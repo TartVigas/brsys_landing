@@ -2,289 +2,316 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrSys • CRM + IA • Propostas Automáticas</title>
-
-  <link rel="canonical" href="https://brsys.com.br" />
-
-  <meta name="description" content="BrSys é uma plataforma inteligente de CRM + IA para gerar propostas comerciais automáticas, organizar leads e escalar suas vendas com menos esforço." />
-  <meta name="keywords" content="BrSys, CRM, IA, OpenAI, Propostas Automáticas, Automação, Vendas, SaaS" />
-  <meta name="author" content="BrSys" />
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="BrSys • CRM com IA para Vender Mais" />
-  <meta property="og:description" content="Automatize processos, gere propostas com IA e gerencie leads em um só lugar." />
-  <meta property="og:image" content="https://brsys-landing.vercel.app/img/brsysgpt.png" />
-  <meta property="og:url" content="https://brsys.com.br" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BrSys • CRM + IA • Propostas Automáticas" />
-  <meta name="twitter:description" content="Gere propostas com Inteligência Artificial e acompanhe seus leads em um CRM simples e poderoso." />
-  <meta name="twitter:image" content="https://brsys-landing.vercel.app/img/brsysgpt.png" />
-
-  <!-- Schema básico -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "BrSys PropostaIA Lite",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "29.90",
-      "priceCurrency": "BRL"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "BrSys"
-    }
-  }
-  </script>
-
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="BrSys PropostaIA Lite: CRM simples com geração automática de propostas usando Inteligência Artificial. Ideal para autônomos, pequenos negócios e times comerciais enxutos." />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
-
-<body class="bg-slate-950 text-slate-50 antialiased">
-  <!-- HEADER -->
-  <header class="border-b border-slate-800/70 bg-slate-950/90 backdrop-blur sticky top-0 z-20">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <img src="img/brsyslogo.png" alt="Logo BrSys" class="h-8 w-auto" />
-        <span class="font-semibold tracking-tight text-slate-50">BrSys</span>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <!-- Trocar pelo seu logo/imagem -->
+        <span class="logo-mark">Br</span>
+        <span class="logo-text">BrSys</span>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-        <a href="#como-funciona" class="hover:text-white">Como funciona</a>
-        <a href="#para-quem" class="hover:text-white">Para quem é</a>
-        <a href="#planos" class="hover:text-white">Planos</a>
-        <a href="#faq" class="hover:text-white">Dúvidas</a>
+
+      <nav class="nav">
+        <a href="#como-funciona" class="nav-link">Como funciona</a>
+        <a href="#para-quem" class="nav-link">Para quem é</a>
+        <a href="#planos" class="nav-link">Planos</a>
+        <a href="#duvidas" class="nav-link">Dúvidas</a>
+        <a href="https://wa.me/SEUNUMERO?text=Quero%20testar%20o%20BrSys%20PropostaIA%20Lite" target="_blank" class="nav-cta">
+          Quero testar grátis
+        </a>
       </nav>
-      <a href="#cta" class="hidden md:inline-flex px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-sm font-semibold shadow-lg shadow-blue-600/30">
-        Quero testar grátis
-      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
-    <section class="max-w-6xl mx-auto px-4 pt-14 pb-16 lg:pt-20 lg:pb-20">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-300 mb-4">
-            <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-            CRM + IA em um só lugar
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">CRM + IA em um só lugar</p>
+          <h1>Gere propostas profissionais com IA e nunca mais perca um lead quente.</h1>
+          <p class="hero-sub">
+            O BrSys PropostaIA Lite combina um CRM simples com geração automática de propostas usando Inteligência Artificial.
+            Ideal para autônomos, pequenos negócios e times comerciais enxutos.
           </p>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Gere propostas profissionais com IA<br class="hidden sm:block" />
-            e nunca mais perca um lead quente.
-          </h1>
-
-          <p class="text-slate-300 text-base sm:text-lg mb-6 max-w-xl">
-            O BrSys PropostaIA Lite combina um CRM simples com geração automática de propostas usando
-            Inteligência Artificial. Ideal para autônomos, pequenos negócios e times comerciais enxutos.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-3 mb-4" id="cta">
-            <a href="https://wa.me/5513SEUNUMEROAQUI?text=Quero%20testar%20o%20BrSys%20PropostaIA%20Lite"
-               class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-sm font-semibold shadow-lg shadow-blue-600/30">
-              Testar grátis até X propostas
+          <div class="hero-actions">
+            <a href="https://wa.me/SEUNUMERO?text=Quero%20testar%20o%20BrSys%20PropostaIA%20Lite" target="_blank" class="btn btn-primary">
+              Testar grátis até 10 propostas
             </a>
-            <a href="#planos" class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-slate-700 text-sm text-slate-200 hover:border-slate-500">
+            <a href="#planos" class="btn btn-outline">
               Ver planos e preços
             </a>
           </div>
 
-          <p class="text-xs text-slate-400">
+          <p class="hero-note">
             Sem cartão de crédito · Você só paga quando começar a gerar propostas todo dia.
           </p>
         </div>
 
-        <div class="space-y-6">
-          <div class="rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50 border border-slate-800 bg-slate-900/80">
-            <img src="img/brsysgpt.png" alt="Tela BrSys PropostaIA" class="w-full h-auto" />
+        <div class="hero-visual">
+          <!-- Coloque aqui a imagem do seu dashboard / mockup -->
+          <div class="mockup">
+            <div class="mockup-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar">
+                <div class="mockup-logo">BrSys</div>
+                <ul>
+                  <li class="active">Leads</li>
+                  <li>Propostas</li>
+                  <li>Funil</li>
+                  <li>Relatórios</li>
+                </ul>
+              </div>
+              <div class="mockup-main">
+                <div class="mockup-header">
+                  <h3>Pipeline comercial</h3>
+                  <button class="badge">+ Nova proposta</button>
+                </div>
+                <div class="mockup-columns">
+                  <div class="col">
+                    <p class="col-title">Novos leads</p>
+                    <div class="card small"></div>
+                    <div class="card small"></div>
+                  </div>
+                  <div class="col">
+                    <p class="col-title">Em proposta</p>
+                    <div class="card highlight"></div>
+                    <div class="card small"></div>
+                  </div>
+                  <div class="col">
+                    <p class="col-title">Fechados</p>
+                    <div class="card small"></div>
+                  </div>
+                </div>
+                <div class="mockup-ai">
+                  <p class="ai-label">Assistente IA</p>
+                  <p class="ai-text">
+                    “Gerei uma proposta com foco em resultados mensuráveis e prazo bem definido. Deseja ajustar condições de pagamento?”
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="rounded-2xl overflow-hidden shadow-xl shadow-slate-900/40 border border-slate-800 bg-slate-900/80">
-            <img src="img/brsyscrm.png" alt="Dashboard CRM BrSys" class="w-full h-auto" />
-          </div>
+          <p class="mockup-caption">
+            Painel simplificado de leads + geração de texto com IA para suas propostas.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- COMO FUNCIONA -->
-    <section id="como-funciona" class="border-t border-slate-800/70 bg-slate-950">
-      <div class="max-w-6xl mx-auto px-4 py-14">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-3">Como funciona na prática</h2>
-        <p class="text-slate-300 mb-8 max-w-2xl">
-          Em poucos minutos você configura o BRsys, organiza leads e começa a gerar propostas com IA de forma consistente.
-        </p>
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Como funciona na prática</h2>
+          <p>
+            Em poucos minutos você configura o BrSys, organiza leads e começa a gerar propostas com IA de forma consistente.
+          </p>
+        </header>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">1. Cadastre seus leads</h3>
-            <p class="text-sm text-slate-300">
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h3>Cadastre seus leads</h3>
+            <p>
               Registre contatos, etapas e status em um CRM simples e visual, pronto para seu dia a dia comercial.
             </p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">2. Descreva a oportunidade</h3>
-            <p class="text-sm text-slate-300">
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h3>Descreva a oportunidade</h3>
+            <p>
               Conte para a IA o que você está oferecendo: tipo de serviço, escopo, valores e diferenciais.
             </p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">3. Gere a proposta automaticamente</h3>
-            <p class="text-sm text-slate-300">
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h3>Gere a proposta automaticamente</h3>
+            <p>
               Em segundos você recebe um texto estruturado, pronto para personalizar e enviar ao cliente.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- PARA QUEM É -->
-    <section id="para-quem" class="border-t border-slate-800/70 bg-slate-950">
-      <div class="max-w-6xl mx-auto px-4 py-14">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-3">Para quem o BrSys foi pensado</h2>
-        <p class="text-slate-300 mb-8 max-w-2xl">
-          Se você fecha negócios enviando propostas, o BrSys PropostaIA Lite pode ser seu “sócio invisível”.
-        </p>
+    <section id="para-quem" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Para quem o BrSys foi pensado</h2>
+          <p>
+            Se você fecha negócios enviando propostas, o BrSys PropostaIA Lite pode ser seu “sócio invisível”.
+          </p>
+        </header>
 
-        <div class="grid md:grid-cols-3 gap-6 text-sm">
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">Autônomos e freelancers</h3>
-            <p class="text-slate-300">Consultores, designers, social media, representantes comerciais e prestadores de serviço em geral.</p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">Pequenas empresas</h3>
-            <p class="text-slate-300">Agências, escritórios, lojas B2B, empresas de tecnologia, serviços recorrentes e contratos mensais.</p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold mb-2 text-slate-50">Times comerciais enxutos</h3>
-            <p class="text-slate-300">Times que precisam de organização, previsibilidade e agilidade para responder leads todo dia.</p>
-          </div>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <h3>Autônomos e freelancers</h3>
+            <p>
+              Consultores, designers, social media, representantes comerciais e prestadores de serviço em geral.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <h3>Pequenas empresas</h3>
+            <p>
+              Agências, escritórios, lojas B2B, empresas de tecnologia, serviços recorrentes e contratos mensais.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <h3>Times comerciais enxutos</h3>
+            <p>
+              Times que precisam de organização, previsibilidade e agilidade para responder leads todo dia.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- PLANOS -->
-    <section id="planos" class="border-t border-slate-800/70 bg-slate-950">
-      <div class="max-w-6xl mx-auto px-4 py-14">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-3">Planos simples para crescer com você</h2>
-        <p class="text-slate-300 mb-8 max-w-2xl">
-          Comece no gratuito, valide seu modelo de vendas e só depois evolua para mais automação e recursos.
-        </p>
+    <section id="planos" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Planos simples para crescer com você</h2>
+          <p>
+            Comece no gratuito, valide seu modelo de vendas e só depois evolua para mais automação e recursos.
+          </p>
+        </header>
 
-        <div class="grid md:grid-cols-4 gap-6 text-sm">
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold text-slate-50 mb-1">Free</h3>
-            <p class="text-2xl font-bold mb-2">R$ 0</p>
-            <p class="text-xs text-slate-400 mb-3">Teste na prática, sem compromisso.</p>
-            <ul class="space-y-1 text-slate-300">
-              <li>• Até X propostas/mês</li>
-              <li>• CRM básico de leads</li>
-              <li>• 1 usuário</li>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Free</h3>
+            <p class="price">R$ 0</p>
+            <p class="price-sub">Teste na prática, sem compromisso.</p>
+            <ul class="price-list">
+              <li>Até 10 propostas/mês com IA</li>
+              <li>CRM básico de leads</li>
+              <li>1 usuário</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="p-5 rounded-2xl border border-blue-600 bg-slate-900/80 shadow-lg shadow-blue-900/40">
-            <h3 class="font-semibold text-slate-50 mb-1">Basic</h3>
-            <p class="text-2xl font-bold mb-2">R$ 29,90</p>
-            <p class="text-xs text-slate-400 mb-3">Foco total em PropostaIA.</p>
-            <ul class="space-y-1 text-slate-300 mb-4">
-              <li>• IA para propostas ilimitadas*</li>
-              <li>• Modelos salvos</li>
-              <li>• Campos personalizados</li>
+          <article class="price-card price-card-featured">
+            <div class="price-badge">Mais escolhido</div>
+            <h3>Basic</h3>
+            <p class="price">R$ 29,90</p>
+            <p class="price-sub">Foco total em PropostaIA.</p>
+            <ul class="price-list">
+              <li>IA para propostas ilimitadas*</li>
+              <li>Modelos de proposta salvos</li>
+              <li>Campos personalizados</li>
             </ul>
-            <a href="#cta" class="inline-flex justify-center w-full px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-xs font-semibold">
+            <a href="https://wa.me/SEUNUMERO?text=Quero%20come%C3%A7ar%20no%20BrSys%20Basic" target="_blank" class="btn btn-primary full">
               Começar no Basic
             </a>
-          </div>
+          </article>
 
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold text-slate-50 mb-1">Pro</h3>
-            <p class="text-2xl font-bold mb-2">R$ 49,90</p>
-            <p class="text-xs text-slate-400 mb-3">Equilíbrio IA + CRM.</p>
-            <ul class="space-y-1 text-slate-300">
-              <li>• Funil completo de vendas</li>
-              <li>• Múltiplos pipelines</li>
-              <li>• Relatórios simples</li>
+          <article class="price-card">
+            <h3>Pro</h3>
+            <p class="price">R$ 49,90</p>
+            <p class="price-sub">Equilíbrio IA + CRM.</p>
+            <ul class="price-list">
+              <li>Funil completo de vendas</li>
+              <li>Múltiplos pipelines</li>
+              <li>Relatórios simples</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="p-5 rounded-2xl border border-slate-800 bg-slate-900/70">
-            <h3 class="font-semibold text-slate-50 mb-1">Full</h3>
-            <p class="text-2xl font-bold mb-2">R$ 79,90</p>
-            <p class="text-xs text-slate-400 mb-3">Automação + IA avançada.</p>
-            <ul class="space-y-1 text-slate-300">
-              <li>• Automatizações de etapas</li>
-              <li>• Integrações sob demanda</li>
-              <li>• Suporte prioritário</li>
+          <article class="price-card">
+            <h3>Full</h3>
+            <p class="price">R$ 79,90</p>
+            <p class="price-sub">Automação + IA avançada.</p>
+            <ul class="price-list">
+              <li>Automatizações de etapas</li>
+              <li>Integrações sob demanda</li>
+              <li>Suporte prioritário</li>
             </ul>
-          </div>
+          </article>
         </div>
 
-        <p class="text-xs text-slate-500 mt-4">
+        <p class="price-footnote">
           *Uso da IA pode estar sujeito a limites de segurança e fair use conforme a demanda.
         </p>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="border-t border-slate-800/70 bg-slate-950">
-      <div class="max-w-4xl mx-auto px-4 py-14">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-6">Dúvidas frequentes</h2>
+    <section id="duvidas" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Dúvidas frequentes</h2>
+        </header>
 
-        <div class="space-y-4 text-sm">
-          <details class="group border border-slate-800 rounded-2xl bg-slate-900/70 px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer list-none">
-              <span class="font-medium text-slate-50">Preciso saber programar para usar o BrSys?</span>
-              <span class="text-slate-400 group-open:rotate-90 transition-transform">›</span>
-            </summary>
-            <p class="mt-2 text-slate-300">
-              Não. O BrSys foi pensado para vendedores, empreendedores e autônomos. Você só preenche campos e gera propostas.
-            </p>
-          </details>
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Preciso saber programar para usar o BrSys?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Não. O BrSys foi pensado para vendedores, empreendedores e autônomos.
+                Você só preenche campos e gera propostas.
+              </p>
+            </div>
+          </article>
 
-          <details class="group border border-slate-800 rounded-2xl bg-slate-900/70 px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer list-none">
-              <span class="font-medium text-slate-50">Como funciona o teste gratuito?</span>
-              <span class="text-slate-400 group-open:rotate-90 transition-transform">›</span>
-            </summary>
-            <p class="mt-2 text-slate-300">
-              Você ganha direito a gerar até X propostas com IA. Só depois disso decide se quer ativar um plano pago.
-            </p>
-          </details>
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Como funciona o teste gratuito?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Você ganha direito a gerar até 10 propostas com IA.
+                Só depois disso decide se quer ativar um plano pago.
+              </p>
+            </div>
+          </article>
 
-          <details class="group border border-slate-800 rounded-2xl bg-slate-900/70 px-4 py-3">
-            <summary class="flex items-center justify-between cursor-pointer list-none">
-              <span class="font-medium text-slate-50">Consigo adaptar o texto das propostas?</span>
-              <span class="text-slate-400 group-open:rotate-90 transition-transform">›</span>
-            </summary>
-            <p class="mt-2 text-slate-300">
-              Sim. A IA gera uma base bem estruturada e você pode ajustar termos, condições, valores e prazos antes de enviar.
-            </p>
-          </details>
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Consigo adaptar o texto das propostas?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sim. A IA gera uma base bem estruturada e você pode ajustar termos, condições,
+                valores e prazos antes de enviar.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 bg-slate-950">
-    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+  <footer class="footer">
+    <div class="container footer-inner">
       <p>© 2025 BrSys. Todos os direitos reservados.</p>
-      <p>Em breve: acesso ao painel em <span class="text-slate-200 font-medium">app.brsys.com.br</span></p>
+      <p class="footer-note">
+        Em breve: acesso ao painel em <strong>app.brsys.com.br</strong>
+      </p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
