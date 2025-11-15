@@ -1,11 +1,13 @@
-// Smooth scroll para links internos
+// ===============================
+// Smooth Scroll para links internos
+// ===============================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
+  link.addEventListener('click', event => {
     const targetId = link.getAttribute('href').substring(1);
     const target = document.getElementById(targetId);
 
     if (target) {
-      e.preventDefault();
+      event.preventDefault();
       const headerOffset = 72;
       const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerOffset;
@@ -18,7 +20,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Menu mobile
+
+// ===============================
+// Menu Mobile (abrir/fechar)
+// ===============================
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.nav-toggle');
 
@@ -29,38 +34,50 @@ if (toggle && nav) {
   });
 }
 
-// Ícone do hambúrguer animado (opcional)
+
+// ===============================
+// Animação do botão hambúrguer
+// ===============================
 if (toggle) {
   toggle.addEventListener('click', () => {
     const spans = toggle.querySelectorAll('span');
-    spans[0].style.transform = toggle.classList.contains('open')
-      ? 'translateY(5px) rotate(45deg)'
-      : '';
-    spans[1].style.opacity = toggle.classList.contains('open') ? '0' : '1';
-    spans[2].style.transform = toggle.classList.contains('open')
-      ? 'translateY(-5px) rotate(-45deg)'
-      : '';
+
+    if (spans.length === 3) {
+      const isOpen = toggle.classList.contains('open');
+
+      spans[0].style.transform = isOpen
+        ? 'translateY(6px) rotate(45deg)'
+        : '';
+
+      spans[1].style.opacity = isOpen ? '0' : '1';
+
+      spans[2].style.transform = isOpen
+        ? 'translateY(-6px) rotate(-45deg)'
+        : '';
+    }
   });
 }
 
-// FAQ accordion
+
+// ===============================
+// FAQ Accordion
+// ===============================
 document.querySelectorAll('.faq-item').forEach(item => {
-  const btn = item.querySelector('.faq-question');
-  btn.addEventListener('click', () => {
+  const button = item.querySelector('.faq-question');
+
+  if (!button) return;
+
+  button.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
 
-    // Fecha outros
+    // Fecha todas antes de abrir a atual
     document.querySelectorAll('.faq-item.open').forEach(openItem => {
       if (openItem !== item) {
         openItem.classList.remove('open');
       }
     });
 
-    // Toggle atual
-    if (!isOpen) {
-      item.classList.add('open');
-    } else {
-      item.classList.remove('open');
-    }
+    // Toggle da atual
+    item.classList.toggle('open', !isOpen);
   });
 });
