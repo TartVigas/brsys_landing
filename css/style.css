@@ -178,3 +178,10 @@ footer {
   font-size: 13px;
   color: var(--text-muted);
 }
+#planos .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
