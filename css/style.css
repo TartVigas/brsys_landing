@@ -546,3 +546,20 @@ body.nav-open .nav-toggle span:nth-child(3) {
     font-size: 1.5rem;
   }
 }
+/* HERO IMAGE DEFINITIVA */
+.hero-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.hero-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: contain;
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
