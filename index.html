@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,55 +9,53 @@
 
   <!-- SEO -->
   <meta name="description"
-        content="BRsys Sites é uma empresa especializada em criação de sites profissionais em HTML, SEO avançado e sistemas web sob medida. Base no litoral paulista (Peruíbe-SP) e atendimento para todo o Brasil." />
+    content="A BRsys Sites desenvolve sites profissionais em HTML, SEO avançado e sistemas web sob medida. Empresa sediada em Peruíbe-SP, atendendo Baixada Santista, Litoral Norte e todo o Brasil." />
 
   <meta name="keywords"
-        content="empresa de criação de sites, sites profissionais, SEO avançado, sistemas web, desenvolvimento web, sites para restaurantes, sites para pousadas, sites para hotéis, BRsys Sites, Peruíbe SP, litoral paulista" />
+    content="empresa de criação de sites, sites profissionais, SEO avançado, sistemas web, desenvolvimento web, sites para restaurantes, sites para pousadas, sites para hotéis, BRsys Sites, Peruíbe SP, Baixada Santista" />
 
-  <meta name="author" content="BRsys Sites" />
-
-  <!-- SEO Local / Geo -->
-  <meta name="geo.region" content="BR-SP" />
-  <meta name="geo.placename" content="Peruíbe" />
-  <meta name="geo.position" content="-24.32;-46.99" />
-  <meta name="ICBM" content="-24.32, -46.99" />
-
-  <meta property="og:title" content="BRsys Sites • Sites Profissionais, SEO Avançado e Sistemas Web" />
+  <!-- OpenGraph -->
+  <meta property="og:title" content="BRsys Sites • Sites Profissionais e SEO Avançado" />
   <meta property="og:description"
-        content="Empresa de tecnologia web focada em sites profissionais, SEO avançado e sistemas web para negócios de todo o Brasil, com base no litoral paulista." />
-  <meta property="og:type" content="website" />
+    content="Empresa especializada em criação de sites profissionais, SEO avançado e sistemas web. Base em Peruíbe-SP e atendimento nacional." />
+  <meta property="og:image" content="https://www.brsys.com.br/img/brsys-hero-mockup.png" />
   <meta property="og:url" content="https://www.brsys.com.br" />
-  <meta property="og:image" content="https://www.brsys.com.br/img/brsyslogo.png" />
+  <meta property="og:type" content="website" />
 
-  <link rel="icon" href="img/favicon-brsys.png" />
+  <link rel="icon" href="img/brsys-logo.svg" />
 
-  <!-- Fonte + CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- JSON-LD LocalBusiness (empresa) -->
+  <!-- Structured Data: Empresa + Serviço -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BRsys Sites",
-    "description": "Empresa de sites profissionais, SEO avançado e sistemas web sob medida para negócios de todo o Brasil.",
-    "url": "https://www.brsys.com.br",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Peruíbe",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55-13-99740-8157",
-    "areaServed": [
-      "Peruíbe",
-      "Litoral Paulista",
-      "Baixada Santista",
-      "Litoral Norte de São Paulo",
-      "Brasil"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BRsys Sites",
+      "description": "Empresa especializada em criação de sites profissionais, SEO avançado e sistemas web.",
+      "image": "https://www.brsys.com.br/img/brsys-hero-mockup.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Peruíbe",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "telephone": "+55-13-99740-8157",
+      "areaServed": [
+        "Peruíbe",
+        "Baixada Santista",
+        "Santos",
+        "São Vicente",
+        "Praia Grande",
+        "Itanhaém",
+        "Mongaguá",
+        "Guarujá",
+        "Litoral Norte",
+        "Todo o Brasil"
+      ],
+      "url": "https://www.brsys.com.br"
+    }
   </script>
 </head>
 
@@ -65,11 +64,11 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand">
-        <img src="img/brsyslogo.png" alt="BRsys Sites" class="brand-logo" />
+      <a href="/" class="brand">
+        <img src="img/brsys-logo.svg" alt="Logo BRsys Sites" class="brand-logo" />
         <div class="brand-text">
           <span class="brand-name">BRsys Sites</span>
-          <span class="brand-tagline">Sites Profissionais • SEO • Sistemas Web</span>
+          <span class="brand-tagline">Tecnologia Web • SEO • Sistemas</span>
         </div>
       </a>
 
@@ -78,18 +77,15 @@
         <a href="#solucoes">Soluções</a>
         <a href="#modelos">Modelos</a>
         <a href="#planos">Planos</a>
-        <a href="#enterprise">Soluções Web</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <a href="https://wa.me/5513997408157?text=Ol%C3%A1%2C+gostaria+de+informacoes+sobre+sites+profissionais+BRsys+Sites"
-         class="btn btn-pill btn-primary header-cta">
-        WhatsApp Comercial
+      <a class="btn btn-pill btn-primary header-cta"
+        href="https://wa.me/5513997408157?text=Quero+informacoes+sobre+sites+BRsys">
+        WhatsApp
       </a>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle"><span></span><span></span><span></span></button>
     </div>
 
     <nav class="nav-mobile">
@@ -97,304 +93,197 @@
       <a href="#solucoes">Soluções</a>
       <a href="#modelos">Modelos</a>
       <a href="#planos">Planos</a>
-      <a href="#enterprise">Soluções Web</a>
       <a href="#contato">Contato</a>
-      <a href="https://wa.me/5513997408157?text=Ol%C3%A1%2C+gostaria+de+informacoes+sobre+sites+profissionais+BRsys+Sites"
-         class="btn btn-pill btn-primary nav-mobile-cta">
+
+      <a class="btn btn-pill btn-primary nav-mobile-cta"
+        href="https://wa.me/5513997408157?text=Quero+um+site+BRsys">
         Falar no WhatsApp
       </a>
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main id="inicio">
+
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
+
         <div class="hero-text">
           <p class="eyebrow">Empresa de tecnologia web</p>
-          <h1>Sites profissionais, SEO avançado e sistemas web para negócios que levam digital a sério.</h1>
+          <h1>Sites profissionais, SEO avançado e sistemas web para empresas que querem crescer online.</h1>
+
           <p class="hero-subtitle">
-            A BRsys Sites é uma empresa especializada em criação de sites em HTML, otimização de SEO e desenvolvimento
-            de sistemas web sob medida. Performance, segurança e foco em resultado — do litoral paulista para todo o Brasil.
+            Foco em performance, SEO local para o litoral paulista e soluções robustas para negócios de todo o Brasil.
+            Desenvolvemos sites rápidos, modernos e preparados para conversão.
           </p>
 
           <div class="hero-actions">
-            <a href="#planos" class="btn btn-pill btn-primary">Ver planos e condições</a>
-            <a href="#modelos" class="btn btn-pill btn-secondary">Ver modelos e templates</a>
+            <a class="btn btn-pill btn-primary" href="#planos">Ver planos</a>
+            <a class="btn btn-pill btn-secondary" href="#modelos">Ver modelos</a>
           </div>
-
-          <p class="hero-note">
-            Sites publicados em infraestrutura moderna e escalável, com domínio próprio e integração completa com WhatsApp
-            e formulários de contato.
-          </p>
         </div>
 
         <div class="hero-panel">
-          <div class="hero-card">
-            <p class="hero-card-title">Soluções digitais BRsys Sites</p>
-            <ul>
-              <li><strong>Criação de sites</strong> institucionais, comerciais e focados em conversão.</li>
-              <li><strong>SEO avançado</strong> com foco em busca local e segmentada.</li>
-              <li><strong>Landing pages</strong> otimizadas para campanhas.</li>
-              <li><strong>Sistemas web internos</strong> (reservas, agendamentos, painéis).</li>
-            </ul>
-            <a href="https://wa.me/5513997408157?text=Quero+avaliar+uma+solucao+digital+com+a+BRsys+Sites"
-               class="btn btn-pill btn-outline hero-card-cta">
-              Falar com o time comercial
-            </a>
-          </div>
+          <img src="img/brsys-hero-mockup.png"
+            alt="Mockup do site BRsys Sites mostrando design moderno e responsivo"
+            class="hero-image" />
         </div>
+
       </div>
     </section>
 
     <!-- SOLUÇÕES -->
-    <section id="solucoes" class="section">
+    <section id="solucoes" class="section section-alt">
       <div class="container">
         <header class="section-header">
-          <h2>Soluções em sites, SEO e sistemas web</h2>
-          <p>
-            A BRsys Sites atua como parceira tecnológica para empresas que precisam de presença digital sólida.
-            Cada entrega combina desenvolvimento web moderno, SEO bem executado e integrações que fazem sentido para o negócio.
-          </p>
+          <h2>Soluções completas para presença digital</h2>
+          <p>Sites rápidos, SEO eficiente e sistemas internos sob medida para empresas de todos os portes.</p>
         </header>
 
         <div class="grid grid-3">
+
           <article class="card">
-            <h3>Sites profissionais em HTML</h3>
-            <p>
-              Estrutura enxuta, código organizado e foco em performance. Sites rápidos, responsivos e com
-              arquitetura preparada para crescer conforme sua empresa evolui.
-            </p>
-            <ul class="list">
-              <li>Layout profissional alinhado à identidade da marca.</li>
-              <li>Compatível com dispositivos móveis e desktops.</li>
-              <li>Integrações com WhatsApp, formulários e mapas.</li>
-            </ul>
+            <img src="img/brsys-team-desk.jpg"
+              alt="Equipe BRsys Sites trabalhando em desenvolvimento web" class="card-img" />
+            <h3>Sites Profissionais</h3>
+            <p>Sites institucionais, comerciais e de conversão, com foco em velocidade e clareza.</p>
           </article>
 
           <article class="card">
-            <h3>SEO avançado e presença digital</h3>
-            <p>
-              Otimização técnica e de conteúdo para sua empresa ser encontrada nos buscadores, com foco em buscas reais
-              do seu público e da sua região de atuação.
-            </p>
-            <ul class="list">
-              <li>Configuração de títulos, descrições e headings.</li>
-              <li>Estrutura de conteúdo pensada para Google.</li>
-              <li>Forte atuação em SEO local para o litoral paulista.</li>
-            </ul>
+            <img src="img/brsys-seo-graph.png"
+              alt="Gráfico de SEO demonstrando crescimento nas buscas orgânicas"
+              class="card-img" />
+            <h3>SEO Avançado</h3>
+            <p>Fortalecimento da presença digital com técnicas reais de SEO local e regional.</p>
           </article>
 
           <article class="card">
-            <h3>Sistemas web sob medida</h3>
-            <p>
-              Desenvolvimento de módulos e sistemas internos em nuvem, integrados ao site da empresa, para apoiar
-              processos como reservas, agendamentos e atendimento.
-            </p>
-            <ul class="list">
-              <li>Áreas administrativas com login e permissões.</li>
-              <li>Painéis para operação, reservas ou agendamentos.</li>
-              <li>Arquitetura pensada para segurança e escalabilidade.</li>
-            </ul>
+            <img src="img/brsys-system-panel.png"
+              alt="Painel de sistema web desenvolvido pela BRsys Sites" class="card-img" />
+            <h3>Sistemas Web</h3>
+            <p>Agendamentos, reservas, painéis administrativos e soluções internas integradas ao site.</p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- MODELOS / TEMPLATES -->
-    <section id="modelos" class="section section-alt">
+    <!-- MODELOS -->
+    <section id="modelos" class="section">
       <div class="container">
+
         <header class="section-header">
-          <h2>Modelos e templates para diferentes segmentos</h2>
-          <p>
-            A empresa trabalha com uma base de templates próprios, que são personalizados para cada cliente com identidade visual,
-            textos, imagens e chamadas de ação específicas. Em breve, esses modelos estarão disponíveis em uma área
-            dedicada de templates dentro do site.
-          </p>
+          <h2>Modelos profissionais para cada segmento</h2>
+          <p>Templates exclusivos da BRsys Sites, totalmente personalizáveis.</p>
         </header>
 
         <div class="grid grid-3">
+
           <article class="card">
-            <h3>Restaurantes e alimentação</h3>
-            <p>
-              Sites focados em cardápio, campanhas, delivery e reservas. Integração com WhatsApp e destaque visual para
-              pratos, combos e promoções.
-            </p>
-            <a href="/sites/restaurantes/gourmet" class="card-link">Ver modelo base (quando disponível) →</a>
+            <img src="img/template-restaurante-preview.jpg"
+              alt="Template de site para restaurante com cardápio online"
+              class="card-img" />
+            <h3>Restaurantes & Delivery</h3>
+            <a href="#"
+              class="card-link">Ver modelo →</a>
           </article>
 
           <article class="card">
-            <h3>Pousadas, hotéis e temporada</h3>
-            <p>
-              Estruturas pensadas para apresentar acomodações, estrutura, fotos, localização e formas de contato.
-              Preparado para evoluir para reservas online em projetos Enterprise.
-            </p>
-            <a href="/sites/hoteis/classic" class="card-link">Ver modelo base (quando disponível) →</a>
+            <img src="img/template-hotel-preview.jpg"
+              alt="Modelo de site profissional para hotéis e pousadas"
+              class="card-img" />
+            <h3>Hotéis & Pousadas</h3>
+            <a href="/sites/hoteis/classic"
+              class="card-link">Ver modelo →</a>
           </article>
 
           <article class="card">
-            <h3>Serviços e negócios locais</h3>
-            <p>
-              Clínicas, salões, imobiliárias, escritórios e prestadores de serviços em geral. Foco em clareza,
-              credibilidade e geração de contato qualificado.
-            </p>
-            <a href="/sites/negocios/institucional" class="card-link">Ver modelo base (quando disponível) →</a>
+            <img src="img/template-negocio-preview.jpg"
+              alt="Template de site institucional para negócios locais"
+              class="card-img" />
+            <h3>Negócios Locais</h3>
+            <a href="#"
+              class="card-link">Ver modelo →</a>
           </article>
+
         </div>
       </div>
     </section>
 
     <!-- PLANOS -->
-    <section id="planos" class="section">
+    <section id="planos" class="section section-alt">
       <div class="container">
+
         <header class="section-header">
-          <h2>Planos de implantação para sites profissionais</h2>
-          <p>
-            Todos os valores abaixo são <strong>a partir</strong>, definidos após entender o escopo do projeto.
-            A implantação é cobrada uma única vez. A manutenção mensal é opcional e pode ser contratada depois da entrega.
-          </p>
+          <h2>Planos de implantação</h2>
+          <p>Valores a partir de acordo com o escopo. Manutenção mensal opcional.</p>
         </header>
 
         <div class="grid grid-4">
-          <!-- Essencial -->
+
           <article class="card card-plan">
-            <h3>Plano Essencial</h3>
-            <p class="price">a partir de R$ 500,00</p>
-            <p class="plan-desc">
-              Ideal para empresas e negócios que precisam de um site bem estruturado, objetivo e pronto para gerar contato.
-            </p>
-            <ul class="list">
-              <li>Até 4–5 seções institucionais.</li>
-              <li>Layout baseado em template BRsys Sites.</li>
-              <li>SEO básico bem configurado.</li>
-              <li>WhatsApp e mapa integrados.</li>
-              <li>Formulário simples de contato, se necessário.</li>
-            </ul>
-            <p class="plan-note">
-              Manutenção opcional a partir de R$ 100/mês (conteúdo e pequenos ajustes).
-            </p>
-            <a href="https://wa.me/5513997408157?text=Quero+mais+detalhes+do+Plano+Essencial+BRsys+Sites"
-               class="btn btn-pill btn-primary">
-              Falar sobre o Plano Essencial
-            </a>
+            <h3>Essencial</h3>
+            <p class="price">R$ 500,00+</p>
+            <p>Até 5 seções • SEO básico • WhatsApp • Mapa</p>
           </article>
 
-          <!-- Profissional -->
           <article class="card card-plan">
-            <h3>Plano Profissional</h3>
-            <p class="price">a partir de R$ 900,00</p>
-            <p class="plan-desc">
-              Para empresas que desejam um site mais completo, com mais conteúdo, estrutura de SEO avançada
-              e foco em geração de oportunidade.
-            </p>
-            <ul class="list">
-              <li>Até 7 seções ou páginas.</li>
-              <li>Layout mais elaborado, alinhado à marca.</li>
-              <li>SEO on-page avançado com foco em região de atuação.</li>
-              <li>Integração com WhatsApp, mapa e formulários detalhados.</li>
-              <li>Preparado para futuras campanhas e páginas extras.</li>
-            </ul>
-            <p class="plan-note">
-              Manutenção opcional a partir de R$ 120–150/mês (conteúdo, SEO e melhorias contínuas).
-            </p>
-            <a href="https://wa.me/5513997408157?text=Quero+avaliar+o+Plano+Profissional+BRsys+Sites"
-               class="btn btn-pill btn-primary">
-              Falar sobre o Plano Profissional
-            </a>
+            <h3>Profissional</h3>
+            <p class="price">R$ 900,00+</p>
+            <p>Até 7 seções • SEO avançado • Formulários completos</p>
           </article>
 
-          <!-- Premium -->
           <article class="card card-plan">
-            <h3>Plano Premium</h3>
-            <p class="price">a partir de R$ 1.500,00</p>
-            <p class="plan-desc">
-              Projetos com mais profundidade, conteúdo robusto, visual diferenciado e presença digital forte
-              em múltiplas localidades.
-            </p>
-            <ul class="list">
-              <li>Até 10 seções ou páginas.</li>
-              <li>Design mais exclusivo e experiência refinada.</li>
-              <li>SEO avançado com foco em várias cidades/regiões.</li>
-              <li>Formulários mais completos e captação de leads.</li>
-              <li>Estrutura para campanhas sazonais e alta temporada.</li>
-            </ul>
-            <p class="plan-note">
-              Manutenção opcional a partir de R$ 180–250/mês (campanhas, SEO e otimizações constantes).
-            </p>
-            <a href="https://wa.me/5513997408157?text=Quero+entender+melhor+o+Plano+Premium+BRsys+Sites"
-               class="btn btn-pill btn-outline">
-              Falar sobre o Plano Premium
-            </a>
+            <h3>Premium</h3>
+            <p class="price">R$ 1500,00+</p>
+            <p>Até 10 seções • Visual premium • SEO regional forte</p>
           </article>
 
-          <!-- Enterprise -->
-          <article id="enterprise" class="card card-plan">
-            <h3>Plano Enterprise</h3>
-            <p class="price">projetos sob consulta</p>
-            <p class="plan-desc">
-              Soluções completas envolvendo site + sistemas web internos em nuvem, desenhados sob medida para a operação
-              da empresa.
-            </p>
-            <ul class="list">
-              <li>Levantamento de requisitos e desenho de fluxos.</li>
-              <li>Arquitetura de sistema integrada ao site.</li>
-              <li>Áreas internas com login (reservas, agendamentos, painéis).</li>
-              <li>Desenvolvimento com foco em segurança e escalabilidade.</li>
-            </ul>
-            <p class="plan-note">
-              Indicados para empresas que precisam transformar processos em soluções web customizadas.
-            </p>
-            <a href="https://wa.me/5513997408157?text=Tenho+interesse+em+um+projeto+Enterprise+BRsys+Sites"
-               class="btn btn-pill btn-outline">
-              Conversar sobre um projeto Enterprise
-            </a>
+          <article class="card card-plan">
+            <h3>Enterprise</h3>
+            <p class="price">Sob consulta</p>
+            <p>Sistemas internos, reservas, painéis, integrações</p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- COBERTURA / CONTATO -->
-    <section id="contato" class="section section-alt">
+    <!-- CONTATO -->
+    <section id="contato" class="section">
       <div class="container coverage-grid">
-        <div>
-          <h2>Atuação a partir do litoral paulista, com cobertura nacional</h2>
-          <p>
-            A BRsys Sites tem base em Peruíbe-SP e forte atuação no litoral paulista — Baixada Santista, Litoral Norte
-            e região — atendendo também empresas de outros estados que buscam uma parceira técnica em sites,
-            SEO e sistemas web.
-          </p>
 
-          <p>
-            Para iniciar um projeto, o primeiro passo é uma conversa rápida com o time comercial para entender o contexto,
-            o objetivo do site e o nível de solução necessário.
-          </p>
+        <div>
+          <h2>Com sede em Peruíbe-SP, atendemos todo o litoral e o Brasil</h2>
+          <img src="img/litoral-sp-map.webp"
+            alt="Mapa ilustrativo do litoral paulista e região atendida pela BRsys Sites"
+            class="map-img" />
         </div>
 
         <div class="contact-card">
-          <h3>Fale com o time da BRsys Sites</h3>
-          <p>Envie no WhatsApp:</p>
-          <ul class="list">
-            <li>• Tipo de negócio e segmento de atuação.</li>
-            <li>• Cidade / Estado.</li>
-            <li>• Se já possui domínio registrado.</li>
-          </ul>
-          <a href="https://wa.me/5513997408157?text=Gostaria+de+iniciar+um+projeto+de+site+ou+sistema+web+com+a+BRsys+Sites"
-             class="btn btn-pill btn-primary contact-btn">
-            Falar com o time comercial no WhatsApp
+          <h3>Fale com o time BRsys Sites</h3>
+          <a class="btn btn-pill btn-primary"
+            href="https://wa.me/5513997408157?text=Gostaria+de+iniciar+um+projeto+BRsys+Sites">
+            WhatsApp Comercial
           </a>
         </div>
+
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2025 BRsys Sites • Empresa de sites profissionais, SEO avançado e sistemas web.</p>
-      <p>Com sede em Peruíbe - SP e atendimento para empresas em todo o Brasil • WhatsApp comercial: +55 (13) 99740-8157</p>
+      <p>© 2025 BRsys Sites — Empresa de Sites Profissionais, SEO Avançado e Sistemas Web.</p>
+      <p>Peruíbe - SP • Atendemos Brasil inteiro</p>
+      <p>WhatsApp: +55 (13) 99740-8157</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
