@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>BRsys Sites • Criação de Sites Profissionais em HTML + SEO</title>
+  <meta name="description" content="BRsys Sites cria sites profissionais em HTML com SEO real, alta performance e integração com WhatsApp. Ideal para restaurantes, pousadas, hotéis e negócios locais que querem vender mais online." />
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="BRsys Sites • Sites Profissionais em HTML + SEO" />
+  <meta property="og:description" content="Sites rápidos, otimizados para Google e integrados ao WhatsApp. Para restaurantes, pousadas, hotéis e negócios locais." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.brsys.com.br/sites" />
+  <!-- Ajuste o caminho da imagem de capa quando tiver -->
+  <meta property="og:image" content="https://www.brsys.com.br/img/brsys-sites-cover.png" />
+
+  <meta name="theme-color" content="#020617" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (para agilizar a landing) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
+          colors: {
+            brsys: {
+              teal: "#0f9b9d",
+              dark: "#020617",
+              soft: "#02081f",
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-brsys-dark text-slate-100 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-brsys-dark/95 backdrop-blur border-b border-slate-800 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <!-- Ajuste o caminho da logo -->
+        <img src="/img/brsyslogo.png" alt="BRsys" class="w-7 h-7" />
+        <span class="font-semibold tracking-tight">
+          BRsys <span class="text-brsys-teal">Sites</span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+        <a href="/" class="hover:text-white">Início</a>
+        <a href="#beneficios" class="hover:text-white">Por que BRsys Sites?</a>
+        <a href="#modelos" class="hover:text-white">Modelos</a>
+        <a href="#planos" class="hover:text-white">Planos</a>
+        <a href="#contato" class="hover:text-white">Contato</a>
+      </nav>
+
+      <div class="hidden md:flex">
+        <!-- TROCAR pelo seu número -->
+        <a href="https://wa.me/5599999999999?text=Ol%C3%A1%2C+quero+um+site+BRsys+Sites"
+           class="rounded-full bg-brsys-teal px-5 py-2 text-sm font-semibold text-slate-950 hover:brightness-110 transition">
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      <div class="md:hidden">
+        <a href="https://wa.me/5599999999999?text=Quero+um+site+BRsys+Sites"
+           class="rounded-full bg-brsys-teal px-4 py-2 text-xs font-semibold text-slate-950">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="bg-gradient-to-b from-brsys-soft to-brsys-dark py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-xs font-semibold text-brsys-teal tracking-wide mb-3 uppercase">
+            Criação de Sites Profissionais
+          </p>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4">
+            Sites em HTML + SEO real<br class="hidden md:block" />
+            para restaurantes, pousadas e negócios locais.
+          </h1>
+          <p class="text-slate-300 text-sm md:text-base mb-6 max-w-xl">
+            Com o BRsys Sites você tem um site rápido, moderno, responsivo e pronto para aparecer no Google,
+            com botões de ação direto no WhatsApp para receber reservas, pedidos e orçamentos todos os dias.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-4">
+            <a href="#modelos"
+               class="rounded-full bg-brsys-teal px-6 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 transition">
+              Ver exemplos de sites
+            </a>
+            <a href="#planos"
+               class="rounded-full border border-slate-600 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-brsys-teal hover:text-brsys-teal transition">
+              Ver planos e valores
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-400">
+            Sites publicados em infraestrutura moderna (como Vercel) + domínio próprio do seu negócio.
+          </p>
+        </div>
+
+        <!-- “Mockup” visual simples -->
+        <div class="md:pl-6">
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 md:p-6 shadow-2xl">
+            <p class="text-xs text-slate-400 mb-2">Exemplos de projetos BRsys Sites</p>
+            <div class="space-y-3">
+              <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold">Restaurante Gourmet</p>
+                  <p class="text-xs text-slate-400">Cardápio online, fotos e botão “Pedir no WhatsApp”.</p>
+                </div>
+                <span class="text-[10px] px-2 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                  Demo
+                </span>
+              </div>
+              <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold">Pousada & Hotel</p>
+                  <p class="text-xs text-slate-400">Quartos, estrutura, localização e reservas.</p>
+                </div>
+                <span class="text-[10px] px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                  Demo
+                </span>
+              </div>
+              <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold">Negócio Local</p>
+                  <p class="text-xs text-slate-400">Serviços, depoimentos e contato rápido.</p>
+                </div>
+                <span class="text-[10px] px-2 py-1 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                  Demo
+                </span>
+              </div>
+            </div>
+            <p class="mt-4 text-[11px] text-slate-500">
+              Cada projeto é 100% personalizado com as cores, fotos e textos do seu negócio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios" class="py-16 border-t border-slate-800 bg-brsys-dark">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3">Por que fazer seu site com o BRsys Sites?</h2>
+        <p class="text-slate-300 text-sm md:text-base mb-8 max-w-2xl">
+          A proposta é simples: tecnologia moderna, visual profissional e foco em resultado. Nada de site pesado,
+          travando, difícil de mexer ou que ninguém encontra no Google.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5">
+            <p class="text-2xl mb-2">⚡</p>
+            <h3 class="font-semibold mb-1">Performance e velocidade</h3>
+            <p class="text-sm text-slate-300">
+              Código em HTML/CSS/JS otimizado, hospedagem moderna e foco em carregamento rápido — principalmente no celular.
+            </p>
+          </div>
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5">
+            <p class="text-2xl mb-2">🔍</p>
+            <h3 class="font-semibold mb-1">SEO de verdade</h3>
+            <p class="text-sm text-slate-300">
+              Estrutura pensada para o Google: títulos, descrições, headings, conteúdo e URLs preparados para ranquear na sua região.
+            </p>
+          </div>
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5">
+            <p class="text-2xl mb-2">📲</p>
+            <h3 class="font-semibold mb-1">WhatsApp como centro da venda</h3>
+            <p class="text-sm text-slate-300">
+              Botões claros e estratégicos levando direto para o seu WhatsApp — reservas, pedidos, orçamentos e dúvidas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section id="modelos" class="py-16 border-t border-slate-800 bg-brsys-soft">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-2">Modelos para diferentes tipos de negócios</h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl">
+              Você escolhe um modelo como base e eu ajusto tudo com a identidade do seu negócio: logo, cores, fotos, textos e chamadas de ação.
+            </p>
+          </div>
+          <!-- CTA lateral -->
+          <a href="https://wa.me/5599999999999?text=Quero+ver+os+modelos+BRsys+Sites"
+             class="inline-flex rounded-full border border-slate-600 px-4 py-2 text-xs font-semibold text-slate-200 hover:border-brsys-teal hover:text-brsys-teal transition">
+            Ver modelos com ajuda no WhatsApp
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Restaurante -->
+          <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
+            <p class="text-[11px] font-semibold text-brsys-teal uppercase tracking-wide mb-2">
+              Restaurantes & Lanchonetes
+            </p>
+            <h3 class="font-semibold mb-2">Template Restaurante Gourmet</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Página com cardápio online, fotos dos pratos, depoimentos e um botão forte de “Pedir pelo WhatsApp”.
+            </p>
+            <!-- Ajuste o link quando subir o demo -->
+            <a href="https://brsys.com.br/sites/restaurantes/gourmet" target="_blank"
+               class="mt-auto text-sm font-semibold text-brsys-teal hover:underline">
+              Ver demo do modelo →
+            </a>
+          </article>
+
+          <!-- Hotel / Pousada -->
+          <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
+            <p class="text-[11px] font-semibold text-brsys-teal uppercase tracking-wide mb-2">
+              Hotéis & Pousadas
+            </p>
+            <h3 class="font-semibold mb-2">Template Hotel & Pousada Classic</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Focado em reservas: quartos, estrutura, localização, diferenciais e contato rápido para falar com a recepção.
+            </p>
+            <a href="https://brsys.com.br/sites/hoteis/classic" target="_blank"
+               class="mt-auto text-sm font-semibold text-brsys-teal hover:underline">
+              Ver demo do modelo →
+            </a>
+          </article>
+
+          <!-- Negócio Local -->
+          <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
+            <p class="text-[11px] font-semibold text-brsys-teal uppercase tracking-wide mb-2">
+              Clínicas, salões e serviços
+            </p>
+            <h3 class="font-semibold mb-2">Template Negócio Local</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Ideal para quem precisa apresentar serviços, equipe, depoimentos e ter um botão claro de agendamento.
+            </p>
+            <a href="https://brsys.com.br/sites/negocios/institucional" target="_blank"
+               class="mt-auto text-sm font-semibold text-brsys-teal hover:underline">
+              Ver demo do modelo →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="py-16 border-t border-slate-800 bg-brsys-dark">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6">Como funciona na prática?</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5">
+            <p class="text-xs text-slate-400 mb-1">Etapa 1</p>
+            <h3 class="font-semibold mb-2">Escolha e briefing</h3>
+            <p class="text-sm text-slate-300">
+              Você escolhe um modelo e me envia informações: tipo de negócio, cidade, público, fotos, logo e o que é prioridade.
+            </p>
+          </div>
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5">
+            <p class="text-xs text-slate-400 mb-1">Etapa 2</p>
+            <h3 class="font-semibold mb-2">Criação + SEO</h3>
+            <p class="text-sm text-slate-300">
+              Eu crio o site com a sua identidade, ajusto textos, configuro SEO básico e deixo tudo preparado para celular e desktop.
+            </p>
+          </div>
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5">
+            <p class="text-xs text-slate-400 mb-1">Etapa 3</p>
+            <h3 class="font-semibold mb-2">Publicação e ajustes</h3>
+            <p class="text-sm text-slate-300">
+              Publicamos no seu domínio e ajustamos detalhes finos. Se quiser, você ainda pode ter um plano de manutenção mensal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="py-16 border-t border-slate-800 bg-brsys-soft">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-2">Planos simples e claros</h2>
+            <p class="text-slate-300 text-sm md:text-base max-w-2xl">
+              Você não é obrigado a pagar mensalidade. Pode ter um site completo e, se fizer sentido, adicionar manutenção mensal depois.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500">
+            Valores podem ser ajustados conforme o tamanho e complexidade do projeto.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Plano Essencial -->
+          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6 flex flex-col">
+            <p class="text-[11px] font-semibold text-brsys-teal uppercase tracking-wide mb-1">
+              Plano Essencial
+            </p>
+            <h3 class="text-xl font-semibold mb-2">Site completo + SEO básico</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Para quem quer ter um site profissional, bem feito, sem enrolação, com foco em presença digital e conversão.
+            </p>
+            <p class="text-3xl font-semibold mb-1">
+              R$ 1.000<span class="text-base font-normal text-slate-300"> a R$ 1.500</span>
+            </p>
+            <p class="text-xs text-slate-400 mb-4">
+              Valor exato definido após entender o seu projeto.
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2 mb-6">
+              <li>• 1 página completa com seções (sobre, serviços, fotos, contato).</li>
+              <li>• SEO on-page básico (títulos, descrições, headings, URLs).</li>
+              <li>• Integração com WhatsApp e mapa.</li>
+              <li>• Publicação no seu domínio próprio.</li>
+              <li>• Período curto de ajustes após entrega.</li>
+            </ul>
+            <a href="https://wa.me/5599999999999?text=Quero+saber+mais+sobre+o+Plano+Essencial+BRsys+Sites"
+               class="mt-auto inline-flex justify-center rounded-full bg-brsys-teal px-5 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 transition">
+              Falar sobre o Plano Essencial
+            </a>
+          </div>
+
+          <!-- Plano Manutenção -->
+          <div class="bg-slate-900/40 border border-slate-700 rounded-2xl p-6 flex flex-col">
+            <p class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide mb-1">
+              Plano de Manutenção
+            </p>
+            <h3 class="text-xl font-semibold mb-2">Atualizações e melhorias contínuas</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Para quem quer alguém cuidando do site: atualizando textos, fotos, promoções e ajustando SEO ao longo do tempo.
+            </p>
+            <p class="text-3xl font-semibold mb-1">
+              R$ 99<span class="text-base font-normal text-slate-300"> /mês (base)</span>
+            </p>
+            <p class="text-xs text-slate-400 mb-4">
+              Valor pode variar conforme a quantidade de alterações mensais.
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2 mb-6">
+              <li>• Atualização de conteúdo (textos, fotos, banners).</li>
+              <li>• Pequenos ajustes de layout e usabilidade.</li>
+              <li>• Revisão pontual de SEO e performance.</li>
+              <li>• Suporte para dúvidas simples sobre o site.</li>
+            </ul>
+            <a href="https://wa.me/5599999999999?text=Quero+entender+o+Plano+de+Manuten%C3%A7%C3%A3o+BRsys+Sites"
+               class="mt-auto inline-flex justify-center rounded-full border border-brsys-teal px-5 py-2.5 text-sm font-semibold text-brsys-teal hover:bg-brsys-teal/10 transition">
+              Falar sobre manutenção
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ + CONTATO -->
+    <section id="contato" class="py-16 border-t border-slate-800 bg-brsys-dark">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+        <!-- FAQ -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold mb-4">Dúvidas frequentes</h2>
+          <div class="space-y-4 text-sm text-slate-300">
+            <div>
+              <p class="font-semibold text-slate-100 mb-1">Em quanto tempo o site fica pronto?</p>
+              <p>Dependendo do tamanho, geralmente entre 3 e 10 dias úteis após receber todo o material.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-100 mb-1">Posso usar meu domínio próprio?</p>
+              <p>Sim. Podemos apontar o site para o seu domínio (ex: meurestaurante.com.br) ou criar um domínio do zero.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-100 mb-1">Vocês usam WordPress?</p>
+              <p>Nesta linha BRsys Sites, não. Trabalhamos com HTML/CSS/JS para mais desempenho, controle e simplicidade.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-100 mb-1">Consigo editar depois?</p>
+              <p>
+                Podemos combinar um modelo de edição simples ou você pode solicitar alterações pontuais via plano de manutenção.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box contato -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+          <h3 class="text-xl font-semibold mb-2">Vamos falar sobre o seu site?</h3>
+          <p class="text-sm text-slate-300 mb-4">
+            Me manda uma mensagem rápida no WhatsApp com:
+            tipo de negócio, cidade e se já tem domínio. Eu respondo com uma sugestão de caminho e um orçamento alinhado.
+          </p>
+
+          <ul class="text-xs text-slate-400 space-y-2 mb-4">
+            <li>• Tipo de negócio (restaurante, pousada, clínica, etc.)</li>
+            <li>• Cidade / Estado</li>
+            <li>• Já tem domínio? (ex: meunegocio.com.br)</li>
+          </ul>
+
+          <a href="https://wa.me/5599999999999?text=Quero+entender+melhor+o+BRsys+Sites"
+             class="inline-flex w-full items-center justify-center rounded-full bg-brsys-teal px-5 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 transition">
+            Falar com um humano no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-12 border-t border-slate-800 bg-gradient-to-r from-brsys-soft to-brsys-dark">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+          Seu negócio merece um site à altura. Vamos tirar isso do papel?
+        </h2>
+        <p class="text-sm md:text-base text-slate-300 mb-6 max-w-3xl mx-auto">
+          Não precisa de reunião demorada. Um bate-papo rápido no WhatsApp já é suficiente para entender o que você precisa
+          e indicar o melhor modelo para o seu momento.
+        </p>
+        <a href="https://wa.me/5599999999999?text=Quero+um+site+BRsys+Sites+para+meu+neg%C3%B3cio"
+           class="inline-flex rounded-full bg-brsys-teal px-8 py-3 text-sm md:text-base font-semibold text-slate-950 hover:brightness-110 transition">
+          Começar conversa pelo WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-brsys-dark text-slate-500 text-xs">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© 2025 BRsys • BRsys Sites • Todos os direitos reservados.</p>
+      <p>Desenvolvido no Brasil • Sites em HTML + SEO para negócios modernos.</p>
+    </div>
+  </footer>
+</body>
+</html>
