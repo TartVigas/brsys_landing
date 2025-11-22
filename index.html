@@ -1,649 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BRsys • PropostaIA Lite – CRM com IA para criar propostas automáticas em segundos</title>
+  <title>BRsys • Soluções Digitais Inteligentes para Negócios Modernos</title>
+  <meta name="description" content="A BRsys oferece sites profissionais, automações, IA aplicada, consultoria digital e sistemas inteligentes como PropostaIA Lite e CRM. Tecnologia, estratégia e performance para negócios modernos." />
 
-  <meta name="description" content="Crie propostas profissionais em segundos com Inteligência Artificial. O BRsys combina CRM + IA para gerar orçamentos automáticos, acelerar vendas e aumentar sua produtividade. Teste grátis." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Crie propostas profissionais em segundos — BRsys PropostaIA Lite" />
-  <meta property="og:description" content="Automatize orçamentos, aumente vendas e padronize propostas com IA. Teste grátis." />
+  <meta property="og:title" content="BRsys • Soluções Digitais Inteligentes" />
+  <meta property="og:description" content="Sites profissionais, IA, automação, consultoria e sistemas digitais para elevar o seu negócio ao próximo nível." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://brsys.com.br" />
-  <meta property="og:image" content="https://brsys.com.br/img/mockup-propostaia-3d-dark.png" />
+  <meta property="og:url" content="https://www.brsys.com.br" />
+  <meta property="og:image" content="/img/brsys-cover.png" />
 
-  <link rel="icon" href="/img/favicon-brsys.png" type="image/png" />
+  <meta name="theme-color" content="#0f172a" />
 
-  <!-- Tailwind via CDN -->
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+          },
           colors: {
             brsys: {
-              teal: '#30E0C2',
-              dark: '#050816'
+              teal: "#0f9b9d",
+              dark: "#020617",
+              soft: "#0a0f1f"
             }
           }
         }
       }
-    }
+    };
   </script>
-
-  <style>
-    /* Mockup 3D simples via CSS */
-    .mockup-3d {
-      perspective: 1800px;
-    }
-
-    .mockup-card {
-      transform: rotateY(-18deg) rotateX(12deg);
-      box-shadow:
-        0 40px 80px rgba(0, 0, 0, 0.65),
-        0 0 0 1px rgba(148, 163, 184, 0.15);
-      background: radial-gradient(circle at top left, rgba(48, 224, 194, 0.25), transparent 45%),
-                  radial-gradient(circle at bottom right, rgba(15, 23, 42, 1), rgba(15, 23, 42, 1));
-    }
-  </style>
 </head>
 
-<body class="bg-slate-950 text-slate-100 antialiased">
-  <!-- Wrapper -->
-  <div class="min-h-screen flex flex-col">
+<body class="bg-brsys-dark text-slate-100 font-sans">
 
-    <!-- Header -->
-    <header class="border-b border-slate-800/70 sticky top-0 z-40 bg-slate-950/80 backdrop-blur">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <img src="/img/logo-brsys-transparente.png" alt="BRsys" class="h-9 w-auto" />
-          <span class="font-semibold text-slate-100 tracking-tight">BRsys</span>
-          <span class="ml-2 text-xs px-2 py-1 rounded-full bg-slate-800/80 text-slate-300">
-            PropostaIA Lite
-          </span>
-        </div>
+  <!-- NAVBAR -->
+  <header class="bg-brsys-dark/95 border-b border-slate-800 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      
+      <a href="/" class="flex items-center gap-2">
+        <img src="/img/brsyslogo.png" class="w-7 h-7" />
+        <span class="text-xl font-semibold tracking-tight">BRsys</span>
+      </a>
 
-        <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-          <a href="#como-funciona" class="hover:text-brsys-teal transition">Como funciona</a>
-          <a href="#planos" class="hover:text-brsys-teal transition">Planos</a>
-          <a href="#faq" class="hover:text-brsys-teal transition">Dúvidas</a>
-          <a href="#contato" class="hover:text-brsys-teal transition">Contato</a>
-          <a href="https://app.brsys.com.br/login" class="text-slate-200 hover:text-brsys-teal transition">
-            Entrar
-          </a>
-          <a href="#teste-gratis" class="inline-flex items-center px-4 py-2 rounded-full bg-brsys-teal text-slate-900 font-semibold shadow-md shadow-emerald-500/30 hover:shadow-lg hover:-translate-y-px transition">
-            Teste grátis
-          </a>
-        </nav>
+      <nav class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="#servicos" class="hover:text-white">Serviços</a>
+        <a href="/sites" class="hover:text-white">Sites Profissionais</a>
+        <a href="/propostaIA" class="hover:text-white">PropostaIA</a>
+        <a href="#sobre" class="hover:text-white">Sobre</a>
+        <a href="#contato" class="hover:text-white">Contato</a>
+      </nav>
 
-        <!-- Mobile menu button (visu apenas; JS simples abaixo) -->
-        <button id="menu-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-700 text-slate-200">
-          <span class="sr-only">Abrir menu</span>
-          ☰
-        </button>
+      <div class="hidden md:flex">
+        <a href="https://wa.me/5599999999999?text=Ol%C3%A1%2C+quero+conversar+com+a+BRsys"
+          class="px-5 py-2 rounded-full bg-brsys-teal font-semibold text-slate-900 hover:brightness-110">
+          WhatsApp
+        </a>
       </div>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800 bg-slate-950">
-        <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm text-slate-200">
-          <a href="#como-funciona" class="hover:text-brsys-teal transition">Como funciona</a>
-          <a href="#planos" class="hover:text-brsys-teal transition">Planos</a>
-          <a href="#faq" class="hover:text-brsys-teal transition">Dúvidas</a>
-          <a href="#contato" class="hover:text-brsys-teal transition">Contato</a>
-          <a href="https://app.brsys.com.br/login" class="hover:text-brsys-teal transition">
-            Entrar
-          </a>
-          <a href="#teste-gratis" class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-brsys-teal text-slate-900 font-semibold shadow-md shadow-emerald-500/30">
-            Teste grátis
-          </a>
-        </nav>
+      <div class="md:hidden">
+        <a href="https://wa.me/5599999999999"
+          class="px-4 py-2 rounded-full bg-brsys-teal text-xs font-semibold text-slate-900">WA</a>
       </div>
-    </header>
 
-    <!-- Main -->
-    <main class="flex-1">
+    </div>
+  </header>
 
-      <!-- HERO -->
-      <section class="relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-brsys-dark via-slate-950 to-slate-950"></div>
-        <div class="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-brsys-teal/20 blur-3xl"></div>
-        <div class="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
+  <main>
 
-        <div class="relative max-w-6xl mx-auto px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Texto -->
-          <div>
-            <span class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700/60 text-slate-300 mb-4">
-              <span class="h-1.5 w-1.5 rounded-full bg-brsys-teal"></span>
-              CRM + IA para propostas automáticas
-            </span>
+    <!-- HERO -->
+    <section class="py-20 bg-gradient-to-b from-brsys-soft to-brsys-dark">
+      <div class="max-w-6xl mx-auto px-4 text-center">
 
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-50 mb-4">
-              Crie propostas profissionais<br class="hidden sm:block" />
-              <span class="text-brsys-teal">em segundos com IA</span>
-            </h1>
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4 leading-tight">
+          BRsys — Soluções Digitais Inteligentes<br />
+          <span class="text-brsys-teal">para Negócios Modernos</span>
+        </h1>
 
-            <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-6">
-              O BRsys PropostaIA Lite é o CRM mais rápido para quem precisa montar orçamentos,
-              enviar propostas e fechar negócios todos os dias — tudo automaticamente, com Inteligência Artificial.
+        <p class="text-slate-300 text-sm md:text-lg max-w-2xl mx-auto mb-8">
+          Sites profissionais, automações, IA aplicada, consultoria digital e sistemas desenvolvidos sob medida.
+          Tecnologia prática, rápida e eficiente para empresas que querem evoluir hoje — não amanhã.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/sites"
+            class="px-7 py-3 rounded-full bg-brsys-teal text-slate-900 text-sm font-semibold hover:brightness-110 transition">
+            Ver Serviço de Criação de Sites
+          </a>
+          <a href="#servicos"
+            class="px-7 py-3 rounded-full border border-slate-600 text-sm font-semibold hover:border-brsys-teal hover:text-brsys-teal transition">
+            Ver todos os serviços
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-16 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <h2 class="text-3xl font-semibold mb-2">O que a BRsys faz?</h2>
+        <p class="text-slate-300 text-sm mb-10 max-w-xl">Tecnologia moderna aplicada ao crescimento real do seu negócio.</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">📌 Sites Profissionais + SEO</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Criação de sites rápidos, modernos, responsivos e otimizados para Google.
             </p>
+            <a href="/sites" class="text-brsys-teal text-sm hover:underline">Ver detalhes →</a>
+          </div>
 
-            <ul class="space-y-2 text-sm text-slate-300 mb-6">
-              <li>✅ Propostas completas em poucos cliques</li>
-              <li>✅ IA organiza textos, valores e layout automaticamente</li>
-              <li>✅ CRM integrado com Kanban, leads e histórico</li>
-            </ul>
-
-            <div class="flex flex-wrap items-center gap-3 mb-4" id="teste-gratis">
-              <a href="https://app.brsys.com.br/signup"
-                 class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-brsys-teal text-slate-900 font-semibold text-sm shadow-md shadow-emerald-500/40 hover:shadow-lg hover:-translate-y-px transition">
-                Teste grátis agora
-              </a>
-              <a href="#como-funciona"
-                 class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-slate-700 text-slate-200 text-sm hover:border-brsys-teal hover:text-brsys-teal transition">
-                Ver como funciona
-              </a>
-            </div>
-
-            <p class="text-xs text-slate-400">
-              Sem cartão • Acesso imediato • Até 3 propostas grátis no plano Free
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">🤖 IA & Automação</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              Criação de fluxos inteligentes, automações e integrações para economizar tempo e aumentar resultados.
             </p>
+            <a href="#contato" class="text-brsys-teal text-sm hover:underline">Falar sobre automações →</a>
           </div>
 
-          <!-- MOCKUP 3D DARK MODE -->
-          <div class="mockup-3d">
-            <div class="mockup-card rounded-3xl border border-slate-800/80 p-5 sm:p-6 lg:p-7 bg-slate-900/90">
-              <!-- Barra do "monitor" -->
-              <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-1.5">
-                  <span class="h-2 w-2 rounded-full bg-red-500/80"></span>
-                  <span class="h-2 w-2 rounded-full bg-amber-400/80"></span>
-                  <span class="h-2 w-2 rounded-full bg-emerald-400/80"></span>
-                </div>
-                <span class="text-[10px] uppercase tracking-[0.15em] text-slate-400">
-                  BRsys • PropostaIA
-                </span>
-              </div>
-
-              <!-- Conteúdo do Dashboard -->
-              <div class="grid grid-cols-12 gap-4">
-                <!-- Coluna esquerda: pipeline -->
-                <div class="col-span-5 space-y-3">
-                  <div class="text-xs font-medium text-slate-300 flex items-center justify-between">
-                    <span>Pipeline de vendas</span>
-                    <span class="text-[10px] text-slate-400">Hoje</span>
-                  </div>
-                  <div class="grid grid-cols-3 gap-2 text-[10px]">
-                    <div class="rounded-xl bg-slate-900/80 border border-slate-700/70 p-2">
-                      <div class="text-slate-400 mb-1">Novos</div>
-                      <div class="text-sm font-semibold text-slate-50">8</div>
-                    </div>
-                    <div class="rounded-xl bg-slate-900/80 border border-slate-700/70 p-2">
-                      <div class="text-slate-400 mb-1">Em proposta</div>
-                      <div class="text-sm font-semibold text-brsys-teal">14</div>
-                    </div>
-                    <div class="rounded-xl bg-slate-900/80 border border-slate-700/70 p-2">
-                      <div class="text-slate-400 mb-1">Fechados</div>
-                      <div class="text-sm font-semibold text-emerald-400">6</div>
-                    </div>
-                  </div>
-
-                  <!-- Colunas Kanban -->
-                  <div class="flex gap-2 text-[10px]">
-                    <div class="flex-1 rounded-xl bg-slate-900/80 border border-slate-700/70 p-2 space-y-1.5">
-                      <div class="flex items-center justify-between text-slate-300">
-                        <span>Leads</span>
-                        <span class="text-slate-500">4</span>
-                      </div>
-                      <div class="h-1.5 rounded-full bg-slate-800">
-                        <div class="h-1.5 w-1/3 rounded-full bg-brsys-teal"></div>
-                      </div>
-                      <div class="h-1.5 rounded-full bg-slate-800">
-                        <div class="h-1.5 w-1/2 rounded-full bg-sky-400"></div>
-                      </div>
-                    </div>
-
-                    <div class="flex-1 rounded-xl bg-slate-900/80 border border-slate-700/70 p-2 space-y-1.5">
-                      <div class="flex items-center justify-between text-slate-300">
-                        <span>Propostas</span>
-                        <span class="text-slate-500">6</span>
-                      </div>
-                      <div class="h-1.5 rounded-full bg-slate-800">
-                        <div class="h-1.5 w-3/5 rounded-full bg-brsys-teal"></div>
-                      </div>
-                      <div class="h-1.5 rounded-full bg-slate-800">
-                        <div class="h-1.5 w-2/5 rounded-full bg-purple-400"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Coluna direita: gráfico + card IA -->
-                <div class="col-span-7 space-y-3">
-                  <!-- Gráfico -->
-                  <div class="rounded-2xl bg-slate-900/80 border border-slate-700/70 p-3">
-                    <div class="flex items-center justify-between mb-2">
-                      <span class="text-xs text-slate-300">Conversão com PropostaIA</span>
-                      <span class="text-[10px] text-emerald-400">+32%</span>
-                    </div>
-                    <div class="flex items-end gap-1 h-20">
-                      <div class="flex-1 bg-slate-800/70 rounded-t-sm" style="height: 35%;"></div>
-                      <div class="flex-1 bg-slate-800/70 rounded-t-sm" style="height: 45%;"></div>
-                      <div class="flex-1 bg-slate-800/70 rounded-t-sm" style="height: 50%;"></div>
-                      <div class="flex-1 bg-brsys-teal/80 rounded-t-sm" style="height: 80%;"></div>
-                      <div class="flex-1 bg-brsys-teal/60 rounded-t-sm" style="height: 70%;"></div>
-                      <div class="flex-1 bg-brsys-teal/40 rounded-t-sm" style="height: 60%;"></div>
-                    </div>
-                  </div>
-
-                  <!-- Card Proposta IA -->
-                  <div class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-brsys-teal/40 p-3 sm:p-4 flex flex-col gap-2">
-                    <div class="flex items-center justify-between">
-                      <div class="text-xs text-slate-300">
-                        <div class="flex items-center gap-1.5">
-                          <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-brsys-teal/10 text-[10px] text-brsys-teal">
-                            IA
-                          </span>
-                          <span>PropostaIA pronta</span>
-                        </div>
-                      </div>
-                      <span class="text-[10px] text-slate-400">00:03s</span>
-                    </div>
-                    <p class="text-[11px] leading-snug text-slate-200 line-clamp-3">
-                      “Conforme alinhado, esta proposta apresenta a solução ideal para otimizar o seu processo comercial,
-                      garantindo mais produtividade, controle e previsibilidade de resultados, com implantação simples e suporte dedicado.”
-                    </p>
-                    <div class="flex items-center justify-between pt-1">
-                      <div class="text-[10px] text-slate-400">
-                        Cliente: <span class="text-slate-200">Empresa Exemplo LTDA</span>
-                      </div>
-                      <button class="text-[10px] px-3 py-1 rounded-full bg-brsys-teal text-slate-900 font-semibold">
-                        Gerar PDF
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Base do "monitor" -->
-              <div class="mt-6 flex flex-col items-center">
-                <div class="h-1.5 w-24 rounded-full bg-slate-800/80"></div>
-                <div class="mt-1 h-1 w-16 rounded-full bg-slate-900/90"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMO FUNCIONA -->
-      <section id="como-funciona" class="py-16 bg-slate-950">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="text-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-              Como funciona a <span class="text-brsys-teal">PropostaIA</span>
-            </h2>
-            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
-              Em poucos passos, você sai de um lead interessado para uma proposta pronta, profissional e com maior chance de fechamento.
-            </p>
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">🧠 PropostaIA Lite</h3>
+            <p class="text-sm text-slate-300 mb-4">Sistema inteligente para gerar propostas comerciais com rapidez e profissionalismo.</p>
+            <a href="/propostaIA" class="text-brsys-teal text-sm hover:underline">Acessar PropostaIA →</a>
           </div>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <div class="text-xs font-semibold text-brsys-teal mb-1">Passo 1</div>
-              <h3 class="text-sm font-semibold text-slate-100 mb-2">Informe os dados do cliente</h3>
-              <p class="text-xs text-slate-400">
-                Nome, empresa, contato e um breve resumo da necessidade. Tudo dentro do CRM BRsys.
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <div class="text-xs font-semibold text-brsys-teal mb-1">Passo 2</div>
-              <h3 class="text-sm font-semibold text-slate-100 mb-2">Adicione produtos e valores</h3>
-              <p class="text-xs text-slate-400">
-                Escolha os serviços/produtos, defina quantidades e deixe o sistema cuidar dos cálculos.
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <div class="text-xs font-semibold text-brsys-teal mb-1">Passo 3</div>
-              <h3 class="text-sm font-semibold text-slate-100 mb-2">A IA monta o texto profissional</h3>
-              <p class="text-xs text-slate-400">
-                A PropostaIA organiza o texto, estrutura os argumentos e deixa a proposta pronta para enviar.
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
-              <div class="text-xs font-semibold text-brsys-teal mb-1">Passo 4</div>
-              <h3 class="text-sm font-semibold text-slate-100 mb-2">Gere o PDF e acompanhe</h3>
-              <p class="text-xs text-slate-400">
-                Gere o PDF final, envie ao cliente e acompanhe todo o histórico dentro do CRM BRsys.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- BENEFÍCIOS -->
-      <section class="py-16 bg-gradient-to-b from-slate-950 to-slate-950">
-        <div class="max-w-5xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-              Simplicidade que <span class="text-brsys-teal">aumenta suas vendas</span>
-            </h2>
-            <p class="text-sm sm:text-base text-slate-400 mb-5">
-              O BRsys PropostaIA Lite foi pensado para quem precisa de velocidade e organização no dia a dia.
-              Você foca no cliente, e o sistema cuida da parte chata: textos, cálculos e formatação.
-            </p>
-
-            <ul class="space-y-3 text-sm text-slate-300">
-              <li>✅ Propostas em segundos, não em horas</li>
-              <li>✅ CRM com Kanban visual para acompanhar cada etapa</li>
-              <li>✅ Padronização de textos, layout e valores</li>
-              <li>✅ Baseado em Supabase, com segurança e performance</li>
-            </ul>
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">📊 CRM BRsys (em construção)</h3>
+            <p class="text-sm text-slate-300 mb-4">Organização de clientes, pipeline, automações e IA integrada.</p>
+            <span class="text-slate-500 text-xs">Disponível em breve</span>
           </div>
 
-          <div class="space-y-4">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-              <div class="text-xs text-brsys-teal font-semibold mb-1">Produtividade</div>
-              <p class="text-xs text-slate-300">
-                Usuários relatam redução drástica no tempo gasto por proposta, liberando horas preciosas por semana.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-              <div class="text-xs text-brsys-teal font-semibold mb-1">Organização</div>
-              <p class="text-xs text-slate-300">
-                Cada cliente, proposta e negociação ficam centralizados, com histórico acessível em poucos cliques.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-              <div class="text-xs text-brsys-teal font-semibold mb-1">Profissionalismo</div>
-              <p class="text-xs text-slate-300">
-                Propostas com aparência de grande empresa, mesmo para autônomos e pequenos negócios.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PLANOS E PREÇOS -->
-      <section id="planos" class="py-16 bg-slate-950 border-y border-slate-900">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="text-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-              Planos e preços que cabem em qualquer operação
-            </h2>
-            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
-              Comece gratuito, teste a PropostaIA e evolua para o plano ideal conforme seu volume de propostas e tamanho de equipe.
-            </p>
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">🏨 Soluções para Hotéis</h3>
+            <p class="text-sm text-slate-300 mb-4">Experiência profissional na área e soluções digitais para hotelaria.</p>
+            <span class="text-slate-500 text-xs">Consultoria personalizada</span>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5 text-sm">
-            <!-- Free -->
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
-              <h3 class="font-semibold text-slate-50 mb-1">Free</h3>
-              <p class="text-xs text-slate-400 mb-3">Ideal para testar</p>
-              <div class="text-lg font-semibold text-slate-100 mb-4">
-                R$0<span class="text-xs text-slate-400">/mês</span>
-              </div>
-              <ul class="text-xs text-slate-300 space-y-2 mb-4 flex-1">
-                <li>• Até 3 propostas por mês</li>
-                <li>• CRM de leads limitado</li>
-                <li>• Exportação PDF básica</li>
-                <li>• Suporte por e-mail</li>
-                <li>• Sem cartão de crédito</li>
-              </ul>
-              <a href="https://app.brsys.com.br/signup" class="block text-center text-xs font-semibold px-3 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-brsys-teal hover:text-brsys-teal transition">
-                Começar grátis
-              </a>
-            </div>
-
-            <!-- Basic -->
-            <div class="rounded-2xl border border-brsys-teal/60 bg-slate-900/80 p-4 flex flex-col">
-              <h3 class="font-semibold text-slate-50 mb-1">Basic</h3>
-              <p class="text-xs text-slate-400 mb-3">Para autônomos</p>
-              <div class="text-lg font-semibold text-slate-100 mb-4">
-                R$29,90<span class="text-xs text-slate-400">/mês</span>
-              </div>
-              <ul class="text-xs text-slate-300 space-y-2 mb-4 flex-1">
-                <li>• Propostas ilimitadas</li>
-                <li>• IA completa na geração</li>
-                <li>• CRM com Kanban</li>
-                <li>• Modelos personalizados</li>
-                <li>• Exportação avançada</li>
-              </ul>
-              <a href="https://app.brsys.com.br/signup" class="block text-center text-xs font-semibold px-3 py-2 rounded-full bg-brsys-teal text-slate-900 hover:brightness-110 transition">
-                Assinar Basic
-              </a>
-            </div>
-
-            <!-- Pro -->
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
-              <h3 class="font-semibold text-slate-50 mb-1">Pro</h3>
-              <p class="text-xs text-slate-400 mb-3">Pequenas empresas</p>
-              <div class="text-lg font-semibold text-slate-100 mb-4">
-                R$49,90<span class="text-xs text-slate-400">/mês</span>
-              </div>
-              <ul class="text-xs text-slate-300 space-y-2 mb-4 flex-1">
-                <li>• Tudo do Basic</li>
-                <li>• Múltiplos usuários</li>
-                <li>• Pipeline completo</li>
-                <li>• Automação simples</li>
-                <li>• Relatórios avançados</li>
-              </ul>
-              <a href="https://app.brsys.com.br/signup" class="block text-center text-xs font-semibold px-3 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-brsys-teal hover:text-brsys-teal transition">
-                Assinar Pro
-              </a>
-            </div>
-
-            <!-- Full -->
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
-              <h3 class="font-semibold text-slate-50 mb-1">Full</h3>
-              <p class="text-xs text-slate-400 mb-3">Operação completa</p>
-              <div class="text-lg font-semibold text-slate-100 mb-4">
-                R$79,90<span class="text-xs text-slate-400">/mês</span>
-              </div>
-              <ul class="text-xs text-slate-300 space-y-2 mb-4 flex-1">
-                <li>• Tudo do Pro</li>
-                <li>• IA avançada</li>
-                <li>• Dashboards completos</li>
-                <li>• Templates premium</li>
-                <li>• Suporte prioritário</li>
-              </ul>
-              <a href="https://app.brsys.com.br/signup" class="block text-center text-xs font-semibold px-3 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-brsys-teal hover:text-brsys-teal transition">
-                Assinar Full
-              </a>
-            </div>
-
-            <!-- Enterprise -->
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
-              <h3 class="font-semibold text-slate-50 mb-1">Enterprise</h3>
-              <p class="text-xs text-slate-400 mb-3">Sob medida</p>
-              <div class="text-lg font-semibold text-slate-100 mb-4">
-                Sob consulta
-              </div>
-              <ul class="text-xs text-slate-300 space-y-2 mb-4 flex-1">
-                <li>• Desenvolvimento customizado</li>
-                <li>• Integrações e APIs</li>
-                <li>• Painéis exclusivos</li>
-                <li>• Consultoria técnica</li>
-                <li>• Treinamento e onboarding</li>
-              </ul>
-              <a href="#contato" class="block text-center text-xs font-semibold px-3 py-2 rounded-full border border-slate-700 text-slate-200 hover:border-brsys-teal hover:text-brsys-teal transition">
-                Falar com comercial
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- DEPOIMENTOS -->
-      <section class="py-16 bg-slate-950">
-        <div class="max-w-5xl mx-auto px-4">
-          <div class="text-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-              Quem já testou, não volta para o Excel
-            </h2>
-            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
-              Depoimentos de usuários reais do BRsys PropostaIA Lite (textos placeholders que você pode ajustar depois).
-            </p>
+          <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+            <h3 class="font-semibold mb-1">🎨 Templates & Demos</h3>
+            <p class="text-sm text-slate-300 mb-4">Modelos prontos de sites para restaurantes, pousadas e negócios locais.</p>
+            <a href="/sites" class="text-brsys-teal text-sm hover:underline">Ver modelos →</a>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-5 text-sm">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col">
-              <div class="text-xs text-amber-400 mb-1">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="text-xs text-slate-200 mb-3">
-                “Economizei horas todos os dias. A IA cria minhas propostas do jeito certo, sem eu precisar ficar revisando texto.”
-              </p>
-              <span class="mt-auto text-xs text-slate-400">João Ribeiro • Consultor</span>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col">
-              <div class="text-xs text-amber-400 mb-1">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="text-xs text-slate-200 mb-3">
-                “Antes eu demorava 40 minutos por orçamento. Hoje faço em menos de 2, com layout muito mais profissional.”
-              </p>
-              <span class="mt-auto text-xs text-slate-400">Amanda Costa • Autônoma</span>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col">
-              <div class="text-xs text-amber-400 mb-1">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="text-xs text-slate-200 mb-3">
-                “Ferramenta simples, rápida e perfeita para quem vive de enviar propostas e precisa de organização.”
-              </p>
-              <span class="mt-auto text-xs text-slate-400">Pedro Martins • Pequena empresa</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq" class="py-16 bg-slate-950 border-y border-slate-900">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="text-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-              Dúvidas frequentes
-            </h2>
-            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
-              Se ainda estiver com alguma dúvida, você pode falar com a gente pelo WhatsApp ou testar o sistema gratuitamente.
-            </p>
-          </div>
-
-          <div class="space-y-6 text-sm text-slate-200">
-            <div>
-              <h3 class="font-semibold mb-1">O que é o BRsys PropostaIA Lite?</h3>
-              <p class="text-slate-400 text-xs">
-                É um CRM moderno com geração automática de propostas através de Inteligência Artificial. Ele acelera a criação de orçamentos e ajuda você a fechar mais vendas.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">A IA realmente cria a proposta completa?</h3>
-              <p class="text-slate-400 text-xs">
-                Sim. Você coloca as informações do cliente + produtos/serviços e a IA gera o texto profissional, organiza os valores e prepara tudo para exportar.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">O plano Free é realmente grátis?</h3>
-              <p class="text-slate-400 text-xs">
-                Sim. Você pode usar o BRsys gratuitamente com limite de propostas mensais. Sem cartão, sem pegadinhas.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">Preciso instalar algo?</h3>
-              <p class="text-slate-400 text-xs">
-                Não. O BRsys é 100% online. Funciona no computador, notebook, celular e tablet através do navegador.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">Posso cancelar quando quiser?</h3>
-              <p class="text-slate-400 text-xs">
-                Claro. Basta acessar sua conta e solicitar o cancelamento imediato, sem burocracia.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">O sistema é seguro?</h3>
-              <p class="text-slate-400 text-xs">
-                Sim. Toda estrutura é hospedada no Vercel e Supabase, com autenticação, controle de acesso e boas práticas de segurança.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="font-semibold mb-1">Como funciona o teste grátis?</h3>
-              <p class="text-slate-400 text-xs">
-                Você cria sua conta, gera até X propostas (limite configurável) e depois escolhe um plano se quiser continuar usando sem limites.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA FINAL / CONTATO -->
-      <section id="contato" class="py-16 bg-slate-950">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-slate-50 mb-3">
-            Pronto para parar de sofrer com propostas manuais?
-          </h2>
-          <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-6">
-            Crie sua conta em poucos segundos, teste o BRsys PropostaIA Lite e veja, na prática,
-            como é possível ganhar velocidade e profissionalismo no seu processo comercial.
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-3 mb-4">
-            <a href="https://app.brsys.com.br/signup"
-               class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-brsys-teal text-slate-900 font-semibold text-sm shadow-md shadow-emerald-500/40 hover:shadow-lg hover:-translate-y-px transition">
-              Começar meu teste grátis
-            </a>
-            <a href="https://wa.me/5513997408157"
-               class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-slate-700 text-slate-200 text-sm hover:border-brsys-teal hover:text-brsys-teal transition">
-              Falar com um humano no WhatsApp
-            </a>
-          </div>
-
-          <p class="text-xs text-slate-500">
-            Sem compromisso, sem cartão de crédito. Apenas resultados mais rápidos.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-900 bg-slate-950">
-      <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-        <div class="flex items-center gap-2">
-          <img src="/img/logo-brsys-transparente.png" alt="BRsys" class="h-5 w-auto" />
-          <span>BRsys • PropostaIA Lite</span>
-        </div>
-        <div class="flex flex-wrap items-center gap-4 justify-center">
-          <span>© <span id="year"></span> BRsys. Todos os direitos reservados.</span>
-          <span class="hidden sm:inline text-slate-700">•</span>
-          <span>Desenvolvido no Brasil.</span>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <!-- JS simples para menu mobile e ano -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    <!-- SOBRE -->
+    <section id="sobre" class="py-16 border-t border-slate-800 bg-brsys-soft">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-3">Sobre a BRsys</h2>
+        <p class="text-slate-300 max-w-3xl mx-auto text-sm md:text-base">
+          A BRsys nasceu da visão de criar soluções digitais práticas, rápidas e inteligentes.
+          Nada de tecnologia complicada: nosso foco é entregar ferramentas que realmente funcionem,
+          que economizam tempo, aumentam resultados e fazem seu negócio evoluir.
+        </p>
+      </div>
+    </section>
 
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  </script>
+    <!-- CONTATO -->
+    <section id="contato" class="py-16 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-3">Fale com a BRsys</h2>
+        <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-6">
+          Envie uma mensagem e conte um pouco do seu projeto. O atendimento é 100% humano e personalizado.
+        </p>
+
+        <a href="https://wa.me/5599999999999?text=Ol%C3%A1%2C+quero+conversar+sobre+uma+solu%C3%A7%C3%A3o+BRsys"
+          class="px-8 py-3 rounded-full bg-brsys-teal text-slate-900 font-semibold hover:brightness-110 transition">
+          Conversar no WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
+    © 2025 BRsys • Soluções Digitais Inteligentes • Desenvolvido no Brasil
+  </footer>
+
 </body>
 </html>
