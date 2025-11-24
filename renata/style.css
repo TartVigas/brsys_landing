@@ -1,0 +1,248 @@
+:root {
+  --bg-creme: #fff8f0;
+  --bg-claro: #fffdf9;
+  --rosa: #e8b7c8;
+  --rosa-suave: #f6d8e7;
+  --marrom: #7a5b47;
+  --marrom-escuro: #5a4638;
+  --dourado: #d6b677;
+  --texto: #4a3328;
+  --branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--bg-creme);
+}
+
+/* HERO */
+
+.hero {
+  background: radial-gradient(circle at top left, #fbe6f0 0, #fff8f0 40%, #fffdf9 100%);
+  padding: 60px 16px 40px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 2.7rem;
+  margin: 0 0 12px;
+  color: var(--marrom-escuro);
+}
+
+.hero-text h1 span {
+  color: var(--rosa);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.hero-info {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.btn-primary {
+  background: var(--rosa);
+  color: var(--marrom-escuro);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
+
+.btn-secondary {
+  background: var(--marrom-escuro);
+  color: var(--branco);
+}
+
+.btn-secondary:hover {
+  filter: brightness(1.05);
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* SEÇÕES */
+
+.section {
+  padding: 56px 16px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 2rem;
+  margin: 0 0 12px;
+  color: var(--marrom-escuro);
+}
+
+.section p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+/* ESPECIALIDADES */
+
+.especialidades {
+  background: var(--bg-claro);
+}
+
+.cards-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: 18px;
+  padding: 12px 12px 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.card .price {
+  font-weight: 700;
+  color: var(--marrom-escuro);
+}
+
+/* DESTAQUE */
+
+.destaque {
+  text-align: center;
+  background: linear-gradient(135deg, var(--rosa-suave), var(--bg-creme));
+}
+
+/* COMO PEDIR */
+
+.como-pedir {
+  background: var(--bg-claro);
+}
+
+.steps {
+  margin: 16px 0 20px;
+  padding-left: 20px;
+}
+
+.steps li {
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--marrom-escuro);
+  color: var(--branco);
+  padding: 18px 16px;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.footer a {
+  color: var(--rosa-suave);
+  text-decoration: none;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp-float {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 52px;
+  height: 52px;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+}
