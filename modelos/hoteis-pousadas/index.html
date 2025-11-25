@@ -1,1 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Modelo Hotéis & Pousadas • BRsys Sites</title>
+
+  <meta name="description"
+        content="Template premium de site para hotéis e pousadas desenvolvido pela BRsys Sites. Focado em reservas diretas, experiência do hóspede e integração futura com PMS e sistema de gestão hoteleira.">
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #0b1220;
+      --bg-card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #14b8a6;
+      --accent: #38bdf8;
+      --radius: 16px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    .topbar {
+      padding: 10px 24px;
+      background: #020617;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-nav a {
+      position: relative;
+      font-size: .9rem;
+      color: var(--muted);
+      padding-bottom: 4px;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s ease;
+    }
+
+    .top-nav a:hover::after {
+      width: 100%;
+    }
+
+    .top-nav a:hover {
+      color: var(--text);
+    }
+
+    .link-voltar {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: #022c22;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: .9rem;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .logo {
+        justify-self: flex-start;
+      }
+
+      .link-voltar {
+        justify-self: flex-end;
+      }
+
+      .top-nav {
+        justify-content: center;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 90px 20px 80px;
+      overflow: hidden;
+      background: radial-gradient(circle at top left, #0ea5e9, #020617 60%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/img/hotel-hero-piscina-peruibe.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.40;
+      mix-blend-mode: lighten;
+    }
+
+    .hero-overlay {
+      position: relative;
+      max-width: 1150px;
+      width: 100%;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 950px) {
+      .hero-overlay {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2.6rem, 4vw, 3.4rem);
+      margin-bottom: 12px;
+      color: #f9fafb;
+    }
+
+    .hero-left p {
+      margin-bottom: 18px;
+      color: #e0f2fe;
+      font-size: 1.05rem;
+      max-width: 520px;
+    }
+
+    .hero-tagline {
+      font-size: .9rem;
+      color: #bae6fd;
+      margin-bottom: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 14px 28px;
+      background: #22c55e;
+      border-radius: 999px;
+      color: #022c22;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.7);
+      color: #e5e7eb;
+      font-size: .9rem;
+    }
+
+    .hero-right {
+      background: rgba(15, 23, 42, 0.93);
+      border-radius: 20px;
+      padding: 20px 22px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-right h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .hero-right-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: .9rem;
+    }
+
+    .hero-right-row span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .hero-pill {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .8rem;
+      background: rgba(15, 118, 110, .20);
+      color: #a5f3fc;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    /* SEÇÕES GERAIS */
+    .section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    /* DESTAQUES */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .highlight-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 18px 20px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(148,163,184,0.26);
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* QUARTOS */
+    .quartos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .quarto-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .quarto-card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .quarto-body {
+      padding: 16px 18px 20px;
+    }
+
+    .quarto-body h3 {
+      margin: 4px 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .quarto-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .quarto-preco {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .quarto-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .quarto-tag {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .btn-quarto {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #022c22;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    /* ESTRUTURA / SERVIÇOS */
+    .estrutura-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .estrutura-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .estrutura-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .estrutura-card p {
+      margin: 0;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* EXPERIÊNCIA */
+    .experiencia-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 26px;
+    }
+
+    @media (max-width: 900px) {
+      .experiencia-grid { grid-template-columns: 1fr; }
+    }
+
+    .experiencia-text {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .experiencia-text p {
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.6;
+    }
+
+    .experiencia-img {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .experiencia-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* PAINEL BRSYS */
+    .painel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .painel-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 18px 20px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(148,163,184,0.2);
+    }
+
+    .painel-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .painel-card p {
+      margin: 0;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* MDE PMS */
+    .mde-box {
+      background: linear-gradient(135deg, #0f172a, #111827);
+      border-radius: 20px;
+      padding: 24px 22px 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(56,189,248,0.5);
+    }
+
+    .mde-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .mde-header h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .mde-tag {
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.7);
+      font-size: .78rem;
+      color: #e0f2fe;
+    }
+
+    .mde-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .mde-item h3 {
+      margin: 0 0 4px;
+      font-size: .98rem;
+    }
+
+    .mde-item p {
+      margin: 0;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .btn-mde {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      color: #e0f2fe;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    /* HORÁRIOS */
+    .horarios {
+      max-width: 520px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .horarios-table {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .horarios-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* LOCALIZAÇÃO / MAPA */
+    .mapa {
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 20px 50px;
+      text-align: center;
+      background: var(--bg-alt);
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header class="topbar">
+    <a href="/" class="logo"><span>BR</span>sys Sites</a>
+
+    <nav class="top-nav">
+      <a href="#destaques">Destaques</a>
+      <a href="#quartos">Quartos</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#painel-brsys">BRsys</a>
+      <a href="#mde-pms">MDE PMS</a>
+      <a href="#reservas">Reservas</a>
+    </nav>
+
+    <a href="/" class="link-voltar">← Voltar</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-left">
+        <div class="hero-tagline">Template premium para hotéis, pousadas e resorts.</div>
+        <h1>Hospedagem perfeita em um site à altura do seu hotel.</h1>
+        <p>Apresente quartos, estrutura, localização e permita que o hóspede reserve direto pelo WhatsApp.</p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5513997408157?text=Tenho%20interesse%20no%20site%20para%20hotel%20ou%20pousada"
+             target="_blank" class="btn-primary">💬 Falar sobre este modelo</a>
+          <a href="#quartos" class="btn-outline">Ver demonstração dos quartos</a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <h2>Resumo do modelo</h2>
+        <div class="hero-right-row">
+          <strong>Foco principal</strong><span>Reservas diretas e experiência</span>
+        </div>
+        <div class="hero-right-row">
+          <strong>Ideal para</strong><span>Hotéis, pousadas, hostels e resorts</span>
+        </div>
+        <div class="hero-right-row">
+          <strong>Nível</strong><span>Template Premium BRsys</span>
+        </div>
+        <p style="margin-top:10px;font-size:.88rem;color:var(--muted);">
+          Também oferecemos versões mais simples para quem está começando no digital, usando a mesma base técnica.
+        </p>
+        <div class="hero-pill">✨ Pronto para evoluir com PMS, reserva online e integrações MDE.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="section" id="destaques">
+    <div class="section-header">
+      <h2 class="section-title">Destaques do seu hotel no site</h2>
+      <p class="section-subtitle">
+        Uma vitrine pensada para que o hóspede entenda rapidamente por que deve escolher o seu hotel.
+      </p>
+    </div>
+
+    <div class="highlights">
+      <article class="highlight-card">
+        <h3>Experiência completa</h3>
+        <p>Fotos em alta qualidade, detalhes claros e navegação intuitiva desde a primeira dobra do site.</p>
+      </article>
+
+      <article class="highlight-card">
+        <h3>Foco em reservas diretas</h3>
+        <p>Chamadas estratégicas para WhatsApp ou formulário, reduzindo dependência de OTAs e comissões.</p>
+      </article>
+
+      <article class="highlight-card">
+        <h3>Pronto para integração</h3>
+        <p>Estrutura pensada para crescer com PMS, motor de reservas, cardápio digital e outros módulos MDE.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- QUARTOS -->
+  <section class="section" id="quartos">
+    <div class="section-header">
+      <h2 class="section-title">Categorias de quartos</h2>
+      <p class="section-subtitle">
+        Exemplo de como o seu hotel pode apresentar diferentes tipos de acomodações neste modelo.
+      </p>
+    </div>
+
+    <div class="quartos-grid">
+      <article class="quarto-card">
+        <img src="/img/quarto-standard-hotel.jpg" alt="Quarto Standard">
+        <div class="quarto-body">
+          <h3>Quarto Standard</h3>
+          <div class="quarto-meta">
+            <span>Conforto essencial</span>
+            <span class="quarto-preco">a partir de R$ 199</span>
+          </div>
+          <div class="quarto-tags">
+            <span class="quarto-tag">Cama casal</span>
+            <span class="quarto-tag">Ar-condicionado</span>
+            <span class="quarto-tag">Wi-Fi</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20informações%20sobre%20o%20Quarto%20Standard"
+             target="_blank" class="btn-quarto">Consultar disponibilidade</a>
+        </div>
+      </article>
+
+      <article class="quarto-card">
+        <img src="/img/quarto-deluxe-hotel.jpg" alt="Quarto Deluxe">
+        <div class="quarto-body">
+          <h3>Quarto Deluxe</h3>
+          <div class="quarto-meta">
+            <span>Mais espaço e conforto</span>
+            <span class="quarto-preco">a partir de R$ 279</span>
+          </div>
+          <div class="quarto-tags">
+            <span class="quarto-tag">Cama king</span>
+            <span class="quarto-tag">Varanda</span>
+            <span class="quarto-tag">Amenidades premium</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20informações%20sobre%20o%20Quarto%20Deluxe"
+             target="_blank" class="btn-quarto">Consultar disponibilidade</a>
+        </div>
+      </article>
+
+      <article class="quarto-card">
+        <img src="/img/quarto-master-hotel.jpg" alt="Suíte Master">
+        <div class="quarto-body">
+          <h3>Suíte Master</h3>
+          <div class="quarto-meta">
+            <span>Experiência completa</span>
+            <span class="quarto-preco">a partir de R$ 399</span>
+          </div>
+          <div class="quarto-tags">
+            <span class="quarto-tag">Vista especial</span>
+            <span class="quarto-tag">Banheira / hidro</span>
+            <span class="quarto-tag">Espaço para casal</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20informações%20sobre%20a%20Suíte%20Master"
+             target="_blank" class="btn-quarto">Consultar disponibilidade</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ESTRUTURA -->
+  <section class="section" id="estrutura">
+    <div class="section-header">
+      <h2 class="section-title">Estrutura & serviços</h2>
+      <p class="section-subtitle">
+        Demonstração de como a infraestrutura do seu hotel pode ser apresentada de forma clara e atrativa.
+      </p>
+    </div>
+
+    <div class="estrutura-grid">
+      <article class="estrutura-card">
+        <h3>🏊 Piscina</h3>
+        <p>Área de lazer para relaxar durante o dia e aproveitar o entardecer.</p>
+      </article>
+
+      <article class="estrutura-card">
+        <h3>☕ Café da manhã</h3>
+        <p>Opções variadas para começar o dia bem, adaptáveis à sua realidade.</p>
+      </article>
+
+      <article class="estrutura-card">
+        <h3>🅿 Estacionamento</h3>
+        <p>Vagas para hóspedes, com possibilidade de destacar vagas cobertas ou internas.</p>
+      </article>
+
+      <article class="estrutura-card">
+        <h3>📶 Wi-Fi em todo o hotel</h3>
+        <p>Indispensável para hóspedes em lazer e trabalho.</p>
+      </article>
+
+      <article class="estrutura-card">
+        <h3>🐾 Pet friendly</h3>
+        <p>Se o hotel aceitar pets, o site já está pronto para comunicar isso da forma certa.</p>
+      </article>
+
+      <article class="estrutura-card">
+        <h3>🍽 Cardápio / Room service</h3>
+        <p>Se houver restaurante, podemos integrar com cardápio digital e pedidos online.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section class="section" id="experiencia">
+    <div class="section-header">
+      <h2 class="section-title">Experiência do hóspede</h2>
+      <p class="section-subtitle">
+        Um site que transmite a sensação de estar hospedado antes mesmo da reserva.
+      </p>
+    </div>
+
+    <div class="experiencia-grid">
+      <div class="experiencia-text">
+        <p>
+          O objetivo deste template é fazer o hóspede sentir confiança e desejo pela hospedagem em poucos segundos.
+          Imagens, textos e chamadas são trabalhados para mostrar conforto, organização e cuidado em cada detalhe.
+        </p>
+        <p>
+          Na publicação real, substituímos este conteúdo por informações do hotel, depoimentos reais e diferenciais
+          específicos: proximidade da praia, centro, pontos turísticos, eventos, etc.
+        </p>
+        <p>
+          Tudo isso com base técnica pensada para SEO local e para servir como futura base de integração com um
+          sistema de gestão hoteleira completo.
+        </p>
+      </div>
+
+      <div class="experiencia-img">
+        <img src="/img/hotel-lobby-elegante.jpg" alt="Lobby elegante do hotel">
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINEL BRSYS -->
+  <section class="section" id="painel-brsys">
+    <div class="section-header">
+      <h2 class="section-title">Tecnologia BRsys aplicada à hotelaria</h2>
+      <p class="section-subtitle">
+        Mais do que um layout bonito, este template foi pensado como base para evolução digital do hotel.
+      </p>
+    </div>
+
+    <div class="painel-grid">
+      <article class="painel-card">
+        <h3>⚡ Performance</h3>
+        <p>Site leve, em HTML otimizado, pronto para carregar rápido mesmo em internet móvel.</p>
+      </article>
+      <article class="painel-card">
+        <h3>📱 100% responsivo</h3>
+        <p>Experiência fluida em celular, tablet e desktop, focada em reservas diretas.</p>
+      </article>
+      <article class="painel-card">
+        <h3>🔍 SEO local para hotelaria</h3>
+        <p>Estrutura pensada para buscar resultados em pesquisas como “hotel em [cidade]”.</p>
+      </article>
+      <article class="painel-card">
+        <h3>🔒 Segurança & estabilidade</h3>
+        <p>Boas práticas de hospedagem e código, com HTTPS e infraestrutura moderna.</p>
+      </article>
+      <article class="painel-card">
+        <h3>☁ Pronto para integrações</h3>
+        <p>Base técnica preparada para receber motor de reservas, formulários e integrações externas.</p>
+      </article>
+      <article class="painel-card">
+        <h3>🎯 Planos sob medida</h3>
+        <p>Este é o template premium. Também trabalhamos versões básicas para hotéis que estão dando os primeiros
+          passos no digital.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- MDE PMS -->
+  <section class="section" id="mde-pms">
+    <div class="mde-box">
+      <div class="mde-header">
+        <h2>MDE Sistemas • PMS completo para seu hotel</h2>
+        <span class="mde-tag">Integração futura opcional • Upgrade de nível profissional</span>
+      </div>
+
+      <p style="margin:0 0 16px;color:var(--muted);font-size:.95rem;">
+        Para hotéis e pousadas que desejam ir além do site e organizar toda a operação, este template foi pensado
+        para se conectar com um PMS completo: controle de reservas, hospedagens, financeiro, auditoria e muito mais.
+      </p>
+
+      <div class="mde-grid">
+        <div class="mde-item">
+          <h3>Reservas & mapa de UHs</h3>
+          <p>Gestão visual dos apartamentos, status de ocupação e reservas em um só painel.</p>
+        </div>
+        <div class="mde-item">
+          <h3>Check-in, check-out e contas</h3>
+          <p>Controle de hóspedes, lançamento de consumos, contas por apartamento e fechamento de contas.</p>
+        </div>
+        <div class="mde-item">
+          <h3>Financeiro & relatórios</h3>
+          <p>Gestão de contas a pagar/receber, relatórios de auditoria e visão completa da operação.</p>
+        </div>
+        <div class="mde-item">
+          <h3>Reserva online & cardápio digital</h3>
+          <p>Possibilidade de expansão com motor de reservas, pré check-in e integração com cardápio digital.</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5513997408157?text=Quero%20saber%20mais%20sobre%20o%20MDE%20Sistemas%20para%20meu%20hotel"
+         target="_blank" class="btn-mde">
+        Falar sobre MDE e integrações para meu hotel
+      </a>
+    </div>
+  </section>
+
+  <!-- HORÁRIOS / RESERVAS -->
+  <section class="section" id="reservas">
+    <div class="section-header">
+      <h2 class="section-title">Horários e reservas</h2>
+      <p class="section-subtitle">
+        Exemplo de como as informações operacionais do hotel podem aparecer no site.
+      </p>
+    </div>
+
+    <div class="horarios">
+      <div class="horarios-table">
+        <div class="horarios-row">
+          <strong>Check-in</strong><span>a partir das 14h</span>
+        </div>
+        <div class="horarios-row">
+          <strong>Check-out</strong><span>até 12h</span>
+        </div>
+        <div class="horarios-row">
+          <strong>Reservas por WhatsApp</strong><span>todos os dias, 08h–22h</span>
+        </div>
+      </div>
+      <p style="margin-top:14px;color:var(--muted);font-size:.9rem;">
+        Estes dados são apenas ilustrativos. No projeto real, adaptamos conforme a operação do hotel ou pousada.
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="section" id="localizacao">
+    <div class="section-header">
+      <h2 class="section-title">Localização</h2>
+      <p class="section-subtitle">
+        Exemplo focado no litoral paulista. No projeto final, configuramos o mapa com o endereço real do hotel.
+      </p>
+    </div>
+
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.392969965663!2d-46.9984!3d-24.322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dbf8b0f6e0c0b1%3A0x4c6f2ca2c1a!2sPeru%C3%ADbe%20-%20SP!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Template demonstrativo criado pela <strong>BRsys Sites</strong>.  
+    Este é o modelo premium para hotéis e pousadas — também oferecemos opções básicas para quem está começando no
+    digital.
+  </footer>
+
+</body>
+</html>
 
