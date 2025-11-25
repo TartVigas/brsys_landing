@@ -7,10 +7,8 @@
   <title>Modelo Restaurante & Delivery • BRsys Sites</title>
 
   <!-- SEO -->
-  <meta name="description"
-        content="Modelo de site profissional para Restaurantes & Delivery criado pela BRsys Sites. Layout moderno, rápido e focado em cardápio digital, reservas e pedidos por WhatsApp.">
-  <meta name="keywords"
-        content="modelo site restaurante, site delivery, cardápio digital, BRsys Sites, criação de sites, restaurante em Peruíbe">
+  <meta name="description" content="Modelo de site profissional para Restaurantes & Delivery criado pela BRsys Sites. Layout moderno, rápido e focado em cardápio digital e pedidos por WhatsApp.">
+  <meta name="keywords" content="modelo site restaurante, site delivery, cardápio digital, BRsys Sites, criação de sites, restaurante em Peruíbe">
 
   <style>
     :root {
@@ -25,30 +23,23 @@
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    /* TOPO */
+    /* HEADER */
     .topbar {
       padding: 16px 24px;
       background: #020617;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid rgba(148,163,184,0.25);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -57,7 +48,6 @@
     .logo {
       font-weight: 700;
       font-size: 1.3rem;
-      letter-spacing: .03em;
     }
 
     .logo span {
@@ -73,7 +63,7 @@
       font-size: .95rem;
     }
 
-    /* HERO COM BANNER */
+    /* HERO */
     .hero {
       position: relative;
       min-height: 420px;
@@ -92,14 +82,13 @@
       background-image: url("/img/restaurante-hero-banner.jpg");
       background-size: cover;
       background-position: center;
-      opacity: 0.35;
+      opacity: 0.32;
       mix-blend-mode: lighten;
-      pointer-events: none;
     }
 
     .hero-overlay {
       position: relative;
-      max-width: 1100px;
+      max-width: 1150px;
       width: 100%;
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -109,47 +98,20 @@
     }
 
     @media (max-width: 900px) {
-      .hero-overlay {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      .hero-overlay { grid-template-columns: 1fr; text-align: center; }
     }
 
     .hero-left h1 {
       font-size: clamp(2.4rem, 4vw, 3.2rem);
-      margin: 0 0 12px;
+      margin-bottom: 12px;
       color: #f9fafb;
     }
 
     .hero-left p {
-      margin: 0 0 22px;
+      margin-bottom: 22px;
       color: #e0f2fe;
       font-size: 1.05rem;
       max-width: 520px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-left p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-
-    .tag {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-      padding: 6px 12px;
-      font-size: .8rem;
-      color: #e2e8f0;
-      background: rgba(15,23,42,0.65);
-      backdrop-filter: blur(12px);
     }
 
     .hero-actions {
@@ -166,12 +128,9 @@
       color: #022c22;
       font-weight: 700;
       font-size: 1rem;
-      box-shadow: var(--shadow);
-      border: none;
-      cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      box-shadow: var(--shadow);
     }
 
     .btn-outline {
@@ -180,43 +139,33 @@
       border: 1px solid rgba(148,163,184,0.6);
       background: rgba(15,23,42,0.65);
       color: #e5e7eb;
-      font-size: .9rem;
     }
 
     .hero-right {
       background: rgba(15,23,42,0.92);
       border-radius: 20px;
-      padding: 22px 22px 18px;
+      padding: 22px;
       border: 1px solid rgba(148,163,184,0.35);
       box-shadow: var(--shadow);
     }
 
     .hero-right h2 {
+      margin-bottom: 10px;
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: .12em;
       color: var(--muted);
-      margin-top: 0;
-      margin-bottom: 10px;
     }
 
     .highlight-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       margin-bottom: 6px;
       font-size: .9rem;
-      color: #e5e7eb;
-    }
-
-    .highlight-row span {
-      color: var(--muted);
-      font-size: .8rem;
     }
 
     .pill {
       display: inline-flex;
-      align-items: center;
       gap: 6px;
       font-size: .8rem;
       background: rgba(15,118,110,.2);
@@ -225,7 +174,8 @@
       color: #a5f3fc;
     }
 
-    /* SEÇÕES GERAIS */
+
+    /* SEÇÕES */
     .section {
       padding: 70px 20px;
       max-width: 1200px;
@@ -244,27 +194,38 @@
 
     .section-subtitle {
       color: var(--muted);
-      font-size: .98rem;
     }
 
     /* DESTAQUES */
     .highlights {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
     }
 
     .highlight-card {
       background: var(--bg-card);
       border-radius: 18px;
-      padding: 18px 18px 20px;
+      padding: 0;
+      overflow: hidden;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(30,64,175,0.3);
+      border: 1px solid rgba(30,64,175,0.25);
+    }
+
+    .highlight-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .highlight-card-body {
+      padding: 18px 20px;
     }
 
     .highlight-card h3 {
-      margin: 0 0 4px;
-      font-size: 1.05rem;
+      margin: 0 0 6px;
+      font-size: 1.15rem;
     }
 
     .highlight-card p {
@@ -277,36 +238,40 @@
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-      gap: 20px;
+      gap: 24px;
       margin-top: 25px;
     }
 
     .menu-card {
       background: var(--bg-card);
       border-radius: 18px;
-      padding: 16px 16px 18px;
+      padding: 0;
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .menu-card img {
       width: 100%;
+      object-fit: cover;
+      height: 200px;
       display: block;
-      border-radius: 14px;
-      margin-bottom: 10px;
+    }
+
+    .menu-card-body {
+      padding: 16px 18px 20px;
     }
 
     .menu-card h3 {
-      margin: 4px 0 2px;
+      margin: 4px 0;
       font-size: 1.05rem;
     }
 
     .menu-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: .9rem;
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-size: .9rem;
     }
 
     .menu-price {
@@ -315,182 +280,45 @@
     }
 
     .btn-menu {
-      display: inline-block;
-      margin-top: 4px;
       padding: 8px 14px;
       background: var(--primary);
       color: #0f172a;
       border-radius: 999px;
       font-size: .85rem;
       font-weight: 600;
+      display: inline-block;
     }
 
-    /* SOBRE / HORÁRIOS / COMO FUNCIONA */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-      gap: 30px;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .about-block {
-      background: var(--bg-card);
-      border-radius: 18px;
-      padding: 20px 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-block h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-
-    .about-block p,
-    .about-block li {
-      font-size: .92rem;
-      color: var(--muted);
-    }
-
-    .about-block ul {
-      padding-left: 18px;
-      margin: 8px 0 0;
-    }
-
-    .hours-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-      font-size: .92rem;
-    }
-
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 4px 0;
-      border-bottom: 1px dashed rgba(148,163,184,0.3);
-    }
-
-    /* AVALIAÇÕES E MAPA */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-      gap: 30px;
-    }
-
-    @media (max-width: 900px) {
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .testimonial-card {
-      background: var(--bg-card);
-      border-radius: 18px;
-      padding: 18px 18px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .testimonial-card p {
-      margin-top: 0;
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    .testimonial-author {
-      margin-top: 10px;
-      font-size: .9rem;
-      color: #e5e7eb;
-    }
-
-    .stars {
-      color: #facc15;
-      margin-bottom: 4px;
-      font-size: .9rem;
-    }
-
-    .map-card {
-      background: var(--bg-card);
-      border-radius: 18px;
-      padding: 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .map-card iframe {
-      width: 100%;
-      height: 250px;
-      border: 0;
-      border-radius: 12px;
-    }
-
-    .map-note {
-      margin-top: 6px;
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    /* BOTÃO FLUTUANTE WHATSAPP */
-    .floating-whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 60;
-    }
-
-    .floating-whatsapp a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 999px;
-      background: #22c55e;
-      color: #022c22;
-      font-size: 1.8rem;
-      box-shadow: var(--shadow);
-    }
-
-    /* RODAPÉ */
+    /* FOOTER */
     footer {
-      padding: 30px 20px 40px;
+      padding: 40px 20px 50px;
       text-align: center;
       background: var(--bg-alt);
       color: var(--muted);
       font-size: .85rem;
+      margin-top: 60px;
     }
-
   </style>
 </head>
+
 <body>
 
-  <!-- TOPO -->
+  <!-- TOP -->
   <header class="topbar">
     <a href="/" class="logo"><span>BR</span>sys Sites</a>
     <a href="/" class="link-voltar">← Voltar</a>
   </header>
 
-  <!-- HERO COM BANNER -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay">
+
       <div class="hero-left">
-        <div class="hero-tags">
-          <div class="tag">Template demonstrativo • Restaurantes & Delivery</div>
-        </div>
         <h1>O site perfeito para o seu restaurante.</h1>
-        <p>
-          Cardápio digital, foco em delivery e botão direto pro WhatsApp.
-          Tudo pensado para transformar visitantes em pedidos todos os dias.
-        </p>
+        <p>Cardápio digital, foco em delivery e botão direto pro WhatsApp.</p>
 
         <div class="hero-actions">
-          <a href="https://wa.me/5513997408157" target="_blank" class="btn-whatsapp">
-            💬 Falar no WhatsApp
-          </a>
+          <a href="https://wa.me/5513997408157" target="_blank" class="btn-whatsapp">💬 Falar no WhatsApp</a>
           <a href="#cardapio" class="btn-outline">Ver cardápio demonstrativo</a>
         </div>
       </div>
@@ -499,25 +327,21 @@
         <h2>Resumo do site</h2>
 
         <div class="highlight-row">
-          <strong>Foco principal</strong>
-          <span>Pedidos por WhatsApp</span>
+          <strong>Foco principal</strong><span>Pedidos por WhatsApp</span>
         </div>
-
         <div class="highlight-row">
-          <strong>Ideal para</strong>
-          <span>Hamburguerias, pizzarias, bistrôs, lanchonetes</span>
+          <strong>Ideal para</strong><span>Hamburguerias, pizzarias, bistrôs</span>
         </div>
-
         <div class="highlight-row">
-          <strong>Inclui</strong>
-          <span>Cardápio digital, delivery e mapa</span>
+          <strong>Inclui</strong><span>Cardápio digital + mapa</span>
         </div>
 
         <div style="margin-top:16px;">
-          <span class="pill">⚡ Site leve e otimizado</span>
-          <span class="pill">📱 100% responsivo</span>
+          <span class="pill">⚡ Leve e otimizado</span>
+          <span class="pill">📱 Responsivo</span>
         </div>
       </aside>
+
     </div>
   </section>
 
@@ -525,31 +349,43 @@
   <section class="section" id="destaques">
     <div class="section-header">
       <h2 class="section-title">Destaques da Casa</h2>
-      <p class="section-subtitle">
-        Mostre seus pratos mais vendidos logo de cara. Aqui é onde o cliente já fica com água na boca.
-      </p>
+      <p class="section-subtitle">Impressione o visitante logo de cara mostrando seus melhores pratos.</p>
     </div>
 
     <div class="highlights">
+
       <article class="highlight-card">
-        <h3>Prato do Chef</h3>
-        <p>Uma combinação especial criada para impressionar quem visita o restaurante pela primeira vez.</p>
+        <img src="/img/destaque-prato-chef.jpg" alt="Prato do Chef">
+        <div class="highlight-card-body">
+          <h3>Prato do Chef</h3>
+          <p>Uma combinação especial criada para impressionar quem visita o restaurante pela primeira vez.</p>
+        </div>
       </article>
 
       <article class="highlight-card">
-        <h3>Combo Delivery</h3>
-        <p>Perfeito para quem pede em grupo: prato principal + acompanhamento + bebida com preço especial.</p>
+        <img src="/img/destaque-combo-delivery.jpg" alt="Combo Delivery">
+        <div class="highlight-card-body">
+          <h3>Combo Delivery</h3>
+          <p>Perfeito para quem pede em grupo: prato principal + acompanhamento + bebida com preço especial.</p>
+        </div>
       </article>
 
       <article class="highlight-card">
-        <h3>Promoção da Semana</h3>
-        <p>Destaque para o prato que você quer impulsionar — ideal para girar estoque e testar novidades.</p>
+        <img src="/img/destaque-promocao-semana.jpg" alt="Promoção da Semana">
+        <div class="highlight-card-body">
+          <h3>Promoção da Semana</h3>
+          <p>Destaque para o prato que você quer impulsionar — ideal para girar estoque e testar novidades.</p>
+        </div>
       </article>
 
       <article class="highlight-card">
-        <h3>Opções Fit & Veg</h3>
-        <p>Espaço para mostrar pratos leves, saladas e opções vegetarianas/veganas.</p>
+        <img src="/img/destaque-fit-veg.jpg" alt="Opções Fit e Veg">
+        <div class="highlight-card-body">
+          <h3>Opções Fit & Veg</h3>
+          <p>Espaço para mostrar pratos leves, saladas e opções vegetarianas/veganas.</p>
+        </div>
       </article>
+
     </div>
   </section>
 
@@ -557,140 +393,69 @@
   <section class="section" id="cardapio">
     <div class="section-header">
       <h2 class="section-title">Cardápio Digital</h2>
-      <p class="section-subtitle">
-        O cliente navega, escolhe o prato e chama no WhatsApp. Simples, direto e sem burocracia.
-      </p>
+      <p class="section-subtitle">O cliente navega, escolhe o prato e chama no WhatsApp.</p>
     </div>
 
     <div class="menu-grid">
+
       <article class="menu-card">
         <img src="/img/prato-macarrao.jpg" alt="Macarrão artesanal">
-        <h3>Macarrão Artesanal</h3>
-        <div class="menu-meta">
-          <span>Serve 1 pessoa</span>
-          <span class="menu-price">R$ 32,00</span>
+        <div class="menu-card-body">
+          <h3>Macarrão Artesanal</h3>
+          <div class="menu-meta">
+            <span>Serve 1 pessoa</span>
+            <span class="menu-price">R$ 32,00</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarrão%20Artesanal"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
-        <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarr%C3%A3o%20Artesanal"
-           target="_blank"
-           class="btn-menu">Pedir pelo WhatsApp</a>
       </article>
 
       <article class="menu-card">
         <img src="/img/prato-hamburguer.jpg" alt="Hambúrguer Premium">
-        <h3>Hambúrguer Premium</h3>
-        <div class="menu-meta">
-          <span>Pão brioche + 180g carne</span>
-          <span class="menu-price">R$ 28,00</span>
+        <div class="menu-card-body">
+          <h3>Hambúrguer Premium</h3>
+          <div class="menu-meta">
+            <span>Pão brioche + 180g carne</span>
+            <span class="menu-price">R$ 28,00</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hambúrguer%20Premium"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
-        <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hamb%C3%BArguer%20Premium"
-           target="_blank"
-           class="btn-menu">Pedir pelo WhatsApp</a>
       </article>
 
       <article class="menu-card">
         <img src="/img/prato-salada.jpg" alt="Salada Fit">
-        <h3>Salada Fit</h3>
-        <div class="menu-meta">
-          <span>Folhas frescas + crocantes</span>
-          <span class="menu-price">R$ 22,00</span>
+        <div class="menu-card-body">
+          <h3>Salada Fit</h3>
+          <div class="menu-meta">
+            <span>Folhas frescas + crocantes</span>
+            <span class="menu-price">R$ 22,00</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
-        <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit"
-           target="_blank"
-           class="btn-menu">Pedir pelo WhatsApp</a>
       </article>
 
       <article class="menu-card">
-        <img src="/img/prato-bebida.jpg" alt="Combo com bebida gelada">
-        <h3>Combo com Bebida</h3>
-        <div class="menu-meta">
-          <span>Prato especial + bebida gelada</span>
-          <span class="menu-price">R$ 39,90</span>
+        <img src="/img/prato-bebida.jpg" alt="Combo com bebida">
+        <div class="menu-card-body">
+          <h3>Combo com Bebida</h3>
+          <div class="menu-meta">
+            <span>Prato especial + bebida gelada</span>
+            <span class="menu-price">R$ 39,90</span>
+          </div>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
-        <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida"
-           target="_blank"
-           class="btn-menu">Pedir pelo WhatsApp</a>
       </article>
+
     </div>
   </section>
 
-  <!-- SOBRE / HORÁRIOS / COMO FUNCIONA -->
-  <section class="section">
-    <div class="about-grid">
-      <div class="about-block">
-        <h3>Sobre o Restaurante</h3>
-        <p>
-          Este texto será personalizado para cada cliente. Aqui você conta, em poucas linhas, a história,
-          o estilo da cozinha e o diferencial da casa. É o espaço perfeito para criar conexão com o público.
-        </p>
-        <p>
-          Você também pode destacar prêmios, especialidades e aquela frase que resume a essência do restaurante.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <h3>Horário de Funcionamento</h3>
-        <ul class="hours-list">
-          <li><span>Segunda a Sexta</span><span>18h às 23h</span></li>
-          <li><span>Sábado</span><span>18h às 00h</span></li>
-          <li><span>Domingo</span><span>18h às 22h</span></li>
-        </ul>
-
-        <h3 style="margin-top:20px;">Como funciona o Delivery</h3>
-        <ul>
-          <li>1. O cliente acessa o cardápio digital.</li>
-          <li>2. Escolhe o prato e clica em “Pedir pelo WhatsApp”.</li>
-          <li>3. A mensagem já chega pronta para o atendente.</li>
-          <li>4. Você confirma, prepara e envia pela entrega.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- AVALIAÇÕES E MAPA -->
-  <section class="section">
-    <div class="grid-2">
-      <div class="testimonial-card">
-        <h3>O que os clientes dizem</h3>
-
-        <div style="margin-top:8px;">
-          <div class="stars">★★★★★</div>
-          <p>“Melhor hambúrguer da região! Entrega rápida e tudo sempre muito bem embalado.”</p>
-          <div class="testimonial-author">— Cliente Google</div>
-        </div>
-
-        <div style="margin-top:18px;">
-          <div class="stars">★★★★★</div>
-          <p>“O macarrão artesanal é incrível. Já pedi várias vezes no delivery e nunca decepciona.”</p>
-          <div class="testimonial-author">— Cliente fidelizado</div>
-        </div>
-      </div>
-
-      <div class="map-card">
-        <h3 style="margin: 4px 0 10px;">Localização</h3>
-        <!-- Substituir depois pela localização real do cliente -->
-        <iframe
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.347212810988!2d-47.010!3d-24.320!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUGVydeKAmWJlIC0gU1A!5e0!3m2!1spt-BR!2sBR!4v1700000000000">
-        </iframe>
-        <div class="map-note">
-          Mapa demonstrativo. No projeto final, o endereço é ajustado para o restaurante ou lanchonete do cliente.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/5513997408157" target="_blank" aria-label="Falar no WhatsApp">
-      💬
-    </a>
-  </div>
-
-  <!-- RODAPÉ -->
+  <!-- FOOTER -->
   <footer>
-    Modelo demonstrativo criado pela <strong>BRsys Sites</strong>.  
-    Ideal para apresentar para restaurantes, lanchonetes, hamburguerias e negócios de delivery.
+    Modelo demonstrativo criado pela <strong>BRsys Sites</strong>.
   </footer>
 
 </body>
