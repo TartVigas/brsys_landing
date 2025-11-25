@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,8 +8,8 @@
   <title>Modelo Restaurante & Delivery • BRsys Sites</title>
 
   <!-- SEO -->
-  <meta name="description" content="Modelo de site profissional para Restaurantes & Delivery criado pela BRsys Sites. Layout moderno, rápido e focado em cardápio digital e pedidos por WhatsApp.">
-  <meta name="keywords" content="modelo site restaurante, site delivery, cardápio digital, BRsys Sites, criação de sites, restaurante em Peruíbe">
+  <meta name="description"
+    content="Modelo profissional de site para Restaurantes & Delivery desenvolvido pela BRsys Sites. Moderno, rápido e ideal para cardápio digital e pedidos por WhatsApp.">
 
   <style>
     :root {
@@ -18,9 +19,8 @@
       --text: #e2e8f0;
       --muted: #94a3b8;
       --primary: #14b8a6;
-      --primary-dark: #0d9488;
       --radius: 14px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     }
 
     body {
@@ -30,7 +30,10 @@
       font-family: "Inter", sans-serif;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* HEADER */
     .topbar {
@@ -39,7 +42,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(148,163,184,0.25);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -98,7 +101,10 @@
     }
 
     @media (max-width: 900px) {
-      .hero-overlay { grid-template-columns: 1fr; text-align: center; }
+      .hero-overlay {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
 
     .hero-left h1 {
@@ -136,44 +142,10 @@
     .btn-outline {
       padding: 12px 22px;
       border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.65);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.65);
       color: #e5e7eb;
     }
-
-    .hero-right {
-      background: rgba(15,23,42,0.92);
-      border-radius: 20px;
-      padding: 22px;
-      border: 1px solid rgba(148,163,184,0.35);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-right h2 {
-      margin-bottom: 10px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: var(--muted);
-    }
-
-    .highlight-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 6px;
-      font-size: .9rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      gap: 6px;
-      font-size: .8rem;
-      background: rgba(15,118,110,.2);
-      border-radius: 999px;
-      padding: 4px 10px;
-      color: #a5f3fc;
-    }
-
 
     /* SEÇÕES */
     .section {
@@ -206,16 +178,13 @@
     .highlight-card {
       background: var(--bg-card);
       border-radius: 18px;
-      padding: 0;
       overflow: hidden;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(30,64,175,0.25);
     }
 
     .highlight-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
@@ -237,7 +206,7 @@
     /* CARDÁPIO */
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
       margin-top: 25px;
     }
@@ -245,15 +214,13 @@
     .menu-card {
       background: var(--bg-card);
       border-radius: 18px;
-      padding: 0;
-      box-shadow: var(--shadow);
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .menu-card img {
       width: 100%;
-      object-fit: cover;
-      height: 200px;
+      height: auto;
       display: block;
     }
 
@@ -289,6 +256,76 @@
       display: inline-block;
     }
 
+    /* SOBRE */
+    .sobre {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 60px;
+    }
+
+    .sobre p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* HORÁRIOS */
+    .horarios {
+      max-width: 500px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .horarios-table {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .horarios-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      color: var(--muted);
+    }
+
+    /* COMO FUNCIONA */
+    .processo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .processo-card {
+      padding: 20px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .processo-card h3 {
+      margin-bottom: 6px;
+    }
+
+    /* MAPA */
+    .mapa {
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 60px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     /* FOOTER */
     footer {
       padding: 40px 20px 50px;
@@ -312,41 +349,20 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay">
-
       <div class="hero-left">
         <h1>O site perfeito para o seu restaurante.</h1>
-        <p>Cardápio digital, foco em delivery e botão direto pro WhatsApp.</p>
+        <p>Cardápio digital, foco em delivery e botão direto para o WhatsApp.</p>
 
         <div class="hero-actions">
           <a href="https://wa.me/5513997408157" target="_blank" class="btn-whatsapp">💬 Falar no WhatsApp</a>
           <a href="#cardapio" class="btn-outline">Ver cardápio demonstrativo</a>
         </div>
       </div>
-
-      <aside class="hero-right">
-        <h2>Resumo do site</h2>
-
-        <div class="highlight-row">
-          <strong>Foco principal</strong><span>Pedidos por WhatsApp</span>
-        </div>
-        <div class="highlight-row">
-          <strong>Ideal para</strong><span>Hamburguerias, pizzarias, bistrôs</span>
-        </div>
-        <div class="highlight-row">
-          <strong>Inclui</strong><span>Cardápio digital + mapa</span>
-        </div>
-
-        <div style="margin-top:16px;">
-          <span class="pill">⚡ Leve e otimizado</span>
-          <span class="pill">📱 Responsivo</span>
-        </div>
-      </aside>
-
     </div>
   </section>
 
-  <!-- DESTAQUES DA CASA -->
-  <section class="section" id="destaques">
+  <!-- DESTAQUES -->
+  <section class="section">
     <div class="section-header">
       <h2 class="section-title">Destaques da Casa</h2>
       <p class="section-subtitle">Impressione o visitante logo de cara mostrando seus melhores pratos.</p>
@@ -389,7 +405,7 @@
     </div>
   </section>
 
-  <!-- CARDÁPIO DIGITAL -->
+  <!-- CARDÁPIO -->
   <section class="section" id="cardapio">
     <div class="section-header">
       <h2 class="section-title">Cardápio Digital</h2>
@@ -399,15 +415,15 @@
     <div class="menu-grid">
 
       <article class="menu-card">
-        <img src="/img/prato-macarrao.jpg" alt="Macarrão artesanal">
+        <img src="/img/prato-macarrao.jpg" alt="Macarrão Artesanal">
         <div class="menu-card-body">
           <h3>Macarrão Artesanal</h3>
           <div class="menu-meta">
             <span>Serve 1 pessoa</span>
             <span class="menu-price">R$ 32,00</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarrão%20Artesanal"
-             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarrão%20Artesanal" target="_blank"
+            class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
@@ -419,8 +435,9 @@
             <span>Pão brioche + 180g carne</span>
             <span class="menu-price">R$ 28,00</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hambúrguer%20Premium"
-             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
+
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hambúrguer%20Premium" target="_blank"
+            class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
@@ -432,24 +449,96 @@
             <span>Folhas frescas + crocantes</span>
             <span class="menu-price">R$ 22,00</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit"
-             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit" target="_blank"
+            class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
       <article class="menu-card">
-        <img src="/img/prato-bebida.jpg" alt="Combo com bebida">
+        <img src="/img/prato-bebida.jpg" alt="Combo com Bebida">
         <div class="menu-card-body">
           <h3>Combo com Bebida</h3>
           <div class="menu-meta">
             <span>Prato especial + bebida gelada</span>
             <span class="menu-price">R$ 39,90</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida"
-             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida" target="_blank"
+            class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
+    </div>
+  </section>
+
+  <!-- SOBRE O RESTAURANTE -->
+  <section class="section">
+    <div class="sobre">
+      <h2 class="section-title">Sobre o Restaurante</h2>
+      <p>
+        Um espaço dedicado ao sabor, ao atendimento de qualidade e à experiência gastronômica completa. Este modelo é
+        apenas demonstrativo, mas mostra como o site do seu restaurante ficará moderno, rápido e perfeito para receber
+        pedidos todos os dias.
+      </p>
+    </div>
+  </section>
+
+  <!-- HORÁRIO DE FUNCIONAMENTO -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Horário de Funcionamento</h2>
+      <p class="section-subtitle">Mostre quando seu restaurante está aberto para atendimento.</p>
+    </div>
+
+    <div class="horarios">
+      <div class="horarios-table">
+        <div class="horarios-row"><strong>Segunda a Sexta</strong><span>18h – 23h</span></div>
+        <div class="horarios-row"><strong>Sábado</strong><span>18h – 00h</span></div>
+        <div class="horarios-row"><strong>Domingo</strong><span>18h – 22h</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA O DELIVERY -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Como funciona o Delivery</h2>
+      <p class="section-subtitle">Simples, rápido e direto para o WhatsApp.</p>
+    </div>
+
+    <div class="processo-grid">
+      <div class="processo-card">
+        <h3>1. Escolha o Prato</h3>
+        <p>Navegue pelo cardápio e escolha sua refeição favorita.</p>
+      </div>
+
+      <div class="processo-card">
+        <h3>2. Envie no WhatsApp</h3>
+        <p>O pedido chega diretamente para atendimento rápido.</p>
+      </div>
+
+      <div class="processo-card">
+        <h3>3. Preparo Imediato</h3>
+        <p>Sua comida é preparada na hora com toda atenção.</p>
+      </div>
+
+      <div class="processo-card">
+        <h3>4. Entrega Rápida</h3>
+        <p>Receba no conforto da sua casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Localização</h2>
+      <p class="section-subtitle">Insira seu endereço real quando for usar para um cliente.</p>
+    </div>
+
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14627.69271523544!2d-46.995!3d-24.320!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDE5JzEyLjAiUyA0NsKwNTknNDIuMCJX!5e0!3m2!1spt-BR!2sbr!4v0000000000000">
+      </iframe>
     </div>
   </section>
 
