@@ -1,314 +1,609 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRsys • Sites rápidos. Escopo fechado. WhatsApp direto.</title>
+  <meta name="description" content="BRsys cria sites simples e profissionais, com escopo fechado e WhatsApp direto. Entrega objetiva para negócios locais." />
 
-  <!-- SEO: Title (mais vendedor + local) -->
-  <title>BRsys • Criação de Sites Profissionais e SEO Local (Peruíbe e Litoral SP)</title>
+  <style>
+    /* ===============================
+       BRsys Landing • Visual do Print
+       Dark/Clean • Grid • Glass • Cards
+       =============================== */
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.brsys.com.br/" />
-
-  <!-- SEO: Description (curta, objetiva, comercial) -->
-  <meta name="description" content="Criação de sites profissionais rápidos e focados em vendas no WhatsApp. Especialistas em SEO local no litoral paulista. Sites para pousadas, hotéis, restaurantes e negócios locais. Atendimento nacional." />
-
-  <!-- Keywords (ok manter, sem exagero) -->
-  <meta name="keywords" content="criação de sites, site profissional, SEO local, sites para pousadas, sites para hotéis, sites para restaurantes, negócios locais, Peruíbe SP, litoral paulista, BRsys" />
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="BRsys • Sites Profissionais e SEO Local" />
-  <meta property="og:description" content="Sites rápidos, bonitos e focados em conversão (WhatsApp + Google). Especialistas em SEO local no litoral paulista. Atendimento nacional." />
-  <meta property="og:image" content="https://www.brsys.com.br/img/brsys-hero-mockup.png" />
-  <meta property="og:url" content="https://www.brsys.com.br/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BRsys • Sites Profissionais e SEO Local" />
-  <meta name="twitter:description" content="Sites focados em WhatsApp + Google. SEO local no litoral paulista. Atendimento nacional." />
-  <meta name="twitter:image" content="https://www.brsys.com.br/img/brsys-hero-mockup.png" />
-
-  <link rel="icon" href="img/brsys-logo.svg" />
-
-  <!-- Performance: Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Structured Data: LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BRsys",
-    "description": "Criação de sites profissionais e SEO local para negócios. Atendimento no litoral paulista e em todo o Brasil.",
-    "image": "https://www.brsys.com.br/img/brsys-hero-mockup.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Peruíbe",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55-13-99740-8157",
-    "areaServed": [
-      "Peruíbe",
-      "Baixada Santista",
-      "Santos",
-      "São Vicente",
-      "Praia Grande",
-      "Itanhaém",
-      "Mongaguá",
-      "Guarujá",
-      "Litoral Norte",
-      "Todo o Brasil"
-    ],
-    "url": "https://www.brsys.com.br"
-  }
-  </script>
-
-  <!-- Structured Data: WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BRsys",
-    "url": "https://www.brsys.com.br/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.brsys.com.br/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
+    :root { color-scheme: dark; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
     }
-  }
-  </script>
+
+    /* ===== Themes ===== */
+    html[data-theme="dark"]{
+      color-scheme: dark;
+      --bg: #071116;
+      --panel: rgba(9, 22, 28, .68);
+      --panel2: rgba(10, 25, 32, .55);
+      --stroke: rgba(255,255,255,.08);
+      --stroke2: rgba(255,255,255,.10);
+      --text: #eaf3f7;
+      --muted: rgba(234,243,247,.72);
+      --muted2: rgba(234,243,247,.55);
+      --teal: #24e6c3;
+      --teal2:#14c8a8;
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --grid: rgba(255,255,255,.06);
+    }
+
+    html[data-theme="clean"]{
+      color-scheme: light;
+      --bg: #eaf5f6;
+      --panel: rgba(255,255,255,.65);
+      --panel2: rgba(255,255,255,.55);
+      --stroke: rgba(10,20,28,.10);
+      --stroke2: rgba(10,20,28,.12);
+      --text: #0a141a;
+      --muted: rgba(10,20,26,.70);
+      --muted2: rgba(10,20,26,.55);
+      --teal: #18c7a8;
+      --teal2:#11b29a;
+      --shadow: 0 18px 45px rgba(10,20,28,.12);
+      --grid: rgba(10,20,28,.07);
+    }
+
+    /* ===== Background grid + glow ===== */
+    .bg{
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(36,230,195,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(36,230,195,.10), transparent 65%),
+        linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0));
+    }
+    html[data-theme="clean"] .bg{
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(24,199,168,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(24,199,168,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(24,199,168,.10), transparent 65%);
+    }
+    .grid{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 52px 52px;
+      opacity: .55;
+      mask-image: radial-gradient(circle at 30% 35%, black 0 55%, transparent 78%);
+    }
+
+    /* ===== Layout ===== */
+    .wrap{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 18px 80px;
+    }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 10px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 260px;
+    }
+    .logo{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(36,230,195,.35), transparent 55%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+    .logo b{
+      font-size: 16px;
+      letter-spacing:.4px;
+    }
+    .brand-txt{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .brand-txt strong{
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .brand-txt span{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+
+    .icon-btn, .cta{
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      color: var(--text);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      user-select:none;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+    }
+    .icon-btn{
+      width: 44px;
+      height: 44px;
+      justify-content:center;
+      font-size: 16px;
+    }
+    .icon-btn:hover{ border-color: rgba(36,230,195,.35); }
+    .icon-btn:active{ transform: scale(.98); }
+
+    .cta{
+      padding: 12px 14px;
+      font-weight: 800;
+      letter-spacing:.2px;
+      background:
+        radial-gradient(140px 80px at 25% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border-color: rgba(36,230,195,.30);
+    }
+    .cta:hover{ border-color: rgba(36,230,195,.55); }
+    .cta:active{ transform: scale(.99); }
+    .cta .arrow{ opacity:.9; }
+
+    /* ===== Main Hero Layout ===== */
+    .main{
+      margin-top: 18px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .main-inner{
+      padding: 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 18px;
+    }
+    @media (max-width: 980px){
+      .main-inner{ grid-template-columns: 1fr; }
+      .topbar{ flex-wrap: wrap; }
+      .brand{ min-width: auto; }
+    }
+
+    /* Left hero */
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(36,230,195,.10);
+      border: 1px solid rgba(36,230,195,.22);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(36,230,195,.12);
+    }
+
+    h1{
+      margin: 14px 0 12px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.9px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      align-items:center;
+    }
+    .btn{
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text);
+      padding: 12px 14px;
+      font-weight: 800;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease, border-color .2s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      user-select:none;
+    }
+    .btn:hover{ border-color: rgba(36,230,195,.28); }
+    .btn:active{ transform: scale(.99); }
+
+    .btn-primary{
+      background:
+        radial-gradient(180px 100px at 20% 30%, rgba(36,230,195,.24), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.22), rgba(36,230,195,.10));
+      border-color: rgba(36,230,195,.30);
+    }
+    .btn-primary:hover{ border-color: rgba(36,230,195,.55); }
+
+    .micro{
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted2);
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .micro b{ color: var(--text); font-weight: 800; }
+    .sep{ opacity:.55; }
+
+    /* Right cards */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .card{
+      border-radius: 20px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="clean"] .card{
+      background: rgba(255,255,255,.60);
+    }
+
+    .card-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+    .card-head strong{
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .card-head span{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .seg{
+      border-radius: 16px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 12px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      margin-top: 10px;
+    }
+    .seg:first-child{ margin-top: 0; }
+    html[data-theme="clean"] .seg{ background: rgba(255,255,255,.45); }
+
+    .check{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(36,230,195,.35);
+      background: rgba(36,230,195,.10);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .seg h3{
+      margin: 0;
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .seg p{
+      margin: 4px 0 8px;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    /* Lower card (recebe) */
+    .receive{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .receive strong{
+      display:block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .receive small{
+      display:block;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .mini-cta{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(36,230,195,.30);
+      background:
+        radial-gradient(140px 70px at 30% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      font-weight: 900;
+      text-decoration:none;
+      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+      box-shadow: var(--shadow);
+    }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(36,230,195,.35);
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="bg"></div>
+  <div class="grid"></div>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand">
-        <img src="img/brsys-logo.svg" alt="Logo BRsys" class="brand-logo" />
-        <div class="brand-text">
-          <span class="brand-name">BRsys</span>
-          <span class="brand-tagline">Sites • SEO Local • Sistemas Web</span>
+  <div class="wrap">
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><b>B</b></div>
+        <div class="brand-txt">
+          <strong>BRsys</strong>
+          <span>Sites rápidos. Escopo fechado. WhatsApp direto.</span>
         </div>
-      </a>
+      </div>
 
-      <!-- NAV DESKTOP -->
-      <nav class="nav-desktop">
-        <a href="#inicio">Início</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#modelos">Modelos</a>
-        <a href="#planos">Planos</a>
-        <a href="#contato">Contato</a>
-        <a href="/login.html">Login</a>
-      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="btnTheme" type="button" aria-label="Alternar tema">🌙</button>
+        <a class="cta" id="ctaTop" href="#" rel="noopener">
+          Falar no WhatsApp <span class="arrow">→</span>
+        </a>
+      </div>
+    </header>
 
-      <a class="btn btn-pill btn-primary header-cta"
-        href="https://wa.me/5513997408157?text=Quero+um+site+profissional+para+meu+negocio">
-        WhatsApp
-      </a>
+    <!-- Main -->
+    <main class="main">
+      <div class="main-inner">
+        <!-- Left -->
+        <section>
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Entrega objetiva para negócios locais</span>
+          </div>
 
-      <button class="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-    </div>
+          <h1>Um site profissional que dá confiança e traz pedido no WhatsApp.</h1>
 
-    <!-- NAV MOBILE -->
-    <nav class="nav-mobile">
-      <a href="#inicio">Início</a>
-      <a href="#solucoes">Soluções</a>
-      <a href="#modelos">Modelos</a>
-      <a href="#planos">Planos</a>
-      <a href="#contato">Contato</a>
-      <a href="/login.html">Login</a>
-
-      <a class="btn btn-pill btn-primary nav-mobile-cta"
-        href="https://wa.me/5513997408157?text=Quero+um+site+profissional+para+meu+negocio">
-        Falar no WhatsApp
-      </a>
-    </nav>
-  </header>
-
-  <!-- MAIN -->
-  <main id="inicio">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-
-        <div class="hero-text">
-          <p class="eyebrow">Criação de sites profissionais</p>
-
-          <h1>
-            Sites profissionais para negócios locais<br />
-            que querem aparecer no Google e vender mais
-          </h1>
-
-          <p class="hero-subtitle">
-            Sites rápidos, modernos e focados em conversão (WhatsApp + Google).
-            Ideal para pousadas, hotéis, restaurantes e negócios locais.
-            Especialistas em SEO local no litoral paulista — com atendimento nacional.
+          <p class="lead">
+            Sem enrolação e sem projeto infinito. Você fala comigo no WhatsApp,
+            eu fecho o escopo e entrego um site rápido, bonito e pronto pra converter.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-pill btn-primary"
-              href="https://wa.me/5513997408157?text=Quero+um+site+profissional+e+quero+um+orçamento">
-              Pedir orçamento
-            </a>
-            <a class="btn btn-pill btn-secondary" href="#modelos">Ver modelos</a>
+            <a class="btn btn-primary" id="ctaHero" href="#" rel="noopener">Quero meu site <span>→</span></a>
+            <a class="btn" href="#como-funciona">Como funciona</a>
+          </div>
+
+          <div class="micro">
+            <b>Site é site.</b>
+            <span class="sep">•</span>
+            <span>Escopo fechado.</span>
+            <span class="sep">•</span>
+            <span>WhatsApp como canal principal.</span>
+            <span class="sep">•</span>
+            <span>Entrega rápida (dependendo do material).</span>
+          </div>
+        </section>
+
+        <!-- Right -->
+        <aside class="side">
+          <div class="card">
+            <div class="card-head">
+              <strong>Para quem é</strong>
+              <span>clareza = menos objeção</span>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Restaurantes &amp; delivery</h3>
+                <p>cardápio simples, WhatsApp e Google Maps</p>
+                <div class="tag">foco em pedido</div>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Hotéis &amp; pousadas</h3>
+                <p>apresentação, fotos, CTA e contato direto</p>
+                <div class="tag">foco em reserva</div>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Negócios locais</h3>
+                <p>serviços, localização, confiança e velocidade</p>
+                <div class="tag">foco em ligações</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <strong>O que você recebe</strong>
+              <span>sem surpresa</span>
+            </div>
+
+            <div class="receive">
+              <div>
+                <strong>Site profissional e rápido</strong>
+                <small>layout premium, responsivo e leve</small>
+              </div>
+              <a class="mini-cta" id="ctaMini" href="#" rel="noopener">WhatsApp agora <span>→</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Anchor section (placeholder simples) -->
+    <section id="como-funciona" style="margin-top:14px; padding: 0 6px;">
+      <div class="card" style="max-width: 860px;">
+        <div class="card-head">
+          <strong>Como funciona</strong>
+          <span>simples e direto</span>
+        </div>
+
+        <div class="seg">
+          <div class="check">1</div>
+          <div>
+            <h3>Você chama no WhatsApp</h3>
+            <p>Me manda nome do negócio, cidade e o que você quer destacar.</p>
+          </div>
+        </div>
+        <div class="seg">
+          <div class="check">2</div>
+          <div>
+            <h3>Fechamos o escopo</h3>
+            <p>Sem projeto infinito: páginas/itens combinados e pronto.</p>
+          </div>
+        </div>
+        <div class="seg">
+          <div class="check">3</div>
+          <div>
+            <h3>Eu entrego e você usa</h3>
+            <p>Site no ar, botão de WhatsApp e tudo organizado.</p>
           </div>
         </div>
 
-        <div class="hero-panel">
-          <img
-            src="img/brsys-sites-hero-sites-profissionais-seo.png"
-            alt="Mockup de site profissional desenvolvido pela BRsys para negócios locais e do litoral"
-            class="hero-image"
-            loading="eager"
-          />
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SOLUÇÕES -->
-    <section id="solucoes" class="section section-alt">
-      <div class="container">
-        <header class="section-header">
-          <h2>Soluções para vender mais no WhatsApp e aparecer melhor no Google</h2>
-          <p>Sites rápidos, SEO local eficiente e sistemas sob medida para negócios que dependem de conversão.</p>
-        </header>
-
-        <div class="grid grid-3">
-
-          <article class="card">
-            <img src="img/brsys-team-desk.jpg" alt="Desenvolvimento de sites e presença digital" class="card-img" loading="lazy" />
-            <h3>Sites Profissionais</h3>
-            <p>Site institucional/comercial com foco em clareza, velocidade e botões de ação (WhatsApp, mapa, cardápio, reservas).</p>
-          </article>
-
-          <article class="card">
-            <img src="img/brsys-seo-graph.png" alt="SEO local e crescimento nas buscas orgânicas" class="card-img" loading="lazy" />
-            <h3>SEO Local</h3>
-            <p>Estrutura técnica e conteúdo para melhorar presença em buscas locais — especialmente Google Maps e pesquisas por cidade/segmento.</p>
-          </article>
-
-          <article class="card">
-            <img src="img/brsys-system-panel.png" alt="Painel de sistema web para gestão e automações" class="card-img" loading="lazy" />
-            <h3>Sistemas Web</h3>
-            <p>Formulários, painéis, automações e integrações. E em breve: Área do Cliente + propostas inteligentes (Login).</p>
-          </article>
-
+        <div style="margin-top:12px; color: var(--muted2); font-size: 12px;">
+          🧠 O site é totalmente seu. Domínio, conta e hospedagem ficam no seu nome. Eu faço a criação e configuração inicial.
         </div>
       </div>
     </section>
+  </div>
 
-    <!-- MODELOS -->
-    <section id="modelos" class="section">
-      <div class="container">
+  <script>
+    // ===============================
+    // Tema + WhatsApp (mínimo)
+    // ===============================
+    (function(){
+      const PHONE_E164 = "5513997408157"; // +55 13 99740-8157
+      const KEY = "brsys-theme";
+      const html = document.documentElement;
 
-        <header class="section-header">
-          <h2>Modelos profissionais por segmento</h2>
-          <p>Templates exclusivos, personalizáveis e prontos para conversão.</p>
-        </header>
+      function prefersDark(){
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      function setTheme(t){
+        html.setAttribute("data-theme", t);
+        try{ localStorage.setItem(KEY, t); }catch(e){}
+        const btn = document.getElementById("btnTheme");
+        if(btn) btn.textContent = (t === "dark") ? "🌙" : "☀️";
+      }
+      function initTheme(){
+        let saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === "dark" || saved === "clean") return setTheme(saved);
+        setTheme(prefersDark() ? "dark" : "clean");
+      }
 
-        <div class="grid grid-3">
+      function waLink(text){
+        const base = "https://wa.me/" + PHONE_E164;
+        const msg = encodeURIComponent(text || "");
+        return msg ? (base + "?text=" + msg) : base;
+      }
 
-          <article class="card">
-            <img src="img/template-restaurante-preview.jpg" alt="Template de site para restaurante com cardápio e WhatsApp" class="card-img" loading="lazy" />
-            <h3>Restaurantes & Delivery</h3>
-            <a class="btn-link" href="/modelos/restaurantes-delivery/">Ver modelo →</a>
-          </article>
+      const msg = "Oi! Aqui é o Thiago da BRsys 😊\n\nQuero um site simples e profissional focado em WhatsApp.\nVocê consegue me orientar no modelo ideal?";
 
-          <article class="card">
-            <img src="img/template-hotel-preview.jpg" alt="Modelo de site profissional para hotéis e pousadas" class="card-img" loading="lazy" />
-            <h3>Hotéis & Pousadas</h3>
-            <a class="btn-link" href="/modelos/hoteis-pousadas/">Ver modelo →</a>
-          </article>
+      function bind(id){
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.href = waLink(msg);
+      }
 
-          <article class="card">
-            <img src="img/template-negocio-preview.jpg" alt="Template de site institucional para negócios locais" class="card-img" loading="lazy" />
-            <h3>Negócios Locais</h3>
-            <a class="btn-link" href="/modelos/negocios-locais/">Ver modelo →</a>
-          </article>
+      initTheme();
+      bind("ctaTop");
+      bind("ctaHero");
+      bind("ctaMini");
 
-        </div>
-      </div>
-    </section>
-
-    <!-- PLANOS -->
-    <section id="planos" class="section section-alt">
-      <div class="container">
-
-        <header class="section-header">
-          <h2>Planos de implantação</h2>
-          <p>Valores a partir do escopo. Manutenção mensal opcional.</p>
-        </header>
-
-        <div class="grid grid-4">
-
-          <article class="card card-plan">
-            <h3>Essencial</h3>
-            <p class="price">R$ 500,00+</p>
-            <p>Até 5 seções • SEO básico • WhatsApp • Mapa</p>
-          </article>
-
-          <article class="card card-plan">
-            <h3>Profissional</h3>
-            <p class="price">R$ 900,00+</p>
-            <p>Até 7 seções • SEO local forte • Formulários completos</p>
-          </article>
-
-          <article class="card card-plan">
-            <h3>Premium</h3>
-            <p class="price">R$ 1500,00+</p>
-            <p>Até 10 seções • Visual premium • SEO regional</p>
-          </article>
-
-          <article class="card card-plan">
-            <h3>Enterprise</h3>
-            <p class="price">Sob consulta</p>
-            <p>Sistemas internos, painéis, reservas, integrações</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" class="section">
-      <div class="container coverage-grid">
-
-        <div>
-          <h2>Base em Peruíbe-SP, com atendimento em todo o Brasil</h2>
-          <p>Se você quer um site que carregue rápido e gere conversas no WhatsApp, a BRsys te ajuda.</p>
-        </div>
-
-        <div class="contact-card">
-          <h3>Fale com a BRsys</h3>
-          <a class="btn btn-pill btn-primary"
-            href="https://wa.me/5513997408157?text=Quero+um+orçamento+de+site+profissional+BRsys">
-            WhatsApp Comercial
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2025 BRsys — Criação de sites profissionais e SEO local para negócios.</p>
-      <p>Peruíbe - SP • Atendimento nacional</p>
-      <p>WhatsApp: +55 (13) 99740-8157</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+      const btn = document.getElementById("btnTheme");
+      if(btn){
+        btn.addEventListener("click", () => {
+          const cur = html.getAttribute("data-theme");
+          setTheme(cur === "dark" ? "clean" : "dark");
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
