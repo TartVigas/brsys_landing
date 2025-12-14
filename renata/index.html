@@ -1,159 +1,609 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRsys • Sites rápidos. Escopo fechado. WhatsApp direto.</title>
+  <meta name="description" content="BRsys cria sites simples e profissionais, com escopo fechado e WhatsApp direto. Entrega objetiva para negócios locais." />
 
-  <title>Sobremesas & Bolos da Renata • Região da Sé – SP</title>
+  <style>
+    /* ===============================
+       BRsys Landing • Visual do Print
+       Dark/Clean • Grid • Glass • Cards
+       =============================== */
 
-  <!-- SEO -->
-  <meta name="description"
-    content="Sobremesas, bolos e tortas artesanais na região da Sé, São Paulo. Encomendas para casamento, aniversário e eventos. Preços a partir de R$ 80,00." />
-  <meta name="keywords"
-    content="bolos na Sé, bolos decorados Sé, sobremesas artesanais Sé, travessas de sobremesa, bolos para casamento Sé, bolos para aniversário, doces personalizados São Paulo" />
+    :root { color-scheme: dark; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
+    }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sobremesas & Bolos da Renata" />
-  <meta property="og:description"
-    content="Encomendas de bolos, tortas e travessas de sobremesa feitos com carinho. Região da Sé – São Paulo. A partir de R$ 80,00." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/renata/img/travessa-morango-uva-chocolate-brsys.jpg" />
+    /* ===== Themes ===== */
+    html[data-theme="dark"]{
+      color-scheme: dark;
+      --bg: #071116;
+      --panel: rgba(9, 22, 28, .68);
+      --panel2: rgba(10, 25, 32, .55);
+      --stroke: rgba(255,255,255,.08);
+      --stroke2: rgba(255,255,255,.10);
+      --text: #eaf3f7;
+      --muted: rgba(234,243,247,.72);
+      --muted2: rgba(234,243,247,.55);
+      --teal: #24e6c3;
+      --teal2:#14c8a8;
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --grid: rgba(255,255,255,.06);
+    }
 
-  <!-- CSS CORRIGIDO -->
-  <link rel="stylesheet" href="/renata/style.css" />
+    html[data-theme="clean"]{
+      color-scheme: light;
+      --bg: #eaf5f6;
+      --panel: rgba(255,255,255,.65);
+      --panel2: rgba(255,255,255,.55);
+      --stroke: rgba(10,20,28,.10);
+      --stroke2: rgba(10,20,28,.12);
+      --text: #0a141a;
+      --muted: rgba(10,20,26,.70);
+      --muted2: rgba(10,20,26,.55);
+      --teal: #18c7a8;
+      --teal2:#11b29a;
+      --shadow: 0 18px 45px rgba(10,20,28,.12);
+      --grid: rgba(10,20,28,.07);
+    }
+
+    /* ===== Background grid + glow ===== */
+    .bg{
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(36,230,195,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(36,230,195,.10), transparent 65%),
+        linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0));
+    }
+    html[data-theme="clean"] .bg{
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(24,199,168,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(24,199,168,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(24,199,168,.10), transparent 65%);
+    }
+    .grid{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 52px 52px;
+      opacity: .55;
+      mask-image: radial-gradient(circle at 30% 35%, black 0 55%, transparent 78%);
+    }
+
+    /* ===== Layout ===== */
+    .wrap{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 18px 80px;
+    }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 10px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 260px;
+    }
+    .logo{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(36,230,195,.35), transparent 55%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+    .logo b{
+      font-size: 16px;
+      letter-spacing:.4px;
+    }
+    .brand-txt{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .brand-txt strong{
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .brand-txt span{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+
+    .icon-btn, .cta{
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      color: var(--text);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      user-select:none;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+    }
+    .icon-btn{
+      width: 44px;
+      height: 44px;
+      justify-content:center;
+      font-size: 16px;
+    }
+    .icon-btn:hover{ border-color: rgba(36,230,195,.35); }
+    .icon-btn:active{ transform: scale(.98); }
+
+    .cta{
+      padding: 12px 14px;
+      font-weight: 800;
+      letter-spacing:.2px;
+      background:
+        radial-gradient(140px 80px at 25% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border-color: rgba(36,230,195,.30);
+    }
+    .cta:hover{ border-color: rgba(36,230,195,.55); }
+    .cta:active{ transform: scale(.99); }
+    .cta .arrow{ opacity:.9; }
+
+    /* ===== Main Hero Layout ===== */
+    .main{
+      margin-top: 18px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .main-inner{
+      padding: 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 18px;
+    }
+    @media (max-width: 980px){
+      .main-inner{ grid-template-columns: 1fr; }
+      .topbar{ flex-wrap: wrap; }
+      .brand{ min-width: auto; }
+    }
+
+    /* Left hero */
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(36,230,195,.10);
+      border: 1px solid rgba(36,230,195,.22);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(36,230,195,.12);
+    }
+
+    h1{
+      margin: 14px 0 12px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.9px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      align-items:center;
+    }
+    .btn{
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text);
+      padding: 12px 14px;
+      font-weight: 800;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease, border-color .2s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      user-select:none;
+    }
+    .btn:hover{ border-color: rgba(36,230,195,.28); }
+    .btn:active{ transform: scale(.99); }
+
+    .btn-primary{
+      background:
+        radial-gradient(180px 100px at 20% 30%, rgba(36,230,195,.24), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.22), rgba(36,230,195,.10));
+      border-color: rgba(36,230,195,.30);
+    }
+    .btn-primary:hover{ border-color: rgba(36,230,195,.55); }
+
+    .micro{
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted2);
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .micro b{ color: var(--text); font-weight: 800; }
+    .sep{ opacity:.55; }
+
+    /* Right cards */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .card{
+      border-radius: 20px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="clean"] .card{
+      background: rgba(255,255,255,.60);
+    }
+
+    .card-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+    .card-head strong{
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .card-head span{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    .seg{
+      border-radius: 16px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 12px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      margin-top: 10px;
+    }
+    .seg:first-child{ margin-top: 0; }
+    html[data-theme="clean"] .seg{ background: rgba(255,255,255,.45); }
+
+    .check{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(36,230,195,.35);
+      background: rgba(36,230,195,.10);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .seg h3{
+      margin: 0;
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .seg p{
+      margin: 4px 0 8px;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    /* Lower card (recebe) */
+    .receive{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .receive strong{
+      display:block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .receive small{
+      display:block;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .mini-cta{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(36,230,195,.30);
+      background:
+        radial-gradient(140px 70px at 30% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      font-weight: 900;
+      text-decoration:none;
+      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+      box-shadow: var(--shadow);
+    }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(36,230,195,.35);
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <h1>Sobremesas & Bolos <span>da Renata</span></h1>
-        <p class="hero-sub">
-          Qualidade caseira • Sabor incrível • Feitos com carinho
-        </p>
-        <p class="hero-info">
-          Atendemos a <strong>região da Sé – São Paulo</strong><br />
-          Encomendas a partir de <strong>R$ 80,00</strong>
-        </p>
-        <a class="btn-primary"
-          href="https://wa.me/5511951084301?text=Ol%C3%A1%20Renata,%20gostaria%20de%20fazer%20uma%20encomenda.">
-          Fazer pedido pelo WhatsApp
+  <div class="bg"></div>
+  <div class="grid"></div>
+
+  <div class="wrap">
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><b>B</b></div>
+        <div class="brand-txt">
+          <strong>BRsys</strong>
+          <span>Sites rápidos. Escopo fechado. WhatsApp direto.</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="btnTheme" type="button" aria-label="Alternar tema">🌙</button>
+        <a class="cta" id="ctaTop" href="#" rel="noopener">
+          Falar no WhatsApp <span class="arrow">→</span>
         </a>
       </div>
+    </header>
 
-      <div class="hero-image">
-        <img src="/renata/img/travessa-morango-uva-chocolate-brsys.jpg"
-          alt="Travessa de sobremesa com morango, uva, creme e chocolate" />
+    <!-- Main -->
+    <main class="main">
+      <div class="main-inner">
+        <!-- Left -->
+        <section>
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Entrega objetiva para negócios locais</span>
+          </div>
+
+          <h1>Um site profissional que dá confiança e traz pedido no WhatsApp.</h1>
+
+          <p class="lead">
+            Sem enrolação e sem projeto infinito. Você fala comigo no WhatsApp,
+            eu fecho o escopo e entrego um site rápido, bonito e pronto pra converter.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="ctaHero" href="#" rel="noopener">Quero meu site <span>→</span></a>
+            <a class="btn" href="#como-funciona">Como funciona</a>
+          </div>
+
+          <div class="micro">
+            <b>Site é site.</b>
+            <span class="sep">•</span>
+            <span>Escopo fechado.</span>
+            <span class="sep">•</span>
+            <span>WhatsApp como canal principal.</span>
+            <span class="sep">•</span>
+            <span>Entrega rápida (dependendo do material).</span>
+          </div>
+        </section>
+
+        <!-- Right -->
+        <aside class="side">
+          <div class="card">
+            <div class="card-head">
+              <strong>Para quem é</strong>
+              <span>clareza = menos objeção</span>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Restaurantes &amp; delivery</h3>
+                <p>cardápio simples, WhatsApp e Google Maps</p>
+                <div class="tag">foco em pedido</div>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Hotéis &amp; pousadas</h3>
+                <p>apresentação, fotos, CTA e contato direto</p>
+                <div class="tag">foco em reserva</div>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">✓</div>
+              <div>
+                <h3>Negócios locais</h3>
+                <p>serviços, localização, confiança e velocidade</p>
+                <div class="tag">foco em ligações</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <strong>O que você recebe</strong>
+              <span>sem surpresa</span>
+            </div>
+
+            <div class="receive">
+              <div>
+                <strong>Site profissional e rápido</strong>
+                <small>layout premium, responsivo e leve</small>
+              </div>
+              <a class="mini-cta" id="ctaMini" href="#" rel="noopener">WhatsApp agora <span>→</span></a>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  </header>
+    </main>
 
-  <section class="section sobre">
-    <div class="container">
-      <h2>Doce feito em casa, com carinho de família</h2>
-      <p>
-        A Renata prepara bolos, tortas, doces e travessas de sobremesa com
-        aquele toque caseiro que lembra reunião em família. Cada encomenda
-        é produzida de forma artesanal, com atenção aos detalhes e muita
-        dedicação.
-      </p>
-      <p>
-        Ideal para <strong>casamentos, aniversários, batizados,
-        confraternizações, ceias de fim de ano</strong> e eventos em geral.
-      </p>
-    </div>
-  </section>
+    <!-- Anchor section (placeholder simples) -->
+    <section id="como-funciona" style="margin-top:14px; padding: 0 6px;">
+      <div class="card" style="max-width: 860px;">
+        <div class="card-head">
+          <strong>Como funciona</strong>
+          <span>simples e direto</span>
+        </div>
 
-  <section class="section especialidades" id="especialidades">
-    <div class="container">
-      <h2>O que você pode encomendar</h2>
+        <div class="seg">
+          <div class="check">1</div>
+          <div>
+            <h3>Você chama no WhatsApp</h3>
+            <p>Me manda nome do negócio, cidade e o que você quer destacar.</p>
+          </div>
+        </div>
+        <div class="seg">
+          <div class="check">2</div>
+          <div>
+            <h3>Fechamos o escopo</h3>
+            <p>Sem projeto infinito: páginas/itens combinados e pronto.</p>
+          </div>
+        </div>
+        <div class="seg">
+          <div class="check">3</div>
+          <div>
+            <h3>Eu entrego e você usa</h3>
+            <p>Site no ar, botão de WhatsApp e tudo organizado.</p>
+          </div>
+        </div>
 
-      <div class="cards-grid">
-        <article class="card">
-          <img src="/renata/img/bolo-parabens-borboletas-rosa-brsys.jpg"
-            alt="Bolo rosa de aniversário com borboletas douradas" />
-          <h3>Bolos para aniversário</h3>
-          <p>Bolos decorados, toppers personalizados e sabores especiais.</p>
-          <p class="price">A partir de R$ 80,00</p>
-        </article>
-
-        <article class="card">
-          <img src="/renata/img/bolo-casamento-enfim-casados-brsys.jpg"
-            alt="Bolo de casamento branco com pérolas e flores" />
-          <h3>Bolos para casamento</h3>
-          <p>Design elegante, perfeito para noivado, chá de cozinha e casamento.</p>
-        </article>
-
-        <article class="card">
-          <img src="/renata/img/bolo-baby-shark-lara-rafaela-brsys.jpg"
-            alt="Bolo infantil tema Baby Shark" />
-          <h3>Bolos infantis</h3>
-          <p>Temas como Baby Shark, Peppa Pig e outros personagens.</p>
-        </article>
-
-        <article class="card">
-          <img src="/renata/img/bolo-moto-alexandre-27-anos-brsys.jpg"
-            alt="Bolo temático de moto para aniversário adulto" />
-          <h3>Bolos temáticos</h3>
-          <p>Temas adultos: hobbies, profissões, times e muito mais.</p>
-        </article>
-
-        <article class="card">
-          <img src="/renata/img/travessa-morango-uva-chocolate-brsys.jpg"
-            alt="Travessa de sobremesa com morangos, uvas e chocolate" />
-          <h3>Travessas de sobremesa</h3>
-          <p>Sobremesas em camadas, ideais para ceias e eventos em família.</p>
-        </article>
+        <div style="margin-top:12px; color: var(--muted2); font-size: 12px;">
+          🧠 O site é totalmente seu. Domínio, conta e hospedagem ficam no seu nome. Eu faço a criação e configuração inicial.
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section class="section destaque">
-    <div class="container">
-      <h2>Atendimento na região da Sé – São Paulo</h2>
-      <p>
-        Encomendas feitas com antecedência garantem sua data na agenda.
-        Consultar disponibilidade para entregas ou retirada.
-      </p>
-      <a class="btn-secondary"
-        href="https://wa.me/5511951084301?text=Ol%C3%A1%20Renata,%20quero%20saber%20sobre%20datas%20dispon%C3%ADveis%20e%20valores.">
-        Consultar datas e valores
-      </a>
-    </div>
-  </section>
+  <script>
+    // ===============================
+    // Tema + WhatsApp (mínimo)
+    // ===============================
+    (function(){
+      const PHONE_E164 = "5513997408157"; // +55 13 99740-8157
+      const KEY = "brsys-theme";
+      const html = document.documentElement;
 
-  <section class="section como-pedir" id="como-pedir">
-    <div class="container">
-      <h2>Como fazer sua encomenda</h2>
-      <ol class="steps">
-        <li>Envie uma mensagem pelo WhatsApp informando a data do evento.</li>
-        <li>Escolha o tipo de bolo ou sobremesa e o tema desejado.</li>
-        <li>Combine sabores, tamanhos e condições de entrega ou retirada.</li>
-        <li>Confirme seu pedido e garanta sua reserva na agenda da Renata.</li>
-      </ol>
-      <a class="btn-primary"
-        href="https://wa.me/5511951084301?text=Ol%C3%A1%20Renata,%20quero%20fazer%20uma%20encomenda.">
-        Falar com a Renata agora
-      </a>
-    </div>
-  </section>
+      function prefersDark(){
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      function setTheme(t){
+        html.setAttribute("data-theme", t);
+        try{ localStorage.setItem(KEY, t); }catch(e){}
+        const btn = document.getElementById("btnTheme");
+        if(btn) btn.textContent = (t === "dark") ? "🌙" : "☀️";
+      }
+      function initTheme(){
+        let saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === "dark" || saved === "clean") return setTheme(saved);
+        setTheme(prefersDark() ? "dark" : "clean");
+      }
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© 2025 Sobremesas & Bolos da Renata • Região da Sé – São Paulo</p>
-      <p>
-        Site criado pela
-        <a href="https://www.brsys.com.br" target="_blank" rel="noopener">
-          BRsys
-        </a>
-      </p>
-    </div>
-  </footer>
+      function waLink(text){
+        const base = "https://wa.me/" + PHONE_E164;
+        const msg = encodeURIComponent(text || "");
+        return msg ? (base + "?text=" + msg) : base;
+      }
 
-  <a class="whatsapp-float"
-    href="https://wa.me/5511951084301?text=Ol%C3%A1%20Renata,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20encomenda."
-    target="_blank" aria-label="Fale com a Renata no WhatsApp">
-    💬
-  </a>
+      const msg = "Oi! Aqui é o Thiago da BRsys 😊\n\nQuero um site simples e profissional focado em WhatsApp.\nVocê consegue me orientar no modelo ideal?";
+
+      function bind(id){
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.href = waLink(msg);
+      }
+
+      initTheme();
+      bind("ctaTop");
+      bind("ctaHero");
+      bind("ctaMini");
+
+      const btn = document.getElementById("btnTheme");
+      if(btn){
+        btn.addEventListener("click", () => {
+          const cur = html.getAttribute("data-theme");
+          setTheme(cur === "dark" ? "clean" : "dark");
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
