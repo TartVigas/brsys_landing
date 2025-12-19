@@ -590,3 +590,65 @@ body.nav-open .nav-toggle span:nth-child(3) {
   height: auto;
   display: block;
 }
+/* ================================
+   HERO — FIX DEFINITIVO (BRsys)
+   Corrige overflow e conflito
+================================ */
+
+/* trava geral */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* grid único (não duplicar acima) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* remove estruturas antigas conflitantes */
+.hero-panel,
+.hero-image {
+  display: none !important;
+}
+
+/* container correto da imagem */
+.hero-media {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* dispositivo / mockup */
+.hero-device {
+  max-width: 520px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.hero-device img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    justify-content: center;
+  }
+
+  .hero-device {
+    margin: 2rem auto 0;
+  }
+}
