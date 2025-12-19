@@ -1,169 +1,632 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070b16" />
 
-  <title>PMS Hoteleiro Completo | Reservas, Governança e Indicadores | BRsys</title>
-
-  <meta name="description" content="Sistema PMS hoteleiro completo para hotéis de médio e grande porte. Controle reservas, governança, financeiro, SPA & Wellness e indicadores como ADR e RevPAR. Fale com a BRsys." />
-
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://brsys.com.br/prhotels/" />
+  <title>PMS Hoteleiro Completo (PrHotels) | Reservas, Governança, Financeiro e SPA | BRsys</title>
+  <meta
+    name="description"
+    content="PMS hoteleiro completo (PrHotels): reservas e recepção, mapa de reservas, governança e limpeza, financeiro, estoque e módulos para SPA & Wellness. Fale com um especialista BRsys e descubra o melhor PMS para seu hotel."
+  />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://www.brsys.com.br/prhotels/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="PMS Hoteleiro Completo | BRsys" />
-  <meta property="og:description" content="Gestão profissional de hotéis com PMS completo: reservas, governança, financeiro e indicadores estratégicos." />
-  <meta property="og:url" content="https://brsys.com.br/prhotels/" />
+  <meta property="og:locale" content="pt_BR" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://brsys.com.br/img/brsys-seo-graph.png" />
+  <meta property="og:title" content="PMS Hoteleiro Completo (PrHotels) | BRsys" />
+  <meta
+    property="og:description"
+    content="Reservas, mapa de ocupação, governança/limpeza, financeiro, estoque e SPA & Wellness. Fale com um especialista."
+  />
+  <meta property="og:url" content="https://www.brsys.com.br/prhotels/" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/brsys-seo-graph.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Schema.org -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PMS Hoteleiro Completo (PrHotels) | BRsys" />
+  <meta
+    name="twitter:description"
+    content="Sistema PMS hoteleiro com reservas, governança, financeiro, estoque e SPA & Wellness."
+  />
+  <meta name="twitter:image" content="https://www.brsys.com.br/img/brsys-seo-graph.png" />
+
+  <!-- Fav / Brand -->
+  <link rel="icon" href="/img/brsyslogo.png" />
+  <link rel="preload" as="image" href="/img/mockups/prhotels/dashboard.webp" />
+
+  <!-- Schema.org (Organization + WebPage + Service) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "PMS Hoteleiro BRsys",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Sistema PMS hoteleiro completo para gestão de reservas, governança, financeiro e indicadores gerenciais.",
-    "provider": {
-      "@type": "Organization",
-      "name": "BRsys",
-      "url": "https://brsys.com.br"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "BRsys",
+        "url": "https://www.brsys.com.br/",
+        "logo": "https://www.brsys.com.br/img/brsyslogo.png",
+        "sameAs": [],
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+55-13-99740-8157",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": ["pt-BR"]
+        }]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.brsys.com.br/prhotels/",
+        "url": "https://www.brsys.com.br/prhotels/",
+        "name": "PMS Hoteleiro Completo (PrHotels) | BRsys",
+        "description": "PMS hoteleiro completo com reservas, governança, financeiro, estoque e módulos para SPA & Wellness.",
+        "isPartOf": { "@id": "https://www.brsys.com.br/#website" },
+        "about": [{ "@type": "Thing", "name": "PMS Hoteleiro" }],
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "Service",
+        "name": "Implantação e orientação de PMS Hoteleiro (PrHotels)",
+        "provider": { "@type": "Organization", "name": "BRsys" },
+        "areaServed": "BR",
+        "serviceType": "PMS Hoteleiro",
+        "description": "Orientação, demonstração e implantação de sistema PMS hoteleiro (PrHotels) para hotéis, pousadas e resorts."
+      }
+    ]
   }
   </script>
 
-  <link rel="stylesheet" href="/css/app.css" />
+  <style>
+    :root{
+      --bg0:#050712;
+      --bg1:#070b16;
+      --bg2:#0b1224;
+      --card:#0d1733;
+      --stroke:rgba(255,255,255,.10);
+      --stroke2:rgba(255,255,255,.14);
+      --txt:#eaf0ff;
+      --muted:rgba(234,240,255,.72);
+      --muted2:rgba(234,240,255,.55);
+      --accent:#19d3c5;
+      --accent2:#0fb2a7;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow2: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 22px;
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--txt);
+      background:
+        radial-gradient(1100px 700px at 25% 20%, rgba(25,211,197,.18), transparent 60%),
+        radial-gradient(900px 600px at 80% 30%, rgba(90,140,255,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 35%, var(--bg0));
+      overflow-x:hidden;
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .container{ width:100%; max-width:var(--max); margin:0 auto; padding:0 20px; }
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(5,7,18,.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .brand span{ opacity:.95; }
+    .nav{
+      display:flex; align-items:center; gap:20px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+    .nav a{ opacity:.9; }
+    .nav a:hover{ opacity:1; color:var(--txt); }
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      color:#021317;
+      font-weight:800;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 24px rgba(25,211,197,.20);
+      transition: transform .15s ease, filter .15s ease;
+      white-space:nowrap;
+    }
+    .cta:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .cta.ghost{
+      background: transparent;
+      color: var(--txt);
+      border: 1px solid rgba(25,211,197,.35);
+      box-shadow: none;
+    }
+
+    .hero{
+      padding: 56px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-weight:700;
+      font-size:13px;
+      width:fit-content;
+    }
+    .h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 3.4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -.6px;
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 60ch;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .meta-row{
+      display:flex; gap:16px; flex-wrap:wrap;
+      margin-top:18px;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .meta-pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.14);
+    }
+
+    .hero-panel{
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 250px at 50% 0%, rgba(25,211,197,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-panel-inner{
+      position:relative;
+      padding: 16px;
+    }
+    .hero-panel img{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+    }
+    .caption{
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+
+    .section{
+      padding: 34px 0;
+    }
+    .section-head{
+      margin-bottom: 18px;
+    }
+    .section-head h2{
+      margin:0 0 8px;
+      font-size: clamp(22px, 2.2vw, 30px);
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      max-width: 74ch;
+      line-height: 1.55;
+    }
+
+    .grid{
+      display:grid;
+      gap: 16px;
+    }
+    .grid-3{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      overflow:hidden;
+    }
+    .card-media{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .card-media img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit: cover;
+    }
+    .card h3{
+      margin: 14px 0 6px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .feature{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .feature strong{
+      display:block;
+      margin-bottom:6px;
+      letter-spacing:-.2px;
+    }
+    .feature span{ color: var(--muted); line-height:1.55; font-size:14.5px; }
+
+    .faq{
+      margin-top: 6px;
+    }
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.16);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      color: var(--txt);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin:10px 0 0;
+      color: var(--muted);
+      line-height:1.55;
+      font-size:14.5px;
+    }
+
+    .footer{
+      padding: 26px 0 34px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .footer-row{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .mini-links{ display:flex; gap:14px; flex-wrap:wrap; }
+    .mini-links a{ opacity:.9; }
+    .mini-links a:hover{ opacity:1; color:var(--txt); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .feature-grid{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="BRsys">
+          <span>BRsys</span>
+        </a>
 
-<!-- TOPBAR -->
-<header class="topbar dark">
-  <div class="container">
-    <div class="logo">BRsys</div>
-    <nav>
-      <a href="/servicos/">Serviços</a>
-      <a href="/solucoes/">Soluções</a>
-      <a href="/contato/">Contato</a>
-    </nav>
-  </div>
-</header>
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="/#servicos">Serviços</a>
+          <a href="/#solucoes">Soluções</a>
+          <a href="/#contato">Contato</a>
+        </nav>
 
-<!-- HERO -->
-<section class="hero hero-dark">
-  <div class="container">
-    <h1>Sistema PMS Hoteleiro Completo para Gestão Profissional de Hotéis</h1>
-    <p>
-      Controle total da operação do hotel com reservas, recepção, governança,
-      financeiro, SPA & Wellness e indicadores estratégicos como ADR e RevPAR.
-    </p>
-
-    <a class="btn-primary" href="https://wa.me/5513997408157">
-      Falar com um especialista
-    </a>
-  </div>
-</section>
-
-<!-- CONTEXTO SEO -->
-<section class="section">
-  <div class="container narrow">
-    <h2>Gestão completa de reservas, recepção e governança hoteleira</h2>
-    <p>
-      Um PMS hoteleiro moderno precisa oferecer visão operacional e gerencial.
-      Com um mapa de reservas visual, controle de check-in e check-out,
-      governança integrada, financeiro e indicadores em tempo real,
-      o gestor toma decisões com segurança.
-    </p>
-  </div>
-</section>
-
-<!-- MÓDULOS -->
-<section class="section dark">
-  <div class="container">
-    <h2>Principais módulos do sistema PMS</h2>
-
-    <div class="grid-3">
-
-      <div class="card">
-        <img src="/img/mockups/prhotels/reservas.webp"
-             alt="Mapa de reservas do sistema PMS hoteleiro com controle visual" />
-        <h3>Reservas & Recepção</h3>
-        <p>
-          Mapa de reservas visual, check-in, check-out,
-          canais integrados e pagamentos antecipados.
-        </p>
+        <a class="cta" href="https://wa.me/5513997408157?text=Oi!%20Quero%20avaliar%20o%20PMS%20PrHotels%20para%20meu%20hotel.%20Pode%20me%20orientar%3F">
+          Falar com um especialista
+        </a>
       </div>
-
-      <div class="card">
-        <img src="/img/mockups/prhotels/governanca.webp"
-             alt="Governança e limpeza no PMS hoteleiro" />
-        <h3>Governança & Limpeza</h3>
-        <p>
-          Status das suítes, tarefas automáticas,
-          manutenção e controle operacional.
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="/img/mockups/prhotels/dashboard.webp"
-             alt="Indicadores gerenciais no sistema PMS hoteleiro" />
-        <h3>Indicadores Gerenciais</h3>
-        <p>
-          Ocupação, ADR, RevPAR, receitas e relatórios
-          estratégicos para tomada de decisão.
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- PARA QUEM -->
-<section class="section">
-  <div class="container narrow">
-    <h2>Para quais hotéis este sistema PMS é indicado?</h2>
-    <ul>
-      <li>Hotéis de médio e grande porte</li>
-      <li>Resorts e empreendimentos turísticos</li>
-      <li>Hotéis com SPA, Wellness ou eventos</li>
-      <li>Operações que exigem controle total e integrado</li>
-    </ul>
-  </div>
-</section>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">PMS Hoteleiro • PrHotels • Operação + Gestão</div>
 
-<!-- CTA FINAL -->
-<section class="section cta dark">
-  <div class="container">
-    <h2>Quer saber se este PMS é ideal para o seu hotel?</h2>
-    <p>
-      A BRsys atua de forma consultiva para indicar a solução certa
-      conforme o perfil da sua operação.
-    </p>
+            <h1 class="h1">Sistema PMS Hoteleiro Completo</h1>
 
-    <a class="btn-primary" href="https://wa.me/5513997408157">
-      Falar com especialista
-    </a>
-  </div>
-</section>
+            <p class="lead">
+              Gestão profissional para <strong>reservas</strong>, recepção, governança, financeiro e operações com
+              <strong>SPA &amp; Wellness</strong>. A BRsys orienta a escolha da solução certa para o seu hotel
+              (porte, operação e metas).
+            </p>
 
-<!-- SEO INVISÍVEL -->
-<section class="seo-text">
-  <p>
-    PMS hoteleiro completo para hotéis, resorts e empreendimentos turísticos.
-    Sistema de gestão hoteleira com reservas, governança, financeiro,
-    SPA & Wellness e indicadores como ADR, RevPAR e taxa de ocupação.
-  </p>
-</section>
+            <div class="hero-actions">
+              <a class="cta" href="https://wa.me/5513997408157?text=Oi!%20Quero%20avaliar%20o%20PMS%20PrHotels%20para%20meu%20hotel.%20Pode%20me%20orientar%3F">
+                Quero uma avaliação rápida
+              </a>
+              <a class="cta ghost" href="#modulos">Ver módulos do sistema</a>
+            </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <p>© BRsys — Soluções Digitais para Negócios</p>
-  </div>
-</footer>
+            <div class="meta-row">
+              <div class="meta-pill">✔ Demonstração guiada</div>
+              <div class="meta-pill">✔ Orientação por perfil</div>
+              <div class="meta-pill">✔ Implantação e suporte</div>
+            </div>
+          </div>
 
+          <aside class="hero-panel" aria-label="Prévia do sistema">
+            <div class="hero-panel-inner">
+              <img
+                src="/img/mockups/prhotels/dashboard.webp"
+                alt="Dashboard do PMS PrHotels com indicadores gerenciais"
+                width="1100"
+                height="700"
+                loading="eager"
+                decoding="async"
+              />
+              <div class="caption">
+                Prévia realista do sistema: indicadores, visão de ocupação e painel gerencial.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM -->
+    <section class="section" id="para-quem">
+      <div class="container">
+        <header class="section-head">
+          <h2>Para quem este PMS é indicado?</h2>
+          <p>
+            Ideal para operações que precisam de controle total: da reserva ao pós-estadia, com governança e financeiro integrados.
+          </p>
+        </header>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <strong>Hotéis de médio e grande porte</strong>
+            <span>Rotina intensa de reservas, check-in/check-out, governança e caixa.</span>
+          </div>
+          <div class="feature">
+            <strong>Resorts e empreendimentos turísticos</strong>
+            <span>Processos, relatórios e módulos complementares para operação complexa.</span>
+          </div>
+          <div class="feature">
+            <strong>Operações com SPA &amp; Wellness</strong>
+            <span>Estrutura pensada para serviços e consumo adicional, com visão consolidada.</span>
+          </div>
+          <div class="feature">
+            <strong>Controle e gestão (sem improviso)</strong>
+            <span>Indicadores (Ocupação/ADR/RevPAR), relatórios e histórico para decisão.</span>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="cta" href="https://wa.me/5513997408157?text=Oi!%20Quero%20saber%20se%20o%20PMS%20PrHotels%20%C3%A9%20ideal%20para%20meu%20hotel.%20Meu%20perfil%20%C3%A9%3A%20(porte%2Fqtde%20uhs%2Fcidade)%20">
+            Quero saber se é ideal para meu hotel
+          </a>
+          <a class="cta ghost" href="#faq">Tirar dúvidas rápidas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULOS / MOCKUPS (DARK) -->
+    <section id="modulos" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Principais módulos do sistema</h2>
+          <p>
+            Três telas que representam o dia a dia: <strong>reservas</strong>, <strong>governança</strong> e <strong>gestão</strong>.
+            Tudo com foco em operação real e produtividade.
+          </p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="/img/mockups/prhotels/reservas.webp"
+                alt="Mapa de reservas do sistema PMS hoteleiro (PrHotels)"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3>Reservas &amp; Recepção</h3>
+            <p>Mapa de reservas visual, controle de check-in, canais e pagamentos antecipados.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="/img/mockups/prhotels/governanca.webp"
+                alt="Tela de governança e limpeza do PMS hoteleiro (PrHotels)"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3>Governança &amp; Limpeza</h3>
+            <p>Status das suítes, tarefas automáticas, manutenção e controle operacional.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img
+                src="/img/mockups/prhotels/dashboard.webp"
+                alt="Dashboard com indicadores gerenciais do PMS hoteleiro (PrHotels)"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3>Indicadores Gerenciais</h3>
+            <p>Ocupação, ADR, RevPAR e relatórios para tomada de decisão rápida.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS (SEO keywords) -->
+    <section class="section" id="diferenciais">
+      <div class="container">
+        <header class="section-head">
+          <h2>O que este PMS entrega na prática</h2>
+          <p>
+            Um PMS hoteleiro precisa reduzir atrito na operação e aumentar previsibilidade na gestão.
+            Aqui vai o que mais pesa no dia a dia.
+          </p>
+        </header>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <strong>Mapa de reservas e ocupação</strong>
+            <span>Visão de disponibilidade, reservas, bloqueios e períodos (7/14/30 dias).</span>
+          </div>
+          <div class="feature">
+            <strong>Check-in / Check-out e recepção</strong>
+            <span>Rotina rápida, controle de hóspedes, contas e pagamentos antecipados.</span>
+          </div>
+          <div class="feature">
+            <strong>Governança e manutenção</strong>
+            <span>Status de UH (limpa/suja/manutenção), tarefas e acompanhamento operacional.</span>
+          </div>
+          <div class="feature">
+            <strong>Financeiro e relatórios</strong>
+            <span>Indicadores e relatórios de gestão para dono e gerência (Ocupação/ADR/RevPAR).</span>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <a class="cta" href="https://wa.me/5513997408157?text=Oi!%20Quero%20uma%20demonstra%C3%A7%C3%A3o%20guiada%20do%20PMS%20PrHotels.%20Pode%20me%20passar%20os%20pr%C3%B3ximos%20passos%3F">
+            Quero uma demonstração guiada
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (SEO) -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-head">
+          <h2>Dúvidas rápidas (FAQ)</h2>
+          <p>Perguntas comuns sobre PMS hoteleiro e escolha do sistema certo.</p>
+        </header>
+
+        <div class="faq">
+          <details>
+            <summary>Em quanto tempo dá para implantar um PMS hoteleiro?</summary>
+            <p>
+              Depende do porte e do nível de operação, mas o caminho mais eficiente é: diagnóstico rápido do perfil,
+              demonstração objetiva e implantação por etapas (recepção/reservas primeiro, depois governança e gestão).
+            </p>
+          </details>
+
+          <details>
+            <summary>Esse PMS serve para hotel com SPA &amp; Wellness?</summary>
+            <p>
+              Sim — o foco aqui é operação integrada: reservas + recepção + governança + gestão,
+              com suporte para operação com consumo adicional e módulos dedicados.
+            </p>
+          </details>
+
+          <details>
+            <summary>O que vocês precisam para me orientar corretamente?</summary>
+            <p>
+              Só o básico: cidade/estado, quantidade de UHs, tipo de operação (hotel/pousada/resort),
+              e seu objetivo (controle, relatórios, governança, reduzir falhas na recepção, etc.).
+            </p>
+          </details>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="cta" href="https://wa.me/5513997408157?text=Oi!%20Tenho%20um%20hotel%20com%20__%20UHs%20em%20__%2F__.%20Quero%20avaliar%20o%20PMS%20PrHotels.%20Pode%20me%20orientar%3F">
+            Quero uma recomendação rápida
+          </a>
+          <a class="cta ghost" href="/#contato">Outras soluções BRsys</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>
+          <strong>BRsys</strong> — soluções digitais e orientação de sistemas para negócios.
+          <div style="margin-top:6px;">WhatsApp: <a href="https://wa.me/5513997408157" style="text-decoration:underline;">+55 13 99740-8157</a></div>
+        </div>
+        <div class="mini-links">
+          <a href="/#servicos">Serviços</a>
+          <a href="/#solucoes">Soluções</a>
+          <a href="/#contato">Contato</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
