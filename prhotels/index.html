@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Sistema PMS Hoteleiro Completo | Reservas, Governança e Gestão</title>
 
@@ -20,27 +20,42 @@
 
   <link rel="canonical" href="https://www.brsys.com.br/prhotels/">
 
-  <!-- CSS GLOBAL (o que você já usa) -->
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- CSS OFICIAL -->
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER / TOPBAR ================= -->
-<header class="topbar">
-  <div class="container topbar-inner">
-    <div class="logo">BRsys</div>
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
 
-    <nav class="nav">
+    <a href="/" class="brand">
+      <span class="brand-name">BRsys</span>
+      <span class="brand-tagline">Soluções Digitais</span>
+    </a>
+
+    <nav class="nav-desktop">
       <a href="#modulos">Soluções</a>
       <a href="#faq">Dúvidas</a>
       <a href="#contato">Contato</a>
     </nav>
 
-    <a class="btn btn-primary" href="https://wa.me/5513997408157" target="_blank">
+    <a class="btn btn-primary header-cta" href="https://wa.me/5513997408157" target="_blank">
       Falar com um especialista
     </a>
+
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
+  <nav class="nav-mobile">
+    <a href="#modulos">Soluções</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#contato">Contato</a>
+    <a class="btn btn-primary nav-mobile-cta" href="https://wa.me/5513997408157">Falar no WhatsApp</a>
+  </nav>
 </header>
 
 <!-- ================= HERO ================= -->
@@ -49,15 +64,14 @@
 <section class="hero">
   <div class="container hero-grid">
 
-    <div class="hero-content">
-      <span class="hero-eyebrow">PMS Hoteleiro • Operação + Gestão</span>
+    <div>
+      <span class="eyebrow">PMS Hoteleiro • Operação + Gestão</span>
 
       <h1>Sistema PMS Hoteleiro Completo</h1>
 
-      <p>
-        Gestão profissional para <strong>reservas, recepção, governança, financeiro</strong> 
-        e operações com <strong>SPA & Wellness</strong>.
-        A BRsys orienta a escolha da solução certa para o seu hotel.
+      <p class="hero-subtitle">
+        Gestão profissional para <strong>reservas, recepção, governança e financeiro</strong>,
+        com suporte completo para operações de <strong>SPA & Wellness</strong>.
       </p>
 
       <div class="hero-actions">
@@ -69,150 +83,125 @@
         </a>
       </div>
 
-      <ul class="hero-checks">
-        <li>✔ Demonstração guiada</li>
-        <li>✔ Orientação por perfil</li>
-        <li>✔ Implantação assistida</li>
-      </ul>
+      <p class="hero-note">
+        ✔ Demonstração guiada &nbsp; • &nbsp; ✔ Orientação por perfil &nbsp; • &nbsp; ✔ Implantação assistida
+      </p>
     </div>
 
     <div class="hero-media">
-      <img 
-        src="/img/mockups/prhotels/dashboard.webp"
-        alt="Sistema PMS Hoteleiro - Dashboard e Reservas"
-        loading="eager"
-      >
+      <div class="hero-device">
+        <img src="/img/mockups/prhotels/dashboard.webp" alt="Sistema PMS Hoteleiro - Dashboard">
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- ================= PARA QUEM ================= -->
-<section class="section dark">
+<section class="section section-alt">
   <div class="container">
-    <h2>Para quem este PMS é indicado?</h2>
-    <p class="section-subtitle">
-      Ideal para operações que precisam de controle total, sem improviso.
-    </p>
 
-    <div class="grid-2">
+    <div class="section-header">
+      <h2>Para quem este PMS é indicado?</h2>
+      <p>Ideal para operações que precisam de controle total, sem improviso.</p>
+    </div>
+
+    <div class="grid-4">
       <div class="card">
         <h3>Hotéis de médio e grande porte</h3>
-        <p>Rotina intensa de reservas, check-in/check-out, governança e caixa.</p>
+        <p>Alta rotatividade, reservas intensas e controle operacional completo.</p>
       </div>
 
       <div class="card">
-        <h3>Resorts e empreendimentos turísticos</h3>
-        <p>Processos integrados, relatórios e módulos para operação complexa.</p>
+        <h3>Resorts & Turismo</h3>
+        <p>Processos integrados, múltiplos serviços e relatórios avançados.</p>
       </div>
 
       <div class="card">
         <h3>SPA & Wellness</h3>
-        <p>Consumos adicionais, agenda, controle financeiro e integração total.</p>
+        <p>Agenda, consumos adicionais e financeiro integrado.</p>
       </div>
 
       <div class="card">
-        <h3>Gestão sem achismo</h3>
-        <p>Indicadores como Ocupação, ADR e RevPAR para decisão rápida.</p>
+        <h3>Gestão profissional</h3>
+        <p>Indicadores como Ocupação, ADR e RevPAR para decisões rápidas.</p>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ================= MODULOS ================= -->
 <section id="modulos" class="section">
   <div class="container">
-    <h2>Principais módulos do sistema</h2>
-    <p class="section-subtitle">
-      Telas reais do dia a dia: reservas, governança e gestão.
-    </p>
+
+    <div class="section-header">
+      <h2>Principais módulos do sistema</h2>
+      <p>Telas reais do dia a dia: reservas, governança e gestão.</p>
+    </div>
 
     <div class="grid-3">
       <div class="card">
-        <img src="/img/mockups/prhotels/reservas.webp" alt="Mapa de Reservas PMS">
         <h3>Reservas & Recepção</h3>
-        <p>Mapa visual, check-in/check-out, canais e pagamentos antecipados.</p>
+        <p>Mapa visual, check-in/check-out, canais e pagamentos.</p>
       </div>
 
       <div class="card">
-        <img src="/img/mockups/prhotels/governanca.webp" alt="Governança e Limpeza PMS">
         <h3>Governança & Limpeza</h3>
-        <p>Status das UHs, tarefas automáticas e manutenção.</p>
+        <p>Status das UHs, manutenção e tarefas automatizadas.</p>
       </div>
 
       <div class="card">
-        <img src="/img/mockups/prhotels/dashboard.webp" alt="Indicadores Gerenciais PMS">
         <h3>Indicadores Gerenciais</h3>
         <p>Ocupação, ADR, RevPAR e relatórios estratégicos.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ================= O QUE ENTREGA ================= -->
-<section class="section dark">
-  <div class="container">
-    <h2>O que este PMS entrega na prática</h2>
-
-    <div class="grid-2">
-      <div class="card">
-        <h3>Mapa de reservas e ocupação</h3>
-        <p>Visão clara de disponibilidade, bloqueios e períodos (7/14/30 dias).</p>
-      </div>
-
-      <div class="card">
-        <h3>Recepção ágil</h3>
-        <p>Controle de hóspedes, contas, consumos e pagamentos.</p>
-      </div>
-
-      <div class="card">
-        <h3>Governança e manutenção</h3>
-        <p>Status de UH, limpeza, inspeção e acompanhamento.</p>
-      </div>
-
-      <div class="card">
-        <h3>Financeiro e relatórios</h3>
-        <p>Indicadores consolidados para dono e gerência.</p>
-      </div>
-    </div>
-
-    <a class="btn btn-primary" href="https://wa.me/5513997408157">
-      Quero uma demonstração guiada
-    </a>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section id="faq" class="section">
+<section id="faq" class="section section-alt">
   <div class="container">
-    <h2>Dúvidas rápidas (FAQ)</h2>
 
-    <div class="faq">
-      <h4>Em quanto tempo dá para implantar?</h4>
-      <p>Depende do porte, mas seguimos diagnóstico rápido, demonstração objetiva e implantação por etapas.</p>
+    <div class="section-header">
+      <h2>Dúvidas rápidas</h2>
+      <p>Respostas objetivas para decidir com segurança.</p>
+    </div>
 
-      <h4>Serve para hotel com SPA & Wellness?</h4>
-      <p>Sim. A operação é integrada com consumos, agenda e financeiro.</p>
+    <div class="card">
+      <h3>Em quanto tempo dá para implantar?</h3>
+      <p>Depende do porte da operação. Trabalhamos com implantação por etapas.</p>
 
-      <h4>O que vocês precisam para orientar corretamente?</h4>
-      <p>Cidade, quantidade de UHs, tipo de operação e objetivo principal.</p>
+      <h3>Serve para hotel com SPA & Wellness?</h3>
+      <p>Sim. A operação é integrada com agenda, consumos e financeiro.</p>
+
+      <h3>O que vocês precisam para orientar corretamente?</h3>
+      <p>Cidade, número de UHs, tipo de operação e objetivo principal.</p>
     </div>
 
     <a class="btn btn-primary" href="https://wa.me/5513997408157">
       Quero uma recomendação rápida
     </a>
+
   </div>
 </section>
 
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer" id="contato">
-  <div class="container">
-    <p><strong>BRsys</strong> — soluções digitais e orientação de sistemas para negócios.</p>
+<footer class="site-footer" id="contato">
+  <div class="container footer-inner">
+    <p><strong>BRsys</strong> — soluções digitais e orientação de sistemas.</p>
     <p>WhatsApp: +55 13 99740-8157</p>
   </div>
 </footer>
+
+<script>
+  document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+  });
+</script>
 
 </body>
 </html>
