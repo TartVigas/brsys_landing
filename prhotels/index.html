@@ -4,185 +4,220 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>PMS Hoteleiro Completo | Gestão Profissional para Hotéis | BRsys</title>
+  <title>PMS Hoteleiro Completo | BRsys</title>
+  <meta name="description" content="Sistema PMS hoteleiro completo para reservas, recepção, governança, financeiro e SPA & Wellness. A BRsys orienta a escolha certa para seu hotel." />
 
-  <meta name="description" content="Sistema PMS hoteleiro completo para hotéis, resorts e operações com SPA & Wellness. Controle reservas, recepção, governança e financeiro em um único sistema." />
+  <link rel="stylesheet" href="/css/app.css">
 
-  <link rel="canonical" href="https://www.brsys.com.br/prhotels/" />
+  <style>
+    /* === RESET LEVE === */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: #0b1020;
+      color: #e5e7eb;
+    }
 
-  <!-- CSS global -->
-  <link rel="stylesheet" href="/css/style.css" />
+    a { color: inherit; text-decoration: none; }
+
+    /* === TOPBAR DARK CLEAN === */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11,16,32,0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar nav a {
+      margin-left: 24px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .topbar nav a:hover { opacity: 1; }
+
+    /* === HERO === */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #cbd5f5;
+      max-width: 520px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg,#14b8a6,#06b6d4);
+      color: #022c22;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    /* === MOCKUP === */
+    .mockup {
+      position: relative;
+      max-width: 520px;
+    }
+
+    .mockup img {
+      width: 100%;
+      height: auto;
+      max-height: 340px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      background: #fff;
+    }
+
+    /* === SEÇÕES === */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 32px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .feature img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      margin: 12px 0 8px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #c7d2fe;
+      line-height: 1.5;
+    }
+
+    /* === RESPONSIVO === */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .mockup {
+        max-width: 100%;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <a href="/" class="logo">BRsys</a>
-      <nav class="nav">
-        <a href="/#servicos">Serviços</a>
-        <a href="/#solucoes">Soluções</a>
-        <a href="/#contato">Contato</a>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <strong>BRsys</strong>
+      <nav>
+        <a href="/">Serviços</a>
+        <a href="/">Soluções</a>
+        <a href="/">Contato</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero hero-dark">
-    <div class="container">
+  <main class="hero">
+    <div>
       <h1>Sistema PMS Hoteleiro Completo</h1>
-
-      <p class="hero-subtitle">
-        Gestão profissional para reservas, recepção, governança, financeiro
-        e operações com <strong>SPA & Wellness</strong>.
-        <br />
-        A <strong>BRsys</strong> orienta a escolha da solução certa para o seu hotel.
+      <p>
+        Gestão profissional para reservas, recepção, governança, financeiro e
+        operações com <strong>SPA & Wellness</strong>.
+        <br><br>
+        A BRsys orienta a escolha da solução certa para o seu hotel.
       </p>
-
-      <a
-        href="https://wa.me/5513997408157"
-        class="btn-primary"
-        target="_blank"
-      >
+      <a class="cta" href="https://wa.me/5513997408157" target="_blank">
         Falar com um especialista
       </a>
     </div>
-  </section>
 
-  <!-- PARA QUEM É -->
-  <section class="section">
-    <div class="container">
-      <h2>Para quem esse PMS é indicado?</h2>
-
-      <ul class="feature-list">
-        <li>Hotéis de médio e grande porte</li>
-        <li>Resorts e empreendimentos turísticos</li>
-        <li>Hotéis com SPA, Wellness ou eventos</li>
-        <li>Operações que precisam de controle total e integrado</li>
-      </ul>
-
-      <a
-        href="https://wa.me/5513997408157"
-        class="btn-outline"
-        target="_blank"
-      >
-        Quero saber se é ideal para meu hotel
-      </a>
+    <div class="mockup">
+      <img src="/img/mockups/prhotels/dashboard.webp" alt="Dashboard PMS Hoteleiro">
     </div>
-  </section>
+  </main>
 
-  <!-- MOCKUPS DO SISTEMA -->
-  <section class="section section-dark">
-    <div class="container">
+  <!-- FEATURES -->
+  <section>
+    <h2>Principais módulos do sistema</h2>
 
-      <h2>Veja o sistema funcionando na prática</h2>
-      <p class="section-subtitle">
-        Interface profissional, clara e pensada para a operação real do hotel.
-      </p>
+    <div class="features">
+      <div class="feature">
+        <img src="/img/mockups/prhotels/reservas.webp" alt="Mapa de Reservas">
+        <h3>Reservas & Recepção</h3>
+        <p>Mapa de reservas visual, controle de check-in, canais e pagamentos antecipados.</p>
+      </div>
 
-      <div class="mockup-grid">
+      <div class="feature">
+        <img src="/img/mockups/prhotels/governanca.webp" alt="Governança Hoteleira">
+        <h3>Governança & Limpeza</h3>
+        <p>Status das suítes, tarefas automáticas, manutenção e controle operacional.</p>
+      </div>
 
-        <!-- DASHBOARD -->
-        <div class="mockup-item">
-          <img
-            src="/img/mockups/prhotels/dashboard.webp"
-            alt="Dashboard do PMS Hoteleiro com indicadores de ocupação, ADR e receita"
-            loading="lazy"
-          />
-          <h3>Dashboard Gerencial</h3>
-          <p>
-            Indicadores claros de ocupação, ADR, RevPAR, receitas
-            e visão geral da operação.
-          </p>
-        </div>
-
-        <!-- RESERVAS -->
-        <div class="mockup-item">
-          <img
-            src="/img/mockups/prhotels/reservas.webp"
-            alt="Mapa de reservas do PMS hoteleiro com controle por datas e acomodações"
-            loading="lazy"
-          />
-          <h3>Mapa de Reservas</h3>
-          <p>
-            Controle visual de reservas, disponibilidade,
-            check-ins e check-outs por período.
-          </p>
-        </div>
-
-        <!-- GOVERNANÇA -->
-        <div class="mockup-item">
-          <img
-            src="/img/mockups/prhotels/governanca.webp"
-            alt="Gestão de governança hoteleira com status de limpeza e manutenção"
-            loading="lazy"
-          />
-          <h3>Governança & Limpeza</h3>
-          <p>
-            Status das suítes em tempo real:
-            limpo, sujo, ocupado, manutenção e bloqueios.
-          </p>
-        </div>
-
+      <div class="feature">
+        <img src="/img/mockups/prhotels/dashboard.webp" alt="Indicadores Hoteleiros">
+        <h3>Indicadores Gerenciais</h3>
+        <p>Ocupação, ADR, RevPAR e relatórios estratégicos para tomada de decisão.</p>
       </div>
     </div>
   </section>
-
-  <!-- O QUE ENTREGA -->
-  <section class="section">
-    <div class="container">
-      <h2>O que esse sistema entrega na prática</h2>
-
-      <div class="feature-grid">
-        <div>
-          <h4>Reservas & Acomodações</h4>
-          <p>Calendário inteligente, tarifas flexíveis e controle total de disponibilidade.</p>
-        </div>
-
-        <div>
-          <h4>Recepção Moderna</h4>
-          <p>Check-in e check-out ágil, controle de hóspedes e contas.</p>
-        </div>
-
-        <div>
-          <h4>Financeiro Integrado</h4>
-          <p>Receitas, consumos, relatórios e visão clara do faturamento.</p>
-        </div>
-
-        <div>
-          <h4>SPA & Wellness</h4>
-          <p>Gestão integrada de serviços, agenda, atendimentos e consumo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="section section-cta">
-    <div class="container">
-      <h2>Evite escolher o PMS errado para o seu hotel</h2>
-      <p>
-        A BRsys analisa sua operação e orienta a melhor solução,
-        sem promessas irreais.
-      </p>
-
-      <a
-        href="https://wa.me/5513997408157"
-        class="btn-primary"
-        target="_blank"
-      >
-        Falar agora no WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 BRsys. Todos os direitos reservados.</p>
-    </div>
-  </footer>
 
 </body>
 </html>
