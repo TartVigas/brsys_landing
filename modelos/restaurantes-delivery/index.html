@@ -6,9 +6,9 @@
 
   <title>Modelo Restaurante & Delivery • BRsys Sites</title>
 
-  <!-- SEO -->
+  <!-- SEO (por ramo / genérico) -->
   <meta name="description"
-    content="Modelo profissional de site para Restaurantes & Delivery desenvolvido pela BRsys Sites. Moderno, rápido e ideal para cardápio digital e pedidos por WhatsApp.">
+    content="Modelo premium de site para Restaurante & Delivery desenvolvido pela BRsys Sites. Rápido, moderno e ideal para cardápio digital com pedidos direto no WhatsApp.">
 
   <style>
     :root {
@@ -22,10 +22,7 @@
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -34,10 +31,7 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* HEADER */
     .topbar {
@@ -53,15 +47,8 @@
       z-index: 50;
     }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.3rem;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
+    .logo { font-weight: 700; font-size: 1.3rem; white-space: nowrap; }
+    .logo span { color: var(--primary); }
 
     .top-nav {
       display: flex;
@@ -80,21 +67,14 @@
     .top-nav a::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
       background: var(--primary);
       transition: width 0.25s ease;
     }
 
-    .top-nav a:hover::after {
-      width: 100%;
-    }
-
-    .top-nav a:hover {
-      color: var(--text);
-    }
+    .top-nav a:hover::after { width: 100%; }
+    .top-nav a:hover { color: var(--text); }
 
     .link-voltar {
       padding: 8px 16px;
@@ -107,22 +87,10 @@
     }
 
     @media (max-width: 768px) {
-      .topbar {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-
-      .logo {
-        justify-self: flex-start;
-      }
-
-      .link-voltar {
-        justify-self: flex-end;
-      }
-
-      .top-nav {
-        justify-content: center;
-      }
+      .topbar { grid-template-columns: 1fr; justify-items: center; }
+      .logo { justify-self: flex-start; }
+      .link-voltar { justify-self: flex-end; }
+      .top-nav { justify-content: center; }
     }
 
     /* HERO */
@@ -155,9 +123,7 @@
       z-index: 2;
     }
 
-    .hero-left {
-      max-width: 520px;
-    }
+    .hero-left { max-width: 560px; }
 
     .hero-left h1 {
       font-size: clamp(2.4rem, 4vw, 3.2rem);
@@ -206,19 +172,9 @@
       margin: 0 auto;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-    }
+    .section-header { text-align: center; margin-bottom: 40px; }
+    .section-title { font-size: 2rem; margin-bottom: 8px; }
+    .section-subtitle { color: var(--muted); }
 
     /* DESTAQUES */
     .highlights {
@@ -234,26 +190,12 @@
       box-shadow: var(--shadow);
     }
 
-    .highlight-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    .highlight-card img { width: 100%; height: auto; display: block; }
 
-    .highlight-card-body {
-      padding: 18px 20px;
-    }
+    .highlight-card-body { padding: 18px 20px; }
 
-    .highlight-card h3 {
-      margin: 0 0 6px;
-      font-size: 1.15rem;
-    }
-
-    .highlight-card p {
-      margin: 0;
-      font-size: .9rem;
-      color: var(--muted);
-    }
+    .highlight-card h3 { margin: 0 0 6px; font-size: 1.15rem; }
+    .highlight-card p { margin: 0; font-size: .9rem; color: var(--muted); }
 
     /* CARDÁPIO */
     .menu-grid {
@@ -270,20 +212,11 @@
       box-shadow: var(--shadow);
     }
 
-    .menu-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    .menu-card img { width: 100%; height: auto; display: block; }
 
-    .menu-card-body {
-      padding: 16px 18px 20px;
-    }
+    .menu-card-body { padding: 16px 18px 20px; }
 
-    .menu-card h3 {
-      margin: 4px 0;
-      font-size: 1.05rem;
-    }
+    .menu-card h3 { margin: 4px 0; font-size: 1.05rem; }
 
     .menu-meta {
       display: flex;
@@ -293,10 +226,7 @@
       font-size: .9rem;
     }
 
-    .menu-price {
-      color: var(--primary);
-      font-weight: 600;
-    }
+    .menu-price { color: var(--primary); font-weight: 600; }
 
     .btn-menu {
       padding: 8px 14px;
@@ -323,36 +253,15 @@
       border: 1px solid rgba(148,163,184,0.18);
     }
 
-    .painel-card h3 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-
-    .painel-card p {
-      margin: 0;
-      font-size: .9rem;
-      color: var(--muted);
-    }
+    .painel-card h3 { margin: 0 0 6px; font-size: 1rem; }
+    .painel-card p { margin: 0; font-size: .9rem; color: var(--muted); }
 
     /* SOBRE */
-    .sobre {
-      text-align: center;
-      max-width: 850px;
-      margin: 0 auto 40px;
-    }
-
-    .sobre p {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.02rem;
-    }
+    .sobre { text-align: center; max-width: 850px; margin: 0 auto 40px; }
+    .sobre p { color: var(--muted); line-height: 1.6; font-size: 1.02rem; }
 
     /* HORÁRIOS */
-    .horarios {
-      max-width: 500px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
+    .horarios { max-width: 500px; margin: 0 auto 40px; text-align: center; }
 
     .horarios-table {
       background: var(--bg-card);
@@ -384,29 +293,22 @@
       box-shadow: var(--shadow);
     }
 
-    .processo-card h3 {
-      margin-bottom: 6px;
-    }
+    .processo-card h3 { margin-bottom: 6px; }
+    .processo-card p { color: var(--muted); font-size: .9rem; }
 
-    .processo-card p {
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    /* MAPA */
-    .mapa {
-      width: 100%;
-      height: 350px;
+    /* LOCALIZAÇÃO (genérico) */
+    .local-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-card);
       border-radius: 16px;
-      overflow: hidden;
+      padding: 22px;
       box-shadow: var(--shadow);
+      border: 1px solid rgba(148,163,184,0.18);
+      text-align: center;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    .local-box p { margin: 8px 0 0; color: var(--muted); line-height: 1.6; }
 
     /* FOOTER */
     footer {
@@ -447,7 +349,8 @@
         <p>Cardápio digital, foco em delivery e botão direto para o WhatsApp.</p>
 
         <div class="hero-actions">
-          <a href="https://wa.me/5513997408157" target="_blank" class="btn-whatsapp">💬 Falar no WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20o%20modelo%20Restaurante%20%26%20Delivery%20da%20BRsys%20Sites"
+             target="_blank" class="btn-whatsapp">💬 Falar no WhatsApp</a>
           <a href="#cardapio" class="btn-outline">Ver cardápio demonstrativo</a>
         </div>
       </div>
@@ -462,7 +365,6 @@
     </div>
 
     <div class="highlights">
-
       <article class="highlight-card">
         <img src="/img/destaque-prato-chef.jpg" alt="Prato do Chef">
         <div class="highlight-card-body">
@@ -494,7 +396,6 @@
           <p>Espaço para mostrar pratos leves, saladas e opções vegetarianas/veganas.</p>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -506,7 +407,6 @@
     </div>
 
     <div class="menu-grid">
-
       <article class="menu-card">
         <img src="/img/prato-macarrao.jpg" alt="Macarrão Artesanal">
         <div class="menu-card-body">
@@ -515,8 +415,8 @@
             <span>Serve 1 pessoa</span>
             <span class="menu-price">R$ 32,00</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarrão%20Artesanal" target="_blank"
-            class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Macarr%C3%A3o%20Artesanal"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
@@ -528,9 +428,8 @@
             <span>Pão brioche + 180g carne</span>
             <span class="menu-price">R$ 28,00</span>
           </div>
-
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hambúrguer%20Premium" target="_blank"
-            class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Hamb%C3%BArguer%20Premium"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
@@ -542,8 +441,8 @@
             <span>Folhas frescas + crocantes</span>
             <span class="menu-price">R$ 22,00</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit" target="_blank"
-            class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20a%20Salada%20Fit"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
 
@@ -555,11 +454,10 @@
             <span>Prato especial + bebida gelada</span>
             <span class="menu-price">R$ 39,90</span>
           </div>
-          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida" target="_blank"
-            class="btn-menu">Pedir pelo WhatsApp</a>
+          <a href="https://wa.me/5513997408157?text=Quero%20pedir%20o%20Combo%20com%20Bebida"
+             target="_blank" class="btn-menu">Pedir pelo WhatsApp</a>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -567,7 +465,7 @@
   <section class="section" id="painel-brsys">
     <div class="section-header">
       <h2 class="section-title">Tecnologia BRsys por trás do seu site</h2>
-      <p class="section-subtitle">Performance, SEO e segurança pensados para transformar seu site em máquina de pedidos.</p>
+      <p class="section-subtitle">Performance, SEO e segurança para transformar seu site em máquina de pedidos.</p>
     </div>
 
     <div class="painel-grid">
@@ -580,12 +478,12 @@
         <p>Seu cardápio perfeito em qualquer tela: celular, tablet ou computador.</p>
       </article>
       <article class="painel-card">
-        <h3>🔍 SEO Local</h3>
-        <p>Estrutura preparada para ranquear melhor em buscas como “restaurante em Peruíbe”.</p>
+        <h3>🔍 SEO por ramo</h3>
+        <p>Estrutura preparada para buscas como “restaurante delivery”, “cardápio online” e “pedir no WhatsApp”.</p>
       </article>
       <article class="painel-card">
         <h3>🔒 Segurança</h3>
-        <p>Conexão segura (HTTPS) e boas práticas para proteger os dados do seu negócio.</p>
+        <p>Conexão segura (HTTPS) e boas práticas para proteger o site do seu negócio.</p>
       </article>
       <article class="painel-card">
         <h3>☁ Hospedagem Profissional</h3>
@@ -598,19 +496,18 @@
     </div>
   </section>
 
-  <!-- SOBRE O RESTAURANTE -->
+  <!-- SOBRE -->
   <section class="section" id="sobre">
     <div class="sobre">
       <h2 class="section-title">Sobre o Restaurante</h2>
       <p>
-        Um espaço dedicado ao sabor, ao atendimento de qualidade e à experiência gastronômica completa. Este modelo é
-        demonstrativo, mas mostra como o site do seu restaurante pode ficar moderno, rápido e perfeito para receber
-        pedidos todos os dias.
+        Este modelo é demonstrativo, mas mostra como o site do seu restaurante pode ficar moderno, rápido e perfeito para
+        receber pedidos todos os dias — com cardápio digital e WhatsApp em destaque.
       </p>
     </div>
   </section>
 
-  <!-- HORÁRIO DE FUNCIONAMENTO -->
+  <!-- HORÁRIOS -->
   <section class="section" id="horarios">
     <div class="section-header">
       <h2 class="section-title">Horário de Funcionamento</h2>
@@ -626,7 +523,7 @@
     </div>
   </section>
 
-  <!-- COMO FUNCIONA O DELIVERY -->
+  <!-- DELIVERY -->
   <section class="section" id="delivery">
     <div class="section-header">
       <h2 class="section-title">Como funciona o Delivery</h2>
@@ -653,21 +550,22 @@
     </div>
   </section>
 
-  <!-- MAPA -->
+  <!-- LOCALIZAÇÃO (genérico) -->
   <section class="section" id="localizacao">
     <div class="section-header">
       <h2 class="section-title">Localização</h2>
-      <p class="section-subtitle">Exemplo focado no litoral paulista. No projeto real, ajustamos para o endereço do cliente.</p>
+      <p class="section-subtitle">No projeto real, configuramos o mapa e o endereço do seu estabelecimento.</p>
     </div>
 
-    <div class="mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.392969965663!2d-46.9984!3d-24.322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dbf8b0f6e0c0b1%3A0x4c6f2ca2c1a!2sPeru%C3%ADbe%20-%20SP!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="local-box">
+      <strong>📍 Endereço do Restaurante</strong>
+      <p>
+        Esta área é demonstrativa. Quando o site for publicado para o seu negócio, colocamos o endereço real, link do Google Maps
+        e botão “Como chegar”.
+      </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     Modelo demonstrativo criado pela <strong>BRsys Sites</strong>.
   </footer>
