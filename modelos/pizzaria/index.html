@@ -1,1 +1,1160 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Site para Pizzaria com Pedidos no WhatsApp | BRsys</title>
+  <meta name="description" content="Modelo premium de site para pizzarias com cardápio digital, pedidos no WhatsApp e foco em vendas diretas — sem aplicativos e sem comissão." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical (ajuste para seu domínio real se quiser) -->
+  <link rel="canonical" href="https://brsys.com.br/modelos/pizzaria/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Site para Pizzaria com Pedidos no WhatsApp | BRsys" />
+  <meta property="og:description" content="Modelo premium de site para pizzarias com cardápio digital e pedidos diretos no WhatsApp. Foco em conversão e vendas diretas." />
+  <meta property="og:url" content="https://brsys.com.br/modelos/pizzaria/" />
+  <meta property="og:image" content="https://brsys.com.br/img/pizzaria/hero-pizzaria.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Site para Pizzaria com Pedidos no WhatsApp | BRsys" />
+  <meta name="twitter:description" content="Cardápio digital + pedido no WhatsApp. Modelo premium BRsys para pizzarias." />
+  <meta name="twitter:image" content="https://brsys.com.br/img/pizzaria/hero-pizzaria.jpg" />
+
+  <!-- JSON-LD (Template / Serviço) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Modelo Pizzaria • BRsys Sites",
+    "description":"Modelo premium de site para pizzarias com cardápio digital e pedidos no WhatsApp.",
+    "inLanguage":"pt-BR",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"BRsys",
+      "url":"https://brsys.com.br/"
+    }
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       BRsys • Template Premium (Pizzaria)
+       Dark/Clean • Grid/Glow • Glass • Cards • Conversão
+       ============================================================ */
+
+    :root { color-scheme: dark; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x:hidden;
+    }
+
+    /* ===== Theme tokens ===== */
+    html[data-theme="dark"]{
+      color-scheme: dark;
+      --bg: #071116;
+      --panel: rgba(9, 22, 28, .68);
+      --panel2: rgba(10, 25, 32, .55);
+      --stroke: rgba(255,255,255,.08);
+      --stroke2: rgba(255,255,255,.10);
+      --text: #eaf3f7;
+      --muted: rgba(234,243,247,.72);
+      --muted2: rgba(234,243,247,.55);
+      --teal: #24e6c3;
+      --teal2:#14c8a8;
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --grid: rgba(255,255,255,.06);
+      --good: #22c55e;
+      --warn: #f59e0b;
+      --danger:#ef4444;
+    }
+
+    html[data-theme="clean"]{
+      color-scheme: light;
+      --bg: #eaf5f6;
+      --panel: rgba(255,255,255,.65);
+      --panel2: rgba(255,255,255,.55);
+      --stroke: rgba(10,20,28,.10);
+      --stroke2: rgba(10,20,28,.12);
+      --text: #0a141a;
+      --muted: rgba(10,20,26,.70);
+      --muted2: rgba(10,20,26,.55);
+      --teal: #18c7a8;
+      --teal2:#11b29a;
+      --shadow: 0 18px 45px rgba(10,20,28,.12);
+      --grid: rgba(10,20,28,.07);
+      --good: #16a34a;
+      --warn: #d97706;
+      --danger:#dc2626;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* ===== Background glow + grid ===== */
+    .bg{
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(36,230,195,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(36,230,195,.10), transparent 65%);
+    }
+    html[data-theme="clean"] .bg{
+      background:
+        radial-gradient(900px 500px at 18% 22%, rgba(24,199,168,.18), transparent 55%),
+        radial-gradient(650px 420px at 70% 26%, rgba(24,199,168,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 80%, rgba(24,199,168,.10), transparent 65%);
+    }
+    .grid{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 52px 52px;
+      opacity: .55;
+      mask-image: radial-gradient(circle at 30% 35%, black 0 55%, transparent 78%);
+    }
+
+    /* ===== Layout ===== */
+    .wrap{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 16px 86px;
+    }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 10px;
+      border-radius: 18px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      margin-top: 10px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 260px;
+    }
+    .logo{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(36,230,195,.35), transparent 55%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+      flex: 0 0 auto;
+    }
+    .logo b{ font-size: 16px; letter-spacing:.4px; }
+    .brand-txt{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .brand-txt strong{ font-size: 14px; letter-spacing:.2px; }
+    .brand-txt span{ font-size: 12px; color: var(--muted2); }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 14px;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+    }
+    .nav a{
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: border-color .2s ease, color .2s ease, background .2s ease;
+      user-select:none;
+    }
+    .nav a:hover{
+      color: var(--text);
+      border-color: rgba(36,230,195,.25);
+      background: rgba(36,230,195,.08);
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+
+    .icon-btn, .cta{
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+      color: var(--text);
+      transition: transform .08s ease, border-color .2s ease, background .2s ease;
+      user-select:none;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+    }
+    .icon-btn{
+      width: 44px;
+      height: 44px;
+      justify-content:center;
+      font-size: 16px;
+    }
+    .icon-btn:hover{ border-color: rgba(36,230,195,.35); }
+    .icon-btn:active{ transform: scale(.98); }
+
+    .cta{
+      padding: 12px 14px;
+      font-weight: 900;
+      letter-spacing:.2px;
+      background:
+        radial-gradient(140px 80px at 25% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      border-color: rgba(36,230,195,.30);
+    }
+    .cta:hover{ border-color: rgba(36,230,195,.55); }
+    .cta:active{ transform: scale(.99); }
+    .cta .arrow{ opacity:.9; }
+
+    @media (max-width: 980px){
+      .topbar{ flex-wrap: wrap; justify-content:space-between; }
+      .brand{ min-width: auto; }
+      .nav{ justify-content:flex-start; width: 100%; }
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      margin-top: 14px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("/img/pizzaria/hero-pizzaria.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: .42;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 480px at 20% 20%, rgba(36,230,195,.18), transparent 60%),
+        linear-gradient(90deg, rgba(7,17,22,.92), rgba(7,17,22,.55), rgba(7,17,22,.90));
+      pointer-events:none;
+    }
+
+    html[data-theme="clean"] .hero::after{
+      background:
+        radial-gradient(900px 480px at 20% 20%, rgba(24,199,168,.18), transparent 60%),
+        linear-gradient(90deg, rgba(234,245,246,.92), rgba(234,245,246,.55), rgba(234,245,246,.90));
+    }
+
+    .hero-inner{
+      position: relative;
+      z-index: 2;
+      padding: 26px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: 1fr; }
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(36,230,195,.10);
+      border: 1px solid rgba(36,230,195,.22);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+    .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(36,230,195,.12);
+    }
+
+    h1{
+      margin: 14px 0 12px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -0.9px;
+    }
+    .lead{
+      margin: 0 0 16px;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 66ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      align-items:center;
+    }
+
+    .btn{
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text);
+      padding: 12px 14px;
+      font-weight: 900;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease, border-color .2s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ border-color: rgba(36,230,195,.28); }
+    .btn:active{ transform: scale(.99); }
+
+    .btn-primary{
+      background:
+        radial-gradient(180px 100px at 20% 30%, rgba(36,230,195,.24), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.22), rgba(36,230,195,.10));
+      border-color: rgba(36,230,195,.30);
+    }
+    .btn-primary:hover{ border-color: rgba(36,230,195,.55); }
+
+    .micro{
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted2);
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .micro b{ color: var(--text); font-weight: 950; }
+    .sep{ opacity:.55; }
+
+    /* Right hero card */
+    .hero-card{
+      border-radius: 20px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+    html[data-theme="clean"] .hero-card{ background: rgba(255,255,255,.60); }
+
+    .card-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+    .card-head strong{ font-size: 13px; letter-spacing:.2px; }
+    .card-head span{ font-size: 12px; color: var(--muted2); }
+
+    .seg{
+      border-radius: 16px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 12px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      margin-top: 10px;
+    }
+    .seg:first-child{ margin-top: 0; }
+    html[data-theme="clean"] .seg{ background: rgba(255,255,255,.45); }
+
+    .badge{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(36,230,195,.35);
+      background: rgba(36,230,195,.10);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+    .seg h3{
+      margin: 0;
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .seg p{
+      margin: 4px 0 8px;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 850;
+    }
+
+    .hero-card .cta-mini{
+      margin-top: 12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--stroke);
+    }
+    .hero-card .cta-mini strong{ display:block; font-size: 13px; margin-bottom: 4px; }
+    .hero-card .cta-mini small{ display:block; font-size: 12px; color: var(--muted2); }
+
+    .mini-cta{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(36,230,195,.30);
+      background:
+        radial-gradient(140px 70px at 30% 30%, rgba(36,230,195,.22), transparent 60%),
+        linear-gradient(135deg, rgba(36,230,195,.18), rgba(36,230,195,.08));
+      font-weight: 950;
+      text-decoration:none;
+      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      white-space:nowrap;
+      box-shadow: var(--shadow);
+    }
+    .mini-cta:active{ transform: scale(.99); }
+
+    /* ===== Sections ===== */
+    .section{
+      margin-top: 14px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .section-inner{ padding: 22px; }
+
+    .section-title{
+      margin: 0 0 6px;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+    .section-sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 80ch;
+    }
+
+    /* Pain grid */
+    .pain{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){ .pain{ grid-template-columns: 1fr; } }
+
+    .pain-box{
+      border-radius: 20px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+    html[data-theme="clean"] .pain-box{ background: rgba(255,255,255,.45); }
+
+    .pain-list{
+      display:grid;
+      gap: 10px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .pain-list li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill-small{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(36,230,195,.22);
+      background: rgba(36,230,195,.08);
+      font-size: 12px;
+      color: var(--muted);
+      width: fit-content;
+      margin-top: 10px;
+    }
+
+    /* Highlights cards */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .cardx{
+      grid-column: span 3;
+      border-radius: 20px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      min-height: 260px;
+    }
+    html[data-theme="clean"] .cardx{ background: rgba(255,255,255,.55); }
+
+    .cardx img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .cardx .body{
+      padding: 12px 14px 14px;
+    }
+    .cardx h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+      letter-spacing:.1px;
+    }
+    .cardx p{
+      margin: 0;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    @media (max-width: 980px){ .cardx{ grid-column: span 6; } }
+    @media (max-width: 560px){ .cardx{ grid-column: span 12; } }
+
+    /* Menu cards */
+    .menu{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .menu-item{
+      grid-column: span 3;
+      border-radius: 20px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="clean"] .menu-item{ background: rgba(255,255,255,.55); }
+
+    .menu-item img{
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+    .menu-body{ padding: 12px 14px 14px; }
+    .menu-body h3{ margin: 0 0 6px; font-size: 14px; }
+    .menu-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color: var(--muted2);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .price{
+      color: var(--teal);
+      font-weight: 950;
+      letter-spacing: .2px;
+    }
+    .btn-wa{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(34,197,94,.28);
+      background:
+        radial-gradient(160px 70px at 20% 30%, rgba(34,197,94,.22), transparent 60%),
+        linear-gradient(135deg, rgba(34,197,94,.18), rgba(34,197,94,.08));
+      font-weight: 950;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn-wa:hover{ border-color: rgba(34,197,94,.55); }
+    .btn-wa:active{ transform: scale(.99); }
+
+    @media (max-width: 980px){ .menu-item{ grid-column: span 6; } }
+    @media (max-width: 560px){ .menu-item{ grid-column: span 12; } }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .step{
+      grid-column: span 3;
+      border-radius: 20px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="clean"] .step{ background: rgba(255,255,255,.55); }
+
+    .step b{
+      display:inline-grid;
+      place-items:center;
+      width: 28px; height: 28px;
+      border-radius: 12px;
+      border: 1px solid rgba(36,230,195,.30);
+      background: rgba(36,230,195,.10);
+      margin-bottom: 8px;
+      font-weight: 950;
+    }
+    .step h3{ margin: 0 0 6px; font-size: 14px; }
+    .step p{ margin: 0; color: var(--muted2); font-size: 12px; }
+    @media (max-width: 980px){ .step{ grid-column: span 6; } }
+    @media (max-width: 560px){ .step{ grid-column: span 12; } }
+
+    /* Tech */
+    .tech{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .tcard{
+      grid-column: span 4;
+      border-radius: 20px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    html[data-theme="clean"] .tcard{ background: rgba(255,255,255,.55); }
+
+    .tcard h3{ margin: 0 0 6px; font-size: 14px; }
+    .tcard p{ margin: 0; color: var(--muted2); font-size: 12px; }
+    @media (max-width: 980px){ .tcard{ grid-column: span 6; } }
+    @media (max-width: 560px){ .tcard{ grid-column: span 12; } }
+
+    /* Footer / CTA Final */
+    .final{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      border-top: 1px solid var(--stroke);
+      margin-top: 14px;
+    }
+    .final strong{ font-size: 14px; }
+    .final span{ font-size: 12px; color: var(--muted2); }
+
+    footer{
+      margin-top: 14px;
+      padding: 18px 4px 0;
+      text-align:center;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(36,230,195,.35);
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+
+  <div class="wrap">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><b>B</b></div>
+        <div class="brand-txt">
+          <strong>BRsys Sites</strong>
+          <span>Template premium por ramo • foco em pedido no WhatsApp</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegação do modelo">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#brsys">BRsys</a>
+      </nav>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="btnTheme" type="button" aria-label="Alternar tema">🌙</button>
+        <a class="cta" id="ctaTop" href="#" rel="noopener">
+          Falar no WhatsApp <span class="arrow">→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero do modelo pizzaria">
+      <div class="hero-inner">
+        <div>
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Modelo premium para pizzarias (venda direta)</span>
+          </div>
+
+          <h1>Sua pizzaria aberta. O pedido chega direto no WhatsApp.</h1>
+
+          <p class="lead">
+            Cardápio digital, fotos consistentes e botões prontos para o cliente pedir em 1 clique —
+            <b>sem aplicativo, sem comissão e sem perda de pedido.</b>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cardapio">Ver cardápio demonstrativo <span>→</span></a>
+            <a class="btn" id="ctaHero" href="#" rel="noopener">Falar sobre este modelo</a>
+          </div>
+
+          <div class="micro">
+            <b>Filtro:</b>
+            <span>atendo dono ou responsável com poder de decisão.</span>
+            <span class="sep">•</span>
+            <span>Entrega rápida (dependendo do material).</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumo do modelo">
+          <div class="card-head">
+            <strong>Resumo do modelo</strong>
+            <span>clareza = confiança</span>
+          </div>
+
+          <div class="seg">
+            <div class="badge">✓</div>
+            <div>
+              <h3>Foco principal</h3>
+              <p>Pedidos diretos (WhatsApp) + cardápio simples</p>
+              <div class="tag">menos comissão • mais margem</div>
+            </div>
+          </div>
+
+          <div class="seg">
+            <div class="badge">✓</div>
+            <div>
+              <h3>Ideal para</h3>
+              <p>Pizzarias, pizzaria + restaurante, delivery e retirada</p>
+              <div class="tag">basta o cliente clicar</div>
+            </div>
+          </div>
+
+          <div class="seg">
+            <div class="badge">✓</div>
+            <div>
+              <h3>Nível</h3>
+              <p>Template Premium BRsys (estrutura de venda)</p>
+              <div class="tag">site que vende</div>
+            </div>
+          </div>
+
+          <div class="cta-mini">
+            <div>
+              <strong>Quer sua pizzaria assim?</strong>
+              <small>veja se faz sentido pro seu caso</small>
+            </div>
+            <a class="mini-cta" id="ctaMini" href="#" rel="noopener">WhatsApp agora <span>→</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DOR REAL / FILTRO -->
+    <section class="section" id="beneficios">
+      <div class="section-inner">
+        <h2 class="section-title">Você já perdeu pedido hoje.</h2>
+        <p class="section-sub">
+          Quando o cliente não acha cardápio, o link quebra ou o botão joga pro Instagram, ele não “espera você responder” —
+          ele vai para a próxima pizzaria.
+        </p>
+
+        <div class="pain">
+          <div class="pain-box">
+            <strong style="display:block; margin-bottom:8px;">O que acontece na vida real:</strong>
+            <ul class="pain-list">
+              <li><span class="badge" style="border-color: rgba(239,68,68,.35); background: rgba(239,68,68,.10);">!</span> Botão “Site” leva para Instagram / Facebook</li>
+              <li><span class="badge" style="border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.10);">!</span> Link não abre / erro / domínio expirado</li>
+              <li><span class="badge" style="border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.10);">!</span> Pedido se perde na conversa (“qual sabor mesmo?”)</li>
+              <li><span class="badge" style="border-color: rgba(239,68,68,.35); background: rgba(239,68,68,.10);">!</span> Cliente desiste antes de você ver a mensagem</li>
+            </ul>
+
+            <div class="pill-small">✅ Este modelo resolve exatamente isso: cardápio + pedido em 1 clique.</div>
+          </div>
+
+          <div class="pain-box">
+            <strong style="display:block; margin-bottom:8px;">O que você ganha:</strong>
+            <ul class="pain-list">
+              <li><span class="badge">✓</span> Pedido chega “pronto” no WhatsApp</li>
+              <li><span class="badge">✓</span> Fotos consistentes (parece uma pizzaria real)</li>
+              <li><span class="badge">✓</span> Site rápido (abre no 4G)</li>
+              <li><span class="badge">✓</span> Estrutura preparada para SEO por ramo</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:12px;">
+              <a class="btn btn-primary" href="#cardapio">Ver cardápio <span>→</span></a>
+              <a class="btn" id="ctaPain" href="#" rel="noopener">Quero minha pizzaria assim</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DESTAQUES (CONSISTÊNCIA VISUAL) -->
+    <section class="section" aria-label="Destaques da pizzaria">
+      <div class="section-inner">
+        <h2 class="section-title">Destaques que vendem (em 10 segundos)</h2>
+        <p class="section-sub">
+          O segredo do “premium” não é só beleza: é consistência. Tudo parece ser da mesma pizzaria — e isso aumenta confiança.
+        </p>
+
+        <div class="cards">
+          <article class="cardx">
+            <img src="/img/pizzaria/destaque-tradicionais.jpg" alt="Pizzas tradicionais da casa">
+            <div class="body">
+              <h3>🍕 Tradicionais & Especiais</h3>
+              <p>Mostre as campeãs de venda e uma “especial da casa” para aumentar ticket.</p>
+            </div>
+          </article>
+
+          <article class="cardx">
+            <img src="/img/pizzaria/destaque-promocao.jpg" alt="Promoção da semana da pizzaria">
+            <div class="body">
+              <h3>🔥 Promoção da Semana</h3>
+              <p>Crie urgência com um combo e um destaque visual (sem parecer panfleto).</p>
+            </div>
+          </article>
+
+          <article class="cardx">
+            <img src="/img/pizzaria/destaque-delivery.jpg" alt="Pizza pronta para delivery">
+            <div class="body">
+              <h3>🛵 Delivery & Retirada</h3>
+              <p>Um site que deixa claro como pedir e como retirar — sem ruído.</p>
+            </div>
+          </article>
+
+          <article class="cardx">
+            <img src="/img/pizzaria/destaque-ambiente.jpg" alt="Ambiente aconchegante da pizzaria">
+            <div class="body">
+              <h3>📸 Confiança visual</h3>
+              <p>Ambiente + pratos no mesmo estilo: o cliente “sente” que é real.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO DIGITAL (NÚCLEO) -->
+    <section class="section" id="cardapio">
+      <div class="section-inner">
+        <h2 class="section-title">Cardápio digital (pedido em 1 clique)</h2>
+        <p class="section-sub">
+          O cliente escolhe a pizza e clica. O WhatsApp abre com a mensagem pronta. Simples e direto.
+        </p>
+
+        <div class="menu">
+          <article class="menu-item">
+            <img src="/img/pizzaria/pizza-calabresa.jpg" alt="Pizza Calabresa">
+            <div class="menu-body">
+              <h3>Pizza Calabresa</h3>
+              <div class="menu-meta">
+                <span>Média • 8 fatias</span>
+                <span class="price">R$ 49,90</span>
+              </div>
+              <a class="btn-wa" data-wa="Quero pedir a Pizza Calabresa 🍕 (média)">Pedir no WhatsApp <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="/img/pizzaria/pizza-portuguesa.jpg" alt="Pizza Portuguesa">
+            <div class="menu-body">
+              <h3>Pizza Portuguesa</h3>
+              <div class="menu-meta">
+                <span>Média • 8 fatias</span>
+                <span class="price">R$ 54,90</span>
+              </div>
+              <a class="btn-wa" data-wa="Quero pedir a Pizza Portuguesa 🍕 (média)">Pedir no WhatsApp <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="/img/pizzaria/pizza-especial.jpg" alt="Pizza Especial da Casa">
+            <div class="menu-body">
+              <h3>Especial da Casa</h3>
+              <div class="menu-meta">
+                <span>Média • 8 fatias</span>
+                <span class="price">R$ 59,90</span>
+              </div>
+              <a class="btn-wa" data-wa="Quero pedir a Pizza Especial da Casa 🍕 (média)">Pedir no WhatsApp <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="/img/pizzaria/combo-pizza-bebida.jpg" alt="Combo Pizza + Bebida">
+            <div class="menu-body">
+              <h3>Combo Pizza + Bebida</h3>
+              <div class="menu-meta">
+                <span>Pizza + refri 2L</span>
+                <span class="price">R$ 69,90</span>
+              </div>
+              <a class="btn-wa" data-wa="Quero o Combo Pizza + Bebida 🥤🍕">Pedir no WhatsApp <span>→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="pill-small" style="margin-top:14px;">
+          ✅ Sem cadastro. Sem app. Sem taxa. O pedido chega claro e rápido.
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="section-inner">
+        <h2 class="section-title">Como funciona (sem fricção)</h2>
+        <p class="section-sub">
+          O modelo é feito para celular, porque é assim que o cliente compra. Ele não quer navegar: ele quer pedir.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <b>1</b>
+            <h3>O cliente entra</h3>
+            <p>Abre rápido, com visual consistente e foco total em pedido.</p>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <h3>Escolhe a pizza</h3>
+            <p>Cardápio simples e direto — sem confusão de informação.</p>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <h3>Clica no WhatsApp</h3>
+            <p>Mensagem pronta: você atende mais rápido e perde menos pedido.</p>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <h3>Você confirma</h3>
+            <p>Pedido claro, com sabor/observação — pronto pra cozinha.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECNOLOGIA / CREDIBILIDADE -->
+    <section class="section" id="brsys">
+      <div class="section-inner">
+        <h2 class="section-title">Tecnologia BRsys por trás do seu site</h2>
+        <p class="section-sub">
+          Performance, SEO por ramo e estrutura pensada para conversão. O objetivo não é “ter site”. É vender.
+        </p>
+
+        <div class="tech">
+          <div class="tcard">
+            <h3>⚡ Performance</h3>
+            <p>Código otimizado e hospedagem moderna focada em velocidade.</p>
+          </div>
+          <div class="tcard">
+            <h3>📱 100% Responsivo</h3>
+            <p>Cardápio perfeito no celular, tablet e computador.</p>
+          </div>
+          <div class="tcard">
+            <h3>🔍 SEO por ramo</h3>
+            <p>Estrutura preparada para buscas como “site para pizzaria” e “cardápio digital”.</p>
+          </div>
+          <div class="tcard">
+            <h3>🔒 Segurança</h3>
+            <p>HTTPS e boas práticas para estabilidade e confiança do cliente.</p>
+          </div>
+          <div class="tcard">
+            <h3>☁ Hospedagem Profissional</h3>
+            <p>Infra em nuvem com alta disponibilidade e atualização contínua.</p>
+          </div>
+          <div class="tcard">
+            <h3>🔧 Pronto para evoluir</h3>
+            <p>Se fizer sentido, dá para integrar formulários e automações — com escopo e preço justo.</p>
+          </div>
+        </div>
+
+        <div class="final">
+          <div>
+            <strong>Quer usar este modelo na sua pizzaria?</strong><br/>
+            <span>Atendimento direto no WhatsApp. Sem enrolação. Escopo fechado.</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" id="ctaFinal" href="#" rel="noopener">Falar no WhatsApp <span>→</span></a>
+            <a class="btn" href="/modelos/">Ver outros modelos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Modelo demonstrativo criado pela <strong>BRsys</strong>. WhatsApp é o canal principal.
+    </footer>
+
+  </div>
+
+  <script>
+    // ============================================================
+    // Tema (auto + toggle) + WhatsApp (links e mensagens)
+    // ============================================================
+    (function(){
+      const PHONE_E164 = "5513997408157"; // +55 13 99740-8157
+      const KEY = "brsys-theme";
+      const html = document.documentElement;
+
+      function prefersDark(){
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+
+      function setTheme(t){
+        html.setAttribute("data-theme", t);
+        try{ localStorage.setItem(KEY, t); }catch(e){}
+        const btn = document.getElementById("btnTheme");
+        if(btn) btn.textContent = (t === "dark") ? "🌙" : "☀️";
+      }
+
+      function initTheme(){
+        let saved = null;
+        try{ saved = localStorage.getItem(KEY); }catch(e){}
+        if(saved === "dark" || saved === "clean") return setTheme(saved);
+        setTheme(prefersDark() ? "dark" : "clean");
+      }
+
+      function waLink(text){
+        const base = "https://wa.me/" + PHONE_E164;
+        const msg = encodeURIComponent(text || "");
+        return msg ? (base + "?text=" + msg) : base;
+      }
+
+      // Mensagem padrão (modelo)
+      const MSG_MODEL = [
+        "Oi! Aqui é o Thiago da BRsys 😊",
+        "",
+        "Vi que você tem uma pizzaria e queria te mostrar um modelo premium focado em pedido direto no WhatsApp.",
+        "A ideia é simples: cardápio digital + botão de pedido em 1 clique (sem app e sem comissão).",
+        "",
+        "Posso te mandar o link e te explicar em 2 minutos?"
+      ].join("\\n");
+
+      function bindHref(id, msg){
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.href = waLink(msg || MSG_MODEL);
+      }
+
+      initTheme();
+      bindHref("ctaTop", MSG_MODEL);
+      bindHref("ctaHero", MSG_MODEL);
+      bindHref("ctaMini", MSG_MODEL);
+      bindHref("ctaPain", MSG_MODEL);
+      bindHref("ctaFinal", MSG_MODEL);
+
+      // Botões de pedir item (cardápio)
+      const itemButtons = document.querySelectorAll("[data-wa]");
+      itemButtons.forEach(btn => {
+        const text = btn.getAttribute("data-wa") || "";
+        btn.setAttribute("href", waLink(text));
+        btn.setAttribute("target", "_blank");
+        btn.setAttribute("rel", "noopener");
+      });
+
+      // Toggle tema
+      const btnTheme = document.getElementById("btnTheme");
+      if(btnTheme){
+        btnTheme.addEventListener("click", () => {
+          const cur = html.getAttribute("data-theme");
+          setTheme(cur === "dark" ? "clean" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
 
