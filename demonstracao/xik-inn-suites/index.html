@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xik Inn Suítes | Pousada em Jaboticatubas – MG | Reserva no WhatsApp</title>
+
+  <meta name="description" content="Xik Inn Suítes em Jaboticatubas (MG). Hospedagem tranquila com café da manhã e reserva direta no WhatsApp. Perfeito para casal e família." />
+  <meta name="keywords" content="Xik Inn Suítes, pousada em Jaboticatubas, suítes Jaboticatubas MG, pousada com café da manhã, reserva WhatsApp" />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Xik Inn Suítes | Jaboticatubas – MG" />
+  <meta property="og:description" content="Hospedagem tranquila com café da manhã. Reserve direto no WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#fbf6ee;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:rgba(17,24,39,.10);
+
+      --wood:#6b4e2e;         /* madeira */
+      --wood-2:#a67c52;       /* madeira clara */
+      --green:#2f6f4e;        /* verde elegante */
+      --green-soft:#eaf3ec;
+
+      --shadow: 0 18px 45px rgba(17,24,39,.10);
+      --radius: 22px;
+      --radius2: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 500px at 80% 15%, rgba(47,111,78,.10), transparent 50%),
+        var(--bg);
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1120px; margin:0 auto; padding:26px 18px 80px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(251,246,238,.75);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar .inner{
+      max-width:1120px; margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:240px;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background:
+        linear-gradient(135deg, rgba(107,78,46,.22), rgba(47,111,78,.14)),
+        #fff;
+      border:1px solid var(--line);
+      display:grid; place-items:center;
+      box-shadow: 0 10px 28px rgba(17,24,39,.08);
+      font-weight:800; letter-spacing:.5px;
+      color:var(--wood);
+    }
+    .brand h1{
+      margin:0; font-size:15px; line-height:1.1;
+      letter-spacing:.2px;
+    }
+    .brand small{display:block; margin-top:2px; color:var(--muted); font-weight:600}
+
+    .nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      border-radius:999px;
+      font-weight:700; font-size:13px;
+      transition:.2s ease;
+    }
+    .pill:hover{transform: translateY(-1px); box-shadow: 0 12px 30px rgba(17,24,39,.10)}
+    .pill.primary{
+      border-color: rgba(47,111,78,.25);
+      background: linear-gradient(135deg, rgba(47,111,78,.12), rgba(166,124,82,.12));
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      padding-top:24px;
+    }
+    .card{
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:26px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
+    .chip{
+      font-size:12px; font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(107,78,46,.18);
+      background: rgba(166,124,82,.10);
+      color: var(--wood);
+    }
+    .hero-left h2{
+      margin:0 0 10px;
+      font-size: 42px;
+      line-height: 1.06;
+      letter-spacing: -0.6px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    }
+    .hero-left p{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.7;
+      max-width: 58ch;
+    }
+    .bullets{
+      display:grid; gap:10px; margin: 16px 0 18px;
+    }
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.75);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px; margin-top:5px;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(47,111,78,.10);
+    }
+    .bullet b{display:block; font-size:13.5px}
+    .bullet span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: #fff;
+      font-weight:800;
+      font-size:14px;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 12px 30px rgba(17,24,39,.10)}
+    .btn.primary{
+      border-color: rgba(47,111,78,.25);
+      background: linear-gradient(135deg, rgba(47,111,78,.18), rgba(166,124,82,.14));
+    }
+    .meta{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .meta b{color:var(--text)}
+    .hero-right{
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .hero-photo{
+      position:relative;
+      flex:1;
+      min-height: 360px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(107,78,46,.18), rgba(47,111,78,.12)),
+        url("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1400&q=70") center/cover no-repeat;
+    }
+    .hero-tag{
+      position:absolute;
+      left:14px; right:14px; bottom:14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.85);
+      border:1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .hero-tag .place b{display:block; font-size:13.5px}
+    .hero-tag .place span{display:block; color:var(--muted); font-size:12.5px; margin-top:2px}
+    .hero-tag .mini{
+      padding:10px 12px; border-radius:999px;
+      border:1px solid rgba(47,111,78,.22);
+      background: rgba(47,111,78,.10);
+      font-weight:900; font-size:13px;
+      white-space:nowrap;
+    }
+
+    /* Sections */
+    section{margin-top:42px}
+    .section-title{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 30px;
+      letter-spacing:-.4px;
+      margin:0 0 6px;
+    }
+    .section-sub{margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.6}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .feature{
+      padding:16px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
+    }
+    .feature h4{margin:0 0 6px; font-size:14px}
+    .feature p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .split{
+      display:grid; grid-template-columns: 1.05fr .95fr;
+      gap:16px; align-items:stretch;
+    }
+    .box{padding:18px}
+    .list{
+      margin:12px 0 0; padding-left:18px;
+      color:var(--muted); font-size:13.5px; line-height:1.7;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap:12px;
+    }
+    .g-big{
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      min-height: 280px;
+      background:
+        linear-gradient(135deg, rgba(107,78,46,.18), rgba(47,111,78,.10)),
+        url("https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&fit=crop&w=1400&q=70") center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+    .g-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .g{
+      border-radius: 18px;
+      border:1px solid var(--line);
+      min-height: 134px;
+      background:#eee center/cover no-repeat;
+      box-shadow: 0 14px 35px rgba(17,24,39,.08);
+    }
+    .g1{background-image:url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=70")}
+    .g2{background-image:url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=70")}
+    .g3{background-image:url("https://images.unsplash.com/photo-1501117716987-c8e1ecb210ff?auto=format&fit=crop&w=1200&q=70")}
+    .g4{background-image:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=70")}
+
+    /* CTA WhatsApp */
+    .reserve{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .steps{
+      display:grid; gap:10px; margin-top:10px;
+    }
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.78);
+    }
+    .num{
+      width:26px; height:26px; border-radius: 10px;
+      display:grid; place-items:center;
+      font-weight:900;
+      border:1px solid rgba(107,78,46,.18);
+      color:var(--wood);
+      background: rgba(166,124,82,.10);
+      flex:none;
+    }
+    .step b{display:block; font-size:13.5px}
+    .step span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    /* Location + FAQ */
+    .location{
+      display:grid; grid-template-columns: 1fr 1.1fr; gap:16px;
+      align-items:stretch;
+    }
+    .map{
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      overflow:hidden;
+      min-height: 340px;
+      background:#fff;
+      box-shadow: var(--shadow);
+    }
+    .map iframe{width:100%; height:100%; border:0}
+
+    details{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      font-size:14px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted); font-size:13.5px; line-height:1.7}
+
+    /* Floating CTA */
+    .float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:50;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .float .fab{
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 999px;
+      border:1px solid rgba(47,111,78,.25);
+      background: linear-gradient(135deg, rgba(47,111,78,.20), rgba(166,124,82,.14));
+      box-shadow: 0 18px 45px rgba(17,24,39,.18);
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .float .fab:hover{transform: translateY(-1px)}
+    .wa-dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(47,111,78,.16);
+    }
+
+    footer{
+      margin-top:44px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    footer b{color:var(--text)}
+    .footlinks{display:flex; gap:10px; flex-wrap:wrap}
+    .footlinks a{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      font-weight:800;
+      color:var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; }
+      .hero-photo{min-height: 320px}
+      .grid3{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .reserve{grid-template-columns:1fr}
+      .location{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .topbar .inner{flex-direction:column; align-items:flex-start}
+      .nav{justify-content:flex-start}
+      .hero-left h2{font-size: 36px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Xik Inn Suítes",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Felicíssimo Cirílo Pinto, 230",
+      "addressLocality": "Jaboticatubas",
+      "addressRegion": "MG",
+      "postalCode": "35830-000",
+      "addressCountry": "BR"
+    },
+    "telephone": "+55 31 8492-3406",
+    "sameAs": ["https://www.instagram.com/xikinnjabo/"]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">XIK</div>
+        <div>
+          <h1>Xik Inn Suítes</h1>
+          <small>Jaboticatubas • MG</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegação">
+        <a class="pill" href="#fotos">Fotos</a>
+        <a class="pill" href="#como-chegar">Como chegar</a>
+        <a class="pill" href="https://www.instagram.com/xikinnjabo/" target="_blank" rel="noopener">Instagram</a>
+        <a class="pill primary" href="#reservar">Reservar no WhatsApp</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero" id="topo">
+      <section class="card hero-left" aria-label="Apresentação">
+        <div class="chips">
+          <span class="chip">Tranquilidade • Conforto</span>
+          <span class="chip">Café da manhã</span>
+          <span class="chip">Casal & Família</span>
+        </div>
+
+        <h2>Xik Inn Suítes em Jaboticatubas</h2>
+        <p>
+          Uma hospedagem com clima acolhedor e toque rústico-elegante para descansar com calma.
+          Reserva direta com a equipe pelo WhatsApp — sem complicação.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Café da manhã</b>
+              <span>Comece o dia bem, com opções simples e cuidadas.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Para casal e família</b>
+              <span>Ambiente tranquilo para descanso e momentos leves.</span>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="dot"></div>
+            <div>
+              <b>Reserva rápida no WhatsApp</b>
+              <span>Você envia datas + número de pessoas. A equipe confirma disponibilidade.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" id="btnHeroWhats" href="#" aria-label="Fazer reserva no WhatsApp">Fazer reserva agora</a>
+          <a class="btn" href="#como-chegar">Ver localização</a>
+          <a class="btn" href="https://www.instagram.com/xikinnjabo/" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+
+        <div class="meta">
+          <b>WhatsApp:</b> (31) 8492-3406 &nbsp;•&nbsp;
+          <b>Endereço:</b> R. Felicíssimo Cirílo Pinto, 230 – Jaboticatubas/MG
+          <br>
+          <span style="opacity:.9">*Demonstração: fotos serão substituídas pelas fotos profissionais do local.</span>
+        </div>
+      </section>
+
+      <aside class="card hero-right" aria-label="Foto de destaque">
+        <div class="hero-photo">
+          <div class="hero-tag">
+            <div class="place">
+              <b>Xik Inn Suítes</b>
+              <span>Jaboticatubas/MG • Reserva direta</span>
+            </div>
+            <a class="mini" href="#como-chegar">Como chegar</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FEATURES -->
+    <section aria-label="Destaques">
+      <h3 class="section-title">Uma estadia simples, gostosa e bem cuidada</h3>
+      <p class="section-sub">
+        Ideal para quem quer tranquilidade e praticidade, com atendimento direto.
+      </p>
+
+      <div class="grid3">
+        <div class="feature">
+          <h4>Ambiente tranquilo</h4>
+          <p>Clima de interior, perfeito para descansar e desacelerar.</p>
+        </div>
+        <div class="feature">
+          <h4>Café da manhã</h4>
+          <p>Opções simples e bem feitas. Confirme detalhes pelo WhatsApp.</p>
+        </div>
+        <div class="feature">
+          <h4>Reserva direta</h4>
+          <p>Você fala com a equipe e combina tudo em poucos minutos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="split" aria-label="Sobre">
+      <div class="card box">
+        <h3 class="section-title" style="margin-bottom:10px">Sobre o Xik Inn</h3>
+        <p class="section-sub" style="margin-bottom:0">
+          A proposta é acolhimento e praticidade: um lugar para dormir bem, tomar um café e seguir o dia com calma.
+          Se você gosta de ambiente tranquilo e atendimento direto, aqui faz sentido.
+        </p>
+        <ul class="list">
+          <li>Hospedagem em Jaboticatubas/MG</li>
+          <li>Aceita casal e família</li>
+          <li>Reserva pelo WhatsApp (datas + nº de pessoas)</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#reservar">Ver como reservar</a>
+          <a class="btn" href="https://www.instagram.com/xikinnjabo/" target="_blank" rel="noopener">Abrir Instagram</a>
+        </div>
+
+        <p class="meta" style="margin-bottom:0">
+          *Valores e disponibilidade sob consulta no WhatsApp.
+        </p>
+      </div>
+
+      <div class="card box" id="cafe">
+        <h3 class="section-title" style="margin-bottom:10px">Café da manhã</h3>
+        <p class="section-sub" style="margin-bottom:10px">
+          Um começo de dia gostoso, com simplicidade bem feita.
+        </p>
+        <div class="feature" style="background:var(--green-soft); border-color: rgba(47,111,78,.18)">
+          <h4 style="color:var(--green)">Dica rápida</h4>
+          <p>Se você me disser as datas e quantas pessoas, a equipe confirma disponibilidade e valores.</p>
+        </div>
+        <ul class="list">
+          <li>Ambiente tranquilo e familiar</li>
+          <li>Opções simples para começar bem o dia</li>
+          <li>Confirme itens e horários no WhatsApp</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="fotos" aria-label="Galeria">
+      <h3 class="section-title">Galeria de fotos</h3>
+      <p class="section-sub">
+        Demonstração com imagens ilustrativas. Ao aprovar, substituímos pelas fotos profissionais do local.
+      </p>
+
+      <div class="gallery">
+        <div class="g-big" aria-label="Foto grande ilustrativa"></div>
+        <div class="g-col" aria-label="Fotos menores ilustrativas">
+          <div class="g g1"></div>
+          <div class="g g2"></div>
+          <div class="g g3"></div>
+          <div class="g g4"></div>
+        </div>
+      </div>
+
+      <p class="meta">
+        Dica: você também pode ver mais fotos no Instagram: <b>@xikinnjabo</b>
+      </p>
+    </section>
+
+    <!-- RESERVE -->
+    <section id="reservar" class="reserve" aria-label="Reserva">
+      <div class="card box">
+        <h3 class="section-title" style="margin-bottom:6px">Reserve em 1 minuto pelo WhatsApp</h3>
+        <p class="section-sub" style="margin-bottom:0">
+          Me diga as datas e a quantidade de pessoas. A equipe responde com disponibilidade e valores.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Envie as datas + nº de pessoas</b>
+              <span>Ex.: “10 a 12/01 • 2 adultos + 1 criança”.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Receba valores e disponibilidade</b>
+              <span>A equipe responde assim que possível.</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Combine tudo direto com a equipe ✅</b>
+              <span>Sem intermediários e sem complicação.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" id="btnReserveWhats" href="#">Reservar no WhatsApp</a>
+          <a class="btn" href="tel:+553184923406">Ligar</a>
+        </div>
+
+        <p class="meta" style="margin-bottom:0">
+          WhatsApp/Telefone: <b>(31) 8492-3406</b>
+        </p>
+      </div>
+
+      <div class="card box">
+        <h3 class="section-title" style="margin-bottom:8px">Pronto para reservar?</h3>
+        <p class="section-sub" style="margin-bottom:12px">
+          Clique no botão e fale com a equipe agora.
+        </p>
+        <div class="feature" style="margin-bottom:12px">
+          <h4>Mensagem sugerida</h4>
+          <p style="margin:0; color:var(--muted); font-size:13.5px; line-height:1.7">
+            “Olá! Gostaria de reservar no Xik Inn Suítes. Datas: __/__/__ a __/__/__. Pessoas: __. Pode me informar valores e disponibilidade?”
+          </p>
+        </div>
+        <a class="btn primary" href="#" id="btnMsgWhats" style="width:100%">Abrir WhatsApp com mensagem</a>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="como-chegar" class="location" aria-label="Localização">
+      <div class="card box">
+        <h3 class="section-title" style="margin-bottom:6px">Localização</h3>
+        <p class="section-sub" style="margin-bottom:12px">
+          Abra o mapa e venha com tranquilidade. Endereço completo abaixo.
+        </p>
+
+        <div class="feature">
+          <h4>Endereço</h4>
+          <p>R. Felicíssimo Cirílo Pinto, 230 — Jaboticatubas, MG — 35830-000</p>
+        </div>
+
+        <div class="cta-row" style="margin-top:12px">
+          <a class="btn primary" id="btnMaps" href="#" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn" href="https://www.instagram.com/xikinnjabo/" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+
+        <p class="meta" style="margin-bottom:0">
+          Dica: depois, podemos ajustar o “pin” exato do local (fica mais profissional).
+        </p>
+      </div>
+
+      <div class="map" aria-label="Mapa">
+        <!-- Mapa genérico por endereço (funciona sem latitude/longitude) -->
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=R.%20Felic%C3%ADssimo%20Cir%C3%ADlo%20Pinto%2C%20230%20-%20Jaboticatubas%20-%20MG%2C%2035830-000&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-label="Dúvidas frequentes">
+      <h3 class="section-title">Dúvidas frequentes</h3>
+      <p class="section-sub">Essas perguntas ajudam muito no SEO (é o tipo de coisa que o Google mostra nas buscas).</p>
+
+      <div style="display:grid; gap:10px">
+        <details>
+          <summary>Como faço a reserva?</summary>
+          <p>É só clicar em “Reservar no WhatsApp”. Você envia as datas e a quantidade de pessoas, e a equipe confirma disponibilidade e valores.</p>
+        </details>
+
+        <details>
+          <summary>Tem café da manhã?</summary>
+          <p>Sim. Os itens e horários podem variar. Confirme detalhes no WhatsApp.</p>
+        </details>
+
+        <details>
+          <summary>Aceita casal e família?</summary>
+          <p>Sim. Você pode reservar para casal ou família. Informe quantas pessoas no WhatsApp para a equipe orientar melhor.</p>
+        </details>
+
+        <details>
+          <summary>Posso ver mais fotos?</summary>
+          <p>Sim. Veja no Instagram: <a href="https://www.instagram.com/xikinnjabo/" target="_blank" rel="noopener"><b>@xikinnjabo</b></a>.</p>
+        </details>
+
+        <details>
+          <summary>Qual o melhor horário para falar?</summary>
+          <p>Você pode chamar no WhatsApp. Se a equipe estiver ocupada, responde assim que possível.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer aria-label="Rodapé">
+      <div>
+        <b>Xik Inn Suítes</b><br>
+        Reservas e informações: (31) 8492-3406<br>
+        Instagram: @xikinnjabo<br>
+        Endereço: R. Felicíssimo Cirílo Pinto, 230 — Jaboticatubas/MG
+      </div>
+
+      <div class="footlinks">
+        <a href="#topo">Topo</a>
+        <a href="#fotos">Fotos</a>
+        <a href="#como-chegar">Como chegar</a>
+        <a href="#reservar">Reservar</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp CTA -->
+  <div class="float" aria-label="Atalho para WhatsApp">
+    <button class="fab" id="fabWhats" type="button">
+      <span class="wa-dot" aria-hidden="true"></span>
+      Reservar
+    </button>
+  </div>
+
+  <script>
+    // ====== Config ======
+    const WHATSAPP_PHONE = "553184923406"; // +55 31 8492-3406
+    const PLACE = "Xik Inn Suítes";
+    const CITY = "Jaboticatubas - MG";
+    const MAPS_QUERY = "R. Felicíssimo Cirílo Pinto, 230 - Jaboticatubas - MG, 35830-000";
+
+    function waLink(text){
+      const base = `https://wa.me/${WHATSAPP_PHONE}`;
+      return `${base}?text=${encodeURIComponent(text)}`;
+    }
+
+    const msgDefault =
+      `Olá! Gostaria de reservar no ${PLACE} (${CITY}). ` +
+      `Datas: __/__/__ a __/__/__. Pessoas: __. ` +
+      `Pode me informar valores e disponibilidade?`;
+
+    const msgShort =
+      `Olá! Quero reservar no ${PLACE}. Datas: __/__/__ a __/__/__. Pessoas: __.`;
+
+    // Buttons
+    const btnHero = document.getElementById("btnHeroWhats");
+    const btnReserve = document.getElementById("btnReserveWhats");
+    const btnMsg = document.getElementById("btnMsgWhats");
+    const fab = document.getElementById("fabWhats");
+    const btnMaps = document.getElementById("btnMaps");
+
+    btnHero.href = waLink(msgShort);
+    btnReserve.href = waLink(msgShort);
+    btnMsg.href = waLink(msgDefault);
+    btnMaps.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`;
+
+    fab.addEventListener("click", () => {
+      window.open(waLink(msgShort), "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
