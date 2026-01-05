@@ -1,337 +1,498 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vila Venina Hospedagem em Itaipuaçu, Maricá | Reservas no WhatsApp</title>
-  <meta name="description" content="Vila Venina Hospedagem em Itaipuaçu (Maricá-RJ). Aconchego, atendimento direto e reservas no WhatsApp. Confira fotos, localização e dúvidas frequentes." />
-  <meta name="robots" content="index,follow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vila Venina Hospedagem em Itaipuaçu, Maricá RJ | Reserve no WhatsApp</title>
+  <meta name="description" content="Vila Venina Hospedagem em Itaipuaçu, Maricá/RJ. Aconchego, café da manhã, piscina e área de descanso. Reserve direto pelo WhatsApp." />
+  <meta name="keywords" content="Vila Venina, hospedagem Itaipuaçu, pousada em Maricá, pousada Itaipuaçu, hospedagem com piscina Maricá, pousada com café da manhã Maricá" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vila Venina Hospedagem | Itaipuaçu, Maricá" />
-  <meta property="og:description" content="Hospedagem aconchegante com atendimento direto. Reserve no WhatsApp." />
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vila Venina | Hospedagem em Itaipuaçu, Maricá RJ" />
+  <meta property="og:description" content="Aconchego, café da manhã, piscina e área de descanso. Reserve direto no WhatsApp." />
+  <meta property="og:image" content="/img/vila-venina/hero-vila-venina.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vila Venina | Hospedagem em Itaipuaçu, Maricá RJ" />
+  <meta name="twitter:description" content="Aconchego, café da manhã, piscina e área de descanso. Reserve direto no WhatsApp." />
+  <meta name="twitter:image" content="/img/vila-venina/hero-vila-venina.jpg" />
+
+  <!-- Preload hero (helps performance) -->
+  <link rel="preload" as="image" href="/img/vila-venina/hero-vila-venina.jpg" />
 
   <style>
     :root{
-      --bg: #fbf6ee;
-      --card: #ffffff;
-      --ink: #1d1b16;
-      --muted: #6c655a;
-      --line: rgba(29,27,22,.12);
+      /* Verde “Vila Venina” (rústico-elegante) */
+      --bg: #F6F4EE;            /* off-white quente */
+      --panel: #FFFFFF;
+      --text: #1E241F;          /* verde-escuro quase preto */
+      --muted: #5B665D;
+      --line: rgba(30,36,31,.12);
 
-      /* rústico-elegante */
-      --brand: #2f5d50;      /* verde oliva elegante */
-      --brand2:#b07a3f;      /* caramelo */
-      --sand: #efe4d2;       /* areia */
-      --shadow: 0 18px 40px rgba(29,27,22,.10);
+      --vv-900:#1F2A22;         /* verde profundo */
+      --vv-800:#2C3A30;
+      --vv-700:#3A4B3F;
+      --vv-600:#4C5F51;
+      --vv-500:#6D826F;
+      --vv-300:#BFD0C1;
+
+      --accent: #7EA07C;        /* verde “assinatura” */
+      --accent-2:#A9C6A3;       /* verde claro */
+      --chip: rgba(126,160,124,.14);
+
+      --shadow: 0 18px 40px rgba(0,0,0,.08);
+      --shadow2: 0 10px 24px rgba(0,0,0,.08);
       --radius: 18px;
-      --radius2: 26px;
+      --radius2: 22px;
 
       --max: 1120px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font: 16px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 24px; }
-    .topbar{
-      position: sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: color-mix(in srgb, var(--bg) 86%, #ffffff 14%);
-      border-bottom:1px solid var(--line);
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(169,198,163,.28), transparent 55%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(126,160,124,.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.45;
     }
-    .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 14px 24px; }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width: 240px;
-    }
-    .logo{
-      width:40px; height:40px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--sand), #fff);
-      border:1px solid var(--line);
-      display:grid; place-items:center;
-      font-weight:800; letter-spacing:.5px;
-      color: var(--brand);
-    }
-    .brand h1{ font-size:14px; margin:0; line-height:1.15; }
-    .brand small{ display:block; color:var(--muted); font-weight:600; margin-top:2px; }
 
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px;}
+    .topbar{
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(246,244,238,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px; min-width: 220px;
+    }
+    .brand-mark{
+      width:40px; height:40px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(126,160,124,.25), rgba(169,198,163,.35));
+      border: 1px solid rgba(30,36,31,.10);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 800; letter-spacing:.5px; color: var(--vv-900);
+      box-shadow: 0 10px 24px rgba(0,0,0,.05);
+    }
+    .brand-txt{display:flex; flex-direction:column; line-height:1.1}
+    .brand-txt strong{font-family: ui-serif, Georgia, "Times New Roman", Times, serif; font-size: 16px}
+    .brand-txt span{font-size: 12px; color: var(--muted)}
     .nav{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+      display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end;
     }
     .pill{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:999px;
-      border:1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      font-weight:700;
-      transition:.2s ease;
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(30,36,31,.10);
+      text-decoration:none;
+      font-size: 13px;
+      color: var(--vv-900);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      box-shadow: 0 10px 18px rgba(0,0,0,.05);
+      white-space: nowrap;
     }
-    .pill:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(29,27,22,.08); }
+    .pill:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
     .pill.primary{
-      background: color-mix(in srgb, var(--brand) 12%, #fff 88%);
-      border-color: color-mix(in srgb, var(--brand) 26%, var(--line) 74%);
-      color: var(--brand);
-    }
-    .pill.cta{
-      background: color-mix(in srgb, var(--brand) 18%, #fff 82%);
-      border-color: color-mix(in srgb, var(--brand) 34%, var(--line) 66%);
+      background: linear-gradient(135deg, rgba(126,160,124,.25), rgba(169,198,163,.40));
+      border-color: rgba(126,160,124,.38);
+      font-weight: 700;
     }
 
+    /* HERO */
     .hero{
-      padding: 26px 0 8px;
+      padding: 26px 0 10px;
     }
-    .grid2{
+    .hero-grid{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      align-items:stretch;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
     }
-    @media (max-width: 920px){
-      .grid2{ grid-template-columns: 1fr; }
-      .brand{ min-width:auto; }
-      .topbar .wrap{ padding: 12px 16px; }
-      .wrap{ padding: 18px; }
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .brand{min-width:auto}
     }
 
     .card{
-      background: var(--card);
-      border:1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(30,36,31,.10);
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
+    }
+    .hero-left{
+      padding: 26px;
       overflow:hidden;
+      position:relative;
     }
-    .card.pad{ padding: 22px; }
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom: 12px;}
+    .chip{
+      display:inline-flex; align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid rgba(126,160,124,.22);
+      color: var(--vv-900);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    h1{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 44px;
+      line-height: 1.02;
+      margin: 10px 0 12px;
+      letter-spacing: -0.6px;
+      color: var(--vv-900);
+    }
+    @media (max-width: 480px){ h1{font-size: 36px;} }
 
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:7px 10px; border-radius:999px;
-      border:1px solid color-mix(in srgb, var(--brand2) 22%, var(--line) 78%);
-      background: color-mix(in srgb, var(--brand2) 10%, #fff 90%);
-      color: color-mix(in srgb, var(--brand2) 70%, var(--ink) 30%);
-      font-weight:800; font-size:12px;
+    .lead{
+      color: var(--muted);
+      max-width: 60ch;
+      font-size: 15px;
+      margin: 0 0 16px;
     }
-    .title{
-      margin: 12px 0 10px;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: 44px; line-height: 1.02;
-      letter-spacing: -.4px;
-    }
-    @media (max-width: 920px){ .title{ font-size: 38px; } }
 
-    .lead{ color: var(--muted); font-weight:650; margin: 0 0 16px; }
     .bullets{
-      margin: 16px 0 0; display:grid; gap:10px;
+      display:grid;
+      gap: 10px;
+      margin-top: 16px;
     }
     .bullet{
-      border:1px solid var(--line);
-      background: color-mix(in srgb, var(--sand) 38%, #fff 62%);
-      border-radius: 16px;
+      display:flex; gap: 10px; align-items:flex-start;
       padding: 12px 12px;
-      display:flex; gap:10px;
-      align-items:flex-start;
+      border-radius: 16px;
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(30,36,31,.10);
     }
     .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--brand);
-      margin-top:6px;
-      box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 14%, transparent 86%);
-      flex:0 0 auto;
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+      margin-top: 5px;
+      box-shadow: 0 0 0 5px rgba(126,160,124,.13);
+      flex: 0 0 auto;
     }
-    .bullet b{ display:block; }
-    .bullet span{ color:var(--muted); font-weight:650; }
+    .bullet strong{font-size: 13px}
+    .bullet p{margin: 2px 0 0; color: var(--muted); font-size: 13px}
 
-    .heroMedia{
-      position:relative;
-      min-height: 380px;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--sand) 70%, #fff 30%), #fff);
-      border-radius: var(--radius2);
-      border:1px solid var(--line);
+    .cta-row{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 14px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(30,36,31,.12);
+      background: rgba(255,255,255,.80);
+      box-shadow: 0 14px 26px rgba(0,0,0,.06);
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(126,160,124,.30), rgba(169,198,163,.55));
+      border-color: rgba(126,160,124,.40);
+      color: var(--vv-900);
+    }
+
+    .meta{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .meta a{color: var(--vv-800); text-decoration: underline; text-underline-offset: 3px;}
+    .sep{opacity:.6}
+
+    .hero-right{
+      padding: 0;
       overflow:hidden;
     }
-    .heroMedia img{
-      width:100%; height:100%;
+    .hero-photo{
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      display:block;
+      object-fit: cover;
+      border-radius: var(--radius2);
+      filter: contrast(1.02) saturate(1.02);
+    }
+    .photo-badge{
+      position:absolute;
+      right: 16px; bottom: 16px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(30,36,31,.10);
+      border-radius: 16px;
+      padding: 10px 12px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.08);
+      display:flex; gap: 10px; align-items:center;
+      max-width: 360px;
+    }
+    .photo-badge strong{font-size: 13px; display:block}
+    .photo-badge span{font-size: 12px; color: var(--muted)}
+    .mini-btn{
+      margin-left:auto;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(126,160,124,.18);
+      border: 1px solid rgba(126,160,124,.30);
+      text-decoration:none;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* Section */
+    section{padding: 22px 0;}
+    .section-title{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 30px;
+      letter-spacing: -0.3px;
+      margin: 0 0 6px;
+      color: var(--vv-900);
+    }
+    .section-sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 72ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){ .grid-3{grid-template-columns: 1fr; } }
+
+    .feature{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(30,36,31,.10);
+      background: rgba(255,255,255,.74);
+      box-shadow: 0 12px 22px rgba(0,0,0,.05);
+    }
+    .feature h3{margin: 0 0 6px; font-size: 14px; color: var(--vv-900)}
+    .feature p{margin: 0; color: var(--muted); font-size: 13px}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns: 1fr; } }
+
+    .text-card{
+      padding: 18px;
+    }
+    .text-card p{margin: 0 0 10px; color: var(--muted); font-size: 14px}
+    .list{
+      margin: 10px 0 14px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .list li{margin: 6px 0}
+
+    .img-card{
+      overflow:hidden;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(30,36,31,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: var(--shadow2);
+    }
+    .img-card img{
+      width:100%;
+      height: 360px;
       object-fit: cover;
       display:block;
     }
-    .stamp{
-      position:absolute; left:16px; bottom:16px;
-      background: color-mix(in srgb, #fff 78%, var(--sand) 22%);
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding: 10px 12px;
-      display:flex; gap:10px; align-items:center;
-      box-shadow: 0 16px 30px rgba(29,27,22,.10);
-      max-width: 92%;
-    }
-    .stamp strong{ display:block; }
-    .stamp small{ display:block; color:var(--muted); font-weight:650; }
-    .stamp .miniBtn{
-      margin-left:auto;
-      padding:10px 12px;
-      border-radius: 14px;
-      background: color-mix(in srgb, var(--brand) 12%, #fff 88%);
-      border:1px solid color-mix(in srgb, var(--brand) 26%, var(--line) 74%);
-      color: var(--brand);
-      font-weight:850;
-      white-space:nowrap;
-    }
+    @media (max-width: 980px){ .img-card img{height: 280px;} }
 
-    .section{ padding: 18px 0; }
-    .h2{
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      font-size: 28px; margin: 0 0 6px;
-    }
-    .sub{ color:var(--muted); font-weight:650; margin:0 0 14px; }
-    .cards3{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 920px){ .cards3{ grid-template-columns: 1fr; } }
-    .mini{
-      border:1px solid var(--line);
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-    .mini b{ display:block; margin-bottom:6px; }
-    .mini p{ margin:0; color:var(--muted); font-weight:650; }
-
-    .split{
-      display:grid; grid-template-columns: 1fr 1fr; gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){ .split{ grid-template-columns: 1fr; } }
-
+    /* Gallery */
     .gallery{
-      display:grid; grid-template-columns: 1.2fr .8fr;
-      gap:14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: stretch;
     }
-    @media (max-width: 920px){ .gallery{ grid-template-columns: 1fr; } }
-    .gMain{ border-radius: var(--radius2); overflow:hidden; border:1px solid var(--line); background:#fff; }
-    .gMain img{ width:100%; height:360px; object-fit:cover; display:block; }
-    .gGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-    .gThumb{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#fff;
-      cursor:pointer;
-    }
-    .gThumb img{ width:100%; height:174px; object-fit:cover; display:block; }
+    @media (max-width: 980px){ .gallery{grid-template-columns: 1fr; } }
 
-    .ctaBox{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;
+    .gallery-left{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:850;
-      transition:.2s ease;
+    .gallery-right{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(29,27,22,.10); }
-    .btn.primary{
-      background: color-mix(in srgb, var(--brand) 16%, #fff 84%);
-      border-color: color-mix(in srgb, var(--brand) 34%, var(--line) 66%);
-      color: var(--brand);
-    }
-    .btn.secondary{
-      background: color-mix(in srgb, var(--brand2) 14%, #fff 86%);
-      border-color: color-mix(in srgb, var(--brand2) 28%, var(--line) 72%);
-      color: color-mix(in srgb, var(--brand2) 75%, var(--ink) 25%);
-    }
+    .gallery .img-card img{height: 320px;}
+    @media (max-width: 980px){ .gallery .img-card img{height: 260px;} }
 
-    .list{
-      margin: 12px 0 0; padding-left: 18px; color:var(--muted); font-weight:650;
+    /* Steps */
+    .steps{
+      display:grid;
+      gap: 10px;
     }
-    .fine{ font-size:12px; color:var(--muted); font-weight:650; margin-top:10px; }
-
-    .faq details{
-      border:1px solid var(--line);
+    .step{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px;
       border-radius: 16px;
-      background:#fff;
-      padding: 14px 16px;
-      margin-bottom: 10px;
+      border: 1px solid rgba(30,36,31,.10);
+      background: rgba(255,255,255,.72);
     }
-    .faq summary{
-      cursor:pointer;
-      font-weight:900;
+    .num{
+      width: 28px; height: 28px; border-radius: 10px;
+      background: rgba(126,160,124,.20);
+      border: 1px solid rgba(126,160,124,.30);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      color: var(--vv-900);
+      flex: 0 0 auto;
     }
-    .faq p{
-      margin: 10px 0 0;
-      color:var(--muted);
-      font-weight:650;
-    }
+    .step strong{display:block; font-size: 13px}
+    .step span{display:block; margin-top: 2px; color: var(--muted); font-size: 13px}
 
-    .footer{
-      padding: 28px 0 40px;
-      color:var(--muted);
-      font-weight:650;
+    /* Testimonials */
+    .quotes{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
+    @media (max-width: 980px){ .quotes{grid-template-columns: 1fr; } }
+    blockquote{
+      margin:0;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(30,36,31,.10);
+      box-shadow: 0 12px 22px rgba(0,0,0,.05);
+    }
+    blockquote p{margin:0 0 10px; color: var(--muted); font-size: 13px}
+    blockquote footer{font-size: 12px; color: var(--vv-900); font-weight: 800}
 
-    .floatCta{
-      position:fixed;
-      right:16px; bottom:16px;
-      z-index:80;
-      background: color-mix(in srgb, var(--brand) 16%, #fff 84%);
-      border:1px solid color-mix(in srgb, var(--brand) 34%, var(--line) 66%);
-      color: var(--brand);
-      box-shadow: 0 18px 40px rgba(29,27,22,.18);
-      border-radius: 999px;
+    /* FAQ */
+    .faq{
+      display:grid;
+      gap: 10px;
+    }
+    details{
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(30,36,31,.10);
+      border-radius: 16px;
       padding: 12px 14px;
-      font-weight:950;
-      display:inline-flex;
-      gap:10px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.04);
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      color: var(--vv-900);
+      outline:none;
+    }
+    details p{margin: 10px 0 0; color: var(--muted); font-size: 13px}
+
+    /* Footer */
+    footer{
+      padding: 24px 0 90px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .footer-grid{grid-template-columns: 1fr;} }
+
+    .footer-card{padding: 16px;}
+    .small{font-size: 12px; color: var(--muted)}
+    .footer-card a{color: var(--vv-800); text-underline-offset: 3px;}
+
+    /* Floating CTA */
+    .float-cta{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display:flex;
+      gap: 10px;
       align-items:center;
+    }
+    .float-btn{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(126,160,124,.30), rgba(169,198,163,.55));
+      border: 1px solid rgba(126,160,124,.40);
+      box-shadow: var(--shadow);
+      text-decoration:none;
+      font-weight: 900;
+      color: var(--vv-900);
+    }
+    .float-mini{
+      display:inline-flex; align-items:center; justify-content:center;
+      width: 44px; height: 44px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(30,36,31,.12);
+      box-shadow: 0 14px 26px rgba(0,0,0,.08);
+      text-decoration:none;
+      font-weight: 900;
+      color: var(--vv-900);
+    }
+
+    /* Accessibility focus */
+    .pill:focus, .btn:focus, summary:focus, .float-btn:focus, .float-mini:focus{
+      outline: 3px solid rgba(126,160,124,.35);
+      outline-offset: 2px;
     }
   </style>
 
-  <!-- SEO: Schema.org -->
+  <!-- LocalBusiness / LodgingBusiness schema -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"LodgingBusiness",
-    "name":"Vila Venina Hospedagem",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu",
-      "addressLocality":"Maricá",
-      "addressRegion":"RJ",
-      "postalCode":"24937-005",
-      "addressCountry":"BR"
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Vila Venina Hospedagem",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Deoclécio Machado, 227 - Lote 20, Quadra 13",
+      "addressLocality": "Itaipuaçu",
+      "addressRegion": "RJ",
+      "addressCountry": "BR",
+      "postalCode": "24937-005"
     },
-    "telephone":"+55 21 99935-6178",
-    "sameAs":[
+    "telephone": "+55 21 99935-6178",
+    "url": "",
+    "sameAs": [
       "https://www.instagram.com/vilavenina_hospedagem/"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Como faço a reserva?",
-        "acceptedAnswer":{"@type":"Answer","text":"Clique em “Reservar no WhatsApp”, envie as datas e a quantidade de pessoas. A equipe confirma disponibilidade e valores."}
-      },
-      {
-        "@type":"Question",
-        "name":"A Vila Venina aceita casal e família?",
-        "acceptedAnswer":{"@type":"Answer","text":"Sim. É uma hospedagem indicada tanto para casais quanto para famílias. Confirme detalhes e regras pelo WhatsApp."}
-      },
-      {
-        "@type":"Question",
-        "name":"Onde fica a Vila Venina?",
-        "acceptedAnswer":{"@type":"Answer","text":"Em Itaipuaçu, Maricá-RJ. Endereço: R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005."}
-      }
+    ],
+    "image": [
+      "/img/vila-venina/hero-vila-venina.jpg",
+      "/img/vila-venina/quarto-vila-venina.jpg",
+      "/img/vila-venina/piscina-vila-venina.jpg"
     ]
   }
   </script>
@@ -340,338 +501,463 @@
 <body>
   <!-- TOPBAR -->
   <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="#topo" aria-label="Ir ao topo">
-        <div class="logo">VV</div>
-        <div>
-          <h1>Vila Venina Hospedagem</h1>
-          <small>Itaipuaçu • Maricá / RJ</small>
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="Vila Venina Hospedagem">
+          <div class="brand-mark" aria-hidden="true">VV</div>
+          <div class="brand-txt">
+            <strong>Vila Venina</strong>
+            <span>Itaipuaçu • Maricá • RJ</span>
+          </div>
         </div>
-      </a>
 
-      <nav class="nav">
-        <a class="pill" href="#fotos">Fotos</a>
-        <a class="pill" href="#localizacao">Como chegar</a>
-        <a class="pill" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Instagram</a>
-        <a class="pill primary" href="#reservar">Reservar no WhatsApp</a>
-      </nav>
+        <nav class="nav" aria-label="Navegação principal">
+          <a class="pill" href="#fotos">Fotos</a>
+          <a class="pill" href="#comodidades">Comodidades</a>
+          <a class="pill" href="#cafe">Café da manhã</a>
+          <a class="pill" href="#faq">Dúvidas</a>
+          <a class="pill" href="#localizacao">Como chegar</a>
+          <a class="pill" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Instagram</a>
+          <a class="pill primary" href="https://wa.me/5521999356178?text=Olá!%20Quero%20reservar%20na%20Vila%20Venina.%20Pode%20me%20passar%20valores%20e%20disponibilidade%3F%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">Reservar no WhatsApp</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <main id="topo" class="wrap">
-    <!-- HERO -->
-    <section class="hero grid2">
-      <div class="card pad">
-        <span class="kicker">Aconchego • Atendimento direto • Reservas no WhatsApp</span>
-        <h2 class="title">Hospedagem em Itaipuaçu, Maricá — simples, bonita e bem cuidada.</h2>
-        <p class="lead">
-          Um cantinho para descansar com tranquilidade. Fale direto com a equipe pelo WhatsApp e combine sua estadia sem complicação.
-        </p>
+  <!-- HERO -->
+  <main class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <article class="card hero-left">
+          <div class="chips">
+            <span class="chip">Verde • Aconchego</span>
+            <span class="chip">Piscina</span>
+            <span class="chip">Café da manhã</span>
+            <span class="chip">Casal & família</span>
+          </div>
 
-        <div class="bullets">
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>Atendimento rápido e humano</b>
-              <span>Você fala com a equipe e resolve tudo em poucos minutos.</span>
+          <h1>Vila Venina: hospedagem aconchegante em Itaipuaçu, Maricá</h1>
+          <p class="lead">
+            Um lugar com clima tranquilo e atendimento direto: perfeito para descansar, curtir a região e aproveitar
+            uma estadia leve — com piscina, área de descanso e café da manhã.
+          </p>
+
+          <div class="bullets" aria-label="Destaques da hospedagem">
+            <div class="bullet">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <strong>Ambiente aconchegante</strong>
+                <p>Conforto para casal, família e quem busca tranquilidade.</p>
+              </div>
+            </div>
+
+            <div class="bullet">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <strong>Piscina e área de descanso</strong>
+                <p>Um espaço gostoso para relaxar e recarregar as energias.</p>
+              </div>
+            </div>
+
+            <div class="bullet">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <strong>Reserva simples no WhatsApp</strong>
+                <p>Fale direto com a equipe para valores e disponibilidade.</p>
+              </div>
             </div>
           </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>Café da manhã</b>
-              <span>Se você gosta de começar o dia bem, confirme os detalhes pelo WhatsApp.</span>
+
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/5521999356178?text=Olá!%20Quero%20reservar%20na%20Vila%20Venina.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+              Fazer reserva agora
+            </a>
+            <a class="btn" href="#localizacao">Ver localização</a>
+            <a class="btn" href="tel:+5521999356178">Ligar</a>
+          </div>
+
+          <div class="meta">
+            <span><strong>Endereço:</strong> R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005</span>
+            <span class="sep"> • </span>
+            <span><strong>WhatsApp:</strong> <a href="https://wa.me/5521999356178" target="_blank" rel="noopener">(21) 99935-6178</a></span>
+          </div>
+        </article>
+
+        <aside class="card hero-right" aria-label="Foto de destaque">
+          <div style="position:relative;">
+            <img
+              class="hero-photo"
+              src="/img/vila-venina/hero-vila-venina.jpg"
+              alt="Fachada da Vila Venina em Itaipuaçu, Maricá RJ"
+              loading="eager"
+            />
+            <div class="photo-badge">
+              <div>
+                <strong>Vila Venina Hospedagem</strong>
+                <span>Itaipuaçu • Maricá/RJ</span>
+              </div>
+              <a class="mini-btn" href="#localizacao">Como chegar</a>
             </div>
           </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>Ideal para casal e família</b>
-              <span>Uma opção confortável para diferentes perfis de viagem.</span>
-            </div>
-          </div>
-        </div>
+        </aside>
+      </div>
+    </div>
+  </main>
 
-        <div class="ctaBox">
-          <a class="btn primary" href="https://wa.me/5521999356178?text=Ol%C3%A1!%20Quero%20consultar%20disponibilidade%20na%20Vila%20Venina.%20Datas%3A%20__%2F__%20a%20__%2F__%20%7C%20Pessoas%3A%20__" target="_blank" rel="noopener">
-            Reservar agora
-          </a>
-          <a class="btn" href="#localizacao">Ver localização</a>
-          <a class="btn secondary" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Ver Instagram</a>
-        </div>
+  <!-- COMODIDADES -->
+  <section id="comodidades">
+    <div class="container">
+      <h2 class="section-title">Uma estadia tranquila, com conforto e simplicidade bem feita</h2>
+      <p class="section-sub">
+        A proposta é clara: ambiente acolhedor, espaço gostoso para relaxar e atendimento direto — do jeito que o hóspede gosta.
+      </p>
 
-        <div class="fine">
-          Endereço: R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005 •
-          WhatsApp: (21) 99935-6178
+      <div class="grid-3">
+        <div class="feature">
+          <h3>Para casal e família</h3>
+          <p>Uma hospedagem versátil, ideal para descanso a dois ou em grupo.</p>
+        </div>
+        <div class="feature">
+          <h3>Piscina para aproveitar</h3>
+          <p>Perfeita para refrescar e curtir o dia com calma.</p>
+        </div>
+        <div class="feature">
+          <h3>Atendimento direto</h3>
+          <p>Você conversa com a equipe e combina tudo pelo WhatsApp.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="heroMedia">
-        <!-- Troque por sua foto principal -->
-        <img src="/img/vila-venina/hero.jpg" alt="Vila Venina Hospedagem em Itaipuaçu, Maricá" onerror="this.style.display='none'">
-        <div class="stamp">
-          <div>
-            <strong>Vila Venina Hospedagem</strong>
-            <small>Itaipuaçu • Maricá / RJ</small>
-          </div>
-          <a class="miniBtn" href="#localizacao">Como chegar</a>
-        </div>
-      </div>
-    </section>
+  <!-- QUARTO -->
+  <section id="fotos">
+    <div class="container">
+      <div class="split">
+        <div class="card text-card">
+          <h2 class="section-title">Quartos aconchegantes, clima de descanso</h2>
+          <p>
+            Ambientes pensados para uma estadia tranquila, com aquele “jeito de casa” que dá vontade de voltar.
+          </p>
+          <ul class="list">
+            <li>Conforto para dormir bem</li>
+            <li>Ideal para finais de semana e temporadas</li>
+            <li>Perfeito para quem quer sossego em Itaipuaçu</li>
+          </ul>
 
-    <!-- BENEFÍCIOS -->
-    <section class="section">
-      <h3 class="h2">Uma estadia gostosa e com personalidade</h3>
-      <p class="sub">Foco no essencial: conforto, cuidado e atendimento direto — sem intermediários.</p>
-
-      <div class="cards3">
-        <div class="mini">
-          <b>Ambiente aconchegante</b>
-          <p>Um lugar tranquilo para descansar e “desligar”.</p>
-        </div>
-        <div class="mini">
-          <b>Casal e família</b>
-          <p>Boa opção para diferentes tipos de viagem.</p>
-        </div>
-        <div class="mini">
-          <b>Contato rápido</b>
-          <p>Orçamento e disponibilidade direto no WhatsApp.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROVA SOCIAL -->
-    <section class="section split">
-      <div class="card pad">
-        <h3 class="h2">O que as pessoas comentam</h3>
-        <p class="sub">Trechos de avaliações públicas (ajudam muito na confiança).</p>
-
-        <div class="bullets">
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>“Roupas de cama e banho de qualidade.”</b>
-              <span>Conforto e cuidado nos detalhes.</span>
-            </div>
-          </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>“Lugar super aconchegante, proprietários atenciosos.”</b>
-              <span>Clima acolhedor e bom atendimento.</span>
-            </div>
-          </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>“Hospitalidade de primeira.”</b>
-              <span>Equipe preparada para receber bem.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="fine">*Se quiser, eu adiciono mais depoimentos e estruturo isso para SEO local.</div>
-      </div>
-
-      <div class="card">
-        <div class="gallery" id="fotos" style="padding:18px;">
-          <div class="gMain">
-            <img id="gMainImg" src="/img/vila-venina/foto-01.jpg" alt="Foto da Vila Venina" onerror="this.alt='(Adicione suas fotos em /img/vila-venina/)';">
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/5521999356178?text=Olá!%20Quero%20saber%20valores%20e%20disponibilidade%20na%20Vila%20Venina.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+              Ver valores no WhatsApp
+            </a>
+            <a class="btn" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Ver Instagram</a>
           </div>
 
-          <div class="gGrid">
-            <div class="gThumb" data-src="/img/vila-venina/foto-01.jpg"><img src="/img/vila-venina/foto-01.jpg" alt="Foto 1" onerror="this.style.display='none'"></div>
-            <div class="gThumb" data-src="/img/vila-venina/foto-02.jpg"><img src="/img/vila-venina/foto-02.jpg" alt="Foto 2" onerror="this.style.display='none'"></div>
-            <div class="gThumb" data-src="/img/vila-venina/foto-03.jpg"><img src="/img/vila-venina/foto-03.jpg" alt="Foto 3" onerror="this.style.display='none'"></div>
-            <div class="gThumb" data-src="/img/vila-venina/foto-04.jpg"><img src="/img/vila-venina/foto-04.jpg" alt="Foto 4" onerror="this.style.display='none'"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAFÉ -->
-    <section class="section split">
-      <div class="card pad">
-        <h3 class="h2">Café da manhã</h3>
-        <p class="sub">Comece o dia bem — confirme itens e horários pelo WhatsApp.</p>
-
-        <ul class="list">
-          <li>Opção prática para quem quer acordar com calma</li>
-          <li>Ideal para casal e família</li>
-          <li>Detalhes e disponibilidade direto com a equipe</li>
-        </ul>
-
-        <div class="ctaBox">
-          <a class="btn primary" href="https://wa.me/5521999356178?text=Ol%C3%A1!%20Queria%20confirmar%20como%20funciona%20o%20caf%C3%A9%20da%20manh%C3%A3%20na%20Vila%20Venina%20e%20ver%20disponibilidade.%20Datas%3A%20__%2F__%20a%20__%2F__" target="_blank" rel="noopener">
-            Perguntar no WhatsApp
-          </a>
-          <a class="btn" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Ver fotos no Instagram</a>
-        </div>
-      </div>
-
-      <div class="card" style="min-height: 260px;">
-        <div style="padding:18px;">
-          <div class="mini" style="background: color-mix(in srgb, var(--sand) 40%, #fff 60%);">
-            <b>Dica SEO (rápida)</b>
-            <p style="margin:0; color:var(--muted); font-weight:650;">
-              Quando o Google vê um <b>site</b> (de verdade) com localização + FAQs + fotos, ele tende a entregar mais cliques orgânicos.
-              Isso ajuda a depender menos de OTAs e de DM no Instagram.
-            </p>
-          </div>
-          <p class="fine">*Esta página é uma demonstração. As fotos podem ser substituídas pelas imagens oficiais.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESERVAR -->
-    <section id="reservar" class="section split">
-      <div class="card pad">
-        <h3 class="h2">Reserve em 1 minuto pelo WhatsApp</h3>
-        <p class="sub">Me diga as datas e a quantidade de pessoas. A equipe confirma disponibilidade e valores.</p>
-
-        <div class="bullets">
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>1) Envie as datas + nº de pessoas</b>
-              <span>Ex.: 10/01 a 12/01 • 2 adultos (+ crianças se tiver)</span>
-            </div>
-          </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>2) Receba valores e disponibilidade</b>
-              <span>Resposta assim que possível, direto com a equipe.</span>
-            </div>
-          </div>
-          <div class="bullet">
-            <span class="dot"></span>
-            <div>
-              <b>3) Combine tudo sem intermediários ✅</b>
-              <span>Prático, rápido e sem complicação.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="ctaBox">
-          <a class="btn primary" href="https://wa.me/5521999356178?text=Ol%C3%A1!%20Quero%20reservar%20na%20Vila%20Venina.%20Datas%3A%20__%2F__%20a%20__%2F__%20%7C%20Pessoas%3A%20__" target="_blank" rel="noopener">
-            Reservar no WhatsApp
-          </a>
-          <a class="btn" href="tel:+5521999356178">Ligar</a>
-        </div>
-
-        <div class="fine">WhatsApp: (21) 99935-6178</div>
-      </div>
-
-      <div class="card" style="min-height: 320px;">
-        <div style="padding:18px;">
-          <div class="mini">
-            <b>O que eu preciso de você (pra versão final)</b>
-            <p>Se você curtir o modelo, eu fecho a versão oficial em poucas horas com:</p>
-            <ul class="list">
-              <li>8–12 fotos profissionais</li>
-              <li>lista de comodidades (ex.: estacionamento, Wi-Fi, piscina etc.)</li>
-              <li>horário do café / regras básicas</li>
-            </ul>
-            <p class="fine">*A demo já serve pra apresentar e destravar conversa.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LOCALIZAÇÃO -->
-    <section id="localizacao" class="section split">
-      <div class="card pad">
-        <h3 class="h2">Localização</h3>
-        <p class="sub">Abra o mapa e venha com tranquilidade. Endereço completo abaixo.</p>
-
-        <div class="mini" style="background: color-mix(in srgb, var(--sand) 44%, #fff 56%);">
-          <b>Endereço:</b>
-          <p style="margin:6px 0 0; color:var(--muted); font-weight:650;">
-            R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005
+          <p class="small" style="margin:10px 0 0;">
+            *Para agilizar, envie no WhatsApp: datas + quantidade de pessoas.
           </p>
         </div>
 
-        <div class="ctaBox">
-          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=R.%20Deocl%C3%A9cio%20Machado%2C%20227%20-%20Itaipua%C3%A7u%2C%20Maric%C3%A1%20-%20RJ%2C%2024937-005" target="_blank" rel="noopener">
-            Como chegar
-          </a>
-          <a class="btn" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">
-            Ver Instagram
-          </a>
+        <div class="img-card">
+          <img
+            src="/img/vila-venina/quarto-vila-venina.jpg"
+            alt="Quarto aconchegante na Vila Venina, Maricá RJ"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAFÉ -->
+  <section id="cafe">
+    <div class="container">
+      <div class="split">
+        <div class="img-card">
+          <img
+            src="/img/vila-venina/cafe-da-manha-vila-venina.jpg"
+            alt="Café da manhã na Vila Venina em Itaipuaçu, Maricá RJ"
+            loading="lazy"
+          />
+        </div>
+        <div class="card text-card">
+          <h2 class="section-title">Café da manhã</h2>
+          <p>
+            Um começo de dia gostoso, com clima leve. Confirme com a equipe os detalhes e horários pelo WhatsApp.
+          </p>
+          <ul class="list">
+            <li>Opção prática para começar o dia</li>
+            <li>Ambiente tranquilo</li>
+            <li>Ideal para casal e família</li>
+          </ul>
+          <p class="small">
+            *Itens e horários podem variar. Confirme no WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section aria-label="Galeria de fotos da Vila Venina">
+    <div class="container">
+      <h2 class="section-title">Galeria de fotos</h2>
+      <p class="section-sub">Piscina, varanda e cantinhos para relaxar. (Imagens de demonstração.)</p>
+
+      <div class="gallery">
+        <div class="gallery-left">
+          <div class="img-card">
+            <img
+              src="/img/vila-venina/piscina-vila-venina.jpg"
+              alt="Piscina da Vila Venina em Maricá RJ"
+              loading="lazy"
+            />
+          </div>
         </div>
 
-        <div class="fine">Dica: depois dá pra ajustar “pin” exato e integrar mapa embutido (mais profissional).</div>
-      </div>
-
-      <div class="card" style="overflow:hidden;">
-        <!-- Sem embed para evitar erro de billing em alguns casos. Link do Maps já resolve. -->
-        <div style="padding:18px;">
-          <div class="mini">
-            <b>SEO rápido (o que isso resolve)</b>
-            <p style="margin:0; color:var(--muted); font-weight:650;">
-              Um site simples e rápido com endereço + FAQs + fotos ajuda o Google a entender melhor o negócio.
-              Isso melhora clique orgânico e dá mais segurança pro hóspede reservar direto.
-            </p>
+        <div class="gallery-right">
+          <div class="img-card">
+            <img
+              src="/img/vila-venina/varanda-redario-vila-venina.jpg"
+              alt="Varanda com redário e área de descanso na Vila Venina"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="section">
-      <h3 class="h2">Dúvidas frequentes</h3>
-      <p class="sub">Essas perguntas ajudam muito no SEO (é o tipo de coisa que o Google mostra nas buscas).</p>
+      <div style="margin-top:14px; display:flex; justify-content:flex-end;">
+        <a class="btn primary" href="https://wa.me/5521999356178?text=Olá!%20Gostei%20das%20fotos%20da%20Vila%20Venina.%20Quero%20reservar.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+          Gostei, quero reservar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO RESERVAR -->
+  <section id="reservar">
+    <div class="container">
+      <div class="split">
+        <div class="card text-card">
+          <h2 class="section-title">Reserve em 1 minuto pelo WhatsApp</h2>
+          <p class="section-sub" style="margin-bottom:10px;">
+            Me diga as datas e a quantidade de pessoas. A equipe confirma disponibilidade e valores.
+          </p>
+
+          <div class="steps" aria-label="Passo a passo da reserva">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <strong>Envie as datas + nº de pessoas</strong>
+                <span>Ex.: 10 a 12/01 • 2 pessoas</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <strong>Receba valores e disponibilidade</strong>
+                <span>Resposta direta pelo WhatsApp</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <strong>Confirme a reserva ✅</strong>
+                <span>Sem complicação</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-row" style="margin-top:14px;">
+            <a class="btn primary" href="https://wa.me/5521999356178?text=Olá!%20Quero%20reservar%20na%20Vila%20Venina.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+              Reservar no WhatsApp
+            </a>
+            <a class="btn" href="tel:+5521999356178">Ligar</a>
+          </div>
+
+          <p class="small" style="margin-top:10px;">
+            WhatsApp: (21) 99935-6178
+          </p>
+        </div>
+
+        <div class="img-card">
+          <img
+            src="/img/vila-venina/hero-vila-venina.jpg"
+            alt="Ambiente externo e fachada da Vila Venina"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES (texto) -->
+  <section aria-label="Comentários de hóspedes">
+    <div class="container">
+      <h2 class="section-title">O que os hóspedes comentam</h2>
+      <p class="section-sub">Trechos de feedbacks que reforçam conforto, atenção e qualidade da estadia.</p>
+
+      <div class="quotes">
+        <blockquote>
+          <p>“Os colchões, travesseiros, roupas de cama e banho são de qualidade.”</p>
+          <footer>— Comentário de hóspede</footer>
+        </blockquote>
+
+        <blockquote>
+          <p>“Lugar super aconchegante com proprietários muito atenciosos e profissionais.”</p>
+          <footer>— Comentário de hóspede</footer>
+        </blockquote>
+
+        <blockquote>
+          <p>“Ótimos funcionários com uma hospitalidade de primeira.”</p>
+          <footer>— Comentário de hóspede</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao">
+    <div class="container">
+      <h2 class="section-title">Localização</h2>
+      <p class="section-sub">Abra o mapa e venha com tranquilidade. Endereço completo abaixo.</p>
+
+      <div class="split">
+        <div class="card text-card">
+          <p style="margin:0 0 10px;"><strong>Endereço:</strong><br/>
+            R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=R.%20Deocl%C3%A9cio%20Machado%2C%20227%20-%20Itaipua%C3%A7u%2C%20Maric%C3%A1%20-%20RJ%2C%2024937-005" target="_blank" rel="noopener">
+              Como chegar
+            </a>
+            <a class="btn" href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">Ver Instagram</a>
+          </div>
+
+          <p class="small" style="margin-top:10px;">
+            Dica: se quiser, dá para ajustar o “pin” exato no Google Business Profile para ficar ainda mais profissional.
+          </p>
+        </div>
+
+        <div class="img-card" aria-label="Mapa do Google">
+          <iframe
+            title="Mapa - Vila Venina"
+            src="https://www.google.com/maps?q=R.%20Deocl%C3%A9cio%20Machado,%20227%20-%20Itaipua%C3%A7u,%20Maric%C3%A1%20-%20RJ,%2024937-005&output=embed"
+            width="100%"
+            height="360"
+            style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Dúvidas frequentes</h2>
+      <p class="section-sub">Essas perguntas ajudam bastante no SEO (é o tipo de coisa que o Google mostra nas buscas).</p>
 
       <div class="faq">
-        <details open>
+        <details>
           <summary>Como faço a reserva?</summary>
-          <p>É só clicar em “Reservar no WhatsApp”. Você envia as datas e a quantidade de pessoas, e a equipe confirma disponibilidade e valores.</p>
+          <p>
+            É só clicar em “Reservar no WhatsApp”. Envie as datas e a quantidade de pessoas, e a equipe confirma disponibilidade e valores.
+          </p>
         </details>
 
         <details>
-          <summary>A Vila Venina aceita casal e família?</summary>
-          <p>Sim. É indicada tanto para casal quanto para família. Se quiser, mande as datas e o número de pessoas no WhatsApp para validar certinho.</p>
+          <summary>A Vila Venina tem café da manhã?</summary>
+          <p>
+            Sim. Confirme com a equipe os detalhes e horários pelo WhatsApp (itens e horários podem variar).
+          </p>
+        </details>
+
+        <details>
+          <summary>A Vila Venina é indicada para casal e família?</summary>
+          <p>
+            Sim. A proposta é ser uma hospedagem aconchegante e tranquila para casal e família.
+          </p>
         </details>
 
         <details>
           <summary>Onde fica a Vila Venina?</summary>
-          <p>R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005. Clique em “Como chegar” para abrir o Google Maps.</p>
+          <p>
+            R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005. Clique em “Como chegar” para abrir no Google Maps.
+          </p>
         </details>
 
         <details>
           <summary>Posso ver mais fotos?</summary>
-          <p>Sim. Veja no Instagram: @vilavenina_hospedagem. Se preferir, a equipe também pode enviar mais fotos pelo WhatsApp.</p>
+          <p>
+            Sim. Veja no Instagram: <a href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">@vilavenina_hospedagem</a>.
+          </p>
         </details>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="card pad" style="box-shadow:none;">
-        <b style="display:block; margin-bottom:6px; color:var(--ink);">Vila Venina Hospedagem</b>
-        Reservas e informações: <a href="tel:+5521999356178" style="text-decoration:underline;">(21) 99935-6178</a><br/>
-        Instagram: <a href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener" style="text-decoration:underline;">@vilavenina_hospedagem</a><br/>
-        Endereço: R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005
-        <div class="fine" style="margin-top:10px;">
-          *Página de demonstração. Fotos e textos podem ser ajustados para versão oficial.
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="card footer-card">
+          <div class="brand" style="margin-bottom:10px;">
+            <div class="brand-mark" aria-hidden="true">VV</div>
+            <div class="brand-txt">
+              <strong>Vila Venina</strong>
+              <span>Hospedagem • Itaipuaçu • Maricá/RJ</span>
+            </div>
+          </div>
+
+          <div class="small">
+            <p style="margin:0 0 8px;">
+              <strong>WhatsApp/Telefone:</strong> <a href="https://wa.me/5521999356178" target="_blank" rel="noopener">(21) 99935-6178</a>
+            </p>
+            <p style="margin:0 0 8px;">
+              <strong>Instagram:</strong> <a href="https://www.instagram.com/vilavenina_hospedagem/" target="_blank" rel="noopener">@vilavenina_hospedagem</a>
+            </p>
+            <p style="margin:0;">
+              <strong>Endereço:</strong> R. Deoclécio Machado, 227 - Lote 20, Quadra 13 - Itaipuaçu, Maricá - RJ, 24937-005
+            </p>
+          </div>
+        </div>
+
+        <div class="card footer-card">
+          <h3 style="margin:0 0 8px; color:var(--vv-900); font-size:14px;">Pronto para reservar?</h3>
+          <p class="small" style="margin:0 0 12px;">
+            Clique no botão e envie: datas + quantidade de pessoas.
+          </p>
+          <a class="btn primary" href="https://wa.me/5521999356178?text=Olá!%20Quero%20reservar%20na%20Vila%20Venina.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+            Reservar no WhatsApp
+          </a>
+          <p class="small" style="margin:12px 0 0;">
+            <span style="opacity:.8;">Versão demonstração • BRsys</span>
+          </p>
         </div>
       </div>
-    </footer>
-  </main>
+    </div>
+  </footer>
 
   <!-- Floating CTA -->
-  <a class="floatCta" href="https://wa.me/5521999356178?text=Ol%C3%A1!%20Quero%20consultar%20disponibilidade%20na%20Vila%20Venina.%20Datas%3A%20__%2F__%20a%20__%2F__%20%7C%20Pessoas%3A%20__" target="_blank" rel="noopener">
-    💬 Reservar
-  </a>
+  <div class="float-cta" aria-label="Atalho para reservar">
+    <a class="float-mini" href="#top" aria-label="Voltar ao topo" title="Topo">↑</a>
+    <a class="float-btn" href="https://wa.me/5521999356178?text=Olá!%20Quero%20reservar%20na%20Vila%20Venina.%20Datas%3A%20____%20a%20____%20%7C%20Pessoas%3A%20____" target="_blank" rel="noopener">
+      Reservar
+    </a>
+  </div>
 
   <script>
-    // Galeria simples
-    const main = document.getElementById('gMainImg');
-    document.querySelectorAll('.gThumb').forEach(t => {
-      t.addEventListener('click', () => {
-        const src = t.getAttribute('data-src');
-        if (src && main) main.src = src;
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
