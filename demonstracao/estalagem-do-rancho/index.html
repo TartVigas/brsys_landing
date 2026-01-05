@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Estalagem do Rancho em Miguel Pereira | Reserva no WhatsApp</title>
+  <meta name="description" content="Estalagem do Rancho em Miguel Pereira (RJ). Hospedagem tranquila em meio à natureza. Reserve direto no WhatsApp: (21) 98075-9974." />
+  <meta name="keywords" content="estalagem do rancho, miguel pereira rj, pousada em miguel pereira, hospedagem miguel pereira, reserva whatsapp, pousada com natureza" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Estalagem do Rancho | Miguel Pereira - RJ" />
+  <meta property="og:description" content="Hospedagem tranquila em meio à natureza. Reserva direta no WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/estalagem/hero-estalagem.jpg" />
+
+  <meta name="theme-color" content="#fbf7ef" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbf7ef;
+      --paper: #ffffff;
+      --ink: #1f2937;
+      --muted: #556070;
+      --line: rgba(31,41,55,.10);
+
+      --wood: #7a5a3a;
+      --wood-2: #5e442c;
+      --olive: #4b5d45;
+      --accent: #2f6f5b;
+
+      --shadow: 0 18px 40px rgba(31,41,55,.10);
+      --shadow-soft: 0 10px 24px rgba(31,41,55,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 650px at 20% -10%, rgba(122,90,58,.10), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(75,93,69,.10), transparent 60%),
+        var(--bg);
+    }
+    a{ color: inherit; text-decoration: none; }
+    img{ max-width: 100%; display: block; }
+    .wrap{ width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+    /* Topbar */
+    .topbar{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(251,247,239,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 240px;
+    }
+    .brand img{
+      width: 44px; height: 44px; object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 6px;
+      box-shadow: var(--shadow-soft);
+    }
+    .brand b{
+      font-family: "Playfair Display", serif;
+      font-size: 16px;
+      line-height: 1.1;
+      display:block;
+    }
+    .brand span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .nav-actions{ display:flex; align-items:center; gap: 10px; flex-wrap: wrap; justify-content:flex-end; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 10px 20px rgba(31,41,55,.06);
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(31,41,55,.18);
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(47,111,91,.12), rgba(122,90,58,.10));
+      border-color: rgba(47,111,91,.22);
+    }
+    .pill{
+      display:inline-flex; align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--wood-2);
+      background: rgba(122,90,58,.10);
+      border: 1px solid rgba(122,90,58,.18);
+    }
+
+    /* Hero */
+    .hero{ padding: 26px 0 10px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .card{
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .hero-copy{
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-copy:before{
+      content:"";
+      position:absolute; inset:-120px -120px auto auto;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle at 30% 30%, rgba(75,93,69,.18), transparent 55%);
+      transform: rotate(25deg);
+      pointer-events:none;
+    }
+
+    h1{
+      margin: 12px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 60ch;
+    }
+    .hero-bullets{
+      margin-top: 18px;
+      display:grid;
+      gap: 10px;
+    }
+    .bullet{
+      display:flex; gap: 10px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: rgba(47,111,91,.55);
+      margin-top: 6px;
+      flex: 0 0 auto;
+    }
+    .bullet b{ display:block; font-size: 14px; }
+    .bullet span{ display:block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .hero-ctas{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .hero-ctas .btn{ padding: 12px 16px; }
+
+    .fine{ color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+    .hero-media{
+      overflow:hidden;
+      border-radius: var(--radius-lg);
+      position: relative;
+      min-height: 420px;
+    }
+    .hero-media img{
+      width:100%; height:100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      filter: saturate(1.03) contrast(1.02);
+    }
+    .hero-caption{
+      position:absolute; left: 14px; right: 14px; bottom: 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.84);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .hero-caption small{ color: var(--muted); display:block; margin-top: 2px; }
+    .hero-caption b{ font-size: 14px; }
+
+    /* Sections */
+    section{ padding: 18px 0; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 12px;
+      margin: 10px 0 12px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    .section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      max-width: 70ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .feature{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.84);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(31,41,55,.06);
+      min-height: 120px;
+    }
+    .feature b{ display:block; font-size: 15px; margin-bottom: 6px; color: var(--wood-2); }
+    .feature span{ color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .box{
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(31,41,55,.06);
+    }
+    .list{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+    .media{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+    }
+    .media img{ width: 100%; height: 320px; object-fit: cover; }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+    }
+    .g{
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(31,41,55,.06);
+    }
+    .g img{ width:100%; height:100%; object-fit: cover; }
+    .g1{ grid-column: span 7; height: 330px; }
+    .g2{ grid-column: span 5; height: 330px; }
+    .g3{ grid-column: span 4; height: 240px; }
+    .g4{ grid-column: span 4; height: 240px; }
+    .g5{ grid-column: span 4; height: 240px; }
+
+    /* Reserva */
+    .steps{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step{
+      display:flex; gap: 10px; align-items:flex-start;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+    }
+    .num{
+      width: 28px; height: 28px;
+      border-radius: 999px;
+      background: rgba(122,90,58,.12);
+      border: 1px solid rgba(122,90,58,.20);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 800;
+      color: var(--wood-2);
+      flex: 0 0 auto;
+    }
+
+    /* FAQ */
+    details{
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 10px 22px rgba(31,41,55,.06);
+    }
+    details + details{ margin-top: 10px; }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      color: var(--wood-2);
+    }
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 22px 0 32px;
+      border-top: 1px solid var(--line);
+      margin-top: 8px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* WhatsApp floating */
+    .wa-float{
+      position: fixed;
+      right: 16px; bottom: 16px;
+      z-index: 60;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid, .split{ grid-template-columns: 1fr; }
+      .hero-media{ min-height: 340px; }
+      h1{ font-size: 34px; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .g1,.g2{ grid-column: span 12; }
+      .g3,.g4,.g5{ grid-column: span 12; height: 220px; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+  </style>
+
+  <!-- Schema.org (ajuste o "url" quando publicar) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Pousada Estalagem do Rancho",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Ilka, 185 - Vila Margarida",
+      "addressLocality": "Miguel Pereira",
+      "addressRegion": "RJ",
+      "postalCode": "26900-000",
+      "addressCountry": "BR"
+    },
+    "telephone": "+55 21 98075-9974",
+    "url": "https://SEU-DOMINIO-AQUI/",
+    "sameAs": [
+      "https://www.instagram.com/pousada.estalagem.do.rancho"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <a class="brand" href="#topo" aria-label="Estalagem do Rancho">
+          <img src="/img/estalagem/logo-estalagem-do-rancho.png" alt="Logo Estalagem do Rancho" />
+          <div>
+            <b>Estalagem do Rancho</b>
+            <span>Miguel Pereira • RJ</span>
+          </div>
+        </a>
+
+        <div class="nav-actions">
+          <a class="btn" href="#galeria">Fotos</a>
+          <a class="btn" href="#localizacao">Como chegar</a>
+          <a class="btn" href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Quero%20reservar%20na%20Estalagem%20do%20Rancho.%20Poderia%20me%20passar%20valores%20e%20disponibilidade%3F" target="_blank" rel="noopener">
+            Reservar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <main id="topo" class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="card hero-copy">
+          <span class="pill">Natureza • Sossego • Atendimento direto</span>
+
+          <h1>Estalagem do Rancho em Miguel Pereira</h1>
+
+          <p class="subtitle">
+            Um refúgio <b>rústico-elegante</b>, cercado de verde, para descansar com calma e simplicidade.
+            Reserve direto com a gente pelo WhatsApp — sem intermediários.
+          </p>
+
+          <div class="hero-bullets">
+            <div class="bullet">
+              <span class="dot"></span>
+              <div>
+                <b>Atendimento direto e rápido</b>
+                <span>Você fala com a equipe e combina tudo em minutos.</span>
+              </div>
+            </div>
+            <div class="bullet">
+              <span class="dot"></span>
+              <div>
+                <b>Clima de rancho, paz de verdade</b>
+                <span>Ambiente simples, aconchegante e com aquele silêncio bom.</span>
+              </div>
+            </div>
+            <div class="bullet">
+              <span class="dot"></span>
+              <div>
+                <b>Fotos reais, experiência real</b>
+                <span>O que você vê aqui é o que encontra ao chegar.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Quero%20saber%20valores%20e%20disponibilidade%20na%20Estalagem%20do%20Rancho." target="_blank" rel="noopener">
+              Fazer reserva agora
+            </a>
+            <a class="btn" href="#localizacao">Ver localização</a>
+            <a class="btn" href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener">Ver Instagram</a>
+          </div>
+
+          <p class="fine" style="margin:14px 0 0;">
+            Endereço: R. Ilka, 185 - Vila Margarida, Miguel Pereira - RJ, 26900-000 • Telefone/WhatsApp: (21) 98075-9974
+          </p>
+        </div>
+
+        <div class="card hero-media" aria-label="Foto principal da estalagem">
+          <img src="/img/estalagem/hero-estalagem.jpg" alt="Fachada da Estalagem do Rancho em Miguel Pereira" />
+          <div class="hero-caption">
+            <div>
+              <b>Estalagem do Rancho</b>
+              <small>R. Ilka, 185 • Miguel Pereira/RJ</small>
+            </div>
+            <a class="btn" href="#localizacao">Como chegar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Destaques -->
+  <section id="destaques">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Uma estadia simples, gostosa e com personalidade</h2>
+          <p>Perfeita para quem quer respirar, desacelerar e aproveitar Miguel Pereira com tranquilidade — sem complicação.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature">
+          <b>Natureza por todos os lados</b>
+          <span>Ambiente verde e clima de interior para descansar de verdade.</span>
+        </div>
+        <div class="feature">
+          <b>Varanda pra relaxar</b>
+          <span>Rede, sombra e tempo correndo devagar — do jeitinho que faz bem.</span>
+        </div>
+        <div class="feature">
+          <b>Conforto essencial</b>
+          <span>Espaço limpo, acolhedor e funcional para dormir bem e recarregar as energias.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre / Acomodações -->
+  <section id="acomodacoes">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Estalagem do Rancho</h2>
+          <p>Um lugar com clima de interior, toque rústico-elegante e atendimento direto pelo WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <p style="margin:0; color:var(--muted); line-height:1.75;">
+            Aqui a ideia é simples: oferecer uma estadia acolhedora, com tranquilidade e contato com a natureza.
+            Se você curte um lugar com clima de rancho, sossego e simplicidade bem cuidada, você vai se sentir em casa.
+          </p>
+
+          <ul class="list">
+            <li>Hospedagem tranquila em Miguel Pereira</li>
+            <li>Ambiente familiar</li>
+            <li>Reserva direta com atendimento humano</li>
+          </ul>
+
+          <div class="hero-ctas" style="margin-top:14px;">
+            <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20e%20valores%20na%20Estalagem%20do%20Rancho." target="_blank" rel="noopener">
+              Ver valores no WhatsApp
+            </a>
+            <a class="btn" href="#faq">Tirar dúvidas</a>
+          </div>
+
+          <p class="fine" style="margin-top:10px;">
+            *Se quiser, envie as datas e a quantidade de pessoas no WhatsApp para receber disponibilidade.
+          </p>
+        </div>
+
+        <div class="media">
+          <img src="/img/estalagem/quarto-estalagem.jpg" alt="Quarto da Estalagem do Rancho" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Café da manhã -->
+  <section id="cafe">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Café da manhã</h2>
+          <p>Um começo de dia gostoso, com clima de roça e simplicidade bem feita.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="media">
+          <img src="/img/estalagem/cafe-mesa-1.jpg" alt="Mesa de café da manhã na estalagem" />
+        </div>
+
+        <div class="box">
+          <p style="margin:0; color:var(--muted); line-height:1.75;">
+            Se você busca <b>pousada em Miguel Pereira com café da manhã</b>, aqui a proposta é acolhimento:
+            um café simples e servido com cuidado, para começar o dia com calma.
+          </p>
+          <ul class="list">
+            <li>Ambiente tranquilo e familiar</li>
+            <li>Opções simples para começar bem o dia</li>
+            <li>Confirme detalhes e horários pelo WhatsApp</li>
+          </ul>
+          <p class="fine" style="margin-top:10px;">
+            *Itens e horários podem variar. Confirme no WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Galeria de fotos</h2>
+          <p>Natureza, varanda e cantinhos que dão vontade de ficar. (Fotos reais do local.)</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Vi%20as%20fotos%20e%20quero%20reservar%20na%20Estalagem%20do%20Rancho.%20Tem%20disponibilidade%3F" target="_blank" rel="noopener">
+          Gostei, quero reservar
+        </a>
+      </div>
+
+      <div class="gallery">
+        <div class="g g1"><img src="/img/estalagem/varanda-estalagem-1.jpg" alt="Varanda da estalagem" /></div>
+        <div class="g g2"><img src="/img/estalagem/caminho-estalagem.jpg" alt="Caminho de entrada em meio à natureza" /></div>
+        <div class="g g3"><img src="/img/estalagem/varanda-estalagem-2.jpg" alt="Área externa da estalagem" /></div>
+        <div class="g g4"><img src="/img/estalagem/area-cafe-noite.jpg" alt="Área do café à noite" /></div>
+        <div class="g g5"><img src="/img/estalagem/cafe-mesa-2.jpg" alt="Mesa de café da manhã" /></div>
+      </div>
+
+      <p class="fine" style="margin-top:10px;">
+        Dica: você também pode ver mais fotos no Instagram:
+        <a href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener" style="text-decoration:underline;">
+          @pousada.estalagem.do.rancho
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Reserva -->
+  <section id="reservas">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Reserve em 1 minuto pelo WhatsApp</h2>
+          <p>Me diga as datas e a quantidade de pessoas. A gente responde com disponibilidade e valores.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <div class="steps">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <b>Envie as datas + nº de pessoas</b>
+                <div class="fine">Ex.: “10 a 12/01 • 2 pessoas”.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <b>Receba valores e disponibilidade</b>
+                <div class="fine">A equipe responde assim que possível.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <b>Combine tudo direto com a gente ✅</b>
+                <div class="fine">Sem intermediários e sem complicação.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-ctas" style="margin-top:14px;">
+            <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Quero%20reservar%20na%20Estalagem%20do%20Rancho.%20Datas%3A%20_____%20a%20_____%20.%20Pessoas%3A%20_____%20." target="_blank" rel="noopener">
+              Reservar no WhatsApp
+            </a>
+            <a class="btn" href="tel:+5521980759974">Ligar</a>
+          </div>
+
+          <p class="fine" style="margin-top:10px;">
+            Telefone/WhatsApp: <b>(21) 98075-9974</b>
+          </p>
+        </div>
+
+        <div class="media">
+          <img src="/img/estalagem/hero-estalagem.jpg" alt="Ambiente da Estalagem do Rancho" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localização -->
+  <section id="localizacao">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Localização</h2>
+          <p>Abra o mapa e venha com tranquilidade. Endereço completo abaixo.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <p style="margin:0; line-height:1.75; color:var(--muted);">
+            <b>Endereço:</b><br>
+            R. Ilka, 185 - Vila Margarida, Miguel Pereira - RJ, 26900-000
+          </p>
+
+          <div class="hero-ctas" style="margin-top:14px;">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=R.%20Ilka%2C%20185%20-%20Vila%20Margarida%2C%20Miguel%20Pereira%20-%20RJ%2C%2026900-000" target="_blank" rel="noopener">
+              Como chegar
+            </a>
+            <a class="btn" href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener">
+              Ver Instagram
+            </a>
+          </div>
+
+          <p class="fine" style="margin-top:10px;">
+            Dica: se quiser, posso ajustar o mapa para o “pin” exato do local (fica mais profissional).
+          </p>
+        </div>
+
+        <div class="media" style="height:320px;">
+          <iframe
+            title="Mapa - Estalagem do Rancho"
+            src="https://www.google.com/maps?q=R.%20Ilka,%20185%20-%20Vila%20Margarida,%20Miguel%20Pereira%20-%20RJ,%2026900-000&output=embed"
+            width="100%" height="320"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Dúvidas frequentes</h2>
+          <p>Essas perguntas ajudam muito no SEO (é o tipo de coisa que o Google mostra nas buscas).</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Como faço a reserva?</summary>
+        <p>É só clicar em “Reservar no WhatsApp”. Você envia as datas e a quantidade de pessoas, e a equipe confirma disponibilidade e valores.</p>
+      </details>
+
+      <details>
+        <summary>Onde fica a Estalagem do Rancho?</summary>
+        <p>R. Ilka, 185 - Vila Margarida, Miguel Pereira - RJ, 26900-000. Clique em “Como chegar” para abrir no Google Maps.</p>
+      </details>
+
+      <details>
+        <summary>Posso ver mais fotos?</summary>
+        <p>Sim. Veja mais no Instagram: <a href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener" style="text-decoration:underline;">@pousada.estalagem.do.rancho</a>.</p>
+      </details>
+
+      <details>
+        <summary>Qual o melhor horário para falar?</summary>
+        <p>Você pode chamar no WhatsApp. Se a equipe estiver ocupada, responde assim que possível.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <b style="font-family:'Playfair Display', serif; font-size:18px;">Estalagem do Rancho</b>
+          <p class="fine" style="margin:8px 0 0;">
+            Reservas e informações: <a href="tel:+5521980759974" style="text-decoration:underline;">(21) 98075-9974</a><br>
+            Instagram: <a href="https://www.instagram.com/pousada.estalagem.do.rancho" target="_blank" rel="noopener" style="text-decoration:underline;">@pousada.estalagem.do.rancho</a><br>
+            Endereço: R. Ilka, 185 - Vila Margarida, Miguel Pereira - RJ, 26900-000
+          </p>
+          <p class="fine" style="margin:10px 0 0;">
+            <span class="pill">Site oficial</span>
+          </p>
+        </div>
+
+        <div class="box">
+          <b style="color:var(--wood-2);">Pronto para reservar?</b>
+          <p class="fine" style="margin:8px 0 12px;">
+            Clique no botão e fale com a equipe agora.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Quero%20fazer%20uma%20reserva%20na%20Estalagem%20do%20Rancho." target="_blank" rel="noopener">
+            Reservar no WhatsApp
+          </a>
+
+          <p class="fine" style="margin:12px 0 0;">
+            Versão: <b>Premium • Claro rústico-elegante</b><br>
+            <span style="opacity:.9;">Página de demonstração criada pela BRsys.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <div class="wa-float">
+    <a class="btn btn-primary" href="https://wa.me/5521980759974?text=Ol%C3%A1!%20Quero%20reservar%20na%20Estalagem%20do%20Rancho.%20Poderia%20me%20passar%20valores%20e%20disponibilidade%3F" target="_blank" rel="noopener">
+      💬 Reservar
+    </a>
+  </div>
+</body>
+</html>
