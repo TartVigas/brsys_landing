@@ -8,357 +8,188 @@
   <title>Casinhas do Rio — Morretes/PR | Demo BRsys</title>
   <meta name="description" content="Demo de site: Casinhas do Rio (Morretes/PR). Sossego e natureza às margens do Rio Marumbi. Fale direto no WhatsApp." />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Casinhas do Rio — Morretes/PR" />
   <meta property="og:description" content="Sossego e natureza às margens do Rio Marumbi. Fale direto no WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/hero-rio-morretes.jpg" />
+  <meta property="og:image" content="./img/hero-rio-morretes.jpg" />
 
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="preload" as="image" href="img/hero-rio-morretes.jpg" />
-
-  <link rel="stylesheet" href="/css/app.css" />
+  <!-- Assets RELATIVOS -->
+  <link rel="preload" as="image" href="./img/hero-rio-morretes.jpg" />
+  <link rel="stylesheet" href="./css/app.css" />
 </head>
 
 <body>
-  <!-- Topbar -->
-  <header class="topbar" role="banner">
+
+  <!-- HEADER -->
+  <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#inicio" aria-label="Ir ao início">
-        <span class="brand__mark">CR</span>
-        <span class="brand__text">
+      <div class="brand">
+        <div class="brand__mark">CR</div>
+        <div class="brand__text">
           <strong>Casinhas do Rio</strong>
           <small>Morretes • Paraná</small>
-        </span>
-      </a>
+        </div>
+      </div>
 
-      <nav class="nav" aria-label="Navegação principal">
+      <nav class="nav">
         <a href="#experiencia">Experiência</a>
         <a href="#casinhas">As casinhas</a>
         <a href="#localizacao">Localização</a>
-        <a href="#sobre">Sobre</a>
         <a href="#reservar" class="btn btn--ghost">Reservar</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio">
-    <section class="hero" aria-label="Capa">
-      <div class="hero__bg">
-        <img
-          src="img/hero-rio-morretes.jpg"
-          alt="Rio em meio à Mata Atlântica em Morretes, Paraná"
-          loading="eager"
-          decoding="async"
-        />
-        <div class="hero__overlay"></div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <img src="./img/hero-rio-morretes.jpg" alt="Rio Marumbi em meio à Mata Atlântica" />
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="container hero__content">
+      <div class="hero__badge">
+        <span class="dot"></span>
+        Hospedagem na Mata Atlântica • Rio Marumbi
       </div>
 
-      <div class="container hero__content">
-        <div class="hero__badge">
-          <span class="dot"></span>
-          <span>Hospedagem na Mata Atlântica • Rio Marumbi</span>
-        </div>
+      <h1>Casinhas do Rio</h1>
+      <p class="hero__lead">
+        Sossego e natureza às margens do <strong>Rio Marumbi</strong>, em Morretes – PR.
+        Um refúgio simples, acolhedor e seguro para descansar.
+      </p>
 
-        <h1>Casinhas do Rio</h1>
-        <p class="hero__lead">
-          Sossego e natureza às margens do <strong>Rio Marumbi</strong>, em Morretes — PR.
-          Um lugar simples, acolhedor e seguro para descansar e recarregar as energias.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" id="ctaHeroWhatsapp" href="#" target="_blank" rel="noopener">
-            Falar no WhatsApp
-          </a>
-          <a class="btn btn--soft" href="#casinhas">Ver fotos e detalhes</a>
-        </div>
-
-        <div class="hero__meta">
-          <div class="pill">🐾 Aceita pets</div>
-          <div class="pill">🔥 Fogueira & descanso</div>
-          <div class="pill">🌊 A 30m do rio</div>
-          <div class="pill">🅿️ Estacionamento</div>
-          <div class="pill">📶 Wi-Fi</div>
-        </div>
-
-        <p class="hero__note">
-          <strong>Demo sem compromisso.</strong> Exemplo de como o Casinhas do Rio pode ficar com um site próprio.
-        </p>
+      <div class="hero__cta">
+        <a id="ctaHeroWhatsapp" class="btn btn--primary" href="#" target="_blank">
+          Falar no WhatsApp
+        </a>
+        <a class="btn btn--soft" href="#casinhas">
+          Ver fotos
+        </a>
       </div>
-    </section>
 
-    <!-- Experience -->
-    <section id="experiencia" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Experiência do lugar</h2>
-          <p>
-            Aqui você dorme com o som do rio, acorda cercado pela floresta e aproveita dias
-            longe do barulho — com simplicidade, tranquilidade e contato real com a natureza.
-          </p>
+      <div class="hero__meta">
+        <span class="pill">🐾 Aceita pets</span>
+        <span class="pill">🔥 Fogueira</span>
+        <span class="pill">🌊 30m do rio</span>
+        <span class="pill">📶 Wi-Fi</span>
+        <span class="pill">🅿️ Estacionamento</span>
+      </div>
+
+      <p class="hero__note">
+        <strong>Demonstração sem compromisso.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia" class="section">
+    <div class="container">
+      <h2>Experiência do lugar</h2>
+      <p class="muted">
+        Aqui você dorme com o som do rio, acorda cercado pela floresta
+        e vive dias de tranquilidade real.
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>🌊 Rio Marumbi</h3>
+          <p>A poucos passos da casinha, água limpa e calma.</p>
         </div>
-
-        <div class="grid3">
-          <article class="card">
-            <div class="card__icon">🌊</div>
-            <h3>Pertinho do Rio Marumbi</h3>
-            <p>A poucos passos do rio, ideal para se refrescar e desacelerar.</p>
-          </article>
-
-          <article class="card">
-            <div class="card__icon">🌿</div>
-            <h3>Mata Atlântica ao redor</h3>
-            <p>Verde por todos os lados, clima de refúgio e silêncio de verdade.</p>
-          </article>
-
-          <article class="card">
-            <div class="card__icon">🔥</div>
-            <h3>Varanda & fogueira</h3>
-            <p>Espaço para descanso, conversa e momentos simples que viram memória.</p>
-          </article>
+        <div class="card">
+          <h3>🌿 Mata Atlântica</h3>
+          <p>Natureza preservada e silêncio.</p>
         </div>
-
-        <div class="mediaRow">
-          <figure class="media">
-            <img src="img/rio-marumbi.jpg" alt="Rio com pedras e água cristalina" loading="lazy" decoding="async" />
-            <figcaption>Água, pedras e calma — o cenário muda o ritmo.</figcaption>
-          </figure>
-          <figure class="media">
-            <img src="img/natureza-morretes.jpg" alt="Mata Atlântica e montanhas com névoa" loading="lazy" decoding="async" />
-            <figcaption>Névoa, verde e montanha — Morretes em sua melhor forma.</figcaption>
-          </figure>
+        <div class="card">
+          <h3>🔥 Descanso</h3>
+          <p>Fogueira, varanda e tempo sem pressa.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Casinhas -->
-    <section id="casinhas" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>As casinhas</h2>
-          <p>
-            Casinhas rústicas, independentes e completas — pensadas para quem busca tranquilidade,
-            contato com a natureza e conforto essencial.
-          </p>
-        </div>
-
-        <div class="split">
-          <figure class="split__media">
-            <img src="img/casinha-varanda.jpg" alt="Varanda de madeira com rede e área externa" loading="lazy" decoding="async" />
-          </figure>
-
-          <div class="split__content">
-            <ul class="checklist">
-              <li><span class="check">✓</span> Varanda para descanso</li>
-              <li><span class="check">✓</span> Cozinha equipada</li>
-              <li><span class="check">✓</span> Banheiro privativo</li>
-              <li><span class="check">✓</span> Vista para rio, montanha e floresta</li>
-              <li><span class="check">✓</span> Wi-Fi gratuito e TV</li>
-              <li><span class="check">✓</span> Estacionamento no local</li>
-              <li><span class="check">✓</span> Pets bem-vindos 🐾</li>
-            </ul>
-
-            <div class="callout">
-              <h3>Ideal para descansar</h3>
-              <p>
-                Um lugar alto e seguro, a cerca de <strong>5 km do centro</strong>, em área rural de Morretes.
-                Perfeito para quem quer silêncio, natureza e simplicidade.
-              </p>
-            </div>
-
-            <div class="actions">
-              <a class="btn btn--primary" id="ctaCasinhasWhatsapp" href="#" target="_blank" rel="noopener">
-                Consultar disponibilidade no WhatsApp
-              </a>
-              <a class="btn btn--ghost" href="#reservar">Como reservar</a>
-            </div>
-          </div>
-        </div>
-
-        <figure class="wideMedia">
-          <img src="img/area-fogueira.jpg" alt="Área externa com fogueira e iluminação aconchegante" loading="lazy" decoding="async" />
-          <figcaption>Fim de tarde + fogueira + natureza. Simples e perfeito.</figcaption>
-        </figure>
+      <div class="mediaRow">
+        <img src="./img/rio-marumbi.jpg" alt="Rio Marumbi" />
+        <img src="./img/natureza-morretes.jpg" alt="Natureza em Morretes" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Location -->
-    <section id="localizacao" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Localização</h2>
-          <p>
-            Morretes — PR. Área rural tranquila e segura, a poucos minutos do centro.
-            Se você vier de ônibus ou trem turístico partindo de Curitiba, é possível combinar traslado (verificar valores e agendar antes).
-          </p>
-        </div>
+  <!-- CASINHAS -->
+  <section id="casinhas" class="section section--alt">
+    <div class="container split">
+      <img src="./img/casinha-varanda.jpg" alt="Varanda da casinha" />
 
-        <div class="mapCard">
-          <div class="mapCard__info">
-            <h3>Como chegar</h3>
-            <p class="muted">
-              (Nesta demo, o mapa é ilustrativo. No site final, colocamos o Google Maps com rota.)
-            </p>
-            <ul class="mini">
-              <li><strong>Distância:</strong> aprox. 5 km do centro</li>
-              <li><strong>Rio:</strong> cerca de 30 m</li>
-              <li><strong>Check-in:</strong> 12:00–22:00</li>
-              <li><strong>Silêncio:</strong> 22:00–06:00</li>
-            </ul>
-
-            <a class="btn btn--soft" href="#reservar">Falar e reservar</a>
-          </div>
-
-          <div class="mapCard__mock" aria-hidden="true">
-            <div class="mapMock">
-              <div class="mapMock__pin"></div>
-              <div class="mapMock__label">Casinhas do Rio • Morretes/PR</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="sobre" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Um espaço cuidado com carinho</h2>
-          <p>
-            Denise vive no local há mais de 3 anos e cuida pessoalmente de cada detalhe das Casinhas do Rio.
-            Apaixonada pela floresta, trilhas e cachoeiras de Morretes, recebe os hóspedes com simplicidade e atenção.
-          </p>
-        </div>
-
-        <div class="grid2">
-          <article class="card card--soft">
-            <h3>O que você encontra por aqui</h3>
-            <ul class="bullets">
-              <li>Tranquilidade e contato real com a natureza</li>
-              <li>Espaço externo para descanso</li>
-              <li>Ambiente simples e acolhedor</li>
-              <li>Estrutura completa para uma estadia confortável</li>
-            </ul>
-          </article>
-
-          <article class="card card--soft">
-            <h3>Idiomas</h3>
-            <p class="muted">Atendimento em:</p>
-            <div class="chips">
-              <span class="chip">Português</span>
-              <span class="chip">Inglês</span>
-              <span class="chip">Espanhol</span>
-            </div>
-
-            <div class="divider"></div>
-
-            <h3>Importante</h3>
-            <p class="muted">
-              Esta demonstração foi criada para visualizar um site próprio.
-              No site final, podemos incluir mais fotos, regras detalhadas e informações conforme a necessidade.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking -->
-    <section id="reservar" class="section">
-      <div class="container">
-        <div class="reserve">
-          <div class="reserve__left">
-            <h2>Reservas diretas, sem intermediários</h2>
-            <p>
-              Para valores, disponibilidade e dúvidas, fale diretamente no WhatsApp.
-              É rápido e você resolve tudo com atendimento humano.
-            </p>
-
-            <div class="reserve__cta">
-              <a class="btn btn--primary btn--xl" id="ctaReserveWhatsapp" href="#" target="_blank" rel="noopener">
-                Reservar pelo WhatsApp
-              </a>
-              <p class="muted small">
-                Dica: no site final, dá pra colocar também um botão “Ver no Instagram” como secundário — mas o principal sempre é o WhatsApp.
-              </p>
-            </div>
-          </div>
-
-          <div class="reserve__right">
-            <div class="card">
-              <h3>Principais comodidades</h3>
-              <div class="amenities">
-                <span class="amenity">🅿️ Estacionamento</span>
-                <span class="amenity">📶 Wi-Fi</span>
-                <span class="amenity">🍳 Cozinha</span>
-                <span class="amenity">🛁 Banheiro privativo</span>
-                <span class="amenity">🌄 Vista</span>
-                <span class="amenity">🐾 Pets</span>
-              </div>
-
-              <div class="divider"></div>
-
-              <a class="btn btn--ghost" href="https://www.instagram.com/casinhas.do.rio/" target="_blank" rel="noopener">
-                Ver Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Floating WhatsApp -->
-    <a class="waFloat" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-      <span class="waFloat__icon">💬</span>
-      <span class="waFloat__text">WhatsApp</span>
-    </a>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__inner">
       <div>
-        <strong>Casinhas do Rio</strong>
-        <div class="muted">Morretes • Paraná</div>
+        <h2>As casinhas</h2>
+        <ul class="checklist">
+          <li>✓ Varanda com rede</li>
+          <li>✓ Cozinha equipada</li>
+          <li>✓ Banheiro privativo</li>
+          <li>✓ Vista para rio e floresta</li>
+          <li>✓ Pets bem-vindos</li>
+        </ul>
+
+        <a id="ctaCasinhasWhatsapp" class="btn btn--primary" href="#" target="_blank">
+          Consultar disponibilidade
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <img class="wideMedia" src="./img/area-fogueira.jpg" alt="Área da fogueira" />
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" class="section">
+    <div class="container">
+      <h2>Localização</h2>
+      <p class="muted">
+        Área rural tranquila, a cerca de 5km do centro de Morretes.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESERVA -->
+  <section id="reservar" class="section section--alt">
+    <div class="container reserve">
+      <div>
+        <h2>Reservas diretas</h2>
+        <p class="muted">
+          Fale direto pelo WhatsApp, sem intermediários.
+        </p>
+
+        <a id="ctaReserveWhatsapp" class="btn btn--primary btn--xl" href="#" target="_blank">
+          Reservar pelo WhatsApp
+        </a>
       </div>
 
-      <div class="footer__links">
-        <a href="#inicio">Topo</a>
-        <a href="#casinhas">Casinhas</a>
-        <a href="#localizacao">Localização</a>
-        <a href="#reservar">Reservar</a>
+      <div class="card">
+        <h3>Comodidades</h3>
+        <div class="amenities">
+          <span>🅿️ Estacionamento</span>
+          <span>📶 Wi-Fi</span>
+          <span>🍳 Cozinha</span>
+          <span>🛁 Banheiro</span>
+          <span>🐾 Pets</span>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="footer__brsys">
-        <span class="muted">Demonstração criada por</span>
-        <strong>BRsys</strong>
-      </div>
+  <!-- WHATSAPP FLOAT -->
+  <a id="waFloat" class="waFloat" href="#" target="_blank">💬 WhatsApp</a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <strong>Casinhas do Rio</strong>
+      <span class="muted">Demonstração criada pela BRsys</span>
     </div>
   </footer>
 
-  <!-- Basic JSON-LD (demo) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "Casinhas do Rio",
-    "description": "Hospedagem na Mata Atlântica ao lado do Rio Marumbi, em Morretes - PR.",
-    "areaServed": "Morretes - PR",
-    "petsAllowed": true,
-    "image": [
-      "img/hero-rio-morretes.jpg",
-      "img/casinha-varanda.jpg",
-      "img/rio-marumbi.jpg",
-      "img/area-fogueira.jpg",
-      "img/natureza-morretes.jpg"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/casinhas.do.rio/"
-    ]
-  }
-  </script>
+  <!-- JS RELATIVO -->
+  <script src="./js/app.js" defer></script>
 
-  <script src="/js/app.js" defer></script>
 </body>
 </html>
-
