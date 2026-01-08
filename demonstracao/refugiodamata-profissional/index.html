@@ -2,17 +2,152 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Refúgio da Mata | Chalés Românticos em Morretes – PR</title>
-  <meta name="description" content="Chalés românticos em meio à natureza em Morretes – PR. Ideal para casais, lua de mel e datas especiais. Consulte disponibilidade pelo WhatsApp." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Refúgio da Mata | Chalés Românticos em Morretes – PR</title>
+  <meta name="description" content="Chalés românticos em Morretes – PR. Ideal para casais, lua de mel e datas especiais. Consulte disponibilidade direto pelo WhatsApp." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Canonical (opcional, mas recomendado) -->
+  <link rel="canonical" href="https://www.brsys.com.br/demonstracao/refugiodamata-profissional/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Refúgio da Mata | Chalés Românticos em Morretes" />
   <meta property="og:description" content="Um refúgio exclusivo para casais em meio à natureza. Tranquilidade, privacidade e experiência romântica." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/refugiodamata/hero-exterior.jpg" />
 
-  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <script defer src="js/app.js"></script>
+
+  <!-- CSS extra (somente para garantir galeria e grids sem você mexer no app.css agora) -->
+  <style>
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .grid-2.reverse { grid-template-columns: 0.95fr 1.05fr; }
+    .grid-2 img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      display: block;
+    }
+
+    .badge-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .badge {
+      border: 1px solid rgba(45,212,191,.35);
+      color: rgba(229,231,235,.92);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .85rem;
+      background: rgba(22,26,33,.45);
+      backdrop-filter: blur(4px);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .gallery .main {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.5);
+    }
+    .gallery .main img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.02);
+    }
+    .gallery .side {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .gallery .tile {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.45);
+    }
+    .gallery .tile img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .mini-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.42);
+      display:block;
+    }
+
+    .cta-inline {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 20px;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(45,212,191,.65);
+      color: rgba(45,212,191,.95);
+      background: rgba(11,14,18,.35);
+      transition: transform .15s ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-2.reverse { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery .side { grid-template-columns: repeat(2, 1fr); }
+      .gallery .tile img { height: 160px; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .mini-grid img { height: 220px; }
+    }
+  </style>
+
+  <!-- Schema.org (básico) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Refúgio da Mata",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Morretes",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "telephone": "+55 41 9636-6554",
+    "url": "https://www.brsys.com.br/demonstracao/refugiodamata-profissional/"
+  }
+  </script>
 </head>
+
 <body>
 
 <header class="top">
@@ -22,7 +157,7 @@
       <a href="index.html">Início</a>
       <a href="experiencia-romantica.html">Experiência Romântica</a>
       <a href="morretes.html">Morretes</a>
-      <a class="btn" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank">WhatsApp</a>
+      <a class="btn" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank" rel="noopener">WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -31,38 +166,107 @@
   <div class="container">
     <h2>Chalés românticos em Morretes para viver momentos a dois</h2>
     <p>Um refúgio exclusivo em meio à natureza, ideal para casais, lua de mel e datas especiais.</p>
-    <a class="btn-primary" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank">
-      Ver disponibilidade no WhatsApp
-    </a>
+
+    <div class="cta-inline">
+      <a class="btn-primary" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank" rel="noopener">
+        Ver disponibilidade no WhatsApp
+      </a>
+      <a class="btn-secondary" href="#galeria">Ver fotos</a>
+    </div>
+
+    <div class="badge-row" aria-label="Destaques">
+      <span class="badge">Ideal para casais</span>
+      <span class="badge">Privacidade</span>
+      <span class="badge">Natureza</span>
+      <span class="badge">Experiência romântica</span>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="galeria">
   <div class="container">
-    <h3>Sobre o Refúgio</h3>
-    <p>
-      O Refúgio da Mata foi criado para quem busca tranquilidade, privacidade e conexão com a natureza.
-      Um espaço pensado para desacelerar e viver experiências únicas a dois.
-    </p>
+    <h3>Galeria</h3>
+    <p>Imagens reais de referência (demo). Estrutura pensada para valorizar o refúgio e aumentar conversão.</p>
+
+    <div class="gallery">
+      <div class="main">
+        <img src="img/refugiodamata/hero-exterior.jpg" alt="Chalé com hidromassagem e vista para a mata" loading="eager" />
+      </div>
+      <div class="side">
+        <div class="tile">
+          <img src="img/refugiodamata/interior-suite.jpg" alt="Interior da suíte no Refúgio da Mata" loading="lazy" />
+        </div>
+        <div class="tile">
+          <img src="img/refugiodamata/hidro-suite.jpg" alt="Hidromassagem privativa na suíte" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-grid">
+      <img src="img/refugiodamata/vista-montanha.jpg" alt="Vista para montanhas e natureza em Morretes" loading="lazy" />
+      <img src="img/refugiodamata/romantico-cama.jpg" alt="Decoração romântica para casal" loading="lazy" />
+      <img src="img/refugiodamata/fachada-dia.jpg" alt="Fachada do chalé durante o dia" loading="lazy" />
+    </div>
   </div>
 </section>
 
 <section class="section dark">
   <div class="container">
-    <h3>Acomodações</h3>
-    <ul class="list">
-      <li>Chalés privativos e silenciosos</li>
-      <li>Conforto e design acolhedor</li>
-      <li>Ambiente ideal para casais</li>
-      <li>Contato direto, sem intermediários</li>
-    </ul>
+    <h3>Sobre o Refúgio</h3>
+    <p>
+      O Refúgio da Mata foi criado para quem busca tranquilidade, privacidade e conexão com a natureza.
+      Um espaço pensado para desacelerar e viver experiências únicas a dois — sem correria, sem barulho, sem intermediários.
+    </p>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="margin-top:22px;">O que você encontra aqui</h3>
+        <ul class="list">
+          <li>Chalés privativos e silenciosos</li>
+          <li>Ambiente ideal para casais e datas especiais</li>
+          <li>Experiência acolhedora com foco em descanso</li>
+          <li>Atendimento direto pelo WhatsApp</li>
+        </ul>
+      </div>
+      <img src="img/refugiodamata/interior-suite.jpg" alt="Ambiente interno confortável e acolhedor" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h3>Para quem é</h3>
+    <p>Perfeito para casais que querem viver uma experiência reservada, romântica e conectada com a natureza.</p>
+
+    <div class="grid-2 reverse">
+      <img src="img/refugiodamata/romantico-cama.jpg" alt="Quarto preparado para casal" loading="lazy" />
+      <div>
+        <ul class="list">
+          <li>Lua de mel e pedidos especiais</li>
+          <li>Aniversários e comemorações</li>
+          <li>Fim de semana romântico</li>
+          <li>Descanso fora da rotina</li>
+        </ul>
+
+        <div class="cta-inline">
+          <a class="btn-primary" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank" rel="noopener">
+            Consultar disponibilidade
+          </a>
+          <a class="btn-secondary" href="experiencia-romantica.html">Ver experiência romântica</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
     <h3>Prontos para viver essa experiência?</h3>
-    <a class="btn-primary" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank">
+    <p style="max-width:720px;margin:0 auto 22px;color:rgba(229,231,235,.75);">
+      Fale direto no WhatsApp para consultar datas, valores e condições.
+    </p>
+
+    <a class="btn-primary" href="https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata." target="_blank" rel="noopener">
       Falar no WhatsApp
     </a>
   </div>
