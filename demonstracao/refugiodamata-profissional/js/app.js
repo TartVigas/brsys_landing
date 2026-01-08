@@ -1,51 +1,65 @@
 /* =====================================================
-   BRsys — app.js (Dark Clean)
-   Projeto: Refúgio da Mata | Demo Profissional
+   BRsys — app.js Premium
+   Projeto: Refúgio da Mata
    ===================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  handleHeaderScroll();
-  smoothInternalLinks();
+  headerOnScroll();
+  smoothScroll();
+  revealOnScroll();
+  floatingWhatsApp();
 });
 
-/* ---------- HEADER COM SOMBRA AO SCROLL ---------- */
-function handleHeaderScroll() {
+/* ---------- HEADER AO SCROLL ---------- */
+function headerOnScroll() {
   const header = document.querySelector("header.top");
   if (!header) return;
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+    header.classList.toggle("scrolled", window.scrollY > 20);
   });
 }
 
-/* ---------- SCROLL SUAVE PARA ÂNCORAS ---------- */
-function smoothInternalLinks() {
-  const links = document.querySelectorAll('a[href^="#"]');
-
-  links.forEach(link => {
+/* ---------- SCROLL SUAVE ---------- */
+function smoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", e => {
-      const targetId = link.getAttribute("href");
-      const targetEl = document.querySelector(targetId);
-
-      if (!targetEl) return;
-
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
       e.preventDefault();
-      targetEl.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      target.scrollIntoView({ behavior: "smooth" });
     });
   });
 }
 
-/* ---------- UTILITÁRIO FUTURO (RESERVADO) ----------
-   Espaço preparado para:
-   - animações leves
-   - toggle dark/light (se quiser)
-   - lazy-load manual
--------------------------------------------------- */
+/* ---------- REVEAL SUAVE (PREMIUM) ---------- */
+function revealOnScroll() {
+  const items = document.querySelectorAll(".section, .gallery img");
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  items.forEach(el => {
+    el.classList.add("reveal-init");
+    observer.observe(el);
+  });
+}
+
+/* ---------- WHATSAPP FLUTUANTE ---------- */
+function floatingWhatsApp() {
+  const btn = document.createElement("a");
+  btn.href =
+    "https://wa.me/554196366554?text=Olá,%20gostaria%20de%20consultar%20disponibilidade%20no%20Refúgio%20da%20Mata.";
+  btn.target = "_blank";
+  btn.className = "whatsapp-float";
+  btn.setAttribute("aria-label", "Falar no WhatsApp");
+
+  btn.innerHTML = "💬";
+  document.body.appendChild(btn);
+}
