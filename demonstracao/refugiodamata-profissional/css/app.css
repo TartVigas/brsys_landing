@@ -221,4 +221,8 @@ footer .dev {
     padding: 60px 0;
   }
 }
+header.top.scrolled {
+  background: rgba(8, 10, 14, 0.95);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
 
