@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cursos — BRsys</title>
+  <meta name="description" content="Cursos recomendados pela BRsys. Curadoria por ramo (começando por Hotelaria), com links oficiais e orientação via WhatsApp." />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    :root{
+      --br-accent:#21d0b2;
+      --br-text:rgba(255,255,255,.92);
+      --br-muted:rgba(255,255,255,.72);
+      --br-border:rgba(255,255,255,.14);
+      --br-card:rgba(255,255,255,.06);
+      --br-shadow:0 18px 60px rgba(0,0,0,.45);
+      --br-radius2:22px;
+      --br-max:1120px;
+      --br-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    body{font-family:var(--br-font)}
+    .wrap{max-width:var(--br-max); margin:0 auto; padding:26px 16px 64px}
+    .crumbs{display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--br-muted); font-size:13px; margin:6px 0 16px}
+    .crumbs a{color:var(--br-muted); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.25)}
+    .crumbs .sep{opacity:.55}
+
+    .head{
+      border:1px solid var(--br-border);
+      background:var(--br-card);
+      border-radius:var(--br-radius2);
+      padding:18px;
+      box-shadow:var(--br-shadow);
+    }
+    h1{margin:0 0 8px; color:var(--br-text); font-size:clamp(26px,3.2vw,40px); letter-spacing:-.3px}
+    .sub{margin:0; color:var(--br-muted); line-height:1.6}
+    .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px; border-radius:999px; border:1px solid var(--br-border);
+      background:rgba(255,255,255,.04); color:var(--br-muted); font-size:12px; margin-top:12px;
+    }
+    .dot{width:10px; height:10px; border-radius:999px; background:var(--br-accent); box-shadow:0 0 0 6px rgba(33,208,178,.14)}
+
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--br-border);
+      background:rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:14px;
+    }
+    .k{color:rgba(255,255,255,.62); font-size:12px; margin-bottom:6px}
+    .v{color:var(--br-text); font-weight:900; font-size:16px}
+    .d{color:var(--br-muted); font-size:13px; margin-top:6px; line-height:1.55}
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:14px;
+      border:1px solid var(--br-border);
+      background:rgba(255,255,255,.04);
+      color:var(--br-text); text-decoration:none; font-weight:800;
+    }
+    .btn:hover{background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(33,208,178,.55);
+      background: linear-gradient(180deg, rgba(33,208,178,.22), rgba(33,208,178,.10));
+    }
+    .footer{
+      margin-top:16px; padding-top:12px; border-top:1px solid var(--br-border);
+      color:rgba(255,255,255,.62); font-size:12px; line-height:1.65;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Início</a>
+      <span class="sep">/</span>
+      <span aria-current="page">Cursos</span>
+    </nav>
+
+    <header class="head">
+      <h1>Cursos (Robbie)</h1>
+      <p class="sub">
+        Curadoria BRsys: cursos por ramo, com link oficial e orientação no WhatsApp.
+        Começamos por <b>Hotelaria</b>.
+      </p>
+      <div class="tag"><span class="dot" aria-hidden="true"></span> Robbie = Hotmart</div>
+
+      <div class="actions">
+        <a class="btn" id="btnSupport" href="#" target="_blank" rel="noopener">Falar com a BRsys no WhatsApp</a>
+        <a class="btn" href="/">Voltar para o site</a>
+      </div>
+    </header>
+
+    <section class="grid" style="margin-top:14px">
+      <!-- 1º braço -->
+      <article class="card">
+        <div class="k">Hotelaria</div>
+        <div class="v">Curso de Hotelaria (EAD)</div>
+        <p class="d">
+          Recomendação inicial: rotina e fundamentos práticos para hotelaria.
+          Link oficial via Hotmart, sem promessas, com orientação BRsys.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="/cursos/hotelaria/">Ver página do curso →</a>
+          <a class="btn" id="btnHotmart" href="#" target="_blank" rel="nofollow sponsored noopener">Link oficial</a>
+        </div>
+      </article>
+
+      <!-- Slots futuros -->
+      <article class="card">
+        <div class="k">Em breve</div>
+        <div class="v">Marketing para Hotelaria</div>
+        <p class="d">Curadoria futura (somente produtos com vendas ativas e boa página oficial).</p>
+      </article>
+
+      <article class="card">
+        <div class="k">Em breve</div>
+        <div class="v">Vendas & Atendimento</div>
+        <p class="d">Treinamentos de atendimento, reservas diretas e padronização.</p>
+      </article>
+    </section>
+
+    <div class="footer">
+      <div><b>Transparência:</b> quando houver link de afiliado, isso será indicado. A BRsys não se passa pela Hotmart.</div>
+      <div>© <span id="year"></span> BRsys — Cursos</div>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script>
+    const HOTMART_LINK = "https://go.hotmart.com/N103776407L";
+    const BRSYS_WA = "https://wa.me/5513997408157?text=" + encodeURIComponent(
+      "Oi! Vim pela página /cursos. Quero orientação sobre cursos de hotelaria."
+    );
+
+    const bind = (id, url) => { const el = document.getElementById(id); if (el) el.href = url; };
+    bind("btnSupport", BRSYS_WA);
+    bind("btnHotmart", HOTMART_LINK);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
