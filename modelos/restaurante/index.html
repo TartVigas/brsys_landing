@@ -1,1 +1,821 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1418" />
+
+  <title>Restaurante | Cardápio e Pedido no WhatsApp — BRsys</title>
+  <meta name="description" content="Modelo BRsys para Restaurante: cardápio simples, pratos do dia e pedido direto no WhatsApp. Feito para conversão." />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/restaurante/" />
+
+  <!-- CSS do projeto (opcional) -->
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <style>
+    :root{
+      --bg:#0b1418; --panel:#0f1c22; --panel2:#0c171d;
+      --text:#e9f1f3; --muted:#a9bcc2;
+      --brand:#19d3c5; --brand2:#10bfb2;
+      --warm:#ffcc66; --ok:#7ef0c2;
+      --stroke:rgba(255,255,255,.08);
+      --shadow: 0 20px 80px rgba(0,0,0,.45);
+      --r: 18px; --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(1200px 800px at 12% -10%, rgba(25,211,197,.22), transparent 55%),
+        radial-gradient(1000px 650px at 95% 10%, rgba(255,204,102,.10), transparent 55%),
+        radial-gradient(900px 600px at 80% 80%, rgba(16,191,178,.14), transparent 52%),
+        linear-gradient(180deg, #071014 0%, #091217 35%, #071014 100%);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 0 18px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:30;
+      backdrop-filter: blur(10px);
+      background: rgba(7,16,20,.58);
+      border-bottom:1px solid var(--stroke);
+    }
+    .topbar .in{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width: 260px;
+    }
+    .mark{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(255,204,102,.20), rgba(25,211,197,.14));
+      border: 1px solid rgba(255,204,102,.20);
+      display:grid; place-items:center;
+      box-shadow: 0 14px 45px rgba(0,0,0,.4);
+      position:relative; overflow:hidden;
+    }
+    .mark::after{
+      content:""; position:absolute; inset:-50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.16), transparent 35%);
+      transform: rotate(25deg);
+    }
+    .brand b{letter-spacing:.2px}
+    .brand small{display:block; color:var(--muted); margin-top:2px}
+
+    .nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+    .nav a{
+      color:var(--muted); font-size:14px;
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{border-color:var(--stroke); color:var(--text); background: rgba(255,255,255,.03)}
+
+    .cta{
+      display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width: 300px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding: 12px 14px; border-radius: 14px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.05); border-color: rgba(25,211,197,.28)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(0,0,0,.18);
+      color:#062022;
+      box-shadow: 0 18px 60px rgba(25,211,197,.18);
+    }
+    .btn.warm{
+      background: linear-gradient(135deg, var(--warm), rgba(255,204,102,.65));
+      border-color: rgba(0,0,0,.18);
+      color:#201706;
+      box-shadow: 0 18px 60px rgba(255,204,102,.12);
+    }
+
+    /* Layout */
+    main{padding: 54px 0 18px}
+    section{padding: 18px 0}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} .cta,.brand{min-width:auto} }
+    .card{
+      border:1px solid var(--stroke);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroCard{padding: 22px 22px 18px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size: 13px; color: var(--muted);
+      padding: 8px 10px; border:1px solid var(--stroke);
+      border-radius: 999px; background: rgba(255,255,255,.02);
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: 44px; line-height: 1.06;
+      letter-spacing: -.6px;
+    }
+    @media (max-width: 520px){ h1{font-size: 36px} }
+    .sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px; line-height: 1.5;
+      max-width: 66ch;
+    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin: 14px 0 0}
+    .badge{
+      font-size: 12px; color: var(--muted);
+      padding: 8px 10px; border-radius: 999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.02);
+    }
+    .note{margin-top:10px; color:var(--muted); font-size:12px; line-height:1.45}
+
+    /* Side */
+    .side{padding: 18px}
+    .side h3{margin:0 0 10px; font-size: 16px}
+    .side p{margin:0 0 14px; color:var(--muted); font-size:14px; line-height:1.5}
+    .mini{
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.18);
+      border-radius: 16px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini ul{margin:0; padding-left: 18px; color:var(--muted); font-size: 14px}
+    .mini li{margin:6px 0}
+    .mini .ok{color:var(--ok); font-weight:900}
+
+    /* Section titles */
+    .sectionTitle{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      margin: 8px 0 12px;
+    }
+    .sectionTitle h2{margin:0; font-size: 22px}
+    .sectionTitle span{color:var(--muted); font-size: 13px}
+
+    /* Tabs */
+    .tabs{
+      display:flex; gap:8px; flex-wrap:wrap;
+      padding: 14px 14px 0;
+    }
+    .tab{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .tab.active{
+      color:#062022;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      border-color: rgba(0,0,0,.18);
+      font-weight: 900;
+    }
+
+    /* Menu list */
+    .list{display:grid; gap: 10px; padding: 14px}
+    .item{
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+      padding: 14px;
+      display:flex; justify-content:space-between; gap: 12px; align-items:flex-start;
+    }
+    .item b{display:block}
+    .item small{display:block; color:var(--muted); margin-top:4px; line-height:1.4}
+    .price{font-weight:900; color: var(--brand); white-space:nowrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:6px;
+      font-size: 12px;
+      padding:6px 10px;
+      border-radius: 999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .choose{
+      margin-top: 10px;
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .choose button{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight: 800;
+    }
+    .choose button:hover{border-color: rgba(25,211,197,.28); background: rgba(255,255,255,.05)}
+
+    /* 3 cols */
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+    @media (max-width: 860px){ .grid3{grid-template-columns: 1fr} }
+    .box{
+      padding: 16px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+    }
+    .box .n{
+      width: 34px; height: 34px; border-radius: 12px;
+      display:grid; place-items:center;
+      background: rgba(255,204,102,.10);
+      border:1px solid rgba(255,204,102,.22);
+      color: var(--warm);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .box b{display:block; margin-bottom:6px}
+    .box p{margin:0; color:var(--muted); font-size: 14px; line-height:1.5}
+
+    /* Testimonials */
+    .quotes{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+    @media (max-width: 900px){ .quotes{grid-template-columns:1fr} }
+    .quote{
+      padding: 16px;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+    }
+    .quote p{margin:0; color:var(--text); line-height:1.5}
+    .quote small{display:block; margin-top:10px; color:var(--muted)}
+
+    /* FAQ */
+    .faq details{
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.14);
+      border-radius: 16px;
+      padding: 14px;
+      margin: 10px 0;
+    }
+    .faq summary{cursor:pointer; list-style:none; font-weight: 900}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{margin:10px 0 0; color:var(--muted); font-size:14px; line-height:1.6}
+
+    /* Footer */
+    .footer{
+      border-top:1px solid var(--stroke);
+      color: var(--muted);
+      font-size: 13px;
+      padding: 18px 0 26px;
+    }
+
+    /* Floating WhatsApp */
+    .floating{
+      position: fixed; right: 16px; bottom: 16px; z-index: 40;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .fab{
+      width: 56px; height:56px; border-radius: 18px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 20px 70px rgba(25,211,197,.22);
+      border: 1px solid rgba(0,0,0,.2);
+      color:#062022; font-weight: 900;
+    }
+
+    /* Utilities */
+    .hidden{display:none !important}
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="in">
+        <div class="brand">
+          <div class="mark" aria-hidden="true"><span style="font-weight:900;color:var(--warm);">🍽️</span></div>
+          <div>
+            <b>Restaurante (modelo)</b>
+            <small>Cardápio + pedido via WhatsApp</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="#cardapio">Cardápio</a>
+          <a href="#prato-dia">Prato do dia</a>
+          <a href="#como">Como pedir</a>
+          <a href="#faq">Dúvidas</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="#cardapio">Ver cardápio</a>
+          <a class="btn primary" id="btnWhatsTop" href="#">Pedir no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <!-- HERO -->
+      <div class="grid">
+        <div class="card heroCard">
+          <div class="kicker">⭐ Pedido rápido • 📍 Retirada/Entrega • ✅ WhatsApp direto</div>
+          <h1>Seu cardápio precisa<br/>virar pedido.</h1>
+          <p class="sub">
+            Página leve, cardápio claro e atalhos que levam direto ao WhatsApp.
+            Ideal para restaurante que quer vender mais sem depender de intermediário.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" id="btnWhatsHero" href="#">Quero pedir agora</a>
+            <a class="btn warm" href="#prato-dia">Ver prato do dia</a>
+            <a class="btn" href="#como">Como funciona</a>
+          </div>
+
+          <div class="badges">
+            <span class="badge">🍛 Pratos</span>
+            <span class="badge">🥤 Bebidas</span>
+            <span class="badge">🍰 Sobremesas</span>
+            <span class="badge">🧾 Mensagem pronta</span>
+          </div>
+
+          <p class="note">
+            * Modelo demonstrativo BRsys. Troque nome, valores, horário e WhatsApp pelo do cliente.
+          </p>
+        </div>
+
+        <aside class="card side">
+          <h3>O que faz converter</h3>
+          <p>
+            O cliente quer <b>escolher rápido</b> e <b>confirmar rápido</b>.
+            O WhatsApp é o funil. O site é o empurrão.
+          </p>
+
+          <div class="mini">
+            <b>Atalhos que vendem:</b>
+            <ul>
+              <li>Cardápio por categoria (tabs)</li>
+              <li>Botão “Pedir” em cada item</li>
+              <li>Prato do dia destacado</li>
+              <li>Horário e entrega visíveis</li>
+            </ul>
+          </div>
+
+          <div class="mini">
+            <b>Regras simples (exemplo)</b>
+            <ul>
+              <li><span class="ok">✔</span> Pix / cartão / dinheiro</li>
+              <li><span class="ok">✔</span> Retirada: 20–35 min</li>
+              <li><span class="ok">✔</span> Entrega: 35–60 min</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- CARDÁPIO -->
+      <section id="cardapio">
+        <div class="sectionTitle">
+          <h2>Cardápio</h2>
+          <span>Escolha rápido • clique • confirme no WhatsApp</span>
+        </div>
+
+        <div class="card">
+          <div class="tabs" role="tablist" aria-label="Categorias do cardápio">
+            <button class="tab active" data-tab="pratos" role="tab" aria-selected="true">Pratos</button>
+            <button class="tab" data-tab="executivo" role="tab" aria-selected="false">Executivo</button>
+            <button class="tab" data-tab="lanches" role="tab" aria-selected="false">Lanches</button>
+            <button class="tab" data-tab="bebidas" role="tab" aria-selected="false">Bebidas</button>
+            <button class="tab" data-tab="sobremesas" role="tab" aria-selected="false">Sobremesas</button>
+          </div>
+
+          <!-- PRATOS -->
+          <div class="list tabpanel" id="tab-pratos" role="tabpanel">
+            <div class="item">
+              <div>
+                <b>Parmegiana (frango ou carne)</b>
+                <small>Acompanha arroz e fritas. Serve 1–2 pessoas.</small>
+                <span class="pill">🔥 Mais pedido</span>
+                <div class="choose">
+                  <button data-order="Parmegiana (frango)">Pedir frango</button>
+                  <button data-order="Parmegiana (carne)">Pedir carne</button>
+                </div>
+              </div>
+              <div class="price">R$ 49</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Feijoada (porção)</b>
+                <small>Arroz, couve, farofa e laranja.</small>
+                <div class="choose">
+                  <button data-order="Feijoada (porção)">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 32</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Peixe grelhado</b>
+                <small>Arroz, legumes e salada. (Consulte o peixe do dia)</small>
+                <div class="choose">
+                  <button data-order="Peixe grelhado (consultar peixe do dia)">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 38</div>
+            </div>
+          </div>
+
+          <!-- EXECUTIVO -->
+          <div class="list tabpanel hidden" id="tab-executivo" role="tabpanel">
+            <div class="item">
+              <div>
+                <b>Executivo frango grelhado</b>
+                <small>Arroz, feijão, salada e batata/legumes.</small>
+                <div class="choose">
+                  <button data-order="Executivo frango grelhado">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 24</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Executivo bife</b>
+                <small>Arroz, feijão, salada e fritas.</small>
+                <div class="choose">
+                  <button data-order="Executivo bife">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 26</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Executivo vegetariano</b>
+                <small>Arroz, feijão, legumes e salada.</small>
+                <div class="choose">
+                  <button data-order="Executivo vegetariano">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 22</div>
+            </div>
+          </div>
+
+          <!-- LANCHES -->
+          <div class="list tabpanel hidden" id="tab-lanches" role="tabpanel">
+            <div class="item">
+              <div>
+                <b>X-salada</b>
+                <small>Pão, burger, queijo, alface, tomate e maionese.</small>
+                <div class="choose">
+                  <button data-order="X-salada">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 18</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>X-bacon</b>
+                <small>Burger, queijo, bacon e molho da casa.</small>
+                <div class="choose">
+                  <button data-order="X-bacon">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 22</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Porção de fritas</b>
+                <small>Tradicional ou com cheddar/bacon (consulte).</small>
+                <div class="choose">
+                  <button data-order="Porção de fritas">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 16</div>
+            </div>
+          </div>
+
+          <!-- BEBIDAS -->
+          <div class="list tabpanel hidden" id="tab-bebidas" role="tabpanel">
+            <div class="item">
+              <div>
+                <b>Refrigerante lata</b>
+                <small>Coca, Guaraná, Fanta (consulte sabores).</small>
+                <div class="choose">
+                  <button data-order="Refrigerante lata">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 6</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Refrigerante 2L</b>
+                <small>Consulte opções do dia.</small>
+                <div class="choose">
+                  <button data-order="Refrigerante 2L">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 12</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Suco natural</b>
+                <small>Laranja, limão, maracujá (consulte).</small>
+                <div class="choose">
+                  <button data-order="Suco natural">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 10</div>
+            </div>
+          </div>
+
+          <!-- SOBREMESAS -->
+          <div class="list tabpanel hidden" id="tab-sobremesas" role="tabpanel">
+            <div class="item">
+              <div>
+                <b>Pudim</b>
+                <small>Fatia.</small>
+                <div class="choose">
+                  <button data-order="Pudim">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 8</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Mousse</b>
+                <small>Maracujá / chocolate (consulte).</small>
+                <div class="choose">
+                  <button data-order="Mousse">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 7</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <b>Açaí</b>
+                <small>300ml / 500ml (consulte adicionais).</small>
+                <div class="choose">
+                  <button data-order="Açaí">Pedir</button>
+                </div>
+              </div>
+              <div class="price">R$ 14</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions" style="justify-content:center; margin-top:14px">
+          <a class="btn primary" id="btnWhatsMenu" href="#">Pedir pelo WhatsApp</a>
+          <a class="btn" href="#como">Como pedir</a>
+        </div>
+      </section>
+
+      <!-- PRATO DO DIA -->
+      <section id="prato-dia">
+        <div class="sectionTitle">
+          <h2>Prato do dia</h2>
+          <span>Um destaque que decide por você</span>
+        </div>
+
+        <div class="card heroCard">
+          <div class="kicker">🍛 Hoje • Promoção</div>
+          <h2 style="margin:12px 0 8px; font-size: 30px">Parmegiana de frango + refri lata</h2>
+          <p class="sub" style="margin:0 0 14px; max-width:70ch">
+            Combinação pronta para você não pensar. Clique e confirme endereço + pagamento.
+          </p>
+          <div class="actions">
+            <a class="btn warm" id="btnWhatsDish" href="#">Quero o prato do dia</a>
+            <button class="btn" id="btnCopyDish" type="button">Copiar texto</button>
+          </div>
+          <p class="note" id="copyMsg" style="display:none">✅ Copiado! Agora é só colar no WhatsApp.</p>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section id="como">
+        <div class="sectionTitle">
+          <h2>Como pedir</h2>
+          <span>3 passos simples</span>
+        </div>
+
+        <div class="grid3">
+          <div class="box">
+            <div class="n">1</div>
+            <b>Escolha no cardápio</b>
+            <p>Clique em “Pedir” no item desejado.</p>
+          </div>
+          <div class="box">
+            <div class="n">2</div>
+            <b>Confirme no WhatsApp</b>
+            <p>A mensagem já vai pronta. Só completar endereço e pagamento.</p>
+          </div>
+          <div class="box">
+            <div class="n">3</div>
+            <b>Receba ou retire</b>
+            <p>Confirmamos tempo e valor final. Você só aguarda.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVALIAÇÕES -->
+      <section id="avaliacoes">
+        <div class="sectionTitle">
+          <h2>O que falam</h2>
+          <span>Prova social simples</span>
+        </div>
+
+        <div class="quotes">
+          <div class="quote">
+            <p>“Chegou rápido e tava muito caprichado. Vou pedir de novo!”</p>
+            <small>— Cliente (exemplo)</small>
+          </div>
+          <div class="quote">
+            <p>“Cardápio fácil, pedi em 2 minutos no WhatsApp.”</p>
+            <small>— Cliente (exemplo)</small>
+          </div>
+          <div class="quote">
+            <p>“O prato do dia salva! Ótimo custo-benefício.”</p>
+            <small>— Cliente (exemplo)</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq">
+        <div class="sectionTitle">
+          <h2>Dúvidas rápidas</h2>
+          <span>Remove objeções antes do clique</span>
+        </div>
+
+        <details>
+          <summary>Vocês entregam em quais bairros?</summary>
+          <p>Liste aqui os bairros reais. Alternativa: “Confirme seu bairro no WhatsApp”.</p>
+        </details>
+
+        <details>
+          <summary>Quais formas de pagamento?</summary>
+          <p>Pix, cartão e dinheiro (ajuste conforme o cliente).</p>
+        </details>
+
+        <details>
+          <summary>Qual o tempo médio?</summary>
+          <p>Exemplo: 35–60 min na entrega e 20–35 min para retirada (varia conforme demanda).</p>
+        </details>
+
+        <details>
+          <summary>Posso pedir sem sal / sem cebola / etc?</summary>
+          <p>Sim. Use o campo “observações” na mensagem do WhatsApp.</p>
+        </details>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section style="padding: 12px 0 46px">
+        <div class="card heroCard" style="text-align:center">
+          <div class="kicker" style="justify-content:center">🚀 Menos etapas = mais pedidos</div>
+          <h2 style="margin:12px 0 8px; font-size: 30px">Pronto para pedir?</h2>
+          <p class="sub" style="margin:0 auto 14px; max-width: 70ch">
+            Clique no botão e envie a mensagem. Respondemos confirmando valor final, tempo e entrega.
+          </p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn primary" id="btnWhatsFinal" href="#">Pedir no WhatsApp</a>
+            <a class="btn" href="#cardapio">Voltar ao cardápio</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2026 • Modelo demonstrativo desenvolvido pela BRsys • WhatsApp como funil único
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="floating" aria-hidden="false">
+    <a class="fab" id="fabWhats" href="#" title="WhatsApp">WA</a>
+  </div>
+
+  <!-- JS do projeto (opcional) -->
+  <script src="../../js/main.js"></script>
+
+  <script>
+    // ====== CONFIG: WhatsApp (trocar pelo número do cliente na versão real) ======
+    const phoneE164 = "5513997408157"; // BRsys padrão
+    const restaurantName = "Restaurante (modelo)";
+    const city = "Sua Cidade";
+
+    const baseText = (extra = "") => encodeURIComponent(
+      `Olá! Quero fazer um pedido 🍽️\n\n` +
+      `📍 ${restaurantName} — ${city}\n` +
+      (extra ? `✅ Item: ${extra}\n` : ``) +
+      `\n📦 Entrega ou retirada?\n` +
+      `📍 Endereço/bairro:\n` +
+      `💳 Pagamento: (Pix/Cartão/Dinheiro)\n` +
+      `📝 Observações: (sem cebola, bem passado, etc.)\n\n` +
+      `Pode confirmar disponibilidade, valor final e tempo?`
+    );
+
+    const wa = (extra = "") => `https://wa.me/${phoneE164}?text=${baseText(extra)}`;
+
+    // CTAs gerais
+    const setLink = (id, href) => {
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.href = href;
+      el.target = "_blank";
+      el.rel = "noopener";
+    };
+
+    setLink("btnWhatsTop", wa(""));
+    setLink("btnWhatsHero", wa(""));
+    setLink("btnWhatsMenu", wa(""));
+    setLink("btnWhatsFinal", wa(""));
+    setLink("fabWhats", wa(""));
+
+    // Prato do dia
+    const pratoDoDia = "Parmegiana de frango + refri lata";
+    setLink("btnWhatsDish", wa(pratoDoDia));
+
+    // Copiar texto do prato do dia
+    const btnCopy = document.getElementById("btnCopyDish");
+    const copyMsg = document.getElementById("copyMsg");
+    if (btnCopy) {
+      btnCopy.addEventListener("click", async () => {
+        const txt =
+          `Olá! Quero o prato do dia 🍛\n\n` +
+          `✅ ${pratoDoDia}\n` +
+          `📍 Endereço/bairro:\n` +
+          `💳 Pagamento: (Pix/Cartão/Dinheiro)\n` +
+          `📝 Observações:\n\n` +
+          `Pode confirmar o valor final e o tempo?`;
+        try{
+          await navigator.clipboard.writeText(txt);
+          if (copyMsg){ copyMsg.style.display="block"; setTimeout(()=>copyMsg.style.display="none", 1800); }
+        }catch(e){
+          alert("Não consegui copiar automaticamente. Selecione e copie manualmente.");
+        }
+      });
+    }
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const panels = {
+      pratos: document.getElementById("tab-pratos"),
+      executivo: document.getElementById("tab-executivo"),
+      lanches: document.getElementById("tab-lanches"),
+      bebidas: document.getElementById("tab-bebidas"),
+      sobremesas: document.getElementById("tab-sobremesas"),
+    };
+
+    const setActiveTab = (name) => {
+      tabs.forEach(t => {
+        const on = t.dataset.tab === name;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      Object.keys(panels).forEach(k => {
+        if(!panels[k]) return;
+        panels[k].classList.toggle("hidden", k !== name);
+      });
+    };
+
+    tabs.forEach(t => t.addEventListener("click", () => setActiveTab(t.dataset.tab)));
+
+    // Botões "Pedir" por item
+    document.querySelectorAll("[data-order]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.getAttribute("data-order") || "";
+        window.open(wa(item), "_blank", "noopener");
+      });
+    });
+  </script>
+</body>
+</html>
 
