@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+
+  <title>Luthieria / Loja de Instrumentos (Modelo) | Orçar regulagem no WhatsApp</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Luthieria e Loja de Instrumentos Musicais. Regulagem, manutenção, troca de cordas, captadores e reparos. Orçamento direto pelo WhatsApp." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/luthieria/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Luthieria (Modelo) | Orçar regulagem no WhatsApp" />
+  <meta property="og:description" content="Regulagem, manutenção e reparos em instrumentos musicais. Página modelo BRsys com CTA WhatsApp." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <style>
+    :root{
+      --bg:#060b10;
+      --bg2:#04080c;
+      --line:rgba(255,255,255,.10);
+      --txt:#e9fffb;
+      --muted:rgba(233,255,251,.70);
+      --muted2:rgba(233,255,251,.55);
+      --brand:#17e2c2;
+      --accent:#c7a14a;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:22px;
+      --max:1120px;
+      --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:var(--font);color:var(--txt);
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(199,161,74,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(23,226,194,.12), transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      min-height:100vh
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 90px}
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:14px 18px;margin:-28px -18px 18px;
+      background:rgba(4,10,14,.75);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line)
+    }
+    .brand{display:flex;gap:12px;align-items:center;font-weight:900}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(199,161,74,.35), rgba(199,161,74,.12));
+      border:1px solid rgba(199,161,74,.45)
+    }
+    .brand small{display:block;color:var(--muted2);font-weight:650}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 16px;border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-weight:900;transition:.15s
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      border-color:rgba(23,226,194,.35);
+      background:linear-gradient(180deg, rgba(23,226,194,.18), rgba(199,161,74,.12));
+    }
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);box-shadow:var(--shadow)
+    }
+    .hero{padding:26px}
+    h1{margin:0 0 12px;font-size:44px;letter-spacing:-.6px}
+    .sub{color:var(--muted);max-width:70ch;line-height:1.45}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .side{padding:22px}
+    .list{display:grid;gap:10px}
+    .item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;padding:14px
+    }
+    .item b{display:block}
+    section{margin-top:18px}
+    .title{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
+    .title h2{margin:0;font-size:18px}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .srv{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;padding:14px
+    }
+    .srv b{display:block;margin-bottom:6px}
+    .srv span{font-size:12px;color:var(--muted2)}
+    .srv .row{margin-top:10px}
+    .footer{
+      margin-top:22px;padding:18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      display:flex;justify-content:space-between;align-items:center;gap:12px
+    }
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:99;
+      display:flex;gap:10px;align-items:center;
+      padding:12px 14px;border-radius:999px;
+      border:1px solid rgba(23,226,194,.35);
+      background:linear-gradient(180deg, rgba(23,226,194,.18), rgba(199,161,74,.12))
+    }
+    @media(max-width:980px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .services{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:520px){
+      .services{grid-template-columns:1fr}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MusicStore",
+    "name":"Luthieria / Loja de Instrumentos (Modelo BRsys)",
+    "url":"https://www.brsys.com.br/modelos/luthieria/",
+    "telephone":"+55 13 99740-8157",
+    "areaServed":"Brasil",
+    "availableLanguage":"pt-BR"
+  }
+  </script>
+</head>
+
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">🎸</div>
+    <div>BRsys Sites<small>Modelo premium • Luthieria</small></div>
+  </div>
+  <a class="btn primary" id="btnTop">Orçar regulagem</a>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card hero">
+      <h1>Seu instrumento no <span style="color:var(--accent)">melhor som</span>.</h1>
+      <p class="sub">
+        Modelo BRsys para luthieria e lojas de instrumentos musicais.
+        Regulagem, manutenção, upgrades e reparos com orçamento direto no WhatsApp.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" id="btnHero">🎵 Orçar regulagem</a>
+        <a class="btn" href="#servicos">Ver serviços</a>
+        <a class="btn" href="#como">Como funciona</a>
+      </div>
+    </section>
+
+    <aside class="card side">
+      <h3>Leads quentes</h3>
+      <div class="list">
+        <div class="item"><b>Guitarra trastejando</b><span>Regulagem urgente</span></div>
+        <div class="item"><b>Troca de cordas/captadores</b><span>Upgrade rápido</span></div>
+        <div class="item"><b>Violão empenado</b><span>Avaliação técnica</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="servicos">
+    <div class="title"><h2>Serviços</h2></div>
+    <div class="services">
+      <div class="srv"><b>🎸 Regulagem completa</b><span>Ação, oitavas, tensor</span><div class="row"><a class="btn" data-s="Regulagem completa">Orçar</a></div></div>
+      <div class="srv"><b>🧵 Troca de cordas</b><span>Elétrica, aço, nylon</span><div class="row"><a class="btn" data-s="Troca de cordas">Orçar</a></div></div>
+      <div class="srv"><b>🎚️ Captadores</b><span>Instalação e upgrade</span><div class="row"><a class="btn" data-s="Troca de captadores">Orçar</a></div></div>
+      <div class="srv"><b>🪚 Trastes</b><span>Nivelamento / troca</span><div class="row"><a class="btn" data-s="Serviço de trastes">Orçar</a></div></div>
+      <div class="srv"><b>🎻 Violão</b><span>Colagem, cavalete, pestana</span><div class="row"><a class="btn" data-s="Manutenção em violão">Orçar</a></div></div>
+      <div class="srv"><b>🥁 Outros instrumentos</b><span>Avaliação</span><div class="row"><a class="btn" data-s="Avaliação de instrumento">Chamar</a></div></div>
+      <div class="srv"><b>🧪 Avaliação</b><span>Diagnóstico técnico</span><div class="row"><a class="btn" data-s="Avaliação técnica">Chamar</a></div></div>
+      <div class="srv"><b>🎶 Loja</b><span>Cordas, acessórios</span><div class="row"><a class="btn" data-s="Compra de acessórios">Chamar</a></div></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="title"><h2>Como funciona</h2></div>
+    <div class="list">
+      <div class="item"><b>1) Envie fotos/vídeo</b><span>Mostre o instrumento e o problema</span></div>
+      <div class="item"><b>2) Informe modelo e uso</b><span>Afinação, estilo, cordas</span></div>
+      <div class="item"><b>3) Orçamento</b><span>Retorno rápido no WhatsApp</span></div>
+      <div class="item"><b>4) Serviço</b><span>Prazo e retirada combinados</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>BRsys Sites</b><small>Modelo por ramo • Luthieria</small></div>
+    <a class="btn primary" id="btnFooter">Orçar regulagem</a>
+  </footer>
+</main>
+
+<a class="wa" id="waFloat">WhatsApp</a>
+
+<script>
+  const WA = "5513997408157";
+  const base = m => `https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+
+  const msg =
+`Olá! Vi o modelo de Luthieria da BRsys e quero orçamento.
+🎸 Instrumento:
+⚠️ Serviço desejado:
+📸 Vou enviar fotos/vídeo
+📍 Cidade/Bairro:`;
+
+  ["btnTop","btnHero","btnFooter","waFloat"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.href=base(msg);
+  });
+
+  document.querySelectorAll("[data-s]").forEach(b=>{
+    b.onclick=e=>{
+      e.preventDefault();
+      const s=b.getAttribute("data-s");
+      window.open(base(`Olá! Quero orçamento para ${s}.\n🎸 Instrumento:\n📸 Envio fotos/vídeo\n📍 Cidade/Bairro:`),"_blank");
+    }
+  });
+</script>
+</body>
+</html>
