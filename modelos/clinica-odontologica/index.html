@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+
+  <title>Clínica Odontológica (Modelo) | Agendamento no WhatsApp</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Clínica Odontológica: serviços, confiança, diferenciais e agendamento rápido via WhatsApp. Layout premium e SEO por ramo." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clínica Odontológica (Modelo) | Agendar no WhatsApp" />
+  <meta property="og:description" content="Página demonstrativa BRsys: clínica odontológica com serviços + CTA no WhatsApp. Estrutura pronta para converter." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/clinica-odontologica/" />
+
+  <style>
+    :root{
+      --bg:#061b1b;
+      --bg2:#041313;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --txt:#e9fffb;
+      --muted:rgba(233,255,251,.70);
+      --muted2:rgba(233,255,251,.55);
+      --brand:#17e2c2;
+      --brand2:#0fb59b;
+      --ok:#4cffb3;
+      --warn:#ffcc66;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:24px;
+      --max:1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--txt);
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(23,226,194,.20), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(23,226,194,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height:100vh;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      position:sticky; top:0; z-index:10;
+      padding:14px 18px;
+      margin:-28px -18px 18px;
+      background:rgba(2,12,12,.70);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .badge{
+      width:38px; height:38px; border-radius:12px;
+      display:grid; place-items:center;
+      background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));
+      border:1px solid rgba(23,226,194,.30);
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+    .badge b{color:var(--brand); font-size:16px}
+    .brand small{display:block; color:var(--muted2); font-weight:600; margin-top:2px}
+
+    .nav{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+    }
+    .nav a{padding:10px 12px; border-radius:12px; border:1px solid transparent;}
+    .nav a:hover{border-color:var(--line); background:rgba(255,255,255,.04);}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.15s transform, .15s background, .15s border-color;
+      user-select:none;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color:rgba(23,226,194,.35);
+      background: linear-gradient(180deg, rgba(23,226,194,.26), rgba(23,226,194,.12));
+      box-shadow: 0 18px 42px rgba(0,0,0,.28);
+    }
+    .btn.primary:hover{border-color:rgba(23,226,194,.60)}
+    .btn .dot{
+      width:10px;height:10px;border-radius:999px;background:var(--brand);
+      box-shadow:0 0 0 4px rgba(23,226,194,.15);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding:26px 22px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 320px at 20% 0%, rgba(23,226,194,.22), transparent 60%),
+        radial-gradient(520px 320px at 80% 20%, rgba(23,226,194,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700; font-size:12px;
+    }
+    .chip i{
+      width:8px; height:8px; border-radius:999px; background:var(--ok);
+      box-shadow:0 0 0 4px rgba(76,255,179,.12);
+      display:inline-block;
+    }
+
+    h1{margin:0 0 10px; font-size:44px; line-height:1.02; letter-spacing:-.6px;}
+    .sub{
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.45;
+      margin:0 0 18px;
+      max-width:64ch;
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .mini{font-size:12px; color:var(--muted2); font-weight:650; margin-top:14px}
+
+    .side{padding:18px}
+    .pad{padding:22px}
+    .side h3{margin:0 0 10px; font-size:14px; letter-spacing:.2px; color:var(--muted); font-weight:850;}
+    .list{display:grid; gap:10px; margin-top:12px}
+    .item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    .item b{display:block; font-size:13px; margin-bottom:4px}
+    .item span{display:block; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35}
+
+    section{margin-top:16px}
+    .sectionTitle{
+      display:flex; align-items:end; justify-content:space-between; gap:12px;
+      margin:18px 0 12px;
+    }
+    .sectionTitle h2{margin:0; font-size:18px; letter-spacing:-.2px;}
+    .sectionTitle p{margin:0; color:var(--muted2); font-weight:650; font-size:12px;}
+
+    .cards3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
+    .thumb{
+      height:150px;
+      border-radius:16px;
+      border:1px dashed rgba(233,255,251,.25);
+      background:
+        radial-gradient(600px 240px at 20% 0%, rgba(23,226,194,.12), transparent 65%),
+        rgba(255,255,255,.03);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:14px;
+      overflow:hidden;
+    }
+    .thumb small{color:var(--muted2); font-weight:750}
+    .thumb b{margin-top:6px; font-size:14px}
+    .thumb em{font-style:normal; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35; margin-top:4px}
+
+    .servicesGrid{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;}
+    .svc{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:14px;
+    }
+    .svc b{display:block; font-size:13px; margin-bottom:6px}
+    .svc p{margin:0; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35}
+    .svc .row{margin-top:10px; display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .pill{
+      font-size:12px; font-weight:850; padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(23,226,194,.35);
+      background:rgba(23,226,194,.10);
+      color:var(--txt);
+      white-space:nowrap;
+    }
+
+    .proof{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+    .quote{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:14px;
+    }
+    .quote b{display:block; font-size:13px}
+    .quote span{display:block; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35; margin-top:6px}
+    .quote i{display:block; color:rgba(233,255,251,.42); font-style:normal; font-weight:800; font-size:12px; margin-top:10px}
+
+    .faq{display:grid; gap:10px}
+    details{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{cursor:pointer; font-weight:850; color:var(--txt); list-style:none;}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted2); font-weight:650; line-height:1.45; font-size:13px;}
+
+    .footer{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius2);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+    }
+    .footer small{color:var(--muted2); font-weight:650}
+    .footer b{font-weight:900}
+
+    .waFloat{
+      position:fixed; right:16px; bottom:16px; z-index:99;
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:999px;
+      border:1px solid rgba(23,226,194,.45);
+      background: linear-gradient(180deg, rgba(23,226,194,.20), rgba(23,226,194,.10));
+      box-shadow: 0 24px 70px rgba(0,0,0,.50);
+    }
+    .waFloat .waIcon{
+      width:40px; height:40px; border-radius:999px;
+      display:grid; place-items:center;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:900;
+    }
+    .waFloat span{font-weight:900}
+    .waFloat small{display:block; color:var(--muted2); font-weight:650; margin-top:1px}
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .servicesGrid{grid-template-columns: repeat(2, 1fr)}
+      .cards3{grid-template-columns:1fr}
+      .proof{grid-template-columns:1fr}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+      .servicesGrid{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Clínica Odontológica (Modelo BRsys)",
+    "description":"Modelo demonstrativo BRsys para clínica odontológica com serviços, prova social e agendamento no WhatsApp. Estrutura SEO por ramo.",
+    "url":"https://www.brsys.com.br/modelos/clinica-odontologica/",
+    "telephone":"+55 13 99740-8157",
+    "areaServed":"Brasil"
+  }
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="badge" aria-hidden="true"><b>B</b></div>
+      <div>
+        BRsys Sites
+        <small>Template premium • Clínica Odontológica (agendamento)</small>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navegação">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+
+    <a class="btn primary" id="btnTopWA" href="#" rel="nofollow">
+      <span class="dot"></span> Agendar no WhatsApp
+    </a>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card hero">
+        <div class="chips">
+          <span class="chip"><i></i> Atendimento humanizado</span>
+          <span class="chip"><i style="background:var(--brand)"></i> Avaliação & plano</span>
+          <span class="chip"><i style="background:var(--warn)"></i> Agendamento rápido</span>
+        </div>
+
+        <h1>Sorriso bem cuidado começa com <span style="color:var(--brand)">confiança</span>.</h1>
+        <p class="sub">
+          Modelo demonstrativo BRsys para <b>Clínica Odontológica</b>:
+          mostre os serviços, tire dúvidas e faça o paciente agendar pelo WhatsApp em 1 clique.
+          Perfeito para quem quer mais consultas sem depender de “link complicado”.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">🦷 Quero agendar</a>
+          <a class="btn" href="#servicos">Ver serviços</a>
+          <a class="btn" href="#diferenciais">Ver diferenciais</a>
+        </div>
+
+        <div class="mini">
+          * Este é um modelo BRsys. Troque nome, CRO, equipe, horários, endereço e WhatsApp pelo do cliente.
+        </div>
+      </section>
+
+      <aside class="card side">
+        <div class="pad">
+          <h3>O que faz converter</h3>
+          <div class="list">
+            <div class="item">
+              <b>Mensagem pronta (sem bot)</b>
+              <span>Paciente escolhe o serviço e já manda as infos básicas no WhatsApp.</span>
+            </div>
+            <div class="item">
+              <b>Prova social e credibilidade</b>
+              <span>Depoimentos curtos + diferenciais + clareza nos procedimentos.</span>
+            </div>
+            <div class="item">
+              <b>SEO por ramo</b>
+              <span>Pronto para buscas: “limpeza”, “clareamento”, “implante”, “aparelho”.</span>
+            </div>
+          </div>
+
+          <div class="list" style="margin-top:12px">
+            <div class="item">
+              <b>Tempo médio (exemplo)</b>
+              <span>Profilaxia: 30–50 min • Avaliação: 20–30 min • Ajuste ortodôntico: 15–25 min.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="servicos">
+      <div class="sectionTitle">
+        <h2>Serviços (exemplos)</h2>
+        <p>Lista enxuta, sem confusão.</p>
+      </div>
+
+      <div class="servicesGrid">
+        <div class="svc">
+          <b>🧼 Limpeza (profilaxia)</b>
+          <p>Prevenção, remoção de tártaro e orientação.</p>
+          <div class="row">
+            <span class="pill">Agendar</span>
+            <a class="btn" data-service="Limpeza (profilaxia)" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>✨ Clareamento</b>
+          <p>Plano e acompanhamento com segurança.</p>
+          <div class="row">
+            <span class="pill">Agendar</span>
+            <a class="btn" data-service="Clareamento dental" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>🦷 Restauração</b>
+          <p>Tratamento de cárie e recuperação estética.</p>
+          <div class="row">
+            <span class="pill">Agendar</span>
+            <a class="btn" data-service="Restauração" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>🛠️ Implantes</b>
+          <p>Avaliação, planejamento e etapas claras.</p>
+          <div class="row">
+            <span class="pill">Avaliar</span>
+            <a class="btn" data-service="Implantes (avaliação)" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>🧩 Aparelho / Alinhadores</b>
+          <p>Ortodontia com plano por fase.</p>
+          <div class="row">
+            <span class="pill">Agendar</span>
+            <a class="btn" data-service="Ortodontia (aparelho/alinhadores)" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>🩺 Canal</b>
+          <p>Alívio de dor + tratamento do dente.</p>
+          <div class="row">
+            <span class="pill">Urgência</span>
+            <a class="btn" data-service="Canal (endodontia)" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>🪥 Periodontia</b>
+          <p>Gengiva saudável e controle de inflamação.</p>
+          <div class="row">
+            <span class="pill">Avaliar</span>
+            <a class="btn" data-service="Periodontia (gengiva)" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="svc">
+          <b>😬 Urgência</b>
+          <p>Dor, fratura, inflamação, avaliação rápida.</p>
+          <div class="row">
+            <span class="pill">Agora</span>
+            <a class="btn" data-service="Urgência odontológica" href="#" rel="nofollow">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini" style="margin-top:10px">
+        Dica BRsys: se o cliente quiser “preços”, coloque “a partir de” e foque em <b>avaliação + plano</b>.
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="sectionTitle">
+        <h2>Diferenciais (confiança)</h2>
+        <p>Deixe claro por que escolher você.</p>
+      </div>
+
+      <div class="cards3">
+        <div class="thumb">
+          <small>🧾 Transparência</small>
+          <b>Plano por etapas</b>
+          <em>O paciente entende o que será feito, prazos e cuidados.</em>
+        </div>
+
+        <div class="thumb">
+          <small>🧼 Segurança</small>
+          <b>Higiene e protocolos</b>
+          <em>Ambiente preparado e rotina de esterilização (cite o real).</em>
+        </div>
+
+        <div class="thumb">
+          <small>🤝 Atendimento</small>
+          <b>Humanizado e sem pressão</b>
+          <em>Acolhimento, explicação simples e agendamento fácil.</em>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos">
+      <div class="sectionTitle">
+        <h2>Depoimentos (exemplos)</h2>
+        <p>Prova social curta converte muito.</p>
+      </div>
+
+      <div class="proof">
+        <div class="quote">
+          <b>“Atendimento excelente e super cuidadoso.”</b>
+          <span>Fui por indicação e gostei da clareza no tratamento. Sem enrolação.</span>
+          <i>— Paciente (exemplo)</i>
+        </div>
+        <div class="quote">
+          <b>“Consegui agendar rápido pelo WhatsApp.”</b>
+          <span>Cheguei com dor e resolveram com orientação e atendimento no mesmo dia.</span>
+          <i>— Paciente (exemplo)</i>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas">
+      <div class="sectionTitle">
+        <h2>Dúvidas rápidas</h2>
+        <p>FAQ enxuto tira objeções.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Como faço para agendar?</summary>
+          <p>Clique em “Agendar no WhatsApp” e envie seu nome + melhor horário + qual serviço/queixa. A clínica confirma a agenda.</p>
+        </details>
+        <details>
+          <summary>Vocês atendem urgência?</summary>
+          <p>Exemplo: sim, dependendo do horário e da agenda. Envie mensagem com o que está sentindo (dor, inchaço, fratura).</p>
+        </details>
+        <details>
+          <summary>Tem avaliação?</summary>
+          <p>Exemplo: avaliação inicial para entender o caso e montar o plano. (Ajuste conforme a clínica.)</p>
+        </details>
+        <details>
+          <summary>Formas de pagamento?</summary>
+          <p>Pix, cartão e dinheiro. (Ajuste conforme a clínica.)</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <b>BRsys Sites</b>
+        <small>Modelo por ramo • Clínica Odontológica • pronto para personalizar</small>
+      </div>
+      <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow">
+        <span class="dot"></span> Agendar no WhatsApp
+      </a>
+    </footer>
+  </main>
+
+  <a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Chamar no WhatsApp">
+    <div class="waIcon">WA</div>
+    <div>
+      <span>Agendar</span>
+      <small>WhatsApp direto</small>
+    </div>
+  </a>
+
+  <script>
+    // WhatsApp (BRsys) - troque quando for demo de cliente
+    const WA_NUMBER = "5513997408157";
+    const PAGE_TAG = "Modelo Clínica Odontológica (BRsys)";
+
+    function waLink(message){
+      const txt = encodeURIComponent(message);
+      return `https://wa.me/${WA_NUMBER}?text=${txt}`;
+    }
+
+    function bindWA(){
+      const baseMsg = `Olá! Vi o ${PAGE_TAG} e quero agendar uma consulta.`;
+      ["btnTopWA","btnHeroWA","btnFooterWA","waFloat"].forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.href = waLink(baseMsg);
+      });
+
+      document.querySelectorAll("[data-service]").forEach(btn=>{
+        btn.addEventListener("click", (e)=>{
+          e.preventDefault();
+          const svc = btn.getAttribute("data-service");
+          const msg =
+            `Olá! Quero agendar: ${svc}.\n` +
+            `Nome: ____\n` +
+            `Melhor dia/horário: ____\n` +
+            `Queixa/observação (se tiver): ____`;
+          window.open(waLink(msg), "_blank");
+        });
+        btn.href = "#";
+      });
+    }
+
+    bindWA();
+  </script>
+</body>
+</html>
