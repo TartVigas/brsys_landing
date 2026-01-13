@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+  <title>Escola/Curso (Modelo) | Agendar aula experimental no WhatsApp</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Escola/Curso: inglês, informática, reforço e cursos rápidos. CTA 'Agendar aula experimental' via WhatsApp. Ideal para SEO local e conversão." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Escola/Curso (Modelo) | Agendar aula experimental no WhatsApp" />
+  <meta property="og:description" content="Página demonstrativa BRsys para escola/curso com cursos, turmas, CTA WhatsApp e perguntas frequentes." />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/escola-curso/" />
+
+  <style>
+    :root{--bg:#061b1b;--bg2:#041313;--line:rgba(255,255,255,.12);--txt:#e9fffb;--muted:rgba(233,255,251,.70);--muted2:rgba(233,255,251,.55);--brand:#17e2c2;--warn:#ffcc66;--ok:#4cffb3;--shadow:0 18px 60px rgba(0,0,0,.45);--radius2:24px;--max:1120px;--font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--txt);
+      background:radial-gradient(1100px 680px at 18% -10%, rgba(255,204,102,.14), transparent 55%),
+                 radial-gradient(900px 600px at 82% 10%, rgba(23,226,194,.12), transparent 60%),
+                 linear-gradient(180deg,var(--bg),var(--bg2));
+      min-height:100vh
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 90px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;
+      padding:14px 18px;margin:-28px -18px 18px;background:rgba(2,12,12,.70);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .badge{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));
+      border:1px solid rgba(23,226,194,.30);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .badge b{color:var(--brand)}
+    .brand small{display:block;color:var(--muted2);font-weight:650;margin-top:2px}
+    .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-weight:750;font-size:13px}
+    .nav a{padding:10px 12px;border-radius:12px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;
+      font-weight:950;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.15s;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color:rgba(255,204,102,.45);
+      background:linear-gradient(180deg, rgba(255,204,102,.18), rgba(23,226,194,.10));
+      box-shadow:0 18px 42px rgba(0,0,0,.28)
+    }
+    .btn.primary:hover{border-color:rgba(255,204,102,.70)}
+    .btn .dot{width:10px;height:10px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 4px rgba(255,204,102,.14)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);box-shadow:var(--shadow)}
+    .hero{padding:26px 22px 22px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-2px;
+      background:radial-gradient(720px 380px at 18% 0%, rgba(255,204,102,.16), transparent 60%),
+                 radial-gradient(560px 340px at 82% 20%, rgba(23,226,194,.10), transparent 60%);
+      pointer-events:none}
+    .hero>*{position:relative}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);color:var(--muted);font-weight:800;font-size:12px}
+    .chip i{width:8px;height:8px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 4px rgba(255,204,102,.14);display:inline-block}
+    h1{margin:0 0 10px;font-size:44px;line-height:1.02;letter-spacing:-.6px}
+    .sub{color:var(--muted);font-weight:700;line-height:1.45;margin:0 0 18px;max-width:74ch}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .mini{font-size:12px;color:var(--muted2);font-weight:650;margin-top:14px}
+    .side{padding:18px}
+    .pad{padding:22px}
+    .side h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:950}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .item{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    .item b{display:block;font-size:13px;margin-bottom:4px}
+    .item span{display:block;color:var(--muted2);font-weight:700;font-size:12px;line-height:1.35}
+    section{margin-top:16px}
+    .sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:18px 0 12px}
+    .sectionTitle h2{margin:0;font-size:18px}
+    .sectionTitle p{margin:0;color:var(--muted2);font-weight:650;font-size:12px}
+    .courses{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .course{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}
+    .course b{display:block;font-size:13px;margin-bottom:6px}
+    .course p{margin:0;color:var(--muted2);font-weight:700;font-size:12px;line-height:1.35}
+    .course .row{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pill{font-size:12px;font-weight:950;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,204,102,.35);
+      background:rgba(255,204,102,.10);white-space:nowrap}
+    details{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    details summary{cursor:pointer;font-weight:950}
+    details p{margin:10px 0 0;color:var(--muted2);font-weight:700;line-height:1.35;font-size:12px}
+    .callout{margin-top:14px;padding:14px;border-radius:18px;border:1px solid rgba(23,226,194,.20);
+      background:linear-gradient(180deg, rgba(23,226,194,.10), rgba(255,255,255,.03))}
+    .callout b{display:block}
+    .callout p{margin:8px 0 0;color:var(--muted);font-weight:700;line-height:1.35}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .t{border:1px solid var(--line);background:rgba(0,0,0,.12);border-radius:18px;padding:14px}
+    .t b{display:block;font-size:14px}
+    .t span{display:block;color:var(--muted2);font-weight:700;font-size:12px;margin-top:6px;line-height:1.35}
+    .footer{margin-top:18px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+      border-radius:var(--radius2);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer small{color:var(--muted2);font-weight:650}
+    .footer b{font-weight:950}
+    .waFloat{position:fixed;right:16px;bottom:16px;z-index:99;display:flex;align-items:center;gap:10px;padding:12px 14px;
+      border-radius:999px;border:1px solid rgba(255,204,102,.45);
+      background:linear-gradient(180deg, rgba(255,204,102,.18), rgba(23,226,194,.10));
+      box-shadow:0 24px 70px rgba(0,0,0,.50)}
+    .waFloat .waIcon{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);font-weight:950}
+    .waFloat span{font-weight:950}
+    .waFloat small{display:block;color:var(--muted2);font-weight:650;margin-top:1px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}h1{font-size:38px}.courses{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}}
+    @media (max-width:520px){h1{font-size:34px}.courses{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"Escola/Curso (Modelo BRsys)",
+    "url":"https://www.brsys.com.br/modelos/escola-curso/",
+    "telephone":"+55 13 99740-8157",
+    "areaServed":"Brasil",
+    "availableLanguage":"pt-BR"
+  }
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="badge" aria-hidden="true"><b>B</b></div>
+    <div>BRsys Sites<small>Template premium • Escola/Curso</small></div>
+  </div>
+
+  <nav class="nav">
+    <a href="#cursos">Cursos</a>
+    <a href="#aula">Aula experimental</a>
+    <a href="#metodo">Método</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+
+  <a class="btn primary" id="btnTopWA" href="#" rel="nofollow"><span class="dot"></span> Agendar aula experimental</a>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card hero">
+      <div class="chips">
+        <span class="chip"><i></i> Aula experimental</span>
+        <span class="chip"><i style="background:var(--brand);box-shadow:0 0 0 4px rgba(23,226,194,.14)"></i> Turmas</span>
+        <span class="chip"><i style="background:var(--ok);box-shadow:0 0 0 4px rgba(76,255,179,.14)"></i> WhatsApp direto</span>
+      </div>
+
+      <h1>Aprenda de verdade com <span style="color:var(--warn)">método</span>.</h1>
+      <p class="sub">Modelo BRsys para escola/curso. Agende uma aula experimental no WhatsApp e receba orientação de turma, valores e horários.</p>
+
+      <div class="ctaRow">
+        <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">🎓 Agendar aula experimental</a>
+        <a class="btn" href="#cursos">Ver cursos</a>
+        <a class="btn" href="#aula">Como funciona</a>
+      </div>
+
+      <div class="callout">
+        <b>✅ O que acelera a matrícula</b>
+        <p>Peça: <b>idade/nível</b> + <b>objetivo</b> (trabalho, prova, viagem) + <b>disponibilidade</b> (dias/horários).</p>
+      </div>
+
+      <div class="mini">* Modelo BRsys. Ajuste cursos, horários e diferenciais da escola real.</div>
+    </section>
+
+    <aside class="card side">
+      <div class="pad">
+        <h3>Leads que fecham</h3>
+        <div class="list">
+          <div class="item"><b>Inglês para trabalho</b><span>Objetivo claro = conversão alta.</span></div>
+          <div class="item"><b>Informática básica</b><span>Demanda constante e local.</span></div>
+          <div class="item"><b>Reforço escolar</b><span>Pais decidem rápido quando há dor.</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="cursos">
+    <div class="sectionTitle"><h2>Cursos (exemplos)</h2><p>Selecione e agende.</p></div>
+
+    <div class="courses">
+      <div class="course">
+        <b>🇺🇸 Inglês</b>
+        <p>Do zero ao avançado. Conversação, provas e viagens.</p>
+        <div class="row"><span class="pill">Popular</span><a class="btn" data-c="Inglês" href="#" rel="nofollow">Agendar</a></div>
+      </div>
+
+      <div class="course">
+        <b>💻 Informática</b>
+        <p>Windows, Office, internet, e-mails, produtividade.</p>
+        <div class="row"><span class="pill">Rápido</span><a class="btn" data-c="Informática" href="#" rel="nofollow">Agendar</a></div>
+      </div>
+
+      <div class="course">
+        <b>📚 Reforço escolar</b>
+        <p>Matemática, português, redação, acompanhamento.</p>
+        <div class="row"><span class="pill">Família</span><a class="btn" data-c="Reforço escolar" href="#" rel="nofollow">Agendar</a></div>
+      </div>
+
+      <div class="course">
+        <b>🧑‍💼 Profissionalizante</b>
+        <p>Atendimento, vendas, currículo, entrevistas.</p>
+        <div class="row"><span class="pill">Carreira</span><a class="btn" data-c="Profissionalizante" href="#" rel="nofollow">Agendar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aula">
+    <div class="sectionTitle"><h2>Como funciona a aula experimental</h2><p>Simples e rápido.</p></div>
+    <div class="list">
+      <div class="item"><b>1) Você chama no WhatsApp</b><span>Informa curso, nível e disponibilidade.</span></div>
+      <div class="item"><b>2) Indicamos a melhor turma</b><span>Ou montamos um plano individual (se oferecer).</span></div>
+      <div class="item"><b>3) Aula experimental</b><span>Você conhece o método antes de matricular.</span></div>
+      <div class="item"><b>4) Matrícula</b><span>Valores, dias/horários e material no WhatsApp.</span></div>
+    </div>
+
+    <div class="callout" style="margin-top:12px">
+      <b>✅ Mensagem pronta</b>
+      <p>Copie e mande no WhatsApp para agendar.</p>
+      <div class="ctaRow" style="margin-top:12px">
+        <a class="btn primary" id="btnTrialWA" href="#" rel="nofollow"><span class="dot"></span> Agendar agora</a>
+        <a class="btn" id="btnPricesWA" href="#" rel="nofollow">Quero valores</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="sectionTitle"><h2>Método (exemplo)</h2><p>Mostre diferenciais reais.</p></div>
+
+    <div class="trust">
+      <div class="t"><b>Plano por objetivo</b><span>Trabalho, prova, viagem, reforço — direcionado.</span></div>
+      <div class="t"><b>Acompanhamento</b><span>Evolução com feedback e metas (ajuste).</span></div>
+      <div class="t"><b>Horários flexíveis</b><span>Turmas e opções que cabem na rotina.</span></div>
+    </div>
+
+    <div class="callout">
+      <b>✅ SEO que dá resultado</b>
+      <p>Crie páginas por curso: <b>“Curso de inglês em [cidade]”</b>, <b>“Informática básica em [bairro]”</b>, <b>“Reforço escolar perto de mim”</b>.</p>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="sectionTitle"><h2>Dúvidas</h2><p>FAQ curto.</p></div>
+
+    <div class="list">
+      <div class="item"><b>Tem aula online?</b><span>Sim/Não (ajuste).</span></div>
+      <div class="item"><b>Material incluso?</b><span>Sim/Não (ajuste).</span></div>
+      <div class="item"><b>Tem certificado?</b><span>Sim/Não (ajuste).</span></div>
+      <div class="item"><b>Formas de pagamento?</b><span>Pix / cartão / boleto (ajuste).</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>BRsys Sites</b><small>Modelo por ramo • Escola/Curso</small></div>
+    <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow"><span class="dot"></span> Agendar aula experimental</a>
+  </footer>
+</main>
+
+<a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Agendar aula experimental no WhatsApp">
+  <div class="waIcon">WA</div>
+  <div><span>Agendar</span><small>Aula</small></div>
+</a>
+
+<script>
+  // BRsys - CTA WhatsApp (trocar para o WhatsApp do cliente ao fechar)
+  const WA_NUMBER = "5513997408157";
+  const PAGE_TAG  = "Modelo Escola/Curso (BRsys)";
+  const waLink = (m) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
+
+  function bindWA(){
+    const msgTrial =
+`Olá! Vi o ${PAGE_TAG} e quero agendar uma aula experimental.
+📚 Curso: ____
+🎯 Objetivo: ____
+📈 Nível/idade: ____
+🗓️ Disponibilidade: ____
+📍 Cidade/Bairro: ____`;
+
+    const msgPrices =
+`Olá! Vi o ${PAGE_TAG} e quero valores.
+📚 Curso: ____
+📈 Nível/idade: ____
+🗓️ Disponibilidade: ____`;
+
+    ["btnTopWA","btnHeroWA","btnFooterWA","waFloat","btnTrialWA"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(msgTrial);
+    });
+
+    const elPrices = document.getElementById("btnPricesWA");
+    if(elPrices) elPrices.href = waLink(msgPrices);
+
+    document.querySelectorAll("[data-c]").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const c = btn.getAttribute("data-c");
+        const msg =
+`Olá! Quero agendar aula experimental de: ${c}.
+📈 Nível/idade: ____
+🎯 Objetivo: ____
+🗓️ Disponibilidade: ____
+📍 Cidade/Bairro: ____`;
+        window.open(waLink(msg), "_blank");
+      });
+      btn.href="#";
+    });
+  }
+  bindWA();
+</script>
+</body>
+</html>
