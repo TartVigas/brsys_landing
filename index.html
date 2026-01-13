@@ -4,9 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BRsys • Sites por ramo. Escopo fechado. WhatsApp direto.</title>
-  <meta name="description" content="A BRsys cria sites profissionais por ramo, com escopo fechado e foco em conversão via WhatsApp. Sem agência, sem mensalidade escondida, sem projeto infinito." />
+  <title>BRsys • Sites por ramo com escopo fechado (WhatsApp direto)</title>
+  <meta name="description" content="Sites profissionais por ramo com foco em conversão no WhatsApp. Escopo fechado, entrega clara e exemplos prontos. Ideal para hotéis, pousadas, restaurantes e negócios locais." />
+  <meta name="theme-color" content="#071116" />
 
+  <!-- Canonical: ajuste se você usar domínio final (ex.: https://www.brsys.com.br/) -->
+  <link rel="canonical" href="https://www.brsys.com.br/" />
+
+  <!-- Open Graph (use uma imagem OG padrão se tiver /img/og.jpg) -->
+  <meta property="og:title" content="BRsys • Sites por ramo. Escopo fechado. WhatsApp direto." />
+  <meta property="og:description" content="Sites profissionais por ramo com foco em conversão no WhatsApp. Modelos e demonstrações prontas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.brsys.com.br/" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+
+  <!-- Global CSS: se já existir, mantenha assim. Se ainda não existir, crie depois. -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <!-- Fallback mínimo caso app.css não esteja pronto (mantém seu “dark clean”) -->
   <style>
     :root { color-scheme: dark; }
     html, body { height: 100%; }
@@ -22,31 +37,33 @@
 
     html[data-theme="dark"]{
       --bg:#071116;
-      --panel:rgba(9,22,28,.68);
+      --panel:rgba(9,22,28,.70);
       --panel2:rgba(10,25,32,.55);
       --stroke:rgba(255,255,255,.08);
       --stroke2:rgba(255,255,255,.12);
       --text:#eaf3f7;
-      --muted:rgba(234,243,247,.70);
-      --muted2:rgba(234,243,247,.55);
+      --muted:rgba(234,243,247,.72);
+      --muted2:rgba(234,243,247,.56);
       --teal:#24e6c3;
       --shadow:0 18px 45px rgba(0,0,0,.35);
       --grid:rgba(255,255,255,.06);
+      --warn:#ffcf5a;
     }
 
     html[data-theme="clean"]{
       color-scheme:light;
       --bg:#eaf5f6;
-      --panel:rgba(255,255,255,.70);
+      --panel:rgba(255,255,255,.76);
       --panel2:rgba(255,255,255,.60);
       --stroke:rgba(10,20,28,.10);
       --stroke2:rgba(10,20,28,.14);
       --text:#0a141a;
-      --muted:rgba(10,20,26,.70);
-      --muted2:rgba(10,20,26,.55);
+      --muted:rgba(10,20,26,.74);
+      --muted2:rgba(10,20,26,.58);
       --teal:#18c7a8;
       --shadow:0 18px 45px rgba(10,20,28,.12);
       --grid:rgba(10,20,28,.07);
+      --warn:#b07b00;
     }
 
     .bg{
@@ -55,7 +72,6 @@
         radial-gradient(900px 500px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
         radial-gradient(700px 420px at 70% 26%, rgba(36,230,195,.12), transparent 60%);
     }
-
     .grid{
       position:fixed; inset:0; z-index:-1;
       background-image:
@@ -66,22 +82,31 @@
       mask-image:radial-gradient(circle at 30% 30%, black 0 55%, transparent 78%);
     }
 
-    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px;}
-
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 90px;}
     .topbar{
       display:flex;align-items:center;justify-content:space-between;
       gap:14px;padding:12px 10px;
     }
-
-    .brand{display:flex;align-items:center;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
     .logo{
       width:42px;height:42px;border-radius:14px;
       display:grid;place-items:center;
       background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.08));
       border:1px solid var(--stroke);
+      font-weight:900;
     }
     .brand strong{font-size:14px;}
     .brand span{font-size:12px;color:var(--muted2);}
+
+    .nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .link{
+      color:var(--muted);
+      text-decoration:none;
+      border:1px solid transparent;
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .link:hover{border-color:var(--stroke); background:rgba(255,255,255,.03);}
 
     .icon-btn,.cta{
       border:1px solid var(--stroke);
@@ -95,12 +120,13 @@
       align-items:center;
       gap:10px;
       box-shadow:var(--shadow);
-    }
-    .icon-btn{width:44px;height:44px;justify-content:center;}
-    .cta{
       font-weight:900;
+    }
+    .icon-btn{width:44px;height:44px;justify-content:center;font-weight:600;}
+    .cta{
       background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.10));
       border-color:rgba(36,230,195,.35);
+      white-space:nowrap;
     }
 
     .main{
@@ -110,18 +136,16 @@
       background:var(--panel);
       backdrop-filter:blur(14px);
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
 
     .main-inner{
       padding:28px;
       display:grid;
-      grid-template-columns:1.2fr .9fr;
+      grid-template-columns:1.25fr .85fr;
       gap:22px;
     }
-
-    @media(max-width:980px){
-      .main-inner{grid-template-columns:1fr;}
-    }
+    @media(max-width:980px){ .main-inner{grid-template-columns:1fr;} }
 
     h1{
       font-size:clamp(34px,4vw,56px);
@@ -129,8 +153,7 @@
       letter-spacing:-.9px;
       margin:14px 0 12px;
     }
-
-    .lead{font-size:15px;color:var(--muted);max-width:62ch;}
+    .lead{font-size:15px;color:var(--muted);max-width:64ch;}
 
     .pill{
       display:inline-flex;align-items:center;gap:10px;
@@ -138,10 +161,10 @@
       background:rgba(36,230,195,.12);
       border:1px solid rgba(36,230,195,.25);
       font-size:12px;
+      color:var(--text);
     }
 
-    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
-
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
     .btn{
       border-radius:14px;
       border:1px solid var(--stroke);
@@ -152,10 +175,15 @@
       color:var(--text);
       display:inline-flex;
       gap:10px;
+      align-items:center;
     }
     .btn-primary{
       background:linear-gradient(135deg, rgba(36,230,195,.28), rgba(36,230,195,.12));
       border-color:rgba(36,230,195,.40);
+    }
+    .btn-warn{
+      background:linear-gradient(135deg, rgba(255,207,90,.22), rgba(255,207,90,.08));
+      border-color:rgba(255,207,90,.32);
     }
 
     .micro{
@@ -178,6 +206,7 @@
       display:flex;gap:12px;margin-top:12px;
       padding:12px;border-radius:16px;
       border:1px solid var(--stroke2);
+      background:rgba(255,255,255,.02);
     }
 
     .check{
@@ -185,166 +214,542 @@
       background:rgba(36,230,195,.12);
       border:1px solid rgba(36,230,195,.35);
       display:grid;place-items:center;
+      font-weight:900;
+      flex:0 0 auto;
     }
 
+    .muted2{color:var(--muted2);font-size:12px;}
+
+    /* Sections */
+    .section{margin-top:18px;}
+    .section-head{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+      margin:0 auto 10px;
+      max-width:1180px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{margin:4px 0 0;color:var(--muted2);font-size:12px;}
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    @media(max-width:980px){ .grid3{grid-template-columns:1fr;} }
+
+    .tile{
+      border-radius:20px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:160px;
+    }
+    .tile strong{font-size:14px;}
+    .tag{
+      display:inline-flex;
+      width:max-content;
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--stroke2);
+      color:var(--muted);
+      background:rgba(255,255,255,.02);
+    }
+    .bullets{margin:0;padding-left:18px;color:var(--muted);font-size:13px;}
+    .tile .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;}
+
+    .price{
+      font-size:22px;
+      letter-spacing:-.4px;
+    }
+    .sub{font-size:12px;color:var(--muted2);margin-top:-6px;}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--stroke);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      padding:12px 14px;
+    }
+    details + details{margin-top:10px;}
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--text);
+    }
+    details p{color:var(--muted);margin:10px 0 0;font-size:13px;}
+
     footer{
-      margin-top:18px;
+      margin-top:22px;
       font-size:12px;
       color:var(--muted2);
       text-align:center;
     }
+    .foot-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px;}
+    .foot-links a{color:var(--muted);text-decoration:none;border-bottom:1px dashed var(--stroke2);}
+    .foot-links a:hover{color:var(--text);border-bottom-color:var(--teal);}
   </style>
+
+  <!-- Schema básico (ajuste cidade/estado se quiser) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BRsys",
+    "areaServed": ["Brasil"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Peruíbe",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "url": "https://www.brsys.com.br/",
+    "telephone": "+55 13 99740-8157"
+  }
+  </script>
 </head>
 
 <body>
-<div class="bg"></div>
-<div class="grid"></div>
+  <div class="bg"></div>
+  <div class="grid"></div>
 
-<div class="wrap">
-<header class="topbar">
-  <div class="brand">
-    <div class="logo"><b>B</b></div>
-    <div>
-      <strong>BRsys</strong><br>
-      <span>Sites por ramo. Escopo fechado.</span>
-    </div>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Ir para a home BRsys">
+        <div class="logo">B</div>
+        <div>
+          <strong>BRsys</strong><br>
+          <span>Sites por ramo • Escopo fechado</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="link" href="/modelos/">Modelos</a>
+        <a class="link" href="#planos">Preços</a>
+        <a class="link" href="#como">Como funciona</a>
+        <a class="link" href="#faq">FAQ</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button class="icon-btn" id="btnTheme" type="button" aria-label="Alternar tema">🌙</button>
+        <a class="cta" id="ctaTop" href="#">WhatsApp direto →</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="main" id="topo">
+      <div class="main-inner">
+
+        <section>
+          <div class="pill">Sem agência • Entrega objetiva • WhatsApp como funil</div>
+
+          <h1>
+            Seu site precisa gerar contato.<br>
+            Não conversa.
+          </h1>
+
+          <p class="lead">
+            A BRsys cria <strong>sites profissionais por ramo</strong>, com escopo fechado e foco total em
+            <strong>conversão no WhatsApp</strong>.
+            Ideal para quem está perdendo cliente por site fraco, link errado ou dependência de intermediários.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-warn" id="ctaBtnSite" href="#">Meu botão “Site” tá ruim →</a>
+            <a class="btn btn-primary" id="ctaNovoSite" href="#">Quero um site novo →</a>
+            <a class="btn" href="/modelos/">Ver modelos por ramo</a>
+          </div>
+
+          <div class="micro">
+            <span>✔ Escopo fechado</span><span>•</span>
+            <span>✔ Sem mensalidade escondida</span><span>•</span>
+            <span>✔ Entrega rápida e clara</span>
+          </div>
+        </section>
+
+        <aside class="side">
+          <div class="card">
+            <strong>Dores que resolvemos</strong>
+
+            <div class="seg">
+              <div class="check">!</div>
+              <div>
+                <strong>Botão “Site” vai pra Instagram / Booking</strong><br>
+                <span class="muted2">experiência ruim + perda de reserva direta</span>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">!</div>
+              <div>
+                <strong>Site com erro / página esquecida</strong><br>
+                <span class="muted2">queda imediata de confiança no Google</span>
+              </div>
+            </div>
+
+            <div class="seg">
+              <div class="check">!</div>
+              <div>
+                <strong>Negócio sem vitrine de confiança</strong><br>
+                <span class="muted2">clique perdido antes de chegar no WhatsApp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Pra quem faz sentido</strong>
+            <p class="muted2" style="margin:10px 0 0;">
+              Hotéis & pousadas, restaurantes, delivery, negócios locais.
+              Se o seu objetivo é <strong>gerar contato</strong>, o site é sua vitrine.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- MODELOS -->
+    <section class="section" id="modelos">
+      <div class="section-head">
+        <div>
+          <h2>Modelos por ramo</h2>
+          <p>Escolha um ramo e veja um exemplo pronto (vitrine + WhatsApp).</p>
+        </div>
+        <a class="link" href="/modelos/">Ver todos →</a>
+      </div>
+
+      <div class="grid3">
+        <article class="tile">
+          <span class="tag">Hotelaria</span>
+          <strong>Hotéis & Pousadas</strong>
+          <ul class="bullets">
+            <li>Apresentação clara + CTA direto</li>
+            <li>Estrutura pronta pra SEO</li>
+            <li>Foco em reserva/contato</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/modelos/hoteis-pousadas/">Ver modelo →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Food</span>
+          <strong>Pizzaria / Delivery</strong>
+          <ul class="bullets">
+            <li>Cardápio/itens com destaque</li>
+            <li>Pedido no WhatsApp</li>
+            <li>Rápido e direto</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/modelos/pizzaria-delivery/">Ver modelo →</a>
+            <a class="btn" href="/modelos/pizzaria/">Outra versão</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Local</span>
+          <strong>Negócios locais</strong>
+          <ul class="bullets">
+            <li>Confiança + prova social</li>
+            <li>Serviços com clareza</li>
+            <li>WhatsApp como funil</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/modelos/negocios-locais/">Ver modelo →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DEMONSTRAÇÕES (prova de execução) -->
+    <section class="section" id="demos">
+      <div class="section-head">
+        <div>
+          <h2>Demonstrações recentes</h2>
+          <p>Exemplos reais de estrutura e acabamento (sem promessa, só execução).</p>
+        </div>
+        <a class="link" href="/demonstracao/">Ver mais →</a>
+      </div>
+
+      <div class="grid3">
+        <article class="tile">
+          <span class="tag">Hotelaria</span>
+          <strong>Casinhas do Rio (demo)</strong>
+          <ul class="bullets">
+            <li>Vitrine + CTA WhatsApp</li>
+            <li>Seções objetivas</li>
+            <li>Layout premium</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/demonstracao/casinhas-do-rio/">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Hotelaria</span>
+          <strong>Refúgio da Mata (demo)</strong>
+          <ul class="bullets">
+            <li>Apelo visual + conversão</li>
+            <li>Texto enxuto</li>
+            <li>CTA forte</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/demonstracao/refugiodamata-profissional/">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Hotelaria</span>
+          <strong>Pousada e Restaurante Bell (demo)</strong>
+          <ul class="bullets">
+            <li>Estrutura completa</li>
+            <li>Seções por intenção</li>
+            <li>Entrega rápida</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="/demonstracao/pousada-restaurante-bell/">Ver demo →</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="muted2" style="margin:10px 0 0;">
+        *Se alguma demo não existir no seu repo, só ajuste os links acima para as pastas corretas em <code>/demonstracao/</code>.
+      </p>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como">
+      <div class="section-head">
+        <div>
+          <h2>Como funciona</h2>
+          <p>Processo simples, rápido e com escopo fechado.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="tile">
+          <span class="tag">Passo 1</span>
+          <strong>Diagnóstico no WhatsApp</strong>
+          <p class="muted2" style="margin:0;">
+            Você manda o nome do negócio e o link do Google/Instagram. Eu te digo o que está te fazendo perder clique.
+          </p>
+        </div>
+
+        <div class="tile">
+          <span class="tag">Passo 2</span>
+          <strong>Escolha do modelo + escopo</strong>
+          <p class="muted2" style="margin:0;">
+            A gente define o ramo, objetivo e o que entra. Sem projeto infinito.
+          </p>
+        </div>
+
+        <div class="tile">
+          <span class="tag">Passo 3</span>
+          <strong>Entrega + publicação</strong>
+          <p class="muted2" style="margin:0;">
+            Site pronto, rápido, com CTA forte e estrutura pra SEO base.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="section" id="planos">
+      <div class="section-head">
+        <div>
+          <h2>Planos (âncora simples)</h2>
+          <p>Sem tabela gigante. Só o essencial pra decisão.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <article class="tile">
+          <span class="tag">Essencial</span>
+          <strong>Vitrine direta</strong>
+          <div class="price">a partir de R$ 500</div>
+          <div class="sub">pra quem precisa do básico bem feito</div>
+          <ul class="bullets">
+            <li>1 página (vitrine)</li>
+            <li>CTA WhatsApp forte</li>
+            <li>SEO base (meta + estrutura)</li>
+            <li>Entrega objetiva</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" id="ctaEssencial" href="#">Quero Essencial →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Profissional</span>
+          <strong>Mais completo</strong>
+          <div class="price">a partir de R$ 900</div>
+          <div class="sub">pra quem quer estrutura e conversão</div>
+          <ul class="bullets">
+            <li>Seções mais robustas</li>
+            <li>Melhor copy (texto)</li>
+            <li>SEO base + ajustes</li>
+            <li>Refino visual</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" id="ctaProfissional" href="#">Quero Profissional →</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <span class="tag">Premium</span>
+          <strong>Alta credibilidade</strong>
+          <div class="price">a partir de R$ 1.500</div>
+          <div class="sub">pra negócio que quer “cara de grande”</div>
+          <ul class="bullets">
+            <li>Layout premium</li>
+            <li>Seções por intenção</li>
+            <li>Estrutura pronta pra escalar</li>
+            <li>Performance e acabamento</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" id="ctaPremium" href="#">Quero Premium →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <div>
+          <h2>FAQ</h2>
+          <p>Objeções comuns (respondidas sem enrolação).</p>
+        </div>
+      </div>
+
+      <div style="max-width:980px;margin:0 auto;display:grid;gap:10px;">
+        <details>
+          <summary>Eu já tenho Instagram. Pra que site?</summary>
+          <p>
+            Instagram é vitrine social. Site é vitrine de confiança no Google (e dá contexto antes do WhatsApp).
+            Com site, você controla o funil e não depende de plataforma.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vocês corrigem o botão “Site” do Google?</summary>
+          <p>
+            Sim — quando o problema é link errado (Instagram/Booking/redirecionador/erro).
+            O objetivo é o clique cair no seu site e daí ir pro WhatsApp com intenção.
+          </p>
+        </details>
+
+        <details>
+          <summary>Tem mensalidade?</summary>
+          <p>
+            O site pode ser entregue sem mensalidade escondida. Se você quiser manutenção/atualizações,
+            dá pra contratar como opcional (combinado no WhatsApp).
+          </p>
+        </details>
+
+        <details>
+          <summary>Em quanto tempo fica pronto?</summary>
+          <p>
+            Depende do modelo e do material (fotos/textos), mas a proposta é entrega rápida e objetiva.
+            O escopo fechado evita “projeto infinito”.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vocês fazem sistemas completos?</summary>
+          <p>
+            Projetos maiores só com diagnóstico e conversa direta com o decisor.
+            O foco aqui é site por ramo com conversão no WhatsApp.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section">
+      <div class="card" style="max-width:980px;margin:18px auto 0;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <div>
+          <strong>Quer saber se faz sentido pro seu caso?</strong><br>
+          <span class="muted2">Manda o nome do negócio + cidade + link do Google.</span>
+        </div>
+        <a class="cta" id="ctaBottom" href="#">Chamar no WhatsApp →</a>
+      </div>
+    </section>
+
+    <footer>
+      © BRsys • Projeto autoral • Foco em quem decide
+      <div class="foot-links">
+        <a href="/modelos/">Modelos</a>
+        <a href="/demonstracao/">Demonstrações</a>
+        <a href="#planos">Preços</a>
+      </div>
+    </footer>
   </div>
 
-  <div>
-    <button class="icon-btn" id="btnTheme">🌙</button>
-    <a class="cta" id="ctaTop" href="#">WhatsApp direto →</a>
-  </div>
-</header>
+  <!-- Global JS (opcional). Se existir, você pode mover o script abaixo pra /js/app.js -->
+  <script src="/js/app.js" defer></script>
 
-<main class="main">
-  <div class="main-inner">
+  <!-- Script local (funciona mesmo sem /js/app.js) -->
+  <script>
+    (function(){
+      const PHONE="5513997408157";
+      const KEY="brsys-theme";
+      const html=document.documentElement;
 
-<section>
-  <div class="pill">Projetos objetivos • Sem agência • Sem enrolação</div>
+      function prefersDark(){
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      function setTheme(t){
+        html.setAttribute("data-theme",t);
+        try{ localStorage.setItem(KEY,t); }catch(e){}
+        const b=document.getElementById("btnTheme");
+        if(b) b.textContent = t==="dark"?"🌙":"☀️";
+      }
 
-  <h1>Seu site precisa gerar contato.<br>Não conversa.</h1>
+      const saved=(function(){ try{return localStorage.getItem(KEY);}catch(e){return null;} })();
+      setTheme(saved || (prefersDark()?"dark":"clean"));
 
-  <p class="lead">
-    A BRsys cria <strong>sites profissionais por ramo</strong>, pensados para
-    conversão direta no WhatsApp.  
-    Escopo fechado, entrega clara e foco total no dono do negócio.
-  </p>
+      const btn=document.getElementById("btnTheme");
+      if(btn){
+        btn.onclick=()=>{
+          setTheme(html.getAttribute("data-theme")==="dark"?"clean":"dark");
+        };
+      }
 
-  <div class="hero-actions">
-    <a class="btn btn-primary" id="ctaHero" href="#">Quero avaliar meu caso →</a>
-    <a class="btn" href="#como">Como funciona</a>
-  </div>
+      // Mensagens pré-prontas (sem prometer resultado, só diagnóstico)
+      const msgBase = "Oi! Aqui é o Thiago da BRsys.%0A%0AQuero entender se meu negócio faz sentido para um site focado em WhatsApp.";
+      const msgBtnSite = "Oi! Aqui é o Thiago da BRsys.%0A%0AMeu botão 'Site' no Google está ruim (leva pra Instagram/Booking/erro). Pode avaliar?";
+      const msgNovoSite = "Oi! Aqui é o Thiago da BRsys.%0A%0AQuero um site novo por ramo (escopo fechado) focado em WhatsApp. Pode me orientar?";
+      const msgEss = "Oi! Aqui é o Thiago da BRsys.%0A%0AQuero o plano Essencial (a partir de R$500). Me diz o que você precisa pra começar?";
+      const msgPro = "Oi! Aqui é o Thiago da BRsys.%0A%0AQuero o plano Profissional (a partir de R$900). Me diz o que você precisa pra começar?";
+      const msgPre = "Oi! Aqui é o Thiago da BRsys.%0A%0AQuero o plano Premium (a partir de R$1500). Me diz o que você precisa pra começar?";
 
-  <div class="micro">
-    <span>✔ Nada de “orçamento sem fim”</span>
-    <span>•</span>
-    <span>✔ Nada de intermediário sem decisão</span>
-    <span>•</span>
-    <span>✔ WhatsApp como único funil</span>
-  </div>
-</section>
+      function waLink(msg){
+        return "https://wa.me/" + PHONE + "?text=" + msg;
+      }
 
-<aside class="side">
+      const map = [
+        ["ctaTop", msgBase],
+        ["ctaBottom", msgBase],
+        ["ctaBtnSite", msgBtnSite],
+        ["ctaNovoSite", msgNovoSite],
+        ["ctaEssencial", msgEss],
+        ["ctaProfissional", msgPro],
+        ["ctaPremium", msgPre]
+      ];
 
-<div class="card">
-<strong>Para quem faz sentido</strong>
-
-<div class="seg">
-  <div class="check">✓</div>
-  <div>
-    <strong>Restaurantes, pizzarias, bistrôs</strong><br>
-    <small class="muted2">pedido direto, sem comissão</small>
-  </div>
-</div>
-
-<div class="seg">
-  <div class="check">✓</div>
-  <div>
-    <strong>Hotéis & pousadas</strong><br>
-    <small class="muted2">apresentação e reserva direta</small>
-  </div>
-</div>
-
-<div class="seg">
-  <div class="check">✓</div>
-  <div>
-    <strong>Negócios locais por ramo</strong><br>
-    <small class="muted2">confiança e velocidade</small>
-  </div>
-</div>
-
-</div>
-
-<div class="card">
-<strong>Importante saber</strong>
-<p class="muted2">
-Não faço sistemas de gestão por curiosidade.  
-Projetos maiores começam por diagnóstico e conversa direta com o decisor.
-</p>
-</div>
-
-</aside>
-
-</div>
-</main>
-
-<section id="como" style="margin-top:18px;">
-<div class="card" style="max-width:860px;margin:auto;">
-<strong>Como funciona</strong>
-
-<div class="seg">
-  <div class="check">1</div>
-  <div>Você chama no WhatsApp e explica seu negócio.</div>
-</div>
-
-<div class="seg">
-  <div class="check">2</div>
-  <div>Definimos escopo, modelo e objetivo.</div>
-</div>
-
-<div class="seg">
-  <div class="check">3</div>
-  <div>Entrega rápida e site no ar.</div>
-</div>
-
-</div>
-</section>
-
-<footer>
-© BRsys • Projeto autoral • Foco em quem decide
-</footer>
-</div>
-
-<script>
-(function(){
-  const PHONE="5513997408157";
-  const KEY="brsys-theme";
-  const html=document.documentElement;
-
-  function prefersDark(){
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-
-  function setTheme(t){
-    html.setAttribute("data-theme",t);
-    localStorage.setItem(KEY,t);
-    document.getElementById("btnTheme").textContent = t==="dark"?"🌙":"☀️";
-  }
-
-  const saved=localStorage.getItem(KEY);
-  setTheme(saved || (prefersDark()?"dark":"clean"));
-
-  document.getElementById("btnTheme").onclick=()=>{
-    setTheme(html.getAttribute("data-theme")==="dark"?"clean":"dark");
-  };
-
-  const msg="Oi! Aqui é o Thiago da BRsys.\n\nQuero entender se meu negócio faz sentido para um site focado em WhatsApp.";
-  const wa="https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
-
-  ["ctaTop","ctaHero"].forEach(id=>{
-    document.getElementById(id).href=wa;
-  });
-})();
-</script>
+      map.forEach(([id,msg])=>{
+        const el=document.getElementById(id);
+        if(el) el.href = waLink(msg);
+      });
+    })();
+  </script>
 </body>
 </html>
