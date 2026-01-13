@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRsys • Modelos por ramo</title>
+  <meta name="description" content="Catálogo de modelos BRsys por ramo: hamburgueria, pizzaria, restaurante, hotéis/pousadas e negócios locais." />
+
+  <link rel="stylesheet" href="/css/style.css?v=2" />
+  <script defer src="/js/main.js?v=2"></script>
+
+  <style>
+    :root{color-scheme:dark;}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg,#071116);color:var(--text,#eaf3f7);}
+    html[data-theme="dark"]{--bg:#071116;--panel:rgba(9,22,28,.72);--panel2:rgba(10,25,32,.55);--stroke:rgba(255,255,255,.08);--stroke2:rgba(255,255,255,.12);--text:#eaf3f7;--muted:rgba(234,243,247,.72);--muted2:rgba(234,243,247,.56);--teal:#24e6c3;--shadow:0 18px 45px rgba(0,0,0,.35);--grid:rgba(255,255,255,.06);}
+    .bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 520px at 18% 22%, rgba(36,230,195,.18), transparent 55%),radial-gradient(720px 440px at 72% 26%, rgba(36,230,195,.12), transparent 60%);}
+    .grid{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:52px 52px;opacity:.55;mask-image:radial-gradient(circle at 30% 30%, black 0 55%, transparent 78%);}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px;}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 10px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+    .logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.08));border:1px solid var(--stroke);font-weight:950;}
+    .btn{border:1px solid var(--stroke);background:var(--panel2);border-radius:14px;padding:12px 14px;color:var(--text);text-decoration:none;display:inline-flex;gap:10px;align-items:center;box-shadow:var(--shadow);font-weight:950;}
+    .btn.primary{background:linear-gradient(135deg, rgba(36,230,195,.28), rgba(36,230,195,.12));border-color:rgba(36,230,195,.40);}
+    .crumbs{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted2);font-size:12px;padding:0 10px 10px;}
+    .crumbs a{color:inherit;text-decoration:none;border-bottom:1px dashed transparent;}
+    .crumbs a:hover{border-bottom-color:var(--stroke2);}
+    .panel{border-radius:26px;border:1px solid var(--stroke);background:var(--panel);backdrop-filter:blur(14px);box-shadow:var(--shadow);padding:18px;}
+    h1{margin:0 0 8px;font-size:22px;letter-spacing:-.3px;}
+    p{margin:0;color:var(--muted);font-size:13px;}
+    .gridCards{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    @media(max-width:980px){.gridCards{grid-template-columns:1fr;}}
+    .card{border-radius:18px;border:1px solid var(--stroke);background:rgba(255,255,255,.03);padding:16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;min-height:120px;}
+    .card:hover{border-color:rgba(36,230,195,.25);}
+    .tag{font-size:12px;color:var(--muted2);}
+    .go{margin-top:auto;font-weight:950;color:var(--teal);}
+    footer{margin-top:18px;color:var(--muted2);font-size:12px;text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="bg"></div><div class="grid"></div>
+
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="/" aria-label="Voltar para início">
+        <div class="logo">B</div>
+        <div>
+          <div style="font-weight:950;font-size:14px;">BRsys</div>
+          <div style="font-size:12px;color:var(--muted2);">Catálogo • Modelos</div>
+        </div>
+      </a>
+      <a class="btn" href="/">← Voltar</a>
+    </header>
+
+    <nav class="crumbs">
+      <a href="/">Início</a><span>›</span><span>Modelos</span>
+    </nav>
+
+    <main class="panel">
+      <h1>Modelos por ramo</h1>
+      <p>Escolha um ramo e veja um template base. Depois você me chama no WhatsApp pra fechar escopo e objetivo.</p>
+
+      <div class="gridCards" aria-label="Lista de modelos">
+        <a class="card" href="/modelos/hamburgueria/">
+          <span class="tag">🍔 Modelo</span>
+          <strong>Hamburgueria</strong>
+          <p>Cardápio, combos, horário, localização e WhatsApp direto.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/pizzaria/">
+          <span class="tag">🍕 Modelo</span>
+          <strong>Pizzaria</strong>
+          <p>Sabores, delivery, promoções e CTA no WhatsApp.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/pizzaria-delivery/">
+          <span class="tag">🛵 Modelo</span>
+          <strong>Pizzaria Delivery</strong>
+          <p>Foco em pedido rápido, taxa/área e conversão.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/restaurante/">
+          <span class="tag">🍽️ Modelo</span>
+          <strong>Restaurante</strong>
+          <p>Apresentação + prova social + chamada para reserva.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/restaurantes-delivery/">
+          <span class="tag">🚚 Modelo</span>
+          <strong>Restaurantes Delivery</strong>
+          <p>Pedido direto, sem intermediário, com CTA forte.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/marmitaria/">
+          <span class="tag">🍱 Modelo</span>
+          <strong>Marmitaria</strong>
+          <p>Cardápio do dia, planos semanais e WhatsApp.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/hoteis-pousadas/">
+          <span class="tag">🏨 Modelo</span>
+          <strong>Hotéis & Pousadas</strong>
+          <p>Vitrine + reservas diretas + fotos e diferenciais.</p>
+          <span class="go">Abrir →</span>
+        </a>
+
+        <a class="card" href="/modelos/negocios-locais/">
+          <span class="tag">📍 Modelo</span>
+          <strong>Negócios locais</strong>
+          <p>Confiança, localização, serviços e CTA rápido.</p>
+          <span class="go">Abrir →</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>© BRsys • /modelos</footer>
+  </div>
+</body>
+</html>
