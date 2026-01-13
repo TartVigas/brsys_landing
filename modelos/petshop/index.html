@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+
+  <title>Petshop (Modelo) | Banho e Tosa + Agendamento no WhatsApp</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Petshop: banho e tosa, consultas, delivery de ração e agendamento rápido no WhatsApp. Layout premium, leve e pronto para SEO por ramo." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Petshop (Modelo) | Agendamento no WhatsApp" />
+  <meta property="og:description" content="Página demonstrativa BRsys: petshop com banho e tosa + CTA WhatsApp. Estrutura pronta para vender." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Canonical (ajuste quando publicar domínio final) -->
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/petshop/" />
+
+  <style>
+    :root{
+      --bg:#061b1b;
+      --bg2:#041313;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --line:rgba(255,255,255,.12);
+      --txt:#e9fffb;
+      --muted:rgba(233,255,251,.70);
+      --muted2:rgba(233,255,251,.55);
+      --brand:#17e2c2;
+      --brand2:#0fb59b;
+      --warn:#ffcc66;
+      --ok:#4cffb3;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:24px;
+      --max:1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--txt);
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(23,226,194,.20), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(23,226,194,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height:100vh;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      position:sticky; top:0; z-index:10;
+      padding:14px 18px;
+      margin:-28px -18px 18px;
+      background:rgba(2,12,12,.70);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .badge{
+      width:38px; height:38px; border-radius:12px;
+      display:grid; place-items:center;
+      background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));
+      border:1px solid rgba(23,226,194,.30);
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+    .badge b{color:var(--brand); font-size:16px}
+    .brand small{display:block; color:var(--muted2); font-weight:600; margin-top:2px}
+
+    .nav{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+    }
+    .nav a{
+      padding:10px 12px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      border-color:var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.15s transform, .15s background, .15s border-color;
+      user-select:none;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color:rgba(23,226,194,.35);
+      background: linear-gradient(180deg, rgba(23,226,194,.26), rgba(23,226,194,.12));
+      box-shadow: 0 18px 42px rgba(0,0,0,.28);
+    }
+    .btn.primary:hover{border-color:rgba(23,226,194,.60)}
+    .btn .dot{
+      width:10px;height:10px;border-radius:999px;background:var(--brand);
+      box-shadow:0 0 0 4px rgba(23,226,194,.15);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .pad{padding:22px}
+    .hero{
+      padding:26px 22px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 320px at 20% 0%, rgba(23,226,194,.22), transparent 60%),
+        radial-gradient(520px 320px at 80% 20%, rgba(23,226,194,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+    .chips{
+      display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700;
+      font-size:12px;
+    }
+    .chip i{
+      width:8px; height:8px; border-radius:999px; background:var(--ok);
+      box-shadow:0 0 0 4px rgba(76,255,179,.12);
+      display:inline-block;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:44px;
+      line-height:1.02;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.45;
+      margin:0 0 18px;
+      max-width:62ch;
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
+    .mini{
+      font-size:12px; color:var(--muted2); font-weight:650; margin-top:14px
+    }
+
+    .side{
+      padding:18px;
+    }
+    .side h3{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.2px;
+      color:var(--muted);
+      font-weight:850;
+    }
+    .list{
+      display:grid; gap:10px; margin-top:12px;
+    }
+    .item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    .item b{display:block; font-size:13px; margin-bottom:4px}
+    .item span{display:block; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35}
+    .kpi{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;
+    }
+    .kpi .item{padding:14px}
+    .kpi .n{
+      font-size:20px; font-weight:900; letter-spacing:-.3px; color:var(--txt)
+    }
+
+    section{margin-top:16px}
+    .sectionTitle{
+      display:flex; align-items:end; justify-content:space-between; gap:12px;
+      margin:18px 0 12px;
+    }
+    .sectionTitle h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .sectionTitle p{
+      margin:0;
+      color:var(--muted2);
+      font-weight:650;
+      font-size:12px;
+    }
+    .cards3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .thumb{
+      height:148px;
+      border-radius:16px;
+      border:1px dashed rgba(233,255,251,.25);
+      background:
+        radial-gradient(600px 240px at 20% 0%, rgba(23,226,194,.12), transparent 65%),
+        rgba(255,255,255,.03);
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:14px;
+      overflow:hidden;
+    }
+    .thumb small{color:var(--muted2); font-weight:750}
+    .thumb b{margin-top:6px; font-size:14px}
+    .thumb em{font-style:normal; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35; margin-top:4px}
+
+    .menuGrid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .menuItem{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:14px;
+    }
+    .menuItem b{display:block; font-size:13px; margin-bottom:6px}
+    .menuItem p{margin:0; color:var(--muted2); font-weight:650; font-size:12px; line-height:1.35}
+    .price{margin-top:10px; display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .pill{
+      font-size:12px; font-weight:850; padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(23,226,194,.35);
+      background:rgba(23,226,194,.10);
+      color:var(--txt);
+      white-space:nowrap;
+    }
+
+    .faq{
+      display:grid; gap:10px;
+    }
+    details{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:850;
+      color:var(--txt);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{
+      margin:10px 0 0;
+      color:var(--muted2);
+      font-weight:650;
+      line-height:1.45;
+      font-size:13px;
+    }
+
+    .footer{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius2);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer small{color:var(--muted2); font-weight:650}
+    .footer b{font-weight:900}
+
+    .waFloat{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:99;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(23,226,194,.45);
+      background: linear-gradient(180deg, rgba(23,226,194,.20), rgba(23,226,194,.10));
+      box-shadow: 0 24px 70px rgba(0,0,0,.50);
+    }
+    .waFloat .waIcon{
+      width:40px; height:40px; border-radius:999px;
+      display:grid; place-items:center;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .waFloat span{font-weight:900}
+    .waFloat small{display:block; color:var(--muted2); font-weight:650; margin-top:1px}
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .menuGrid{grid-template-columns: repeat(2, 1fr)}
+      .cards3{grid-template-columns:1fr}
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+      .menuGrid{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+  </style>
+
+  <!-- Schema.org (modelo) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Petshop (Modelo BRsys)",
+    "description":"Modelo demonstrativo BRsys para Petshop com CTA no WhatsApp, banho e tosa e estrutura SEO por ramo.",
+    "url":"https://www.brsys.com.br/modelos/petshop/",
+    "telephone":"+55 13 99740-8157",
+    "areaServed":"Brasil"
+  }
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="badge" aria-hidden="true"><b>B</b></div>
+      <div>
+        BRsys Sites
+        <small>Template premium • Petshop (banho e tosa)</small>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navegação">
+      <a href="#servicos">Serviços</a>
+      <a href="#precos">Pacotes</a>
+      <a href="#como">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+
+    <a class="btn primary" id="btnTopWA" href="#" rel="nofollow">
+      <span class="dot"></span> Agendar no WhatsApp
+    </a>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card hero">
+        <div class="chips">
+          <span class="chip"><i></i> Agendamento rápido</span>
+          <span class="chip"><i style="background:var(--brand)"></i> Banho & Tosa</span>
+          <span class="chip"><i style="background:var(--warn)"></i> Delivery de ração</span>
+        </div>
+
+        <h1>Seu petshop precisa virar <span style="color:var(--brand)">agenda cheia</span>.</h1>
+        <p class="sub">
+          Modelo demonstrativo BRsys para <b>petshop e banho e tosa</b>:
+          página leve, confiável e pronta para o cliente clicar e chamar no WhatsApp.
+          Sem intermediário. Sem enrolação.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">🐾 Agendar agora</a>
+          <a class="btn" href="#servicos">Ver serviços</a>
+          <a class="btn" href="#precos">Ver pacotes</a>
+        </div>
+
+        <div class="mini">
+          * Este é um modelo BRsys. Troque nome, serviços, preços, horário e WhatsApp pelo do cliente.
+        </div>
+      </section>
+
+      <aside class="card side">
+        <div class="pad">
+          <h3>O que faz converter</h3>
+          <div class="list">
+            <div class="item">
+              <b>Botão WhatsApp sempre visível</b>
+              <span>O cliente agenda em 1 clique (banho, tosa, consulta ou orçamento).</span>
+            </div>
+            <div class="item">
+              <b>Serviços claros (sem confusão)</b>
+              <span>Listas curtas e objetivas: “o que você faz” + “quanto custa” + “como agendar”.</span>
+            </div>
+            <div class="item">
+              <b>SEO por ramo (ativo durável)</b>
+              <span>Preparado para buscas como “banho e tosa”, “petshop”, “ração delivery” e variações.</span>
+            </div>
+          </div>
+
+          <div class="kpi">
+            <div class="item">
+              <div class="n">+Rápido</div>
+              <span>Menos atrito no agendamento.</span>
+            </div>
+            <div class="item">
+              <div class="n">+Confiança</div>
+              <span>Visual premium e leve.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="servicos">
+      <div class="sectionTitle">
+        <h2>Serviços principais</h2>
+        <p>Mostre o que vende (e facilite o “agendar”).</p>
+      </div>
+
+      <div class="cards3">
+        <div class="thumb">
+          <small>🐕 Banho & Tosa</small>
+          <b>Agendamento por WhatsApp</b>
+          <em>Com horários, tipos de pelagem e observações (rápido e direto).</em>
+        </div>
+
+        <div class="thumb">
+          <small>🩺 Cuidados & Consulta</small>
+          <b>Parcerias / clínica</b>
+          <em>Se tiver vet/parceiro: destaque vacinas, check-up, orientação.</em>
+        </div>
+
+        <div class="thumb">
+          <small>🛵 Delivery</small>
+          <b>Ração e itens no bairro</b>
+          <em>Áreas atendidas + prazos + pagamento (Pix/cartão).</em>
+        </div>
+      </div>
+    </section>
+
+    <section id="precos">
+      <div class="sectionTitle">
+        <h2>Pacotes (exemplo)</h2>
+        <p>Preço claro tira dúvida e aumenta clique.</p>
+      </div>
+
+      <div class="menuGrid">
+        <div class="menuItem">
+          <b>Banho (P)</b>
+          <p>Inclui secagem e finalização.</p>
+          <div class="price">
+            <span class="pill">R$ 49</span>
+            <a class="btn" data-service="Banho (P) - R$49" href="#" rel="nofollow">Agendar</a>
+          </div>
+        </div>
+
+        <div class="menuItem">
+          <b>Banho (M)</b>
+          <p>Tempo médio e cuidados básicos.</p>
+          <div class="price">
+            <span class="pill">R$ 59</span>
+            <a class="btn" data-service="Banho (M) - R$59" href="#" rel="nofollow">Agendar</a>
+          </div>
+        </div>
+
+        <div class="menuItem">
+          <b>Tosa Higiênica</b>
+          <p>Rápida e essencial (conforto do pet).</p>
+          <div class="price">
+            <span class="pill">R$ 35</span>
+            <a class="btn" data-service="Tosa Higiênica - R$35" href="#" rel="nofollow">Agendar</a>
+          </div>
+        </div>
+
+        <div class="menuItem">
+          <b>Banho + Tosa</b>
+          <p>Pacote completo com finalização.</p>
+          <div class="price">
+            <span class="pill">R$ 89</span>
+            <a class="btn" data-service="Banho + Tosa - R$89" href="#" rel="nofollow">Agendar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini" style="margin-top:10px">
+        Dica BRsys: você pode trocar “preço” por “a partir de” se variar por raça/pelagem.
+      </div>
+    </section>
+
+    <section id="como">
+      <div class="sectionTitle">
+        <h2>Como o pedido funciona</h2>
+        <p>Regras simples = menos pergunta no chat.</p>
+      </div>
+
+      <div class="cards3">
+        <div class="item">
+          <b>1) Clique para agendar</b>
+          <span>O WhatsApp abre com mensagem pronta (serviço + horário sugerido).</span>
+        </div>
+        <div class="item">
+          <b>2) Confirmar e combinar</b>
+          <span>Você confirma disponibilidade, detalhes (raça/pelagem) e tempo estimado.</span>
+        </div>
+        <div class="item">
+          <b>3) Pronto</b>
+          <span>Cliente chega com confiança. Menos “vai e volta”, mais agenda.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas">
+      <div class="sectionTitle">
+        <h2>Dúvidas rápidas</h2>
+        <p>FAQ enxuto tira objeções.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Vocês atendem quais dias e horários?</summary>
+          <p>Exemplo: Seg–Sáb 9h–18h. (Troque aqui pelo horário real do cliente.)</p>
+        </details>
+        <details>
+          <summary>Precisa agendar ou pode encaixe?</summary>
+          <p>Recomendado agendar. Se houver encaixe, confirmamos pelo WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Fazem delivery de ração e itens?</summary>
+          <p>Sim. Informe bairros atendidos, taxa (se houver) e prazo médio (ex.: 30–60 min).</p>
+        </details>
+        <details>
+          <summary>Quais formas de pagamento?</summary>
+          <p>Pix, dinheiro e cartão. (Ajuste conforme o cliente.)</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <b>BRsys Sites</b>
+        <small>Modelo por ramo • Petshop & Banho e Tosa • pronto para personalizar</small>
+      </div>
+      <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow">
+        <span class="dot"></span> Falar no WhatsApp
+      </a>
+    </footer>
+  </main>
+
+  <a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Chamar no WhatsApp">
+    <div class="waIcon">WA</div>
+    <div>
+      <span>Agendar agora</span>
+      <small>WhatsApp direto</small>
+    </div>
+  </a>
+
+  <script>
+    // WhatsApp (BRsys) - troque quando for demo de cliente
+    const WA_NUMBER = "5513997408157";
+    const PAGE_TAG = "Modelo Petshop (BRsys)";
+
+    function waLink(message){
+      const txt = encodeURIComponent(message);
+      return `https://wa.me/${WA_NUMBER}?text=${txt}`;
+    }
+
+    function bindWA(){
+      const baseMsg = `Olá! Vi o ${PAGE_TAG} e quero agendar.`;
+      const ids = ["btnTopWA","btnHeroWA","btnFooterWA","waFloat"];
+      ids.forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.href = waLink(baseMsg);
+      });
+
+      document.querySelectorAll("[data-service]").forEach(btn=>{
+        btn.addEventListener("click", (e)=>{
+          e.preventDefault();
+          const svc = btn.getAttribute("data-service");
+          const msg = `Olá! Quero agendar: ${svc}. Pode me passar os horários disponíveis?`;
+          window.open(waLink(msg), "_blank");
+        });
+        btn.href = "#";
+      });
+    }
+
+    bindWA();
+  </script>
+</body>
+</html>
