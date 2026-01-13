@@ -3,39 +3,235 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BRsys • Modelos por ramo</title>
-  <meta name="description" content="Catálogo de modelos BRsys por ramo: hamburgueria, pizzaria, restaurante, hotéis/pousadas e negócios locais." />
 
-  <link rel="stylesheet" href="/css/style.css?v=2" />
-  <script defer src="/js/main.js?v=2"></script>
+  <title>Modelos de Sites por Ramo | BRsys Sites (templates prontos)</title>
+  <meta name="description" content="Catálogo de modelos BRsys por ramo: restaurantes, delivery, hotéis/pousadas, negócios locais e serviços. Templates prontos com foco em conversão no WhatsApp e SEO." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#071116" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys Sites" />
+  <meta property="og:title" content="Modelos de Sites por Ramo | BRsys Sites" />
+  <meta property="og:description" content="Templates prontos por ramo com foco em WhatsApp e SEO. Escolha um modelo e peça uma demo personalizada." />
+  <meta property="og:url" content="https://www.brsys.com.br/modelos/" />
+  <meta property="og:image" content="https://www.brsys.com.br/modelos/img/og-modelos.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Modelos de Sites por Ramo | BRsys Sites" />
+  <meta name="twitter:description" content="Templates prontos por ramo com foco em WhatsApp e SEO." />
+  <meta name="twitter:image" content="https://www.brsys.com.br/modelos/img/og-modelos.jpg" />
+
+  <!-- Opcional: manter seus assets globais -->
+  <link rel="stylesheet" href="/css/style.css?v=3" />
+  <script defer src="/js/main.js?v=3"></script>
+
+  <!-- Preload de uma capa (se existir) -->
+  <link rel="preload" as="image" href="/modelos/img/hamburgueria.jpg" imagesrcset="/modelos/img/hamburgueria.jpg" />
 
   <style>
     :root{color-scheme:dark;}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg,#071116);color:var(--text,#eaf3f7);}
-    html[data-theme="dark"]{--bg:#071116;--panel:rgba(9,22,28,.72);--panel2:rgba(10,25,32,.55);--stroke:rgba(255,255,255,.08);--stroke2:rgba(255,255,255,.12);--text:#eaf3f7;--muted:rgba(234,243,247,.72);--muted2:rgba(234,243,247,.56);--teal:#24e6c3;--shadow:0 18px 45px rgba(0,0,0,.35);--grid:rgba(255,255,255,.06);}
-    .bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 520px at 18% 22%, rgba(36,230,195,.18), transparent 55%),radial-gradient(720px 440px at 72% 26%, rgba(36,230,195,.12), transparent 60%);}
-    .grid{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:52px 52px;opacity:.55;mask-image:radial-gradient(circle at 30% 30%, black 0 55%, transparent 78%);}
-    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px;}
+    html[data-theme="dark"]{
+      --bg:#071116;
+      --panel:rgba(9,22,28,.72);
+      --panel2:rgba(10,25,32,.55);
+      --stroke:rgba(255,255,255,.08);
+      --stroke2:rgba(255,255,255,.12);
+      --text:#eaf3f7;
+      --muted:rgba(234,243,247,.72);
+      --muted2:rgba(234,243,247,.56);
+      --teal:#24e6c3;
+      --shadow:0 18px 45px rgba(0,0,0,.35);
+      --grid:rgba(255,255,255,.06);
+      --ok:rgba(36,230,195,.18);
+    }
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(900px 520px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
+        radial-gradient(720px 440px at 72% 26%, rgba(36,230,195,.12), transparent 60%),
+        radial-gradient(820px 520px at 40% 82%, rgba(36,230,195,.08), transparent 60%);
+    }
+    .grid{
+      position:fixed; inset:0; z-index:-1;
+      background-image:
+        linear-gradient(to right,var(--grid) 1px,transparent 1px),
+        linear-gradient(to bottom,var(--grid) 1px,transparent 1px);
+      background-size:52px 52px;
+      opacity:.55;
+      mask-image:radial-gradient(circle at 30% 30%, black 0 55%, transparent 78%);
+    }
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 84px;}
     .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 10px;}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
-    .logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.08));border:1px solid var(--stroke);font-weight:950;}
-    .btn{border:1px solid var(--stroke);background:var(--panel2);border-radius:14px;padding:12px 14px;color:var(--text);text-decoration:none;display:inline-flex;gap:10px;align-items:center;box-shadow:var(--shadow);font-weight:950;}
-    .btn.primary{background:linear-gradient(135deg, rgba(36,230,195,.28), rgba(36,230,195,.12));border-color:rgba(36,230,195,.40);}
+    .logo{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.08));
+      border:1px solid var(--stroke);font-weight:950;
+    }
+    .btn{
+      border:1px solid var(--stroke);
+      background:var(--panel2);
+      border-radius:14px;
+      padding:12px 14px;
+      color:var(--text);
+      text-decoration:none;
+      display:inline-flex;gap:10px;align-items:center;
+      box-shadow:var(--shadow);
+      font-weight:950;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(36,230,195,.28), rgba(36,230,195,.12));
+      border-color:rgba(36,230,195,.40);
+    }
     .crumbs{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted2);font-size:12px;padding:0 10px 10px;}
     .crumbs a{color:inherit;text-decoration:none;border-bottom:1px dashed transparent;}
     .crumbs a:hover{border-bottom-color:var(--stroke2);}
-    .panel{border-radius:26px;border:1px solid var(--stroke);background:var(--panel);backdrop-filter:blur(14px);box-shadow:var(--shadow);padding:18px;}
-    h1{margin:0 0 8px;font-size:22px;letter-spacing:-.3px;}
-    p{margin:0;color:var(--muted);font-size:13px;}
-    .gridCards{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+
+    .panel{
+      border-radius:26px;
+      border:1px solid var(--stroke);
+      background:var(--panel);
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+      padding:18px;
+      overflow:hidden;
+    }
+    .hero{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between;
+      padding:8px 4px 12px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      margin-bottom:14px;
+    }
+    .hero h1{margin:0 0 8px;font-size:22px;letter-spacing:-.3px;}
+    .hero p{margin:0;color:var(--muted);font-size:13px;max-width:68ch;}
+    .hero .actions{display:flex; gap:10px; align-items:center; justify-content:flex-end; flex-wrap:wrap;}
+
+    .note{
+      margin-top:10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted2); font-size:12px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid rgba(36,230,195,.20);
+      background:rgba(36,230,195,.06);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+
+    .gridCards{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
     @media(max-width:980px){.gridCards{grid-template-columns:1fr;}}
-    .card{border-radius:18px;border:1px solid var(--stroke);background:rgba(255,255,255,.03);padding:16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;min-height:120px;}
+    .card{
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      text-decoration:none;
+      color:inherit;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      min-height:150px;
+    }
     .card:hover{border-color:rgba(36,230,195,.25);}
+    .thumb{
+      position:relative;
+      aspect-ratio:16/9;
+      background:
+        radial-gradient(600px 260px at 20% 30%, rgba(36,230,195,.18), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-bottom:1px solid rgba(255,255,255,.06);
+      overflow:hidden;
+    }
+    .thumb img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:.95;
+      transform:scale(1.02);
+    }
+    .thumb .badge{
+      position:absolute; left:10px; top:10px;
+      font-size:12px; color:var(--text);
+      background:rgba(0,0,0,.38);
+      border:1px solid rgba(255,255,255,.12);
+      padding:6px 10px;
+      border-radius:999px;
+      backdrop-filter:blur(10px);
+    }
+    .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
     .tag{font-size:12px;color:var(--muted2);}
+    .title{font-weight:950;font-size:15px;letter-spacing:-.2px;}
+    .desc{margin:0;color:var(--muted);font-size:13px;line-height:1.35;}
     .go{margin-top:auto;font-weight:950;color:var(--teal);}
+
     footer{margin-top:18px;color:var(--muted2);font-size:12px;text-align:center;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   </style>
+
+  <!-- JSON-LD: CollectionPage + ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Modelos de Sites por Ramo | BRsys Sites",
+    "url":"https://www.brsys.com.br/modelos/",
+    "description":"Catálogo de templates BRsys por ramo com foco em conversão via WhatsApp e SEO.",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"BRsys Sites",
+      "url":"https://www.brsys.com.br/"
+    },
+    "mainEntity":{
+      "@type":"ItemList",
+      "itemListOrder":"https://schema.org/ItemListOrderAscending",
+      "numberOfItems":23,
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Hamburgueria","url":"https://www.brsys.com.br/modelos/hamburgueria/"},
+        {"@type":"ListItem","position":2,"name":"Pizzaria","url":"https://www.brsys.com.br/modelos/pizzaria/"},
+        {"@type":"ListItem","position":3,"name":"Pizzaria Delivery","url":"https://www.brsys.com.br/modelos/pizzaria-delivery/"},
+        {"@type":"ListItem","position":4,"name":"Restaurante","url":"https://www.brsys.com.br/modelos/restaurante/"},
+        {"@type":"ListItem","position":5,"name":"Restaurantes Delivery","url":"https://www.brsys.com.br/modelos/restaurantes-delivery/"},
+        {"@type":"ListItem","position":6,"name":"Marmitaria","url":"https://www.brsys.com.br/modelos/marmitaria/"},
+        {"@type":"ListItem","position":7,"name":"Hotéis & Pousadas","url":"https://www.brsys.com.br/modelos/hoteis-pousadas/"},
+        {"@type":"ListItem","position":8,"name":"Negócios Locais","url":"https://www.brsys.com.br/modelos/negocios-locais/"},
+        {"@type":"ListItem","position":9,"name":"Petshop","url":"https://www.brsys.com.br/modelos/petshop/"},
+        {"@type":"ListItem","position":10,"name":"Bicicletaria","url":"https://www.brsys.com.br/modelos/bicicletaria/"},
+        {"@type":"ListItem","position":11,"name":"Clínica Odontológica","url":"https://www.brsys.com.br/modelos/clinica-odontologica/"},
+        {"@type":"ListItem","position":12,"name":"Clínica Estética","url":"https://www.brsys.com.br/modelos/clinica-estetica/"},
+        {"@type":"ListItem","position":13,"name":"Barbearia","url":"https://www.brsys.com.br/modelos/barbearia/"},
+        {"@type":"ListItem","position":14,"name":"Oficina Mecânica","url":"https://www.brsys.com.br/modelos/oficina-mecanica/"},
+        {"@type":"ListItem","position":15,"name":"Marido de Aluguel","url":"https://www.brsys.com.br/modelos/marido-de-aluguel/"},
+        {"@type":"ListItem","position":16,"name":"Imobiliária","url":"https://www.brsys.com.br/modelos/imobiliaria/"},
+        {"@type":"ListItem","position":17,"name":"Academia","url":"https://www.brsys.com.br/modelos/academia/"},
+        {"@type":"ListItem","position":18,"name":"Assistência Técnica","url":"https://www.brsys.com.br/modelos/assistencia-tecnica/"},
+        {"@type":"ListItem","position":19,"name":"Materiais de Construção","url":"https://www.brsys.com.br/modelos/materiais-de-construcao/"},
+        {"@type":"ListItem","position":20,"name":"Farmácia de Manipulação","url":"https://www.brsys.com.br/modelos/farmacia-de-manipulacao/"},
+        {"@type":"ListItem","position":21,"name":"Ótica","url":"https://www.brsys.com.br/modelos/otica/"},
+        {"@type":"ListItem","position":22,"name":"Escola/Curso","url":"https://www.brsys.com.br/modelos/escola-curso/"},
+        {"@type":"ListItem","position":23,"name":"Chaveiro 24h","url":"https://www.brsys.com.br/modelos/chaveiro-24h/"}
+      ]
+    }
+  }
+  </script>
 </head>
+
 <body>
   <div class="bg"></div><div class="grid"></div>
 
@@ -44,81 +240,377 @@
       <a class="brand" href="/" aria-label="Voltar para início">
         <div class="logo">B</div>
         <div>
-          <div style="font-weight:950;font-size:14px;">BRsys</div>
-          <div style="font-size:12px;color:var(--muted2);">Catálogo • Modelos</div>
+          <div style="font-weight:950;font-size:14px;">BRsys Sites</div>
+          <div style="font-size:12px;color:var(--muted2);">Catálogo • Modelos por ramo</div>
         </div>
       </a>
-      <a class="btn" href="/">← Voltar</a>
+
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <a class="btn primary" href="https://wa.me/5513997408157" rel="noopener" aria-label="Falar no WhatsApp">
+          WhatsApp direto →
+        </a>
+        <a class="btn" href="/">← Voltar</a>
+      </div>
     </header>
 
-    <nav class="crumbs">
+    <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/">Início</a><span>›</span><span>Modelos</span>
     </nav>
 
     <main class="panel">
-      <h1>Modelos por ramo</h1>
-      <p>Escolha um ramo e veja um template base. Depois você me chama no WhatsApp pra fechar escopo e objetivo.</p>
+      <section class="hero" aria-label="Introdução">
+        <div>
+          <h1>Modelos de sites por ramo (templates prontos)</h1>
+          <p>Escolha um modelo e veja a base pronta. Depois me chama no WhatsApp e eu adapto com seu nome, fotos, preços, bairros/cidade e CTA — com foco em conversão e SEO local.</p>
 
-      <div class="gridCards" aria-label="Lista de modelos">
-        <a class="card" href="/modelos/hamburgueria/">
-          <span class="tag">🍔 Modelo</span>
-          <strong>Hamburgueria</strong>
-          <p>Cardápio, combos, horário, localização e WhatsApp direto.</p>
-          <span class="go">Abrir →</span>
+          <div class="note" role="note" aria-label="Benefícios rápidos">
+            <span class="pill">✅ WhatsApp como funil</span>
+            <span class="pill">⚡ Leve + rápido</span>
+            <span class="pill">📍 SEO por ramo + local</span>
+            <span class="pill">🧱 Base replicável</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/5513997408157?text=Oi!%20Quero%20uma%20demo%20de%20um%20modelo%20BRsys.%20Meu%20ramo%20%C3%A9%3A%20_____%20%F0%9F%92%AC" rel="noopener">
+            Pedir demo no WhatsApp →
+          </a>
+        </div>
+      </section>
+
+      <h2 class="sr-only">Lista de modelos</h2>
+
+      <div class="gridCards" aria-label="Modelos BRsys">
+        <!-- Helper: cada card tenta carregar /modelos/img/<slug>.jpg e cai no placeholder se não existir -->
+
+        <!-- 1 -->
+        <a class="card" href="/modelos/hamburgueria/" aria-label="Abrir modelo Hamburgueria">
+          <div class="thumb">
+            <span class="badge">🍔 Cardápio + pedido</span>
+            <img src="/modelos/img/hamburgueria.jpg" alt="Prévia do modelo Hamburgueria" loading="eager" decoding="async" fetchpriority="high"
+                 onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Alimentação</span>
+            <div class="title">Hamburgueria</div>
+            <p class="desc">Cardápio, combos, horário, localização e WhatsApp direto.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/pizzaria/">
-          <span class="tag">🍕 Modelo</span>
-          <strong>Pizzaria</strong>
-          <p>Sabores, delivery, promoções e CTA no WhatsApp.</p>
-          <span class="go">Abrir →</span>
+        <!-- 2 -->
+        <a class="card" href="/modelos/pizzaria/" aria-label="Abrir modelo Pizzaria">
+          <div class="thumb">
+            <span class="badge">🍕 Sabores + promo</span>
+            <img src="/modelos/img/pizzaria.jpg" alt="Prévia do modelo Pizzaria" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Alimentação</span>
+            <div class="title">Pizzaria</div>
+            <p class="desc">Sabores, delivery, promoções e CTA no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/pizzaria-delivery/">
-          <span class="tag">🛵 Modelo</span>
-          <strong>Pizzaria Delivery</strong>
-          <p>Foco em pedido rápido, taxa/área e conversão.</p>
-          <span class="go">Abrir →</span>
+        <!-- 3 -->
+        <a class="card" href="/modelos/pizzaria-delivery/" aria-label="Abrir modelo Pizzaria Delivery">
+          <div class="thumb">
+            <span class="badge">🛵 Pedido rápido</span>
+            <img src="/modelos/img/pizzaria-delivery.jpg" alt="Prévia do modelo Pizzaria Delivery" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Delivery</span>
+            <div class="title">Pizzaria Delivery</div>
+            <p class="desc">Foco em pedido rápido, taxa/área e conversão.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/restaurante/">
-          <span class="tag">🍽️ Modelo</span>
-          <strong>Restaurante</strong>
-          <p>Apresentação + prova social + chamada para reserva.</p>
-          <span class="go">Abrir →</span>
+        <!-- 4 -->
+        <a class="card" href="/modelos/restaurante/" aria-label="Abrir modelo Restaurante">
+          <div class="thumb">
+            <span class="badge">🍽️ Cardápio + reservas</span>
+            <img src="/modelos/img/restaurante.jpg" alt="Prévia do modelo Restaurante" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Alimentação</span>
+            <div class="title">Restaurante</div>
+            <p class="desc">Cardápio, prato do dia e pedido direto no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/restaurantes-delivery/">
-          <span class="tag">🚚 Modelo</span>
-          <strong>Restaurantes Delivery</strong>
-          <p>Pedido direto, sem intermediário, com CTA forte.</p>
-          <span class="go">Abrir →</span>
+        <!-- 5 -->
+        <a class="card" href="/modelos/restaurantes-delivery/" aria-label="Abrir modelo Restaurantes Delivery">
+          <div class="thumb">
+            <span class="badge">🚚 Delivery</span>
+            <img src="/modelos/img/restaurantes-delivery.jpg" alt="Prévia do modelo Restaurantes Delivery" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Delivery</span>
+            <div class="title">Restaurantes Delivery</div>
+            <p class="desc">Pedido direto, sem intermediário, com CTA forte.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/marmitaria/">
-          <span class="tag">🍱 Modelo</span>
-          <strong>Marmitaria</strong>
-          <p>Cardápio do dia, planos semanais e WhatsApp.</p>
-          <span class="go">Abrir →</span>
+        <!-- 6 -->
+        <a class="card" href="/modelos/marmitaria/" aria-label="Abrir modelo Marmitaria">
+          <div class="thumb">
+            <span class="badge">🍱 Cardápio do dia</span>
+            <img src="/modelos/img/marmitaria.jpg" alt="Prévia do modelo Marmitaria" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Alimentação</span>
+            <div class="title">Marmitaria</div>
+            <p class="desc">Cardápio do dia, combos e WhatsApp para vender todo dia.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/hoteis-pousadas/">
-          <span class="tag">🏨 Modelo</span>
-          <strong>Hotéis & Pousadas</strong>
-          <p>Vitrine + reservas diretas + fotos e diferenciais.</p>
-          <span class="go">Abrir →</span>
+        <!-- 7 -->
+        <a class="card" href="/modelos/hoteis-pousadas/" aria-label="Abrir modelo Hotéis e Pousadas">
+          <div class="thumb">
+            <span class="badge">🏨 Reservas diretas</span>
+            <img src="/modelos/img/hoteis-pousadas.jpg" alt="Prévia do modelo Hotéis e Pousadas" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Hotelaria</span>
+            <div class="title">Hotéis &amp; Pousadas</div>
+            <p class="desc">Vitrine + reservas diretas + fotos e diferenciais.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
 
-        <a class="card" href="/modelos/negocios-locais/">
-          <span class="tag">📍 Modelo</span>
-          <strong>Negócios locais</strong>
-          <p>Confiança, localização, serviços e CTA rápido.</p>
-          <span class="go">Abrir →</span>
+        <!-- 8 -->
+        <a class="card" href="/modelos/negocios-locais/" aria-label="Abrir modelo Negócios Locais">
+          <div class="thumb">
+            <span class="badge">📍 Local + confiança</span>
+            <img src="/modelos/img/negocios-locais.jpg" alt="Prévia do modelo Negócios Locais" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Multi-segmento</span>
+            <div class="title">Negócios locais</div>
+            <p class="desc">Confiança, serviços, localização e CTA rápido no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 9 -->
+        <a class="card" href="/modelos/petshop/" aria-label="Abrir modelo Petshop">
+          <div class="thumb">
+            <span class="badge">🐾 Banho &amp; tosa</span>
+            <img src="/modelos/img/petshop.jpg" alt="Prévia do modelo Petshop" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Serviços</span>
+            <div class="title">Petshop</div>
+            <p class="desc">Agendamento rápido, serviços e WhatsApp como funil.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 10 -->
+        <a class="card" href="/modelos/bicicletaria/" aria-label="Abrir modelo Bicicletaria">
+          <div class="thumb">
+            <span class="badge">🚲 Revisão</span>
+            <img src="/modelos/img/bicicletaria.jpg" alt="Prévia do modelo Bicicletaria" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Serviços</span>
+            <div class="title">Bicicletaria</div>
+            <p class="desc">Serviços, revisão, peças e orçamento no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 11 -->
+        <a class="card" href="/modelos/clinica-odontologica/" aria-label="Abrir modelo Clínica Odontológica">
+          <div class="thumb">
+            <span class="badge">🦷 Avaliação</span>
+            <img src="/modelos/img/clinica-odontologica.jpg" alt="Prévia do modelo Clínica Odontológica" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Saúde</span>
+            <div class="title">Clínica Odontológica</div>
+            <p class="desc">Serviços, prova social e agendamento por WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 12 -->
+        <a class="card" href="/modelos/clinica-estetica/" aria-label="Abrir modelo Clínica Estética">
+          <div class="thumb">
+            <span class="badge">✨ Agenda cheia</span>
+            <img src="/modelos/img/clinica-estetica.jpg" alt="Prévia do modelo Clínica Estética" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Beleza</span>
+            <div class="title">Clínica de Estética</div>
+            <p class="desc">Tratamentos, antes/depois e CTA “Agendar horário”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 13 -->
+        <a class="card" href="/modelos/barbearia/" aria-label="Abrir modelo Barbearia">
+          <div class="thumb">
+            <span class="badge">💈 Agendar corte</span>
+            <img src="/modelos/img/barbearia.jpg" alt="Prévia do modelo Barbearia" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Beleza</span>
+            <div class="title">Barbearia</div>
+            <p class="desc">Serviços, horários, portfólio e agendamento rápido.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 14 -->
+        <a class="card" href="/modelos/oficina-mecanica/" aria-label="Abrir modelo Oficina Mecânica">
+          <div class="thumb">
+            <span class="badge">🔧 Orçamento</span>
+            <img src="/modelos/img/oficina-mecanica.jpg" alt="Prévia do modelo Oficina Mecânica" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Automotivo</span>
+            <div class="title">Oficina / Auto Center</div>
+            <p class="desc">Dor imediata + busca local. CTA “Pedir orçamento”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 15 -->
+        <a class="card" href="/modelos/marido-de-aluguel/" aria-label="Abrir modelo Marido de Aluguel">
+          <div class="thumb">
+            <span class="badge">⚡ Emergência</span>
+            <img src="/modelos/img/marido-de-aluguel.jpg" alt="Prévia do modelo Marido de Aluguel" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Serviços</span>
+            <div class="title">Marido de Aluguel</div>
+            <p class="desc">Eletricista/encanador/manutenção com CTA “Chamar agora”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 16 -->
+        <a class="card" href="/modelos/imobiliaria/" aria-label="Abrir modelo Imobiliária">
+          <div class="thumb">
+            <span class="badge">🏡 Lead alto valor</span>
+            <img src="/modelos/img/imobiliaria.jpg" alt="Prévia do modelo Imobiliária" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Imóveis</span>
+            <div class="title">Imobiliária / Corretor</div>
+            <p class="desc">SEO eterno por cidade + CTA “Quero visitar”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 17 -->
+        <a class="card" href="/modelos/academia/" aria-label="Abrir modelo Academia">
+          <div class="thumb">
+            <span class="badge">🏋️ Avaliação</span>
+            <img src="/modelos/img/academia.jpg" alt="Prévia do modelo Academia" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Saúde</span>
+            <div class="title">Academia / Personal</div>
+            <p class="desc">Planos, benefícios e CTA “Agendar avaliação”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 18 -->
+        <a class="card" href="/modelos/assistencia-tecnica/" aria-label="Abrir modelo Assistência Técnica">
+          <div class="thumb">
+            <span class="badge">📱 Conserto</span>
+            <img src="/modelos/img/assistencia-tecnica.jpg" alt="Prévia do modelo Assistência Técnica" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Serviços</span>
+            <div class="title">Assistência Técnica</div>
+            <p class="desc">Celular/notebook com CTA “Orçar conserto” no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 19 -->
+        <a class="card" href="/modelos/materiais-de-construcao/" aria-label="Abrir modelo Materiais de Construção">
+          <div class="thumb">
+            <span class="badge">🧱 Orçamento</span>
+            <img src="/modelos/img/materiais-de-construcao.jpg" alt="Prévia do modelo Materiais de Construção" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Comércio</span>
+            <div class="title">Materiais de Construção</div>
+            <p class="desc">Busca local forte + lista/orçamento rápido no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 20 -->
+        <a class="card" href="/modelos/farmacia-de-manipulacao/" aria-label="Abrir modelo Farmácia de Manipulação">
+          <div class="thumb">
+            <span class="badge">🧪 Confiança</span>
+            <img src="/modelos/img/farmacia-de-manipulacao.jpg" alt="Prévia do modelo Farmácia de Manipulação" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Saúde</span>
+            <div class="title">Farmácia de Manipulação</div>
+            <p class="desc">Serviços, orientações e CTA de orçamento via WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 21 -->
+        <a class="card" href="/modelos/otica/" aria-label="Abrir modelo Ótica">
+          <div class="thumb">
+            <span class="badge">👓 Orçar lente</span>
+            <img src="/modelos/img/otica.jpg" alt="Prévia do modelo Ótica" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Saúde</span>
+            <div class="title">Ótica</div>
+            <p class="desc">Busca local + CTA “Orçar lente/armação” no WhatsApp.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 22 -->
+        <a class="card" href="/modelos/escola-curso/" aria-label="Abrir modelo Escola e Curso">
+          <div class="thumb">
+            <span class="badge">📚 Matrículas</span>
+            <img src="/modelos/img/escola-curso.jpg" alt="Prévia do modelo Escola e Curso" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Educação</span>
+            <div class="title">Escola / Curso</div>
+            <p class="desc">Cursos, turmas e CTA “Quero me matricular”.</p>
+            <span class="go">Abrir →</span>
+          </div>
+        </a>
+
+        <!-- 23 -->
+        <a class="card" href="/modelos/chaveiro-24h/" aria-label="Abrir modelo Chaveiro 24h">
+          <div class="thumb">
+            <span class="badge">🗝️ 24 horas</span>
+            <img src="/modelos/img/chaveiro-24h.jpg" alt="Prévia do modelo Chaveiro 24h" loading="lazy" decoding="async" onerror="this.remove();">
+          </div>
+          <div class="body">
+            <span class="tag">Modelo • Urgência</span>
+            <div class="title">Chaveiro 24h</div>
+            <p class="desc">Emergência = conversão rápida. CTA “Chamar agora”.</p>
+            <span class="go">Abrir →</span>
+          </div>
         </a>
       </div>
     </main>
 
-    <footer>© BRsys • /modelos</footer>
+    <footer>
+      © BRsys Sites • <strong>/modelos</strong> • WhatsApp: <a href="https://wa.me/5513997408157" style="color:var(--teal);text-decoration:none;">+55 13 99740-8157</a>
+    </footer>
   </div>
 </body>
 </html>
