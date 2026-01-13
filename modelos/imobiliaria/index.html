@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+  <title>Imobiliária / Corretor (Modelo) | Quero visitar</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Imobiliária/Corretor: imóveis para venda e aluguel, filtros simples e CTA 'Quero visitar' no WhatsApp. SEO por cidade/bairro." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Imobiliária (Modelo) | Quero visitar" />
+  <meta property="og:description" content="Página demonstrativa BRsys para imobiliária com CTA WhatsApp e estrutura SEO por cidade." />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/imobiliaria/" />
+
+  <style>
+    :root{--bg:#061b1b;--bg2:#041313;--line:rgba(255,255,255,.12);--txt:#e9fffb;--muted:rgba(233,255,251,.70);--muted2:rgba(233,255,251,.55);--brand:#17e2c2;--ok:#4cffb3;--warn:#ffcc66;--shadow:0 18px 60px rgba(0,0,0,.45);--radius2:24px;--max:1120px;--font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--txt);background:radial-gradient(1000px 600px at 20% -10%, rgba(23,226,194,.20), transparent 55%),radial-gradient(900px 600px at 80% 10%, rgba(23,226,194,.10), transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));min-height:100vh}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;padding:14px 18px;margin:-28px -18px 18px;background:rgba(2,12,12,.70);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .badge{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));border:1px solid rgba(23,226,194,.30);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .badge b{color:var(--brand)}
+    .brand small{display:block;color:var(--muted2);font-weight:600;margin-top:2px}
+    .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-weight:650;font-size:13px}
+    .nav a{padding:10px 12px;border-radius:12px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;font-weight:900;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.15s;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
+    .btn.primary{border-color:rgba(23,226,194,.35);background:linear-gradient(180deg, rgba(23,226,194,.26), rgba(23,226,194,.12));box-shadow:0 18px 42px rgba(0,0,0,.28)}
+    .btn.primary:hover{border-color:rgba(23,226,194,.60)}
+    .btn .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 0 4px rgba(23,226,194,.15)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border-radius:var(--radius2);box-shadow:var(--shadow)}
+    .hero{padding:26px 22px 22px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-2px;background:radial-gradient(700px 380px at 20% 0%, rgba(23,226,194,.20), transparent 60%),radial-gradient(520px 320px at 80% 20%, rgba(255,204,102,.10), transparent 60%);pointer-events:none}
+    .hero>*{position:relative}
+    h1{margin:0 0 10px;font-size:44px;line-height:1.02;letter-spacing:-.6px}
+    .sub{color:var(--muted);font-weight:650;line-height:1.45;margin:0 0 18px;max-width:64ch}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .mini{font-size:12px;color:var(--muted2);font-weight:650;margin-top:14px}
+    .side{padding:18px}
+    .pad{padding:22px}
+    .side h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:850}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .item{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    .item b{display:block;font-size:13px;margin-bottom:4px}
+    .item span{display:block;color:var(--muted2);font-weight:650;font-size:12px;line-height:1.35}
+    section{margin-top:16px}
+    .sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:18px 0 12px}
+    .sectionTitle h2{margin:0;font-size:18px}
+    .sectionTitle p{margin:0;color:var(--muted2);font-weight:650;font-size:12px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .prop{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}
+    .prop b{display:block;font-size:13px}
+    .prop p{margin:8px 0 0;color:var(--muted2);font-weight:650;font-size:12px;line-height:1.35}
+    .row{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pill{font-size:12px;font-weight:850;padding:7px 10px;border-radius:999px;border:1px solid rgba(23,226,194,.35);background:rgba(23,226,194,.10);white-space:nowrap}
+    .footer{margin-top:18px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--radius2);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer small{color:var(--muted2);font-weight:650}
+    .footer b{font-weight:900}
+    .waFloat{position:fixed;right:16px;bottom:16px;z-index:99;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;border:1px solid rgba(23,226,194,.45);background:linear-gradient(180deg, rgba(23,226,194,.20), rgba(23,226,194,.10));box-shadow:0 24px 70px rgba(0,0,0,.50)}
+    .waFloat .waIcon{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.10);font-weight:900}
+    .waFloat span{font-weight:900}
+    .waFloat small{display:block;color:var(--muted2);font-weight:650;margin-top:1px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}h1{font-size:38px}.cards{grid-template-columns:1fr}}
+    @media (max-width:520px){h1{font-size:34px}.nav{display:none}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Imobiliária / Corretor (Modelo BRsys)","url":"https://www.brsys.com.br/modelos/imobiliaria/","telephone":"+55 13 99740-8157","areaServed":"Brasil"}
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="badge" aria-hidden="true"><b>B</b></div><div>BRsys Sites<small>Template premium • Imobiliária / Corretor</small></div></div>
+  <nav class="nav"><a href="#imoveis">Imóveis</a><a href="#filtros">Filtros</a><a href="#como">Como funciona</a><a href="#duvidas">Dúvidas</a></nav>
+  <a class="btn primary" id="btnTopWA" href="#" rel="nofollow"><span class="dot"></span> Quero visitar</a>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card hero">
+      <h1>Comprar ou alugar com <span style="color:var(--brand)">visita agendada</span>.</h1>
+      <p class="sub">Modelo BRsys para corretor/imobiliária: SEO eterno por “aluguel/venda + cidade/bairro” e CTA “Quero visitar” no WhatsApp para fechar lead de alto valor.</p>
+      <div class="ctaRow">
+        <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">🏠 Quero visitar</a>
+        <a class="btn" href="#imoveis">Ver imóveis</a>
+        <a class="btn" href="#filtros">Filtrar</a>
+      </div>
+      <div class="mini">* Modelo BRsys. Troque cidade/bairros, CRECI, horários e WhatsApp pelo do corretor.</div>
+    </section>
+
+    <aside class="card side">
+      <div class="pad">
+        <h3>O que converte</h3>
+        <div class="list">
+          <div class="item"><b>Filtro simples (sem sistema pesado)</b><span>Tipo, bairro, faixa de preço e dormitórios.</span></div>
+          <div class="item"><b>3 imóveis “vitrine”</b><span>Mesmo com poucos, já gera confiança e lead.</span></div>
+          <div class="item"><b>SEO por cidade/bairro</b><span>Crie páginas futuras: /aluguel/cidade/bairro/…</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="filtros">
+    <div class="sectionTitle"><h2>O que você procura?</h2><p>Exemplo de filtros.</p></div>
+    <div class="list">
+      <div class="item"><b>Tipo</b><span>Apartamento • Casa • Terreno • Comercial</span></div>
+      <div class="item"><b>Objetivo</b><span>Aluguel • Venda</span></div>
+      <div class="item"><b>Bairro</b><span>Centro • Praia • Bairro X (ajuste)</span></div>
+      <div class="item"><b>Faixa</b><span>Até R$ ___ • R$ ___ a R$ ___ • Acima</span></div>
+    </div>
+  </section>
+
+  <section id="imoveis">
+    <div class="sectionTitle"><h2>Imóveis em destaque</h2><p>Vitrine simples já vende.</p></div>
+    <div class="cards">
+      <div class="prop">
+        <b>Apartamento 2 dorm • Próximo à praia</b>
+        <p>Condomínio com vaga • “Pronto para morar” (exemplo).</p>
+        <div class="row"><span class="pill">Venda</span><a class="btn" data-service="Visitar: Apto 2 dorm (praia)" href="#" rel="nofollow">Quero visitar</a></div>
+      </div>
+      <div class="prop">
+        <b>Casa 3 dorm • Quintal grande</b>
+        <p>Boa para família • bairro tranquilo (exemplo).</p>
+        <div class="row"><span class="pill">Venda</span><a class="btn" data-service="Visitar: Casa 3 dorm" href="#" rel="nofollow">Quero visitar</a></div>
+      </div>
+      <div class="prop">
+        <b>Kitnet • Aluguel</b>
+        <p>Ideal para temporada ou mensal (exemplo).</p>
+        <div class="row"><span class="pill">Aluguel</span><a class="btn" data-service="Visitar: Kitnet (aluguel)" href="#" rel="nofollow">Quero visitar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="sectionTitle"><h2>Como funciona a visita</h2><p>Lead direto.</p></div>
+    <div class="list">
+      <div class="item"><b>1) Você chama no WhatsApp</b><span>Informa tipo, bairro e faixa de preço.</span></div>
+      <div class="item"><b>2) Eu separo opções</b><span>Envio 3–5 imóveis que encaixam.</span></div>
+      <div class="item"><b>3) Agendamos visita</b><span>Você escolhe dia/horário e fechamos.</span></div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="sectionTitle"><h2>Dúvidas</h2><p>FAQ curto.</p></div>
+    <div class="list">
+      <div class="item"><b>Tem CRECI?</b><span>Sim (inserir número real).</span></div>
+      <div class="item"><b>Atende quais regiões?</b><span>Cidade e bairros (ajuste).</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>BRsys Sites</b><small>Modelo por ramo • Imobiliária / Corretor</small></div>
+    <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow"><span class="dot"></span> Quero visitar</a>
+  </footer>
+</main>
+
+<a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Quero visitar no WhatsApp">
+  <div class="waIcon">WA</div><div><span>Visitar</span><small>WhatsApp</small></div>
+</a>
+
+<script>
+  const WA_NUMBER="5513997408157";
+  const PAGE_TAG="Modelo Imobiliária (BRsys)";
+  const waLink=(m)=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
+  function bindWA(){
+    const baseMsg=`Olá! Vi o ${PAGE_TAG} e quero visitar um imóvel.\nTipo: ____\nObjetivo (aluguel/venda): ____\nBairro: ____\nFaixa de preço: ____\nDormitórios: ____`;
+    ["btnTopWA","btnHeroWA","btnFooterWA","waFloat"].forEach(id=>{
+      const el=document.getElementById(id); if(el) el.href=waLink(baseMsg);
+    });
+    document.querySelectorAll("[data-service]").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const im=btn.getAttribute("data-service");
+        const msg=`Olá! Quero visitar este imóvel: ${im}.\nMelhor dia/horário: ____\nMeu nome: ____`;
+        window.open(waLink(msg),"_blank");
+      });
+      btn.href="#";
+    });
+  }
+  bindWA();
+</script>
+</body>
+</html>
