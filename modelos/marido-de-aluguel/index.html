@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+  <title>Eletricista / Encanador / Marido de Aluguel (Modelo) | Chamar agora</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para serviços emergenciais: eletricista, encanador e marido de aluguel. CTA 'Chamar agora' no WhatsApp, ideal para lead quente." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Eletricista / Encanador (Modelo) | Chamar agora no WhatsApp" />
+  <meta property="og:description" content="Página demonstrativa BRsys para emergências: vazamento, curto, chuveiro. CTA WhatsApp." />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/marido-de-aluguel/" />
+
+  <style>
+    :root{--bg:#061b1b;--bg2:#041313;--line:rgba(255,255,255,.12);--txt:#e9fffb;--muted:rgba(233,255,251,.70);--muted2:rgba(233,255,251,.55);--brand:#17e2c2;--warn:#ffcc66;--shadow:0 18px 60px rgba(0,0,0,.45);--radius2:24px;--max:1120px;--font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--txt);background:radial-gradient(1000px 600px at 20% -10%, rgba(23,226,194,.20), transparent 55%),radial-gradient(900px 600px at 80% 10%, rgba(23,226,194,.10), transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));min-height:100vh}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;padding:14px 18px;margin:-28px -18px 18px;background:rgba(2,12,12,.70);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .badge{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));border:1px solid rgba(23,226,194,.30);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .badge b{color:var(--brand)}
+    .brand small{display:block;color:var(--muted2);font-weight:600;margin-top:2px}
+    .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-weight:650;font-size:13px}
+    .nav a{padding:10px 12px;border-radius:12px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;font-weight:900;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.15s;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
+    .btn.primary{border-color:rgba(23,226,194,.45);background:linear-gradient(180deg, rgba(255,204,102,.22), rgba(23,226,194,.12));box-shadow:0 18px 42px rgba(0,0,0,.28)}
+    .btn.primary:hover{border-color:rgba(23,226,194,.70)}
+    .btn .dot{width:10px;height:10px;border-radius:999px;background:var(--warn);box-shadow:0 0 0 4px rgba(255,204,102,.14)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border-radius:var(--radius2);box-shadow:var(--shadow)}
+    .hero{padding:26px 22px 22px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-2px;background:radial-gradient(680px 360px at 20% 0%, rgba(255,204,102,.18), transparent 60%),radial-gradient(520px 320px at 80% 20%, rgba(23,226,194,.12), transparent 60%);pointer-events:none}
+    .hero>*{position:relative}
+    h1{margin:0 0 10px;font-size:44px;line-height:1.02;letter-spacing:-.6px}
+    .sub{color:var(--muted);font-weight:650;line-height:1.45;margin:0 0 18px;max-width:64ch}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .mini{font-size:12px;color:var(--muted2);font-weight:650;margin-top:14px}
+    .side{padding:18px}
+    .pad{padding:22px}
+    .side h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:850}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .item{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    .item b{display:block;font-size:13px;margin-bottom:4px}
+    .item span{display:block;color:var(--muted2);font-weight:650;font-size:12px;line-height:1.35}
+    section{margin-top:16px}
+    .sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:18px 0 12px}
+    .sectionTitle h2{margin:0;font-size:18px}
+    .sectionTitle p{margin:0;color:var(--muted2);font-weight:650;font-size:12px}
+    .servicesGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .svc{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}
+    .svc b{display:block;font-size:13px;margin-bottom:6px}
+    .svc p{margin:0;color:var(--muted2);font-weight:650;font-size:12px;line-height:1.35}
+    .svc .row{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pill{font-size:12px;font-weight:850;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,204,102,.35);background:rgba(255,204,102,.10);white-space:nowrap}
+    .footer{margin-top:18px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--radius2);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer small{color:var(--muted2);font-weight:650}
+    .footer b{font-weight:900}
+    .waFloat{position:fixed;right:16px;bottom:16px;z-index:99;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;border:1px solid rgba(255,204,102,.45);background:linear-gradient(180deg, rgba(255,204,102,.18), rgba(23,226,194,.10));box-shadow:0 24px 70px rgba(0,0,0,.50)}
+    .waFloat .waIcon{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.10);font-weight:900}
+    .waFloat span{font-weight:900}
+    .waFloat small{display:block;color:var(--muted2);font-weight:650;margin-top:1px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}h1{font-size:38px}.servicesGrid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){h1{font-size:34px}.servicesGrid{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Eletricista / Encanador / Marido de Aluguel (Modelo BRsys)","url":"https://www.brsys.com.br/modelos/marido-de-aluguel/","telephone":"+55 13 99740-8157","areaServed":"Brasil"}
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="badge" aria-hidden="true"><b>B</b></div><div>BRsys Sites<small>Template premium • Emergência residencial</small></div></div>
+  <nav class="nav"><a href="#servicos">Serviços</a><a href="#emergencias">Emergências</a><a href="#como">Como funciona</a><a href="#duvidas">Dúvidas</a></nav>
+  <a class="btn primary" id="btnTopWA" href="#" rel="nofollow"><span class="dot"></span> Chamar agora</a>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card hero">
+      <h1>Deu problema? <span style="color:var(--warn)">Chama agora</span>.</h1>
+      <p class="sub">Modelo BRsys para eletricista/encanador/marido de aluguel: lead quente, conversão rápida. O cliente manda foto/vídeo e você já orienta/agenda.</p>
+
+      <div class="ctaRow">
+        <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">⚡🚰 Chamar agora</a>
+        <a class="btn" href="#servicos">Ver serviços</a>
+        <a class="btn" href="#emergencias">Emergências</a>
+      </div>
+
+      <div class="mini">* Modelo BRsys. Troque área atendida, horários e WhatsApp pelo do profissional.</div>
+    </section>
+
+    <aside class="card side">
+      <div class="pad">
+        <h3>O que converte</h3>
+        <div class="list">
+          <div class="item"><b>Emergência = decisão rápida</b><span>Curto, vazamento, chuveiro, disjuntor caindo.</span></div>
+          <div class="item"><b>Mensagem com foto/vídeo</b><span>Você filtra e já chega preparado.</span></div>
+          <div class="item"><b>SEO local</b><span>“eletricista 24h”, “encanador urgente”, “marido de aluguel”.</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="servicos">
+    <div class="sectionTitle"><h2>Serviços</h2><p>Escolha e chame.</p></div>
+    <div class="servicesGrid">
+      <div class="svc"><b>⚡ Elétrica</b><p>Tomadas, disjuntor, chuveiro, luminárias.</p><div class="row"><span class="pill">Agora</span><a class="btn" data-service="Elétrica" href="#" rel="nofollow">Chamar</a></div></div>
+      <div class="svc"><b>🚰 Hidráulica</b><p>Vazamento, torneira, sifão, descarga.</p><div class="row"><span class="pill">Agora</span><a class="btn" data-service="Hidráulica" href="#" rel="nofollow">Chamar</a></div></div>
+      <div class="svc"><b>🧰 Pequenos reparos</b><p>Fixações, prateleiras, suporte TV, ajustes.</p><div class="row"><span class="pill">Agendar</span><a class="btn" data-service="Pequenos reparos" href="#" rel="nofollow">Chamar</a></div></div>
+      <div class="svc"><b>🪚 Montagem</b><p>Móveis, cortina, varão, fechadura.</p><div class="row"><span class="pill">Agendar</span><a class="btn" data-service="Montagem" href="#" rel="nofollow">Chamar</a></div></div>
+    </div>
+  </section>
+
+  <section id="emergencias">
+    <div class="sectionTitle"><h2>Emergências comuns</h2><p>Use como SEO + confiança.</p></div>
+    <div class="list">
+      <div class="item"><b>Disjuntor caindo / curto</b><span>Desligue o geral e chame. Não arrisque.</span></div>
+      <div class="item"><b>Vazamento forte</b><span>Feche o registro e envie foto/vídeo.</span></div>
+      <div class="item"><b>Chuveiro queimado / sem energia</b><span>Troca rápida e segura (quando aplicável).</span></div>
+      <div class="item"><b>Descarga vazando</b><span>Evita desperdício e infiltração.</span></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="sectionTitle"><h2>Como funciona</h2><p>Rápido.</p></div>
+    <div class="servicesGrid">
+      <div class="svc"><b>1) Chamar</b><p>Mensagem com endereço e problema.</p></div>
+      <div class="svc"><b>2) Foto/Vídeo</b><p>Você avalia e orienta.</p></div>
+      <div class="svc"><b>3) Orçamento</b><p>Transparência por etapas.</p></div>
+      <div class="svc"><b>4) Resolver</b><p>Serviço concluído.</p></div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="sectionTitle"><h2>Dúvidas</h2><p>FAQ curto.</p></div>
+    <div class="list">
+      <div class="item"><b>Atende em quais bairros?</b><span>Informe área atendida e taxa (se houver).</span></div>
+      <div class="item"><b>Pagamento?</b><span>Pix/cartão/dinheiro (ajuste).</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>BRsys Sites</b><small>Modelo por ramo • Eletricista / Encanador</small></div>
+    <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow"><span class="dot"></span> Chamar agora</a>
+  </footer>
+</main>
+
+<a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Chamar no WhatsApp">
+  <div class="waIcon">WA</div><div><span>Chamar</span><small>Agora</small></div>
+</a>
+
+<script>
+  const WA_NUMBER="5513997408157";
+  const PAGE_TAG="Modelo Emergência Residencial (BRsys)";
+  const waLink=(m)=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
+  function bindWA(){
+    const baseMsg=`Olá! Vi o ${PAGE_TAG} e preciso de ajuda.\nTipo: (Elétrica/Hidráulica/Reparo)\nEndereço: ____\nProblema: ____\nPosso enviar foto/vídeo?`;
+    ["btnTopWA","btnHeroWA","btnFooterWA","waFloat"].forEach(id=>{
+      const el=document.getElementById(id); if(el) el.href=waLink(baseMsg);
+    });
+    document.querySelectorAll("[data-service]").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const svc=btn.getAttribute("data-service");
+        const msg=`Olá! Preciso de: ${svc}.\nEndereço: ____\nProblema: ____\nPode vir hoje? Posso mandar foto/vídeo?`;
+        window.open(waLink(msg),"_blank");
+      });
+      btn.href="#";
+    });
+  }
+  bindWA();
+</script>
+</body>
+</html>
