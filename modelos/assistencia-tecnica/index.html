@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#061b1b" />
+  <title>Assistência Técnica (Modelo) | Orçar conserto no WhatsApp</title>
+  <meta name="description" content="Modelo demonstrativo BRsys para Assistência Técnica: conserto de celular e notebook, tela, bateria, formatação, limpeza, troca de conector. CTA 'Orçar conserto' via WhatsApp. Ideal para SEO local." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Assistência Técnica (Modelo) | Orçar conserto no WhatsApp" />
+  <meta property="og:description" content="Página demonstrativa BRsys para assistência técnica com CTA WhatsApp e serviços de celular/notebook." />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="canonical" href="https://www.brsys.com.br/modelos/assistencia-tecnica/" />
+
+  <style>
+    :root{--bg:#061b1b;--bg2:#041313;--line:rgba(255,255,255,.12);--txt:#e9fffb;--muted:rgba(233,255,251,.70);--muted2:rgba(233,255,251,.55);--brand:#17e2c2;--warn:#ffcc66;--ok:#4cffb3;--shadow:0 18px 60px rgba(0,0,0,.45);--radius2:24px;--max:1120px;--font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--txt);
+      background:radial-gradient(1100px 680px at 18% -10%, rgba(23,226,194,.12), transparent 55%),
+                 radial-gradient(900px 600px at 82% 10%, rgba(255,204,102,.14), transparent 60%),
+                 linear-gradient(180deg,var(--bg),var(--bg2));
+      min-height:100vh
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 90px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;
+      padding:14px 18px;margin:-28px -18px 18px;background:rgba(2,12,12,.70);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .badge{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(180deg, rgba(23,226,194,.35), rgba(23,226,194,.10));
+      border:1px solid rgba(23,226,194,.30);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+    .badge b{color:var(--brand)}
+    .brand small{display:block;color:var(--muted2);font-weight:650;margin-top:2px}
+    .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-weight:750;font-size:13px}
+    .nav a{padding:10px 12px;border-radius:12px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--line);background:rgba(255,255,255,.04)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;
+      font-weight:950;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.15s;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color:rgba(23,226,194,.35);
+      background:linear-gradient(180deg, rgba(23,226,194,.18), rgba(255,204,102,.10));
+      box-shadow:0 18px 42px rgba(0,0,0,.28)
+    }
+    .btn.primary:hover{border-color:rgba(23,226,194,.60)}
+    .btn .dot{width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 0 4px rgba(23,226,194,.14)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius2);box-shadow:var(--shadow)}
+    .hero{padding:26px 22px 22px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-2px;
+      background:radial-gradient(720px 380px at 18% 0%, rgba(23,226,194,.16), transparent 60%),
+                 radial-gradient(560px 340px at 82% 20%, rgba(255,204,102,.12), transparent 60%);
+      pointer-events:none}
+    .hero>*{position:relative}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);color:var(--muted);font-weight:800;font-size:12px}
+    .chip i{width:8px;height:8px;border-radius:999px;background:var(--brand);box-shadow:0 0 0 4px rgba(23,226,194,.14);display:inline-block}
+    h1{margin:0 0 10px;font-size:44px;line-height:1.02;letter-spacing:-.6px}
+    .sub{color:var(--muted);font-weight:700;line-height:1.45;margin:0 0 18px;max-width:74ch}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .mini{font-size:12px;color:var(--muted2);font-weight:650;margin-top:14px}
+    .side{padding:18px}
+    .pad{padding:22px}
+    .side h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:950}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .item{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px}
+    .item b{display:block;font-size:13px;margin-bottom:4px}
+    .item span{display:block;color:var(--muted2);font-weight:700;font-size:12px;line-height:1.35}
+    section{margin-top:16px}
+    .sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:18px 0 12px}
+    .sectionTitle h2{margin:0;font-size:18px}
+    .sectionTitle p{margin:0;color:var(--muted2);font-weight:650;font-size:12px}
+    .blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .blk{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}
+    .blk b{display:block;font-size:13px;margin-bottom:6px}
+    .blk p{margin:0;color:var(--muted2);font-weight:700;font-size:12px;line-height:1.35}
+    .blk .row{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pill{font-size:12px;font-weight:950;padding:7px 10px;border-radius:999px;border:1px solid rgba(23,226,194,.30);
+      background:rgba(23,226,194,.10);white-space:nowrap}
+    .callout{margin-top:14px;padding:14px;border-radius:18px;border:1px solid rgba(255,204,102,.22);
+      background:linear-gradient(180deg, rgba(255,204,102,.10), rgba(255,255,255,.03))}
+    .callout b{display:block}
+    .callout p{margin:8px 0 0;color:var(--muted);font-weight:700;line-height:1.35}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .t{border:1px solid var(--line);background:rgba(0,0,0,.12);border-radius:18px;padding:14px}
+    .t b{display:block;font-size:14px}
+    .t span{display:block;color:var(--muted2);font-weight:700;font-size:12px;margin-top:6px;line-height:1.35}
+    .footer{margin-top:18px;padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+      border-radius:var(--radius2);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer small{color:var(--muted2);font-weight:650}
+    .footer b{font-weight:950}
+    .waFloat{position:fixed;right:16px;bottom:16px;z-index:99;display:flex;align-items:center;gap:10px;padding:12px 14px;
+      border-radius:999px;border:1px solid rgba(23,226,194,.35);
+      background:linear-gradient(180deg, rgba(23,226,194,.16), rgba(255,204,102,.10));
+      box-shadow:0 24px 70px rgba(0,0,0,.50)}
+    .waFloat .waIcon{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);font-weight:950}
+    .waFloat span{font-weight:950}
+    .waFloat small{display:block;color:var(--muted2);font-weight:650;margin-top:1px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}h1{font-size:38px}.blocks{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}}
+    @media (max-width:520px){h1{font-size:34px}.blocks{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Assistência Técnica (Modelo BRsys)",
+    "url":"https://www.brsys.com.br/modelos/assistencia-tecnica/",
+    "telephone":"+55 13 99740-8157",
+    "areaServed":"Brasil",
+    "availableLanguage":"pt-BR"
+  }
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="badge" aria-hidden="true"><b>B</b></div>
+    <div>BRsys Sites<small>Template premium • Assistência Técnica</small></div>
+  </div>
+
+  <nav class="nav">
+    <a href="#servicos">Serviços</a>
+    <a href="#orcar">Orçar</a>
+    <a href="#garantia">Garantia</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+
+  <a class="btn primary" id="btnTopWA" href="#" rel="nofollow"><span class="dot"></span> Orçar conserto</a>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <section class="card hero">
+      <div class="chips">
+        <span class="chip"><i></i> Orçamento rápido</span>
+        <span class="chip"><i style="background:var(--warn);box-shadow:0 0 0 4px rgba(255,204,102,.14)"></i> Celular & Notebook</span>
+        <span class="chip"><i style="background:var(--ok);box-shadow:0 0 0 4px rgba(76,255,179,.14)"></i> WhatsApp direto</span>
+      </div>
+
+      <h1>Quebrou? <span style="color:var(--brand)">Orça agora</span>.</h1>
+      <p class="sub">Modelo BRsys para assistência técnica: tela, bateria, conector, formatação, limpeza e upgrades. O cliente manda modelo + defeito e você responde com orçamento/diagnóstico.</p>
+
+      <div class="ctaRow">
+        <a class="btn primary" id="btnHeroWA" href="#" rel="nofollow">🛠️ Orçar conserto</a>
+        <a class="btn" href="#servicos">Ver serviços</a>
+        <a class="btn" href="#orcar">Como orçar</a>
+      </div>
+
+      <div class="callout">
+        <b>✅ Para agilizar (manda isso)</b>
+        <p><b>Modelo</b> do aparelho + <b>defeito</b> + se <b>liga</b> ou não + <b>foto/vídeo</b> (se puder). Isso corta 80% das perguntas.</p>
+      </div>
+
+      <div class="mini">* Modelo BRsys. Ajuste WhatsApp, serviços e políticas da assistência real.</div>
+    </section>
+
+    <aside class="card side">
+      <div class="pad">
+        <h3>Leads quentes</h3>
+        <div class="list">
+          <div class="item"><b>Celular caiu / tela trincou</b><span>Decisão rápida + orçamento imediato.</span></div>
+          <div class="item"><b>Notebook lento</b><span>SSD + formatação = ticket bom.</span></div>
+          <div class="item"><b>Não carrega</b><span>Conector/bateria = alta demanda.</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="servicos">
+    <div class="sectionTitle"><h2>Serviços</h2><p>Selecione e chame.</p></div>
+
+    <div class="blocks">
+      <div class="blk">
+        <b>📱 Troca de tela</b>
+        <p>Vidro/display (conforme modelo e peça).</p>
+        <div class="row"><span class="pill">Celular</span><a class="btn" data-s="Troca de tela (celular)" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>🔋 Troca de bateria</b>
+        <p>Bateria viciada, desligando, estufada.</p>
+        <div class="row"><span class="pill">Celular</span><a class="btn" data-s="Troca de bateria" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>🔌 Conector de carga</b>
+        <p>Não carrega / mau contato / USB danificado.</p>
+        <div class="row"><span class="pill">Celular</span><a class="btn" data-s="Conector de carga" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>💻 Formatação / otimização</b>
+        <p>Windows lento, vírus, travando, limpeza.</p>
+        <div class="row"><span class="pill">Notebook</span><a class="btn" data-s="Formatação / otimização (notebook)" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>🚀 Upgrade SSD / RAM</b>
+        <p>Mais velocidade e desempenho no dia a dia.</p>
+        <div class="row"><span class="pill">Notebook</span><a class="btn" data-s="Upgrade SSD/RAM" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>🌡️ Limpeza interna</b>
+        <p>Aquecendo, desligando, fan barulhento.</p>
+        <div class="row"><span class="pill">Notebook</span><a class="btn" data-s="Limpeza interna (notebook)" href="#" rel="nofollow">Orçar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>💧 Molhou</b>
+        <p>Atendimento rápido (desligue e não carregue).</p>
+        <div class="row"><span class="pill">Urgente</span><a class="btn" data-s="Aparelho molhado" href="#" rel="nofollow">Chamar</a></div>
+      </div>
+
+      <div class="blk">
+        <b>🧪 Diagnóstico</b>
+        <p>Não liga / sem imagem / placa (avaliar).</p>
+        <div class="row"><span class="pill">Avaliar</span><a class="btn" data-s="Diagnóstico" href="#" rel="nofollow">Chamar</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="orcar">
+    <div class="sectionTitle"><h2>Como pedir orçamento</h2><p>Sem enrolação.</p></div>
+    <div class="list">
+      <div class="item"><b>1) Modelo do aparelho</b><span>Ex: “Moto G52”, “iPhone 11”, “Lenovo i5 8ª”.</span></div>
+      <div class="item"><b>2) Defeito</b><span>“Tela trincada”, “não carrega”, “lento”, “não liga”.</span></div>
+      <div class="item"><b>3) Estado</b><span>Se liga? Se dá imagem? Se já caiu ou molhou?</span></div>
+      <div class="item"><b>4) Foto/vídeo</b><span>Ajuda a estimar na hora.</span></div>
+    </div>
+
+    <div class="callout" style="margin-top:12px">
+      <b>✅ Mensagem pronta</b>
+      <p>Copie e mande no WhatsApp para receber orçamento/diagnóstico.</p>
+      <div class="ctaRow" style="margin-top:12px">
+        <a class="btn primary" id="btnSendWA" href="#" rel="nofollow"><span class="dot"></span> Orçar agora</a>
+        <a class="btn" id="btnUrgWA" href="#" rel="nofollow">Chamar agora (urgente)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="garantia">
+    <div class="sectionTitle"><h2>Garantia & transparência</h2><p>Confiança vende.</p></div>
+    <div class="trust">
+      <div class="t"><b>Diagnóstico claro</b><span>Você aprova antes do serviço (ajuste).</span></div>
+      <div class="t"><b>Garantia</b><span>Prazo de garantia conforme serviço/peça (ajuste).</span></div>
+      <div class="t"><b>Atualização no WhatsApp</b><span>Você acompanha o status do conserto.</span></div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="sectionTitle"><h2>Dúvidas</h2><p>FAQ curto.</p></div>
+    <div class="list">
+      <div class="item"><b>Quanto tempo demora?</b><span>Depende do serviço e da peça. Informamos no orçamento.</span></div>
+      <div class="item"><b>Trabalham com peças originais?</b><span>Original/primeira linha (ajuste conforme sua política).</span></div>
+      <div class="item"><b>Tem retirada/entrega?</b><span>Sim/Não (ajuste). Se sim, informe região e taxa.</span></div>
+      <div class="item"><b>Formas de pagamento?</b><span>Pix / cartão / dinheiro (ajuste).</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><b>BRsys Sites</b><small>Modelo por ramo • Assistência Técnica</small></div>
+    <a class="btn primary" id="btnFooterWA" href="#" rel="nofollow"><span class="dot"></span> Orçar conserto</a>
+  </footer>
+</main>
+
+<a class="waFloat" id="waFloat" href="#" rel="nofollow" aria-label="Orçar conserto no WhatsApp">
+  <div class="waIcon">WA</div>
+  <div><span>Orçar</span><small>Agora</small></div>
+</a>
+
+<script>
+  // BRsys - CTA WhatsApp (trocar para o WhatsApp do cliente ao fechar)
+  const WA_NUMBER = "5513997408157";
+  const PAGE_TAG  = "Modelo Assistência Técnica (BRsys)";
+  const waLink = (m) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
+
+  function bindWA(){
+    const msgBase =
+`Olá! Vi o ${PAGE_TAG} e quero orçamento.
+📦 Aparelho: (marca/modelo) ____
+⚠️ Defeito: ____
+🔌 Liga? (sim/não) ____
+💥 Caiu/molhou? ____
+📷 Vou enviar foto/vídeo (se tiver).`;
+
+    const msgUrg =
+`Olá! Vi o ${PAGE_TAG}. É urgente.
+📦 Aparelho: ____
+⚠️ Defeito: ____
+Estou indo/preciso de atendimento rápido.`;
+
+    ["btnTopWA","btnHeroWA","btnFooterWA","waFloat","btnSendWA"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink(msgBase);
+    });
+
+    const elUrg = document.getElementById("btnUrgWA");
+    if(elUrg) elUrg.href = waLink(msgUrg);
+
+    document.querySelectorAll("[data-s]").forEach(btn=>{
+      btn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const s = btn.getAttribute("data-s");
+        const msg =
+`Olá! Quero orçamento para: ${s}.
+📦 Aparelho: ____
+⚠️ Defeito: ____
+📍 Cidade/Bairro: ____
+⏱️ Prazo/urgência: ____`;
+        window.open(waLink(msg), "_blank");
+      });
+      btn.href="#";
+    });
+  }
+  bindWA();
+</script>
+</body>
+</html>
