@@ -2,7 +2,12 @@
   "redirects": [
     {
       "source": "/fortesaboresdamanha",
-      "destination": "/fortesaboresdamanha/",
+      "destination": "/fortessaboresdamanha/",
+      "permanent": true
+    },
+    {
+      "source": "/fortesaboresdamanha/",
+      "destination": "/fortessaboresdamanha/",
       "permanent": true
     }
   ]
