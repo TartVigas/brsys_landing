@@ -1,9 +1,8 @@
 /* Fortes Sabores da Manhã — BRsys Sites
    Identidade: elegante, acolhedora, quente
-   app.css FINAL (limpo / sem duplicações)
+   CSS FINAL (limpo / sem duplicações)
 */
 
-/* ===== Tokens ===== */
 :root{
   --bg:#F6F1EA;
   --panel:#FFFFFF;
@@ -26,7 +25,6 @@
   --topbarH: 72px;
 }
 
-/* ===== Base ===== */
 *{ box-sizing:border-box }
 html{ scroll-behavior:smooth }
 body{
@@ -40,6 +38,7 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 a{ color:inherit; text-decoration:none }
 img{ max-width:100%; display:block }
 .container{ max-width:var(--max); margin:0 auto; padding:0 18px }
@@ -50,7 +49,6 @@ img{ max-width:100%; display:block }
   border-radius: 12px;
 }
 
-/* Skip link */
 .skip{
   position:absolute;
   left:-999px;
@@ -72,13 +70,13 @@ img{ max-width:100%; display:block }
   box-shadow: var(--shadow2);
 }
 
-/* Helpers */
 .card{
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--r);
   box-shadow: var(--shadow2);
 }
+
 .muted{ color:var(--muted) }
 .big{ font-size:18px; margin: 0 0 10px }
 .link{
@@ -121,7 +119,7 @@ img{ max-width:100%; display:block }
 
 .topbar__cta{ margin-left: 10px }
 
-/* Mobile menu */
+/* Mobile menu button */
 .menuBtn{
   margin-left:auto;
   display:none;
@@ -132,26 +130,27 @@ img{ max-width:100%; display:block }
   background: rgba(255,255,255,.55);
   box-shadow: 0 10px 25px rgba(46,31,22,.05);
 }
-.menuPanel{
-  display:none;
-  padding: 12px 0 16px;
-}
+
+/* Mobile menu panel (FECHADO por padrão; abre com body.menu-open) */
+.menuPanel{ display:none; padding: 12px 0 16px; }
+body.menu-open .menuPanel{ display:block; }
+
 .menuPanel__inner{
   display:grid;
   gap:10px;
   padding: 12px;
   border-radius: var(--r);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.72);
   box-shadow: var(--shadow2);
 }
 .menuPanel a{
-  padding: 10px 12px;
+  padding: 12px 12px;
   border-radius: 14px;
   border: 1px solid rgba(46,31,22,.08);
   background: rgba(255,255,255,.65);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 .menuPanel a:hover{ color:var(--text) }
 
@@ -198,6 +197,7 @@ img{ max-width:100%; display:block }
   gap: 18px;
   align-items: start;
 }
+
 .pill{
   display:inline-flex; align-items:center; gap:10px;
   padding: 8px 12px;
@@ -248,7 +248,7 @@ h1{
 .micro{ margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap }
 .micro__item{ color:var(--muted); font-size: 13px }
 
-/* Hero media */
+/* Media principal */
 .mediaCard{ overflow:hidden; position:relative }
 .mediaCard::after{
   content:"";
@@ -260,7 +260,6 @@ h1{
 }
 .mediaCard img{
   width:100%;
-  height:auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   filter: contrast(1.03) saturate(1.03);
@@ -273,10 +272,10 @@ h1{
   font-size: 13px;
 }
 
-/* Strip de “Instagram/Promo” — carrossel 4:5 (IG padrão) */
+/* Strip IG (poster 4:5) — carrossel premium */
 .mediaStrip{
   margin-top: 12px;
-  display: flex;
+  display:flex;
   gap: 12px;
   padding: 10px;
   overflow-x: auto;
@@ -299,14 +298,11 @@ h1{
   width: clamp(200px, 22vw, 290px);
   aspect-ratio: 4 / 5;
   height: auto;
-
-  border-radius: 14px;
+  border-radius: 16px;
   border: 1px solid rgba(46,31,22,.10);
-
-  object-fit: cover; /* suas artes já são 4:5 */
+  object-fit: cover;
   background: transparent;
   padding: 0;
-
   box-shadow: 0 10px 25px rgba(46,31,22,.08);
   transition: transform .18s ease, filter .18s ease;
   scroll-snap-align: start;
@@ -342,8 +338,10 @@ h1{
 .infoCard h3{ margin: 0 0 6px; font-size: 16px }
 .infoCard p{ margin: 0; color: var(--muted); line-height: 1.75; font-size: 16.5px }
 
-/* Products */
-.productCard{ overflow:hidden; transition: transform .18s ease, box-shadow .18s ease }
+.productCard{
+  overflow:hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
 .productCard:hover{
   transform: translateY(-3px);
   box-shadow: 0 22px 60px rgba(46,31,22,.12);
@@ -358,7 +356,7 @@ h1{
 .productCard__body h3{ margin: 0 0 6px }
 .productCard__body p{ margin:0; color:var(--muted); line-height:1.75; font-size:16.5px }
 
-/* Note / mini CTA */
+/* Note (fix typo / sem duplicação) */
 .note{
   margin-top: 16px;
   display:flex; gap: 12px; align-items:center; justify-content:space-between;
@@ -371,7 +369,6 @@ h1{
 .note__icon{ font-size: 18px }
 .note p{ margin:0; line-height:1.6 }
 
-/* Callout encomendas */
 .callout{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
@@ -388,10 +385,9 @@ h1{
 .callout__text h2{ margin: 0 0 8px }
 .callout__text p{ margin: 0 0 12px; color: var(--muted); line-height: 1.75 }
 .list{ margin:0 0 16px; padding-left: 18px; color: var(--muted); line-height: 1.9 }
-.callout__media{ overflow:hidden; border-radius: var(--r); border: 1px solid rgba(46,31,22,.10); box-shadow: var(--shadow2) }
+.callout__media{ overflow:hidden; border-radius: var(--r); }
 .callout__media img{ width:100%; height:100%; object-fit: cover }
 
-/* Contact / map */
 .contactCard{ padding: 16px }
 .divider{ height:1px; background: var(--line); margin: 14px 0 }
 .actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 12px }
@@ -399,7 +395,7 @@ h1{
 .mapCard{ overflow:hidden }
 .mapCard iframe{ width:100%; height: 340px; border: 0 }
 
-/* Instagram section */
+/* Instagram */
 .ig{ display:grid; gap: 14px }
 .ig__card{
   padding: 16px;
@@ -418,23 +414,20 @@ h1{
 .ig__grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 .ig__grid img{
   width: 100%;
   aspect-ratio: 4 / 5;
   height: auto;
-
-  border-radius: var(--r);
+  border-radius: 18px;
   border: 1px solid rgba(46,31,22,.10);
   object-fit: cover;
-
   background: transparent;
   padding: 0;
   box-shadow: 0 14px 35px rgba(46,31,22,.08);
 }
 
-/* Final CTA */
 .finalCta{
   padding: 18px;
   display:flex; align-items:center; justify-content:space-between;
@@ -461,7 +454,7 @@ h1{
 .footer__links a:hover{ color: var(--text) }
 .footer__sig{ justify-self:end; text-align:right }
 
-/* WhatsApp floating */
+/* WhatsApp flutuante */
 .wafloat{
   position: fixed;
   right: 16px;
@@ -474,32 +467,58 @@ h1{
   box-shadow: 0 22px 60px rgba(90,62,43,.22);
   border: 1px solid rgba(255,255,255,.18);
   letter-spacing: .3px;
-  z-index: 80;
+  z-index: 60;
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive (tablet / geral) ===== */
 @media (max-width: 980px){
   :root{ --topbarH: 66px; }
 
   .nav{ display:none; }
   .menuBtn{ display:inline-flex; }
-  .menuPanel{ display:block; }
 
   h1{ font-size: 36px; }
   .hero__grid{ grid-template-columns: 1fr; }
   .grid--2{ grid-template-columns: 1fr; }
   .grid--3{ grid-template-columns: 1fr; }
   .callout{ grid-template-columns: 1fr; }
+
   .footer__grid{ grid-template-columns: 1fr; }
   .footer__sig{ justify-self:start; text-align:left; }
   .mapCard iframe{ height: 280px; }
+
   .note{ flex-direction: column; align-items:flex-start; }
   .finalCta{ flex-direction: column; align-items:flex-start; }
   .brand{ min-width: auto; }
 
-  /* Posters maiores no mobile */
-  .mediaStrip img{ width: clamp(230px, 70vw, 320px); }
+  /* IG no tablet: 2 colunas */
   .ig__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Mobile refinado (celular) ===== */
+@media (max-width: 640px){
+  .container{ padding: 0 14px; }
+
+  h1{ font-size: 32px; line-height: 1.05; }
+  .subhead{ font-size: 15.5px; }
+
+  /* Hero mídia: um pouco mais baixo no celular */
+  .mediaCard img{ aspect-ratio: 16 / 11; }
+
+  /* Strip: cards com tamanho bom */
+  .mediaStrip{ gap: 10px; }
+  .mediaStrip img{ width: 220px; border-radius: 16px; }
+
+  /* Cards de produtos: reduzir altura no celular */
+  .productCard img{ aspect-ratio: 16 / 12; } /* menos alto */
+
+  /* IG no celular: 1 coluna, grande e bonito */
+  .ig__grid{ grid-template-columns: 1fr; }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 420px){
+  .mediaStrip img{ width: 205px; }
 }
 
 /* ===== Motion safety ===== */
