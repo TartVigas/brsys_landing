@@ -1,8 +1,9 @@
 /* Fortes Sabores da Manhã — BRsys Sites
    Identidade: elegante, acolhedora, quente
-   CSS FINAL (limpo / sem duplicações)
+   app.css FINAL (limpo / sem duplicações)
 */
 
+/* ===== Tokens ===== */
 :root{
   --bg:#F6F1EA;
   --panel:#FFFFFF;
@@ -25,6 +26,7 @@
   --topbarH: 72px;
 }
 
+/* ===== Base ===== */
 *{ box-sizing:border-box }
 html{ scroll-behavior:smooth }
 body{
@@ -38,7 +40,6 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 a{ color:inherit; text-decoration:none }
 img{ max-width:100%; display:block }
 .container{ max-width:var(--max); margin:0 auto; padding:0 18px }
@@ -49,6 +50,7 @@ img{ max-width:100%; display:block }
   border-radius: 12px;
 }
 
+/* Skip link */
 .skip{
   position:absolute;
   left:-999px;
@@ -70,13 +72,13 @@ img{ max-width:100%; display:block }
   box-shadow: var(--shadow2);
 }
 
+/* Helpers */
 .card{
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--r);
   box-shadow: var(--shadow2);
 }
-
 .muted{ color:var(--muted) }
 .big{ font-size:18px; margin: 0 0 10px }
 .link{
@@ -181,9 +183,7 @@ img{ max-width:100%; display:block }
     0 22px 60px rgba(90,62,43,.18),
     0 1px 0 rgba(255,255,255,.22) inset;
 }
-.btn--ghost{
-  background: rgba(255,255,255,.35);
-}
+.btn--ghost{ background: rgba(255,255,255,.35); }
 .btn--ghost:hover{
   transform: translateY(-1px);
   box-shadow: 0 14px 30px rgba(46,31,22,.10);
@@ -248,6 +248,7 @@ h1{
 .micro{ margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap }
 .micro__item{ color:var(--muted); font-size: 13px }
 
+/* Hero media */
 .mediaCard{ overflow:hidden; position:relative }
 .mediaCard::after{
   content:"";
@@ -272,28 +273,43 @@ h1{
   font-size: 13px;
 }
 
-/* Strip de “Instagram/Promo” */
+/* Strip de “Instagram/Promo” — carrossel 4:5 (IG padrão) */
 .mediaStrip{
   margin-top: 12px;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  gap: 12px;
   padding: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
   background: var(--panel2);
   border-radius: var(--r);
   border: 1px solid rgba(46,31,22,.08);
   box-shadow: 0 12px 30px rgba(46,31,22,.06);
 }
+.mediaStrip::-webkit-scrollbar{ height: 10px; }
+.mediaStrip::-webkit-scrollbar-thumb{
+  background: rgba(90,62,43,.22);
+  border-radius: 999px;
+}
 .mediaStrip img{
-  width:100%;
+  flex: 0 0 auto;
+  width: clamp(200px, 22vw, 290px);
+  aspect-ratio: 4 / 5;
+  height: auto;
+
   border-radius: 14px;
   border: 1px solid rgba(46,31,22,.10);
-  aspect-ratio: 4 / 5;         /* FIX: melhor para artes com texto */
-  object-fit: contain;         /* FIX: NÃO corta */
-  background: linear-gradient(180deg, rgba(90,62,43,.08), rgba(198,134,66,.06));
-  padding: 10px;
-  box-shadow: 0 10px 25px rgba(46,31,22,.04);
+
+  object-fit: cover; /* suas artes já são 4:5 */
+  background: transparent;
+  padding: 0;
+
+  box-shadow: 0 10px 25px rgba(46,31,22,.08);
   transition: transform .18s ease, filter .18s ease;
+  scroll-snap-align: start;
 }
 .mediaStrip img:hover{
   transform: translateY(-2px);
@@ -326,6 +342,7 @@ h1{
 .infoCard h3{ margin: 0 0 6px; font-size: 16px }
 .infoCard p{ margin: 0; color: var(--muted); line-height: 1.75; font-size: 16.5px }
 
+/* Products */
 .productCard{ overflow:hidden; transition: transform .18s ease, box-shadow .18s ease }
 .productCard:hover{
   transform: translateY(-3px);
@@ -341,15 +358,11 @@ h1{
 .productCard__body h3{ margin: 0 0 6px }
 .productCard__body p{ margin:0; color:var(--muted); line-height:1.75; font-size:16.5px }
 
+/* Note / mini CTA */
 .note{
   margin-top: 16px;
   display:flex; gap: 12px; align-items:center; justify-content:space-between;
   padding: 14px 16px;
-  border-radius: var(--rs)
-}
-
-/* NOTE: patch corrigindo o erro acima (var(--s) não existe) */
-.note{
   border-radius: var(--r);
   border: 1px solid rgba(46,31,22,.10);
   background: rgba(255,255,255,.82);
@@ -358,6 +371,7 @@ h1{
 .note__icon{ font-size: 18px }
 .note p{ margin:0; line-height:1.6 }
 
+/* Callout encomendas */
 .callout{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
@@ -374,9 +388,10 @@ h1{
 .callout__text h2{ margin: 0 0 8px }
 .callout__text p{ margin: 0 0 12px; color: var(--muted); line-height: 1.75 }
 .list{ margin:0 0 16px; padding-left: 18px; color: var(--muted); line-height: 1.9 }
-.callout__media{ overflow:hidden }
+.callout__media{ overflow:hidden; border-radius: var(--r); border: 1px solid rgba(46,31,22,.10); box-shadow: var(--shadow2) }
 .callout__media img{ width:100%; height:100%; object-fit: cover }
 
+/* Contact / map */
 .contactCard{ padding: 16px }
 .divider{ height:1px; background: var(--line); margin: 14px 0 }
 .actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 12px }
@@ -384,6 +399,7 @@ h1{
 .mapCard{ overflow:hidden }
 .mapCard iframe{ width:100%; height: 340px; border: 0 }
 
+/* Instagram section */
 .ig{ display:grid; gap: 14px }
 .ig__card{
   padding: 16px;
@@ -404,18 +420,21 @@ h1{
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-
-/* Grid “Instagram/Promo” (FIX: não cortar texto) */
 .ig__grid img{
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+
   border-radius: var(--r);
   border: 1px solid rgba(46,31,22,.10);
-  aspect-ratio: 4 / 5;
-  object-fit: contain;
-  background: linear-gradient(180deg, rgba(90,62,43,.08), rgba(198,134,66,.06));
-  padding: 10px;
+  object-fit: cover;
+
+  background: transparent;
+  padding: 0;
   box-shadow: 0 14px 35px rgba(46,31,22,.08);
 }
 
+/* Final CTA */
 .finalCta{
   padding: 18px;
   display:flex; align-items:center; justify-content:space-between;
@@ -442,6 +461,7 @@ h1{
 .footer__links a:hover{ color: var(--text) }
 .footer__sig{ justify-self:end; text-align:right }
 
+/* WhatsApp floating */
 .wafloat{
   position: fixed;
   right: 16px;
@@ -454,6 +474,7 @@ h1{
   box-shadow: 0 22px 60px rgba(90,62,43,.22);
   border: 1px solid rgba(255,255,255,.18);
   letter-spacing: .3px;
+  z-index: 80;
 }
 
 /* ===== Responsive ===== */
@@ -476,12 +497,9 @@ h1{
   .finalCta{ flex-direction: column; align-items:flex-start; }
   .brand{ min-width: auto; }
 
-  /* Mobile: abre mais espaço pros posters (menos “miniatura”) */
-  .mediaStrip img,
-  .ig__grid img{
-    aspect-ratio: 16 / 10;
-    padding: 8px;
-  }
+  /* Posters maiores no mobile */
+  .mediaStrip img{ width: clamp(230px, 70vw, 320px); }
+  .ig__grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ===== Motion safety ===== */
