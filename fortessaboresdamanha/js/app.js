@@ -1,72 +1,83 @@
-// Fortes Sabores da Manhã — JS FINAL
-// Menu mobile + scroll suave + acessibilidade
+// Fortes Sabores da Manhã — JS leve (sem dependências)
+// - Menu mobile (abre/fecha)
+// - Scroll suave com offset da topbar
+// - Fecha menu ao navegar / ao clicar fora / ESC
+// - Ano automático no rodapé
 
 (() => {
   const menuBtn = document.getElementById("menuBtn");
   const menuPanel = document.getElementById("menuPanel");
-  const year = document.getElementById("year");
-  const body = document.body;
+  const yearEl = document.getElementById("year");
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  const isOpen = () => menuBtn?.getAttribute("aria-expanded") === "true";
+
+  const setMenu = (open) => {
+    if (!menuBtn || !menuPanel) return;
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuPanel.hidden = !open;
+  };
+
+  // MENU
+  if (menuBtn && menuPanel) {
+    setMenu(false);
+
+    menuBtn.addEventListener("click", () => setMenu(!isOpen()));
+
+    // ESC fecha
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenu(false);
+    });
+
+    // clique fora fecha
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+      if (!t) return;
+      const clickedInside = menuPanel.contains(t) || menuBtn.contains(t);
+      if (!clickedInside) setMenu(false);
+    });
+
+    // links do painel fecham
+    menuPanel.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => setMenu(false));
+    });
   }
 
-  if (!menuBtn || !menuPanel) return;
-
-  const openMenu = () => {
-    menuBtn.setAttribute("aria-expanded", "true");
-    menuPanel.hidden = false;
-    body.classList.add("menu-open");
-  };
-
-  const closeMenu = () => {
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuPanel.hidden = true;
-    body.classList.remove("menu-open");
-  };
-
-  // Estado inicial
-  closeMenu();
-
-  // Toggle
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
-    isOpen ? closeMenu() : openMenu();
-  });
-
-  // Fecha ao clicar fora
-  document.addEventListener("click", (e) => {
-    if (!menuPanel.contains(e.target) && !menuBtn.contains(e.target)) {
-      closeMenu();
-    }
-  });
-
-  // Fecha com ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // Fecha ao clicar em links
-  menuPanel.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // Scroll suave com offset
-  const getOffset = () => {
+  // OFFSET DA TOPBAR
+  const getTopbarOffset = () => {
     const header = document.querySelector(".topbar");
-    return header ? header.offsetHeight + 10 : 80;
+    if (!header) return 84;
+    const h = header.getBoundingClientRect().height || 84;
+    return h + 12;
   };
 
-  document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
+  const scrollToHash = (hash) => {
+    if (!hash || hash === "#") return;
+    const el = document.querySelector(hash);
+    if (!el) return;
+
+    const y = window.scrollY + el.getBoundingClientRect().top - getTopbarOffset();
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  // Scroll suave para âncoras
+  document.querySelectorAll("a[href^='#']").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const hash = a.getAttribute("href");
+      if (!hash || hash === "#") return;
+
+      const target = document.querySelector(hash);
       if (!target) return;
+
       e.preventDefault();
-      const y = target.getBoundingClientRect().top + window.scrollY - getOffset();
-      window.scrollTo({ top: y, behavior: "smooth" });
-      history.pushState(null, "", this.getAttribute("href"));
+      history.pushState(null, "", hash);
+      scrollToHash(hash);
     });
   });
 
+  // Se abrir com hash na URL
+  window.addEventListener("load", () => {
+    if (location.hash) scrollToHash(location.hash);
+  });
 })();
