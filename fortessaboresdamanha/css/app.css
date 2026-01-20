@@ -526,3 +526,89 @@ h1{
   html{ scroll-behavior: auto; }
   .btn, .mediaStrip img, .productCard{ transition: none; }
 }
+/* ===== MOBILE FIX FINAL ===== */
+@media (max-width: 768px){
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .container{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* HERO */
+  .hero{
+    padding-top: 18px;
+  }
+
+  .hero__grid{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  h1{
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  .subhead{
+    font-size: 15px;
+  }
+
+  /* IMAGEM HERO */
+  .mediaCard img{
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+  }
+
+  /* STRIP INSTAGRAM / POSTERS */
+  .mediaStrip{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mediaStrip img{
+    aspect-ratio: 4 / 5;
+    padding: 6px;
+  }
+
+  /* GRID DE PRODUTOS */
+  .grid--3,
+  .grid--2{
+    grid-template-columns: 1fr;
+  }
+
+  .productCard,
+  .infoCard{
+    max-width: 100%;
+  }
+
+  /* SEÇÃO ENCOMENDAS */
+  .callout{
+    grid-template-columns: 1fr;
+  }
+
+  .callout__media img{
+    aspect-ratio: 4 / 3;
+  }
+
+  /* MAPA */
+  .mapCard iframe{
+    height: 260px;
+  }
+
+  /* FOOTER */
+  .footer__grid{
+    text-align: left;
+  }
+
+  /* WHATSAPP FLOAT */
+  .wafloat{
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
