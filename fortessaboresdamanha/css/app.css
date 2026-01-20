@@ -507,3 +507,49 @@ h1{
   html{ scroll-behavior: auto; }
   .btn, .mediaStrip img, .productCard, .menuBtn{ transition: none; }
 }
+/* ================================
+   FIX MOBILE MENU + IG GRID (PATCH)
+   Cole no FINAL do app.css
+================================ */
+
+/* No mobile, o painel NÃO fica fixo/visível.
+   Só aparece quando body.menu-open */
+@media (max-width: 980px){
+
+  /* garante que o painel some quando fechado */
+  .menuPanel{ display:none; }
+
+  /* e aparece quando abre */
+  body.menu-open .menuPanel{
+    display:block;
+  }
+
+  /* painel mais "chique" e com scroll interno se precisar */
+  .menuPanel__inner{
+    padding: 14px;
+    gap: 12px;
+  }
+
+  /* links maiores (tamanho dedo) */
+  .menuPanel a{
+    padding: 14px 14px;
+    font-size: 15px;
+  }
+
+  /* ===== Instagram: imagens GRANDES no mobile ===== */
+  .igGrid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .igItem{
+    display:block;
+  }
+
+  .igGrid img{
+    aspect-ratio: 4 / 5;      /* volta pro formato poster */
+    object-fit: cover;         /* ocupa o card */
+    padding: 0;                /* tira borda interna que encolhe */
+    border-radius: 18px;
+  }
+}
