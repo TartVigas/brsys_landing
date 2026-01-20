@@ -73,3 +73,17 @@
     window.addEventListener("load", () => scrollToHash(location.hash));
   }
 })();
+(() => {
+  const btn = document.querySelector('.menuBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+
+  document.querySelectorAll('.menuPanel a').forEach(a => {
+    a.addEventListener('click', () => document.body.classList.remove('menu-open'));
+  });
+})();
+
+
