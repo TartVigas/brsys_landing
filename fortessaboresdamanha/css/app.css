@@ -1,6 +1,6 @@
 /* Fortes Sabores da Manhã — BRsys Sites
    Identidade: elegante, acolhedora, quente
-   Versão: FINAL (CSS limpo + premium)
+   CSS FINAL (limpo / sem duplicações)
 */
 
 :root{
@@ -272,6 +272,7 @@ h1{
   font-size: 13px;
 }
 
+/* Strip de “Instagram/Promo” */
 .mediaStrip{
   margin-top: 12px;
   display:grid;
@@ -284,12 +285,15 @@ h1{
   box-shadow: 0 12px 30px rgba(46,31,22,.06);
 }
 .mediaStrip img{
+  width:100%;
   border-radius: 14px;
   border: 1px solid rgba(46,31,22,.10);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: transform .18s ease, filter .18s ease;
+  aspect-ratio: 4 / 5;         /* FIX: melhor para artes com texto */
+  object-fit: contain;         /* FIX: NÃO corta */
+  background: linear-gradient(180deg, rgba(90,62,43,.08), rgba(198,134,66,.06));
+  padding: 10px;
   box-shadow: 0 10px 25px rgba(46,31,22,.04);
+  transition: transform .18s ease, filter .18s ease;
 }
 .mediaStrip img:hover{
   transform: translateY(-2px);
@@ -341,6 +345,11 @@ h1{
   margin-top: 16px;
   display:flex; gap: 12px; align-items:center; justify-content:space-between;
   padding: 14px 16px;
+  border-radius: var(--rs)
+}
+
+/* NOTE: patch corrigindo o erro acima (var(--s) não existe) */
+.note{
   border-radius: var(--r);
   border: 1px solid rgba(46,31,22,.10);
   background: rgba(255,255,255,.82);
@@ -395,11 +404,15 @@ h1{
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
+
+/* Grid “Instagram/Promo” (FIX: não cortar texto) */
 .ig__grid img{
   border-radius: var(--r);
   border: 1px solid rgba(46,31,22,.10);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: linear-gradient(180deg, rgba(90,62,43,.08), rgba(198,134,66,.06));
+  padding: 10px;
   box-shadow: 0 14px 35px rgba(46,31,22,.08);
 }
 
@@ -462,6 +475,13 @@ h1{
   .note{ flex-direction: column; align-items:flex-start; }
   .finalCta{ flex-direction: column; align-items:flex-start; }
   .brand{ min-width: auto; }
+
+  /* Mobile: abre mais espaço pros posters (menos “miniatura”) */
+  .mediaStrip img,
+  .ig__grid img{
+    aspect-ratio: 16 / 10;
+    padding: 8px;
+  }
 }
 
 /* ===== Motion safety ===== */
