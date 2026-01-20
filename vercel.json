@@ -9,6 +9,11 @@
       "source": "/fortesaboresdamanha/",
       "destination": "/fortessaboresdamanha/",
       "permanent": true
+    },
+    {
+      "source": "/fortessaboresdamanha",
+      "destination": "/fortessaboresdamanha/",
+      "permanent": true
     }
   ]
 }
