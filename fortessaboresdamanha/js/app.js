@@ -1,89 +1,104 @@
 // Fortes Sabores da Manhã — JS leve (sem dependências)
-// - Menu mobile
+// - Menu mobile (aria + hidden + body.menu-open)
+// - Fecha com ESC / clique fora / ao navegar
 // - Scroll suave com offset da topbar
-// - Fecha menu ao navegar
 // - Ano automático no rodapé
 
 (() => {
   const menuBtn = document.getElementById("menuBtn");
   const menuPanel = document.getElementById("menuPanel");
-  const year = document.getElementById("year");
+  const yearEl = document.getElementById("year");
 
-  if (year) year.textContent = String(new Date().getFullYear());
+  // Ano automático
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  const setMenu = (open) => {
+  // Helpers
+  const setMenuOpen = (open) => {
     if (!menuBtn || !menuPanel) return;
+
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     menuPanel.hidden = !open;
+
+    // compatível com o CSS que usa body.menu-open
+    document.body.classList.toggle("menu-open", open);
   };
 
-  if (menuBtn && menuPanel) {
-    setMenu(false);
+  const isMenuOpen = () =>
+    !!menuBtn && menuBtn.getAttribute("aria-expanded") === "true";
 
-    menuBtn.addEventListener("click", () => {
-      const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
-      setMenu(!isOpen);
+  // Menu mobile
+  if (menuBtn && menuPanel) {
+    setMenuOpen(false);
+
+    menuBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      setMenuOpen(!isMenuOpen());
     });
 
     // ESC fecha
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setMenu(false);
+      if (e.key === "Escape") setMenuOpen(false);
     });
 
-    // Clicar fora fecha
+    // Clicar fora fecha (só se estiver aberto)
     document.addEventListener("click", (e) => {
+      if (!isMenuOpen()) return;
       const target = e.target;
-      const clickedInside = menuPanel.contains(target) || menuBtn.contains(target);
-      if (!clickedInside) setMenu(false);
+      if (!(target instanceof Node)) return;
+
+      const clickedInside =
+        menuPanel.contains(target) || menuBtn.contains(target);
+
+      if (!clickedInside) setMenuOpen(false);
     });
 
     // Links do menu fecham o painel
-    menuPanel.querySelectorAll("a[href^='#']").forEach((a) => {
-      a.addEventListener("click", () => setMenu(false));
+    menuPanel.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => setMenuOpen(false));
     });
   }
 
   // Scroll com offset da topbar
   const getTopbarOffset = () => {
     const header = document.querySelector(".topbar");
-    return header ? header.getBoundingClientRect().height + 12 : 84;
+    if (!header) return 84;
+    return header.getBoundingClientRect().height + 12;
   };
 
   const scrollToHash = (hash) => {
+    if (!hash || hash === "#") return;
     const el = document.querySelector(hash);
     if (!el) return;
+
     const y = window.scrollY + el.getBoundingClientRect().top - getTopbarOffset();
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  // Intercepta âncoras (menu + página)
   document.querySelectorAll("a[href^='#']").forEach((a) => {
     a.addEventListener("click", (e) => {
       const hash = a.getAttribute("href");
       if (!hash || hash === "#") return;
-      const el = document.querySelector(hash);
-      if (!el) return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
       e.preventDefault();
       history.pushState(null, "", hash);
-      scrollToHash(hash);
+
+      // fecha menu antes de scrollar (melhor no mobile)
+      setMenuOpen(false);
+
+      // dá 1 frame pro layout estabilizar
+      requestAnimationFrame(() => scrollToHash(hash));
     });
   });
 
   // Se abrir com hash na URL
   if (location.hash) {
-    window.addEventListener("load", () => scrollToHash(location.hash));
+    window.addEventListener("load", () => {
+      // aguarda pintar o layout
+      setTimeout(() => scrollToHash(location.hash), 30);
+    });
   }
 })();
-(() => {
-  const btn = document.querySelector('.menuBtn');
-  if (!btn) return;
-
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
-  });
-
-  document.querySelectorAll('.menuPanel a').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.remove('menu-open'));
-  });
-})();
-
-
