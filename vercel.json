@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/fortesaboresdamanha",
+      "destination": "/fortesaboresdamanha/",
+      "permanent": true
+    }
+  ]
+}
