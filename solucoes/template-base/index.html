@@ -9,10 +9,11 @@
        Arquivo: /solucoes/template-base/index.html
 
        Como usar:
-       1) Copie esta pasta para /solucoes/<ramo>/index.html
-       2) Troque: [RAMO_TITULO], [RAMO_SLUG], [RAMO_DESC], [HERO_IMG]
-       3) Troque textos/tiles (destaques) e headline/kicker
-       4) (Opcional) JSON-LD LocalBusiness deve ir na página do CLIENTE, não aqui
+       1) Copie esta pasta para /solucoes/<ramo>/
+       2) Renomeie/ajuste: [RAMO_TITULO], [RAMO_SLUG], [RAMO_DESC], [HERO_IMG]
+       3) Edite os textos: [KICKER_CURTO], [HEADLINE_FORTE], [TEXTO_CURTO]
+       4) Edite os cards/tiles (pontos e destaques)
+       5) (Opcional) LocalBusiness JSON-LD vai na página do CLIENTE
   ========================== -->
 
   <title>[RAMO_TITULO] • Conversão no WhatsApp | BRsys</title>
@@ -37,12 +38,16 @@
   <link rel="icon" href="/img/favicon.png" />
   <link rel="preload" href="/img/solucoes/[HERO_IMG]" as="image" fetchpriority="high" />
 
-  <!-- Globais do repo -->
+  <!-- CSS global do repo -->
   <link rel="stylesheet" href="/css/app.css?v=1" />
 
-  <!-- CSS local (base) -->
+  <!-- CSS local (override de identidade do ramo/cliente) -->
+  <link rel="stylesheet" href="./theme.css?v=1" />
+
+  <!-- CSS local (base do template) -->
   <style>
     :root{
+      /* Base darkclean (pode ser sobrescrito em theme.css) */
       --bg:#081316;
       --panel: rgba(255,255,255,.06);
       --panel2: rgba(255,255,255,.09);
@@ -51,9 +56,18 @@
       --line: rgba(255,255,255,.14);
       --brand:#19d6c6;
       --brand2:#0b8f86;
+
       --shadow: 0 24px 70px rgba(0,0,0,.55);
       --r: 18px;
       --max: 1120px;
+
+      /* Hero */
+      --hero-img: url("/img/solucoes/[HERO_IMG]");
+      --hero-grad: linear-gradient(90deg,
+        rgba(8,19,22,.92) 0%,
+        rgba(8,19,22,.82) 45%,
+        rgba(8,19,22,.35) 78%,
+        rgba(8,19,22,.10) 100%);
     }
 
     *{ box-sizing:border-box; }
@@ -67,7 +81,6 @@
         var(--bg);
       color: var(--text);
     }
-
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
 
@@ -87,14 +100,13 @@
       font-weight: 900; letter-spacing:.2px;
     }
     .brand img{ width: 34px; height: 34px; border-radius: 10px; }
-
     .nav{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding: 10px 14px; border-radius: 999px;
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
-      transition: transform .15s ease, background .15s ease;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
       white-space: nowrap;
       font-weight: 700;
     }
@@ -119,9 +131,7 @@
       padding: 26px;
       display:flex;
       align-items:flex-end;
-      background-image:
-        linear-gradient(90deg, rgba(8,19,22,.92) 0%, rgba(8,19,22,.82) 45%, rgba(8,19,22,.35) 78%, rgba(8,19,22,.10) 100%),
-        url("/img/solucoes/[HERO_IMG]");
+      background-image: var(--hero-grad), var(--hero-img);
       background-size: cover;
       background-position: center;
     }
@@ -133,6 +143,7 @@
       border: 1px solid rgba(25,214,198,.25);
       font-size: 13px;
       color: rgba(255,255,255,.90);
+      font-weight: 800;
     }
     h1{
       margin: 14px 0 10px;
@@ -166,7 +177,7 @@
     .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
     .list li{ margin: 7px 0; }
 
-    /* Tiles (serviços/destaques) */
+    /* Tiles */
     .tiles .tile{
       grid-column: span 3;
       border-radius: var(--r);
@@ -210,6 +221,18 @@
     .final strong{ font-size: 16px; }
     .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
 
+    footer{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; }
+    .foot{
+      padding: 16px 0 22px;
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
     /* Sticky WhatsApp (mobile) */
     .waSticky{
       position: fixed;
@@ -224,18 +247,6 @@
       justify-content:center;
       z-index: 60;
       text-align:center;
-    }
-
-    footer{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; }
-    .foot{
-      padding: 16px 0 22px;
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
     }
 
     @media (max-width: 980px){
@@ -291,13 +302,11 @@
 
           <h1>[HEADLINE_FORTE]</h1>
 
-          <p class="lead">
-            [TEXTO_CURTO] — foco em conversão e clareza. Sem enrolação.
-          </p>
+          <p class="lead">[TEXTO_CURTO] — foco em conversão e clareza. Sem enrolação.</p>
 
           <div class="ctaRow" id="cta">
             <a class="pill primary" target="_blank" rel="noopener"
-              href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%20Google%2FInstagram%3A%20[LINK].">
+               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%20Google%2FInstagram%3A%20[LINK].">
               📲 Chamar no WhatsApp
             </a>
 
@@ -413,7 +422,7 @@
       </div>
 
       <a class="pill primary" target="_blank" rel="noopener"
-        href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
         📲 Chamar no WhatsApp
       </a>
     </section>
@@ -428,7 +437,7 @@
 
   <!-- Sticky WhatsApp (mobile) -->
   <a class="waSticky" target="_blank" rel="noopener"
-    href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
+     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
     📲 WhatsApp direto
   </a>
 
