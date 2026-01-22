@@ -3,464 +3,349 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BRsys • Sites por ramo com escopo fechado (WhatsApp direto)</title>
-  <meta name="description" content="A BRsys cria sites profissionais por ramo com escopo fechado, entrega clara e foco total em conversão via WhatsApp. Sem agência, sem projeto infinito." />
+  <title>BRsys • Sites por ramo com foco em conversão (WhatsApp direto)</title>
+  <meta name="description" content="A BRsys cria sites por ramo com escopo fechado, entrega rápida e foco total em conversão via WhatsApp. Sem agência, sem projeto infinito." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.brsys.com.br/" />
+
+  <!-- Favicons (ajuste os caminhos conforme seus arquivos reais) -->
+  <link rel="icon" href="/img/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/img/favicon.png" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="BRsys • Sites por ramo com escopo fechado" />
-  <meta property="og:description" content="Sites objetivos, rápidos e focados em WhatsApp. Modelos por ramo + demonstrações reais." />
+  <meta property="og:title" content="BRsys • Sites por ramo com foco em conversão" />
+  <meta property="og:description" content="Sites objetivos, rápidos e focados em WhatsApp. Escopo fechado e entrega clara." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://www.brsys.com.br/" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
 
-  <!-- Globais do repo -->
-  <link rel="stylesheet" href="/css/style.css?v=2" />
-  <script defer src="/js/main.js?v=2"></script>
+  <!-- (Opcional) Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fallback (garante layout mesmo se o global estiver vazio) -->
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/css/style.css?v=3" />
+  <script defer src="/js/main.js?v=3"></script>
+
+  <!-- Bulma: micro-ajustes modernos (mínimo, não quebra seu CSS atual) -->
   <style>
-    :root{color-scheme:dark;}
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      background:var(--bg,#071116);
-      color:var(--text,#eaf3f7);
-      line-height:1.45;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
+    /* Mantém a cara das artes novas (neon/teal) sem refatorar o CSS todo */
+    .hero-media{position:relative; overflow:hidden; border-radius:24px; border:1px solid var(--border-soft); background:rgba(255,255,255,.02);}
+    .hero-media img{width:100%; height:auto; display:block;}
+    .hero-badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(15,155,157,.25); background:rgba(15,155,157,.08); font-size:.78rem; color:var(--text-main);}
+    .mini-grid{display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:12px;}
+    .mini-card{border-radius:18px; border:1px solid var(--border-soft); background:linear-gradient(145deg, #020617, #020b21); padding:14px; text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:8px; min-height:128px;}
+    .mini-card:hover{border-color:rgba(15,155,157,.28); transform:translateY(-2px); box-shadow:var(--shadow-soft);}
+    .mini-ico{width:46px; height:46px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); display:grid; place-items:center; overflow:hidden;}
+    .mini-ico img{width:100%; height:100%; object-fit:cover; display:block;}
+    .mini-card strong{font-size:.98rem;}
+    .mini-card p{margin:0; color:var(--text-muted); font-size:.86rem;}
+    .mini-card span{margin-top:auto; color:var(--accent); font-weight:600; font-size:.86rem;}
+    @media (max-width: 900px){
+      .mini-grid{grid-template-columns:1fr; }
     }
-    html[data-theme="dark"]{
-      --bg:#071116;
-      --panel:rgba(9,22,28,.72);
-      --panel2:rgba(10,25,32,.55);
-      --stroke:rgba(255,255,255,.08);
-      --stroke2:rgba(255,255,255,.12);
-      --text:#eaf3f7;
-      --muted:rgba(234,243,247,.72);
-      --muted2:rgba(234,243,247,.56);
-      --teal:#24e6c3;
-      --shadow:0 18px 45px rgba(0,0,0,.35);
-      --grid:rgba(255,255,255,.06);
-    }
-    html[data-theme="clean"]{
-      color-scheme:light;
-      --bg:#eaf5f6;
-      --panel:rgba(255,255,255,.74);
-      --panel2:rgba(255,255,255,.62);
-      --stroke:rgba(10,20,28,.10);
-      --stroke2:rgba(10,20,28,.14);
-      --text:#0a141a;
-      --muted:rgba(10,20,26,.72);
-      --muted2:rgba(10,20,26,.56);
-      --teal:#18c7a8;
-      --shadow:0 18px 45px rgba(10,20,28,.14);
-      --grid:rgba(10,20,28,.07);
-    }
-    .bg{
-      position:fixed; inset:0; z-index:-2;
-      background:
-        radial-gradient(900px 520px at 18% 22%, rgba(36,230,195,.18), transparent 55%),
-        radial-gradient(720px 440px at 72% 26%, rgba(36,230,195,.12), transparent 60%);
-    }
-    .grid{
-      position:fixed; inset:0; z-index:-1;
-      background-image:
-        linear-gradient(to right, var(--grid) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-      background-size:52px 52px;
-      opacity:.55;
-      mask-image:radial-gradient(circle at 30% 30%, black 0 55%, transparent 78%);
-    }
-    .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px;}
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:14px;padding:12px 10px;
-    }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
-    .logo{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.08));
-      border:1px solid var(--stroke);
-      font-weight:950;
-      letter-spacing:.5px;
-    }
-    .brand strong{font-size:14px;}
-    .brand span{font-size:12px;color:var(--muted2);}
-    .icon-btn,.cta{
-      border:1px solid var(--stroke);
-      background:var(--panel2);
-      border-radius:14px;
-      padding:12px 14px;
-      color:var(--text);
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      box-shadow:var(--shadow);
-      user-select:none;
-    }
-    .icon-btn{width:44px;height:44px;justify-content:center;}
-    .cta{
-      font-weight:950;
-      background:linear-gradient(135deg, rgba(36,230,195,.25), rgba(36,230,195,.10));
-      border-color:rgba(36,230,195,.35);
-    }
-
-    .crumbs{
-      display:flex;flex-wrap:wrap;gap:8px;
-      color:var(--muted2);
-      font-size:12px;
-      padding:0 10px 10px;
-    }
-    .crumbs a{color:inherit;text-decoration:none;border-bottom:1px dashed transparent;}
-    .crumbs a:hover{border-bottom-color:var(--stroke2);}
-
-    .main{
-      margin-top:10px;
-      border-radius:26px;
-      border:1px solid var(--stroke);
-      background:var(--panel);
-      backdrop-filter:blur(14px);
-      box-shadow:var(--shadow);
-    }
-    .main-inner{
-      padding:28px;
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:22px;
-    }
-    @media(max-width:980px){.main-inner{grid-template-columns:1fr;}}
-    h1{
-      font-size:clamp(34px,4vw,56px);
-      line-height:1.02;
-      letter-spacing:-.9px;
-      margin:14px 0 12px;
-    }
-    .lead{font-size:15px;color:var(--muted);max-width:62ch;}
-    .pill{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 12px;border-radius:999px;
-      background:rgba(36,230,195,.12);
-      border:1px solid rgba(36,230,195,.25);
-      font-size:12px;
-    }
-    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
-    .btn{
-      border-radius:14px;
-      border:1px solid var(--stroke);
-      background:var(--panel2);
-      padding:12px 14px;
-      font-weight:950;
-      text-decoration:none;
-      color:var(--text);
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg, rgba(36,230,195,.28), rgba(36,230,195,.12));
-      border-color:rgba(36,230,195,.40);
-    }
-    .micro{
-      margin-top:14px;
-      font-size:12px;
-      color:var(--muted2);
-      display:flex;flex-wrap:wrap;gap:8px;
-    }
-
-    .side{display:flex;flex-direction:column;gap:14px;}
-    .card{
-      border-radius:20px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.03);
-      padding:16px;
-    }
-    .card h2{font-size:14px;margin:0 0 8px;}
-    .muted2{color:var(--muted2);font-size:13px;margin:0;}
-
-    .catalog{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
-    @media(max-width:980px){.catalog{grid-template-columns:1fr;}}
-    .tile{
-      border-radius:18px;
-      border:1px solid var(--stroke);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      padding:16px;
-      text-decoration:none;
-      color:inherit;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      min-height:120px;
-    }
-    .tile:hover{border-color:rgba(36,230,195,.25);}
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:12px;
-      color:var(--muted2);
-    }
-    .tile strong{font-size:14px;}
-    .tile p{margin:0;color:var(--muted);font-size:13px;max-width:55ch;}
-    .tile .go{margin-top:auto;font-weight:950;color:var(--teal);}
-
-    .section{
-      margin-top:18px;
-      border-radius:22px;
-      border:1px solid var(--stroke);
-      background:var(--panel);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .section h3{margin:0 0 10px;font-size:14px;}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-    @media(max-width:980px){.steps{grid-template-columns:1fr;}}
-    .step{
-      border-radius:16px;border:1px solid var(--stroke2);
-      background:rgba(255,255,255,.03);
-      padding:14px;
-    }
-    .step b{display:inline-flex;align-items:center;justify-content:center;
-      width:26px;height:26px;border-radius:10px;
-      background:rgba(36,230,195,.12);
-      border:1px solid rgba(36,230,195,.35);
-      margin-right:10px;
-    }
-    .step p{margin:10px 0 0;color:var(--muted2);font-size:13px;}
-
-    .pricing{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;
-    }
-    @media(max-width:1100px){.pricing{grid-template-columns:1fr 1fr;}}
-    @media(max-width:640px){.pricing{grid-template-columns:1fr;}}
-    .plan{
-      border-radius:16px;border:1px solid var(--stroke2);
-      background:rgba(255,255,255,.03);
-      padding:14px;
-    }
-    .plan strong{font-size:13px;}
-    .price{font-weight:950;color:var(--teal);margin-top:6px;}
-    .plan ul{margin:10px 0 0;padding-left:18px;color:var(--muted2);font-size:12px;}
-    .plan li{margin:6px 0;}
-
-    footer{
-      margin-top:18px;
-      font-size:12px;
-      color:var(--muted2);
-      text-align:center;
-    }
+    /* garante que âncora não fique escondida atrás do header fixo */
+    section{scroll-margin-top:84px;}
   </style>
 </head>
 
 <body>
-  <div class="bg"></div>
-  <div class="grid"></div>
-
-  <div class="wrap">
-
-    <header class="topbar">
+  <!-- Header fixo -->
+  <header class="site-header">
+    <div class="container header-inner">
       <a class="brand" href="/" aria-label="BRsys - Início">
-        <div class="logo">B</div>
-        <div>
-          <strong>BRsys</strong><br>
-          <span>Sites por ramo • Escopo fechado</span>
-        </div>
+        <img class="brand-logo" src="/img/logo.png" alt="BRsys" />
+        <span class="brand-text">
+          <span class="brand-name">BRsys</span>
+          <span class="brand-tagline">Sites por ramo • Escopo fechado</span>
+        </span>
       </a>
 
-      <div>
-        <button class="icon-btn" id="btnTheme" aria-label="Alternar tema">🌙</button>
-        <a class="cta" id="ctaTop" href="#">WhatsApp direto →</a>
-      </div>
-    </header>
+      <nav class="nav-desktop" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#planos">Planos</a>
+        <a href="#como">Como funciona</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Início</a>
-      <span>›</span>
-      <span>Catálogo BRsys</span>
+      <a class="btn btn-primary btn-pill header-cta" id="ctaHeader" href="#">Chamar no WhatsApp</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-controls="navMobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile" aria-label="Menu mobile">
+      <a href="#inicio">Início</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#planos">Planos</a>
+      <a href="#como">Como funciona</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary btn-pill nav-mobile-cta" id="ctaMobile" href="#">Chamar no WhatsApp</a>
     </nav>
+  </header>
 
-    <main class="main">
-      <div class="main-inner">
+  <!-- HERO -->
+  <section class="hero section" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">WhatsApp direto • Sem agência • Sem enrolação</div>
+        <h1>Seu site precisa gerar contato.<br>Não “existir”.</h1>
 
-        <section>
-          <div class="pill">Projetos objetivos • Sem agência • Sem enrolação</div>
+        <p class="hero-subtitle">
+          A BRsys cria <strong>sites por ramo</strong> com escopo fechado, entrega rápida e foco total em conversão.
+          Ideal para quem precisa aparecer no Google e transformar clique em mensagem.
+        </p>
 
-          <h1>Seu site precisa gerar contato.<br>Não conversa.</h1>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-pill" id="ctaHero" href="#">Quero avaliação rápida →</a>
+          <a class="btn btn-secondary btn-pill" href="#solucoes">Ver soluções</a>
+          <a class="btn btn-outline btn-pill" href="#planos">Ver planos</a>
+        </div>
 
-          <p class="lead">
-            A BRsys cria <strong>sites profissionais por ramo</strong> com foco em conversão via WhatsApp.
-            Você escolhe um caminho claro (modelo + escopo) e a entrega acontece sem “projeto infinito”.
-          </p>
+        <div class="hero-badges" aria-label="Destaques">
+          <span class="badge">✔ Escopo fechado</span>
+          <span class="badge">✔ Entrega rápida</span>
+          <span class="badge">✔ SEO local + WhatsApp</span>
+        </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" id="ctaHero" href="#">Quero avaliar meu caso →</a>
-            <a class="btn" href="#catalogo">Ver catálogo</a>
-            <a class="btn" href="#como">Como funciona</a>
-          </div>
-
-          <div class="micro">
-            <span>✔ Escopo fechado</span><span>•</span>
-            <span>✔ Entrega rápida</span><span>•</span>
-            <span>✔ WhatsApp como único funil</span>
-          </div>
-
-          <div class="catalog" id="catalogo" aria-label="Catálogo">
-            <a class="tile" href="/modelos/">
-              <span class="tag">📦 Modelos por ramo</span>
-              <strong>Escolha um template e acelere</strong>
-              <p>Hamburgueria, pizzaria, restaurante, hotéis/pousadas e negócios locais — tudo pronto pra vender.</p>
-              <span class="go">Abrir /modelos →</span>
-            </a>
-
-            <a class="tile" href="/demonstracao/">
-              <span class="tag">🧪 Demonstrações reais</span>
-              <strong>Veja páginas já montadas</strong>
-              <p>Demos feitas para leads reais. Serve como prova, portfólio e base para novas entregas.</p>
-              <span class="go">Abrir /demonstracao →</span>
-            </a>
-
-            <a class="tile" href="#planos">
-              <span class="tag">💼 Planos & escopo</span>
-              <strong>Preço claro. Sem pegadinha.</strong>
-              <p>Do essencial ao premium. Você sabe o que entra, o que não entra e quanto custa.</p>
-              <span class="go">Ver planos →</span>
-            </a>
-          </div>
-        </section>
-
-        <aside class="side">
-          <div class="card">
-            <h2>Para quem faz sentido</h2>
-            <p class="muted2">
-              Negócio com decisão rápida, que precisa de apresentação e contato direto (sem intermediário).
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>O que eu não vendo</h2>
-            <p class="muted2">
-              “Site só pra existir”. Se não tiver objetivo (WhatsApp / pedido / reserva), eu prefiro nem pegar.
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>Diagnóstico rápido (WhatsApp)</h2>
-            <p class="muted2">
-              Você manda o nome do negócio + cidade + o link do Google/Instagram.
-              Eu respondo com a direção mais curta pra converter.
-            </p>
-          </div>
-        </aside>
-
+        <p class="hero-note">
+          Diagnóstico rápido: mande <strong>ramo + cidade + link do Google/Instagram</strong>. Eu respondo o caminho mais curto pra converter.
+        </p>
       </div>
-    </main>
 
-    <section class="section" id="como" aria-label="Como funciona">
-      <h3>Como funciona (3 passos)</h3>
-      <div class="steps">
-        <div class="step">
-          <div><b>1</b><strong>Você chama no WhatsApp</strong></div>
-          <p>Me diga o ramo, a cidade e o que você quer que o site gere (mensagem, pedido, reserva).</p>
+      <!-- Hero com imagem (substitua pelo seu banner mais bonito estilo Instagram) -->
+      <div class="hero-media" aria-label="Imagem principal">
+        <img src="/img/hero.jpg" alt="BRsys Sites — foco em conversão via WhatsApp" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES (Top 5 do CRM) -->
+  <section class="section section-alt" id="solucoes">
+    <div class="container">
+      <div class="section-header">
+        <h2>Soluções por ramo (Top 5)</h2>
+        <p>As soluções que mais fazem sentido hoje — baseadas no seu histórico real: decisão rápida, dor clara e conversão por WhatsApp.</p>
+      </div>
+
+      <div class="mini-grid" aria-label="Soluções em destaque">
+        <!-- Ícones/mini imagens: use imagens pequenas (ex: 200x200) -->
+        <a class="mini-card" href="/solucoes/assistencia-tecnica/">
+          <div class="mini-ico"><img src="/img/solucoes/assistencia.jpg" alt="" loading="lazy"></div>
+          <strong>Assistência técnica</strong>
+          <p>Troca de tela, bateria, conector — clique vira orçamento.</p>
+          <span>Abrir solução →</span>
+        </a>
+
+        <a class="mini-card" href="/solucoes/alimentacao/padaria/">
+          <div class="mini-ico"><img src="/img/solucoes/padaria.jpg" alt="" loading="lazy"></div>
+          <strong>Padaria & alimentação</strong>
+          <p>Horários, encomendas, cardápio e rota — tudo direto.</p>
+          <span>Abrir solução →</span>
+        </a>
+
+        <a class="mini-card" href="/solucoes/hotelaria/">
+          <div class="mini-ico"><img src="/img/solucoes/hotelaria.jpg" alt="" loading="lazy"></div>
+          <strong>Hotelaria</strong>
+          <p>Menos OTA, mais reserva direta com prova e fotos.</p>
+          <span>Abrir solução →</span>
+        </a>
+
+        <a class="mini-card" href="/solucoes/clinicas/">
+          <div class="mini-ico"><img src="/img/solucoes/clinicas.jpg" alt="" loading="lazy"></div>
+          <strong>Clínicas</strong>
+          <p>Apresentação + confiança + botão WhatsApp/agenda.</p>
+          <span>Abrir solução →</span>
+        </a>
+
+        <a class="mini-card" href="/solucoes/servicos-urgentes/">
+          <div class="mini-ico"><img src="/img/solucoes/urgentes.jpg" alt="" loading="lazy"></div>
+          <strong>Serviços urgentes</strong>
+          <p>Chaveiro, marido de aluguel, elétrica/hidráulica.</p>
+          <span>Abrir solução →</span>
+        </a>
+      </div>
+
+      <div style="margin-top:14px;">
+        <a class="btn btn-secondary btn-pill" href="/solucoes/">Ver todas as soluções →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section" id="como">
+    <div class="container">
+      <div class="section-header">
+        <h2>Como funciona</h2>
+        <p>3 passos simples, sem projeto infinito.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>1) Você chama no WhatsApp</h3>
+          <p>Manda ramo + cidade + link do Google/Instagram. Eu respondo o diagnóstico direto.</p>
+          <ul class="list">
+            <li>• Dor visível (Instagram/Booking/link quebrado)</li>
+            <li>• Objetivo (mensagem, pedido, reserva)</li>
+          </ul>
         </div>
-        <div class="step">
-          <div><b>2</b><strong>Fechamos escopo e modelo</strong></div>
-          <p>Escolhemos um template por ramo e definimos o “fim do projeto”. Sem escorregar pra infinito.</p>
+
+        <div class="card">
+          <h3>2) Fechamos escopo</h3>
+          <p>Você sabe exatamente o que entra, o que não entra e quando termina.</p>
+          <ul class="list">
+            <li>• Layout por ramo</li>
+            <li>• Copy focada em conversão</li>
+          </ul>
         </div>
-        <div class="step">
-          <div><b>3</b><strong>Entrega e site no ar</strong></div>
-          <p>Publicação rápida, revisões combinadas e pronto. O foco é conversão, não enfeite.</p>
+
+        <div class="card">
+          <h3>3) Publica e converte</h3>
+          <p>Site no ar rápido, com WhatsApp como funil único.</p>
+          <ul class="list">
+            <li>• SEO local básico</li>
+            <li>• Performance e mobile</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="planos" aria-label="Planos">
-      <h3>Planos (referência rápida)</h3>
-      <div class="pricing">
-        <div class="plan">
-          <strong>Essencial</strong>
+  <!-- PLANOS -->
+  <section class="section section-alt" id="planos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Planos</h2>
+        <p>Preço claro, escopo claro. Sem surpresa.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card card-plan">
+          <h3>Essencial</h3>
           <div class="price">a partir de R$ 500</div>
-          <ul>
-            <li>1 página (vitrine) + WhatsApp</li>
-            <li>SEO básico</li>
-            <li>Entrega objetiva</li>
+          <p class="plan-desc">Vitrine simples + CTA WhatsApp. Direto ao ponto.</p>
+          <ul class="list">
+            <li>• 1 página</li>
+            <li>• SEO básico</li>
+            <li>• Entrega rápida</li>
           </ul>
         </div>
-        <div class="plan">
-          <strong>Profissional</strong>
+
+        <div class="card card-plan">
+          <h3>Profissional</h3>
           <div class="price">a partir de R$ 900</div>
-          <ul>
-            <li>2–4 seções bem estruturadas</li>
-            <li>Copy focada em conversão</li>
-            <li>SEO melhorado</li>
+          <p class="plan-desc">Estrutura completa para converter melhor.</p>
+          <ul class="list">
+            <li>• 2–4 seções fortes</li>
+            <li>• Copy de conversão</li>
+            <li>• SEO melhorado</li>
           </ul>
         </div>
-        <div class="plan">
-          <strong>Premium</strong>
+
+        <div class="card card-plan">
+          <h3>Premium</h3>
           <div class="price">a partir de R$ 1.500</div>
-          <ul>
-            <li>Mais páginas / estrutura avançada</li>
-            <li>Prova social + performance</li>
-            <li>Base forte pra SEO</li>
+          <p class="plan-desc">Para quem quer vitrine + autoridade + performance.</p>
+          <ul class="list">
+            <li>• Mais páginas/estrutura</li>
+            <li>• Prova social + performance</li>
+            <li>• Base forte pra SEO</li>
           </ul>
         </div>
-        <div class="plan">
-          <strong>Enterprise</strong>
+
+        <div class="card card-plan">
+          <h3>Enterprise</h3>
           <div class="price">R$ 3k – 10k+</div>
-          <ul>
-            <li>Escopo sob diagnóstico</li>
-            <li>Integrações / features</li>
-            <li>Pra decisor com pressa</li>
+          <p class="plan-desc">Escopo sob diagnóstico, quando vale a pena.</p>
+          <ul class="list">
+            <li>• Integrações / features</li>
+            <li>• Estratégia avançada</li>
+            <li>• Execução sob medida</li>
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      © BRsys • Projeto autoral • WhatsApp como funil único • Peruíbe/SP + atendimento nacional
-    </footer>
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="container coverage-grid">
+      <div>
+        <div class="section-header">
+          <h2>Contato</h2>
+          <p>WhatsApp é o único funil. Sem formulário, sem enrolação.</p>
+        </div>
 
-  </div>
+        <div class="card">
+          <h3>Me mande isso:</h3>
+          <ul class="list">
+            <li>• Ramo do seu negócio</li>
+            <li>• Cidade</li>
+            <li>• Link do Google ou Instagram</li>
+            <li>• Objetivo (mensagem, pedido, reserva)</li>
+          </ul>
+          <a class="card-link" id="ctaContato" href="#">Chamar agora no WhatsApp →</a>
+        </div>
+      </div>
 
+      <aside class="contact-card">
+        <h3>Para quem faz sentido</h3>
+        <p>Negócio com decisão rápida que precisa de apresentação e contato direto (sem intermediário).</p>
+
+        <h3 style="margin-top:14px;">O que eu não vendo</h3>
+        <p>“Site só pra existir”. Se não tiver objetivo (WhatsApp / pedido / reserva), eu prefiro nem pegar.</p>
+
+        <a class="btn btn-primary btn-pill contact-btn" id="ctaAside" href="#">WhatsApp direto →</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© BRsys • Peruíbe/SP + atendimento nacional</p>
+      <p>WhatsApp como funil único • Sites por ramo • Escopo fechado</p>
+    </div>
+  </footer>
+
+  <!-- Bills: JS mínimo de menu + WhatsApp + tema (não depende do main.js, evita regressão) -->
   <script>
-  (function(){
-    const PHONE = "5513997408157";
-    const KEY = "brsys-theme";
-    const html = document.documentElement;
+    (function () {
+      const PHONE = "5513997408157";
 
-    function prefersDark(){ return window.matchMedia("(prefers-color-scheme: dark)").matches; }
-    function setTheme(t){
-      html.setAttribute("data-theme", t);
-      localStorage.setItem(KEY, t);
-      const btn = document.getElementById("btnTheme");
-      if(btn) btn.textContent = (t==="dark") ? "🌙" : "☀️";
-    }
+      const msg =
+        "Oi! Aqui é o Thiago da BRsys.\n\n" +
+        "Quero uma avaliação rápida do meu caso.\n\n" +
+        "Ramo:\nCidade:\nLink do Google/Instagram:\nObjetivo (mensagem/pedido/reserva):";
 
-    const saved = localStorage.getItem(KEY);
-    setTheme(saved || (prefersDark() ? "dark" : "clean"));
+      const wa = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
 
-    const btnTheme = document.getElementById("btnTheme");
-    if(btnTheme){
-      btnTheme.onclick = () => setTheme(html.getAttribute("data-theme")==="dark" ? "clean" : "dark");
-    }
+      ["ctaHeader","ctaMobile","ctaHero","ctaContato","ctaAside"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.href = wa;
+      });
 
-    const msg =
-      "Oi! Aqui é o Thiago da BRsys.\n\n" +
-      "Quero entender se meu negócio faz sentido para um site focado em WhatsApp.\n\n" +
-      "Ramo:\nCidade:\nLink do Google/Instagram:";
-    const wa = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+      // menu mobile
+      const btn = document.getElementById("navToggle");
+      const nav = document.getElementById("navMobile");
+      if (btn && nav) {
+        btn.addEventListener("click", function () {
+          const isOpen = document.body.classList.toggle("nav-open");
+          btn.setAttribute("aria-expanded", String(isOpen));
+        });
 
-    ["ctaTop","ctaHero"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.href = wa;
-    });
-  })();
+        // fecha ao clicar em link
+        nav.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", () => {
+            document.body.classList.remove("nav-open");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
