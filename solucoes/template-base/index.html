@@ -7,11 +7,12 @@
   <!-- =========================
        TEMPLATE BASE • BRsys
        Arquivo: /solucoes/template-base/index.html
+
        Como usar:
        1) Copie esta pasta para /solucoes/<ramo>/index.html
        2) Troque: [RAMO_TITULO], [RAMO_SLUG], [RAMO_DESC], [HERO_IMG]
-       3) Ajuste: tiles/serviços e textos curtos
-       4) Se quiser: adicione JSON-LD LocalBusiness na página do cliente (não aqui)
+       3) Troque textos/tiles (destaques) e headline/kicker
+       4) (Opcional) JSON-LD LocalBusiness deve ir na página do CLIENTE, não aqui
   ========================== -->
 
   <title>[RAMO_TITULO] • Conversão no WhatsApp | BRsys</title>
@@ -20,16 +21,21 @@
   <link rel="canonical" href="https://www.brsys.com.br/solucoes/[RAMO_SLUG]/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="[RAMO_TITULO] • WhatsApp direto" />
+  <meta property="og:title" content="[RAMO_TITULO] • WhatsApp direto | BRsys" />
   <meta property="og:description" content="[RAMO_DESC]" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://www.brsys.com.br/solucoes/[RAMO_SLUG]/" />
   <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
+  <!-- Extras -->
+  <meta name="theme-color" content="#081316" />
+  <meta name="format-detection" content="telephone=no" />
+
   <link rel="icon" href="/img/favicon.png" />
-  <link rel="preload" href="/img/solucoes/[HERO_IMG]" as="image" />
+  <link rel="preload" href="/img/solucoes/[HERO_IMG]" as="image" fetchpriority="high" />
 
   <!-- Globais do repo -->
   <link rel="stylesheet" href="/css/app.css?v=1" />
@@ -82,7 +88,7 @@
     }
     .brand img{ width: 34px; height: 34px; border-radius: 10px; }
 
-    .nav{ display:flex; gap:10px; align-items:center; }
+    .nav{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding: 10px 14px; border-radius: 999px;
@@ -90,12 +96,13 @@
       border: 1px solid rgba(255,255,255,.12);
       transition: transform .15s ease, background .15s ease;
       white-space: nowrap;
+      font-weight: 700;
     }
     .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
     .pill.primary{
       background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
       border-color: rgba(25,214,198,.35);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     /* Hero */
@@ -153,7 +160,7 @@
       box-shadow: 0 18px 55px rgba(0,0,0,.35);
       padding: 16px;
     }
-    .card strong{ display:block; margin-bottom: 8px; }
+    .card strong{ display:block; margin-bottom: 8px; font-weight: 900; }
     .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
 
     .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
@@ -191,6 +198,18 @@
     .step h3{ margin: 6px 0 8px; font-size: 16px; }
     .step p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
 
+    /* Final CTA */
+    .final{
+      margin: 18px 0 10px;
+      border-radius: calc(var(--r) + 6px);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    }
+    .final strong{ font-size: 16px; }
+    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
+
     /* Sticky WhatsApp (mobile) */
     .waSticky{
       position: fixed;
@@ -204,19 +223,20 @@
       font-weight: 900;
       justify-content:center;
       z-index: 60;
+      text-align:center;
     }
 
-    /* Final CTA */
-    .final{
-      margin: 18px 0 44px;
-      border-radius: calc(var(--r) + 6px);
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
-      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    footer{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; }
+    .foot{
+      padding: 16px 0 22px;
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
     }
-    .final strong{ font-size: 16px; }
-    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
 
     @media (max-width: 980px){
       .card{ grid-column: span 12; }
@@ -225,6 +245,7 @@
       .hero .bg{ padding: 18px; min-height: 460px; }
       .waSticky{ display:flex; }
       .final{ margin-bottom: 90px; }
+      .foot{ justify-content:center; text-align:center; }
     }
   </style>
 
@@ -247,20 +268,21 @@
 <body>
   <header class="top">
     <div class="topin wrap">
-      <a class="brand" href="/">
+      <a class="brand" href="/" aria-label="BRsys - Início">
         <img src="/img/favicon.png" alt="BRsys" />
         <span>BRsys</span>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Navegação">
         <a class="pill" href="/solucoes/">Soluções</a>
-        <a class="pill primary" href="#cta">Chamar no WhatsApp</a>
+        <a class="pill" href="#destaques">Destaques</a>
+        <a class="pill" href="#como-funciona">Como funciona</a>
+        <a class="pill primary" href="#cta">WhatsApp</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-
     <!-- HERO -->
     <section class="hero" aria-label="Solução BRsys">
       <div class="bg">
@@ -275,7 +297,7 @@
 
           <div class="ctaRow" id="cta">
             <a class="pill primary" target="_blank" rel="noopener"
-               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20%5BRAMO_TITULO%5D.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.">
+              href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%20Google%2FInstagram%3A%20[LINK].">
               📲 Chamar no WhatsApp
             </a>
 
@@ -288,60 +310,60 @@
       </div>
     </section>
 
-    <!-- BLOCO 2 CARDS (dor / objetivo) -->
-    <section class="section">
+    <!-- 2 CARDS (dor / objetivo) -->
+    <section class="section" aria-label="Resumo do ramo">
       <div class="grid">
         <div class="card">
           <strong>Por que este ramo converte</strong>
-          <p>[RESUMO_DA_DOR + decisao rápida + WhatsApp natural]</p>
+          <p>[RESUMO_DA_DOR — decisão rápida + WhatsApp natural]</p>
           <ul class="list">
-            <li>✅ [ponto 1]</li>
-            <li>✅ [ponto 2]</li>
-            <li>✅ [ponto 3]</li>
+            <li>✅ [PONTO_1]</li>
+            <li>✅ [PONTO_2]</li>
+            <li>✅ [PONTO_3]</li>
           </ul>
         </div>
 
         <div class="card">
           <strong>O que a página precisa ter</strong>
-          <p>[RESUMO_DO_OBJETIVO: clareza + prova + CTA]</p>
+          <p>[RESUMO_DO_OBJETIVO — clareza + prova + CTA]</p>
           <ul class="list">
             <li>✅ CTA WhatsApp visível</li>
             <li>✅ Serviços claros</li>
-            <li>✅ Local/área atendida</li>
+            <li>✅ Local / área atendida</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- TILES (destaques/serviços) -->
-    <section class="section" id="destaques">
+    <!-- TILES -->
+    <section class="section" id="destaques" aria-label="Destaques e serviços">
       <h2 style="margin:0 0 10px;">O que destacar</h2>
       <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
         4 a 8 blocos curtos. O objetivo é o cliente bater o olho e ir pro WhatsApp.
       </p>
 
-      <div class="grid tiles">
-        <div class="tile">
-          <div class="t">⚡ [Título 1]</div>
-          <div class="d">[Descrição curta]</div>
+      <div class="grid tiles" role="list">
+        <div class="tile" role="listitem">
+          <div class="t">⚡ [TÍTULO_1]</div>
+          <div class="d">[DESCRIÇÃO_CURTA]</div>
         </div>
-        <div class="tile">
-          <div class="t">📍 [Título 2]</div>
-          <div class="d">[Descrição curta]</div>
+        <div class="tile" role="listitem">
+          <div class="t">📍 [TÍTULO_2]</div>
+          <div class="d">[DESCRIÇÃO_CURTA]</div>
         </div>
-        <div class="tile">
-          <div class="t">✅ [Título 3]</div>
-          <div class="d">[Descrição curta]</div>
+        <div class="tile" role="listitem">
+          <div class="t">✅ [TÍTULO_3]</div>
+          <div class="d">[DESCRIÇÃO_CURTA]</div>
         </div>
-        <div class="tile">
-          <div class="t">💬 [Título 4]</div>
-          <div class="d">[Descrição curta]</div>
+        <div class="tile" role="listitem">
+          <div class="t">💬 [TÍTULO_4]</div>
+          <div class="d">[DESCRIÇÃO_CURTA]</div>
         </div>
       </div>
     </section>
 
-    <!-- COMO FUNCIONA (3 passos) -->
-    <section class="section" id="como-funciona">
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona" aria-label="Como funciona">
       <h2 style="margin:0 0 10px;">Como funciona (curto e direto)</h2>
       <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
         Jornada curta: Google → confiança → WhatsApp → fechamento.
@@ -368,8 +390,8 @@
       </div>
     </section>
 
-    <!-- NÃO VENDO / PARA QUEM -->
-    <section class="section">
+    <!-- QUALIFICAÇÃO -->
+    <section class="section" aria-label="Qualificação">
       <div class="grid">
         <div class="card">
           <strong>O que a BRsys NÃO vende</strong>
@@ -378,7 +400,7 @@
 
         <div class="card">
           <strong>Para quem faz sentido</strong>
-          <p>[Perfil do ramo] que precisa de apresentação e contato direto (sem intermediário).</p>
+          <p>[PERFIL_DO_RAMO] que precisa de apresentação e contato direto (sem intermediário).</p>
         </div>
       </div>
     </section>
@@ -391,18 +413,27 @@
       </div>
 
       <a class="pill primary" target="_blank" rel="noopener"
-         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20%5BRAMO_TITULO%5D.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
+        href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
         📲 Chamar no WhatsApp
       </a>
     </section>
-
   </main>
+
+  <footer aria-label="Rodapé">
+    <div class="wrap foot">
+      <span>© <span id="y"></span> BRsys • Solução: [RAMO_TITULO]</span>
+      <span>WhatsApp: +55 13 99740-8157</span>
+    </div>
+  </footer>
 
   <!-- Sticky WhatsApp (mobile) -->
   <a class="waSticky" target="_blank" rel="noopener"
-     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20%5BRAMO_TITULO%5D.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
+    href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20[Ramo]%3A%20[RAMO_TITULO].%20Meu%20neg%C3%B3cio%3A%20[NOME]%20-%20[CIDADE].%20Link%3A%20[LINK].">
     📲 WhatsApp direto
   </a>
 
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
