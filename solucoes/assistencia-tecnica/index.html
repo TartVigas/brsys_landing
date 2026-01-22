@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Assistência Técnica • Site que converte no WhatsApp | BRsys</title>
+  <meta name="description" content="Modelo BRsys para Assistência Técnica (celular e eletrônicos): página rápida, foco em WhatsApp e SEO local. Clique → orçamento → fechamento." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.brsys.com.br/solucoes/assistencia-tecnica/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Assistência Técnica • Converta cliques em orçamento no WhatsApp" />
+  <meta property="og:description" content="Modelo BRsys pronto para Assistências: foco em WhatsApp, prova visual e SEO local." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon" href="/img/favicon.png" />
+  <link rel="preload" href="/img/solucoes/assistencia.jpg" as="image" />
+
+  <!-- Global do repo -->
+  <link rel="stylesheet" href="/css/app.css?v=1" />
+
+  <!-- CSS local (seguro) -->
+  <style>
+    :root{
+      --bg:#081316;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --brand:#19d6c6;
+      --brand2:#0b8f86;
+      --shadow: 0 24px 70px rgba(0,0,0,.55);
+      --r: 18px;
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
+        radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
+
+    /* Topbar */
+    .top{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,19,22,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topin{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 12px 18px; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:.2px; }
+    .brand img{ width: 34px; height: 34px; border-radius: 10px; }
+
+    .nav{ display:flex; gap:10px; align-items:center; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .15s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
+      border-color: rgba(25,214,198,.35);
+      font-weight: 800;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: calc(var(--r) + 10px);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background:#000;
+    }
+    .hero .bg{
+      min-height: 360px;
+      padding: 26px;
+      display:flex;
+      align-items:flex-end;
+      background-image:
+        linear-gradient(90deg, rgba(8,19,22,.90) 0%, rgba(8,19,22,.80) 42%, rgba(8,19,22,.35) 75%, rgba(8,19,22,.10) 100%),
+        url("/img/solucoes/assistencia.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero .content{ max-width: 760px; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(25,214,198,.10);
+      border: 1px solid rgba(25,214,198,.25);
+      font-size: 13px;
+      color: rgba(255,255,255,.90);
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.06; }
+    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.6; font-size: 16px; }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .note{ color: rgba(255,255,255,.62); font-size: 13px; }
+
+    /* Sections */
+    .section{ padding: 26px 0 6px; }
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card{
+      grid-column: span 6;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .card strong{ display:block; margin-bottom: 8px; }
+    .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
+    .list li{ margin: 7px 0; }
+
+    .steps .step{
+      grid-column: span 4;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 16px;
+    }
+    .step .n{
+      display:inline-flex; width: 34px; height: 34px;
+      align-items:center; justify-content:center;
+      border-radius: 10px;
+      background: rgba(25,214,198,.12);
+      border: 1px solid rgba(25,214,198,.28);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .step h3{ margin: 6px 0 8px; font-size: 16px; }
+    .step p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    /* Sticky WhatsApp (mobile) */
+    .waSticky{
+      position: fixed;
+      left: 14px; right: 14px; bottom: 14px;
+      display:none;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(25,214,198,.28), rgba(25,214,198,.10));
+      border: 1px solid rgba(25,214,198,.35);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      font-weight: 900;
+      justify-content:center;
+      z-index: 60;
+    }
+
+    /* Final CTA */
+    .final{
+      margin: 18px 0 44px;
+      border-radius: calc(var(--r) + 6px);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    }
+    .final strong{ font-size: 16px; }
+    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
+
+    @media (max-width: 920px){
+      .card{ grid-column: span 12; }
+      .steps .step{ grid-column: span 12; }
+      .hero .bg{ padding: 18px; min-height: 420px; }
+      .waSticky{ display:flex; }
+      .final{ margin-bottom: 90px; }
+    }
+  </style>
+
+  <!-- JSON-LD: página de solução (genérica) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solução BRsys • Assistência Técnica",
+    "url": "https://www.brsys.com.br/solucoes/assistencia-tecnica/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BRsys",
+      "url": "https://www.brsys.com.br"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="topin wrap">
+      <a class="brand" href="/">
+        <img src="/img/favicon.png" alt="BRsys" />
+        <span>BRsys</span>
+      </a>
+
+      <nav class="nav">
+        <a class="pill" href="/solucoes/">Soluções</a>
+        <a class="pill primary" href="#cta">Chamar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" aria-label="Solução BRsys para Assistência Técnica">
+      <div class="bg">
+        <div class="content">
+          <div class="kicker">🥇 Melhor ramo atual • Conversão rápida • WhatsApp natural</div>
+          <h1>Assistência Técnica que transforma clique em orçamento no WhatsApp.</h1>
+          <p class="lead">
+            Para celular e eletrônicos: dor imediata, decisão rápida e ticket aceitável.
+            Esse ramo é perfeito para <b>fechar em 1–7 dias</b> e validar caixa.
+          </p>
+
+          <div class="ctaRow" id="cta">
+            <a class="pill primary" target="_blank" rel="noopener"
+               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20ASSIST%C3%8ANCIA%20T%C3%89CNICA.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.%20Hoje%20meu%20bot%C3%A3o%20%22site%22%20leva%20para%3A%20%5Binstagram%2Fbooking%2Ferro%2Fsem%20site%5D.">
+              📲 Chamar no WhatsApp
+            </a>
+
+            <a class="pill" href="#como-funciona">Como funciona</a>
+
+            <div class="note">Você manda nome + cidade + link. Eu respondo a direção mais curta pra converter.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUE CONVERTE -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>Por que Assistência Técnica é prioridade #1</strong>
+          <p>É o ramo onde o cliente já chega decidido: ele não “pesquisa”, ele quer resolver agora.</p>
+          <ul class="list">
+            <li>📱 Dor imediata: tela quebrada, celular parado, eletrônico travando</li>
+            <li>🧠 Dono decide rápido (sem reuniões / sem burocracia)</li>
+            <li>💬 WhatsApp é o caminho natural (foto → orçamento → ok)</li>
+            <li>💰 Ticket aceitável sem negociação longa</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Objetivo do site (BRsys)</strong>
+          <p>Não é “ter site”. É <b>converter</b>.</p>
+          <ul class="list">
+            <li>✅ Botão WhatsApp sempre visível</li>
+            <li>✅ Serviços claros (sem texto enrolado)</li>
+            <li>✅ Prova visual (bancada, antes/depois, avaliações)</li>
+            <li>✅ SEO local (bairro/cidade) para trazer tráfego orgânico</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA (3 passos) -->
+    <section class="section" id="como-funciona">
+      <h2 style="margin:0 0 10px;">Como a BRsys fecha rápido nesse ramo</h2>
+      <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
+        A estrutura é simples e direta: reduzir atrito e empurrar para o WhatsApp com clareza.
+      </p>
+
+      <div class="grid steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Entrada (Google/Instagram)</h3>
+          <p>Quem acha você no Google precisa ver em segundos: serviços, horário, localização e o botão WhatsApp.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Prova + clareza</h3>
+          <p>Fotos reais, serviços objetivos e avaliações. Sem enrolação: passa confiança e acelera o “ok”.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">3</div>
+          <h3>WhatsApp (orçamento)</h3>
+          <p>O site termina onde o dinheiro entra: WhatsApp com mensagem pronta e call-to-action forte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE NÃO VENDEMOS -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>O que a BRsys NÃO vende</strong>
+          <p>
+            “Site só pra existir”. Se não tiver objetivo (WhatsApp / orçamento / conversão),
+            a gente prefere nem pegar.
+          </p>
+        </div>
+
+        <div class="card">
+          <strong>Para quem faz sentido</strong>
+          <p>
+            Assistências que querem decisão rápida, apresentação profissional e contato direto (sem intermediário).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final" aria-label="CTA final">
+      <div>
+        <strong>Quer aplicar isso na sua assistência técnica?</strong>
+        <span>Me envie: nome do negócio + cidade + link do Google/Instagram. Eu retorno com o caminho mais curto pra converter.</span>
+      </div>
+
+      <a class="pill primary" target="_blank" rel="noopener"
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20Assist%C3%AAncia%20T%C3%A9cnica%20com%20foco%20em%20WhatsApp.">
+        📲 Chamar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- Sticky WhatsApp (mobile) -->
+  <a class="waSticky" target="_blank" rel="noopener"
+     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20ASSIST%C3%8ANCIA%20T%C3%89CNICA.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
+    📲 Orçamento no WhatsApp
+  </a>
+</body>
+</html>
