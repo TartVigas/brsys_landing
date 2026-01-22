@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Soluções BRsys • Sites por ramo com foco em WhatsApp</title>
+  <meta name="description" content="Escolha um ramo e veja a solução BRsys: páginas rápidas, profissionais e focadas em conversão via WhatsApp + SEO local." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Soluções BRsys • Sites por ramo" />
+  <meta property="og:description" content="Modelos por ramo + foco em WhatsApp + SEO local." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon" href="/img/favicon.png" />
+  <link rel="preload" href="/img/hero.jpg" as="image" />
+
+  <!-- Se você já tem CSS global, mantenha: -->
+  <link rel="stylesheet" href="/css/app.css?v=1" />
+
+  <!-- CSS local (leve e seguro) -->
+  <style>
+    :root{
+      --bg: #081316;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --brand: #19d6c6;
+      --brand2: #0b8f86;
+      --shadow: 0 24px 70px rgba(0,0,0,.55);
+      --r: 18px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
+                  radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    a{ color: inherit; text-decoration: none; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px; }
+
+    /* Topbar */
+    .top{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,19,22,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topin{ display:flex; align-items:center; justify-content:space-between; gap:14px; padding: 12px 18px; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 800; letter-spacing:.2px; }
+    .brand img{ width: 34px; height: 34px; border-radius: 10px; }
+    .nav{ display:flex; align-items:center; gap: 10px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      transition: transform .15s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
+      border-color: rgba(25,214,198,.35);
+      color: rgba(255,255,255,.95);
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: calc(var(--r) + 10px);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background: #000;
+    }
+    .hero .bg{
+      min-height: 320px;
+      background-image:
+        linear-gradient(90deg, rgba(8,19,22,.88) 0%, rgba(8,19,22,.78) 38%, rgba(8,19,22,.30) 70%, rgba(8,19,22,.10) 100%),
+        url("/img/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 26px;
+      display:flex;
+      align-items: flex-end;
+    }
+    .hero .content{ max-width: 720px; }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(25,214,198,.10);
+      border: 1px solid rgba(25,214,198,.25);
+      color: rgba(255,255,255,.90);
+      font-size: 13px;
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.06; }
+    p.lead{ margin:0 0 16px; color: var(--muted); font-size: 16px; line-height: 1.55; }
+    .ctaRow{ display:flex; flex-wrap: wrap; gap: 10px; align-items:center; }
+    .ctaNote{ color: rgba(255,255,255,.62); font-size: 13px; }
+
+    /* Section */
+    .section{ padding: 26px 0 8px; }
+    .section h2{ margin: 0 0 10px; font-size: 22px; }
+    .section .sub{ margin: 0 0 18px; color: var(--muted); line-height: 1.6; }
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      border-radius: var(--r);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      position: relative;
+      isolation: isolate;
+      min-height: 220px;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(25,214,198,.28);
+      background: rgba(255,255,255,.08);
+    }
+
+    .card .img{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.03);
+      transform: scale(1.02);
+      z-index: -2;
+    }
+    .card .shade{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(8,19,22,.86) 0%, rgba(8,19,22,.72) 55%, rgba(8,19,22,.35) 100%),
+        radial-gradient(700px 260px at 0% 100%, rgba(25,214,198,.18), transparent 60%);
+      z-index: -1;
+    }
+    .card .inner{ padding: 16px; display:flex; flex-direction:column; height:100%; gap: 10px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px; border-radius: 999px;
+      width: fit-content;
+      background: rgba(25,214,198,.10);
+      border: 1px solid rgba(25,214,198,.24);
+      font-size: 12px;
+      color: rgba(255,255,255,.90);
+    }
+    .title{ font-size: 18px; font-weight: 800; margin: 0; }
+    .desc{ margin: 0; color: rgba(255,255,255,.74); line-height: 1.5; }
+    .meta{
+      margin-top:auto;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+    }
+    .chip{
+      padding: 7px 10px; border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .go{
+      margin-left:auto;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(25,214,198,.22), rgba(25,214,198,.08));
+      border: 1px solid rgba(25,214,198,.28);
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+    }
+
+    /* Footer CTA */
+    .footerCta{
+      margin: 22px 0 32px;
+      border-radius: calc(var(--r) + 6px);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    }
+    .footerCta strong{ font-size: 16px; }
+    .footerCta span{ color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 920px){
+      .card{ grid-column: span 12; }
+      .hero .bg{ min-height: 360px; padding: 18px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BRsys",
+    "url": "https://www.brsys.com.br",
+    "logo": "https://www.brsys.com.br/img/logo.png"
+  }
+  </script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="topin wrap">
+      <a class="brand" href="/">
+        <img src="/img/favicon.png" alt="BRsys" />
+        <span>BRsys</span>
+      </a>
+
+      <nav class="nav">
+        <a class="pill" href="/">Início</a>
+        <a class="pill primary" href="#ramos">Ver ramos</a>
+        <a class="pill primary" href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20um%20site%20por%20ramo.%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D%20%7C%20Link%20Google%2FInstagram%3A%20%5Blink%5D" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Soluções BRsys">
+      <div class="bg">
+        <div class="content">
+          <div class="kicker">Modelos por ramo • Foco em WhatsApp • SEO local</div>
+          <h1>Escolha o ramo e veja a solução pronta para converter.</h1>
+          <p class="lead">
+            Páginas rápidas, profissionais e com escopo fechado.
+            A BRsys não faz “site só pra existir” — aqui é <b>clique → WhatsApp → fechamento</b>.
+          </p>
+
+          <div class="ctaRow">
+            <a class="pill primary" href="#ramos">Ver ramos agora</a>
+            <a class="pill" href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Meu%20neg%C3%B3cio%20%C3%A9%20%5Bnome%5D%20(%5Bcidade%5D).%20Link%20Google%2FInstagram%3A%20%5Blink%5D.%20Quero%20o%20diagn%C3%B3stico%20r%C3%A1pido%20e%20a%20dire%C3%A7%C3%A3o%20mais%20curta%20pra%20converter." target="_blank" rel="noopener">
+              Diagnóstico rápido
+            </a>
+            <div class="ctaNote">Você manda nome + cidade + link. Eu respondo o caminho mais curto pra converter.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ramos">
+      <h2>Ramos com maior potencial de conversão</h2>
+      <p class="sub">Clique em um ramo para ver a página completa (modelo + estrutura de conversão + CTA WhatsApp).</p>
+
+      <div class="grid">
+        <!-- 1) Assistência -->
+        <a class="card" href="/solucoes/assistencia-tecnica/" aria-label="Assistência Técnica">
+          <div class="img" style="background-image:url('/img/solucoes/assistencia.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">🥇 Melhor ramo atual</div>
+            <p class="title">Assistência Técnica</p>
+            <p class="desc">Dor imediata, decisão rápida e WhatsApp natural. Ideal pra fechar em poucos dias.</p>
+            <div class="meta">
+              <span class="chip">⚡ 1–7 dias</span>
+              <span class="chip">📱 Celular & eletrônicos</span>
+              <span class="go">Abrir solução →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 2) Serviços Urgentes -->
+        <a class="card" href="/solucoes/servicos-urgentes/" aria-label="Serviços Urgentes">
+          <div class="img" style="background-image:url('/img/solucoes/urgentes.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">⚡ Decisão muito rápida</div>
+            <p class="title">Serviços Emergenciais</p>
+            <p class="desc">Chaveiro, elétrica, hidráulica, marido de aluguel. Dor urgente fecha rápido.</p>
+            <div class="meta">
+              <span class="chip">⚡ 1–5 dias</span>
+              <span class="chip">🧰 Chaveiro • elétrica • hidráulica</span>
+              <span class="go">Abrir solução →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 3) Padaria -->
+        <a class="card" href="/solucoes/padaria/" aria-label="Padaria">
+          <div class="img" style="background-image:url('/img/solucoes/padaria.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">🍞 Alto volume local</div>
+            <p class="title">Padaria</p>
+            <p class="desc">Cardápio simples + rota + horário + WhatsApp. Perfeito pra SEO de bairro.</p>
+            <div class="meta">
+              <span class="chip">📍 SEO local</span>
+              <span class="chip">🛒 Encomendas</span>
+              <span class="go">Abrir solução →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 4) Hotelaria -->
+        <a class="card" href="/solucoes/hotelaria/" aria-label="Hotelaria">
+          <div class="img" style="background-image:url('/img/solucoes/hotelaria.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">🏨 Reservas diretas</div>
+            <p class="title">Hotelaria</p>
+            <p class="desc">Página institucional + prova visual + CTA de reserva. Menos OTA, mais direto.</p>
+            <div class="meta">
+              <span class="chip">📆 Reserva</span>
+              <span class="chip">📲 WhatsApp</span>
+              <span class="go">Abrir solução →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- 5) Clínicas -->
+        <a class="card" href="/solucoes/clinicas/" aria-label="Clínicas">
+          <div class="img" style="background-image:url('/img/solucoes/clinicas.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">🩺 Agendamento</div>
+            <p class="title">Clínicas</p>
+            <p class="desc">Serviços + convênios + prova social + WhatsApp para agendar rápido.</p>
+            <div class="meta">
+              <span class="chip">📍 Local</span>
+              <span class="chip">📅 Agenda</span>
+              <span class="go">Abrir solução →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card extra (opcional): “Seu ramo” -->
+        <a class="card" href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20um%20modelo%20de%20site%20para%20o%20ramo%3A%20%5Brama%5D%20%7C%20Neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D%20%7C%20Link%20Google%2FInstagram%3A%20%5Blink%5D" target="_blank" rel="noopener" aria-label="Pedir ramo novo">
+          <div class="img" style="background-image:url('/img/hero.jpg')"></div>
+          <div class="shade"></div>
+          <div class="inner">
+            <div class="badge">➕ Novo ramo</div>
+            <p class="title">Não achou seu ramo?</p>
+            <p class="desc">Me manda nome + cidade + link do Google/Instagram e eu te digo a direção mais curta pra converter.</p>
+            <div class="meta">
+              <span class="chip">⏱️ resposta rápida</span>
+              <span class="chip">🎯 conversão</span>
+              <span class="go">Chamar no WhatsApp →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="footerCta" aria-label="CTA final">
+      <div>
+        <strong>Quer um site por ramo com foco em WhatsApp?</strong><br/>
+        <span>Manda nome + cidade + link do Google/Instagram. Eu respondo o caminho mais curto pra converter.</span>
+      </div>
+      <a class="pill primary" href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D%20%7C%20Link%20Google%2FInstagram%3A%20%5Blink%5D.%20Quero%20um%20site%20por%20ramo%20com%20foco%20em%20WhatsApp." target="_blank" rel="noopener">
+        Chamar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- JS opcional (mínimo) -->
+  <script>
+    // Ajuste simples: destaca o card quando a pessoa volta com #ramos
+    (function(){
+      if (location.hash === '#ramos') {
+        const el = document.querySelector('#ramos');
+        if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    })();
+  </script>
+</body>
+</html>
