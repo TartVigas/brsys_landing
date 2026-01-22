@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Serviços Urgentes • Decisão Rápida no WhatsApp | BRsys</title>
+  <meta name="description" content="Modelo BRsys para serviços emergenciais (chaveiro, elétrica, hidráulica, marido de aluguel): página rápida, foco em WhatsApp e SEO local. Fecha em 1–5 dias." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.brsys.com.br/solucoes/servicos-urgentes/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Serviços Urgentes • Dor imediata → WhatsApp → fechamento" />
+  <meta property="og:description" content="Chaveiro, elétrica, hidráulica e marido de aluguel: modelo BRsys pronto para conversão rápida via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon" href="/img/favicon.png" />
+  <link rel="preload" href="/img/solucoes/urgentes.jpg" as="image" />
+
+  <!-- Global do repo -->
+  <link rel="stylesheet" href="/css/app.css?v=1" />
+
+  <!-- CSS local (seguro) -->
+  <style>
+    :root{
+      --bg:#081316;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --brand:#19d6c6;
+      --brand2:#0b8f86;
+      --shadow: 0 24px 70px rgba(0,0,0,.55);
+      --r: 18px;
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
+        radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
+
+    /* Topbar */
+    .top{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,19,22,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topin{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 12px 18px; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:.2px; }
+    .brand img{ width: 34px; height: 34px; border-radius: 10px; }
+
+    .nav{ display:flex; gap:10px; align-items:center; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .15s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
+      border-color: rgba(25,214,198,.35);
+      font-weight: 800;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: calc(var(--r) + 10px);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background:#000;
+    }
+    .hero .bg{
+      min-height: 380px;
+      padding: 26px;
+      display:flex;
+      align-items:flex-end;
+      background-image:
+        linear-gradient(90deg, rgba(8,19,22,.90) 0%, rgba(8,19,22,.80) 42%, rgba(8,19,22,.35) 75%, rgba(8,19,22,.10) 100%),
+        url("/img/solucoes/urgentes.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero .content{ max-width: 820px; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(25,214,198,.10);
+      border: 1px solid rgba(25,214,198,.25);
+      font-size: 13px;
+      color: rgba(255,255,255,.90);
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.06; }
+    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.6; font-size: 16px; }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .note{ color: rgba(255,255,255,.62); font-size: 13px; }
+
+    /* Sections */
+    .section{ padding: 26px 0 6px; }
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card{
+      grid-column: span 6;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .card strong{ display:block; margin-bottom: 8px; }
+    .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
+    .list li{ margin: 7px 0; }
+
+    .tiles .tile{
+      grid-column: span 3;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 14px;
+      min-height: 92px;
+    }
+    .tile .t{ font-weight: 900; margin-bottom: 6px; }
+    .tile .d{ color: rgba(255,255,255,.74); line-height:1.45; font-size: 13px; }
+
+    .steps .step{
+      grid-column: span 4;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 16px;
+    }
+    .step .n{
+      display:inline-flex; width: 34px; height: 34px;
+      align-items:center; justify-content:center;
+      border-radius: 10px;
+      background: rgba(25,214,198,.12);
+      border: 1px solid rgba(25,214,198,.28);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .step h3{ margin: 6px 0 8px; font-size: 16px; }
+    .step p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    /* Sticky WhatsApp (mobile) */
+    .waSticky{
+      position: fixed;
+      left: 14px; right: 14px; bottom: 14px;
+      display:none;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(25,214,198,.28), rgba(25,214,198,.10));
+      border: 1px solid rgba(25,214,198,.35);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      font-weight: 900;
+      justify-content:center;
+      z-index: 60;
+    }
+
+    /* Final CTA */
+    .final{
+      margin: 18px 0 44px;
+      border-radius: calc(var(--r) + 6px);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    }
+    .final strong{ font-size: 16px; }
+    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
+
+    @media (max-width: 980px){
+      .card{ grid-column: span 12; }
+      .tiles .tile{ grid-column: span 6; }
+      .steps .step{ grid-column: span 12; }
+      .hero .bg{ padding: 18px; min-height: 440px; }
+      .waSticky{ display:flex; }
+      .final{ margin-bottom: 90px; }
+    }
+  </style>
+
+  <!-- JSON-LD: página de solução (genérica) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solução BRsys • Serviços Urgentes",
+    "url": "https://www.brsys.com.br/solucoes/servicos-urgentes/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BRsys",
+      "url": "https://www.brsys.com.br"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="topin wrap">
+      <a class="brand" href="/">
+        <img src="/img/favicon.png" alt="BRsys" />
+        <span>BRsys</span>
+      </a>
+
+      <nav class="nav">
+        <a class="pill" href="/solucoes/">Soluções</a>
+        <a class="pill primary" href="#cta">Chamar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" aria-label="Solução BRsys para Serviços Urgentes">
+      <div class="bg">
+        <div class="content">
+          <div class="kicker">⚡ Ramo de conversão muito rápida • Dor urgente • Decisão imediata</div>
+          <h1>Serviços Emergenciais que fecham rápido no WhatsApp.</h1>
+          <p class="lead">
+            Chaveiro, elétrica, hidráulica e marido de aluguel.
+            Aqui o cliente não quer “explicação” — ele quer <b>resolver agora</b>.
+            Perfeito para caixa e validação com fechamento em <b>1–5 dias</b>.
+          </p>
+
+          <div class="ctaRow" id="cta">
+            <a class="pill primary" target="_blank" rel="noopener"
+               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20SERVI%C3%87OS%20URGENTES.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Servi%C3%A7os%3A%20%5Bchaveiro%2Fel%C3%A9trica%2Fhidr%C3%A1ulica%2Fmarido%20de%20aluguel%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.">
+              📲 Chamar no WhatsApp
+            </a>
+
+            <a class="pill" href="#servicos">Serviços</a>
+            <a class="pill" href="#como-funciona">Como funciona</a>
+
+            <div class="note">Você manda nome + cidade + link. Eu retorno com o caminho mais curto pra converter.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUE CONVERTE -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>Por que “Serviços Urgentes” entra no TOP 5</strong>
+          <p>É um ramo de decisão imediata: dor urgente e pouca comparação.</p>
+          <ul class="list">
+            <li>🚨 Dor urgente (porta travada, curto, vazamento, torneira estourada)</li>
+            <li>⚡ Decisão imediata (cliente não quer perder tempo)</li>
+            <li>💬 WhatsApp vira central (foto → preço → envio do técnico)</li>
+            <li>💰 Ticket menor, mas fecha rápido (ótimo para caixa/validação)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Objetivo do site (BRsys)</strong>
+          <p>Ser um “botão de resolução rápida” no Google.</p>
+          <ul class="list">
+            <li>✅ WhatsApp fixo e mensagem pronta</li>
+            <li>✅ Áreas atendidas e tempo médio de chegada</li>
+            <li>✅ Serviços claros e sem texto longo</li>
+            <li>✅ SEO local (bairro/cidade) para captar urgência orgânica</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS (tiles) -->
+    <section class="section" id="servicos">
+      <h2 style="margin:0 0 10px;">Serviços que mais convertem</h2>
+      <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
+        O segredo aqui é clareza: a pessoa bate o olho e já entende que você resolve.
+      </p>
+
+      <div class="grid tiles">
+        <div class="tile">
+          <div class="t">🔑 Chaveiro</div>
+          <div class="d">Porta travada, chave perdida, abertura rápida, troca de segredo.</div>
+        </div>
+        <div class="tile">
+          <div class="t">⚡ Elétrica</div>
+          <div class="d">Curto, disjuntor caindo, tomada queimando, troca urgente.</div>
+        </div>
+        <div class="tile">
+          <div class="t">💧 Hidráulica</div>
+          <div class="d">Vazamento, registro, torneira, caixa acoplada, cano estourado.</div>
+        </div>
+        <div class="tile">
+          <div class="t">🧰 Marido de Aluguel</div>
+          <div class="d">Pequenos reparos, instalação, prateleiras, suportes, ajustes.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA (3 passos) -->
+    <section class="section" id="como-funciona">
+      <h2 style="margin:0 0 10px;">Como a BRsys acelera o fechamento (1–5 dias)</h2>
+      <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
+        O cliente está com pressa. Então o site precisa ser um funil curto e direto.
+      </p>
+
+      <div class="grid steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Google mostra você</h3>
+          <p>O cliente pesquisa “chaveiro agora”, “encanador urgente”, “eletricista perto”. SEO local faz o resto.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Clareza em 10 segundos</h3>
+          <p>Serviços + área atendida + tempo médio + prova. Sem enrolação, sem “texto institucional”.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">3</div>
+          <h3>WhatsApp com mensagem pronta</h3>
+          <p>O site já empurra o cliente para enviar foto, localização e tipo de urgência. Fecha rápido.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE NÃO VENDEMOS / PARA QUEM -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>O que a BRsys NÃO vende</strong>
+          <p>
+            “Site só pra existir”. Aqui o site tem função: gerar chamado e orçamento no WhatsApp.
+          </p>
+        </div>
+
+        <div class="card">
+          <strong>Para quem faz sentido</strong>
+          <p>
+            Profissionais que atendem urgência e querem aparecer no Google com uma página objetiva e profissional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final" aria-label="CTA final">
+      <div>
+        <strong>Quer aplicar isso nos seus serviços urgentes?</strong>
+        <span>Manda nome + cidade + link do Google/Instagram e quais serviços você atende. Eu retorno com a direção mais curta pra converter.</span>
+      </div>
+
+      <a class="pill primary" target="_blank" rel="noopener"
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Atendo%3A%20%5Bchaveiro%2Fel%C3%A9trica%2Fhidr%C3%A1ulica%2Fmarido%20de%20aluguel%5D.%20Link%3A%20%5Blink%5D.%20Quero%20a%20solu%C3%A7%C3%A3o%20BRsys%20com%20foco%20em%20WhatsApp.">
+        📲 Chamar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- Sticky WhatsApp (mobile) -->
+  <a class="waSticky" target="_blank" rel="noopener"
+     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20SERVI%C3%87OS%20URGENTES.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Atendo%3A%20%5Bchaveiro%2Fel%C3%A9trica%2Fhidr%C3%A1ulica%2Fmarido%20de%20aluguel%5D.%20Link%3A%20%5Blink%5D.">
+    📲 Atendimento urgente no WhatsApp
+  </a>
+</body>
+</html>
