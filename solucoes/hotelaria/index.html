@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hotelaria • Reservas Diretas no WhatsApp | BRsys</title>
+  <meta name="description" content="Modelo BRsys para Hotelaria: página institucional rápida com fotos, prova social e CTA de reserva no WhatsApp + SEO local. Menos OTA, mais direto." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.brsys.com.br/solucoes/hotelaria/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hotelaria • Transforme buscas em reservas diretas no WhatsApp" />
+  <meta property="og:description" content="Modelo BRsys para Hotéis/Pousadas: foco em WhatsApp, prova visual e SEO local para reduzir dependência de OTAs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="icon" href="/img/favicon.png" />
+  <link rel="preload" href="/img/solucoes/hotelaria.jpg" as="image" />
+
+  <!-- Global do repo -->
+  <link rel="stylesheet" href="/css/app.css?v=1" />
+
+  <style>
+    :root{
+      --bg:#081316;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --brand:#19d6c6;
+      --brand2:#0b8f86;
+      --shadow: 0 24px 70px rgba(0,0,0,.55);
+      --r: 18px;
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
+        radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
+
+    /* Topbar */
+    .top{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(8,19,22,.62);
+      border-bottom: 1px solid var(--line);
+    }
+    .topin{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 12px 18px; }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight: 900; letter-spacing:.2px; }
+    .brand img{ width: 34px; height: 34px; border-radius: 10px; }
+    .nav{ display:flex; gap:10px; align-items:center; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .15s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
+      border-color: rgba(25,214,198,.35);
+      font-weight: 800;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: calc(var(--r) + 10px);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background:#000;
+    }
+    .hero .bg{
+      min-height: 400px;
+      padding: 26px;
+      display:flex;
+      align-items:flex-end;
+      background-image:
+        linear-gradient(90deg, rgba(8,19,22,.92) 0%, rgba(8,19,22,.82) 45%, rgba(8,19,22,.35) 78%, rgba(8,19,22,.10) 100%),
+        url("/img/solucoes/hotelaria.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero .content{ max-width: 860px; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(25,214,198,.10);
+      border: 1px solid rgba(25,214,198,.25);
+      font-size: 13px;
+      color: rgba(255,255,255,.90);
+    }
+    h1{ margin: 14px 0 10px; font-size: clamp(26px, 3.2vw, 44px); line-height: 1.06; }
+    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.6; font-size: 16px; }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .note{ color: rgba(255,255,255,.62); font-size: 13px; }
+
+    /* Sections */
+    .section{ padding: 26px 0 6px; }
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+
+    .card{
+      grid-column: span 6;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .card strong{ display:block; margin-bottom: 8px; }
+    .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
+    .list li{ margin: 7px 0; }
+
+    /* “Blocos” de prova */
+    .tiles .tile{
+      grid-column: span 3;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 14px;
+      min-height: 92px;
+    }
+    .tile .t{ font-weight: 900; margin-bottom: 6px; }
+    .tile .d{ color: rgba(255,255,255,.74); line-height:1.45; font-size: 13px; }
+
+    /* Steps */
+    .steps .step{
+      grid-column: span 4;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 16px;
+    }
+    .step .n{
+      display:inline-flex; width: 34px; height: 34px;
+      align-items:center; justify-content:center;
+      border-radius: 10px;
+      background: rgba(25,214,198,.12);
+      border: 1px solid rgba(25,214,198,.28);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .step h3{ margin: 6px 0 8px; font-size: 16px; }
+    .step p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
+
+    /* Sticky WhatsApp (mobile) */
+    .waSticky{
+      position: fixed;
+      left: 14px; right: 14px; bottom: 14px;
+      display:none;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(25,214,198,.28), rgba(25,214,198,.10));
+      border: 1px solid rgba(25,214,198,.35);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      font-weight: 900;
+      justify-content:center;
+      z-index: 60;
+    }
+
+    /* Final CTA */
+    .final{
+      margin: 18px 0 44px;
+      border-radius: calc(var(--r) + 6px);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
+      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
+    }
+    .final strong{ font-size: 16px; }
+    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
+
+    @media (max-width: 980px){
+      .card{ grid-column: span 12; }
+      .tiles .tile{ grid-column: span 6; }
+      .steps .step{ grid-column: span 12; }
+      .hero .bg{ padding: 18px; min-height: 460px; }
+      .waSticky{ display:flex; }
+      .final{ margin-bottom: 90px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Solução BRsys • Hotelaria",
+    "url": "https://www.brsys.com.br/solucoes/hotelaria/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BRsys",
+      "url": "https://www.brsys.com.br"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="topin wrap">
+      <a class="brand" href="/">
+        <img src="/img/favicon.png" alt="BRsys" />
+        <span>BRsys</span>
+      </a>
+
+      <nav class="nav">
+        <a class="pill" href="/solucoes/">Soluções</a>
+        <a class="pill primary" href="#cta">Reservar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" aria-label="Solução BRsys para Hotelaria">
+      <div class="bg">
+        <div class="content">
+          <div class="kicker">🏨 Reservas diretas • Menos OTA • SEO local</div>
+          <h1>Hotelaria que transforma buscas em reservas diretas no WhatsApp.</h1>
+          <p class="lead">
+            Se o botão “site” leva para Instagram ou Booking, você perde conversão e paga comissão.
+            A BRsys cria uma página objetiva: <b>prova + clareza + WhatsApp</b>.
+          </p>
+
+          <div class="ctaRow" id="cta">
+            <a class="pill primary" target="_blank" rel="noopener"
+               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20HOTELARIA.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Hoje%20meu%20bot%C3%A3o%20%22site%22%20leva%20para%3A%20%5Binstagram%2Fbooking%2Fcloudbeds%2Ferros%2Fsem%20site%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.">
+              📲 Reservar no WhatsApp
+            </a>
+
+            <a class="pill" href="#provas">O que precisa ter</a>
+            <a class="pill" href="#como-funciona">Como funciona</a>
+
+            <div class="note">Você manda nome + cidade + link. Eu retorno com o caminho mais curto pra reserva direta.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUE CONVERTE -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>Por que hotelaria precisa de uma página própria</strong>
+          <p>Porque antes do WhatsApp, o hóspede quer confiança (rápido).</p>
+          <ul class="list">
+            <li>📸 Prova visual: fotos reais e bem organizadas</li>
+            <li>📍 Localização: mapa/rota/bairro (SEO local)</li>
+            <li>🛏️ Oferta clara: tipos de quarto, check-in/out, regras</li>
+            <li>📲 Contato direto: WhatsApp sem intermediários</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Dores mais comuns que a BRsys resolve</strong>
+          <p>O que está matando sua conversão hoje:</p>
+          <ul class="list">
+            <li>➡️ Botão “site” levando para Instagram (não ranqueia / fraco para reserva)</li>
+            <li>➡️ Botão “site” levando para Booking (comissão + perde contato direto)</li>
+            <li>➡️ Link quebrado / DNS / página de erro (perda imediata de hóspedes)</li>
+            <li>➡️ Só Channel Manager (Cloudbeds etc.) sem institucional/SEO</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE PRECISA TER -->
+    <section class="section" id="provas">
+      <h2 style="margin:0 0 10px;">O que a página precisa ter (pra reserva direta)</h2>
+      <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
+        O hóspede decide rápido, mas ele precisa de evidência. Aqui é o “kit confiança”.
+      </p>
+
+      <div class="grid tiles">
+        <div class="tile">
+          <div class="t">📸 Fotos reais</div>
+          <div class="d">Quartos, café, fachada, piscina/área comum. Sem confusão, sem excesso.</div>
+        </div>
+        <div class="tile">
+          <div class="t">🛏️ Tipos de quarto</div>
+          <div class="d">Casal/família, capacidade, comodidades e destaque do principal.</div>
+        </div>
+        <div class="tile">
+          <div class="t">📍 Local + rota</div>
+          <div class="d">Bairro/cidade, pontos próximos e botão “como chegar”.</div>
+        </div>
+        <div class="tile">
+          <div class="t">✅ Prova social</div>
+          <div class="d">Avaliações do Google, depoimentos curtos e selos de confiança.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <h2 style="margin:0 0 10px;">Como a BRsys reduz OTA e aumenta reserva direta</h2>
+      <p style="margin:0 0 16px; color: rgba(255,255,255,.74); line-height:1.6;">
+        O segredo é encurtar a jornada e remover intermediários.
+      </p>
+
+      <div class="grid steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>SEO local + Google</h3>
+          <p>Você aparece para “pousada em [cidade]” e variações. A página é leve e indexável.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Confiança em 15 segundos</h3>
+          <p>Fotos, quartos, localização, regras e diferenciais. O hóspede entende rápido.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>WhatsApp fecha</h3>
+          <p>Mensagem pronta pedindo datas e quantidade de hóspedes. Você fecha direto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE NÃO VENDEMOS / PARA QUEM -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <strong>O que a BRsys NÃO vende</strong>
+          <p>
+            Página “bonita” que não converte. Se não tiver objetivo (reserva direta no WhatsApp), nem faz sentido.
+          </p>
+        </div>
+
+        <div class="card">
+          <strong>Para quem faz sentido</strong>
+          <p>
+            Hotéis, pousadas, chalés e hospedagens que querem <b>menos comissão</b> e <b>mais contato direto</b> vindo do Google.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final" aria-label="CTA final">
+      <div>
+        <strong>Quer reserva direta no WhatsApp (sem intermediário)?</strong>
+        <span>Manda nome + cidade + link do Google/Instagram e como está seu botão “site”. Eu retorno com o caminho mais curto pra converter.</span>
+      </div>
+
+      <a class="pill primary" target="_blank" rel="noopener"
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Sou%20HOTELARIA%20e%20quero%20reserva%20direta.%20Meu%20bot%C3%A3o%20%22site%22%20leva%20para%3A%20%5Binstagram%2Fbooking%2Ferro%2Fsem%20site%5D.%20Link%3A%20%5Blink%5D.">
+        📲 Reservar no WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <!-- Sticky WhatsApp (mobile) -->
+  <a class="waSticky" target="_blank" rel="noopener"
+     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20a%20solu%C3%A7%C3%A3o%20de%20HOTELARIA.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
+    📲 Reserva direta no WhatsApp
+  </a>
+</body>
+</html>
