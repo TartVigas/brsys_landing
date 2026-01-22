@@ -1,0 +1,19 @@
+/* theme.css — overrides por ramo/cliente
+   Use este arquivo para mudar identidade SEM tocar no app.css.
+*/
+
+:root{
+  /* Paleta */
+  --brand:#19d6c6;
+  --brand2:#0b8f86;
+
+  /* Fundo (se quiser puxar mais pro verde/azulado) */
+  --bg:#081316;
+
+  /* Hero local (pode trocar por ramo) */
+  /* Exemplo: --hero-img: url("/img/solucoes/hotelaria.jpg"); */
+  /* --hero-img: url("/img/solucoes/[HERO_IMG]"); */
+
+  /* Exemplo de gradiente do hero (mais/menos “verde”) */
+  /* --hero-grad: linear-gradient(90deg, rgba(8,19,22,.92) 0%, rgba(8,19,22,.80) 45%, rgba(8,19,22,.30) 78%, rgba(8,19,22,.10) 100%); */
+}
