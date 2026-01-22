@@ -1,11 +1,16 @@
-<url>
-  <loc>https://www.brsys.com.br/fortessaboresdamanha/</loc>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-  <loc>https://www.brsys.com.br/prhotels/</loc>
-</url>
+  <url>
+    <loc>https://www.brsys.com.br/fortessaboresdamanha/</loc>
+  </url>
 
-<url>
-  <loc>https://www.brsys.com.br/renata/</loc>
-</url>
+  <url>
+    <loc>https://www.brsys.com.br/prhotels/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/renata/</loc>
+  </url>
+
+</urlset>
