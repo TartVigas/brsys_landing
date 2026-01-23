@@ -380,6 +380,17 @@ p{ margin:0; }
   font-size:13px;
 }
 
+/* =========================================================
+   FIX GRID-SPAN (necessário para /solucoes/)
+   Mantém o comportamento antigo: 2 colunas pra .card e 3 pra .pick
+========================================================= */
+
+.card{ grid-column: span 6; }
+.pick{ grid-column: span 4; }
+
+/* quando você quiser card único (ex: valores), força 12 */
+.card.single{ grid-column: span 12; }
+
 /* ==============================
    FOOTER
 ============================== */
