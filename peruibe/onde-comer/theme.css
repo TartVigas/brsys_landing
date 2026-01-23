@@ -1,1 +1,222 @@
+/* Peruíbe • Onde Comer — Theme (sobre app.css) */
+
+:root{
+  --oc-max: 1120px;
+  --oc-r: 18px;
+
+  --oc-bg: rgba(255,255,255,.04);
+  --oc-line: rgba(255,255,255,.10);
+  --oc-muted: rgba(255,255,255,.70);
+  --oc-shadow: 0 18px 60px rgba(0,0,0,.35);
+
+  --oc-brand: #1fe3c0;     /* teal */
+  --oc-brand2: #66f2da;
+}
+
+.oc-wrap{ max-width: var(--oc-max); margin: 0 auto; padding: 0 18px; }
+.oc-main{ padding-top: 18px; }
+
+/* topbar */
+.oc-top{
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.35);
+  border-bottom: 1px solid var(--oc-line);
+}
+.oc-top .oc-wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 18px;
+}
+.oc-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color: inherit; }
+.oc-badge{
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--oc-line);
+  background: rgba(255,255,255,.04);
+}
+.oc-brandText{ font-weight: 700; opacity: .9; }
+
+.oc-nav{ display:flex; gap:10px; align-items:center; }
+.oc-navlink{
+  text-decoration:none;
+  color: rgba(255,255,255,.85);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.oc-navlink:hover{ border-color: var(--oc-line); background: rgba(255,255,255,.03); }
+.oc-cta{
+  border-color: rgba(31,227,192,.35);
+  background: rgba(31,227,192,.10);
+}
+
+/* hero */
+.oc-hero{ padding: 34px 0 18px; }
+.oc-kicker{
+  display:inline-block;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--oc-muted);
+  border: 1px solid var(--oc-line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,.03);
+}
+.oc-h1{
+  margin: 14px 0 10px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+}
+.oc-highlight{ color: var(--oc-brand2); }
+.oc-lead{
+  max-width: 860px;
+  color: rgba(255,255,255,.86);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.oc-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--oc-line);
+  text-decoration:none;
+  color: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.03);
+}
+.btn:hover{ background: rgba(255,255,255,.05); }
+.btn-primary{
+  border-color: rgba(31,227,192,.45);
+  background: rgba(31,227,192,.14);
+  color: rgba(255,255,255,.95);
+}
+.btn-ghost{ background: transparent; }
+
+.oc-info{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 14px; }
+.oc-chip{
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--oc-line);
+  color: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.03);
+}
+
+/* sections */
+.oc-section{ padding: 22px 0; }
+.oc-grid2{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 14px;
+}
+@media (max-width: 900px){
+  .oc-grid2{ grid-template-columns: 1fr; }
+  .oc-nav{ display:none; }
+}
+
+.oc-card{
+  border: 1px solid var(--oc-line);
+  border-radius: var(--oc-r);
+  background: rgba(255,255,255,.03);
+  box-shadow: var(--oc-shadow);
+  padding: 16px;
+}
+.oc-cardAccent{
+  border-color: rgba(31,227,192,.25);
+  background: rgba(31,227,192,.06);
+}
+.oc-h2{ margin: 0 0 10px; font-size: 18px; }
+.oc-h3{ margin: 0; font-size: 16px; }
+.oc-text{ margin: 10px 0 0; color: rgba(255,255,255,.86); line-height: 1.55; }
+.oc-muted{ margin: 6px 0 0; color: var(--oc-muted); }
+.oc-list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.84); line-height: 1.65; }
+.oc-mini{ margin: 10px 0 0; color: rgba(255,255,255,.75); font-size: 12.5px; line-height: 1.5; }
+
+/* tabs */
+.oc-headRow{ display:flex; align-items:flex-end; justify-content:space-between; gap: 12px; flex-wrap:wrap; }
+.oc-tabs{ display:flex; gap: 8px; flex-wrap:wrap; margin-top: 12px; }
+
+.oc-tab{
+  cursor:pointer;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--oc-line);
+  background: rgba(255,255,255,.03);
+  color: rgba(255,255,255,.86);
+}
+.oc-tab:hover{ background: rgba(255,255,255,.05); }
+.oc-tab.is-active{
+  border-color: rgba(31,227,192,.45);
+  background: rgba(31,227,192,.14);
+}
+
+/* cards list */
+.oc-cards{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 980px){
+  .oc-cards{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .oc-cards{ grid-template-columns: 1fr; }
+}
+
+.oc-item{
+  border: 1px solid var(--oc-line);
+  border-radius: var(--oc-r);
+  background: rgba(255,255,255,.03);
+  padding: 14px;
+  box-shadow: var(--oc-shadow);
+}
+.oc-itemTop{
+  display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+}
+.oc-meta{
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,.72);
+}
+.oc-tag{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(31,227,192,.35);
+  background: rgba(31,227,192,.10);
+  color: rgba(255,255,255,.88);
+}
+
+/* links */
+.oc-links{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 12px; }
+.oc-link{
+  text-decoration:none;
+  color: rgba(255,255,255,.88);
+  border-bottom: 1px dashed rgba(31,227,192,.35);
+  padding-bottom: 2px;
+}
+.oc-link:hover{ color: #fff; border-bottom-color: rgba(31,227,192,.7); }
+
+.oc-footerNote{
+  margin-top: 14px;
+  border-top: 1px solid var(--oc-line);
+  padding-top: 14px;
+}
+
+/* footer */
+.oc-foot{
+  border-top: 1px solid var(--oc-line);
+  margin-top: 18px;
+  padding: 18px 0 28px;
+  background: rgba(0,0,0,.25);
+}
+.oc-footRow{ display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap; }
+.oc-footLinks{ display:flex; gap: 12px; flex-wrap:wrap; }
+.oc-footLink{ color: rgba(255,255,255,.78); text-decoration:none; }
+.oc-footLink:hover{ color: rgba(255,255,255,.95); }
 
