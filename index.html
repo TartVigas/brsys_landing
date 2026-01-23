@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BRsys • Sites por ramo com foco em WhatsApp (SEO local)</title>
+  <title>BRsys • Sites por ramo + SEO local (WhatsApp direto)</title>
   <meta name="description" content="Sites por ramo com escopo fechado: páginas rápidas e profissionais focadas em conversão via WhatsApp + SEO local. Implantação a partir de R$ 490." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.brsys.com.br/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="BRsys • Sites por ramo com foco em WhatsApp" />
-  <meta property="og:description" content="Implantação a partir de R$ 490. Páginas rápidas, profissionais e com escopo fechado. Clique → WhatsApp → fechamento." />
+  <meta property="og:title" content="BRsys • Sites por ramo + SEO local" />
+  <meta property="og:description" content="Páginas rápidas, escopo fechado e foco em WhatsApp. Clique → mensagem → fechamento." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:url" content="https://www.brsys.com.br/" />
@@ -19,17 +19,14 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Extras -->
   <meta name="theme-color" content="#081316" />
   <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" href="/img/favicon.png" />
   <link rel="preload" href="/img/hero.jpg" as="image" />
-
-  <!-- CSS global do repo (se existir) -->
   <link rel="stylesheet" href="/css/app.css?v=1" />
 
-  <!-- CSS local (padrão “soluções”) -->
+  <!-- CSS local (home BRsys) -->
   <style>
     :root{
       --bg:#081316;
@@ -48,7 +45,7 @@
     html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica;
       background:
         radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
         radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
@@ -58,7 +55,7 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
 
-    /* Topbar */
+    /* Header */
     .top{
       position: sticky; top:0; z-index: 50;
       backdrop-filter: blur(10px);
@@ -71,20 +68,17 @@
     }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight: 900; letter-spacing:.2px;
+      font-weight: 900;
     }
     .brand img{ width: 34px; height: 34px; border-radius: 10px; }
-    .nav{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
     .pill{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex; align-items:center;
       padding: 10px 14px; border-radius: 999px;
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
-      transition: transform .15s ease, background .15s ease;
-      white-space: nowrap;
-      font-weight: 700;
+      font-weight: 800;
     }
-    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
     .pill.primary{
       background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
       border-color: rgba(25,214,198,.35);
@@ -98,7 +92,6 @@
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.12);
       box-shadow: var(--shadow);
-      background:#000;
     }
     .hero .bg{
       min-height: 460px;
@@ -111,168 +104,23 @@
       background-size: cover;
       background-position: center;
     }
-    .hero .content{ max-width: 920px; }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 8px 12px; border-radius: 999px;
-      background: rgba(25,214,198,.10);
-      border: 1px solid rgba(25,214,198,.25);
-      font-size: 13px;
-      color: rgba(255,255,255,.90);
-    }
     h1{ margin: 14px 0 10px; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.06; }
-    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.6; font-size: 16px; }
-    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-    .note{ color: rgba(255,255,255,.62); font-size: 13px; }
+    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.6; }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; }
 
     /* Sections */
     .section{ padding: 26px 0 6px; }
     .section h2{ margin:0 0 10px; font-size: 22px; }
-    .section .sub{ margin:0 0 16px; color: rgba(255,255,255,.74); line-height: 1.6; }
-
-    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-
-    .card{
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
-      padding: 16px;
-    }
-    .card strong{ display:block; margin-bottom: 8px; font-weight: 900; }
-    .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
-
-    .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
-    .list li{ margin: 7px 0; }
-
-    /* Cards imagem (padrão soluções) */
-    .pick{
-      grid-column: span 4;
-      border-radius: var(--r);
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-      position: relative;
-      isolation: isolate;
-      min-height: 220px;
-    }
-    .pick:hover{
-      transform: translateY(-2px);
-      border-color: rgba(25,214,198,.28);
-      background: rgba(255,255,255,.08);
-    }
-    .pick .img{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05) contrast(1.03);
-      transform: scale(1.02);
-      z-index: -2;
-    }
-    .pick .shade{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg, rgba(8,19,22,.86) 0%, rgba(8,19,22,.72) 55%, rgba(8,19,22,.35) 100%),
-        radial-gradient(700px 260px at 0% 100%, rgba(25,214,198,.18), transparent 60%);
-      z-index: -1;
-    }
-    .pick .inner{ padding: 16px; display:flex; flex-direction:column; height:100%; gap: 10px; }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 7px 10px; border-radius: 999px;
-      width: fit-content;
-      background: rgba(25,214,198,.10);
-      border: 1px solid rgba(25,214,198,.24);
-      font-size: 12px;
-      color: rgba(255,255,255,.90);
-      font-weight: 800;
-    }
-    .title{ font-size: 18px; font-weight: 900; margin: 0; }
-    .desc{ margin: 0; color: rgba(255,255,255,.74); line-height: 1.5; }
-    .meta{
-      margin-top:auto;
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-      color: rgba(255,255,255,.72);
-      font-size: 13px;
-    }
-    .chip{
-      padding: 7px 10px; border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-    .go{
-      margin-left:auto;
-      padding: 8px 12px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(25,214,198,.22), rgba(25,214,198,.08));
-      border: 1px solid rgba(25,214,198,.28);
-      color: rgba(255,255,255,.92);
-      font-weight: 900;
-    }
-
-    /* Steps */
-    .steps .step{
-      grid-column: span 4;
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      padding: 16px;
-    }
-    .step .n{
-      display:inline-flex; width: 34px; height: 34px;
-      align-items:center; justify-content:center;
-      border-radius: 10px;
-      background: rgba(25,214,198,.12);
-      border: 1px solid rgba(25,214,198,.28);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-    .step h3{ margin: 6px 0 8px; font-size: 16px; }
-    .step p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.55; }
-
-    /* Final CTA */
-    .final{
-      margin: 18px 0 8px;
-      border-radius: calc(var(--r) + 6px);
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
-      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
-    }
-    .final strong{ font-size: 16px; }
-    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; }
+    .section .sub{ margin:0 0 16px; color: rgba(255,255,255,.74); }
 
     /* Footer */
     footer{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; }
-    .footGrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 12px; }
+    .footGrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
     .footCol{ grid-column: span 6; }
     .mini{ color: rgba(255,255,255,.62); font-size: 13px; line-height: 1.55; }
 
-    /* Sticky WhatsApp (mobile) */
-    .waSticky{
-      position: fixed;
-      left: 14px; right: 14px; bottom: 14px;
-      display:none;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(25,214,198,.28), rgba(25,214,198,.10));
-      border: 1px solid rgba(25,214,198,.35);
-      box-shadow: 0 18px 55px rgba(0,0,0,.45);
-      font-weight: 900;
-      justify-content:center;
-      z-index: 60;
-      text-align:center;
-    }
-
     @media (max-width: 980px){
-      .hero .bg{ padding: 18px; min-height: 560px; }
-      .pick{ grid-column: span 12; }
-      .steps .step{ grid-column: span 12; }
       .footCol{ grid-column: span 12; }
-      .waSticky{ display:flex; }
-      .final{ margin-bottom: 90px; }
     }
   </style>
 
@@ -284,433 +132,88 @@
     "name":"BRsys",
     "url":"https://www.brsys.com.br",
     "logo":"https://www.brsys.com.br/img/logo.png",
-    "sameAs":[]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"BRsys",
-    "url":"https://www.brsys.com.br"
+    "telephone":"+5513997408157",
+    "areaServed":"BR",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "telephone":"+5513997408157",
+      "availableLanguage":"Portuguese"
+    }
   }
   </script>
 </head>
 
 <body>
-  <header class="top">
-    <div class="topin wrap">
-      <a class="brand" href="/" aria-label="BRsys - Início">
-        <img src="/img/favicon.png" alt="BRsys" />
-        <span>BRsys</span>
+
+<header class="top">
+  <div class="topin wrap">
+    <a class="brand" href="/">
+      <img src="/img/favicon.png" alt="BRsys" />
+      <span>BRsys</span>
+    </a>
+
+    <nav class="nav">
+      <a class="pill" href="#solucoes">Soluções</a>
+      <a class="pill" href="#planos">Valores</a>
+      <a class="pill" href="#como">Como funciona</a>
+      <a class="pill" href="/peruibe/onde-ficar/">Guias</a>
+      <a class="pill primary" target="_blank" rel="noopener"
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20uma%20avalia%C3%A7%C3%A3o%20r%C3%A1pida.%20Neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D">
+        WhatsApp
       </a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="nav" aria-label="Navegação principal">
-        <a class="pill" href="#solucoes">Soluções</a>
-        <a class="pill" href="#planos">Valores</a>
-        <a class="pill" href="#como">Como funciona</a>
-        <a class="pill primary" target="_blank" rel="noopener"
-           href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20um%20site%20por%20ramo.%20Meu%20neg%C3%B3cio%20%C3%A9%3A%20%5Bnome%5D%20-%20%5Bcidade%5D%20%7C%20Link%20Google%2FInstagram%3A%20%5Blink%5D">
-          Chamar no WhatsApp
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" aria-label="BRsys - Sites por ramo">
-      <div class="bg">
-        <div class="content">
-          <div class="kicker">WhatsApp direto • Escopo fechado • SEO local</div>
-          <h1>Seu site precisa gerar contato. Não “existir”.</h1>
-          <p class="lead">
-            Sites por ramo com <b>escopo fechado</b> e foco total em conversão via WhatsApp.
-            Implantação a partir de <b>R$ 490,00</b> — no domínio do cliente ou como landing BRsys.
-          </p>
-
-          <div class="ctaRow" id="cta">
-            <a class="pill primary" target="_blank" rel="noopener"
-               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20uma%20avalia%C3%A7%C3%A3o%20r%C3%A1pida.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D">
-              Quero avaliação rápida →
-            </a>
-            <a class="pill" href="/solucoes/">Ver soluções</a>
-            <a class="pill" href="#planos">Ver valores</a>
-            <div class="note">Diagnóstico rápido: mande nome + cidade + link do Google/Instagram.</div>
-          </div>
+<main class="wrap">
+  <section class="hero">
+    <div class="bg">
+      <div>
+        <h1>Seu site precisa gerar contato. Não “existir”.</h1>
+        <p class="lead">
+          Sites por ramo com escopo fechado, foco total em WhatsApp e base sólida de SEO local.
+        </p>
+        <div class="ctaRow">
+          <a class="pill primary" target="_blank" rel="noopener"
+             href="https://wa.me/5513997408157">
+            Quero avaliação rápida →
+          </a>
+          <a class="pill" href="/solucoes/">Ver soluções</a>
         </div>
-      </div>
-    </section>
-
-    <!-- Para quem faz sentido / O que não vendo -->
-    <section class="section" aria-label="Qualificação">
-      <div class="grid">
-        <div class="card" style="grid-column: span 6;">
-          <strong>Para quem faz sentido</strong>
-          <p>Negócio com decisão rápida, que precisa de apresentação e contato direto (sem intermediário).</p>
-          <ul class="list">
-            <li>✅ WhatsApp é o “checkout”</li>
-            <li>✅ Precisa aparecer no Google</li>
-            <li>✅ Quer página leve e objetiva</li>
-          </ul>
-        </div>
-
-        <div class="card" style="grid-column: span 6;">
-          <strong>O que eu NÃO vendo</strong>
-          <p>“Site só pra existir”. Se não tiver objetivo (WhatsApp / pedido / reserva), eu prefiro nem pegar.</p>
-          <ul class="list">
-            <li>🚫 Projeto infinito sem escopo</li>
-            <li>🚫 Site pesado só “bonito”</li>
-            <li>🚫 Página sem CTA / sem conversão</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOLUÇÕES -->
-    <section class="section" id="solucoes" aria-label="Soluções por ramo">
-      <h2>Soluções por ramo (prontas para converter)</h2>
-      <p class="sub">Clique e veja o modelo completo (estrutura + prova + CTA WhatsApp).</p>
-
-      <div class="grid">
-        <a class="pick" href="/solucoes/assistencia-tecnica/" aria-label="Assistência Técnica">
-          <div class="img" style="background-image:url('/img/solucoes/assistencia.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">🥇 Melhor ramo atual</div>
-            <p class="title">Assistência Técnica</p>
-            <p class="desc">Dor imediata, decisão rápida e WhatsApp natural. Fecha em poucos dias.</p>
-            <div class="meta">
-              <span class="chip">⚡ 1–7 dias</span>
-              <span class="chip">📱 Celular & eletrônicos</span>
-              <span class="go">Abrir →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="pick" href="/solucoes/servicos-urgentes/" aria-label="Serviços Emergenciais">
-          <div class="img" style="background-image:url('/img/solucoes/urgentes.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">⚡ Decisão muito rápida</div>
-            <p class="title">Serviços Emergenciais</p>
-            <p class="desc">Chaveiro, elétrica, hidráulica e marido de aluguel. Dor urgente fecha rápido.</p>
-            <div class="meta">
-              <span class="chip">⚡ 1–5 dias</span>
-              <span class="chip">🧰 Serviços locais</span>
-              <span class="go">Abrir →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="pick" href="/solucoes/hotelaria/" aria-label="Hotelaria">
-          <div class="img" style="background-image:url('/img/solucoes/hotelaria.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">🏨 Reservas diretas</div>
-            <p class="title">Hotelaria</p>
-            <p class="desc">Página institucional + prova visual + CTA de reserva. Menos OTA, mais direto.</p>
-            <div class="meta">
-              <span class="chip">📆 Reservas</span>
-              <span class="chip">📍 SEO local</span>
-              <span class="go">Abrir →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="pick" href="/solucoes/clinicas/" aria-label="Clínicas">
-          <div class="img" style="background-image:url('/img/solucoes/clinicas.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">🩺 Agendamento</div>
-            <p class="title">Clínicas</p>
-            <p class="desc">Serviços + prova social + WhatsApp para agendar. Confiança rápida.</p>
-            <div class="meta">
-              <span class="chip">📅 Agenda</span>
-              <span class="chip">⭐ Prova social</span>
-              <span class="go">Abrir →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="pick" href="/solucoes/padaria/" aria-label="Padaria">
-          <div class="img" style="background-image:url('/img/solucoes/padaria.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">🍞 Alto volume local</div>
-            <p class="title">Padaria</p>
-            <p class="desc">Cardápio simples + rota + horário + WhatsApp. SEO forte de bairro.</p>
-            <div class="meta">
-              <span class="chip">📍 Bairro</span>
-              <span class="chip">🛒 Encomendas</span>
-              <span class="go">Abrir →</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="pick" target="_blank" rel="noopener"
-           href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20um%20modelo%20para%20o%20ramo%3A%20%5Brama%5D%20%7C%20Neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D%20%7C%20Link%3A%20%5Blink%5D"
-           aria-label="Novo ramo">
-          <div class="img" style="background-image:url('/img/hero.jpg')"></div>
-          <div class="shade"></div>
-          <div class="inner">
-            <div class="badge">➕ Novo ramo</div>
-            <p class="title">Não achou seu ramo?</p>
-            <p class="desc">Me manda nome + cidade + link. Eu te digo a direção mais curta pra converter.</p>
-            <div class="meta">
-              <span class="chip">⏱️ Resposta rápida</span>
-              <span class="chip">🎯 Conversão</span>
-              <span class="go">WhatsApp →</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="final">
-        <div>
-          <strong>Diagnóstico rápido (WhatsApp)</strong>
-          <span>Me envie: nome do negócio + cidade + link do Google/Instagram. Eu retorno o caminho mais curto pra converter.</span>
-        </div>
-        <a class="pill primary" target="_blank" rel="noopener"
-           href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20o%20diagn%C3%B3stico%20r%C3%A1pido.%20Neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.">
-          Enviar agora →
-        </a>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section class="section" id="como" aria-label="Como funciona">
-      <h2>Como funciona (simples e direto)</h2>
-      <p class="sub">Jornada curta: Google → confiança → WhatsApp → fechamento.</p>
-
-      <div class="grid steps">
-        <div class="step">
-          <div class="n">1</div>
-          <h3>Você manda o link</h3>
-          <p>Nome + cidade + link do Google/Instagram. Eu retorno a direção mais curta pra converter.</p>
-        </div>
-        <div class="step">
-          <div class="n">2</div>
-          <h3>Eu configuro a estrutura</h3>
-          <p>Modelo por ramo, leve e profissional: prova, informações essenciais e CTA WhatsApp bem visível.</p>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <h3>Você recebe contatos</h3>
-          <p>Site trabalha 24/7: ranqueia melhor e transforma visita em mensagem (sem intermediário).</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALORES / PLANOS -->
-    <section class="section" id="planos" aria-label="Valores e planos">
-      <h2>Implantação a partir de <span style="color:var(--brand)">R$ 490,00</span> (escopo fechado)</h2>
-      <p class="sub">
-        Site por ramo, rápido e objetivo: <b>clique → WhatsApp → fechamento</b>.
-        Sem agência, sem projeto infinito.
-      </p>
-
-      <div class="grid">
-        <!-- Implantação -->
-        <div class="card" style="grid-column: span 6;">
-          <strong>O que entra na implantação (R$ 490+)</strong>
-          <p style="margin-top:6px">
-            Página pronta por ramo + identidade moderna, com estrutura de conversão.
-          </p>
-
-          <ul class="list">
-            <li>✅ Modelo por ramo (estrutura já validada)</li>
-            <li>✅ CTA WhatsApp + mensagem pronta</li>
-            <li>✅ Conteúdo essencial (serviços, diferenciais, área atendida)</li>
-            <li>✅ SEO base (title, meta description, canonical, headings)</li>
-            <li>✅ OpenGraph (link bonito no WhatsApp)</li>
-            <li>✅ Entrega rápida</li>
-          </ul>
-
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-            <a class="pill primary" target="_blank" rel="noopener"
-              href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20implanta%C3%A7%C3%A3o%20(R$490+)%20com%20escopo%20fechado.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%20Google%2FInstagram%3A%20%5Blink%5D.">
-              Quero implantação →
-            </a>
-            <span class="chip">🎯 escopo fechado</span>
-            <span class="chip">📲 WhatsApp direto</span>
-          </div>
-        </div>
-
-        <!-- Domínio do cliente x Landing BRsys -->
-        <div class="card" style="grid-column: span 6;">
-          <strong>Hospedagem: domínio do cliente ou landing BRsys</strong>
-          <p style="margin-top:6px">
-            Você escolhe o formato. Os dois convertem — a diferença é velocidade, controle e SEO.
-          </p>
-
-          <div style="margin-top:10px; display:grid; gap:12px;">
-            <div style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);">
-              <div style="font-weight:900; margin-bottom:6px;">A) Domínio próprio do cliente</div>
-              <div style="color:rgba(255,255,255,.74); line-height:1.55;">
-                Ideal para quem já tem domínio e quer “marca própria” (ex.: www.seunegocio.com.br).
-                Eu oriento DNS/hospedagem quando necessário.
-              </div>
-              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                <span class="chip">🏷️ marca do cliente</span>
-                <span class="chip">🔧 pode exigir DNS</span>
-              </div>
-            </div>
-
-            <div style="padding:12px; border-radius:14px; border:1px solid rgba(25,214,198,.22); background: linear-gradient(135deg, rgba(25,214,198,.10), rgba(255,255,255,.05));">
-              <div style="font-weight:900; margin-bottom:6px;">B) Landing BRsys (mais rápida)</div>
-              <div style="color:rgba(255,255,255,.74); line-height:1.55;">
-                Publicação no domínio BRsys (ex.: brsys.com.br/solucoes/…).
-                <b>Vantagem:</b> sobe rápido, vira ativo de SEO e dá pra evoluir com mensalidade.
-              </div>
-              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                <span class="chip">⚡ publicação rápida</span>
-                <span class="chip">📈 ativo de SEO</span>
-                <span class="chip">🛡️ sem dor de DNS</span>
-              </div>
-            </div>
-          </div>
-
-          <p style="margin-top:12px; color:rgba(255,255,255,.62); font-size:13px; line-height:1.55;">
-            *Se quiser, você pode começar na Landing BRsys (rápido) e depois migrar para domínio próprio.
-          </p>
-        </div>
-      </div>
-
-      <!-- SEO mensal opcional -->
-      <div class="grid" style="margin-top:14px;">
-        <div class="card" style="grid-column: span 12;">
-          <strong>SEO mensal (opcional) — para manter o Google girando</strong>
-          <p style="margin-top:6px; color:rgba(255,255,255,.74); line-height:1.55;">
-            Implantação resolve o “agora”. SEO mensal é o que cria consistência e crescimento.
-            Ideal pra dominar bairro/cidade e gerar contato todo mês.
-          </p>
-
-          <div style="display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top:12px;">
-            <div style="grid-column: span 6; padding:14px; border-radius:18px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);">
-              <div style="font-weight:900;">Básica — <span style="color:var(--brand)">R$ 150/mês</span></div>
-              <div style="color:rgba(255,255,255,.74); margin-top:6px; line-height:1.5;">
-                Ajustes leves e atualização de conteúdo (mantém tudo vivo e correto).
-              </div>
-              <ul class="list" style="margin-top:10px;">
-                <li>✅ pequenas atualizações</li>
-                <li>✅ textos / informações / CTA</li>
-                <li>✅ correções rápidas</li>
-              </ul>
-            </div>
-
-            <div style="grid-column: span 6; padding:14px; border-radius:18px; border:1px solid rgba(25,214,198,.22); background: linear-gradient(135deg, rgba(25,214,198,.10), rgba(255,255,255,.05));">
-              <div style="font-weight:900;">PRO (recomendado) — <span style="color:var(--brand)">R$ 490/mês</span></div>
-              <div style="color:rgba(255,255,255,.74); margin-top:6px; line-height:1.5;">
-                SEO de verdade: evolução contínua + ajustes técnicos + conteúdo orientado a busca.
-              </div>
-              <ul class="list" style="margin-top:10px;">
-                <li>✅ melhorias contínuas de SEO local</li>
-                <li>✅ títulos/descrições por intenção</li>
-                <li>✅ otimização de performance e conversão</li>
-              </ul>
-            </div>
-
-            <div style="grid-column: span 6; padding:14px; border-radius:18px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);">
-              <div style="font-weight:900;">PLUS — <span style="color:var(--brand)">R$ 690/mês</span></div>
-              <div style="color:rgba(255,255,255,.74); margin-top:6px; line-height:1.5;">
-                Para crescer mais rápido: conteúdo + performance + evolução por ramo/cidade.
-              </div>
-              <ul class="list" style="margin-top:10px;">
-                <li>✅ conteúdo e seções novas</li>
-                <li>✅ ajustes de conversão</li>
-                <li>✅ base para páginas extras</li>
-              </ul>
-            </div>
-
-            <div style="grid-column: span 6; padding:14px; border-radius:18px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);">
-              <div style="font-weight:900;">MAX — <span style="color:var(--brand)">R$ 990/mês</span></div>
-              <div style="color:rgba(255,255,255,.74); margin-top:6px; line-height:1.5;">
-                Escala pesada: páginas e ativos para dominar buscas (mais agressivo).
-              </div>
-              <ul class="list" style="margin-top:10px;">
-                <li>✅ expansão de páginas (cases/ramo/cidade)</li>
-                <li>✅ SEO forte e contínuo</li>
-                <li>✅ evolução do funil</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="final" style="margin-top:14px">
-            <div>
-              <strong>Quer o valor fechado no seu caso?</strong>
-              <span>Manda nome + cidade + link do Google/Instagram. Eu retorno com o plano ideal (implantação + SEO mensal opcional).</span>
-            </div>
-            <a class="pill primary" target="_blank" rel="noopener"
-              href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20or%C3%A7amento%20fechado%20(implanta%C3%A7%C3%A3o%20+%20SEO%20mensal%20opcional).%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
-              Orçamento rápido →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer aria-label="Rodapé">
-    <div class="wrap" style="padding:22px 18px 26px;">
-      <div class="footGrid">
-        <div class="card footCol">
-          <strong>BRsys</strong>
-          <p style="margin-top:6px">
-            Sites por ramo com escopo fechado e foco em conversão via WhatsApp.
-            Clique → mensagem → fechamento.
-          </p>
-
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="pill primary" target="_blank" rel="noopener"
-               href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20uma%20avalia%C3%A7%C3%A3o%20r%C3%A1pida.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
-              Chamar no WhatsApp
-            </a>
-            <a class="pill" href="/solucoes/">Soluções</a>
-            <a class="pill" href="#planos">Valores</a>
-          </div>
-
-          <p class="mini" style="margin-top:12px;">
-            WhatsApp oficial: <b>+55 13 99740-8157</b><br/>
-            Atendimento remoto • Brasil todo
-          </p>
-        </div>
-
-        <div class="card footCol">
-          <strong>Links rápidos</strong>
-          <ul class="list" style="margin-top:10px;">
-            <li><a href="/solucoes/">Soluções por ramo</a></li>
-            <li><a href="/solucoes/assistencia-tecnica/">Assistência Técnica</a></li>
-            <li><a href="/solucoes/servicos-urgentes/">Serviços Emergenciais</a></li>
-            <li><a href="/solucoes/hotelaria/">Hotelaria</a></li>
-            <li><a href="/solucoes/clinicas/">Clínicas</a></li>
-            <li><a href="/solucoes/padaria/">Padaria</a></li>
-          </ul>
-
-          <p class="mini" style="margin-top:12px;">
-            Se seu “site” aponta para Instagram/Booking ou está com erro, você está perdendo clique agora.
-            Eu corrijo com página objetiva + WhatsApp.
-          </p>
-        </div>
-      </div>
-
-      <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; color:rgba(255,255,255,.62); font-size:13px;">
-        <span>© <span id="y"></span> BRsys • Todos os direitos reservados.</span>
-        <span>Contato: WhatsApp +55 13 99740-8157</span>
       </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <!-- Sticky WhatsApp (mobile) -->
-  <a class="waSticky" target="_blank" rel="noopener"
-     href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20uma%20avalia%C3%A7%C3%A3o%20r%C3%A1pida.%20Meu%20neg%C3%B3cio%3A%20%5Bnome%5D%20-%20%5Bcidade%5D.%20Link%3A%20%5Blink%5D.">
-    📲 Chamar no WhatsApp
-  </a>
+<footer>
+  <div class="wrap">
+    <div class="footGrid">
+      <div class="footCol">
+        <strong>BRsys</strong>
+        <p class="mini">
+          Sites por ramo com foco em conversão via WhatsApp e SEO local.
+        </p>
+      </div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+      <div class="footCol">
+        <strong>Guias DDD 13 • Peruíbe</strong>
+        <ul class="mini">
+          <li><a href="/peruibe/onde-ficar/">Onde ficar em Peruíbe</a></li>
+          <li><a href="/peruibe/onde-comer/">Onde comer em Peruíbe</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mini" style="margin-top:12px;">
+      © <span id="y"></span> BRsys • WhatsApp +55 13 99740-8157
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
