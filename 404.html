@@ -1,1 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 • Página não encontrada | BRsys</title>
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#081316" />
+  <link rel="stylesheet" href="/css/app.css?v=1" />
+  <style>
+    :root{
+      --bg:#081316; --text:rgba(255,255,255,.92); --muted:rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14); --brand:#19d6c6; --r:18px; --max: 960px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
+        radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica;
+      padding: 18px;
+    }
+    .box{
+      width:100%; max-width: var(--max);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      border-radius: calc(var(--r) + 8px);
+      padding: 18px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.55);
+    }
+    .k{display:inline-flex; gap:10px; align-items:center; padding:8px 12px; border-radius:999px;
+      background: rgba(25,214,198,.10); border:1px solid rgba(25,214,198,.25); font-size:13px;}
+    h1{margin:14px 0 8px; font-size: clamp(26px, 3.5vw, 38px); line-height:1.08;}
+    p{margin:0 0 12px; color: var(--muted); line-height:1.6;}
+    .row{display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px;}
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.92); text-decoration:none; font-weight:800;
+    }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
+      border-color: rgba(25,214,198,.35);
+      font-weight: 900;
+    }
+    .links{margin-top: 14px; display:flex; flex-wrap:wrap; gap:12px; color: rgba(255,255,255,.75); font-size:13px;}
+    .links a{color:inherit; text-decoration:none; border-bottom: 1px dashed rgba(25,214,198,.35); padding-bottom:2px;}
+    .links a:hover{color:#fff; border-bottom-color: rgba(25,214,198,.7);}
+  </style>
+</head>
+<body>
+  <main class="box" aria-label="Erro 404">
+    <div class="k">404 • Página não encontrada</div>
+    <h1>Esse link não existe (ou mudou).</h1>
+    <p>
+      Se você veio do Google/Instagram, pode ser que o endereço tenha sido atualizado.
+      Volte para a Home ou chame a BRsys no WhatsApp que eu te passo o caminho certo.
+    </p>
+
+    <div class="row">
+      <a class="pill" href="/">Voltar para a Home</a>
+      <a class="pill" href="/solucoes/">Ver soluções</a>
+      <a class="pill primary" target="_blank" rel="noopener"
+         href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Ca%C3%AD%20num%20link%20quebrado%20(404).%20Pode%20me%20ajudar%3F%20Link%3A%20%5Blink%5D">
+        Chamar no WhatsApp
+      </a>
+    </div>
+
+    <div class="links" aria-label="Links úteis">
+      <a href="/peruibe/onde-ficar/">Guia: Onde ficar em Peruíbe</a>
+      <a href="/peruibe/onde-comer/">Guia: Onde comer em Peruíbe</a>
+      <a href="/solucoes/assistencia-tecnica/">Assistência Técnica</a>
+    </div>
+  </main>
+</body>
+</html>
 
