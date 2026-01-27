@@ -1,47 +1,18 @@
 {
   "redirects": [
-    {
-      "source": "/:path*/index.html",
-      "destination": "/:path*/",
-      "permanent": true
-    },
+    { "source": "/fortesaboresdamanha/index.html", "destination": "/fortessaboresdamanha/", "permanent": true },
+    { "source": "/fortessaboresdamanha/index.html", "destination": "/fortessaboresdamanha/", "permanent": true },
 
-    {
-      "source": "/fortessaboresdamanha",
-      "destination": "/fortessaboresdamanha/",
-      "permanent": true
-    },
-    {
-      "source": "/fortesaboresdamanha",
-      "destination": "/fortessaboresdamanha/",
-      "permanent": true
-    },
+    { "source": "/:path*/index.html", "destination": "/:path/", "permanent": true },
 
-    {
-      "source": "/prhotels",
-      "destination": "/prhotels/",
-      "permanent": true
-    },
-    {
-      "source": "/renata",
-      "destination": "/renata/",
-      "permanent": true
-    },
+    { "source": "/fortessaboresdamanha", "destination": "/fortessaboresdamanha/", "permanent": true },
+    { "source": "/fortesaboresdamanha", "destination": "/fortessaboresdamanha/", "permanent": true },
 
-    {
-      "source": "/peruibe/onde-comer",
-      "destination": "/peruibe/onde-comer/",
-      "permanent": true
-    },
-    {
-      "source": "/peruibe/onde-ficar",
-      "destination": "/peruibe/onde-ficar/",
-      "permanent": true
-    },
-    {
-      "source": "/peruibe/onde-beber",
-      "destination": "/peruibe/onde-beber/",
-      "permanent": true
-    }
+    { "source": "/prhotels", "destination": "/prhotels/", "permanent": true },
+    { "source": "/renata", "destination": "/renata/", "permanent": true },
+
+    { "source": "/peruibe/onde-comer", "destination": "/peruibe/onde-comer/", "permanent": true },
+    { "source": "/peruibe/onde-ficar", "destination": "/peruibe/onde-ficar/", "permanent": true },
+    { "source": "/peruibe/onde-beber", "destination": "/peruibe/onde-beber/", "permanent": true }
   ]
 }
