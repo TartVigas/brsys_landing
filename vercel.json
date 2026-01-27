@@ -7,8 +7,24 @@
     },
 
     {
+      "source": "/fortessaboresdamanha",
+      "destination": "/fortessaboresdamanha/",
+      "permanent": true
+    },
+    {
       "source": "/fortesaboresdamanha",
       "destination": "/fortessaboresdamanha/",
+      "permanent": true
+    },
+
+    {
+      "source": "/prhotels",
+      "destination": "/prhotels/",
+      "permanent": true
+    },
+    {
+      "source": "/renata",
+      "destination": "/renata/",
       "permanent": true
     },
 
