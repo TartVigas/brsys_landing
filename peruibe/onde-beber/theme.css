@@ -1,1 +1,20 @@
+/* theme.css — Onde Beber (Peruíbe) */
+/* Mantém a base do app.css e só troca identidade local */
+
+:root{
+  --accent: #2dd4bf;
+  --accent2: #38bdf8;
+  --heroGlow: rgba(45, 212, 191, .18);
+}
+
+/* Se seu app.css usa classes oc-* como no Onde Comer, isso aqui já encaixa */
+.oc-hero{
+  background:
+    radial-gradient(800px 400px at 15% 10%, var(--heroGlow), transparent 60%),
+    radial-gradient(900px 420px at 85% 20%, rgba(56,189,248,.14), transparent 60%);
+}
+
+.oc-highlight{ color: var(--accent); }
+.oc-cardAccent{ border-color: rgba(45,212,191,.35); }
+.oc-tag{ background: rgba(45,212,191,.12); border: 1px solid rgba(45,212,191,.25); }
 
