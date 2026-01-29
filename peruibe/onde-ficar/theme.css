@@ -224,3 +224,75 @@
 .oc-footLinks{ display:flex; gap: 12px; flex-wrap:wrap; }
 .oc-footLink{ color: rgba(255,255,255,.78); text-decoration:none; }
 .oc-footLink:hover{ color: rgba(255,255,255,.95); }
+
+/* ===== BRIDGE: suporta HTML .of- usando o mesmo theme .oc- (ou vice-versa) ===== */
+/* Se o HTML estiver em .of-, estas regras garantem estilo equivalente. */
+
+.of-wrap{ max-width: var(--of-max); margin: 0 auto; padding: 0 18px; }
+.of-main{ padding-top: 18px; }
+
+.of-top{ position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(0,0,0,.35); border-bottom: 1px solid var(--of-line); }
+.of-top .of-wrap{ display:flex; align-items:center; justify-content:space-between; padding: 14px 18px; }
+
+.of-brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color: inherit; }
+.of-badge{ font-weight: 800; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--of-line); background: rgba(255,255,255,.04); }
+.of-brandText{ font-weight: 700; opacity: .9; }
+
+.of-nav{ display:flex; gap:10px; align-items:center; }
+.of-navlink{ text-decoration:none; color: rgba(255,255,255,.85); padding: 10px 12px; border-radius: 12px; border: 1px solid transparent; }
+.of-navlink:hover{ border-color: var(--of-line); background: rgba(255,255,255,.03); }
+.of-cta{ border-color: rgba(31,227,192,.35); background: rgba(31,227,192,.10); }
+
+.of-hero{ padding: 34px 0 18px; }
+.of-kicker{ display:inline-block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--of-muted); border: 1px solid var(--of-line); border-radius: 999px; padding: 6px 10px; background: rgba(255,255,255,.03); }
+.of-h1{ margin: 14px 0 10px; font-size: clamp(30px, 4vw, 46px); line-height: 1.05; }
+.of-highlight{ color: var(--of-brand2); }
+.of-lead{ max-width: 860px; color: rgba(255,255,255,.86); font-size: 16px; line-height: 1.6; }
+
+.of-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+.of-info{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 14px; }
+.of-chip{ font-size: 12px; padding: 8px 10px; border-radius: 999px; border: 1px solid var(--of-line); color: rgba(255,255,255,.82); background: rgba(255,255,255,.03); }
+
+.of-section{ padding: 22px 0; }
+.of-grid2{ display:grid; grid-template-columns: 1.2fr .8fr; gap: 14px; }
+@media (max-width: 900px){
+  .of-grid2{ grid-template-columns: 1fr; }
+  .of-nav{ display:none; }
+}
+
+.of-card{ border: 1px solid var(--of-line); border-radius: var(--of-r); background: rgba(255,255,255,.03); box-shadow: var(--of-shadow); padding: 16px; }
+.of-cardAccent{ border-color: rgba(31,227,192,.25); background: rgba(31,227,192,.06); }
+
+.of-h2{ margin: 0 0 10px; font-size: 18px; }
+.of-h3{ margin: 0; font-size: 16px; }
+.of-text{ margin: 10px 0 0; color: rgba(255,255,255,.86); line-height: 1.55; }
+.of-muted{ margin: 6px 0 0; color: var(--of-muted); }
+.of-list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.84); line-height: 1.65; }
+.of-mini{ margin: 10px 0 0; color: rgba(255,255,255,.75); font-size: 12.5px; line-height: 1.5; }
+
+.of-headRow{ display:flex; align-items:flex-end; justify-content:space-between; gap: 12px; flex-wrap:wrap; }
+.of-tabs{ display:flex; gap: 8px; flex-wrap:wrap; margin-top: 12px; }
+.of-tab{ cursor:pointer; padding: 10px 12px; border-radius: 999px; border: 1px solid var(--of-line); background: rgba(255,255,255,.03); color: rgba(255,255,255,.86); }
+.of-tab:hover{ background: rgba(255,255,255,.05); }
+.of-tab.is-active{ border-color: rgba(31,227,192,.45); background: rgba(31,227,192,.14); }
+
+.of-cards{ margin-top: 12px; display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 980px){ .of-cards{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px){ .of-cards{ grid-template-columns: 1fr; } }
+
+.of-item{ border: 1px solid var(--of-line); border-radius: var(--of-r); background: rgba(255,255,255,.03); padding: 14px; box-shadow: var(--of-shadow); }
+.of-itemTop{ display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; }
+.of-meta{ margin: 6px 0 0; font-size: 13px; color: rgba(255,255,255,.72); }
+.of-tag{ font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(31,227,192,.35); background: rgba(31,227,192,.10); color: rgba(255,255,255,.88); }
+
+.of-links{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 12px; }
+.of-link{ text-decoration:none; color: rgba(255,255,255,.88); border-bottom: 1px dashed rgba(31,227,192,.35); padding-bottom: 2px; }
+.of-link:hover{ color: #fff; border-bottom-color: rgba(31,227,192,.7); }
+
+.of-footerNote{ margin-top: 14px; border-top: 1px solid var(--of-line); padding-top: 14px; }
+
+.of-foot{ border-top: 1px solid var(--of-line); margin-top: 18px; padding: 18px 0 28px; background: rgba(0,0,0,.25); }
+.of-footRow{ display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap; }
+.of-footLinks{ display:flex; gap: 12px; flex-wrap:wrap; }
+.of-footLink{ color: rgba(255,255,255,.78); text-decoration:none; }
+.of-footLink:hover{ color: rgba(255,255,255,.95); }
