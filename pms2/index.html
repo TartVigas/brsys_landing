@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema para Pousada com Site Integrado | Plano Completo para Hotelaria</title>
+  <meta name="description" content="Sistema completo para pousadas e hotéis pequenos com site profissional integrado, controle de reservas, check-in e redução da dependência de OTAs. Plano com setup e suporte especializado.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET & BASE */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter', system-ui, sans-serif; line-height:1.6; color:#111; background:#fdfdfd;}
+    a{text-decoration:none;}
+    ul{list-style:none;}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    h1,h2,h3{margin-bottom:16px;}
+    p{margin-bottom:16px;}
+    button, .btn{cursor:pointer; border:none; border-radius:12px; font-weight:600; transition:0.3s;}
+    
+    /* COLORS */
+    :root{
+      --primary:#0f4c81;
+      --secondary:#f5f8fb;
+      --accent:#ff7a00;
+      --text:#111;
+      --light:#fff;
+    }
+
+    /* BUTTONS */
+    .btn-primary{background:var(--primary); color:var(--light); padding:16px 28px; display:inline-block;}
+    .btn-primary:hover{background:#093153;}
+    .btn-secondary{background:var(--secondary); color:var(--text); padding:14px 24px;}
+    .btn-secondary:hover{background:#e0e5ea;}
+
+    /* HERO */
+    .hero{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:100px 0; background:var(--secondary);}
+    .hero-text{flex:1; min-width:320px; opacity:0; transform:translateY(40px); transition:0.6s;}
+    .hero-text.visible{opacity:1; transform:translateY(0);}
+    .hero-text h1{font-size:3rem; font-weight:700; margin-bottom:24px; color:var(--primary);}
+    .hero-text p{font-size:1.25rem; margin-bottom:28px;}
+    .hero-form{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;}
+    .hero-form input{padding:14px; flex:1 1 180px; border:1px solid #ccc; border-radius:12px;}
+    .hero-form button{padding:14px 24px;}
+
+    .hero-image{flex:1; min-width:300px; text-align:center; opacity:0; transform:translateY(40px); transition:0.6s;}
+    .hero-image.visible{opacity:1; transform:translateY(0);}
+    .hero-image img{max-width:100%; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+
+    /* SECTIONS */
+    section{padding:100px 0;}
+    .section-title{font-size:2.25rem; font-weight:700; margin-bottom:40px; text-align:center; color:var(--primary);}
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;}
+    .card{background:var(--light); border-radius:16px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:0.4s; opacity:0; transform:translateY(40px);}
+    .card.visible{opacity:1; transform:translateY(0);}
+    .card h3{margin-bottom:16px; font-size:1.5rem; color:var(--primary);}
+    .card ul li{margin-bottom:10px; padding-left:20px; position:relative;}
+    .card ul li::before{content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+    /* CTA Section */
+    .cta{background:var(--primary); color:var(--light); text-align:center; padding:100px 20px; border-radius:16px; opacity:0; transform:translateY(40px); transition:0.6s;}
+    .cta.visible{opacity:1; transform:translateY(0);}
+    .cta h2{font-size:2.5rem; margin-bottom:24px;}
+    .cta p{margin-bottom:32px; font-size:1.25rem;}
+    .cta .btn{margin-top:10px;}
+
+    /* Testimonials */
+    .testimonials{background:var(--secondary); padding:100px 20px;}
+    .testimonial{margin-bottom:28px; font-style:italic; font-size:1.15rem; padding:24px; background:var(--light); border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,0.06); opacity:0; transform:translateY(40px); transition:0.6s;}
+    .testimonial.visible{opacity:1; transform:translateY(0);}
+    .testimonial p{margin-bottom:0;}
+
+    /* Footer */
+    footer{background:#111; color:#fff; text-align:center; padding:60px 20px;}
+    footer p{margin:0;}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero{flex-direction:column;}
+      .hero-image{margin-top:40px;}
+      .hero-text h1{font-size:2.25rem;}
+      .section-title{font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text container">
+      <h1>Sistema Completo para Pousadas: Site + PMS + Reserva Direta</h1>
+      <p>Organize sua pousada, controle reservas simples e venda direto sem depender da Booking.</p>
+      <a href="https://wa.me/5511999999999" class="btn btn-primary">Agende sua Demonstração Agora</a>
+      <form class="hero-form">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+      </form>
+    </div>
+    <div class="hero-image container">
+      <img src="hero-pousada-dashboard.png" alt="Dashboard PMS e Site para Pousada">
+    </div>
+  </header>
+
+  <!-- PROBLEMAS -->
+  <section class="pain-points">
+    <div class="container">
+      <h2 class="section-title">Chega de Planilhas e Sistemas Antigos</h2>
+      <p>Erros de reserva, falta de organização financeira e dependência da Booking atrapalham o crescimento do seu hotel pequeno. Com nosso <strong>sistema para pousada pequena</strong>, você organiza a recepção da pousada, controla reservas simples e aumenta vendas diretas.</p>
+      <ul>
+        <li>Controle manual de reservas</li>
+        <li>Falta de organização financeira</li>
+        <li>Dependência de OTAs</li>
+        <li>Site que não gera reserva</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CARDS DO PLANO -->
+  <section class="plan">
+    <div class="container">
+      <h2 class="section-title">O Que Está Incluso no Plano</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Site Profissional para Pousada</h3>
+          <ul>
+            <li>Página inicial otimizada</li>
+            <li>Motor de reservas integrado</li>
+            <li>WhatsApp integrado</li>
+            <li>SEO local básico</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sistema de Gestão (PMS)</h3>
+          <ul>
+            <li>Controle de reservas simples</li>
+            <li>Check-in e check-out rápido</li>
+            <li>Financeiro simplificado</li>
+            <li>Organização de hóspedes</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Setup e Implantação</h3>
+          <ul>
+            <li>Configuração inicial</li>
+            <li>Cadastro de quartos</li>
+            <li>Importação de dados</li>
+            <li>Treinamento básico da equipe</li>
+          </ul>
+          <p><em>Palavra-chave: implantação de sistema para pousada</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÚBLICO-ALVO -->
+  <section class="audience">
+    <div class="container">
+      <h2 class="section-title">Para Quem Esse Plano é Ideal</h2>
+      <ul>
+        <li>Pousadas até 40 quartos</li>
+        <li>Gestão familiar</li>
+        <li>Quem ainda usa planilhas</li>
+        <li>Quem quer vender mais direto</li>
+      </ul>
+      <p><em>SEO natural: pousadas independentes, hotel pequeno no interior, pousada de praia familiar</em></p>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="benefits">
+    <div class="container">
+      <h2 class="section-title">Benefícios de Modernizar Sua Pousada</h2>
+      <ul>
+        <li>Controle total das reservas</li>
+        <li>Financeiro organizado</li>
+        <li>Mais vendas diretas</li>
+        <li>Marketing local eficiente</li>
+        <li>Sistema intuitivo e fácil para equipe</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta">
+    <div class="container">
+      <h2>Agende Sua Demonstração</h2>
+      <p>Comece a vender direto sem depender da Booking e organize sua pousada de verdade.</p>
+      <a href="https://wa.me/5511999999999" class="btn btn-primary">Agende pelo WhatsApp</a>
+      <form class="hero-form">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Seu Sistema para Pousadas. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS ANIMATION SCROLL -->
+  <script>
+    const elements = document.querySelectorAll('.hero-text, .hero-image, .card, .testimonial, .cta');
+    function reveal() {
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < triggerBottom){
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+</body>
+</html>
