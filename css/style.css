@@ -1009,3 +1009,130 @@ html[data-theme="light"] .dd-col{
 @media (min-width: 901px){
   .dd:hover .dd-menu{ display:block; }
 }
+
+/* =========================================
+   FIX MENU (Desktop) — alinhamento e dropdown
+   Cole no FINAL do style.css
+========================================= */
+
+/* garante que o header use suas classes corretas */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* força layout do miolo do header */
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+/* nav desktop alinhado e com espaçamento */
+.nav-desktop{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+}
+
+/* evita “texto cru” de button */
+.dd-btn{
+  appearance:none;
+  -webkit-appearance:none;
+  background:none;
+  border:none;
+  padding:8px 6px;
+  line-height:1;
+  color: var(--text-muted);
+  font-size:.9rem;
+}
+
+.dd-btn:hover{ color: var(--text-main); }
+
+/* dropdown com posicionamento certo e sem virar texto solto */
+.dd{ position:relative; }
+
+.dd-menu{
+  position:absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 640px;
+  max-width: min(760px, 90vw);
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: rgba(7,20,39,.92);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  display:none;
+}
+
+/* abre no hover (desktop) */
+@media (min-width: 901px){
+  .dd:hover .dd-menu{ display:block; }
+}
+
+.dd-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1.1fr 1fr;
+  gap: 14px;
+}
+
+.dd-col{
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.dd-title{
+  font-weight: 800;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+
+.dd-col a{
+  display:block;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.dd-col a:hover{ background: rgba(15,155,157,.12); }
+
+.dd-highlight{
+  background: linear-gradient(135deg, rgba(15,155,157,.14), rgba(59,130,246,.08));
+  border-color: rgba(15,155,157,.18);
+}
+
+.dd-cta{
+  font-weight: 900;
+  border: 1px solid rgba(15,155,157,.25);
+  background: rgba(15,155,157,.10);
+}
+
+/* Tema claro */
+html[data-theme="light"] .dd-menu{
+  background: rgba(255,255,255,.92);
+}
+html[data-theme="light"] .dd-col{
+  background: rgba(11,27,52,.03);
+  border-color: rgba(11,27,52,.08);
+}
+
+/* esconde nav-mobile no desktop (evita duplicar) */
+@media (min-width: 901px){
+  .nav-mobile{ display:none !important; }
+}
+
+/* mobile: esconde desktop e deixa toggle */
+@media (max-width: 900px){
+  .nav-desktop{ display:none !important; }
+  .nav-toggle{ display:flex; }
+}
