@@ -1,433 +1,341 @@
-<!doctype html>
-<html lang="pt-br" data-theme="auto">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BRsys • Tecnologia para Hotelaria</title>
-    <meta
-      name="description"
-      content="BRsys é tecnologia premium para hotelaria independente: PMS, reservas diretas, site integrado, automações e recursos para gestão."
-    />
+<title>BRsys | Tecnologia para Hotelaria</title>
+<meta name="description" content="Sistema PMS, marketing e automação para pousadas e hotéis independentes. Venda mais reservas diretas e reduza dependência da Booking.">
 
-    <!-- Social preview -->
-    <meta property="og:title" content="BRsys • Tecnologia para Hotelaria" />
-    <meta
-      property="og:description"
-      content="PMS + Reservas Diretas + Site Integrado. Estrutura premium para hotéis e pousadas."
-    />
-    <meta property="og:image" content="img/og.jpg" />
-    <meta property="og:type" content="website" />
+<link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" href="img/favicon.png" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+</head>
 
-  <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="BRsys Home">
-          <img class="brand-logo" src="img/logo.svg" alt="BRsys" />
-          <span class="brand-text">
-            <span class="brand-name">BRsys</span>
-            <span class="brand-tagline">Tecnologia para Hotelaria</span>
-          </span>
-        </a>
+<body>
 
-        <nav class="nav-desktop" aria-label="Menu principal">
-          <a href="#plataforma">Plataforma</a>
-          <a href="#pms">PMS</a>
-          <a href="#marketing">Marketing</a>
-          <a href="#gestao">Gestão</a>
-          <a href="#recursos">Recursos</a>
-          <a href="#destinos">Destinos</a>
-          <a href="#contato">Contato</a>
-        </nav>
+<!-- HEADER -->
+<header class="header">
 
-        <div class="header-cta">
-          <a class="btn btn-secondary" href="#recursos">Baixar materiais</a>
-          <a class="btn btn-primary" href="#contato">Agendar demo</a>
-        </div>
+<div class="container header-inner">
 
-        <!-- Theme Toggle + Mobile Menu -->
-        <div class="header-tools">
-          <button
-            class="theme-toggle"
-            type="button"
-            aria-label="Alternar tema"
-            title="Alternar tema"
-          >
-            <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
-            <span class="theme-icon theme-icon--moon" aria-hidden="true">🌙</span>
-          </button>
+<a href="index.html" class="logo">
+<img src="img/logo.svg" alt="BRsys">
+<span>BRsys</span>
+</a>
 
-          <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
+<button class="nav-toggle" aria-expanded="false">
+☰
+</button>
 
-      <!-- Mobile nav -->
-      <nav class="nav-mobile" aria-label="Menu mobile">
-        <a href="#plataforma">Plataforma</a>
-        <a href="#pms">PMS</a>
-        <a href="#marketing">Marketing</a>
-        <a href="#gestao">Gestão</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#destinos">Destinos</a>
-        <a href="#contato">Contato</a>
+<!-- MENU DESKTOP (renderizado pelo JS) -->
+<div id="nav-desktop-mount"></div>
 
-        <div class="nav-mobile-cta">
-          <a class="btn btn-secondary" href="#recursos">Baixar materiais</a>
-          <a class="btn btn-primary" href="#contato">Agendar demo</a>
-        </div>
-      </nav>
-    </header>
+<div class="header-actions">
 
-    <!-- HERO -->
-    <main>
-      <section class="hero" id="topo">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Plataforma premium para hotelaria independente</div>
-            <h1>Tecnologia completa para hotéis e pousadas</h1>
-            <p class="hero-subtitle">
-              PMS + Reservas Diretas + Site Integrado + Automações.
-              A BRsys organiza a operação e ajuda sua hospedagem a vender direto, com menos dependência de OTAs.
-            </p>
+<a href="#recursos" class="btn btn-secondary">
+Baixar materiais
+</a>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="sistema-para-pousada-com-site-integrado.html">
-                Ver solução completa
-              </a>
-              <a class="btn btn-outline" href="sistema-para-pousada.html">
-                Conhecer o PMS
-              </a>
-              <a class="btn btn-secondary" href="#recursos">
-                Recursos gratuitos
-              </a>
-            </div>
+<a href="#contato" class="btn btn-primary">
+Agendar demo
+</a>
 
-            <div class="hero-note">
-              Referência de preço: mensalidade ≈ <strong>valor de 1 diária</strong>. Se gerar 1 reserva direta/mês, já se paga.
-            </div>
-          </div>
+<button id="theme-toggle" class="theme-toggle">
+🌙
+</button>
 
-          <div class="hero-media">
-            <div class="hero-device">
-              <img
-                src="img/hero-dashboard.png"
-                alt="Dashboard BRsys para hotelaria"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+</div>
 
-      <!-- PLATAFORMA -->
-      <section class="section section-alt" id="plataforma">
-        <div class="container">
-          <div class="section-header">
-            <h2>Plataforma BRsys</h2>
-            <p>
-              Um ecossistema completo: operação + vendas diretas + presença digital.
-              Feito para hospedagens que querem elevar o nível.
-            </p>
-          </div>
+</div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>PMS (Gestão)</h3>
-              <p>Reservas, mapa de quartos, check-in/check-out, contas e relatórios.</p>
-              <a class="card-link" href="pms-para-hotel-pequeno.html">Ver detalhes →</a>
-            </article>
+<!-- MENU MOBILE -->
+<div id="nav-mobile-mount"></div>
 
-            <article class="card">
-              <h3>Reservas Diretas</h3>
-              <p>Site integrado + WhatsApp + SEO para reduzir dependência de OTAs.</p>
-              <a class="card-link" href="como-vender-direto-sem-booking.html">Aprender →</a>
-            </article>
+</header>
 
-            <article class="card">
-              <h3>Automação</h3>
-              <p>Pré-check-in, FNRH digital, mensagens e integrações (WhatsApp, pagamentos, APIs).</p>
-              <a class="card-link" href="tecnologia-para-hotelaria.html">Explorar →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+<!-- HERO -->
+<section class="hero">
 
-      <!-- PMS -->
-      <section class="section" id="pms">
-        <div class="container">
-          <div class="section-header">
-            <h2>PMS</h2>
-            <p>Páginas comerciais para quem já está no momento de decisão.</p>
-          </div>
+<div class="container hero-grid">
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Sistema para Pousada</h3>
-              <p>Para pousadas independentes que querem organização e reservas diretas.</p>
-              <ul class="list">
-                <li>Reservas + ocupação</li>
-                <li>Rotinas de recepção</li>
-                <li>Relatórios essenciais</li>
-              </ul>
-              <a class="card-link" href="sistema-para-pousada.html">Abrir →</a>
-            </article>
+<div class="hero-text">
 
-            <article class="card">
-              <h3>PMS para Hotel Pequeno</h3>
-              <p>Processos padronizados, mais controle e visão gerencial.</p>
-              <ul class="list">
-                <li>Mapa de quartos</li>
-                <li>Check-in digital</li>
-                <li>Controle financeiro</li>
-              </ul>
-              <a class="card-link" href="pms-para-hotel-pequeno.html">Abrir →</a>
-            </article>
+<h1>
+Tecnologia para Hotelaria Independente
+</h1>
 
-            <article class="card">
-              <h3>Hotel Fazenda</h3>
-              <p>Para operações com maior complexidade e experiências.</p>
-              <ul class="list">
-                <li>Pacotes/experiências</li>
-                <li>Operação organizada</li>
-                <li>Automação de atendimento</li>
-              </ul>
-              <a class="card-link" href="sistema-para-hotel-fazenda.html">Abrir →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+<p>
+PMS, reservas diretas, automação e marketing para pousadas e hotéis
+que querem vender mais sem depender da Booking.
+</p>
 
-      <!-- MARKETING -->
-      <section class="section section-alt" id="marketing">
-        <div class="container">
-          <div class="section-header">
-            <h2>Marketing para Hotelaria</h2>
-            <p>Conteúdo para vender direto, aparecer no Google e construir previsibilidade.</p>
-          </div>
+<div class="hero-actions">
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Vender direto sem Booking</h3>
-              <p>Passo a passo para reduzir comissão e aumentar margem.</p>
-              <a class="card-link" href="como-vender-direto-sem-booking.html">Ler →</a>
-            </article>
+<a href="#plataforma" class="btn btn-primary">
+Conhecer plataforma
+</a>
 
-            <article class="card">
-              <h3>SEO para Pousadas</h3>
-              <p>Como ranquear por cidade e atrair hóspedes todos os meses.</p>
-              <a class="card-link" href="seo-para-pousadas.html">Ler →</a>
-            </article>
+<a href="#recursos" class="btn btn-secondary">
+Ver materiais gratuitos
+</a>
 
-            <article class="card">
-              <h3>Google para Hospedagens</h3>
-              <p>GBP, páginas locais e o que realmente converte.</p>
-              <a class="card-link" href="como-divulgar-pousada-no-google.html">Ler →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+</div>
 
-      <!-- GESTÃO -->
-      <section class="section" id="gestao">
-        <div class="container">
-          <div class="section-header">
-            <h2>Gestão Hoteleira</h2>
-            <p>Conteúdo operacional para padronizar rotinas e elevar a qualidade.</p>
-          </div>
+</div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Checklist de gestão</h3>
-              <p>Rotinas essenciais para manter controle da operação.</p>
-              <a class="card-link" href="checklist-gestao-hotel.html">Abrir →</a>
-            </article>
+<div class="hero-img">
 
-            <article class="card">
-              <h3>Check-in moderno</h3>
-              <p>Pré-check-in, conferência e fluxo sem papel.</p>
-              <a class="card-link" href="como-fazer-check-in-hotel.html">Abrir →</a>
-            </article>
+<img src="img/hero-hotelaria.png" alt="Tecnologia para Hotelaria">
 
-            <article class="card">
-              <h3>FNRH Digital</h3>
-              <p>Como implementar FNRH digital no processo da recepção.</p>
-              <a class="card-link" href="fnrh-digital-hotel.html">Abrir →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+</div>
 
-      <!-- RECURSOS -->
-      <section class="section section-alt" id="recursos">
-        <div class="container">
-          <div class="section-header">
-            <h2>Recursos gratuitos</h2>
-            <p>Materiais e ferramentas para aplicar hoje e melhorar seus números.</p>
-          </div>
+</div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Planilha de Reservas</h3>
-              <p>Modelo pronto para organizar reservas e ocupação.</p>
-              <a class="card-link" href="planilha-controle-reservas-hotel.html">Baixar →</a>
-            </article>
+</section>
 
-            <article class="card">
-              <h3>Simulador Booking</h3>
-              <p>Descubra quanto você paga por mês e quanto pode economizar.</p>
-              <a class="card-link" href="simulador-comissao-booking.html">Calcular →</a>
-            </article>
+<!-- PROVA SOCIAL -->
+<section class="proof">
 
-            <article class="card">
-              <h3>Checklist recepção</h3>
-              <p>Fluxo padrão de check-in, pré-check-in e organização.</p>
-              <a class="card-link" href="checklist-recepcao-hotel.html">Abrir →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+<div class="container">
 
-      <!-- DESTINOS -->
-      <section class="section" id="destinos">
-        <div class="container">
-          <div class="section-header">
-            <h2>Guias de destinos</h2>
-            <p>SEO turístico para atrair viajantes — e hospedeiros que querem crescer.</p>
-          </div>
+<h2>
+Tecnologia pensada para hospedagens independentes
+</h2>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Onde ficar em Peruíbe</h3>
-              <p>Guia completo com dicas e regiões.</p>
-              <a class="card-link" href="onde-ficar-em-peruibe.html">Abrir →</a>
-            </article>
+<p class="proof-text">
+Pousadas, hotéis e hospedagens que querem mais reservas diretas e gestão profissional.
+</p>
 
-            <article class="card">
-              <h3>Onde ficar em Itanhaém</h3>
-              <p>Guia por bairros e estilos de hospedagem.</p>
-              <a class="card-link" href="onde-ficar-em-itanhaem.html">Abrir →</a>
-            </article>
+<div class="proof-grid">
 
-            <article class="card">
-              <h3>Onde ficar em Mongaguá</h3>
-              <p>Guia turístico + oportunidades para pousadas.</p>
-              <a class="card-link" href="onde-ficar-em-mongagua.html">Abrir →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+<div class="proof-item">Pousadas</div>
+<div class="proof-item">Hotéis Boutique</div>
+<div class="proof-item">Hotel Fazenda</div>
+<div class="proof-item">Chalés</div>
 
-      <!-- CONTATO -->
-      <section class="section section-alt" id="contato">
-        <div class="container">
-          <div class="section-header">
-            <h2>Agende uma demonstração</h2>
-            <p>
-              Responda rápido: quantos quartos, diária média e cidade.
-              A BRsys te mostra o caminho mais rápido para organizar e vender direto.
-            </p>
-          </div>
+</div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5513997408157" target="_blank" rel="noopener">
-              Falar no WhatsApp
-            </a>
-            <a class="btn btn-secondary" href="mailto:contato@brsys.com.br">
-              Enviar e-mail
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+</div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> BRsys • Tecnologia para Hotelaria</p>
-        <p>Peruíbe/SP • Atendimento via WhatsApp</p>
-      </div>
-    </footer>
+</section>
 
-    <script>
-      // Ano
-      document.getElementById("year").textContent = new Date().getFullYear();
+<!-- PLATAFORMA -->
+<section id="plataforma" class="platform">
 
-      // ===== Mobile menu toggle (usa seu body.nav-open) =====
-      const navBtn = document.querySelector(".nav-toggle");
-      if (navBtn) {
-        navBtn.addEventListener("click", () => {
-          const open = document.body.classList.toggle("nav-open");
-          navBtn.setAttribute("aria-expanded", String(open));
-        });
+<div class="container">
 
-        // Fecha menu ao clicar em links
-        document.querySelectorAll(".nav-mobile a").forEach((a) => {
-          a.addEventListener("click", () => {
-            document.body.classList.remove("nav-open");
-            navBtn.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
+<h2>
+Uma plataforma completa para hotelaria
+</h2>
 
-      // ===== Theme toggle (Sol/Lua) =====
-      // data-theme no <html>: "dark" | "light"
-      // storage: brsys-theme ("dark"|"light"|"auto")
-      const root = document.documentElement;
-      const themeBtn = document.querySelector(".theme-toggle");
-      const storageKey = "brsys-theme";
-      const mql = window.matchMedia("(prefers-color-scheme: dark)");
+<p>
+Tudo que sua hospedagem precisa para gestão, vendas e marketing.
+</p>
 
-      function getStoredTheme() {
-        return localStorage.getItem(storageKey) || "auto";
-      }
+<div class="platform-grid">
 
-      function resolveTheme(mode) {
-        if (mode === "dark" || mode === "light") return mode;
-        // auto:
-        return mql.matches ? "dark" : "light";
-      }
+<div class="card">
+<h3>PMS</h3>
+<p>Gestão de reservas, hóspedes e ocupação.</p>
+<a href="pms/index.html">Saiba mais</a>
+</div>
 
-      function applyTheme(mode) {
-        const resolved = resolveTheme(mode);
-        root.setAttribute("data-theme", resolved);
-        root.dataset.themeMode = mode; // opcional p/ debug (auto/dark/light)
-      }
+<div class="card">
+<h3>Reservas Diretas</h3>
+<p>Venda mais sem pagar comissão para OTAs.</p>
+<a href="como-vender-direto-sem-booking/index.html">Saiba mais</a>
+</div>
 
-      function cycleTheme(currentMode) {
-        // ciclo simples: auto -> dark -> light -> auto
-        if (currentMode === "auto") return "dark";
-        if (currentMode === "dark") return "light";
-        return "auto";
-      }
+<div class="card">
+<h3>Automação</h3>
+<p>Pré check-in, WhatsApp e automação de atendimento.</p>
+<a href="implantacao-sistema/index.html">Saiba mais</a>
+</div>
 
-      function syncTheme() {
-        const mode = getStoredTheme();
-        applyTheme(mode);
-      }
+<div class="card">
+<h3>Marketing</h3>
+<p>SEO e presença no Google para hospedagens.</p>
+<a href="seo-local-hoteis/index.html">Saiba mais</a>
+</div>
 
-      // aplica ao carregar
-      syncTheme();
+</div>
 
-      // se usuário está em "auto", acompanhar mudança do sistema
-      mql.addEventListener?.("change", () => {
-        if (getStoredTheme() === "auto") applyTheme("auto");
-      });
+</div>
 
-      if (themeBtn) {
-        themeBtn.addEventListener("click", () => {
-          const currentMode = getStoredTheme();
-          const nextMode = cycleTheme(currentMode);
-          localStorage.setItem(storageKey, nextMode);
-          applyTheme(nextMode);
-        });
-      }
-    </script>
-  </body>
+</section>
+
+<!-- SEGMENTOS -->
+<section class="segments">
+
+<div class="container">
+
+<h2>
+Soluções para diferentes tipos de hospedagem
+</h2>
+
+<div class="segments-grid">
+
+<a href="sistema-para-pousada/index.html" class="segment-card">
+<h3>Pousadas</h3>
+<p>Gestão e reservas diretas.</p>
+</a>
+
+<a href="sistema-hotel-fazenda/index.html" class="segment-card">
+<h3>Hotel Fazenda</h3>
+<p>Controle completo da operação.</p>
+</a>
+
+<a href="pms-para-hotel-pequeno/index.html" class="segment-card">
+<h3>Hotel Pequeno</h3>
+<p>PMS simples e poderoso.</p>
+</a>
+
+<a href="site-para-hotel/index.html" class="segment-card">
+<h3>Marketing para Hotelaria</h3>
+<p>Mais visibilidade no Google.</p>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RECURSOS -->
+<section id="recursos" class="resources">
+
+<div class="container">
+
+<h2>
+Recursos gratuitos para hotelaria
+</h2>
+
+<div class="resources-grid">
+
+<a href="simulador-receita-direta/index.html" class="resource-card">
+<h3>Simulador de Receita Direta</h3>
+<p>Veja quanto pode economizar sem OTA.</p>
+</a>
+
+<a href="simulador-roi-pms-site/index.html" class="resource-card">
+<h3>ROI PMS + Site</h3>
+<p>Simule retorno da tecnologia.</p>
+</a>
+
+<a href="checklist-gestao-hotel/index.html" class="resource-card">
+<h3>Checklist Gestão Hotel</h3>
+<p>Organize a operação.</p>
+</a>
+
+<a href="modelos/index.html" class="resource-card">
+<h3>Modelos e documentos</h3>
+<p>Materiais prontos para gestão.</p>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA FINAL -->
+<section id="contato" class="cta">
+
+<div class="container">
+
+<h2>
+Pronto para modernizar sua hospedagem?
+</h2>
+
+<p>
+Conheça a plataforma BRsys e veja como aumentar reservas diretas.
+</p>
+
+<a href="#" class="btn btn-primary">
+Agendar demonstração
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>BRsys</h3>
+
+<p>
+Tecnologia e marketing para hotelaria independente.
+</p>
+
+</div>
+
+<div>
+
+<h4>Plataforma</h4>
+
+<a href="#">PMS</a>
+<a href="#">Reservas Diretas</a>
+<a href="#">Automação</a>
+
+</div>
+
+<div>
+
+<h4>Conteúdo</h4>
+
+<a href="seo-local-hoteis/index.html">SEO Hotelaria</a>
+<a href="como-vender-direto-sem-booking/index.html">Reservas Diretas</a>
+
+</div>
+
+<div>
+
+<h4>Empresa</h4>
+
+<a href="#">Contato</a>
+<a href="#">Política</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- MENU JS -->
+<script type="module">
+import { mountMenu } from "./js/menu-render.js";
+mountMenu();
+</script>
+
+
+<!-- THEME TOGGLE -->
+<script>
+
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+
+const html = document.documentElement;
+
+const theme = html.getAttribute("data-theme");
+
+if(theme === "dark"){
+html.setAttribute("data-theme","light");
+toggle.textContent = "☀️";
+}else{
+html.setAttribute("data-theme","dark");
+toggle.textContent = "🌙";
+}
+
+});
+
+</script>
+
+</body>
 </html>
