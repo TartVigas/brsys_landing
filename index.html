@@ -1,36 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BRsys | Tecnologia para Hotelaria</title>
-  <meta name="description" content="Sistema PMS, marketing e automação para pousadas e hotéis independentes. Venda mais reservas diretas e reduza dependência da Booking." />
+  <title>BRsys | Tecnologia para Hotelaria Independente (PMS + Reservas Diretas)</title>
+  <meta name="description" content="Plataforma premium para pousadas e hotéis independentes: PMS, motor de reservas, automação e marketing para vender mais direto e reduzir dependência da Booking." />
+  <link rel="canonical" href="https://brsys.com.br/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="BRsys | Tecnologia para Hotelaria Independente" />
+  <meta property="og:description" content="PMS, reservas diretas, automação e marketing para pousadas e hotéis que querem vender mais sem depender da Booking." />
+  <meta property="og:url" content="https://brsys.com.br/" />
+  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BRsys | Tecnologia para Hotelaria Independente" />
+  <meta name="twitter:description" content="PMS, reservas diretas, automação e marketing para pousadas e hotéis independentes." />
+  <meta name="twitter:image" content="https://brsys.com.br/img/og.jpg" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Performance (opcional, mas recomendado) -->
+  <!-- Favicons (ajuste se já existir) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+
+  <!-- Performance -->
   <link rel="preload" href="img/logo.svg" as="image" />
+  <link rel="preload" href="img/hero-hotelaria.png" as="image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://brsys.com.br/#org",
+        "name": "BRsys",
+        "url": "https://brsys.com.br/",
+        "logo": "https://brsys.com.br/img/logo.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://brsys.com.br/#website",
+        "url": "https://brsys.com.br/",
+        "name": "BRsys",
+        "publisher": { "@id": "https://brsys.com.br/#org" },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://brsys.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "A BRsys substitui a Booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A BRsys ajuda a aumentar reservas diretas com motor de reservas, site e marketing. A Booking pode continuar como canal, mas com menor dependência."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "É indicada para pousadas e hotéis pequenos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. A BRsys é pensada para hotelaria independente: operação simples, foco em reservas diretas e automação do atendimento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto tempo leva para implantar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O básico (site + estrutura + configurações) pode entrar no ar rapidamente. A implantação completa evolui por etapas conforme quartos, regras e integrações."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Acessibilidade -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <!-- Brand -->
-      <a href="index.html" class="brand" aria-label="BRsys - Início">
-        <img class="brand-logo" src="img/logo.svg" alt="BRsys" />
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="img/logo.svg" alt="BRsys" width="40" height="40" />
         <span class="brand-text">
           <span class="brand-name">BRsys</span>
           <span class="brand-tagline">Tecnologia para Hotelaria</span>
         </span>
       </a>
 
-      <!-- Menu Desktop (renderizado pelo JS) -->
+      <!-- Menu Desktop (JS) -->
       <div id="nav-desktop-mount"></div>
 
-      <!-- CTA / Actions -->
+      <!-- Actions -->
       <div class="header-actions">
         <a href="#recursos" class="btn btn-secondary">Baixar materiais</a>
         <a href="#contato" class="btn btn-primary">Agendar demo</a>
@@ -39,19 +119,17 @@
           🌙
         </button>
 
-        <!-- Toggle Mobile -->
         <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Menu Mobile (renderizado pelo JS) -->
+    <!-- Mobile mount (JS) -->
     <div id="nav-mobile-mount"></div>
   </header>
 
-  <main>
-
+  <main id="conteudo">
     <!-- HERO -->
     <section class="hero" id="topo">
       <div class="container hero-grid">
@@ -76,24 +154,18 @@
 
         <div class="hero-media">
           <div class="hero-device">
-            <img
-              src="img/hero-hotelaria.png"
-              alt="Dashboard BRsys para hotelaria"
-              loading="lazy"
-            />
+            <img src="img/hero-hotelaria.png" alt="Dashboard BRsys para hotelaria" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
     <!-- PROVA SOCIAL -->
-    <section class="section section-alt proof">
+    <section class="section section-alt proof" aria-label="Perfis de hospedagem atendidos">
       <div class="container">
         <div class="section-header">
           <h2>Tecnologia pensada para hospedagens independentes</h2>
-          <p class="proof-text">
-            Pousadas, hotéis e hospedagens que querem mais reservas diretas e gestão profissional.
-          </p>
+          <p class="proof-text">Pousadas, hotéis e hospedagens que querem mais reservas diretas e gestão profissional.</p>
         </div>
 
         <div class="grid-4 proof-grid">
@@ -134,7 +206,7 @@
               <li>Check-in / check-out</li>
               <li>Relatórios</li>
             </ul>
-            <a class="card-link" href="pms/index.html">Saiba mais →</a>
+            <a class="card-link" href="/pms/">Saiba mais →</a>
           </article>
 
           <article class="card">
@@ -145,18 +217,18 @@
               <li>WhatsApp + Google</li>
               <li>Simuladores</li>
             </ul>
-            <a class="card-link" href="como-vender-direto-sem-booking/index.html">Saiba mais →</a>
+            <a class="card-link" href="/como-vender-direto-sem-booking/">Saiba mais →</a>
           </article>
 
           <article class="card">
             <h3>Automação</h3>
-            <p>Pré check-in, mensagens e processos.</p>
+            <p>Pré-check-in, mensagens e processos.</p>
             <ul class="list">
               <li>Pré-check-in</li>
               <li>Padronização</li>
               <li>Menos retrabalho</li>
             </ul>
-            <a class="card-link" href="implantacao-sistema/index.html">Saiba mais →</a>
+            <a class="card-link" href="/implantacao-sistema/">Saiba mais →</a>
           </article>
 
           <article class="card">
@@ -167,7 +239,7 @@
               <li>Guias de destino</li>
               <li>Landing Ads</li>
             </ul>
-            <a class="card-link" href="seo-local-hoteis/index.html">Saiba mais →</a>
+            <a class="card-link" href="/seo-local-hoteis/">Saiba mais →</a>
           </article>
         </div>
       </div>
@@ -182,25 +254,25 @@
         </div>
 
         <div class="grid-4 segments-grid">
-          <a href="sistema-para-pousada/index.html" class="card segment-card">
+          <a href="/sistema-para-pousada/" class="card segment-card">
             <h3>Pousadas</h3>
             <p>Gestão + reservas diretas.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="sistema-hotel-fazenda/index.html" class="card segment-card">
+          <a href="/sistema-hotel-fazenda/" class="card segment-card">
             <h3>Hotel Fazenda</h3>
             <p>Controle completo da operação.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="pms-para-hotel-pequeno/index.html" class="card segment-card">
+          <a href="/pms-para-hotel-pequeno/" class="card segment-card">
             <h3>Hotel Pequeno</h3>
             <p>PMS simples e poderoso.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="site-para-hotel/index.html" class="card segment-card">
+          <a href="/site-para-hotel/" class="card segment-card">
             <h3>Marketing para Hotelaria</h3>
             <p>Mais visibilidade no Google.</p>
             <span class="card-link">Abrir →</span>
@@ -218,25 +290,25 @@
         </div>
 
         <div class="grid-4 resources-grid">
-          <a href="simulador-receita-direta/index.html" class="card resource-card">
+          <a href="/simulador-receita-direta/" class="card resource-card">
             <h3>Simulador de Receita Direta</h3>
             <p>Veja quanto pode economizar sem OTA.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="simulador-roi-pms-site/index.html" class="card resource-card">
+          <a href="/simulador-roi-pms-site/" class="card resource-card">
             <h3>ROI PMS + Site</h3>
             <p>Simule retorno da tecnologia.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="checklist-gestao-hotel/index.html" class="card resource-card">
+          <a href="/checklist-gestao-hotel/" class="card resource-card">
             <h3>Checklist Gestão Hotel</h3>
             <p>Organize sua operação.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
-          <a href="modelos/index.html" class="card resource-card">
+          <a href="/modelos/" class="card resource-card">
             <h3>Modelos e documentos</h3>
             <p>Materiais prontos para gestão.</p>
             <span class="card-link">Abrir →</span>
@@ -268,6 +340,34 @@
       </div>
     </section>
 
+    <!-- FAQ (visível, combina com Schema) -->
+    <section class="section section-alt faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Dúvidas comuns antes de agendar uma demonstração.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>A BRsys substitui a Booking?</h3>
+            <p>Ela aumenta reservas diretas com site, motor e marketing. A Booking pode continuar como canal, mas com menor dependência.</p>
+          </div>
+          <div class="card">
+            <h3>Serve para pousada pequena?</h3>
+            <p>Sim. A plataforma é feita para hotelaria independente: simples na rotina, forte em vendas diretas e automação.</p>
+          </div>
+          <div class="card">
+            <h3>Quanto tempo para implantar?</h3>
+            <p>O básico entra no ar rapidamente. A implantação completa evolui por etapas conforme regras, quartos e integrações.</p>
+          </div>
+          <div class="card">
+            <h3>O que preciso para começar?</h3>
+            <p>Cidade, número de quartos e diária média. Com isso já dá para montar o plano e o caminho mais rápido.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -278,35 +378,8 @@
     </div>
   </footer>
 
-  <!-- MENU JS -->
-  <script type="module">
-    import { mountMenu } from "./js/menu-render.js";
-    mountMenu();
-  </script>
-
-  <!-- NAV TOGGLE + THEME -->
-  <script>
-    // mobile menu toggle
-    const navBtn = document.querySelector(".nav-toggle");
-    navBtn?.addEventListener("click", () => {
-      const open = document.body.classList.toggle("nav-open");
-      navBtn.setAttribute("aria-expanded", String(open));
-    });
-
-    // theme toggle (respeita tema atual e alterna)
-    const toggle = document.getElementById("theme-toggle");
-    const root = document.documentElement;
-
-    // inicia ícone correto
-    toggle.textContent = root.getAttribute("data-theme") === "light" ? "☀️" : "🌙";
-
-    toggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme") || "dark";
-      const next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      toggle.textContent = next === "light" ? "☀️" : "🌙";
-    });
-  </script>
-
+  <!-- JS (sem mexer em mais nada) -->
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
 </body>
 </html>
