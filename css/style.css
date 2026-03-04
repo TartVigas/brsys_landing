@@ -340,6 +340,12 @@ body.nav-open #nav-mobile-mount { transform: translateX(0); }
   overflow: hidden;   /* ADICIONAR */
 }
 
+.hero-device img{
+  width:100%;
+  display:block;
+  border-radius:18px;
+}
+
 @media (min-width: 980px) {
   .hero-grid { grid-template-columns: 1.15fr .85fr; }
   .hero { padding: 70px 0 52px; }
