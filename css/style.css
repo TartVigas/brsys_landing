@@ -1,719 +1,803 @@
+/* =================================
+   BRsys Theme — Hotel Boutique
+   Dark premium + Light elegante
+================================= */
+
 /* ================================
-   VARIÁVEIS DE TEMA (BRsys DarkClean)
+   VARIÁVEIS DE TEMA
 ================================ */
 :root {
-  --bg-main: #020617;
-  --bg-soft: #02081f;
-  --bg-elevated: #050816;
-  --bg-elevated-soft: #0b1120;
+  /* Base dark (azul noite boutique) */
+  --bg-main: #071427;
+  --bg-soft: #0b1d36;
+  --bg-elevated: #0e2342;
+  --bg-elevated-soft: #132c52;
 
-  --text-main: #e2e8f0;
-  --text-muted: #94a3b8;
-  --text-soft: #64748b;
+  /* Texto */
+  --text-main: #e9efff;
+  --text-muted: #a5b5d6;
+  --text-soft: #7d93bd;
 
-  --border-soft: #1e293b;
-  --border-strong: #0f172a;
+  /* Bordas */
+  --border-soft: rgba(255,255,255,.08);
+  --border-strong: rgba(255,255,255,.14);
 
+  /* Assinatura BRsys */
   --accent: #0f9b9d;
-  --accent-soft: rgba(15, 155, 157, 0.16);
+  --accent-soft: rgba(15,155,157,.16);
 
+  /* Estrutura */
   --radius-card: 18px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.75);
+  --shadow-soft: 0 20px 50px rgba(2,12,35,.65);
 
   --transition-fast: 0.18s ease-out;
 }
 
 /* ================================
-   RESET / BASE
+   RESET
 ================================ */
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior:smooth; }
 
-body {
-  background: radial-gradient(circle at top, #02081f 0, #020617 60%, #020617 100%);
-  color: var(--text-main);
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
+body{
+  font-family:"Inter", system-ui, -apple-system, sans-serif;
+  line-height:1.6;
+  color:var(--text-main);
+
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(15,155,157,.18), transparent 60%),
+    radial-gradient(800px 600px at 85% 0%, rgba(59,130,246,.15), transparent 60%),
+    radial-gradient(circle at top, var(--bg-soft) 0, var(--bg-main) 60%, var(--bg-main) 100%);
 }
 
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
 /* ================================
    LAYOUT
 ================================ */
-.container {
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 16px;
+
+.container{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 16px;
 }
 
-.section { padding: 72px 0; }
-
-.section-alt {
-  background: radial-gradient(circle at top, #020b24 0, #020617 55%, #020617 100%);
+.section{
+  padding:72px 0;
 }
 
-.section-header {
-  max-width: 720px;
-  margin-bottom: 32px;
+.section-alt{
+  background:
+    radial-gradient(900px 400px at 50% 0%, rgba(15,155,157,.10), transparent 70%);
 }
 
-.section-header h2 {
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+.section-header{
+  max-width:720px;
+  margin-bottom:32px;
 }
 
-.section-header p {
-  color: var(--text-muted);
-  font-size: 0.94rem;
+.section-header h2{
+  font-size:1.9rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.section-header p{
+  color:var(--text-muted);
+  font-size:.95rem;
 }
 
 /* ================================
-   HEADER (padrão oficial)
+   HEADER
 ================================ */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(16px);
-  background: rgba(2, 6, 23, 0.92);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  backdrop-filter:blur(18px);
+
+  background:rgba(7,20,39,.86);
+
+  border-bottom:1px solid var(--border-soft);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  gap: 12px;
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 0;
+  gap:14px;
 }
 
 /* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  gap: 10px;
-  min-width: 160px;
-}
 
-.brand-logo { height: 34px; width: auto; }
-
-.brand-text { display: flex; flex-direction: column; }
-
-.brand-name {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #f9fafb;
-}
-
-.brand-tagline {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-soft);
-}
-
-/* Navegação desktop */
-.nav-desktop {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 0.9rem;
-}
-
-.nav-desktop a {
-  color: var(--text-muted);
-  transition: color var(--transition-fast);
-}
-
-.nav-desktop a:hover { color: #e5e7eb; }
-
-/* CTA desktop */
-.header-cta { font-size: 0.85rem; }
-
-/* Menu mobile */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 12px;
-}
-
-.nav-toggle:hover { background: rgba(255,255,255,.04); }
-
-.nav-toggle span {
-  width: 22px;
-  height: 2px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
-}
-
-.nav-mobile {
-  display: none;
-  flex-direction: column;
-  padding: 8px 16px 16px;
-  border-top: 1px solid var(--border-soft);
-  background: #020617;
-}
-
-.nav-mobile a {
-  padding: 10px 0;
-  color: var(--text-main);
-  font-size: 0.92rem;
-}
-
-.nav-mobile-cta { margin-top: 10px; }
-
-/* Estado aberto */
-body.nav-open .nav-mobile { display: flex; }
-
-body.nav-open .nav-toggle span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-body.nav-open .nav-toggle span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* ================================
-   BOTÕES
-================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-pill);
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition:
-    background var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
-  white-space: nowrap;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #020617;
-  box-shadow: 0 12px 30px rgba(15, 155, 157, 0.45);
-}
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 38px rgba(15, 155, 157, 0.5);
-}
-
-.btn-secondary {
-  border-color: var(--border-soft);
-  color: var(--text-main);
-  background: transparent;
-}
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.btn-outline {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: transparent;
-}
-.btn-outline:hover { background: var(--accent-soft); }
-
-/* ================================
-   HERO (genérico do site)
-   -> Suporta duas colunas:
-      - conteúdo (esq)
-      - hero-media (dir) com imagem/mockup
-================================ */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 72px 0 64px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-  gap: 32px;
-  align-items: center;
-}
-
-.eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  line-height: 1.25;
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-
-.hero-subtitle {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  max-width: 600px;
-  margin-bottom: 20px;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.hero-note {
-  font-size: 0.78rem;
-  color: var(--text-soft);
-}
-
-.hero-media {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-device {
-  max-width: 520px;
-  width: 100%;
-  margin-left: auto;
-}
-
-.hero-device img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-/* ================================
-   CARDS / GRID (genérico)
-================================ */
-.grid-3, .grid-4 {
-  display: grid;
-  gap: 20px;
-}
-
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-
-.card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-card);
-  padding: 18px 18px 20px;
-  font-size: 0.9rem;
-  color: var(--text-main);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition:
-    border-color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast),
-    background var(--transition-fast);
-}
-
-.card:hover {
-  border-color: var(--accent-soft);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
-  background: linear-gradient(145deg, #020617, #020b21);
-}
-
-.card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-
-.card p { font-size: 0.9rem; color: var(--text-muted); }
-
-/* Listas */
-.list {
-  list-style: none;
-  margin-top: 10px;
-  font-size: 0.84rem;
-  color: var(--text-soft);
-}
-.list li + li { margin-top: 4px; }
-
-.card-link {
-  margin-top: auto;
-  font-size: 0.86rem;
-  color: var(--accent);
-}
-.card-link:hover { text-decoration: underline; }
-
-/* ================================
-   SOLUÇÕES (página /solucoes)
-   -> substitui 100% o CSS inline
-================================ */
-.solutions-hero {
-  padding: 18px 0 0;
-}
-
-.solutions-hero-card {
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 24px 70px rgba(0,0,0,.55);
-  background: #000;
-}
-
-.solutions-hero-bg {
-  min-height: 320px;
-  padding: 26px;
-  display: flex;
-  align-items: flex-end;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(2, 6, 23, .92) 0%,
-      rgba(2, 6, 23, .80) 38%,
-      rgba(2, 6, 23, .35) 70%,
-      rgba(2, 6, 23, .12) 100%
-    ),
-    var(--solutions-hero-img);
-  background-size: cover;
-  background-position: center;
-}
-
-.solutions-hero-content { max-width: 720px; }
-
-.solutions-kicker {
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(15, 155, 157, .14);
-  border: 1px solid rgba(15, 155, 157, .28);
-  color: rgba(255,255,255,.92);
-  font-size: 13px;
-}
-
-.solutions-hero-title {
-  margin: 14px 0 10px;
-  font-size: clamp(26px, 3.2vw, 42px);
-  line-height: 1.06;
-}
-
-.solutions-hero-lead {
-  margin: 0 0 16px;
-  color: rgba(255,255,255,.74);
-  font-size: 16px;
-  line-height: 1.55;
-}
-
-.solutions-cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.solutions-cta-note {
-  color: rgba(255,255,255,.62);
-  font-size: 13px;
-}
-
-/* Grid cards (estilo capa) */
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
-}
-
-.solution-card {
-  grid-column: span 6;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  box-shadow: 0 18px 55px rgba(0,0,0,.35);
-  transition: transform .15s ease, border-color .15s ease, background .15s ease;
-  position: relative;
-  isolation: isolate;
-  min-height: 220px;
-}
-
-.solution-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(15,155,157,.38);
-  background: rgba(255,255,255,.08);
-}
-
-.solution-card-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.05) contrast(1.03);
-  transform: scale(1.02);
-  z-index: -2;
-}
-
-.solution-card-shade {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(2,6,23,.90) 0%, rgba(2,6,23,.76) 55%, rgba(2,6,23,.38) 100%),
-    radial-gradient(700px 260px at 0% 100%, rgba(15,155,157,.20), transparent 60%);
-  z-index: -1;
-}
-
-.solution-card-inner {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 10px;
-}
-
-.solution-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  width: fit-content;
-  background: rgba(15,155,157,.14);
-  border: 1px solid rgba(15,155,157,.28);
-  font-size: 12px;
-  color: rgba(255,255,255,.92);
-}
-
-.solution-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin: 0;
-}
-
-.solution-desc {
-  margin: 0;
-  color: rgba(255,255,255,.74);
-  line-height: 1.5;
-}
-
-.solution-meta {
-  margin-top: auto;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  color: rgba(255,255,255,.72);
-  font-size: 13px;
-}
-
-.solution-chip {
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
-}
-
-.solution-go {
-  margin-left: auto;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(15,155,157,.26), rgba(15,155,157,.10));
-  border: 1px solid rgba(15,155,157,.30);
-  color: rgba(255,255,255,.92);
-  font-weight: 700;
-}
-
-/* CTA final */
-.footer-cta {
-  margin: 22px 0 32px;
-  border-radius: 24px;
-  padding: 16px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(15,155,157,.08));
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-cta strong { font-size: 16px; }
-.footer-cta span { color: var(--text-muted); font-size: 13px; }
-
-/* ================================
-   FOOTER (padrão)
-================================ */
-.site-footer {
-  border-top: 1px solid var(--border-soft);
-  padding: 18px 0 22px;
-  background: #020617;
-}
-
-.footer-inner {
-  font-size: 0.78rem;
-  color: var(--text-soft);
-  text-align: center;
-}
-
-.footer-inner p + p { margin-top: 4px; }
-
-/* ================================
-   RESPONSIVO
-================================ */
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; }
-
-  .hero-media { justify-content: center; }
-  .hero-device { margin: 18px auto 0; max-width: 560px; }
-
-  .nav-desktop { display: none; }
-  .nav-toggle { display: flex; }
-  .header-cta { display: none; }
-
-  .solutions-hero-bg { min-height: 360px; padding: 18px; }
-  .solution-card { grid-column: span 12; }
-}
-
-@media (max-width: 600px) {
-  .section { padding: 56px 0; }
-
-  .hero { padding-top: 60px; }
-  .hero h1 { font-size: 1.7rem; }
-  .hero-subtitle { font-size: 0.9rem; }
-  .section-header h2 { font-size: 1.5rem; }
-}
-
-/* ================================
-   THEME TOGGLE (Sol/Lua)
-   - Usa html[data-theme="light"] / html[data-theme="dark"]
-================================ */
-.header-tools{
+.brand{
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-.theme-toggle{
+.brand-logo{
+  height:34px;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand-name{
+  font-weight:600;
+  font-size:1rem;
+}
+
+.brand-tagline{
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-soft);
+}
+
+/* Desktop nav */
+
+.nav-desktop{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:.9rem;
+}
+
+.nav-desktop a{
+  color:var(--text-muted);
+  transition:color var(--transition-fast);
+}
+
+.nav-desktop a:hover{
+  color:var(--text-main);
+}
+
+/* CTA */
+
+.header-cta{
+  display:flex;
+  gap:10px;
+}
+
+/* Tools */
+
+.header-tools{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* ================================
+   MOBILE NAV
+================================ */
+
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  padding:10px;
+}
+
+.nav-toggle span{
+  width:22px;
+  height:2px;
+  background:#e2e8f0;
+  border-radius:999px;
+}
+
+.nav-mobile{
+  display:none;
+  flex-direction:column;
+  padding:8px 16px 16px;
+  background:var(--bg-main);
+  border-top:1px solid var(--border-soft);
+}
+
+.nav-mobile a{
+  padding:10px 0;
+  font-size:.9rem;
+}
+
+body.nav-open .nav-mobile{
+  display:flex;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+.btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:42px;
-  height:42px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  cursor: pointer;
-  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  border-radius:var(--radius-pill);
+  padding:10px 20px;
+  font-size:.9rem;
+  font-weight:500;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:all var(--transition-fast);
 }
 
-.theme-toggle:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.06);
-  border-color: rgba(15,155,157,.35);
+.btn-primary{
+  background:var(--accent);
+  color:#03191b;
+  box-shadow:0 10px 30px rgba(15,155,157,.4);
 }
 
-.theme-icon{
+.btn-primary:hover{
+  transform:translateY(-1px);
+}
+
+.btn-secondary{
+  border-color:var(--border-soft);
+}
+
+.btn-secondary:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+.btn-outline{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+.btn-outline:hover{
+  background:var(--accent-soft);
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero{
+  padding:72px 0 64px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:3fr 2.4fr;
+  gap:32px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:2.2rem;
+  line-height:1.25;
+  margin-bottom:14px;
+}
+
+.hero-subtitle{
+  color:var(--text-muted);
+  margin-bottom:20px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.hero-note{
+  font-size:.78rem;
+  color:var(--text-soft);
+}
+
+.hero-device{
+  max-width:520px;
+  margin-left:auto;
+}
+
+.hero-device img{
+  border-radius:20px;
+  box-shadow:var(--shadow-soft);
+}
+
+/* ================================
+   GRID / CARDS
+================================ */
+
+.grid-3{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+.card{
+  background:var(--bg-elevated);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius-card);
+  padding:18px 18px 20px;
+  transition:all var(--transition-fast);
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:var(--accent-soft);
+  background:linear-gradient(160deg,var(--bg-elevated),var(--bg-elevated-soft));
+  box-shadow:var(--shadow-soft);
+}
+
+.card h3{
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:.9rem;
+  color:var(--text-muted);
+}
+
+.card-link{
+  margin-top:12px;
+  font-size:.86rem;
+  color:var(--accent);
+}
+
+/* ================================
+   LIST
+================================ */
+
+.list{
+  list-style:none;
+  margin-top:10px;
+  font-size:.84rem;
+  color:var(--text-soft);
+}
+
+.list li + li{
+  margin-top:4px;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.site-footer{
+  border-top:1px solid var(--border-soft);
+  padding:20px 0;
+  background:var(--bg-main);
+}
+
+.footer-inner{
+  text-align:center;
+  font-size:.8rem;
+  color:var(--text-soft);
+}
+
+/* ================================
+   THEME TOGGLE
+================================ */
+
+.theme-toggle{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid var(--border-soft);
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:16px;
-  line-height:1;
+}
+
+/* ================================
+   LIGHT THEME
+================================ */
+
+html[data-theme="light"]{
+
+  --bg-main:#f6fbff;
+  --bg-soft:#eef6ff;
+  --bg-elevated:#ffffff;
+  --bg-elevated-soft:#f3f9ff;
+
+  --text-main:#0b1b34;
+  --text-muted:#3f587d;
+  --text-soft:#5c7398;
+
+  --border-soft:rgba(11,27,52,.10);
+  --border-strong:rgba(11,27,52,.16);
+
+  --shadow-soft:0 18px 40px rgba(10,25,50,.12);
+}
+
+html[data-theme="light"] body{
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(15,155,157,.16), transparent 60%),
+    radial-gradient(800px 600px at 85% 0%, rgba(59,130,246,.14), transparent 60%),
+    linear-gradient(180deg,#ffffff 0%,var(--bg-main) 100%);
+}
+
+html[data-theme="light"] .site-header{
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(16px);
+}
+
+html[data-theme="light"] .card:hover{
+  background:linear-gradient(180deg,#ffffff,var(--bg-elevated-soft));
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width:900px){
+
+.hero-grid{
+  grid-template-columns:1fr;
+}
+
+.hero-device{
+  margin:18px auto 0;
+}
+
+.nav-desktop{
+  display:none;
+}
+
+.nav-toggle{
+  display:flex;
+}
+
+.header-cta{
+  display:none;
+}
+
+}
+
+@media (max-width:600px){
+
+.section{
+  padding:56px 0;
+}
+
+.hero h1{
+  font-size:1.7rem;
+}
+
+.section-header h2{
+  font-size:1.5rem;
+}
+
+/* =========================================
+   BRsys Upgrades (Hotel Boutique)
+   1) Glass Header
+   2) Card Hover Glow
+   3) Hero Aura + Mockup aura
+   Cole no FINAL do style.css
+========================================= */
+
+/* -------------------------
+   1) GLASS HEADER (premium)
+-------------------------- */
+.site-header{
+  box-shadow: 0 10px 28px rgba(2,12,35,.28);
+}
+
+.site-header::before{
+  content:"";
   position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 140px at 25% 0%, rgba(15,155,157,.14), transparent 70%),
+    radial-gradient(900px 160px at 85% 0%, rgba(59,130,246,.10), transparent 72%);
+  opacity:.9;
+}
+
+.site-header{
+  position: sticky;
+}
+.header-inner{
+  position:relative; /* garante que conteúdo fique acima do ::before */
+}
+
+/* Light: glass mais claro e elegante */
+html[data-theme="light"] .site-header{
+  border-bottom: 1px solid rgba(11,27,52,.10);
+  box-shadow: 0 12px 26px rgba(10,25,50,.10);
+}
+
+html[data-theme="light"] .site-header::before{
+  background:
+    radial-gradient(900px 160px at 20% 0%, rgba(15,155,157,.12), transparent 70%),
+    radial-gradient(900px 180px at 85% 0%, rgba(59,130,246,.10), transparent 72%);
+  opacity: 1;
+}
+
+/* -------------------------
+   2) CARD HOVER GLOW (filé)
+-------------------------- */
+.card{
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: calc(var(--radius-card) + 2px);
+  pointer-events:none;
   opacity:0;
-  transform: scale(.9);
+  transition: opacity var(--transition-fast);
+  background:
+    radial-gradient(260px 120px at 20% 10%, rgba(15,155,157,.22), transparent 60%),
+    radial-gradient(240px 120px at 80% 10%, rgba(59,130,246,.16), transparent 60%);
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+/* borda viva no hover */
+.card:hover{
+  border-color: rgba(15,155,157,.28);
+}
+
+/* light: glow mais sutil */
+html[data-theme="light"] .card::before{
+  background:
+    radial-gradient(260px 120px at 20% 10%, rgba(15,155,157,.14), transparent 60%),
+    radial-gradient(240px 120px at 80% 10%, rgba(59,130,246,.10), transparent 60%);
+}
+
+/* Melhor leitura nos cards (title + link) */
+.card h3{
+  letter-spacing: .01em;
+}
+.card-link{
+  font-weight: 600;
+}
+
+/* -------------------------
+   3) HERO AURA (premium)
+-------------------------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  pointer-events:none;
+  background:
+    radial-gradient(700px 420px at 18% 18%, rgba(15,155,157,.22), transparent 60%),
+    radial-gradient(760px 460px at 78% 6%, rgba(59,130,246,.18), transparent 62%),
+    radial-gradient(900px 520px at 50% 80%, rgba(255,255,255,.04), transparent 65%);
+  filter: blur(2px);
+  opacity: .9;
+}
+
+.hero-grid{
+  position:relative; /* acima do ::before */
+}
+
+.hero-device{
+  position:relative;
+}
+
+/* Aura atrás do mockup (device) */
+.hero-device::after{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border-radius: 26px;
+  pointer-events:none;
+  background:
+    radial-gradient(240px 160px at 25% 20%, rgba(15,155,157,.22), transparent 60%),
+    radial-gradient(260px 170px at 80% 10%, rgba(59,130,246,.18), transparent 60%);
+  filter: blur(10px);
+  opacity: .75;
+  z-index:-1;
+}
+
+/* Light: aura mais clean */
+html[data-theme="light"] .hero::before{
+  background:
+    radial-gradient(700px 420px at 18% 18%, rgba(15,155,157,.16), transparent 60%),
+    radial-gradient(760px 460px at 78% 6%, rgba(59,130,246,.12), transparent 62%),
+    radial-gradient(900px 520px at 50% 80%, rgba(11,27,52,.05), transparent 65%);
+  opacity: 1;
+}
+
+html[data-theme="light"] .hero-device::after{
+  background:
+    radial-gradient(240px 160px at 25% 20%, rgba(15,155,157,.16), transparent 60%),
+    radial-gradient(260px 170px at 80% 10%, rgba(59,130,246,.12), transparent 60%);
+  opacity: .6;
+}
+
+/* =========================================
+   BRsys Upgrade #4 — Tipografia Boutique + Espaçamento
+   Cole no FINAL do style.css
+========================================= */
+
+/* 1) Tipografia mais elegante (sem mudar HTML) */
+body{
+  letter-spacing: .005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero h1,
+.section-header h2{
+  letter-spacing: -0.02em;              /* premium look */
+}
+
+.hero h1{
+  font-size: clamp(1.85rem, 2.6vw, 2.55rem);
+  line-height: 1.18;
+  margin-bottom: 14px;
+}
+
+.section-header h2{
+  font-size: clamp(1.45rem, 1.8vw, 2.05rem);
+  line-height: 1.18;
+}
+
+/* 2) Espaçamento mais “luxo” (mais respiro) */
+.section{
+  padding: 82px 0;                      /* antes 72 */
+}
+
+.section-header{
+  margin-bottom: 36px;                  /* + respiro */
+}
+
+/* 3) Links com destaque sutil (boutique) */
+.card-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.card-link::after{
+  content: "→";
+  transform: translateY(-1px);
+  opacity: .9;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.card-link:hover::after{
+  transform: translate(2px, -1px);
+  opacity: 1;
+}
+
+/* 4) Botões com “acabamento” mais premium */
+.btn{
+  letter-spacing: .01em;
+}
+
+.btn-primary{
+  background: linear-gradient(135deg, rgba(15,155,157,1) 0%, rgba(15,155,157,.90) 60%, rgba(59,130,246,.22) 140%);
+  border-color: rgba(255,255,255,.06);
+}
+
+.btn-primary:hover{
+  box-shadow: 0 18px 44px rgba(15,155,157,.36);
+}
+
+/* 5) Borda “fina” e sofisticada no container de cards */
+.grid-3{
+  gap: 22px; /* leve ajuste */
+}
+
+/* 6) Texto secundário mais consistente */
+.hero-subtitle,
+.section-header p,
+.card p{
+  line-height: 1.65;
+}
+
+/* 7) Ajuste do header para ficar mais “alto padrão” */
+.brand-name{
+  font-weight: 650;                     /* sensação premium */
+}
+
+.brand-tagline{
+  opacity: .95;
+}
+
+/* 8) Melhor contraste do nav no dark e no light */
+.nav-desktop a{
+  position: relative;
+}
+
+.nav-desktop a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  height:2px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(15,155,157,.0), rgba(15,155,157,.7), rgba(59,130,246,.0));
+  opacity:0;
+  transform: translateY(2px);
   transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-/* Mostra ícone conforme tema atual */
-html[data-theme="dark"] .theme-icon--moon{ opacity:1; transform: scale(1); }
-html[data-theme="light"] .theme-icon--sun{ opacity:1; transform: scale(1); }
-
-/* A posição absolute precisa do container relativo */
-.theme-toggle{ position: relative; }
-
-/* ================================
-   TEMA CLARO (overrides)
-   -> Mantém seus tokens mas troca valores
-================================ */
-html[data-theme="light"] {
-  --bg-main: #f8fafc;
-  --bg-soft: #eef2ff;
-  --bg-elevated: #ffffff;
-  --bg-elevated-soft: #f1f5f9;
-
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-soft: #64748b;
-
-  --border-soft: #e2e8f0;
-  --border-strong: #cbd5e1;
-
-  --accent: #0f9b9d;         /* mantém assinatura */
-  --accent-soft: rgba(15, 155, 157, 0.12);
-
-  --shadow-soft: 0 18px 40px rgba(2, 6, 23, 0.12);
+.nav-desktop a:hover::after{
+  opacity:1;
+  transform: translateY(0);
 }
 
-/* Ajustes de fundo para o claro */
-html[data-theme="light"] body{
-  background: radial-gradient(circle at top, #ffffff 0, #f1f5f9 60%, #f8fafc 100%);
+/* 9) Dark: cards com “veludo” (menos chapado) */
+.card{
+  background:
+    radial-gradient(600px 220px at 10% 0%, rgba(255,255,255,.05), transparent 60%),
+    linear-gradient(160deg, rgba(255,255,255,.03), rgba(255,255,255,0)),
+    var(--bg-elevated);
 }
 
-/* Header no claro */
-html[data-theme="light"] .site-header{
-  background: rgba(248, 250, 252, 0.88);
-  border-bottom: 1px solid rgba(203, 213, 225, 0.9);
+.card:hover{
+  background:
+    radial-gradient(600px 220px at 10% 0%, rgba(255,255,255,.06), transparent 60%),
+    linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
+    linear-gradient(160deg,var(--bg-elevated),var(--bg-elevated-soft));
 }
 
-html[data-theme="light"] .nav-desktop a{
-  color: var(--text-muted);
-}
-html[data-theme="light"] .nav-desktop a:hover{
-  color: var(--text-main);
-}
-
-html[data-theme="light"] .nav-toggle span{
-  background: var(--text-main);
-}
-
-html[data-theme="light"] .nav-mobile{
-  background: #ffffff;
-}
-
-/* Botões (pequeno ajuste p/ contraste no claro) */
-html[data-theme="light"] .btn-secondary{
-  background: transparent;
-  border-color: var(--border-soft);
-}
-
-/* Cards no claro */
+/* 10) Light: mais “hotel boutique” (azul gelo, bordas finas, sombras suaves) */
 html[data-theme="light"] .card{
-  background: var(--bg-elevated);
+  background:
+    radial-gradient(600px 220px at 10% 0%, rgba(59,130,246,.06), transparent 60%),
+    #ffffff;
+  border-color: rgba(11,27,52,.10);
 }
-html[data-theme="light"] .card:hover{
-  background: #ffffff;
+
+html[data-theme="light"] .btn-secondary{
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(10px);
 }
+
+/* 11) Responsivo: respiro menor */
+@media (max-width: 900px){
+  .section{
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 600px){
+  .section{
+    padding: 56px 0;
+  }
+  .hero h1{
+    font-size: 1.7rem;
+  }
+}
+
