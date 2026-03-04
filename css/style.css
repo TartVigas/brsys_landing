@@ -910,3 +910,102 @@ html[data-theme="light"] .btn-secondary{
     rgba(7,20,39,1)
   );
 }
+
+/* =========================================
+   Mega Menu (Desktop)
+========================================= */
+.dd{ position: relative; }
+
+.dd-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font: inherit;
+  color: var(--text-muted);
+  padding: 8px 6px;
+  transition: color var(--transition-fast);
+}
+
+.dd-btn:hover{ color: var(--text-main); }
+
+.dd-caret{ font-size: .8em; opacity:.85; }
+
+.dd-menu{
+  position:absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  width: 720px;
+  max-width: min(720px, 80vw);
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: rgba(7,20,39,.88);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  display:none;
+}
+
+html[data-theme="light"] .dd-menu{
+  background: rgba(255,255,255,.85);
+}
+
+.dd-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1.1fr 1fr;
+  gap: 14px;
+}
+
+.dd-col{
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+html[data-theme="light"] .dd-col{
+  background: rgba(11,27,52,.03);
+  border: 1px solid rgba(11,27,52,.08);
+}
+
+.dd-title{
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+
+.dd-col a{
+  display:block;
+  padding: 8px 8px;
+  border-radius: 10px;
+  color: var(--text-main);
+}
+
+.dd-col a:hover{
+  background: rgba(15,155,157,.12);
+}
+
+.dd-highlight{
+  background: linear-gradient(135deg, rgba(15,155,157,.14), rgba(59,130,246,.08));
+  border-color: rgba(15,155,157,.18);
+}
+
+.dd-cta{
+  font-weight: 800;
+  border: 1px solid rgba(15,155,157,.25);
+  background: rgba(15,155,157,.10);
+}
+
+.dd-cta:hover{
+  background: rgba(15,155,157,.16);
+}
+
+/* Mostrar ao passar o mouse (desktop) */
+@media (min-width: 901px){
+  .dd:hover .dd-menu{ display:block; }
+}
