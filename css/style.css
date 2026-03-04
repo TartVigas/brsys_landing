@@ -1194,3 +1194,15 @@ html[data-theme="light"] .dd-col{
 html[data-theme="light"] .dd-menu::-webkit-scrollbar-thumb{
   background: rgba(11,27,52,.16);
 }
+/* NAV (JS) */
+.site-nav .nav-list { display:flex; gap:18px; list-style:none; padding:0; margin:0; align-items:center; }
+.site-nav .nav-link { text-decoration:none; opacity:.9; }
+.site-nav .nav-link.is-active { opacity:1; text-decoration:underline; text-underline-offset:6px; }
+
+.nav-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9998; }
+.nav-drawer { position:fixed; top:0; right:0; height:100dvh; width:min(86vw, 360px); transform:translateX(110%); transition:transform .22s ease; z-index:9999; }
+.nav-drawer__inner { height:100%; padding:18px; backdrop-filter: blur(10px); background:rgba(10,16,24,.92); border-left:1px solid rgba(255,255,255,.08); }
+.nav-drawer .nav-list { display:flex; flex-direction:column; gap:12px; }
+.nav-drawer__ctas { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+
+.nav-open .nav-drawer { transform:translateX(0); }
