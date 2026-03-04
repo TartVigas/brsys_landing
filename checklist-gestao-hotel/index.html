@@ -1,174 +1,409 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checklist de Gestão de Hotel - BRsys</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ================= HEADER ================= -->
+  <title>Checklist de Gestão de Hotel e Pousada | Rotina, Reservas e Operação | BRsys</title>
+  <meta name="description" content="Checklist de gestão hoteleira: rotina de recepção, reservas, ocupação, limpeza, manutenção e financeiro. Material prático para organizar hotel ou pousada." />
+  <link rel="canonical" href="https://brsys.com.br/checklist-gestao-hotel/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="Checklist de Gestão de Hotel e Pousada | BRsys" />
+  <meta property="og:description" content="Checklist prático para organizar rotina, reservas, limpeza, manutenção e financeiro em hotelaria independente." />
+  <meta property="og:url" content="https://brsys.com.br/checklist-gestao-hotel/" />
+  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Checklist de Gestão de Hotel e Pousada",
+    "url":"https://brsys.com.br/checklist-gestao-hotel/",
+    "inLanguage":"pt-BR",
+    "isPartOf":{"@type":"WebSite","name":"BRsys","url":"https://brsys.com.br/"},
+    "about":[
+      {"@type":"Thing","name":"Gestão hoteleira"},
+      {"@type":"Thing","name":"Rotina de recepção"},
+      {"@type":"Thing","name":"Limpeza e manutenção"},
+      {"@type":"Thing","name":"Reservas e ocupação"}
+    ]
+  }
+  </script>
+
+  <!-- Estilos locais (somente nesta página) -->
+  <style>
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-size: 12px; color: var(--text-soft);
+    }
+    .mini{ margin:0; font-size:13px; color: var(--text-muted); line-height:1.5; }
+    .print-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
+
+    .checkwrap{ display:grid; gap:14px; }
+    @media(min-width:980px){ .checkwrap{ grid-template-columns: 1fr 1fr; } }
+
+    .checklist{
+      display:grid;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .check input{
+      margin-top: 2px;
+      width: 18px; height: 18px;
+      accent-color: var(--accent, #18c6b8);
+      flex: 0 0 auto;
+    }
+    .check span{
+      color: var(--text-soft);
+      line-height: 1.45;
+    }
+    .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+
+    /* Impressão */
+    @media print{
+      .site-header, .site-footer, .hero-actions, .print-actions, #nav-mobile-mount, #nav-desktop-mount { display:none !important; }
+      body{ background:#fff !important; color:#111 !important; }
+      .card, .check{ background:#fff !important; border:1px solid #ddd !important; box-shadow:none !important; }
+      .hero{ padding: 20px 0 !important; background: none !important; }
+      a{ text-decoration:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="brand">
-        <img src="img/brsys-logo.svg" alt="BRsys Logo" class="brand-logo">
-        <div class="brand-text">
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+        <span class="brand-text">
           <span class="brand-name">BRsys</span>
-          <span class="brand-tagline">Hotelaria Moderna</span>
-        </div>
+          <span class="brand-tagline">Tecnologia para Hotelaria</span>
+        </span>
       </a>
 
-      <nav class="nav-desktop">
-        <a href="/sistema-para-pousada-com-site-integrado">Soluções</a>
-        <a href="/simuladores">Simuladores</a>
-        <a href="/conteudo">Blog</a>
-        <a href="/contato" class="btn btn-primary">Contato</a>
-      </nav>
+      <div id="nav-desktop-mount"></div>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <a href="#checklists" class="btn btn-secondary">Ver checklist</a>
+        <a href="#contato" class="btn btn-primary">Agendar demo</a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
-    <nav class="nav-mobile">
-      <a href="/sistema-para-pousada-com-site-integrado">Soluções</a>
-      <a href="/simuladores">Simuladores</a>
-      <a href="/conteudo">Blog</a>
-      <a href="/contato" class="btn btn-primary nav-mobile-cta">Contato</a>
-    </nav>
+    <div id="nav-mobile-mount"></div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero section">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Guia Prático</span>
-        <h1>Checklist de Gestão de Hotel</h1>
-        <p class="hero-subtitle">Tenha o controle completo da sua pousada com nosso checklist organizado por áreas da operação, garantindo eficiência e satisfação do hóspede.</p>
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill">✅ Rotina • 🧾 Recepção • 🧹 Limpeza • 🔧 Manutenção • 💰 Financeiro</span>
+
+          <h1>Checklist de Gestão de Hotel e Pousada</h1>
+
+          <p class="hero-subtitle">
+            Um checklist prático para organizar a operação: reservas, recepção, limpeza, manutenção e financeiro.
+            Use como rotina diária/semana — e pare de operar no improviso.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#checklists">Abrir checklist</a>
+            <a class="btn btn-secondary" href="/pms/">Ver PMS</a>
+          </div>
+
+          <p class="hero-note">
+            Dica: imprima este checklist e use como padrão da equipe. (Tem botão de imprimir logo abaixo.)
+          </p>
+
+          <div class="print-actions">
+            <button class="btn btn-secondary" type="button" onclick="window.print()">Imprimir / salvar PDF</button>
+            <a class="btn btn-secondary" href="/simulador-receita-direta/">Simulador receita direta</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-device">
+            <img src="/img/hero-hotelaria.png" alt="BRsys - Gestão e rotinas de hotelaria" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO USAR -->
+    <section class="section section-alt" id="como-usar">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como usar esse checklist</h2>
+          <p>Simples: transforme em rotina e distribua por função (recepção, limpeza, manutenção e financeiro).</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Diário</h3>
+            <p>Recepção + ocupação + pendências.</p>
+          </div>
+          <div class="card">
+            <h3>Turnos</h3>
+            <p>Passagem de turno e conferências.</p>
+          </div>
+          <div class="card">
+            <h3>Semanal</h3>
+            <p>Manutenção preventiva e estoques.</p>
+          </div>
+          <div class="card">
+            <h3>Mensal</h3>
+            <p>Financeiro, indicadores e revisão.</p>
+          </div>
+        </div>
+
+        <p class="mini" style="margin-top:14px;">
+          Se você quiser, eu adapto este checklist ao seu tipo de hospedagem (pousada, hotel pequeno, hotel fazenda).
+        </p>
+      </div>
+    </section>
+
+    <!-- CHECKLISTS -->
+    <section class="section" id="checklists">
+      <div class="container">
+        <div class="section-header">
+          <h2>Checklist completo (marque e siga)</h2>
+          <p>Você pode usar direto aqui no celular/PC ou imprimir em PDF.</p>
+        </div>
+
+        <div class="checkwrap">
+
+          <!-- RECEPÇÃO / RESERVAS -->
+          <div class="card">
+            <h3>Recepção & Reservas (diário)</h3>
+            <p class="mini">Objetivo: evitar overbooking, manter informações completas e responder rápido.</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Conferir entradas/saídas do dia e da semana (ocupação e disponibilidade).</span></label>
+              <label class="check"><input type="checkbox" /><span>Validar dados de reservas novas (nome, contato, datas, nº hóspedes, valor, condições).</span></label>
+              <label class="check"><input type="checkbox" /><span>Confirmar reservas do dia seguinte (mensagem padrão / WhatsApp).</span></label>
+              <label class="check"><input type="checkbox" /><span>Checar pendências: pagamentos, comprovantes, notas, solicitações especiais.</span></label>
+              <label class="check"><input type="checkbox" /><span>Atualizar status de quartos: livre / ocupado / limpeza / manutenção.</span></label>
+              <label class="check"><input type="checkbox" /><span>Padronizar atendimento: tempo de resposta e roteiro de perguntas.</span></label>
+            </div>
+
+            <div>
+              <span class="tag">Tempo de resposta</span>
+              <span class="tag">Confirmações</span>
+              <span class="tag">Ocupação</span>
+            </div>
+          </div>
+
+          <!-- CHECK-IN / CHECK-OUT -->
+          <div class="card">
+            <h3>Check-in & Check-out (turno)</h3>
+            <p class="mini">Objetivo: reduzir erro e criar padrão de recepção.</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Check-in: confirmar reserva, valores, regras e horário.</span></label>
+              <label class="check"><input type="checkbox" /><span>Registrar dados do hóspede (documento, contato, placa, observações).</span></label>
+              <label class="check"><input type="checkbox" /><span>Orientar regras essenciais (silêncio, café, estacionamento, pet, piscina, etc.).</span></label>
+              <label class="check"><input type="checkbox" /><span>Check-out: conferir consumo/pendências e finalizar pagamento.</span></label>
+              <label class="check"><input type="checkbox" /><span>Encerrar conta, liberar quarto e sinalizar limpeza.</span></label>
+              <label class="check"><input type="checkbox" /><span>Solicitar avaliação (Google) ao final da estadia.</span></label>
+            </div>
+
+            <div>
+              <span class="tag">Padrão</span>
+              <span class="tag">Dados</span>
+              <span class="tag">Avaliações</span>
+            </div>
+          </div>
+
+          <!-- LIMPEZA / GOVERNANÇA -->
+          <div class="card">
+            <h3>Limpeza & Governança (diário)</h3>
+            <p class="mini">Objetivo: consistência e previsibilidade (sem “surpresa”).</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Montar lista de limpeza do dia (saídas, pernoites, entradas).</span></label>
+              <label class="check"><input type="checkbox" /><span>Conferir enxoval (quantidade, troca, reposição).</span></label>
+              <label class="check"><input type="checkbox" /><span>Checklist do quarto: banheiro, cama, lixo, amenities, cheiro e detalhes.</span></label>
+              <label class="check"><input type="checkbox" /><span>Verificar itens de manutenção (lâmpadas, chuveiro, vazamentos, ar).</span></label>
+              <label class="check"><input type="checkbox" /><span>Reportar quartos bloqueados/pendências para recepção.</span></label>
+              <label class="check"><input type="checkbox" /><span>Organizar depósito/estoque de limpeza e amenities.</span></label>
+            </div>
+
+            <div>
+              <span class="tag">Enxoval</span>
+              <span class="tag">Qualidade</span>
+              <span class="tag">Manutenção</span>
+            </div>
+          </div>
+
+          <!-- MANUTENÇÃO -->
+          <div class="card">
+            <h3>Manutenção (semanal)</h3>
+            <p class="mini">Objetivo: prevenir problemas e reduzir reclamações.</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Verificar ar-condicionado/ventiladores (limpeza e funcionamento).</span></label>
+              <label class="check"><input type="checkbox" /><span>Checar duchas/chuveiros e pressão (vazamentos e aquecimento).</span></label>
+              <label class="check"><input type="checkbox" /><span>Conferir iluminação e tomadas (quartos e áreas comuns).</span></label>
+              <label class="check"><input type="checkbox" /><span>Checar fechaduras/portas/janelas (segurança).</span></label>
+              <label class="check"><input type="checkbox" /><span>Áreas externas: piscina, jardim, estacionamento, sinalização.</span></label>
+              <label class="check"><input type="checkbox" /><span>Registrar manutenção feita e pendências (lista e prazos).</span></label>
+            </div>
+
+            <div>
+              <span class="tag">Preventiva</span>
+              <span class="tag">Segurança</span>
+              <span class="tag">Registro</span>
+            </div>
+          </div>
+
+          <!-- FINANCEIRO -->
+          <div class="card">
+            <h3>Financeiro (diário / semanal)</h3>
+            <p class="mini">Objetivo: saber o que entrou, o que saiu e por onde veio a reserva.</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Conferir recebimentos do dia (PIX, cartão, dinheiro) e fechar caixa.</span></label>
+              <label class="check"><input type="checkbox" /><span>Registrar canal de origem (direto/OTA/indicação) para medir dependência.</span></label>
+              <label class="check"><input type="checkbox" /><span>Conferir comissões da OTA e taxas (evitar surpresas).</span></label>
+              <label class="check"><input type="checkbox" /><span>Listar contas a pagar e vencimentos da semana.</span></label>
+              <label class="check"><input type="checkbox" /><span>Analisar ocupação x diária média (meta e ajustes).</span></label>
+              <label class="check"><input type="checkbox" /><span>Separar reserva de caixa para manutenção e imprevistos.</span></label>
+            </div>
+
+            <div>
+              <span class="tag">Caixa</span>
+              <span class="tag">Origem</span>
+              <span class="tag">Comissão</span>
+            </div>
+          </div>
+
+          <!-- MARKETING / VENDAS -->
+          <div class="card">
+            <h3>Marketing & Vendas (semanal)</h3>
+            <p class="mini">Objetivo: aumentar diretas e reduzir dependência de OTA.</p>
+
+            <div class="checklist">
+              <label class="check"><input type="checkbox" /><span>Atualizar fotos e informações no Google Business Profile (GBP).</span></label>
+              <label class="check"><input type="checkbox" /><span>Solicitar avaliações e responder todas (Google/Booking).</span></label>
+              <label class="check"><input type="checkbox" /><span>Revisar preço/condições para fins de semana e feriados.</span></label>
+              <label class="check"><input type="checkbox" /><span>Checar página principal: CTA WhatsApp, fotos e oferta clara.</span></label>
+              <label class="check"><input type="checkbox" /><span>Publicar 1 conteúdo útil por semana (guia local / dúvidas / regras).</span></label>
+              <label class="check"><input type="checkbox" /><span>Usar simuladores (receita direta/ROI) para decisão e estratégia.</span></label>
+            </div>
+
+            <div>
+              <span class="tag">GBP</span>
+              <span class="tag">Avaliações</span>
+              <span class="tag">Diretas</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Dúvidas comuns sobre organizar gestão e rotina.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Isso serve para pousada pequena?</h3>
+            <p>Sim. Quanto menor a equipe, mais o checklist ajuda a manter padrão e evitar retrabalho.</p>
+          </div>
+          <div class="card">
+            <h3>Qual é o melhor “primeiro passo”?</h3>
+            <p>Organizar reservas/ocupação e padronizar atendimento no WhatsApp. Isso já aumenta conversão e reduz caos.</p>
+          </div>
+          <div class="card">
+            <h3>Como reduzir dependência da Booking?</h3>
+            <p>Com site que converte + SEO local + WhatsApp rápido. Use o simulador de receita direta para medir impacto.</p>
+          </div>
+          <div class="card">
+            <h3>Você adapta esse checklist ao meu hotel?</h3>
+            <p>Sim. Me diga tipo (pousada/hotel/hotel fazenda), cidade, nº de UHs e rotina atual.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer transformar isso em processo (e em sistema)?</h2>
+          <p>Me mande cidade + UHs + diária média e eu te devolvo um plano por etapas (rotina → automação → vendas diretas).</p>
+        </div>
+
         <div class="hero-actions">
-          <a href="/contato" class="btn btn-primary">Fale com nosso time</a>
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20organizar%20a%20gest%C3%A3o%20da%20minha%20hospedagem%20com%20checklist%20e%20processo.%20Cidade:%20____%20Tipo:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____%20Como%20recebo%20reservas%20hoje%3F%20(OTA%2FWhats%2FSite)%20____" class="btn btn-primary" target="_blank" rel="noopener">
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:contato@brsys.com.br?subject=Checklist%20Gest%C3%A3o%20Hotel%20-%20BRsys" class="btn btn-secondary">
+            Enviar e-mail
+          </a>
         </div>
-        <p class="hero-note">Ideal para hotéis e pousadas modernas que buscam padronização e produtividade.</p>
+
+        <p class="hero-note">
+          Se quiser, eu monto uma versão “por cargo” (recepção, limpeza, manutenção) para sua equipe.
+        </p>
       </div>
-      <div class="hero-media">
-        <div class="hero-device">
-          <img src="img/brsys-sites-equipe-desenvolvimento-sites-profissionais.jpg" alt="Mockup Checklist BRsys">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= CHECKLIST ================= -->
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>Checklist de Gestão</h2>
-        <p>Organize sua operação diária, semanal e mensal para manter padrões de qualidade e maximizar reservas diretas.</p>
-      </div>
+  </main>
 
-      <div class="grid-3">
-        <!-- Recepção -->
-        <div class="card">
-          <h3>Recepção & Atendimento</h3>
-          <ul class="list">
-            <li>Check-in eficiente e cordial</li>
-            <li>Registro de hóspedes completo</li>
-            <li>Confirmação de reservas</li>
-            <li>Upsell de serviços e pacotes</li>
-            <li>Atendimento a solicitações especiais</li>
-          </ul>
-        </div>
-
-        <!-- Limpeza & Manutenção -->
-        <div class="card">
-          <h3>Limpeza & Manutenção</h3>
-          <ul class="list">
-            <li>Verificação diária de quartos limpos</li>
-            <li>Manutenção preventiva de equipamentos</li>
-            <li>Check de itens de banheiro e minibar</li>
-            <li>Troca de roupas de cama e banho</li>
-            <li>Registro de ocorrências e reparos</li>
-          </ul>
-        </div>
-
-        <!-- Reservas & PMS -->
-        <div class="card">
-          <h3>Reservas & PMS</h3>
-          <ul class="list">
-            <li>Atualização diária do PMS</li>
-            <li>Confirmação de reservas futuras</li>
-            <li>Controle de overbooking</li>
-            <li>Relatórios de ocupação</li>
-            <li>Integração com site de reservas</li>
-          </ul>
-        </div>
-
-        <!-- Financeiro -->
-        <div class="card">
-          <h3>Financeiro & Pagamentos</h3>
-          <ul class="list">
-            <li>Registro de entradas e saídas</li>
-            <li>Fechamento diário e semanal</li>
-            <li>Controle de inadimplência</li>
-            <li>Conciliação bancária</li>
-            <li>Relatórios de performance</li>
-          </ul>
-        </div>
-
-        <!-- Marketing & SEO -->
-        <div class="card">
-          <h3>Marketing & SEO</h3>
-          <ul class="list">
-            <li>Atualização de site e fotos</li>
-            <li>Promoções e pacotes diretos</li>
-            <li>Otimização para busca local</li>
-            <li>Gestão de reviews e feedbacks</li>
-            <li>Campanhas de e-mail marketing</li>
-          </ul>
-        </div>
-
-        <!-- Operações Gerais -->
-        <div class="card">
-          <h3>Operações Gerais</h3>
-          <ul class="list">
-            <li>Segurança e protocolos</li>
-            <li>Treinamento contínuo da equipe</li>
-            <li>Gestão de fornecedores</li>
-            <li>Auditoria e controle interno</li>
-            <li>Planejamento de melhorias</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA FINAL ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="footer-cta">
-        <strong>Quer padronizar a gestão da sua pousada?</strong>
-        <span>Fale com nosso time e comece a aplicar o checklist na prática.</span>
-        <a href="/contato" class="btn btn-primary">Solicitar Contato</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 BRsys. Todos os direitos reservados.</p>
-      <p>Rua da Hotelaria, 123 – Peruíbe, SP</p>
+      <p>© 2026 BRsys • Tecnologia para Hotelaria</p>
+      <p>Peruíbe/SP • Atendimento via WhatsApp</p>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.querySelector(".nav-toggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("nav-open");
-    });
-  </script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
 </body>
 </html>
