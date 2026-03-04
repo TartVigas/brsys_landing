@@ -1,1 +1,508 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Simulador de Receita Direta | Quanto economizar sem Booking? | BRsys</title>
+  <meta name="description" content="Simule quanto sua pousada ou hotel pode economizar com reservas diretas (sem comissão da Booking). Calcula comissão, economia e impacto no faturamento." />
+  <link rel="canonical" href="https://brsys.com.br/simulador-receita-direta/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="Simulador de Receita Direta | BRsys" />
+  <meta property="og:description" content="Descubra quanto você perde de comissão e quanto economiza ao aumentar reservas diretas (WhatsApp + Google)." />
+  <meta property="og:url" content="https://brsys.com.br/simulador-receita-direta/" />
+  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Simulador de Receita Direta",
+    "url":"https://brsys.com.br/simulador-receita-direta/",
+    "inLanguage":"pt-BR",
+    "isPartOf":{"@type":"WebSite","name":"BRsys","url":"https://brsys.com.br/"},
+    "about":[
+      {"@type":"Thing","name":"Reservas diretas"},
+      {"@type":"Thing","name":"Comissão Booking"},
+      {"@type":"Thing","name":"Hotelaria independente"}
+    ]
+  }
+  </script>
+
+  <!-- Estilos locais (só para o simulador, não mexe no CSS global) -->
+  <style>
+    .sim-wrap{ display:grid; gap:18px; }
+    @media (min-width: 980px){ .sim-wrap{ grid-template-columns: 1.1fr .9fr; align-items:start; } }
+
+    .sim-card{ padding:18px; }
+    .sim-grid{ display:grid; gap:12px; grid-template-columns: 1fr; }
+    @media (min-width: 640px){ .sim-grid{ grid-template-columns: 1fr 1fr; } }
+
+    .field{ display:flex; flex-direction:column; gap:6px; }
+    .field label{ font-size: 13px; color: var(--text-soft); }
+    .field input, .field select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text-main);
+      outline: none;
+    }
+    html[data-theme="light"] .field input,
+    html[data-theme="light"] .field select{
+      background: rgba(0,0,0,.03);
+    }
+    .field input:focus, .field select:focus{
+      border-color: rgba(24,198,184,.55);
+      box-shadow: 0 0 0 4px rgba(24,198,184,.18);
+    }
+
+    .sim-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 8px; }
+
+    .kpi{
+      display:grid;
+      gap:12px;
+    }
+    .kpi .kpi-item{
+      padding:14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .kpi .kpi-label{ font-size: 13px; color: var(--text-soft); margin-bottom: 6px; }
+    .kpi .kpi-value{ font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+    .kpi .kpi-sub{ font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.35; }
+
+    .note-box{
+      padding:14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .note-box p{ margin: 0; color: var(--text-soft); font-size: 14px; line-height: 1.5; }
+
+    .small-muted{ font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+        <span class="brand-text">
+          <span class="brand-name">BRsys</span>
+          <span class="brand-tagline">Tecnologia para Hotelaria</span>
+        </span>
+      </a>
+
+      <div id="nav-desktop-mount"></div>
+
+      <div class="header-actions">
+        <a href="#simulador" class="btn btn-secondary">Abrir simulador</a>
+        <a href="#contato" class="btn btn-primary">Agendar demo</a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="nav-mobile-mount"></div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill">📈 Reservas diretas • 💸 Menos comissão • 📍 SEO local</span>
+
+          <h1>Simulador de Receita Direta</h1>
+
+          <p class="hero-subtitle">
+            Descubra em 30 segundos quanto você pode <strong>economizar de comissão</strong> ao aumentar reservas diretas.
+            Ideal para pousadas e hotéis que querem reduzir dependência da Booking.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#simulador">Simular agora</a>
+            <a class="btn btn-secondary" href="/como-vender-direto-sem-booking/">Como vender direto</a>
+          </div>
+
+          <p class="hero-note">
+            Resultado estimado. Se você me passar cidade + quartos + diária, eu te devolvo um plano realista por etapas.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-device">
+            <img src="/img/hero-hotelaria.png" alt="Dashboard BRsys para hotelaria" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="section section-alt" id="simulador">
+      <div class="container">
+        <div class="section-header">
+          <h2>Simule sua economia com reservas diretas</h2>
+          <p>Preencha os campos e veja comissão estimada, economia e impacto no ano.</p>
+        </div>
+
+        <div class="sim-wrap">
+          <!-- FORM -->
+          <div class="card sim-card">
+            <h3 style="margin-top:0;">Dados da hospedagem</h3>
+            <p class="small-muted" style="margin-top:6px;">
+              Dica: se não souber um valor exato, coloque uma média. O objetivo é dar direção.
+            </p>
+
+            <div class="sim-grid" style="margin-top:14px;">
+              <div class="field">
+                <label for="cidade">Cidade (opcional)</label>
+                <input id="cidade" type="text" placeholder="Ex.: Peruíbe / Monte Verde" />
+              </div>
+
+              <div class="field">
+                <label for="uh">Número de quartos / UHs</label>
+                <input id="uh" type="number" min="1" step="1" value="12" />
+              </div>
+
+              <div class="field">
+                <label for="diaria">Diária média (R$)</label>
+                <input id="diaria" type="number" min="50" step="10" value="350" />
+              </div>
+
+              <div class="field">
+                <label for="noites">Noites médias por reserva</label>
+                <input id="noites" type="number" min="1" step="1" value="2" />
+              </div>
+
+              <div class="field">
+                <label for="ocup">Ocupação média (%)</label>
+                <input id="ocup" type="number" min="1" max="100" step="1" value="45" />
+              </div>
+
+              <div class="field">
+                <label for="shareOta">% das reservas via Booking/OTAs</label>
+                <input id="shareOta" type="number" min="0" max="100" step="1" value="60" />
+              </div>
+
+              <div class="field">
+                <label for="comissao">Comissão OTA (%)</label>
+                <select id="comissao">
+                  <option value="12">12% (padrão)</option>
+                  <option value="15" selected>15% (comum)</option>
+                  <option value="18">18% (com promo/boost)</option>
+                  <option value="20">20% (alto)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="migracao">% migrando para direto (meta)</label>
+                <select id="migracao">
+                  <option value="10">10% (conservador)</option>
+                  <option value="20" selected>20% (realista)</option>
+                  <option value="30">30% (agressivo)</option>
+                  <option value="40">40% (forte)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="sim-actions">
+              <button class="btn btn-primary" type="button" id="btnCalc">Calcular</button>
+              <button class="btn btn-secondary" type="button" id="btnReset">Reset</button>
+              <a class="btn btn-secondary" href="#contato">Quero ajuda</a>
+            </div>
+
+            <p class="small-muted" style="margin-top:12px;">
+              * Cálculo considera um cenário médio (ocupação/diária/noites). Não substitui planilha real do seu hotel, mas dá direção rápida.
+            </p>
+          </div>
+
+          <!-- RESULTADOS -->
+          <div class="kpi">
+            <div class="kpi-item">
+              <div class="kpi-label">Comissão estimada (mês)</div>
+              <div class="kpi-value" id="kpiComissaoMes">R$ 0</div>
+              <div class="kpi-sub" id="subComissaoMes">Preencha os dados e clique em calcular.</div>
+            </div>
+
+            <div class="kpi-item">
+              <div class="kpi-label">Economia ao migrar para direto (mês)</div>
+              <div class="kpi-value" id="kpiEconomiaMes">R$ 0</div>
+              <div class="kpi-sub" id="subEconomiaMes">Meta de migração aplicada sobre reservas via OTA.</div>
+            </div>
+
+            <div class="kpi-item">
+              <div class="kpi-label">Economia ao migrar para direto (ano)</div>
+              <div class="kpi-value" id="kpiEconomiaAno">R$ 0</div>
+              <div class="kpi-sub" id="subEconomiaAno">Se mantiver a mesma média de ocupação e diária.</div>
+            </div>
+
+            <div class="note-box">
+              <p><strong>Atalho de venda:</strong> se a economia mensal estimada for maior que sua mensalidade,
+                o sistema “se paga” com folga. Se quiser, eu te devolvo um plano de implantação por etapas.</p>
+            </div>
+
+            <div class="kpi-item">
+              <div class="kpi-label">Mensagem pronta para WhatsApp</div>
+              <div class="kpi-sub" style="margin-top:0;">
+                Clique para enviar seus dados + resultado calculado.
+              </div>
+              <a class="btn btn-primary" id="btnWhats" href="https://wa.me/5513997408157" target="_blank" rel="noopener" style="margin-top:10px; width: fit-content;">
+                Enviar no WhatsApp
+              </a>
+              <p class="small-muted" style="margin-top:10px;">
+                (Se não abrir no celular, copie e cole a mensagem no WhatsApp Web.)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPLICAÇÃO / METODO -->
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como aumentar reserva direta na prática</h2>
+          <p>Não é “milagre”: é caminho curto com prova + oferta clara + WhatsApp + Google.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>1) Página que converte</h3>
+            <p>Fotos, regras, diferenciais e CTA forte.</p>
+          </div>
+          <div class="card">
+            <h3>2) SEO local</h3>
+            <p>“Pousada em + cidade” e guias de destino.</p>
+          </div>
+          <div class="card">
+            <h3>3) WhatsApp rápido</h3>
+            <p>Atendimento padronizado para fechar.</p>
+          </div>
+          <div class="card">
+            <h3>4) Processo</h3>
+            <p>Menos retrabalho e equipe alinhada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Dúvidas comuns antes de “mudar o jogo” das reservas diretas.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Isso quer dizer que devo parar com Booking?</h3>
+            <p>Não. A ideia é reduzir dependência. OTA vira canal complementar, enquanto o direto vira prioridade.</p>
+          </div>
+          <div class="card">
+            <h3>Os números são exatos?</h3>
+            <p>É uma estimativa baseada nas médias informadas. Serve para direção rápida e tomada de decisão.</p>
+          </div>
+          <div class="card">
+            <h3>Qual meta de migração é realista?</h3>
+            <p>20% costuma ser um bom alvo inicial com página boa + WhatsApp + SEO/Ads. Depois você escala.</p>
+          </div>
+          <div class="card">
+            <h3>O que você precisa para montar um plano?</h3>
+            <p>Cidade, quartos/UHs, diária média, ocupação e link do site/Instagram (se tiver).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer transformar busca em reserva direta?</h2>
+          <p>Me envie seus dados e eu te digo o caminho mais curto (conversão + processo + escala).</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20aumentar%20reservas%20diretas.%20Cidade:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____%20Ocup%20(%25):%20____%20%25%20via%20OTA:%20____%20Link%20site%2FInstagram:%20____" class="btn btn-primary" target="_blank" rel="noopener">
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:contato@brsys.com.br?subject=Simulador%20de%20Receita%20Direta%20-%20BRsys" class="btn btn-secondary">
+            Enviar e-mail
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Quanto mais preciso você mandar os números, mais rápido eu te retorno com um plano por etapas.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 BRsys • Tecnologia para Hotelaria</p>
+      <p>Peruíbe/SP • Atendimento via WhatsApp</p>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+
+  <!-- Simulador JS (local da página, sem mexer em arquivos globais) -->
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function brl(n){
+      try{
+        return n.toLocaleString("pt-BR", { style:"currency", currency:"BRL" });
+      }catch(e){
+        return "R$ " + (Math.round(n*100)/100).toFixed(2).replace(".", ",");
+      }
+    }
+
+    function num(v, fallback=0){
+      const n = Number(String(v).replace(",", "."));
+      return Number.isFinite(n) ? n : fallback;
+    }
+
+    function clamp(n, min, max){
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function calc(){
+      const cidade = ($("cidade")?.value || "").trim();
+      const uh = clamp(num($("uh").value, 1), 1, 9999);
+      const diaria = clamp(num($("diaria").value, 0), 0, 999999);
+      const noites = clamp(num($("noites").value, 1), 1, 60);
+      const ocup = clamp(num($("ocup").value, 0), 0, 100) / 100;
+
+      const shareOta = clamp(num($("shareOta").value, 0), 0, 100) / 100;
+      const comissao = clamp(num($("comissao").value, 15), 0, 40) / 100;
+      const migracao = clamp(num($("migracao").value, 20), 0, 100) / 100;
+
+      // Noites vendidas/mês (média 30 dias)
+      const noitesVendidasMes = uh * 30 * ocup;
+
+      // Reservas/mês aproximadas
+      const reservasMes = noitesVendidasMes / noites;
+
+      // GMV (faturamento bruto de hospedagem) mês
+      const gmvMes = noitesVendidasMes * diaria;
+
+      // Parte via OTA
+      const gmvOtaMes = gmvMes * shareOta;
+
+      // Comissão total (mês)
+      const comissaoMes = gmvOtaMes * comissao;
+
+      // Economia ao migrar X% do que está em OTA para direto (economiza comissão sobre a parte migrada)
+      const economiaMes = (gmvOtaMes * migracao) * comissao;
+      const economiaAno = economiaMes * 12;
+
+      // Atualiza UI
+      $("kpiComissaoMes").textContent = brl(comissaoMes);
+      $("kpiEconomiaMes").textContent = brl(economiaMes);
+      $("kpiEconomiaAno").textContent = brl(economiaAno);
+
+      const pctOta = Math.round(shareOta * 100);
+      const pctMig = Math.round(migracao * 100);
+      const pctCom = Math.round(comissao * 100);
+
+      $("subComissaoMes").textContent =
+        `Estimativa: ${pctOta}% do faturamento vindo de OTAs com comissão de ${pctCom}%.`;
+
+      $("subEconomiaMes").textContent =
+        `Migrando ${pctMig}% do que hoje vem de OTA para direto, você deixa de pagar comissão sobre essa parte.`;
+
+      $("subEconomiaAno").textContent =
+        `Cenário anual mantendo média de ocupação (${Math.round(ocup*100)}%), diária e noites por reserva.`;
+
+      // Mensagem WhatsApp
+      const msg =
+        `Olá! Fiz o Simulador de Receita Direta da BRsys.\n\n` +
+        `Cidade: ${cidade || "(não informado)"}\n` +
+        `UHs/quartos: ${uh}\n` +
+        `Diária média: ${brl(diaria)}\n` +
+        `Ocupação média: ${Math.round(ocup*100)}%\n` +
+        `Noites por reserva: ${noites}\n` +
+        `% via OTA: ${pctOta}%\n` +
+        `Comissão: ${pctCom}%\n` +
+        `Meta migrar para direto: ${pctMig}%\n\n` +
+        `Resultado estimado:\n` +
+        `• Comissão OTA/mês: ${brl(comissaoMes)}\n` +
+        `• Economia/mês migrando para direto: ${brl(economiaMes)}\n` +
+        `• Economia/ano: ${brl(economiaAno)}\n\n` +
+        `Pode me orientar com um plano por etapas (site + WhatsApp + SEO/PMS)?`;
+
+      const url = "https://wa.me/5513997408157?text=" + encodeURIComponent(msg);
+      $("btnWhats").setAttribute("href", url);
+    }
+
+    function reset(){
+      $("cidade").value = "";
+      $("uh").value = 12;
+      $("diaria").value = 350;
+      $("noites").value = 2;
+      $("ocup").value = 45;
+      $("shareOta").value = 60;
+      $("comissao").value = 15;
+      $("migracao").value = 20;
+
+      $("kpiComissaoMes").textContent = "R$ 0";
+      $("kpiEconomiaMes").textContent = "R$ 0";
+      $("kpiEconomiaAno").textContent = "R$ 0";
+
+      $("subComissaoMes").textContent = "Preencha os dados e clique em calcular.";
+      $("subEconomiaMes").textContent = "Meta de migração aplicada sobre reservas via OTA.";
+      $("subEconomiaAno").textContent = "Se mantiver a mesma média de ocupação e diária.";
+
+      $("btnWhats").setAttribute("href", "https://wa.me/5513997408157");
+    }
+
+    $("btnCalc")?.addEventListener("click", calc);
+    $("btnReset")?.addEventListener("click", reset);
+
+    // auto-calcula ao carregar (pra ter “vida”)
+    window.addEventListener("load", () => {
+      try{ calc(); }catch(e){}
+    });
+  </script>
+</body>
+</html>
