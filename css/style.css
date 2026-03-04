@@ -609,3 +609,111 @@ body.nav-open .nav-toggle span:nth-child(3) {
   .hero-subtitle { font-size: 0.9rem; }
   .section-header h2 { font-size: 1.5rem; }
 }
+
+/* ================================
+   THEME TOGGLE (Sol/Lua)
+   - Usa html[data-theme="light"] / html[data-theme="dark"]
+================================ */
+.header-tools{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(15,155,157,.35);
+}
+
+.theme-icon{
+  font-size:16px;
+  line-height:1;
+  position:absolute;
+  opacity:0;
+  transform: scale(.9);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Mostra ícone conforme tema atual */
+html[data-theme="dark"] .theme-icon--moon{ opacity:1; transform: scale(1); }
+html[data-theme="light"] .theme-icon--sun{ opacity:1; transform: scale(1); }
+
+/* A posição absolute precisa do container relativo */
+.theme-toggle{ position: relative; }
+
+/* ================================
+   TEMA CLARO (overrides)
+   -> Mantém seus tokens mas troca valores
+================================ */
+html[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-soft: #eef2ff;
+  --bg-elevated: #ffffff;
+  --bg-elevated-soft: #f1f5f9;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+
+  --border-soft: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --accent: #0f9b9d;         /* mantém assinatura */
+  --accent-soft: rgba(15, 155, 157, 0.12);
+
+  --shadow-soft: 0 18px 40px rgba(2, 6, 23, 0.12);
+}
+
+/* Ajustes de fundo para o claro */
+html[data-theme="light"] body{
+  background: radial-gradient(circle at top, #ffffff 0, #f1f5f9 60%, #f8fafc 100%);
+}
+
+/* Header no claro */
+html[data-theme="light"] .site-header{
+  background: rgba(248, 250, 252, 0.88);
+  border-bottom: 1px solid rgba(203, 213, 225, 0.9);
+}
+
+html[data-theme="light"] .nav-desktop a{
+  color: var(--text-muted);
+}
+html[data-theme="light"] .nav-desktop a:hover{
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .nav-toggle span{
+  background: var(--text-main);
+}
+
+html[data-theme="light"] .nav-mobile{
+  background: #ffffff;
+}
+
+/* Botões (pequeno ajuste p/ contraste no claro) */
+html[data-theme="light"] .btn-secondary{
+  background: transparent;
+  border-color: var(--border-soft);
+}
+
+/* Cards no claro */
+html[data-theme="light"] .card{
+  background: var(--bg-elevated);
+}
+html[data-theme="light"] .card:hover{
+  background: #ffffff;
+}
