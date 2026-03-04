@@ -1,473 +1,433 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="pt-br" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BRsys • Sites por ramo + SEO local (WhatsApp direto)</title>
-  <meta name="description" content="Sites por ramo com escopo fechado: páginas rápidas e profissionais focadas em conversão via WhatsApp + SEO local. Implantação a partir de R$ 490." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://www.brsys.com.br/" />
+    <title>BRsys • Tecnologia para Hotelaria</title>
+    <meta
+      name="description"
+      content="BRsys é tecnologia premium para hotelaria independente: PMS, reservas diretas, site integrado, automações e recursos para gestão."
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="BRsys • Sites por ramo + SEO local" />
-  <meta property="og:description" content="Páginas rápidas, escopo fechado e foco em WhatsApp. Clique → mensagem → fechamento." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:url" content="https://www.brsys.com.br/" />
-  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Social preview -->
+    <meta property="og:title" content="BRsys • Tecnologia para Hotelaria" />
+    <meta
+      property="og:description"
+      content="PMS + Reservas Diretas + Site Integrado. Estrutura premium para hotéis e pousadas."
+    />
+    <meta property="og:image" content="img/og.jpg" />
+    <meta property="og:type" content="website" />
 
-  <meta name="theme-color" content="#081316" />
-  <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <link rel="icon" href="/img/favicon.png" />
-  <link rel="preload" href="/img/hero.jpg" as="image" />
-  <link rel="stylesheet" href="/css/app.css?v=1" />
-
-  <style>
-    :root{
-      --bg:#081316;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.09);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.14);
-      --brand:#19d6c6;
-      --brand2:#0b8f86;
-      --shadow: 0 24px 70px rgba(0,0,0,.55);
-      --r: 18px;
-      --max: 1120px;
-    }
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica;
-      background:
-        radial-gradient(1200px 600px at 20% 0%, rgba(25,214,198,.16), transparent 55%),
-        radial-gradient(900px 500px at 80% 30%, rgba(25,214,198,.12), transparent 60%),
-        var(--bg);
-      color: var(--text);
-    }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px; }
-
-    /* Header */
-    .top{
-      position: sticky; top:0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(8,19,22,.62);
-      border-bottom: 1px solid var(--line);
-    }
-    .topin{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding: 12px 18px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 900;
-      letter-spacing:.2px;
-    }
-    .brand img{ width: 34px; height: 34px; border-radius: 10px; }
-    .nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center; }
-    .pill{
-      display:inline-flex; align-items:center;
-      padding: 10px 14px; border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      font-weight: 850;
-      transition: transform .15s ease, background .15s ease;
-      white-space: nowrap;
-    }
-    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
-    .pill.primary{
-      background: linear-gradient(135deg, rgba(25,214,198,.25), rgba(25,214,198,.08));
-      border-color: rgba(25,214,198,.35);
-      font-weight: 950;
-    }
-
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      border-radius: calc(var(--r) + 10px);
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      background:#000;
-    }
-    .hero .bg{
-      min-height: 460px;
-      padding: 26px;
-      display:flex;
-      align-items:flex-end;
-      background-image:
-        linear-gradient(90deg, rgba(8,19,22,.92) 0%, rgba(8,19,22,.82) 45%, rgba(8,19,22,.35) 78%, rgba(8,19,22,.10) 100%),
-        url("/img/hero.jpg");
-      background-size: cover;
-      background-position: center;
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 8px 12px; border-radius: 999px;
-      background: rgba(25,214,198,.10);
-      border: 1px solid rgba(25,214,198,.25);
-      font-size: 13px;
-      color: rgba(255,255,255,.90);
-      font-weight: 850;
-    }
-    h1{ margin: 12px 0 10px; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.06; }
-    .lead{ margin:0 0 16px; color: var(--muted); line-height: 1.65; max-width: 58ch; }
-    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-    .note{ color: rgba(255,255,255,.62); font-size: 13px; }
-
-    /* Sections */
-    .section{ padding: 26px 0 6px; }
-    .section h2{ margin:0 0 10px; font-size: 22px; }
-    .section .sub{ margin:0 0 16px; color: rgba(255,255,255,.74); line-height: 1.6; }
-
-    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .card{
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
-      padding: 16px;
-    }
-    .card strong{ display:block; margin-bottom: 8px; font-weight: 950; }
-    .card p{ margin:0; color: rgba(255,255,255,.74); line-height: 1.6; }
-    .list{ margin: 10px 0 0; padding-left: 18px; color: rgba(255,255,255,.74); }
-    .list li{ margin: 7px 0; }
-    .chip{
-      display:inline-flex; align-items:center;
-      padding: 7px 10px; border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.82);
-      font-size: 13px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-    .accent{
-      border-color: rgba(25,214,198,.22);
-      background: linear-gradient(135deg, rgba(25,214,198,.10), rgba(255,255,255,.05));
-    }
-    .final{
-      margin-top: 14px;
-      border-radius: calc(var(--r) + 6px);
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(25,214,198,.06));
-      display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between;
-    }
-    .final strong{ font-size: 16px; }
-    .final span{ color: var(--muted); font-size: 13px; display:block; margin-top: 4px; line-height:1.55; }
-
-    /* Footer */
-    footer{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; }
-    .footGrid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .footCol{ grid-column: span 6; }
-    .mini{ color: rgba(255,255,255,.62); font-size: 13px; line-height: 1.55; margin: 6px 0 0; }
-    .mini ul{ margin:10px 0 0; padding-left: 18px; }
-
-    /* Sticky WhatsApp (mobile) */
-    .waSticky{
-      position: fixed;
-      left: 14px; right: 14px; bottom: 14px;
-      display:none;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(25,214,198,.28), rgba(25,214,198,.10));
-      border: 1px solid rgba(25,214,198,.35);
-      box-shadow: 0 18px 55px rgba(0,0,0,.45);
-      font-weight: 950;
-      justify-content:center;
-      z-index: 60;
-      text-align:center;
-    }
-
-    @media (max-width: 980px){
-      .footCol{ grid-column: span 12; }
-      .waSticky{ display:flex; }
-      .hero .bg{ min-height: 560px; padding: 18px; }
-      .final{ margin-bottom: 90px; }
-    }
-  </style>
-
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"BRsys",
-    "url":"https://www.brsys.com.br",
-    "logo":"https://www.brsys.com.br/img/logo.png",
-    "telephone":"+5513997408157",
-    "areaServed":"BR",
-    "contactPoint":{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "telephone":"+5513997408157",
-      "availableLanguage":"Portuguese"
-    }
-  }
-  </script>
-</head>
-
-<body>
-
-<header class="top">
-  <div class="topin wrap">
-    <a class="brand" href="/" aria-label="BRsys - Início">
-      <img src="/img/favicon.png" alt="BRsys" />
-      <span>BRsys</span>
-    </a>
-
-    <nav class="nav" aria-label="Menu principal">
-      <a class="pill" href="/solucoes/">Soluções</a>
-      <a class="pill" href="#planos">Valores</a>
-      <a class="pill" href="/peruibe/onde-ficar/">Guias</a>
-      <a id="waTop" class="pill primary" target="_blank" rel="noopener" href="#">
-        WhatsApp
-      </a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <!-- HERO -->
-  <section class="hero" aria-label="BRsys - Sites por ramo">
-    <div class="bg">
-      <div>
-        <div class="kicker">WhatsApp direto • Escopo fechado • SEO local</div>
-        <h1>Seu site precisa gerar contato. Não “existir”.</h1>
-        <p class="lead">
-          Sites por ramo com escopo fechado, foco total em WhatsApp e base sólida de SEO local.
-          <b>Implantação a partir de R$ 490</b> — no domínio do cliente ou como landing BRsys.
-        </p>
-
-        <div class="ctaRow">
-          <a id="waHero" class="pill primary" target="_blank" rel="noopener" href="#">
-            Quero avaliação rápida →
-          </a>
-          <a class="pill" href="/solucoes/">Ver soluções</a>
-          <a class="pill" href="#planos">Ver valores</a>
-          <span class="note">Diga: nome + cidade + link do Google/Instagram.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUALIFICAÇÃO (curto e cirúrgico) -->
-  <section class="section" aria-label="Qualificação">
-    <div class="grid">
-      <div class="card col6" style="grid-column: span 6;">
-        <strong>Para quem faz sentido</strong>
-        <p>Negócio com decisão rápida e que precisa transformar visita em mensagem (WhatsApp).</p>
-        <ul class="list">
-          <li>✅ WhatsApp como “checkout”</li>
-          <li>✅ Precisa aparecer bem no Google</li>
-          <li>✅ Quer página leve e objetiva</li>
-        </ul>
-      </div>
-
-      <div class="card col6" style="grid-column: span 6;">
-        <strong>O que eu NÃO vendo</strong>
-        <p>“Site só pra existir”. Se não tem objetivo (WhatsApp / pedido / reserva), eu prefiro nem pegar.</p>
-        <ul class="list">
-          <li>🚫 Projeto infinito sem escopo</li>
-          <li>🚫 Site pesado só “bonito”</li>
-          <li>🚫 Página sem CTA / sem conversão</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALORES -->
-<section id="planos" class="section">
-  <h2>Valores</h2>
-  <p class="sub">Implantação (uma vez) + opções de recorrência para manter o Google girando.</p>
-
-  <div class="card single">
-    <div class="priceTop">
-      <strong>Implantação (escopo fechado)</strong>
-      <span class="tag">Entrega rápida • WhatsApp direto • SEO base</span>
-    </div>
-
-    <div class="priceRows">
-      <div class="row">
-        <div class="rowL">
-          <div class="ttl">Landing BRsys (mais rápida)</div>
-          <div class="txt">Publicação no domínio BRsys (ex.: brsys.com.br/seu-negocio). Sobe rápido, vira ativo de SEO e dá pra evoluir depois.</div>
-        </div>
-        <div class="rowR">
-          <div class="price">R$ 490</div>
-          <a class="pill primary" target="_blank" rel="noopener"
-             href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20implanta%C3%A7%C3%A3o%20na%20Landing%20BRsys%20(R%24%20490).%0A%0ANeg%C3%B3cio%3A%20%5Bnome%5D%0ACidade%3A%20%5Bcidade%5D%0ALink%20Google/Instagram%3A%20%5Blink%5D">
-            Quero implantação →
-          </a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="rowL">
-          <div class="ttl">Domínio próprio do cliente (marca própria)</div>
-          <div class="txt">Ideal quando você quer seu domínio (ex.: www.seunegocio.com.br). Inclui orientação e configuração básica de DNS/SSL quando necessário.</div>
-        </div>
-        <div class="rowR">
-          <div class="price">R$ 790</div>
-          <a class="pill" target="_blank" rel="noopener"
-             href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20implanta%C3%A7%C3%A3o%20no%20meu%20dom%C3%ADnio%20(R%24%20790).%0A%0ANeg%C3%B3cio%3A%20%5Bnome%5D%0ACidade%3A%20%5Bcidade%5D%0ADom%C3%ADnio%3A%20%5Bdominio%5D%0ALink%20Google/Instagram%3A%20%5Blink%5D">
-            Quero no meu domínio →
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="line" />
-
-    <div class="priceTop">
-      <strong>Recorrência (opcional)</strong>
-      <span class="tag">Reconhecimento • Crescimento mês a mês</span>
-    </div>
-
-    <div class="recGrid">
-      <div class="rec">
-        <div class="ttl">Presença & suporte leve</div>
-        <div class="txt">Manter no ar, pequenos ajustes, revisões rápidas e acompanhamento básico.</div>
-        <div class="priceSm">R$ 79/mês</div>
-      </div>
-
-      <div class="rec">
-        <div class="ttl">SEO mensal (recomendado)</div>
-        <div class="txt">Implantação resolve o “agora”. SEO mensal cria consistência e crescimento real no Google.</div>
-        <div class="miniList">
-          <span>Básica: R$ 150/mês</span>
-          <span>PRO: R$ 490/mês</span>
-          <span>PLUS: R$ 690/mês</span>
-          <span>MAX: R$ 990/mês</span>
-        </div>
-      </div>
-
-      <div class="rec">
-        <div class="ttl">Aparecer nos Guias BRsys (DDD 13)</div>
-        <div class="txt">Seu negócio ganha vitrine local e contato direto. Ideal pra quem hoje só tem Instagram/Booking.</div>
-        <div class="priceSm">R$ 79/mês</div>
-        <a class="pill primary" target="_blank" rel="noopener"
-           href="https://wa.me/5513997408157?text=Oi%20BRsys!%20Quero%20aparecer%20nos%20Guias%20DDD%2013%20(R%24%2079%2Fm%C3%AAs).%0A%0ANeg%C3%B3cio%3A%20%5Bnome%5D%0ACidade%3A%20%5Bcidade%5D%0ALink%20Google%3A%20%5Blink%5D">
-          Quero aparecer no guia →
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="BRsys Home">
+          <img class="brand-logo" src="img/logo.svg" alt="BRsys" />
+          <span class="brand-text">
+            <span class="brand-name">BRsys</span>
+            <span class="brand-tagline">Tecnologia para Hotelaria</span>
+          </span>
         </a>
+
+        <nav class="nav-desktop" aria-label="Menu principal">
+          <a href="#plataforma">Plataforma</a>
+          <a href="#pms">PMS</a>
+          <a href="#marketing">Marketing</a>
+          <a href="#gestao">Gestão</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#destinos">Destinos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-secondary" href="#recursos">Baixar materiais</a>
+          <a class="btn btn-primary" href="#contato">Agendar demo</a>
+        </div>
+
+        <!-- Theme Toggle + Mobile Menu -->
+        <div class="header-tools">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Alternar tema"
+            title="Alternar tema"
+          >
+            <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon--moon" aria-hidden="true">🌙</span>
+          </button>
+
+          <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <p class="note">
-      * Escopo fechado = entrega rápida e objetiva (sem “projeto infinito”). Se precisar algo fora do padrão, eu aviso antes.
-    </p>
-  </div>
+      <!-- Mobile nav -->
+      <nav class="nav-mobile" aria-label="Menu mobile">
+        <a href="#plataforma">Plataforma</a>
+        <a href="#pms">PMS</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#gestao">Gestão</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#contato">Contato</a>
 
-        <div class="final">
+        <div class="nav-mobile-cta">
+          <a class="btn btn-secondary" href="#recursos">Baixar materiais</a>
+          <a class="btn btn-primary" href="#contato">Agendar demo</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="topo">
+        <div class="container hero-grid">
           <div>
-            <strong>Quer o valor fechado no seu caso?</strong>
-            <span>Manda nome + cidade + link do Google/Instagram. Eu retorno com o plano ideal (implantação + SEO mensal opcional).</span>
+            <div class="eyebrow">Plataforma premium para hotelaria independente</div>
+            <h1>Tecnologia completa para hotéis e pousadas</h1>
+            <p class="hero-subtitle">
+              PMS + Reservas Diretas + Site Integrado + Automações.
+              A BRsys organiza a operação e ajuda sua hospedagem a vender direto, com menos dependência de OTAs.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="sistema-para-pousada-com-site-integrado.html">
+                Ver solução completa
+              </a>
+              <a class="btn btn-outline" href="sistema-para-pousada.html">
+                Conhecer o PMS
+              </a>
+              <a class="btn btn-secondary" href="#recursos">
+                Recursos gratuitos
+              </a>
+            </div>
+
+            <div class="hero-note">
+              Referência de preço: mensalidade ≈ <strong>valor de 1 diária</strong>. Se gerar 1 reserva direta/mês, já se paga.
+            </div>
           </div>
-          <a id="waBudget" class="pill primary" target="_blank" rel="noopener" href="#">
-            Orçamento rápido →
-          </a>
+
+          <div class="hero-media">
+            <div class="hero-device">
+              <img
+                src="img/hero-dashboard.png"
+                alt="Dashboard BRsys para hotelaria"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-</main>
+      </section>
 
-<footer aria-label="Rodapé">
-  <div class="wrap" style="padding:22px 18px 26px;">
-    <div class="footGrid">
-      <div class="card footCol">
-        <strong>BRsys</strong>
-        <p class="mini">
-          Sites por ramo com foco em conversão via WhatsApp e SEO local.
-          Implantação a partir de <b>R$ 490</b> + SEO mensal opcional.
-        </p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a id="waFooter" class="pill primary" target="_blank" rel="noopener" href="#">Chamar no WhatsApp</a>
-          <a class="pill" href="/solucoes/">Soluções</a>
-          <a class="pill" href="#planos">Valores</a>
+      <!-- PLATAFORMA -->
+      <section class="section section-alt" id="plataforma">
+        <div class="container">
+          <div class="section-header">
+            <h2>Plataforma BRsys</h2>
+            <p>
+              Um ecossistema completo: operação + vendas diretas + presença digital.
+              Feito para hospedagens que querem elevar o nível.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>PMS (Gestão)</h3>
+              <p>Reservas, mapa de quartos, check-in/check-out, contas e relatórios.</p>
+              <a class="card-link" href="pms-para-hotel-pequeno.html">Ver detalhes →</a>
+            </article>
+
+            <article class="card">
+              <h3>Reservas Diretas</h3>
+              <p>Site integrado + WhatsApp + SEO para reduzir dependência de OTAs.</p>
+              <a class="card-link" href="como-vender-direto-sem-booking.html">Aprender →</a>
+            </article>
+
+            <article class="card">
+              <h3>Automação</h3>
+              <p>Pré-check-in, FNRH digital, mensagens e integrações (WhatsApp, pagamentos, APIs).</p>
+              <a class="card-link" href="tecnologia-para-hotelaria.html">Explorar →</a>
+            </article>
+          </div>
         </div>
-        <p class="mini" style="margin-top:12px;">
-          WhatsApp oficial: <b>+55 13 99740-8157</b><br/>
-          Atendimento remoto • Brasil todo
-        </p>
-      </div>
+      </section>
 
-      <div class="card footCol">
-        <strong>Guias DDD 13 • Peruíbe</strong>
-        <p class="mini">Projetos editoriais (em evolução) — sem tirar o foco da venda de sites + SEO mensal.</p>
-        <div class="mini">
-          <ul>
-            <li><a href="/peruibe/onde-ficar/">Onde ficar em Peruíbe</a></li>
-            <li><a href="/peruibe/onde-comer/">Onde comer em Peruíbe</a></li>
-          </ul>
+      <!-- PMS -->
+      <section class="section" id="pms">
+        <div class="container">
+          <div class="section-header">
+            <h2>PMS</h2>
+            <p>Páginas comerciais para quem já está no momento de decisão.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Sistema para Pousada</h3>
+              <p>Para pousadas independentes que querem organização e reservas diretas.</p>
+              <ul class="list">
+                <li>Reservas + ocupação</li>
+                <li>Rotinas de recepção</li>
+                <li>Relatórios essenciais</li>
+              </ul>
+              <a class="card-link" href="sistema-para-pousada.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>PMS para Hotel Pequeno</h3>
+              <p>Processos padronizados, mais controle e visão gerencial.</p>
+              <ul class="list">
+                <li>Mapa de quartos</li>
+                <li>Check-in digital</li>
+                <li>Controle financeiro</li>
+              </ul>
+              <a class="card-link" href="pms-para-hotel-pequeno.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>Hotel Fazenda</h3>
+              <p>Para operações com maior complexidade e experiências.</p>
+              <ul class="list">
+                <li>Pacotes/experiências</li>
+                <li>Operação organizada</li>
+                <li>Automação de atendimento</li>
+              </ul>
+              <a class="card-link" href="sistema-para-hotel-fazenda.html">Abrir →</a>
+            </article>
+          </div>
         </div>
+      </section>
+
+      <!-- MARKETING -->
+      <section class="section section-alt" id="marketing">
+        <div class="container">
+          <div class="section-header">
+            <h2>Marketing para Hotelaria</h2>
+            <p>Conteúdo para vender direto, aparecer no Google e construir previsibilidade.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Vender direto sem Booking</h3>
+              <p>Passo a passo para reduzir comissão e aumentar margem.</p>
+              <a class="card-link" href="como-vender-direto-sem-booking.html">Ler →</a>
+            </article>
+
+            <article class="card">
+              <h3>SEO para Pousadas</h3>
+              <p>Como ranquear por cidade e atrair hóspedes todos os meses.</p>
+              <a class="card-link" href="seo-para-pousadas.html">Ler →</a>
+            </article>
+
+            <article class="card">
+              <h3>Google para Hospedagens</h3>
+              <p>GBP, páginas locais e o que realmente converte.</p>
+              <a class="card-link" href="como-divulgar-pousada-no-google.html">Ler →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GESTÃO -->
+      <section class="section" id="gestao">
+        <div class="container">
+          <div class="section-header">
+            <h2>Gestão Hoteleira</h2>
+            <p>Conteúdo operacional para padronizar rotinas e elevar a qualidade.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Checklist de gestão</h3>
+              <p>Rotinas essenciais para manter controle da operação.</p>
+              <a class="card-link" href="checklist-gestao-hotel.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>Check-in moderno</h3>
+              <p>Pré-check-in, conferência e fluxo sem papel.</p>
+              <a class="card-link" href="como-fazer-check-in-hotel.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>FNRH Digital</h3>
+              <p>Como implementar FNRH digital no processo da recepção.</p>
+              <a class="card-link" href="fnrh-digital-hotel.html">Abrir →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECURSOS -->
+      <section class="section section-alt" id="recursos">
+        <div class="container">
+          <div class="section-header">
+            <h2>Recursos gratuitos</h2>
+            <p>Materiais e ferramentas para aplicar hoje e melhorar seus números.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Planilha de Reservas</h3>
+              <p>Modelo pronto para organizar reservas e ocupação.</p>
+              <a class="card-link" href="planilha-controle-reservas-hotel.html">Baixar →</a>
+            </article>
+
+            <article class="card">
+              <h3>Simulador Booking</h3>
+              <p>Descubra quanto você paga por mês e quanto pode economizar.</p>
+              <a class="card-link" href="simulador-comissao-booking.html">Calcular →</a>
+            </article>
+
+            <article class="card">
+              <h3>Checklist recepção</h3>
+              <p>Fluxo padrão de check-in, pré-check-in e organização.</p>
+              <a class="card-link" href="checklist-recepcao-hotel.html">Abrir →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DESTINOS -->
+      <section class="section" id="destinos">
+        <div class="container">
+          <div class="section-header">
+            <h2>Guias de destinos</h2>
+            <p>SEO turístico para atrair viajantes — e hospedeiros que querem crescer.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Onde ficar em Peruíbe</h3>
+              <p>Guia completo com dicas e regiões.</p>
+              <a class="card-link" href="onde-ficar-em-peruibe.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>Onde ficar em Itanhaém</h3>
+              <p>Guia por bairros e estilos de hospedagem.</p>
+              <a class="card-link" href="onde-ficar-em-itanhaem.html">Abrir →</a>
+            </article>
+
+            <article class="card">
+              <h3>Onde ficar em Mongaguá</h3>
+              <p>Guia turístico + oportunidades para pousadas.</p>
+              <a class="card-link" href="onde-ficar-em-mongagua.html">Abrir →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="section section-alt" id="contato">
+        <div class="container">
+          <div class="section-header">
+            <h2>Agende uma demonstração</h2>
+            <p>
+              Responda rápido: quantos quartos, diária média e cidade.
+              A BRsys te mostra o caminho mais rápido para organizar e vender direto.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5513997408157" target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="mailto:contato@brsys.com.br">
+              Enviar e-mail
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> BRsys • Tecnologia para Hotelaria</p>
+        <p>Peruíbe/SP • Atendimento via WhatsApp</p>
       </div>
-    </div>
+    </footer>
 
-    <div class="mini" style="margin-top:12px;">
-      © <span id="y"></span> BRsys • WhatsApp +55 13 99740-8157
-    </div>
-  </div>
-</footer>
+    <script>
+      // Ano
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-<!-- Sticky WhatsApp (mobile) -->
-<a id="waSticky" class="waSticky" target="_blank" rel="noopener" href="#">
-  📲 Chamar no WhatsApp
-</a>
+      // ===== Mobile menu toggle (usa seu body.nav-open) =====
+      const navBtn = document.querySelector(".nav-toggle");
+      if (navBtn) {
+        navBtn.addEventListener("click", () => {
+          const open = document.body.classList.toggle("nav-open");
+          navBtn.setAttribute("aria-expanded", String(open));
+        });
 
-<script>
-  // Ano
-  document.getElementById('y').textContent = new Date().getFullYear();
+        // Fecha menu ao clicar em links
+        document.querySelectorAll(".nav-mobile a").forEach((a) => {
+          a.addEventListener("click", () => {
+            document.body.classList.remove("nav-open");
+            navBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
 
-  // WhatsApp (um lugar só pra editar)
-  const WA_BASE = "https://wa.me/5513997408157?text=";
+      // ===== Theme toggle (Sol/Lua) =====
+      // data-theme no <html>: "dark" | "light"
+      // storage: brsys-theme ("dark"|"light"|"auto")
+      const root = document.documentElement;
+      const themeBtn = document.querySelector(".theme-toggle");
+      const storageKey = "brsys-theme";
+      const mql = window.matchMedia("(prefers-color-scheme: dark)");
 
-  const WA_TEXT = encodeURIComponent(
-    "Oi BRsys! Quero uma avaliação rápida.\n\n" +
-    "Negócio: [nome] - [cidade]\n" +
-    "Link Google/Instagram: [link]\n\n" +
-    "Meu objetivo: ( ) WhatsApp / ( ) Pedido / ( ) Reserva\n" +
-    "Obs: ( ) site aponta pra Instagram/Booking  ( ) erro/fora do ar  ( ) sem site"
-  );
+      function getStoredTheme() {
+        return localStorage.getItem(storageKey) || "auto";
+      }
 
-  const WA_TEXT_IMPLANT = encodeURIComponent(
-    "Oi BRsys! Quero implantação (a partir de R$ 490) com escopo fechado.\n\n" +
-    "Negócio: [nome] - [cidade]\n" +
-    "Link Google/Instagram: [link]\n\n" +
-    "Prefiro: ( ) Domínio próprio  ( ) Landing BRsys\n" +
-    "Ramo: [ramo]"
-  );
+      function resolveTheme(mode) {
+        if (mode === "dark" || mode === "light") return mode;
+        // auto:
+        return mql.matches ? "dark" : "light";
+      }
 
-  const WA_TEXT_BUDGET = encodeURIComponent(
-    "Oi BRsys! Quero orçamento fechado (implantação + SEO mensal opcional).\n\n" +
-    "Negócio: [nome] - [cidade]\n" +
-    "Link Google/Instagram: [link]\n\n" +
-    "Preferência de plano SEO: ( ) R$150  ( ) R$490  ( ) R$690  ( ) R$990"
-  );
+      function applyTheme(mode) {
+        const resolved = resolveTheme(mode);
+        root.setAttribute("data-theme", resolved);
+        root.dataset.themeMode = mode; // opcional p/ debug (auto/dark/light)
+      }
 
-  function setHref(id, text){
-    const el = document.getElementById(id);
-    if (el) el.href = WA_BASE + text;
-  }
+      function cycleTheme(currentMode) {
+        // ciclo simples: auto -> dark -> light -> auto
+        if (currentMode === "auto") return "dark";
+        if (currentMode === "dark") return "light";
+        return "auto";
+      }
 
-  // Top / Hero / Rodapé
-  setHref("waTop", WA_TEXT);
-  setHref("waHero", WA_TEXT);
-  setHref("waFooter", WA_TEXT);
-  setHref("waSticky", WA_TEXT);
+      function syncTheme() {
+        const mode = getStoredTheme();
+        applyTheme(mode);
+      }
 
-  // Seção Valores
-  setHref("waImplant", WA_TEXT_IMPLANT);
-  setHref("waBudget", WA_TEXT_BUDGET);
-</script>
+      // aplica ao carregar
+      syncTheme();
 
-</body>
+      // se usuário está em "auto", acompanhar mudança do sistema
+      mql.addEventListener?.("change", () => {
+        if (getStoredTheme() === "auto") applyTheme("auto");
+      });
+
+      if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+          const currentMode = getStoredTheme();
+          const nextMode = cycleTheme(currentMode);
+          localStorage.setItem(storageKey, nextMode);
+          applyTheme(nextMode);
+        });
+      }
+    </script>
+  </body>
 </html>
