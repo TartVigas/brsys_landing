@@ -1,31 +1,28 @@
-// /js/nav.js — menu simples + mobile drawer + active link
+// /js/nav.js — menu simples (desktop + mobile) sem mexer no index
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
 
   const desktopMount = $("#nav-desktop-mount");
+  const mobileMount = $("#nav-mobile-mount");
   const toggleBtn = $(".nav-toggle");
   const header = $(".site-header");
 
-  if (!desktopMount || !toggleBtn) return;
+  if (!desktopMount || !mobileMount || !toggleBtn) return;
 
-  // Ajuste aqui os links (pode ser #ancora ou /pagina/)
+  // Ajuste os links aqui (pode ser #ancora ou /pagina/)
   const NAV = [
-    { label: "Plataforma", href: "#topo" },
+    { label: "Plataforma", href: "#plataforma" },
     { label: "PMS", href: "/pms/" },
-    { label: "Marketing", href: "/marketing/" },
-    { label: "Gestão", href: "/gestao/" },
+    { label: "Marketing", href: "/seo-local-hoteis/" },
+    { label: "Gestão", href: "/checklist-gestao-hotel/" },
     { label: "Destinos", href: "/destinos/" },
     { label: "Recursos", href: "#recursos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Contato", href: "#contato" }
   ];
 
-  function isSamePageHashLink(href) {
-    return typeof href === "string" && href.startsWith("#");
-  }
-
-  function renderNav(container, opts = { mode: "desktop" }) {
+  function renderNav(container, mode) {
     const nav = document.createElement("nav");
-    nav.className = `site-nav site-nav--${opts.mode}`;
+    nav.className = `site-nav site-nav--${mode}`;
 
     const ul = document.createElement("ul");
     ul.className = "nav-list";
@@ -48,62 +45,35 @@
     container.appendChild(nav);
   }
 
-  // Desktop nav
-  renderNav(desktopMount, { mode: "desktop" });
+  renderNav(desktopMount, "desktop");
+  renderNav(mobileMount, "mobile");
 
-  // Mobile drawer
-  const mobileDrawer = document.createElement("div");
-  mobileDrawer.className = "nav-drawer";
-  mobileDrawer.setAttribute("aria-hidden", "true");
-
-  const mobileInner = document.createElement("div");
-  mobileInner.className = "nav-drawer__inner";
-
-  const mobileMount = document.createElement("div");
-  mobileMount.className = "nav-drawer__mount";
-
-  // CTA mobile (opcional)
-  const mobileCtas = document.createElement("div");
-  mobileCtas.className = "nav-drawer__ctas";
-  mobileCtas.innerHTML = `
-    <a class="btn btn-primary nav-cta" href="#contato">Agendar demo</a>
-    <a class="btn btn-secondary nav-cta" href="#recursos">Baixar materiais</a>
-  `;
-
-  mobileInner.appendChild(mobileMount);
-  mobileInner.appendChild(mobileCtas);
-  mobileDrawer.appendChild(mobileInner);
-  document.body.appendChild(mobileDrawer);
-
-  renderNav(mobileMount, { mode: "mobile" });
-
+  // Backdrop
   const backdrop = document.createElement("div");
   backdrop.className = "nav-backdrop";
   backdrop.hidden = true;
   document.body.appendChild(backdrop);
 
-  function openDrawer() {
+  function openNav() {
+    document.body.classList.add("nav-open");
     toggleBtn.setAttribute("aria-expanded", "true");
-    mobileDrawer.setAttribute("aria-hidden", "false");
     backdrop.hidden = false;
-    document.documentElement.classList.add("nav-open");
   }
 
-  function closeDrawer() {
+  function closeNav() {
+    document.body.classList.remove("nav-open");
     toggleBtn.setAttribute("aria-expanded", "false");
-    mobileDrawer.setAttribute("aria-hidden", "true");
     backdrop.hidden = true;
-    document.documentElement.classList.remove("nav-open");
   }
 
   toggleBtn.addEventListener("click", () => {
-    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
-    expanded ? closeDrawer() : openDrawer();
+    const isOpen = document.body.classList.contains("nav-open");
+    isOpen ? closeNav() : openNav();
   });
 
-  backdrop.addEventListener("click", closeDrawer);
+  backdrop.addEventListener("click", closeNav);
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeDrawer();
+    if (e.key === "Escape") closeNav();
   });
 
   // Smooth scroll para âncoras
@@ -121,19 +91,18 @@
     if (!a) return;
 
     const href = a.getAttribute("href") || "";
-    if (isSamePageHashLink(href)) {
+    if (href.startsWith("#")) {
       e.preventDefault();
-      closeDrawer();
+      closeNav();
       smoothScrollTo(href);
       history.replaceState(null, "", href);
     } else {
-      // em links de página, fecha drawer e segue normal
-      closeDrawer();
+      closeNav();
     }
   }
 
   desktopMount.addEventListener("click", onNavClick);
-  mobileDrawer.addEventListener("click", onNavClick);
+  mobileMount.addEventListener("click", onNavClick);
 
   // Active link (simples)
   function markActive() {
@@ -141,8 +110,7 @@
     document.querySelectorAll(".nav-link").forEach((a) => {
       const href = (a.getAttribute("href") || "").replace(/\/+$/, "");
       const isActive =
-        href === path ||
-        (href !== "/" && href && !href.startsWith("#") && path.startsWith(href));
+        (!href.startsWith("#") && (href === path || (href !== "/" && path.startsWith(href))));
       a.classList.toggle("is-active", isActive);
     });
   }
