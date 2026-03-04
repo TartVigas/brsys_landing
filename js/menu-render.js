@@ -152,3 +152,33 @@ export function mountMenu() {
     document.querySelectorAll(".dd-btn").forEach((b) => b.setAttribute("aria-expanded", "false"));
   });
 }
+
+  // Desktop: abre por clique, apenas 1 por vez
+  const closeAll = () => {
+    document.querySelectorAll(".dd").forEach((d) => d.classList.remove("open"));
+    document.querySelectorAll(".dd-btn").forEach((b) => b.setAttribute("aria-expanded", "false"));
+  };
+
+  document.querySelectorAll(".dd-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wrap = btn.closest(".dd");
+      const isOpen = wrap.classList.contains("open");
+
+      closeAll();
+      if (!isOpen) {
+        wrap.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener("click", () => closeAll());
+
+  // Fecha com ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
