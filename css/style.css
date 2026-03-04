@@ -1136,3 +1136,61 @@ html[data-theme="light"] .dd-col{
   .nav-desktop{ display:none !important; }
   .nav-toggle{ display:flex; }
 }
+
+/* =========================================
+   FIX MegaMenu — abre por clique, 1 por vez
+   Cole no FINAL do style.css
+========================================= */
+
+/* DESLIGA hover-open (causa o caos) */
+@media (min-width: 901px){
+  .dd:hover .dd-menu{ display:none !important; }
+}
+
+/* Estado aberto controlado por JS */
+.dd.open > .dd-menu{
+  display:block !important;
+}
+
+/* Dropdown mais “controlado” (não invade tudo) */
+.dd-menu{
+  max-height: min(520px, calc(100vh - 110px));
+  overflow: auto;
+}
+
+/* Melhor espaçamento e leitura */
+.dd-grid{
+  gap: 12px;
+}
+
+.dd-col a{
+  line-height: 1.25;
+  white-space: normal;
+}
+
+/* Colunas adaptáveis (se tiver muito conteúdo) */
+@media (max-width: 1100px) and (min-width: 901px){
+  .dd-menu{ min-width: 560px; }
+  .dd-grid{ grid-template-columns: 1fr 1fr; }
+  .dd-highlight{ grid-column: 1 / -1; }
+}
+
+/* Evita que o menu empurre o header ou “quebre” */
+.nav-desktop{
+  overflow: visible;
+}
+
+/* Botão ativo (feedback visual) */
+.dd.open .dd-btn{
+  color: var(--text-main);
+}
+
+/* Scrollbar discreta */
+.dd-menu::-webkit-scrollbar{ width: 10px; }
+.dd-menu::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.12);
+  border-radius: 999px;
+}
+html[data-theme="light"] .dd-menu::-webkit-scrollbar-thumb{
+  background: rgba(11,27,52,.16);
+}
