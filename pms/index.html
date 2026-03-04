@@ -1,211 +1,346 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema para Pousada com Site Integrado | Plano Completo para Hotelaria</title>
-  <meta name="description" content="Sistema completo para pousadas e hotéis pequenos com site profissional integrado, controle de reservas, check-in e redução da dependência de OTAs. Plano com setup e suporte especializado.">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>PMS para Hotelaria Independente | Reservas, Ocupação e Rotina | BRsys</title>
+  <meta name="description" content="PMS para pousadas e hotéis independentes: controle de reservas, mapa de ocupação, check-in/check-out, hóspedes e relatórios. Evolua por etapas e venda mais direto." />
+  <link rel="canonical" href="https://brsys.com.br/pms/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="PMS para Hotelaria Independente | BRsys" />
+  <meta property="og:description" content="Gestão de reservas, ocupação e rotina: PMS simples e poderoso para pousadas e hotéis independentes." />
+  <meta property="og:url" content="https://brsys.com.br/pms/" />
+  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"PMS para Hotelaria Independente",
+    "url":"https://brsys.com.br/pms/",
+    "inLanguage":"pt-BR",
+    "isPartOf":{"@type":"WebSite","name":"BRsys","url":"https://brsys.com.br/"},
+    "about":[
+      {"@type":"Thing","name":"PMS"},
+      {"@type":"Thing","name":"Gestão hoteleira"},
+      {"@type":"Thing","name":"Reservas"},
+      {"@type":"Thing","name":"Check-in e check-out"}
+    ]
+  }
+  </script>
+
+  <!-- Ajustes locais (opcional, só para organizar o layout desta página) -->
   <style>
-    /* RESET & BASE */
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter', system-ui, sans-serif; line-height:1.6; color:#111; background:#fdfdfd;}
-    a{text-decoration:none;}
-    ul{list-style:none;}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-    h1,h2,h3{margin-bottom:16px;}
-    p{margin-bottom:16px;}
-    button, .btn{cursor:pointer;border:none;border-radius:12px;font-weight:600;transition:0.3s;}
-    
-    /* COLORS */
-    :root{
-      --primary:#0f4c81;
-      --secondary:#f5f8fb;
-      --accent:#ff7a00;
-      --light:#fff;
-      --dark-text:#111;
-      --card-bg:#fff;
-      --bg-alt:#f0f4f8;
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-size: 12px; color: var(--text-soft);
     }
-
-    /* BUTTONS */
-    .btn-primary{background:var(--primary); color:var(--light); padding:16px 32px; display:inline-block; border-radius:12px; font-size:1.1rem;}
-    .btn-primary:hover{background:#093153;}
-    .btn-secondary{background:var(--secondary); color:var(--dark-text); padding:14px 28px; font-size:1rem;}
-    .btn-secondary:hover{background:#e0e5ea;}
-
-    /* HERO */
-    .hero{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:120px 0; background:linear-gradient(90deg, #0f4c81 0%, #06355a 100%); color:#fff; border-radius:24px; position:relative; overflow:hidden;}
-    .hero::before{content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:url('hero-bg-pattern.svg') no-repeat center/cover; opacity:0.1;}
-    .hero-text{flex:1; min-width:320px; z-index:1; opacity:0; transform:translateY(40px); transition:0.6s;}
-    .hero-text.visible{opacity:1; transform:translateY(0);}
-    .hero-text h1{font-size:3rem; font-weight:700; margin-bottom:24px;}
-    .hero-text p{font-size:1.25rem; margin-bottom:28px;}
-    .hero-form{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;}
-    .hero-form input{padding:14px; flex:1 1 180px; border:1px solid #ccc; border-radius:12px;}
-    .hero-form button{padding:14px 24px;}
-
-    .hero-image{flex:1; min-width:300px; text-align:center; opacity:0; transform:translateY(40px); transition:0.6s; z-index:1;}
-    .hero-image.visible{opacity:1; transform:translateY(0);}
-    .hero-image img{max-width:100%; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.15);}
-
-    /* SECTIONS */
-    section{padding:100px 0; position:relative;}
-    .section-alt{background:var(--bg-alt);}
-    .section-title{font-size:2.25rem; font-weight:700; margin-bottom:40px; text-align:center; color:var(--primary);}
-    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;}
-    .card{background:var(--card-bg); border-radius:24px; padding:32px; box-shadow:0 12px 28px rgba(0,0,0,0.08); transition:0.4s; opacity:0; transform:translateY(40px);}
-    .card:hover{transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,0.12);}
-    .card.visible{opacity:1; transform:translateY(0);}
-    .card-icon{font-size:2rem; color:var(--accent); margin-bottom:16px;}
-    .card h3{margin-bottom:16px; font-size:1.5rem; color:var(--primary);}
-    .card ul li{margin-bottom:12px; padding-left:28px; position:relative;}
-    .card ul li::before{content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700;}
-
-    /* CTA Section */
-    .cta{background:var(--primary); color:var(--light); text-align:center; padding:120px 20px; border-radius:24px; opacity:0; transform:translateY(40px); transition:0.6s;}
-    .cta.visible{opacity:1; transform:translateY(0);}
-    .cta h2{font-size:2.5rem; margin-bottom:24px;}
-    .cta p{margin-bottom:32px; font-size:1.25rem;}
-    .cta .btn{margin-top:10px;}
-
-    /* Testimonials */
-    .testimonials{background:var(--secondary); padding:100px 20px;}
-    .testimonial{margin-bottom:32px; font-style:italic; font-size:1.15rem; padding:24px; background:var(--card-bg); border-radius:24px; box-shadow:0 8px 20px rgba(0,0,0,0.06); opacity:0; transform:translateY(40px); transition:0.6s;}
-    .testimonial.visible{opacity:1; transform:translateY(0);}
-    .testimonial p{margin-bottom:0;}
-
-    /* Footer */
-    footer{background:#111; color:#fff; text-align:center; padding:60px 20px; border-radius:12px;}
-    footer p{margin:0;}
-
-    /* RESPONSIVE */
-    @media(max-width:768px){
-      .hero{flex-direction:column; padding:80px 20px;}
-      .hero-text h1{font-size:2.25rem;}
-      .section-title{font-size:2rem;}
+    .split{
+      display:grid; gap:14px;
+    }
+    @media(min-width:980px){
+      .split{ grid-template-columns: 1fr 1fr; align-items: stretch; }
+    }
+    .mini{
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
     }
   </style>
 </head>
+
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-text container">
-      <h1>Sistema Completo para Pousadas: Site + PMS + Reserva Direta</h1>
-      <p>Organize sua pousada, controle reservas simples e venda direto sem depender da Booking.</p>
-      <a href="https://wa.me/5511999999999" class="btn btn-primary">Agende sua Demonstração Agora</a>
-      <form class="hero-form">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
-        <button type="submit" class="btn btn-secondary">Enviar</button>
-      </form>
-    </div>
-    <div class="hero-image container">
-      <img src="hero-dashboard-illustration.png" alt="Dashboard e Site Integrado para Pousada">
-    </div>
-  </header>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- SEÇÃO PROBLEMAS -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Chega de Planilhas e Sistemas Antigos</h2>
-      <p>Erros de reserva, falta de organização financeira e dependência da Booking atrapalham o crescimento do seu hotel pequeno. Com nosso <strong>sistema para pousada pequena</strong>, você organiza a recepção da pousada, controla reservas simples e aumenta vendas diretas.</p>
-      <ul>
-        <li>Controle manual de reservas</li>
-        <li>Falta de organização financeira</li>
-        <li>Dependência de OTAs</li>
-        <li>Site que não gera reserva</li>
-      </ul>
-    </div>
-  </section>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+        <span class="brand-text">
+          <span class="brand-name">BRsys</span>
+          <span class="brand-tagline">Tecnologia para Hotelaria</span>
+        </span>
+      </a>
 
-  <!-- CARDS -->
-  <section class="section-alt">
-    <div class="container">
-      <h2 class="section-title">O Que Está Incluso no Plano</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h3>Site Profissional para Pousada</h3>
-          <ul>
-            <li>Página inicial otimizada</li>
-            <li>Motor de reservas integrado</li>
-            <li>WhatsApp integrado</li>
-            <li>SEO local básico</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-icon">📋</div>
-          <h3>Sistema de Gestão (PMS)</h3>
-          <ul>
-            <li>Controle de reservas simples</li>
-            <li>Check-in e check-out rápido</li>
-            <li>Financeiro simplificado</li>
-            <li>Organização de hóspedes</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚙️</div>
-          <h3>Setup e Implantação</h3>
-          <ul>
-            <li>Configuração inicial</li>
-            <li>Cadastro de quartos</li>
-            <li>Importação de dados</li>
-            <li>Treinamento básico da equipe</li>
-          </ul>
-          <p><em>Palavra-chave: implantação de sistema para pousada</em></p>
-        </div>
+      <div id="nav-desktop-mount"></div>
+
+      <div class="header-actions">
+        <a href="#features" class="btn btn-secondary">Ver recursos</a>
+        <a href="#contato" class="btn btn-primary">Agendar demo</a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <h2 class="section-title">Depoimentos de Quem Já Modernizou</h2>
-      <div class="testimonial"><p>“Agora conseguimos organizar melhor a recepção e aumentar reservas diretas.” – Pousada Maré Alta</p></div>
-      <div class="testimonial"><p>“Treinamento rápido e sistema fácil de usar. Nosso hotel pequeno nunca esteve tão organizado!” – Pousada Sol e Mar</p></div>
-    </div>
-  </section>
+    <div id="nav-mobile-mount"></div>
+  </header>
 
-  <!-- CTA FINAL -->
-  <section class="cta">
-    <div class="container">
-      <h2>Agende Sua Demonstração</h2>
-      <p>Comece a vender direto sem depender da Booking e organize sua pousada de verdade.</p>
-      <a href="https://wa.me/5511999999999" class="btn btn-primary">Agende pelo WhatsApp</a>
-      <form class="hero-form" style="margin-top:24px;">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
-        <button type="submit" class="btn btn-secondary">Enviar</button>
-      </form>
-    </div>
-  </section>
+  <main id="conteudo">
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Seu Sistema para Pousadas. Todos os direitos reservados.</p>
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill">🧩 PMS • 🗓️ Reservas • 🧾 Rotina • 📊 Relatórios</span>
+
+          <h1>PMS para Hotelaria Independente</h1>
+
+          <p class="hero-subtitle">
+            Um PMS simples e poderoso para pousadas e hotéis independentes: controle de reservas, ocupação, hóspedes,
+            check-in/check-out e relatórios — com implantação por etapas para não travar sua operação.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20conhecer%20o%20PMS%20da%20BRsys.%20Cidade:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____" target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#features">Ver recursos</a>
+          </div>
+
+          <p class="hero-note">
+            Responda rápido: cidade + UHs + diária média. Eu te digo a melhor etapa para começar.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-device">
+            <img src="/img/hero-hotelaria.png" alt="Dashboard BRsys para PMS e hotelaria" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMAS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quando falta PMS, sobra retrabalho</h2>
+          <p>O PMS existe para transformar rotina em processo — e evitar erros e perdas.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Planilha / caderno</h3>
+            <p>Reserva se perde, datas confundem e overbooking aparece.</p>
+          </div>
+          <div class="card">
+            <h3>Check-in no improviso</h3>
+            <p>Fila, dados incompletos e equipe sem padrão.</p>
+          </div>
+          <div class="card">
+            <h3>Relatórios inexistentes</h3>
+            <p>Sem visão de ocupação, receita e desempenho.</p>
+          </div>
+          <div class="card">
+            <h3>WhatsApp vira caos</h3>
+            <p>Atendimento sem histórico e sem consistência.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recursos do PMS BRsys</h2>
+          <p>O essencial para operar bem — e o avançado para crescer quando fizer sentido.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3>Reservas</h3>
+            <p>Controle de reservas com visão clara de entrada/saída.</p>
+            <ul class="list">
+              <li>Cadastro rápido</li>
+              <li>Confirmação e status</li>
+              <li>Histórico do hóspede</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Mapa de ocupação</h3>
+            <p>Enxergue ocupação e disponibilidade de forma simples.</p>
+            <ul class="list">
+              <li>Disponível / ocupado</li>
+              <li>Entrada e saída</li>
+              <li>Evita overbooking</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Check-in / Check-out</h3>
+            <p>Rotina padronizada para equipe e recepção.</p>
+            <ul class="list">
+              <li>Dados do hóspede</li>
+              <li>Registro organizado</li>
+              <li>Finalização simples</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Relatórios</h3>
+            <p>Visão de operação para tomada de decisão.</p>
+            <ul class="list">
+              <li>Ocupação</li>
+              <li>Receita estimada</li>
+              <li>Desempenho por período</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM (NICHOS) -->
+    <section class="section section-alt" id="nichos">
+      <div class="container">
+        <div class="section-header">
+          <h2>PMS por tipo de hospedagem</h2>
+          <p>Escolha seu cenário e comece com a solução certa.</p>
+        </div>
+
+        <div class="grid-4">
+          <a href="/pms-para-hotel-fazenda/" class="card segment-card">
+            <h3>Hotel Fazenda</h3>
+            <p>Rotina complexa, pacotes e ticket alto.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a href="/pms-para-hotel-pequeno/" class="card segment-card">
+            <h3>Hotel Pequeno</h3>
+            <p>PMS simples e forte para crescer.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a href="/sistema-para-pousada-com-site/" class="card segment-card">
+            <h3>Pousada</h3>
+            <p>Gestão + reservas diretas + WhatsApp.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a href="/sistema-para-pousada/" class="card segment-card">
+            <h3>Pousada (base)</h3>
+            <p>Comece pelo essencial e evolua.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO IMPLANTAMOS -->
+    <section class="section" id="implantacao">
+      <div class="container">
+        <div class="section-header">
+          <h2>Implantação por etapas (sem travar sua operação)</h2>
+          <p>Primeiro organiza, depois automatiza, depois escala.</p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Etapa 1 — Rotina organizada</h3>
+            <p>Reserva + ocupação + padrão de atendimento.</p>
+            <ul class="list">
+              <li>Configuração inicial</li>
+              <li>Treino do básico</li>
+              <li>Processo simples e replicável</li>
+            </ul>
+            <p class="mini">Ideal para começar rápido e parar de apagar incêndio.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 2 — Automação e vendas diretas</h3>
+            <p>Menos retrabalho e mais reservas diretas.</p>
+            <ul class="list">
+              <li>Pré-check-in e mensagens</li>
+              <li>Site de conversão + WhatsApp</li>
+              <li>SEO e páginas satélite</li>
+            </ul>
+            <p class="mini">Ideal para reduzir OTA e aumentar previsibilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Dúvidas comuns antes de implantar um PMS.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Serve para pousada pequena?</h3>
+            <p>Sim. O PMS é pensado para hotelaria independente: simples na rotina e escalável por etapas.</p>
+          </div>
+          <div class="card">
+            <h3>Eu preciso trocar tudo de uma vez?</h3>
+            <p>Não. A implantação é por etapas: primeiro organiza o básico, depois evolui para automação/marketing.</p>
+          </div>
+          <div class="card">
+            <h3>Ajuda a reduzir dependência da Booking?</h3>
+            <p>Sim — principalmente quando combinado com site de conversão, WhatsApp e SEO local.</p>
+          </div>
+          <div class="card">
+            <h3>O que você precisa para recomendar o plano certo?</h3>
+            <p>Cidade, UHs, diária média e como você recebe reservas hoje (OTA/WhatsApp/site).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer implantar o PMS do jeito certo?</h2>
+          <p>Me mande seus dados e eu te digo qual etapa faz mais sentido para começar.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20implantar%20PMS%20na%20minha%20hospedagem.%20Cidade:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____%20Como%20recebo%20reservas%20hoje%3F%20(OTA%2FWhats%2FSite)%20____" class="btn btn-primary" target="_blank" rel="noopener">
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:contato@brsys.com.br?subject=PMS%20BRsys%20-%20Contato" class="btn btn-secondary">
+            Enviar e-mail
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Com cidade + UHs + diária média, eu já retorno com um plano por etapas e metas realistas.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 BRsys • Tecnologia para Hotelaria</p>
+      <p>Peruíbe/SP • Atendimento via WhatsApp</p>
     </div>
   </footer>
 
-  <!-- JS SCROLL REVEAL -->
-  <script>
-    const elements = document.querySelectorAll('.hero-text, .hero-image, .card, .testimonial, .cta');
-    function reveal() {
-      const triggerBottom = window.innerHeight * 0.85;
-      elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < triggerBottom){ el.classList.add('visible'); }
-      });
-    }
-    window.addEventListener('scroll', reveal);
-    window.addEventListener('load', reveal);
-  </script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
 </body>
 </html>
