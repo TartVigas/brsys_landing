@@ -1,25 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home -->
+  <!-- HOME -->
   <url>
     <loc>https://www.brsys.com.br/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Soluções -->
+  <!-- HUBS PRINCIPAIS -->
   <url>
-    <loc>https://www.brsys.com.br/solucoes/</loc>
+    <loc>https://www.brsys.com.br/pms/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Hub de cidade (DDD 13 piloto) -->
+  <url>
+    <loc>https://www.brsys.com.br/marketing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/gestao/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/destinos/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/recursos/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PMS / SOFTWARE -->
+  <url>
+    <loc>https://www.brsys.com.br/pms-para-hotel-pequeno/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/pms-para-pousada-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/pms-para-hotel-fazenda/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/programa-controle-reservas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/software-gestao-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SITE PARA HOTEL -->
+  <url>
+    <loc>https://www.brsys.com.br/site-para-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/site-hotel-interior/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- MARKETING HOTELARIA -->
+  <url>
+    <loc>https://www.brsys.com.br/seo-local-hoteis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/como-vender-direto-sem-booking/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/como-modernizar-pousadas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GESTÃO -->
+  <url>
+    <loc>https://www.brsys.com.br/checklist-gestao-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/implantacao-sistema-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SIMULADORES -->
+  <url>
+    <loc>https://www.brsys.com.br/simulador-receita-direta/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/simulador-roi-pms-site/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brsys.com.br/simulador-planilha-vs-pms/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- HUB DE CIDADE (PILOTO) -->
   <url>
     <loc>https://www.brsys.com.br/peruibe/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
