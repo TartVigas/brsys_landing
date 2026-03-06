@@ -1,6 +1,8 @@
-// /js/nav.js — menu simples (desktop + mobile) sem mexer no index
+// /js/nav.js — menu global BRsys (desktop + mobile)
+// Usa páginas reais no menu principal e mantém suporte a âncoras locais quando existirem.
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const desktopMount = $("#nav-desktop-mount");
   const mobileMount = $("#nav-mobile-mount");
@@ -9,20 +11,37 @@
 
   if (!desktopMount || !mobileMount || !toggleBtn) return;
 
-  // Ajuste os links aqui (pode ser #ancora ou /pagina/)
+  // Menu global do site: somente páginas reais
   const NAV = [
-    { label: "Plataforma", href: "#plataforma" },
+    { label: "Plataforma", href: "/plataforma/" },
     { label: "PMS", href: "/pms/" },
-    { label: "Marketing", href: "/seo-local-hoteis/" },
-    { label: "Gestão", href: "/checklist-gestao-hotel/" },
+    { label: "Marketing", href: "/marketing/" },
+    { label: "Gestão", href: "/gestao/" },
     { label: "Destinos", href: "/destinos/" },
-    { label: "Recursos", href: "#recursos" },
-    { label: "Contato", href: "#contato" }
+    { label: "Recursos", href: "/recursos/" },
+    { label: "Sobre", href: "/sobre/" },
+    { label: "Contato", href: "/contato/" }
   ];
+
+  function normalizePath(path) {
+    if (!path) return "/";
+    const cleaned = path.replace(/\/+$/, "");
+    return cleaned || "/";
+  }
+
+  function createLink(item) {
+    const a = document.createElement("a");
+    a.className = "nav-link";
+    a.href = item.href;
+    a.textContent = item.label;
+    a.setAttribute("data-href", item.href);
+    return a;
+  }
 
   function renderNav(container, mode) {
     const nav = document.createElement("nav");
     nav.className = `site-nav site-nav--${mode}`;
+    nav.setAttribute("aria-label", mode === "desktop" ? "Navegação principal" : "Navegação móvel");
 
     const ul = document.createElement("ul");
     ul.className = "nav-list";
@@ -30,13 +49,7 @@
     NAV.forEach((item) => {
       const li = document.createElement("li");
       li.className = "nav-item";
-
-      const a = document.createElement("a");
-      a.className = "nav-link";
-      a.href = item.href;
-      a.textContent = item.label;
-
-      li.appendChild(a);
+      li.appendChild(createLink(item));
       ul.appendChild(li);
     });
 
@@ -48,71 +61,132 @@
   renderNav(desktopMount, "desktop");
   renderNav(mobileMount, "mobile");
 
-  // Backdrop
-  const backdrop = document.createElement("div");
-  backdrop.className = "nav-backdrop";
-  backdrop.hidden = true;
-  document.body.appendChild(backdrop);
+  // Backdrop mobile
+  let backdrop = $(".nav-backdrop");
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.className = "nav-backdrop";
+    backdrop.hidden = true;
+    document.body.appendChild(backdrop);
+  }
 
   function openNav() {
     document.body.classList.add("nav-open");
     toggleBtn.setAttribute("aria-expanded", "true");
+    toggleBtn.setAttribute("aria-label", "Fechar menu");
     backdrop.hidden = false;
   }
 
   function closeNav() {
     document.body.classList.remove("nav-open");
     toggleBtn.setAttribute("aria-expanded", "false");
+    toggleBtn.setAttribute("aria-label", "Abrir menu");
     backdrop.hidden = true;
   }
 
+  function isMobileOpen() {
+    return document.body.classList.contains("nav-open");
+  }
+
+  toggleBtn.setAttribute("aria-expanded", "false");
+  toggleBtn.setAttribute("aria-label", "Abrir menu");
+
   toggleBtn.addEventListener("click", () => {
-    const isOpen = document.body.classList.contains("nav-open");
-    isOpen ? closeNav() : openNav();
+    isMobileOpen() ? closeNav() : openNav();
   });
 
   backdrop.addEventListener("click", closeNav);
+
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeNav();
+    if (e.key === "Escape" && isMobileOpen()) closeNav();
   });
 
-  // Smooth scroll para âncoras
+  // Fecha mobile ao redimensionar para desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980 && isMobileOpen()) {
+      closeNav();
+    }
+  });
+
+  // Smooth scroll para âncoras locais, caso existam em algum link futuro
   function smoothScrollTo(hash) {
     const el = document.querySelector(hash);
-    if (!el) return;
+    if (!el) return false;
 
     const headerH = header ? header.offsetHeight : 0;
     const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
     window.scrollTo({ top, behavior: "smooth" });
+    return true;
   }
 
-  function onNavClick(e) {
+  function handleNavClick(e) {
     const a = e.target.closest("a");
     if (!a) return;
 
     const href = a.getAttribute("href") || "";
+
+    // Se for âncora local, trata com scroll suave
     if (href.startsWith("#")) {
-      e.preventDefault();
-      closeNav();
-      smoothScrollTo(href);
-      history.replaceState(null, "", href);
-    } else {
-      closeNav();
+      const ok = smoothScrollTo(href);
+      if (ok) {
+        e.preventDefault();
+        closeNav();
+        history.replaceState(null, "", href);
+      }
+      return;
     }
+
+    // Se for mesma página com hash, ex.: /pagina/#bloco
+    const url = new URL(a.href, window.location.origin);
+    const currentPath = normalizePath(window.location.pathname);
+    const targetPath = normalizePath(url.pathname);
+
+    if (url.hash && currentPath === targetPath) {
+      const ok = smoothScrollTo(url.hash);
+      if (ok) {
+        e.preventDefault();
+        closeNav();
+        history.replaceState(null, "", url.hash);
+      }
+      return;
+    }
+
+    closeNav();
   }
 
-  desktopMount.addEventListener("click", onNavClick);
-  mobileMount.addEventListener("click", onNavClick);
+  desktopMount.addEventListener("click", handleNavClick);
+  mobileMount.addEventListener("click", handleNavClick);
 
-  // Active link (simples)
+  // Marca item ativo
   function markActive() {
-    const path = location.pathname.replace(/\/+$/, "") || "/";
-    document.querySelectorAll(".nav-link").forEach((a) => {
-      const href = (a.getAttribute("href") || "").replace(/\/+$/, "");
-      const isActive =
-        (!href.startsWith("#") && (href === path || (href !== "/" && path.startsWith(href))));
+    const currentPath = normalizePath(window.location.pathname);
+
+    $$(".nav-link").forEach((a) => {
+      const rawHref = a.getAttribute("data-href") || a.getAttribute("href") || "";
+      let isActive = false;
+
+      if (!rawHref.startsWith("#")) {
+        try {
+          const url = new URL(rawHref, window.location.origin);
+          const targetPath = normalizePath(url.pathname);
+
+          isActive =
+            targetPath === currentPath ||
+            (targetPath !== "/" && currentPath.startsWith(targetPath + "/")) ||
+            (targetPath !== "/" && currentPath === targetPath);
+        } catch (_) {
+          isActive = false;
+        }
+      }
+
       a.classList.toggle("is-active", isActive);
+      if (isActive) {
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
     });
   }
+
   markActive();
 })();
