@@ -10,7 +10,15 @@
   </sitemap>
 
   <sitemap>
-    <loc>https://www.brsys.com.br/sitemap-clientes.xml</loc>
+    <loc>https://www.brsys.com.br/sitemap-pms.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://www.brsys.com.br/sitemap-simuladores.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://www.brsys.com.br/sitemap-destinos.xml</loc>
   </sitemap>
 
   <sitemap>
