@@ -1,4 +1,19 @@
 User-agent: *
+
 Allow: /
 
+# Bloquear arquivos desnecessários
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+
+# Bloquear arquivos internos
+Disallow: /templates/
+Disallow: /private/
+Disallow: /_vercel/
+
+# Sitemaps
 Sitemap: https://www.brsys.com.br/sitemap.xml
+Sitemap: https://www.brsys.com.br/sitemap-pages.xml
+Sitemap: https://www.brsys.com.br/sitemap-simuladores.xml
+Sitemap: https://www.brsys.com.br/sitemap-destinos.xml
