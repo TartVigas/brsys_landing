@@ -1,1 +1,505 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Implantação de Sistema para Hotel | Como Organizar sem Travar a Operação | BRsys</title>
+  <meta name="description" content="Entenda como funciona a implantação de sistema para hotel ou pousada: reservas, ocupação, check-in/check-out, rotina da equipe e evolução por etapas, sem travar a operação." />
+  <link rel="canonical" href="https://www.brsys.com.br/implantacao-sistema-hotel/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <link rel="icon" href="/img/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="Implantação de Sistema para Hotel | BRsys" />
+  <meta property="og:description" content="Veja como implantar um sistema para hotel ou pousada por etapas, com mais organização e menos retrabalho para a equipe." />
+  <meta property="og:url" content="https://www.brsys.com.br/implantacao-sistema-hotel/" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Implantação de sistema para hotel",
+    "description":"Guia prático para implantar um sistema em hotéis e pousadas sem travar a operação, começando pelo essencial e evoluindo por etapas.",
+    "url":"https://www.brsys.com.br/implantacao-sistema-hotel/",
+    "inLanguage":"pt-BR",
+    "publisher":{
+      "@type":"Organization",
+      "name":"BRsys",
+      "url":"https://www.brsys.com.br/"
+    },
+    "mainEntityOfPage":"https://www.brsys.com.br/implantacao-sistema-hotel/"
+  }
+  </script>
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"BRsys",
+        "item":"https://www.brsys.com.br/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Implantação de Sistema para Hotel",
+        "item":"https://www.brsys.com.br/implantacao-sistema-hotel/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Quanto tempo leva para implantar um sistema em hotel ou pousada?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"O básico pode entrar em operação rapidamente quando a implantação começa por etapas. Normalmente o ideal é organizar primeiro reservas, ocupação e recepção, deixando automações e expansões para a fase seguinte."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"É preciso mudar toda a operação de uma vez?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Não. A implantação mais segura acontece por etapas, reduzindo resistência da equipe, retrabalho e risco de travar a rotina da hospedagem."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Qual é o primeiro passo na implantação de sistema para hotel?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"O primeiro passo costuma ser mapear a rotina atual da hospedagem e organizar o núcleo da operação: reservas, ocupação, check-in/check-out e padrão de atendimento."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Implantar sistema ajuda também nas reservas diretas?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sim. Quando a operação fica mais organizada, a hospedagem ganha base para integrar site, WhatsApp, pré-check-in e processos comerciais mais fortes, apoiando a reserva direta."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--text-soft);
+    }
+    .split{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width:980px){
+      .split{ grid-template-columns:1fr 1fr; }
+    }
+    .mini{
+      margin:0;
+      font-size:13px;
+      color:var(--text-muted);
+      line-height:1.5;
+    }
+    .highlight-box{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .highlight-box p{
+      margin:0;
+      color:var(--text-soft);
+      line-height:1.55;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+        <span class="brand-text">
+          <span class="brand-name">BRsys</span>
+          <span class="brand-tagline">Tecnologia para Hotelaria</span>
+        </span>
+      </a>
+
+      <div id="nav-desktop-mount"></div>
+
+      <div class="header-actions">
+        <a href="#etapas" class="btn btn-secondary">Ver etapas</a>
+        <a href="#contato" class="btn btn-primary">Agendar demo</a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="nav-mobile-mount"></div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill">⚙️ Implantação • 🏨 Hotelaria • 🗓️ Reservas • 👥 Equipe</span>
+
+          <h1>Implantação de Sistema para Hotel</h1>
+
+          <p class="hero-subtitle">
+            Implantar um sistema em hotel ou pousada não precisa ser traumático. O segredo está em começar pelo que mais pesa na rotina,
+            organizar reservas, ocupação e recepção, e só depois avançar para automação, integração e escala.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20de%20sistema%20para%20hotel.%20Cidade:%20____%20UHs:%20____%20Sistema%20atual:%20____%20Principal%20dificuldade:%20____" target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#etapas">Ver etapas</a>
+          </div>
+
+          <p class="hero-note">
+            Se você me mandar cidade, UHs, sistema atual e principal dificuldade, eu já consigo sugerir a melhor ordem de implantação.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-device">
+            <img
+              src="/img/hero-hotelaria.png"
+              alt="Implantação de sistema para hotel com a BRsys"
+              loading="lazy"
+              width="640"
+              height="480"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Onde a implantação costuma travar</h2>
+          <p>
+            Muitas hospedagens não têm problema com tecnologia em si. O problema aparece quando tentam implantar tudo de uma vez,
+            sem respeitar a rotina da equipe e o momento da operação.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Mudança brusca</h3>
+            <p>Quando tudo muda ao mesmo tempo, a equipe tende a resistir e a operação perde fluidez.</p>
+          </div>
+
+          <div class="card">
+            <h3>Falta de prioridade</h3>
+            <p>Tentar resolver tudo de uma vez mistura o essencial com o acessório e cria confusão.</p>
+          </div>
+
+          <div class="card">
+            <h3>Treinamento fraco</h3>
+            <p>Sem rotina clara e sem padrão de uso, o sistema vira culpa da operação e não solução.</p>
+          </div>
+
+          <div class="card">
+            <h3>Processo mal definido</h3>
+            <p>Sem processo, a tecnologia entra em cima do caos e não consegue entregar resultado real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="etapas">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como implantar um sistema sem travar a hospedagem</h2>
+          <p>
+            A lógica mais segura é implantar por etapas. Primeiro organização, depois padronização, depois automação e só então expansão.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3>1) Diagnóstico da rotina</h3>
+            <p>Mapear como a hospedagem recebe reservas, atende o hóspede e controla ocupação hoje.</p>
+            <ul class="list">
+              <li>Origem das reservas</li>
+              <li>Fluxo de recepção</li>
+              <li>Pontos de gargalo</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2) Organização do básico</h3>
+            <p>Entrar primeiro com reservas, ocupação, check-in/check-out e rotina mínima da equipe.</p>
+            <ul class="list">
+              <li>Mapa de ocupação</li>
+              <li>Status das reservas</li>
+              <li>Fluxo operacional claro</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>3) Padronização</h3>
+            <p>Definir como cada etapa será feita para reduzir dependência de memória e improviso.</p>
+            <ul class="list">
+              <li>Treino da equipe</li>
+              <li>Padrão de recepção</li>
+              <li>Menos retrabalho</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>4) Evolução da estrutura</h3>
+            <p>Depois do básico redondo, entra automação, site, pré-check-in e reserva direta com mais força.</p>
+            <ul class="list">
+              <li>Mensagens e confirmações</li>
+              <li>Pré-check-in</li>
+              <li>Mais integração comercial</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="pratica">
+      <div class="container">
+        <div class="section-header">
+          <h2>Na prática: qual é a ordem mais saudável</h2>
+          <p>Essa costuma ser a sequência que gera menos atrito e mais resultado para a operação.</p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Etapa 1 — Controlar reservas e ocupação</h3>
+            <ul class="list">
+              <li>Centralizar entradas e saídas</li>
+              <li>Visualizar quartos livres, ocupados e pendentes</li>
+              <li>Reduzir erro de reserva</li>
+            </ul>
+            <p class="mini">Objetivo: sair do improviso e ganhar visão da operação.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 2 — Ajustar recepção e check-in</h3>
+            <ul class="list">
+              <li>Padronizar check-in e check-out</li>
+              <li>Organizar cadastro de hóspedes</li>
+              <li>Melhorar velocidade no balcão e no WhatsApp</li>
+            </ul>
+            <p class="mini">Objetivo: dar segurança para a equipe no dia a dia.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 3 — Treinar e estabilizar uso</h3>
+            <ul class="list">
+              <li>Ensinar a equipe no fluxo real</li>
+              <li>Corrigir pontos de dúvida</li>
+              <li>Transformar uso em hábito</li>
+            </ul>
+            <p class="mini">Objetivo: fazer o sistema virar rotina, não peso extra.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 4 — Conectar operação e comercial</h3>
+            <ul class="list">
+              <li>Pré-check-in e automações</li>
+              <li>Integração com site e canal direto</li>
+              <li>Mais base para vender melhor</li>
+            </ul>
+            <p class="mini">Objetivo: usar a organização da operação para sustentar crescimento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="erros">
+      <div class="container">
+        <div class="section-header">
+          <h2>Erros comuns na implantação</h2>
+          <p>Alguns erros fazem a hospedagem culpar o sistema, quando o problema real era a forma de implantar.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Pular o diagnóstico</h3>
+            <p>Sem entender a rotina atual, a implantação vira tentativa e erro desnecessária.</p>
+          </div>
+
+          <div class="card">
+            <h3>Querer automatizar antes de organizar</h3>
+            <p>Automatizar uma bagunça só acelera a bagunça.</p>
+          </div>
+
+          <div class="card">
+            <h3>Não envolver a equipe</h3>
+            <p>Sem participação da equipe, o uso tende a ser parcial e cheio de resistência.</p>
+          </div>
+
+          <div class="card">
+            <h3>Não medir adaptação</h3>
+            <p>Sem acompanhar a adoção, os gargalos continuam escondidos e o sistema parece não funcionar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="estrategia">
+      <div class="container">
+        <div class="section-header">
+          <h2>Implantação boa não é a mais rápida. É a mais sustentável.</h2>
+          <p>Em hotelaria, implantar bem significa respeitar a rotina da operação enquanto constrói uma base melhor.</p>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            A implantação ideal em hotelaria independente quase nunca é “tudo de uma vez”. O caminho mais sólido é:
+            <strong>organizar o básico, treinar a equipe, estabilizar o processo e depois evoluir para automação e vendas diretas</strong>.
+            Isso reduz atrito, acelera adoção e aumenta a chance de o sistema realmente gerar resultado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apoio">
+      <div class="container">
+        <div class="section-header">
+          <h2>Conteúdos relacionados que reforçam a implantação</h2>
+          <p>Essas páginas ajudam a conectar implantação, PMS, rotina operacional e reserva direta.</p>
+        </div>
+
+        <div class="grid-4">
+          <a class="card resource-card" href="/pms/">
+            <h3>Hub PMS</h3>
+            <p>Veja a visão geral do cluster PMS para hotelaria independente.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/pms-para-hotel-pequeno/">
+            <h3>PMS para Hotel Pequeno</h3>
+            <p>Entenda como organizar uma operação enxuta com mais controle e menos improviso.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/checklist-gestao-hotel/">
+            <h3>Checklist Gestão Hotel</h3>
+            <p>Organize recepção, rotina e operação antes e depois da implantação.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/simulador-roi-pms-site/">
+            <h3>ROI PMS + Site</h3>
+            <p>Calcule o retorno de estruturar melhor operação e canal direto.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes sobre implantação de sistema em hotel</h2>
+          <p>Dúvidas comuns antes de começar a modernizar a operação da hospedagem.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Quanto tempo leva para implantar um sistema?</h3>
+            <p>O básico pode entrar rapidamente. O restante evolui por etapas conforme a rotina da equipe e a complexidade da hospedagem.</p>
+          </div>
+
+          <div class="card">
+            <h3>Preciso mudar tudo de uma vez?</h3>
+            <p>Não. O mais saudável é implantar aos poucos, começando pelo núcleo da operação.</p>
+          </div>
+
+          <div class="card">
+            <h3>Qual é o primeiro passo real?</h3>
+            <p>Mapear a rotina atual e organizar reservas, ocupação, check-in/check-out e padrão da recepção.</p>
+          </div>
+
+          <div class="card">
+            <h3>Implantação ajuda nas reservas diretas?</h3>
+            <p>Sim. Uma operação bem organizada cria base para integrar site, WhatsApp, automação e processo comercial mais forte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer implantar um sistema sem travar sua hospedagem?</h2>
+          <p>
+            Me mande cidade, UHs, sistema atual e principal dificuldade. Com isso já dá para sugerir a melhor ordem de implantação para o seu caso.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20entender%20a%20implanta%C3%A7%C3%A3o%20de%20sistema%20para%20hotel.%20Cidade:%20____%20UHs:%20____%20Sistema%20atual:%20____%20Principal%20dificuldade:%20____" class="btn btn-primary" target="_blank" rel="noopener">
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:contato@brsys.com.br?subject=Implantacao%20de%20Sistema%20para%20Hotel%20-%20BRsys" class="btn btn-secondary">
+            Enviar e-mail
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Com essas informações, a recomendação já pode sair em formato prático: etapa 1, etapa 2 e prioridade real de execução.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 BRsys • Tecnologia para Hotelaria</p>
+      <p>Peruíbe/SP • Atendimento via WhatsApp</p>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+</body>
+</html>
 
