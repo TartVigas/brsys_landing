@@ -1,24 +1,51 @@
-// /js/theme.js — alterna dark/light usando data-theme no <html>
+// /js/theme.js — controle de tema dark/light para BRsys
 (() => {
+
   const btn = document.getElementById("theme-toggle");
   const root = document.documentElement;
+
   if (!btn) return;
 
-  const stored = localStorage.getItem("brsys_theme");
-  if (stored === "dark" || stored === "light") root.setAttribute("data-theme", stored);
+  const STORAGE_KEY = "brsys_theme";
 
-  function syncIcon() {
-    const theme = root.getAttribute("data-theme") || "dark";
-    btn.textContent = theme === "light" ? "☀️" : "🌙";
+  function getPreferredTheme() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+
+    if (stored === "dark" || stored === "light") {
+      return stored;
+    }
+
+    const systemPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    return systemPrefersDark ? "dark" : "light";
   }
 
-  syncIcon();
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    updateButton(theme);
+  }
+
+  function updateButton(theme) {
+    if (theme === "light") {
+      btn.textContent = "☀️";
+      btn.setAttribute("aria-label", "Ativar modo escuro");
+    } else {
+      btn.textContent = "🌙";
+      btn.setAttribute("aria-label", "Ativar modo claro");
+    }
+  }
+
+  const initialTheme = getPreferredTheme();
+  root.setAttribute("data-theme", initialTheme);
+  updateButton(initialTheme);
 
   btn.addEventListener("click", () => {
     const current = root.getAttribute("data-theme") || "dark";
     const next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("brsys_theme", next);
-    syncIcon();
+    applyTheme(next);
   });
+
 })();
