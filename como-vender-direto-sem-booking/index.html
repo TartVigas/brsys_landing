@@ -1,140 +1,427 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Como Vender Direto Sem Booking - BRsys</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ================= HEADER ================= -->
+  <title>Como Vender Direto sem Booking | Mais Reservas Diretas para Hotéis e Pousadas | BRsys</title>
+  <meta name="description" content="Aprenda como vender direto sem depender da Booking: site que converte, WhatsApp rápido, SEO local, Google e processo comercial para hotéis e pousadas." />
+  <link rel="canonical" href="https://brsys.com.br/como-vender-direto-sem-booking/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BRsys" />
+  <meta property="og:title" content="Como Vender Direto sem Booking | BRsys" />
+  <meta property="og:description" content="Descubra como reduzir dependência da Booking e gerar mais reservas diretas com site, WhatsApp, SEO local e processo comercial." />
+  <meta property="og:url" content="https://brsys.com.br/como-vender-direto-sem-booking/" />
+  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Como vender direto sem Booking",
+    "description":"Estratégia prática para hotéis e pousadas aumentarem reservas diretas com site, WhatsApp, SEO local e processo comercial.",
+    "url":"https://brsys.com.br/como-vender-direto-sem-booking/",
+    "inLanguage":"pt-BR",
+    "publisher":{
+      "@type":"Organization",
+      "name":"BRsys",
+      "url":"https://brsys.com.br/"
+    },
+    "mainEntityOfPage":"https://brsys.com.br/como-vender-direto-sem-booking/"
+  }
+  </script>
+
+  <style>
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+    .split{ display:grid; gap:14px; }
+    @media (min-width: 980px){
+      .split{ grid-template-columns: 1fr 1fr; }
+    }
+    .mini{
+      margin:0;
+      font-size:13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .highlight-box{
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .highlight-box p{
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="brand">
-        <img src="brsys-logo.svg" alt="BRsys Logo" class="brand-logo">
-        <div class="brand-text">
+      <a href="/" class="brand" aria-label="BRsys - Início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+        <span class="brand-text">
           <span class="brand-name">BRsys</span>
-          <span class="brand-tagline">Hotelaria Moderna</span>
-        </div>
+          <span class="brand-tagline">Tecnologia para Hotelaria</span>
+        </span>
       </a>
 
-      <nav class="nav-desktop">
-        <a href="/sistema-para-pousada-com-site-integrado">Soluções</a>
-        <a href="/simuladores">Simuladores</a>
-        <a href="/conteudo">Blog</a>
-        <a href="/contato" class="btn btn-primary">Contato</a>
-      </nav>
+      <div id="nav-desktop-mount"></div>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <a href="#metodo" class="btn btn-secondary">Ver método</a>
+        <a href="#contato" class="btn btn-primary">Agendar demo</a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
-    <nav class="nav-mobile">
-      <a href="/sistema-para-pousada-com-site-integrado">Soluções</a>
-      <a href="/simuladores">Simuladores</a>
-      <a href="/conteudo">Blog</a>
-      <a href="/contato" class="btn btn-primary nav-mobile-cta">Contato</a>
-    </nav>
+    <div id="nav-mobile-mount"></div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero section">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Vendas Diretas</span>
-        <h1>Como Vender Direto Sem Dependência de Booking</h1>
-        <p class="hero-subtitle">Aprenda estratégias para captar hóspedes diretamente, aumentar margem de lucro e reduzir comissões de OTAs.</p>
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="pill">💬 WhatsApp • 🔎 Google • 📍 SEO local • 🏨 Reserva direta</span>
+
+          <h1>Como Vender Direto sem Booking</h1>
+
+          <p class="hero-subtitle">
+            Você não precisa “sumir” da Booking. Precisa fazer ela deixar de ser dona do seu faturamento.
+            O caminho é simples: <strong>site que converte + WhatsApp rápido + Google + processo comercial</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20vender%20mais%20direto%20sem%20depender%20da%20Booking.%20Cidade:%20____%20Tipo:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____" target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#metodo">Ver passo a passo</a>
+          </div>
+
+          <p class="hero-note">
+            Quanto mais reserva direta entra, menos comissão vai embora.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-device">
+            <img src="/img/hero-hotelaria.png" alt="Estratégia BRsys para reservas diretas na hotelaria" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXTO -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>O problema não é usar OTA. É depender dela.</h2>
+          <p>Booking pode ser canal. O erro é deixar ela dominar sua entrada de reservas.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Comissão alta</h3>
+            <p>Parte do seu faturamento some antes mesmo de entrar.</p>
+          </div>
+          <div class="card">
+            <h3>Pouco controle do cliente</h3>
+            <p>Você recebe a reserva, mas não constrói relacionamento direto.</p>
+          </div>
+          <div class="card">
+            <h3>Preço vira guerra</h3>
+            <p>Sem marca e sem diferencial, sobra competir só por valor.</p>
+          </div>
+          <div class="card">
+            <h3>Previsibilidade baixa</h3>
+            <p>Você depende de algoritmo, ranking e promoção da plataforma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-header">
+          <h2>O método para vender direto</h2>
+          <p>Não é um truque. É uma estrutura comercial digital para hotelaria.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3>1) Site que converte</h3>
+            <p>O hóspede precisa entender rápido por que reservar com você.</p>
+            <ul class="list">
+              <li>Fotos reais e boas</li>
+              <li>Oferta clara</li>
+              <li>CTA WhatsApp visível</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2) Google & SEO local</h3>
+            <p>Apareça quando o cliente procura “hotel em [cidade]”.</p>
+            <ul class="list">
+              <li>Páginas satélite</li>
+              <li>Perfil no Google forte</li>
+              <li>Conteúdo por intenção</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>3) WhatsApp rápido</h3>
+            <p>Atendimento lento perde reserva. Atendimento padrão fecha.</p>
+            <ul class="list">
+              <li>Mensagem pronta</li>
+              <li>Roteiro de qualificação</li>
+              <li>Fechamento com agilidade</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>4) Processo</h3>
+            <p>Sem processo, cada atendente vende de um jeito e você perde dinheiro.</p>
+            <ul class="list">
+              <li>Padrão de resposta</li>
+              <li>Follow-up</li>
+              <li>Medição de resultados</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE FAZER NA PRÁTICA -->
+    <section class="section section-alt" id="pratica">
+      <div class="container">
+        <div class="section-header">
+          <h2>Na prática: o que fazer primeiro</h2>
+          <p>Se você quer sair do improviso, essa é a ordem certa.</p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>Etapa 1 — Ajustar a conversão</h3>
+            <ul class="list">
+              <li>Ter uma página clara da hospedagem</li>
+              <li>Botão de WhatsApp forte e visível</li>
+              <li>Fotos melhores e mais confiáveis</li>
+              <li>Informações objetivas (regras, horários, benefícios)</li>
+            </ul>
+            <p class="mini">Objetivo: transformar visita em conversa.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 2 — Atrair busca qualificada</h3>
+            <ul class="list">
+              <li>SEO local por cidade/tipo</li>
+              <li>Google Business Profile bem feito</li>
+              <li>Conteúdo que responde dúvidas reais</li>
+              <li>Páginas focadas em intenção de reserva</li>
+            </ul>
+            <p class="mini">Objetivo: trazer o hóspede certo, no momento certo.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 3 — Melhorar atendimento</h3>
+            <ul class="list">
+              <li>Padronizar respostas</li>
+              <li>Reduzir tempo de retorno</li>
+              <li>Fazer follow-up quando necessário</li>
+              <li>Converter orçamento em reserva</li>
+            </ul>
+            <p class="mini">Objetivo: parar de perder lead por demora ou desorganização.</p>
+          </div>
+
+          <div class="card">
+            <h3>Etapa 4 — Medir e escalar</h3>
+            <ul class="list">
+              <li>Comparar OTA vs direto</li>
+              <li>Medir canais de origem</li>
+              <li>Repetir o que funciona</li>
+              <li>Escalar via SEO e Ads</li>
+            </ul>
+            <p class="mini">Objetivo: crescer com previsibilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERROS -->
+    <section class="section" id="erros">
+      <div class="container">
+        <div class="section-header">
+          <h2>Erros comuns de quem quer vender direto</h2>
+          <p>Muita hospedagem quer reserva direta, mas ainda opera do jeito errado.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Esperar só pelo Instagram</h3>
+            <p>Rede social ajuda, mas sem Google e site você perde intenção forte.</p>
+          </div>
+          <div class="card">
+            <h3>Ter site “bonito” sem CTA</h3>
+            <p>Design sem conversão não fecha reserva.</p>
+          </div>
+          <div class="card">
+            <h3>Responder devagar</h3>
+            <p>Lead quente esfria rápido. Em hotelaria isso custa caro.</p>
+          </div>
+          <div class="card">
+            <h3>Não medir canal</h3>
+            <p>Se você não sabe de onde vem a reserva, não sabe onde investir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO ESTRATÉGICO -->
+    <section class="section section-alt" id="estrategia">
+      <div class="container">
+        <div class="section-header">
+          <h2>O objetivo não é “zerar” Booking</h2>
+          <p>O objetivo é fazer o direto crescer até a OTA deixar de mandar no jogo.</p>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            A estratégia correta é usar Booking como apoio enquanto constrói uma base própria:
+            <strong>Google + site + WhatsApp + processo comercial</strong>.
+            Quando a reserva direta cresce, você melhora margem, ganha controle e reduz dependência.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SATÉLITES / APOIO -->
+    <section class="section" id="apoio">
+      <div class="container">
+        <div class="section-header">
+          <h2>Ferramentas e páginas que ajudam nesse processo</h2>
+          <p>Essas páginas reforçam a estratégia de reserva direta.</p>
+        </div>
+
+        <div class="grid-4">
+          <a class="card resource-card" href="/simulador-receita-direta/">
+            <h3>Simulador de Receita Direta</h3>
+            <p>Veja quanto pode economizar sem OTA.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/simulador-roi-pms-site/">
+            <h3>ROI PMS + Site</h3>
+            <p>Calcule retorno do investimento.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/seo-local-hoteis/">
+            <h3>SEO Local para Hotéis</h3>
+            <p>Apareça no Google e gere tráfego qualificado.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/sistema-para-pousada-com-site/">
+            <h3>Sistema para Pousada com Site</h3>
+            <p>Estrutura comercial para vender direto.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Perguntas frequentes</h2>
+          <p>Dúvidas comuns antes de começar a vender mais direto.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Preciso sair da Booking?</h3>
+            <p>Não. O foco é reduzir dependência, não necessariamente abandonar a OTA.</p>
+          </div>
+          <div class="card">
+            <h3>Qual o primeiro passo real?</h3>
+            <p>Ter uma página que converte e um atendimento no WhatsApp mais rápido e padronizado.</p>
+          </div>
+          <div class="card">
+            <h3>SEO local funciona para hotelaria?</h3>
+            <p>Sim. Principalmente quando a busca tem cidade, bairro, tipo de hospedagem e intenção de reserva.</p>
+          </div>
+          <div class="card">
+            <h3>Como saber se faz sentido investir agora?</h3>
+            <p>Se 1 ou 2 reservas diretas por mês já pagam seu investimento, faz sentido começar logo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer vender mais direto na sua hospedagem?</h2>
+          <p>Me mande cidade, tipo de hospedagem, UHs e diária média. Eu te mostro o caminho mais curto.</p>
+        </div>
+
         <div class="hero-actions">
-          <a href="/contato" class="btn btn-primary">Fale com nosso time</a>
-          <a href="#estrategias" class="btn btn-outline">Ver Estratégias</a>
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20vender%20mais%20direto%20sem%20depender%20da%20Booking.%20Cidade:%20____%20Tipo:%20____%20UHs:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____%20Site%2FInstagram%2FBooking:%20____" class="btn btn-primary" target="_blank" rel="noopener">
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:contato@brsys.com.br?subject=Como%20vender%20direto%20sem%20Booking%20-%20BRsys" class="btn btn-secondary">
+            Enviar e-mail
+          </a>
         </div>
-        <p class="hero-note">Venda direta é a chave para estabilidade e independência da sua pousada.</p>
+
+        <p class="hero-note">
+          Com esses dados, eu já retorno com uma direção prática: página, SEO, WhatsApp e processo.
+        </p>
       </div>
-      <div class="hero-media">
-        <div class="hero-device">
-          <img src="mockup-venda-direta.png" alt="Venda Direta Pousadas BRsys">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= ESTRATÉGIAS ================= -->
-  <section class="section-alt" id="estrategias">
-    <div class="container">
-      <div class="section-header">
-        <h2>Estrategias Para Captar Reservas Diretas</h2>
-        <p>Essas ações ajudam você a reduzir dependência de OTAs e aumentar lucro por reserva.</p>
-      </div>
+  </main>
 
-      <div class="grid-3">
-        <div class="card">
-          <h3>Site Próprio com PMS Integrado</h3>
-          <p>Tenha um site moderno que aceita reservas diretas, integrado ao seu sistema de gestão (PMS).</p>
-          <a href="/sistema-para-pousada-com-site-integrado" class="card-link">Saiba mais →</a>
-        </div>
-
-        <div class="card">
-          <h3>Promoções e Pacotes Exclusivos</h3>
-          <p>Ofereça descontos ou pacotes especiais somente para quem reserva direto pelo site ou WhatsApp.</p>
-          <a href="/simulador-roi-pms-site" class="card-link">Saiba mais →</a>
-        </div>
-
-        <div class="card">
-          <h3>WhatsApp e Comunicação Direta</h3>
-          <p>Centralize reservas e pré-check-in via WhatsApp, garantindo atendimento rápido e pessoal.</p>
-          <a href="/simulador-checkin" class="card-link">Saiba mais →</a>
-        </div>
-
-        <div class="card">
-          <h3>SEO Local & Conteúdo</h3>
-          <p>Otimize sua pousada para buscas no Google, garantindo que hóspedes te encontrem sem intermediários.</p>
-          <a href="/seo-local-hoteis" class="card-link">Saiba mais →</a>
-        </div>
-
-        <div class="card">
-          <h3>Marketing de Relacionamento</h3>
-          <p>Mantenha contato com hóspedes antigos via e-mail ou WhatsApp, incentivando retornos e indicações.</p>
-          <a href="/simulador-receita-direta" class="card-link">Saiba mais →</a>
-        </div>
-
-        <div class="card">
-          <h3>Checklists e Operação Padronizada</h3>
-          <p>Organize a equipe e processos para garantir qualidade consistente e hóspedes satisfeitos.</p>
-          <a href="/checklist-gestao-hotel" class="card-link">Saiba mais →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA FINAL ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="footer-cta">
-        <strong>Quer começar a vender direto hoje?</strong>
-        <span>Fale com nosso time e implemente reservas diretas sem depender de OTAs.</span>
-        <a href="/contato" class="btn btn-primary">Solicitar Contato</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 BRsys. Todos os direitos reservados.</p>
-      <p>Rua da Hotelaria, 123 – Peruíbe, SP</p>
+      <p>© 2026 BRsys • Tecnologia para Hotelaria</p>
+      <p>Peruíbe/SP • Atendimento via WhatsApp</p>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.querySelector(".nav-toggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("nav-open");
-    });
-  </script>
-
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/theme.js" defer></script>
 </body>
 </html>
