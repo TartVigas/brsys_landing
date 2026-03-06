@@ -4,36 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>PMS para Hotel Pequeno | Gestão de Reservas e Operação | BRsys</title>
-  <meta name="description" content="PMS para hotel pequeno: reservas, ocupação, check-in/check-out, relatórios e rotina organizada. Solução prática para hotéis independentes venderem mais e operarem melhor." />
-  <link rel="canonical" href="https://brsys.com.br/pms-para-hotel-pequeno/" />
+  <title>PMS para Hotel Pequeno | Reservas, Ocupação e Gestão | BRsys</title>
+  <meta name="description" content="PMS para hotel pequeno com controle de reservas, mapa de ocupação, check-in/check-out, hóspedes e relatórios. Organize a operação do seu hotel independente com mais simplicidade e previsibilidade." />
+  <link rel="canonical" href="https://www.brsys.com.br/pms-para-hotel-pequeno/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <link rel="icon" href="/img/favicon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BRsys" />
   <meta property="og:title" content="PMS para Hotel Pequeno | BRsys" />
   <meta property="og:description" content="Organize reservas, ocupação e rotina do seu hotel pequeno com um PMS simples, prático e escalável." />
-  <meta property="og:url" content="https://brsys.com.br/pms-para-hotel-pequeno/" />
-  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+  <meta property="og:url" content="https://www.brsys.com.br/pms-para-hotel-pequeno/" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preload" href="/img/brsys-logo.svg" as="image" />
 
-  <!-- Schema -->
+  <!-- Schema: WebPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebPage",
     "name":"PMS para Hotel Pequeno",
-    "url":"https://brsys.com.br/pms-para-hotel-pequeno/",
+    "url":"https://www.brsys.com.br/pms-para-hotel-pequeno/",
     "inLanguage":"pt-BR",
-    "isPartOf":{"@type":"WebSite","name":"BRsys","url":"https://brsys.com.br/"},
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"BRsys",
+      "url":"https://www.brsys.com.br/"
+    },
     "about":[
       {"@type":"Thing","name":"PMS para hotel pequeno"},
       {"@type":"Thing","name":"Gestão hoteleira"},
-      {"@type":"Thing","name":"Reservas"},
+      {"@type":"Thing","name":"Controle de reservas"},
       {"@type":"Thing","name":"Hotel independente"}
+    ]
+  }
+  </script>
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"BRsys",
+        "item":"https://www.brsys.com.br/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"PMS",
+        "item":"https://www.brsys.com.br/pms/"
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "name":"PMS para Hotel Pequeno",
+        "item":"https://www.brsys.com.br/pms-para-hotel-pequeno/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Vale a pena usar PMS em hotel pequeno?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sim. Em hotéis pequenos, um PMS ajuda a organizar reservas, ocupação, check-in, check-out e rotina operacional com menos retrabalho e mais clareza."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Preciso trocar toda a operação de uma vez?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Não. A implantação pode ser feita por etapas, começando pelo básico: reservas, ocupação e padronização da recepção."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Um PMS ajuda nas reservas diretas?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sim. Quando combinado com site, WhatsApp e estratégia de SEO local, o PMS ajuda a estruturar melhor a venda direta da hospedagem."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Quais dados a BRsys precisa para orientar o cenário ideal?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Cidade, número de UHs, diária média e como as reservas entram hoje, como OTA, WhatsApp ou site."
+        }
+      }
     ]
   }
   </script>
@@ -43,22 +119,27 @@
       display:inline-flex;
       gap:8px;
       align-items:center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      font-size: 12px;
-      color: var(--text-soft);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--text-soft);
     }
-    .split{ display:grid; gap:14px; }
+    .split{
+      display:grid;
+      gap:14px;
+    }
     @media (min-width: 980px){
-      .split{ grid-template-columns: 1fr 1fr; }
+      .split{
+        grid-template-columns:1fr 1fr;
+      }
     }
     .mini{
       margin:0;
       font-size:13px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      color:var(--text-muted);
+      line-height:1.5;
     }
   </style>
 </head>
@@ -66,7 +147,6 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="BRsys - Início">
@@ -96,18 +176,17 @@
 
   <main id="conteudo">
 
-    <!-- HERO -->
     <section class="hero" id="topo">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="pill">🏨 Hotel pequeno • 🗓️ Reservas • 📊 Ocupação • 💬 Rotina</span>
+          <span class="pill">🏨 Hotel pequeno • 🗓️ Reservas • 📊 Ocupação • ⚙️ Rotina</span>
 
           <h1>PMS para Hotel Pequeno</h1>
 
           <p class="hero-subtitle">
-            Organize seu hotel pequeno com um PMS simples, prático e escalável:
-            controle de reservas, ocupação, check-in/check-out, hóspedes e rotina diária
-            sem depender de planilhas e improviso.
+            Um PMS para hotel pequeno precisa ser simples de operar e forte no que realmente importa:
+            reservas, mapa de ocupação, check-in/check-out, hóspedes e rotina organizada.
+            A BRsys ajuda hotéis independentes a saírem do improviso e ganharem mais controle no dia a dia.
           </p>
 
           <div class="hero-actions">
@@ -118,59 +197,72 @@
           </div>
 
           <p class="hero-note">
-            Ideal para hotéis independentes que querem organizar a rotina e crescer sem complicação.
+            Ideal para hotéis independentes que querem organizar a operação agora e crescer com base sólida depois.
           </p>
         </div>
 
         <div class="hero-media">
           <div class="hero-device">
-            <img src="/img/hero-hotelaria.png" alt="PMS BRsys para hotel pequeno" loading="lazy" />
+            <img
+              src="/img/hero-hotelaria.png"
+              alt="PMS BRsys para hotel pequeno"
+              loading="lazy"
+              width="640"
+              height="480"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTEXTO -->
     <section class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <h2>O hotel é pequeno. O caos não precisa ser.</h2>
-          <p>Quanto menor a operação, mais cada erro pesa. Um PMS certo devolve controle rápido.</p>
+          <h2>Hotel pequeno não precisa viver no caos</h2>
+          <p>
+            Em uma operação enxuta, cada erro pesa mais. Quando reserva, recepção e ocupação não estão organizadas,
+            o problema aparece rápido no atendimento, na rotina e no caixa.
+          </p>
         </div>
 
         <div class="grid-4">
           <div class="card">
-            <h3>Planilha não acompanha</h3>
-            <p>Reserva, status e disponibilidade se perdem fácil.</p>
+            <h3>Planilha vira gargalo</h3>
+            <p>Reservas, disponibilidade e status dos quartos ficam vulneráveis a erro e retrabalho.</p>
           </div>
+
           <div class="card">
-            <h3>Equipe faz tudo no improviso</h3>
-            <p>Sem padrão, cada turno trabalha de um jeito.</p>
+            <h3>Equipe trabalha no improviso</h3>
+            <p>Sem processo claro, cada turno atende de um jeito e a operação perde consistência.</p>
           </div>
+
           <div class="card">
-            <h3>Check-in lento</h3>
-            <p>Mais atrito para a recepção e para o hóspede.</p>
+            <h3>Check-in consome energia</h3>
+            <p>Cadastro desorganizado, lentidão na recepção e mais atrito para a equipe e o hóspede.</p>
           </div>
+
           <div class="card">
-            <h3>Sem visão do negócio</h3>
-            <p>Você não enxerga ocupação, rotina e gargalos com clareza.</p>
+            <h3>Gestão sem visão</h3>
+            <p>Sem relatórios e sem controle visual, fica difícil enxergar ocupação, gargalos e movimento real.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
     <section class="section" id="como-funciona">
       <div class="container">
         <div class="section-header">
           <h2>Como o PMS ajuda um hotel pequeno</h2>
-          <p>Menos retrabalho, mais controle e mais previsibilidade no dia a dia.</p>
+          <p>
+            O objetivo não é complicar sua operação com um sistema enorme, e sim organizar o básico do jeito certo:
+            reservas, ocupação, recepção e acompanhamento da rotina.
+          </p>
         </div>
 
         <div class="grid-4">
           <article class="card">
-            <h3>Reservas organizadas</h3>
-            <p>Centralize entradas, saídas e dados do hóspede.</p>
+            <h3>Controle de reservas</h3>
+            <p>Centralize entradas, saídas, dados do hóspede e histórico de atendimento em um fluxo mais claro.</p>
             <ul class="list">
               <li>Cadastro simples</li>
               <li>Status da reserva</li>
@@ -180,169 +272,199 @@
 
           <article class="card">
             <h3>Mapa de ocupação</h3>
-            <p>Veja rápido o que está livre, ocupado ou em limpeza.</p>
+            <p>Visualize rapidamente quais quartos estão livres, ocupados, bloqueados ou em processo de limpeza.</p>
             <ul class="list">
               <li>Visão clara por quarto</li>
-              <li>Evita overbooking</li>
+              <li>Menos risco de overbooking</li>
               <li>Mais controle operacional</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Check-in / Check-out</h3>
-            <p>Padronize a rotina da recepção e reduza erro.</p>
+            <h3>Check-in e check-out</h3>
+            <p>Padronize a recepção e reduza erros em uma das etapas mais sensíveis da operação.</p>
             <ul class="list">
               <li>Registro organizado</li>
-              <li>Dados completos</li>
-              <li>Fluxo simples</li>
+              <li>Dados mais completos</li>
+              <li>Fluxo simples para equipe</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Relatórios</h3>
-            <p>Tenha visão da operação sem depender de achismo.</p>
+            <h3>Relatórios essenciais</h3>
+            <p>Saia do achismo e tenha indicadores básicos para entender melhor a operação do hotel.</p>
             <ul class="list">
               <li>Ocupação</li>
-              <li>Movimento</li>
-              <li>Indicadores básicos</li>
+              <li>Movimento por período</li>
+              <li>Indicadores operacionais</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- BENEFÍCIOS -->
     <section class="section section-alt" id="beneficios">
       <div class="container">
         <div class="section-header">
-          <h2>Benefícios para hotel pequeno</h2>
-          <p>Você não precisa de sistema “gigante”. Precisa do sistema certo para o momento atual.</p>
+          <h2>Benefícios de um PMS para hotel pequeno</h2>
+          <p>
+            Seu hotel não precisa de excesso de complexidade. Precisa de mais controle, mais padrão e mais capacidade
+            de crescer sem bagunçar a rotina.
+          </p>
         </div>
 
         <div class="split">
           <div class="card">
-            <h3>Mais simplicidade</h3>
+            <h3>Mais simplicidade operacional</h3>
             <ul class="list">
               <li>Menos planilha e menos retrabalho</li>
-              <li>Mais clareza no status dos quartos</li>
+              <li>Mais clareza no status da hospedagem</li>
               <li>Rotina padronizada para a equipe</li>
+              <li>Recepção mais organizada no dia a dia</li>
             </ul>
-            <p class="mini">Bom para quem quer sair do improviso sem complicar a operação.</p>
+            <p class="mini">
+              Ideal para quem quer sair do improviso sem implantar algo pesado demais.
+            </p>
           </div>
 
           <div class="card">
             <h3>Mais base para crescer</h3>
             <ul class="list">
-              <li>Organiza antes de escalar</li>
+              <li>Organiza a operação antes de escalar</li>
               <li>Ajuda a receber mais reservas com controle</li>
-              <li>Prepara terreno para automação e vendas diretas</li>
+              <li>Prepara o hotel para automação futura</li>
+              <li>Facilita a integração com estratégia comercial</li>
             </ul>
-            <p class="mini">Bom para quem quer crescer sem virar refém do caos operacional.</p>
+            <p class="mini">
+              Ideal para quem quer crescer com previsibilidade e não virar refém do caos operacional.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PARA QUEM -->
     <section class="section" id="para-quem">
       <div class="container">
         <div class="section-header">
           <h2>Para quem esse PMS faz mais sentido</h2>
-          <p>Especialmente para hotéis independentes que ainda estão entre “manual demais” e “complexo demais”.</p>
+          <p>
+            Especialmente para meios de hospedagem independentes que já sentem a necessidade de mais organização,
+            mas ainda não querem um sistema excessivamente complexo.
+          </p>
         </div>
 
         <div class="grid-4">
           <div class="card">
             <h3>Hotel pequeno urbano</h3>
-            <p>Mais agilidade e organização da recepção.</p>
+            <p>Mais agilidade na recepção, clareza nas reservas e rotina mais organizada.</p>
           </div>
+
           <div class="card">
             <h3>Hospedagem familiar</h3>
-            <p>Padroniza a rotina e diminui dependência de memória.</p>
+            <p>Padroniza processos e reduz dependência de memória, anotações e improvisos.</p>
           </div>
+
           <div class="card">
             <h3>Pousada em fase de crescimento</h3>
-            <p>Estrutura antes de escalar reservas diretas.</p>
+            <p>Ajuda a estruturar a operação antes de aumentar volume e buscar mais reservas diretas.</p>
           </div>
+
           <div class="card">
             <h3>Operação enxuta</h3>
-            <p>Ideal para equipes pequenas com muitas funções.</p>
+            <p>Ideal para equipes pequenas que acumulam várias funções e precisam de mais organização.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- APOIO / LINKS -->
     <section class="section section-alt" id="apoio">
       <div class="container">
         <div class="section-header">
-          <h2>Próximos passos no ecossistema BRsys</h2>
-          <p>Depois do PMS, você fortalece reserva direta, SEO e rotina.</p>
+          <h2>Próximos passos dentro do ecossistema BRsys</h2>
+          <p>
+            Depois de organizar o PMS, o próximo avanço natural é fortalecer reserva direta, SEO, presença digital
+            e padronização da rotina.
+          </p>
         </div>
 
         <div class="grid-4">
           <a class="card resource-card" href="/pms/">
             <h3>Hub PMS</h3>
-            <p>Visão geral do cluster PMS.</p>
+            <p>Veja a visão geral do cluster de PMS para hotelaria independente.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/programa-controle-reservas/">
+            <h3>Programa de Controle de Reservas</h3>
+            <p>Entenda como estruturar o coração da operação da hospedagem.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
           <a class="card resource-card" href="/simulador-roi-pms-site/">
             <h3>ROI PMS + Site</h3>
-            <p>Veja quando o investimento se paga.</p>
-            <span class="card-link">Abrir →</span>
-          </a>
-
-          <a class="card resource-card" href="/simulador-receita-direta/">
-            <h3>Receita Direta</h3>
-            <p>Entenda o impacto de vender mais direto.</p>
+            <p>Veja quando o investimento pode se pagar com mais controle e venda direta.</p>
             <span class="card-link">Abrir →</span>
           </a>
 
           <a class="card resource-card" href="/checklist-gestao-hotel/">
-            <h3>Checklist Gestão Hotel</h3>
-            <p>Organize recepção, limpeza e rotina.</p>
+            <h3>Checklist de Gestão</h3>
+            <p>Organize recepção, limpeza e rotina com um padrão mais prático.</p>
             <span class="card-link">Abrir →</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container">
         <div class="section-header">
-          <h2>Perguntas frequentes</h2>
-          <p>Dúvidas comuns antes de implantar um PMS em hotel pequeno.</p>
+          <h2>Perguntas frequentes sobre PMS para hotel pequeno</h2>
+          <p>Dúvidas comuns antes de implantar um sistema na rotina da hospedagem.</p>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h3>Vale a pena para hotel pequeno mesmo?</h3>
-            <p>Sim. Quanto menor a operação, mais importante é organizar reserva, ocupação e rotina sem desperdício.</p>
+            <h3>Vale a pena usar PMS em hotel pequeno?</h3>
+            <p>
+              Sim. Em hotéis pequenos, organizar reserva, ocupação e recepção rapidamente faz diferença prática
+              no controle da operação e na qualidade do atendimento.
+            </p>
           </div>
+
           <div class="card">
-            <h3>Preciso trocar tudo de uma vez?</h3>
-            <p>Não. A ideia é implantar por etapas para encaixar no ritmo da hospedagem.</p>
+            <h3>Preciso trocar toda a operação de uma vez?</h3>
+            <p>
+              Não. O ideal é implantar por etapas, começando pelo básico: reserva, ocupação, check-in e rotina da equipe.
+            </p>
           </div>
+
           <div class="card">
-            <h3>Ajuda também nas reservas diretas?</h3>
-            <p>Sim, principalmente quando combinado com site, WhatsApp e SEO local.</p>
+            <h3>Também ajuda nas reservas diretas?</h3>
+            <p>
+              Sim. Quando o PMS é combinado com site, WhatsApp e estratégia de SEO local, o hotel ganha mais base
+              para vender direto com organização.
+            </p>
           </div>
+
           <div class="card">
-            <h3>O que você precisa para me orientar?</h3>
-            <p>Cidade, número de UHs, diária média e como as reservas entram hoje.</p>
+            <h3>O que a BRsys precisa para orientar o cenário ideal?</h3>
+            <p>
+              Cidade, quantidade de UHs, diária média e como as reservas entram hoje. Com isso já dá para indicar
+              a melhor etapa para começar.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="section cta" id="contato">
       <div class="container">
         <div class="section-header">
           <h2>Quer organizar seu hotel pequeno do jeito certo?</h2>
-          <p>Me mande cidade, UHs e diária média. Eu te mostro a etapa certa para começar.</p>
+          <p>
+            Me mande cidade, UHs e diária média. Eu te mostro a etapa mais prática para começar com mais controle
+            e menos improviso.
+          </p>
         </div>
 
         <div class="hero-actions">
@@ -355,7 +477,7 @@
         </div>
 
         <p class="hero-note">
-          Com esses dados, eu já retorno com a recomendação mais prática para seu cenário.
+          Com esses dados, o retorno já pode ser mais objetivo e alinhado ao momento atual da sua hospedagem.
         </p>
       </div>
     </section>
