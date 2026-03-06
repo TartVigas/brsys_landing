@@ -663,3 +663,147 @@ html[data-theme="light"] .site-footer {
 html, body {
   overflow-x: hidden;
 }
+/* =========================================================
+   BRsys — Páginas Internas
+   Estrutura padrão para todas as páginas do site
+   ========================================================= */
+
+.page-internal .hero{
+  padding:72px 0 56px;
+  min-height:auto;
+}
+
+.page-internal .hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+}
+
+.page-internal .hero-content{
+  max-width:620px;
+}
+
+.page-internal .hero-content h1{
+  max-width:11ch;
+}
+
+.page-internal .hero-subtitle{
+  max-width:60ch;
+}
+
+.page-internal .hero-note{
+  max-width:60ch;
+  opacity:.85;
+}
+
+.page-internal .hero-media{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.page-internal .hero-device{
+  width:100%;
+  max-width:520px;
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+
+.page-internal .section{
+  padding:72px 0;
+}
+
+.page-internal .section-alt{
+  background:var(--bg-soft);
+}
+
+.page-internal .section-header{
+  max-width:760px;
+  margin-bottom:40px;
+}
+
+.page-internal .section-header h2{
+  margin-bottom:12px;
+}
+
+.page-internal .section-header p{
+  opacity:.85;
+  max-width:60ch;
+}
+
+/* =========================================================
+   Grids
+   ========================================================= */
+
+.page-internal .grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.page-internal .grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+/* =========================================================
+   Cards
+   ========================================================= */
+
+.page-internal .card{
+  height:100%;
+}
+
+/* =========================================================
+   CTA final
+   ========================================================= */
+
+.page-internal .cta{
+  text-align:center;
+}
+
+.page-internal .cta .section-header{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================================================
+   Responsivo
+   ========================================================= */
+
+@media (max-width:1100px){
+
+  .page-internal .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .page-internal .hero-media{
+    justify-content:center;
+  }
+
+  .page-internal .hero-content h1{
+    max-width:100%;
+  }
+
+}
+
+@media (max-width:900px){
+
+  .page-internal .grid-4{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media (max-width:600px){
+
+  .page-internal .grid-4,
+  .page-internal .grid-2{
+    grid-template-columns:1fr;
+  }
+
+}
