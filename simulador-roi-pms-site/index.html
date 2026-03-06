@@ -5,30 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Simulador ROI PMS + Site | Vale a pena investir? | BRsys</title>
-  <meta name="description" content="Simulador de ROI: calcule o retorno de PMS + site (reservas diretas, economia de comissão, ganho de tempo e aumento de ocupação). Resultado em meses." />
-  <link rel="canonical" href="https://brsys.com.br/simulador-roi-pms-site/" />
+  <meta name="description" content="Simulador de ROI para PMS + site: calcule o retorno com reservas diretas, economia de comissão OTA, ganho operacional e aumento de eficiência. Descubra em quantos meses o investimento pode se pagar." />
+  <link rel="canonical" href="https://www.brsys.com.br/simulador-roi-pms-site/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <link rel="icon" href="/img/favicon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BRsys" />
   <meta property="og:title" content="Simulador ROI PMS + Site | BRsys" />
-  <meta property="og:description" content="Descubra em quantos meses o investimento em PMS + Site se paga com reservas diretas, economia de comissão e ganho operacional." />
-  <meta property="og:url" content="https://brsys.com.br/simulador-roi-pms-site/" />
-  <meta property="og:image" content="https://brsys.com.br/img/og.jpg" />
+  <meta property="og:description" content="Descubra em quantos meses o investimento em PMS + Site pode se pagar com reservas diretas, economia de comissão e ganho operacional." />
+  <meta property="og:url" content="https://www.brsys.com.br/simulador-roi-pms-site/" />
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preload" href="/img/brsys-logo.svg" as="image" />
 
-  <!-- Schema -->
+  <!-- Schema: WebPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebPage",
     "name":"Simulador ROI PMS + Site",
-    "url":"https://brsys.com.br/simulador-roi-pms-site/",
+    "url":"https://www.brsys.com.br/simulador-roi-pms-site/",
     "inLanguage":"pt-BR",
-    "isPartOf":{"@type":"WebSite","name":"BRsys","url":"https://brsys.com.br/"},
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"BRsys",
+      "url":"https://www.brsys.com.br/"
+    },
     "about":[
       {"@type":"Thing","name":"ROI (Retorno sobre investimento)"},
       {"@type":"Thing","name":"PMS para hotelaria"},
@@ -38,7 +44,70 @@
   }
   </script>
 
-  <!-- Estilos locais (somente nesta página) -->
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"BRsys",
+        "item":"https://www.brsys.com.br/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Simulador ROI PMS + Site",
+        "item":"https://www.brsys.com.br/simulador-roi-pms-site/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Por que considerar ganho operacional no ROI?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Porque tempo também custa. Reduzir retrabalho e horas operacionais libera a equipe para atender melhor, vender mais e operar com menos desperdício."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"As reservas diretas extras são garantidas?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Não. O simulador trabalha com estimativas. O objetivo é ajudar a visualizar cenários possíveis de retorno com base em economia de comissão, ganho operacional e aumento de reservas diretas."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Se eu já tenho site, esse simulador ainda faz sentido?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sim. Muitas hospedagens já têm site, mas sem conversão real. Se o site não gera contato, prova visual e reserva direta, ainda existe muito espaço para melhorar o retorno."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Quais dados a BRsys precisa para montar uma proposta real?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Cidade, quartos ou UHs, diária média, ocupação, participação de OTA, comissão média e links atuais como site, Instagram ou Booking."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     .sim-wrap{ display:grid; gap:18px; }
     @media (min-width: 980px){ .sim-wrap{ grid-template-columns: 1.1fr .9fr; align-items:start; } }
@@ -48,54 +117,93 @@
     @media (min-width: 640px){ .sim-grid{ grid-template-columns: 1fr 1fr; } }
 
     .field{ display:flex; flex-direction:column; gap:6px; }
-    .field label{ font-size: 13px; color: var(--text-soft); }
+    .field label{ font-size:13px; color:var(--text-soft); }
+
     .field input, .field select{
       width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--text-main);
-      outline: none;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text-main);
+      outline:none;
     }
+
     html[data-theme="light"] .field input,
     html[data-theme="light"] .field select{
-      background: rgba(0,0,0,.03);
-    }
-    .field input:focus, .field select:focus{
-      border-color: rgba(24,198,184,.55);
-      box-shadow: 0 0 0 4px rgba(24,198,184,.18);
+      background:rgba(0,0,0,.03);
     }
 
-    .sim-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 8px; }
+    .field input:focus, .field select:focus{
+      border-color:rgba(24,198,184,.55);
+      box-shadow:0 0 0 4px rgba(24,198,184,.18);
+    }
+
+    .sim-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
 
     .kpi{ display:grid; gap:12px; }
+
     .kpi .kpi-item{
       padding:14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
     }
-    .kpi .kpi-label{ font-size: 13px; color: var(--text-soft); margin-bottom: 6px; }
-    .kpi .kpi-value{ font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
-    .kpi .kpi-sub{ font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.35; }
+
+    .kpi .kpi-label{
+      font-size:13px;
+      color:var(--text-soft);
+      margin-bottom:6px;
+    }
+
+    .kpi .kpi-value{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .kpi .kpi-sub{
+      font-size:13px;
+      color:var(--text-muted);
+      margin-top:6px;
+      line-height:1.35;
+    }
 
     .note-box{
       padding:14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
     }
-    .note-box p{ margin: 0; color: var(--text-soft); font-size: 14px; line-height: 1.5; }
 
-    .small-muted{ font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .note-box p{
+      margin:0;
+      color:var(--text-soft);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .small-muted{
+      font-size:12px;
+      color:var(--text-muted);
+      line-height:1.5;
+    }
 
     .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding: 6px 10px; border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      font-size: 12px; color: var(--text-soft);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--text-soft);
     }
   </style>
 </head>
@@ -103,7 +211,6 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="BRsys - Início">
@@ -133,7 +240,6 @@
 
   <main id="conteudo">
 
-    <!-- HERO -->
     <section class="hero" id="topo">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -142,8 +248,8 @@
           <h1>Simulador ROI: PMS + Site</h1>
 
           <p class="hero-subtitle">
-            Descubra em quantos meses o investimento em <strong>PMS + site de conversão</strong> se paga.
-            Calcula retorno por: economia de comissão, aumento de reservas diretas e ganho de tempo na operação.
+            Descubra em quantos meses o investimento em <strong>PMS + site de conversão</strong> pode se pagar.
+            O cálculo considera economia de comissão, aumento de reservas diretas e ganho de tempo na operação.
           </p>
 
           <div class="hero-actions">
@@ -152,32 +258,36 @@
           </div>
 
           <p class="hero-note">
-            Resultado estimado. Se você me mandar cidade + quartos + diária + OTA%, eu monto um plano por etapas.
+            Se você me mandar cidade, quartos, diária média e participação de OTA, eu ajusto o cenário com base mais real.
           </p>
         </div>
 
         <div class="hero-media">
           <div class="hero-device">
-            <img src="/img/hero-hotelaria.png" alt="Dashboard BRsys para hotelaria" loading="lazy" />
+            <img
+              src="/img/hero-hotelaria.png"
+              alt="Dashboard BRsys para hotelaria"
+              loading="lazy"
+              width="640"
+              height="480"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SIMULADOR -->
     <section class="section section-alt" id="simulador">
       <div class="container">
         <div class="section-header">
-          <h2>Simule o retorno (em meses)</h2>
-          <p>Preencha os campos e veja o ROI estimado do combo.</p>
+          <h2>Simule o retorno em meses</h2>
+          <p>Preencha os campos com médias da sua hospedagem e veja um cenário estimado de retorno.</p>
         </div>
 
         <div class="sim-wrap">
-          <!-- FORM -->
           <div class="card sim-card">
-            <h3 style="margin-top:0;">Dados (médias)</h3>
+            <h3 style="margin-top:0;">Dados da operação</h3>
             <p class="small-muted" style="margin-top:6px;">
-              Se não souber um valor exato, use uma média. O objetivo é decisão rápida.
+              Não precisa ser exato. Se não souber o número real, use uma média para tomar decisão mais rápido.
             </p>
 
             <div class="sim-grid" style="margin-top:14px;">
@@ -274,20 +384,19 @@
             </div>
 
             <p class="small-muted" style="margin-top:12px;">
-              * ROI estimado (média). Se sua operação tem pacote/feriado, o potencial costuma ser maior.
+              * É uma estimativa. Em operações com pacotes, feriados ou melhor conversão comercial, o potencial pode ser maior.
             </p>
           </div>
 
-          <!-- RESULTADOS -->
           <div class="kpi">
             <div class="kpi-item">
-              <div class="kpi-label">Retorno estimado (mês)</div>
+              <div class="kpi-label">Retorno estimado por mês</div>
               <div class="kpi-value" id="kpiRetornoMes">R$ 0</div>
               <div class="kpi-sub" id="subRetornoMes">Economia OTA + novas diretas + ganho operacional.</div>
             </div>
 
             <div class="kpi-item">
-              <div class="kpi-label">Payback (meses para se pagar)</div>
+              <div class="kpi-label">Payback estimado</div>
               <div class="kpi-value" id="kpiPayback">—</div>
               <div class="kpi-sub" id="subPayback">Setup + mensalidade / retorno mensal estimado.</div>
             </div>
@@ -300,97 +409,147 @@
 
             <div class="note-box">
               <p>
-                <strong>Atalho:</strong> se o retorno mensal estimado for maior que a mensalidade,
-                o combo costuma se pagar rápido. Se quiser, eu ajusto isso com seus números reais.
+                <strong>Leitura rápida:</strong> se o retorno mensal estimado já superar com folga a mensalidade,
+                normalmente o combo faz sentido e tende a se pagar em pouco tempo.
               </p>
             </div>
 
             <div class="kpi-item">
               <div class="kpi-label">Mensagem pronta para WhatsApp</div>
               <div class="kpi-sub" style="margin-top:0;">
-                Clique para enviar seus dados + resultado calculado.
+                Clique para enviar seus dados com o resultado calculado.
               </div>
               <a class="btn btn-primary" id="btnWhats" href="https://wa.me/5513997408157" target="_blank" rel="noopener" style="margin-top:10px; width: fit-content;">
                 Enviar no WhatsApp
               </a>
               <p class="small-muted" style="margin-top:10px;">
-                (Se não abrir no celular, copie e cole no WhatsApp Web.)
+                Se preferir, você pode copiar os dados e me mandar manualmente também.
               </p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- EXPLICAÇÃO -->
     <section class="section" id="como">
       <div class="container">
         <div class="section-header">
           <h2>O que entra nesse ROI</h2>
-          <p>Retorno = economia + crescimento + eficiência. Sem mágica — só processo.</p>
+          <p>O retorno não vem de mágica. Ele vem de economia, crescimento e eficiência operacional.</p>
         </div>
 
         <div class="grid-4">
           <div class="card">
             <h3>Economia de comissão</h3>
-            <p>Migrar parte das OTAs para direto reduz comissão.</p>
+            <p>Migrar parte do faturamento de OTA para direto reduz comissão e melhora margem.</p>
           </div>
+
           <div class="card">
             <h3>Mais reservas diretas</h3>
-            <p>Página + WhatsApp + Google aumentam conversão.</p>
+            <p>Site, WhatsApp e processo comercial melhoram a conversão da hospedagem.</p>
           </div>
+
           <div class="card">
             <h3>Ganho operacional</h3>
-            <p>PMS/processo reduzem horas e retrabalho.</p>
+            <p>PMS e processo reduzem horas, erro e retrabalho da equipe.</p>
           </div>
+
           <div class="card">
-            <h3>Escala por etapas</h3>
-            <p>Começa com o essencial e evolui conforme necessidade.</p>
+            <h3>Crescimento por etapas</h3>
+            <p>Você começa com o essencial e evolui a estrutura conforme a necessidade real.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <section class="section section-alt" id="apoio">
+      <div class="container">
+        <div class="section-header">
+          <h2>Conteúdos relacionados no ecossistema BRsys</h2>
+          <p>
+            Este simulador se conecta com as páginas de sistema, reserva direta e estrutura comercial
+            que ajudam a transformar o cenário calculado em ação prática.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <a class="card resource-card" href="/sistema-para-pousada-com-site/">
+            <h3>Sistema para Pousada com Site</h3>
+            <p>Veja o combo comercial completo para unir operação, site e reserva direta.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/sistema-para-pousada/">
+            <h3>Sistema para Pousada</h3>
+            <p>Entenda a estrutura base para organizar reservas, recepção e rotina da hospedagem.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/como-vender-direto-sem-booking/">
+            <h3>Vender Direto sem Booking</h3>
+            <p>Veja como reduzir dependência de OTA e melhorar a margem com mais controle do canal próprio.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+
+          <a class="card resource-card" href="/simulador-receita-direta/">
+            <h3>Simulador Receita Direta</h3>
+            <p>Calcule o impacto de vender mais direto na receita da hospedagem.</p>
+            <span class="card-link">Abrir →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="faq">
       <div class="container">
         <div class="section-header">
-          <h2>Perguntas frequentes</h2>
+          <h2>Perguntas frequentes sobre ROI de PMS + Site</h2>
           <p>Dúvidas comuns antes de investir no combo.</p>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h3>Por que considerar “ganho operacional” no ROI?</h3>
-            <p>Porque tempo custa. Reduzir retrabalho libera equipe para atender mais rápido e fechar mais.</p>
+            <h3>Por que considerar ganho operacional no ROI?</h3>
+            <p>
+              Porque tempo custa. Reduzir retrabalho libera equipe para atender melhor, vender mais e operar com menos desperdício.
+            </p>
           </div>
+
           <div class="card">
             <h3>As reservas diretas extras são garantidas?</h3>
-            <p>Não. É uma simulação. Mas com página forte + WhatsApp + SEO/Ads, 2 reservas/mês costuma ser realista.</p>
+            <p>
+              Não. É uma simulação. O objetivo é ajudar a visualizar o potencial de retorno com base em um cenário estimado.
+            </p>
           </div>
+
           <div class="card">
-            <h3>Se eu já tenho site, vale?</h3>
-            <p>Depende. Se seu site não converte e não tem prova/CTA, geralmente vale mais refazer o caminho de conversão.</p>
+            <h3>Se eu já tenho site, ainda vale?</h3>
+            <p>
+              Depende da conversão atual. Se o site não gera confiança, contato e reserva direta, normalmente ainda existe bastante espaço para melhorar.
+            </p>
           </div>
+
           <div class="card">
-            <h3>O que você precisa pra montar uma proposta real?</h3>
-            <p>Cidade, quartos/UHs, diária, ocupação, OTA% e links (site/Instagram/Booking).</p>
+            <h3>O que a BRsys precisa para montar uma proposta real?</h3>
+            <p>
+              Cidade, quartos ou UHs, diária, ocupação, OTA%, comissão média e links atuais como site, Instagram ou Booking.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
     <section class="section cta" id="contato">
       <div class="container">
         <div class="section-header">
           <h2>Quer que eu faça o ROI real do seu caso?</h2>
-          <p>Me mande seus dados e eu devolvo um plano por etapas com meta realista.</p>
+          <p>
+            Me mande seus dados e eu devolvo um cenário mais ajustado, com proposta e plano por etapas para a sua hospedagem.
+          </p>
         </div>
 
         <div class="hero-actions">
-          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20calcular%20ROI%20real%20do%20combo%20PMS%20%2B%20Site.%20Cidade:%20____%20UHs:%20____%20Di%C3%A1ria:%20____%20Ocup(%25):%20____%20OTA%25:%20____%20Comiss%C3%A3o%25:%20____%20Links%20(site%2Finsta%2Fbooking):%20____" class="btn btn-primary" target="_blank" rel="noopener">
+          <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20calcular%20o%20ROI%20real%20do%20combo%20PMS%20%2B%20Site.%20Cidade:%20____%20UHs:%20____%20Di%C3%A1ria:%20____%20Ocup(%25):%20____%20OTA%25:%20____%20Comiss%C3%A3o%25:%20____%20Links%20(site%2Finsta%2Fbooking):%20____" class="btn btn-primary" target="_blank" rel="noopener">
             Chamar no WhatsApp
           </a>
           <a href="mailto:contato@brsys.com.br?subject=Simulador%20ROI%20PMS%20+%20Site%20-%20BRsys" class="btn btn-secondary">
@@ -399,7 +558,7 @@
         </div>
 
         <p class="hero-note">
-          Enviando esses dados, eu já retorno com proposta e plano de implantação por etapas.
+          Enviando esses dados, a recomendação já pode sair mais realista e alinhada com o momento da sua operação.
         </p>
       </div>
     </section>
@@ -416,19 +575,25 @@
   <script src="/js/nav.js" defer></script>
   <script src="/js/theme.js" defer></script>
 
-  <!-- Simulador JS local -->
   <script>
     const $ = (id) => document.getElementById(id);
 
     function brl(n){
-      try{ return n.toLocaleString("pt-BR", { style:"currency", currency:"BRL" }); }
-      catch(e){ return "R$ " + (Math.round(n*100)/100).toFixed(2).replace(".", ","); }
+      try{
+        return n.toLocaleString("pt-BR", { style:"currency", currency:"BRL" });
+      }catch(e){
+        return "R$ " + (Math.round(n * 100) / 100).toFixed(2).replace(".", ",");
+      }
     }
-    function num(v, fallback=0){
+
+    function num(v, fallback = 0){
       const n = Number(String(v).replace(",", "."));
       return Number.isFinite(n) ? n : fallback;
     }
-    function clamp(n, min, max){ return Math.max(min, Math.min(max, n)); }
+
+    function clamp(n, min, max){
+      return Math.max(min, Math.min(max, n));
+    }
 
     function calc(){
       const cidade = ($("cidade")?.value || "").trim();
@@ -451,55 +616,45 @@
 
       const migracao = clamp(num($("migracao").value, 20), 0, 100) / 100;
 
-      // Faturamento mensal aproximado
       const noitesVendidasMes = uh * 30 * ocup;
       const gmvMes = noitesVendidasMes * diaria;
 
-      // Economia por migrar parte do que vem de OTA para direto
       const gmvOtaMes = gmvMes * shareOta;
       const economiaComissaoMes = (gmvOtaMes * migracao) * comissao;
 
-      // Ganho por novas reservas diretas (receita bruta adicional)
       const ganhoReceitaDiretoMes = ganhoDireto * noites * diaria;
-
-      // Ganho operacional (tempo economizado)
       const ganhoOperacionalMes = horasMes * custoHora;
 
-      // Retorno mensal estimado
       const retornoMes = economiaComissaoMes + ganhoReceitaDiretoMes + ganhoOperacionalMes;
 
-      // Custos
       const custoMes = mensalidade;
       const retornoLiquidoMes = retornoMes - custoMes;
 
-      // Payback (meses) considerando setup + mensalidades pagas até se pagar
-      // Simplificação: payback = (setup) / (retornoMes - mensalidade)
       let payback = null;
       if (retornoLiquidoMes > 0){
         payback = investSetup / retornoLiquidoMes;
       }
 
-      // ROI 12 meses: (retorno total 12m - custos 12m - setup)
       const retornoAno = retornoMes * 12;
       const custosAno = (mensalidade * 12) + investSetup;
       const roiAno = retornoAno - custosAno;
 
-      // UI
       $("kpiRetornoMes").textContent = brl(retornoMes);
       $("subRetornoMes").textContent =
         `Economia OTA (${brl(economiaComissaoMes)}) + diretas extras (${brl(ganhoReceitaDiretoMes)}) + operação (${brl(ganhoOperacionalMes)}).`;
 
-      $("kpiPayback").textContent = payback === null ? "Não fecha" : (payback < 0.1 ? "< 0,1" : payback.toFixed(1)) + " meses";
+      $("kpiPayback").textContent =
+        payback === null ? "Não fecha" : (payback < 0.1 ? "< 0,1" : payback.toFixed(1).replace(".", ",")) + " meses";
+
       $("subPayback").textContent =
         payback === null
-          ? "Com esses números, o retorno mensal não cobre a mensalidade. Ajuste metas ou me chame para otimizar o cenário."
+          ? "Com esses números, o retorno mensal ainda não cobre a mensalidade. Ajuste metas ou me chame para otimizar o cenário."
           : `Setup ${brl(investSetup)} / (retorno mensal ${brl(retornoMes)} - mensalidade ${brl(mensalidade)}).`;
 
       $("kpiRoiAno").textContent = brl(roiAno);
       $("subRoiAno").textContent =
         `Retorno anual ${brl(retornoAno)} - custos (mensalidades + setup) ${brl(custosAno)}.`;
 
-      // WhatsApp
       const pctOta = Math.round(shareOta * 100);
       const pctMig = Math.round(migracao * 100);
       const pctCom = Math.round(comissao * 100);
@@ -509,14 +664,14 @@
         `Cidade: ${cidade || "(não informado)"}\n` +
         `UHs/quartos: ${uh}\n` +
         `Diária média: ${brl(diaria)}\n` +
-        `Ocupação média: ${Math.round(ocup*100)}%\n` +
+        `Ocupação média: ${Math.round(ocup * 100)}%\n` +
         `% via OTA: ${pctOta}% | Comissão: ${pctCom}% | Meta migrar: ${pctMig}%\n` +
         `Diretas extras (meta): +${ganhoDireto} reservas/mês | Noites/reserva: ${noites}\n` +
         `Ganho operacional: ${horasMes}h/mês x ${brl(custoHora)}\n\n` +
         `Investimento: Setup ${brl(investSetup)} | Mensalidade ${brl(mensalidade)}\n\n` +
         `Resultado estimado:\n` +
         `• Retorno/mês: ${brl(retornoMes)}\n` +
-        `• Payback: ${payback === null ? "Não fecha (com esses números)" : (payback < 0.1 ? "< 0,1" : payback.toFixed(1)) + " meses"}\n` +
+        `• Payback: ${payback === null ? "Não fecha (com esses números)" : (payback < 0.1 ? "< 0,1" : payback.toFixed(1).replace(".", ",")) + " meses"}\n` +
         `• ROI em 12 meses: ${brl(roiAno)}\n\n` +
         `Pode me orientar com um plano por etapas e metas realistas?`;
 
