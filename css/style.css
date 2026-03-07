@@ -1067,3 +1067,81 @@ html[data-theme="light"] .site-footer {
     font-size: 16px;
   }
 }
+/* =========================================================
+   Desktop hero refinements — equilíbrio visual
+   Ajuste fino para páginas internas sem mexer no mobile
+   ========================================================= */
+
+@media (min-width: 980px) {
+  .page-internal .hero {
+    padding: 52px 0 44px;
+  }
+
+  .page-internal .hero-grid {
+    grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
+    gap: 34px;
+    align-items: center;
+  }
+
+  .page-internal .hero-content {
+    max-width: 700px;
+  }
+
+  .page-internal .hero-content h1 {
+    font-size: clamp(29px, 2.45vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.45px;
+    max-width: 17ch;
+    margin: 4px 0 14px;
+  }
+
+  .page-internal .hero-subtitle {
+    max-width: 54ch;
+    font-size: 15.5px;
+    line-height: 1.68;
+  }
+
+  .page-internal .hero-note {
+    max-width: 52ch;
+  }
+
+  .page-internal .hero-media {
+    justify-content: center;
+  }
+
+  .page-internal .hero-device {
+    width: 100%;
+    max-width: 460px;
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .page-internal .hero-device img {
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1180px) {
+  .page-internal .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+    gap: 26px;
+  }
+
+  .page-internal .hero-content {
+    max-width: 640px;
+  }
+
+  .page-internal .hero-content h1 {
+    font-size: clamp(28px, 2.3vw, 35px);
+    max-width: 18ch;
+  }
+
+  .page-internal .hero-subtitle {
+    max-width: 50ch;
+    font-size: 15px;
+  }
+
+  .page-internal .hero-device {
+    max-width: 410px;
+  }
+}
