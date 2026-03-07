@@ -718,21 +718,21 @@ html[data-theme="light"] .site-footer {
 }
 
 .page-internal .hero-grid {
-  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.85fr);
-  gap: 42px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 36px;
   align-items: center;
 }
 
 .page-internal .hero-content {
-  max-width: 560px;
+  max-width: 620px;
 }
 
 .page-internal .hero-content h1 {
-  margin: 10px 0 14px;
-  font-size: clamp(36px, 3.8vw, 56px);
-  line-height: 1.06;
-  letter-spacing: -0.7px;
-  max-width: 10ch;
+  margin: 8px 0 14px;
+  font-size: clamp(34px, 3.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  max-width: 11ch;
 }
 
 .page-internal .hero-subtitle {
@@ -754,7 +754,7 @@ html[data-theme="light"] .site-footer {
 
 .page-internal .hero-device {
   width: 100%;
-  max-width: 540px;
+  max-width: 500px;
 }
 
 .page-internal .section {
