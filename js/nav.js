@@ -26,12 +26,79 @@
     return cleaned || "/";
   }
 
-  function createLink(item) {
+  function smoothScrollTo(hash) {
+    const el = document.querySelector(hash);
+    if (!el) return false;
+
+    const headerH = header ? header.offsetHeight : 0;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth"
+    });
+
+    return true;
+  }
+
+  function createLink(item, mode) {
     const a = document.createElement("a");
     a.className = "nav-link";
     a.href = item.href;
     a.textContent = item.label;
     a.setAttribute("data-href", item.href);
+
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href") || "";
+
+      // âncora local
+      if (href.startsWith("#")) {
+        const ok = smoothScrollTo(href);
+        if (ok) {
+          e.preventDefault();
+          if (mode === "mobile") closeNav();
+          history.replaceState(null, "", href);
+        }
+        return;
+      }
+
+      let url;
+      try {
+        url = new URL(a.href, window.location.origin);
+      } catch (_) {
+        return;
+      }
+
+      const currentPath = normalizePath(window.location.pathname);
+      const targetPath = normalizePath(url.pathname);
+
+      // mesma página com hash
+      if (url.hash && currentPath === targetPath) {
+        const ok = smoothScrollTo(url.hash);
+        if (ok) {
+          e.preventDefault();
+          if (mode === "mobile") closeNav();
+          history.replaceState(null, "", url.hash);
+        }
+        return;
+      }
+
+      // mobile: fecha e depois navega explicitamente
+      if (mode === "mobile") {
+        e.preventDefault();
+        e.stopPropagation();
+        closeNav();
+
+        setTimeout(() => {
+          window.location.assign(url.href);
+        }, 180);
+
+        return;
+      }
+
+      // desktop: deixa o browser seguir normalmente
+    });
+
     return a;
   }
 
@@ -49,7 +116,7 @@
     NAV.forEach((item) => {
       const li = document.createElement("li");
       li.className = "nav-item";
-      li.appendChild(createLink(item));
+      li.appendChild(createLink(item, mode));
       ul.appendChild(li);
     });
 
@@ -107,69 +174,6 @@
       closeNav();
     }
   });
-
-  function smoothScrollTo(hash) {
-    const el = document.querySelector(hash);
-    if (!el) return false;
-
-    const headerH = header ? header.offsetHeight : 0;
-    const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
-
-    window.scrollTo({
-      top,
-      behavior: "smooth"
-    });
-
-    return true;
-  }
-
-  function handleNavClick(e) {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href") || "";
-
-    // Caso seja âncora local
-    if (href.startsWith("#")) {
-      const ok = smoothScrollTo(href);
-      if (ok) {
-        e.preventDefault();
-        closeNav();
-        history.replaceState(null, "", href);
-      }
-      return;
-    }
-
-    let url;
-    try {
-      url = new URL(a.href, window.location.origin);
-    } catch (_) {
-      closeNav();
-      return;
-    }
-
-    const currentPath = normalizePath(window.location.pathname);
-    const targetPath = normalizePath(url.pathname);
-
-    // Caso seja mesma página com hash
-    if (url.hash && currentPath === targetPath) {
-      const ok = smoothScrollTo(url.hash);
-      if (ok) {
-        e.preventDefault();
-        closeNav();
-        history.replaceState(null, "", url.hash);
-      }
-      return;
-    }
-
-    // Links normais: fecha o menu e força navegação
-    e.preventDefault();
-    closeNav();
-    window.location.href = url.href;
-  }
-
-  desktopMount.addEventListener("click", handleNavClick);
-  mobileMount.addEventListener("click", handleNavClick);
 
   function markActive() {
     const currentPath = normalizePath(window.location.pathname);
