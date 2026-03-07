@@ -35,34 +35,65 @@
 <body class="page-home">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
+<header class="site-header">
+  <div class="container header-inner">
 
-      <a href="/" class="brand" aria-label="BRsys início">
-        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys">
-        <span class="brand-text">
-          <span class="brand-name">BRsys</span>
-          <span class="brand-tagline">Tecnologia para Hotelaria</span>
-        </span>
-      </a>
+    <a href="/" class="brand" aria-label="BRsys início">
+      <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys">
+      <span class="brand-text">
+        <span class="brand-name">BRsys</span>
+        <span class="brand-tagline">Tecnologia para Hotelaria</span>
+      </span>
+    </a>
 
-      <div id="nav-desktop-mount"></div>
+    <!-- NAV DESKTOP -->
+    <nav class="site-nav site-nav--desktop" aria-label="Navegação principal">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+        <li><a class="nav-link" href="/pms/">PMS</a></li>
+        <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+        <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+        <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+        <li><a class="nav-link" href="/sobre/">Sobre</a></li>
+      </ul>
+    </nav>
 
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
-          🌙
-        </button>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+        🌙
+      </button>
 
-        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <div id="nav-mobile-mount"></div>
-  </header>
+  </div>
+
+  <!-- BACKDROP -->
+  <div class="nav-backdrop" hidden></div>
+
+  <!-- NAV MOBILE -->
+  <aside id="mobile-menu" class="mobile-drawer" aria-hidden="true">
+    <nav class="site-nav site-nav--mobile" aria-label="Navegação móvel">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+        <li><a class="nav-link" href="/pms/">PMS</a></li>
+        <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+        <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+        <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+        <li><a class="nav-link" href="/sobre/">Sobre</a></li>
+      </ul>
+    </nav>
+  </aside>
+</header>
 
   <main id="conteudo">
 
