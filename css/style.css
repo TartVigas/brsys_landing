@@ -929,18 +929,322 @@ html[data-theme="light"] .site-footer {
   }
 }
 /* =========================================================
-   Ajuste fino dos H1 nas páginas internas
-   Desktop
+   BRsys — Ajustes finos globais
+   Header + Hero interna + Espaçamentos + Desktop polish
+   Cole no FINAL do style.css
+   ========================================================= */
+
+/* ---------- Header polish ---------- */
+.site-header {
+  box-shadow: 0 1px 0 rgba(255,255,255,.04);
+}
+
+html[data-theme="light"] .site-header {
+  box-shadow: 0 1px 0 rgba(10,18,30,.05);
+}
+
+.header-inner {
+  min-height: 76px;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+}
+
+.brand-name {
+  font-size: 1.04rem;
+  letter-spacing: -0.2px;
+}
+
+.brand-tagline {
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.site-nav--desktop .nav-list {
+  gap: 8px;
+}
+
+.site-nav--desktop .nav-link {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.header-actions {
+  gap: 12px;
+}
+
+.header-actions .btn {
+  min-height: 44px;
+  padding-inline: 18px;
+}
+
+.theme-toggle,
+.nav-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+}
+
+/* ---------- Hero global ---------- */
+.hero {
+  overflow: hidden;
+}
+
+.hero-grid {
+  align-items: center;
+}
+
+.hero-content {
+  min-width: 0;
+}
+
+.hero-content h1 {
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  text-wrap: pretty;
+}
+
+/* ---------- Hero páginas internas ---------- */
+.page-internal .hero {
+  padding-top: 64px;
+  padding-bottom: 52px;
+}
+
+.page-internal .hero-grid {
+  align-items: center;
+}
+
+.page-internal .hero-content {
+  max-width: 640px;
+}
+
+.page-internal .hero-content h1 {
+  margin: 10px 0 14px;
+  font-size: clamp(40px, 4.8vw, 66px);
+  line-height: 1.05;
+  letter-spacing: -0.7px;
+  max-width: 10ch;
+}
+
+.page-internal .hero-subtitle {
+  max-width: 58ch;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.page-internal .hero-note {
+  max-width: 58ch;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.page-internal .hero-device {
+  max-width: 540px;
+}
+
+/* ---------- Seções ---------- */
+.section {
+  padding: 58px 0;
+}
+
+.page-internal .section {
+  padding: 68px 0;
+}
+
+.section-header {
+  margin-bottom: 22px;
+}
+
+.section-header h2 {
+  line-height: 1.12;
+  letter-spacing: -0.35px;
+}
+
+.section-header p {
+  max-width: 66ch;
+  line-height: 1.65;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.card h3 {
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.card p {
+  line-height: 1.62;
+}
+
+.resource-card .card-link,
+.segment-card .card-link {
+  margin-top: 6px;
+}
+
+/* ---------- Grids ---------- */
+.grid-2,
+.grid-3,
+.grid-4 {
+  gap: 16px;
+}
+
+@media (min-width: 980px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    gap: 18px;
+  }
+}
+
+/* ---------- CTA final ---------- */
+.page-internal .cta-final {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.page-internal .cta-final .section-header {
+  margin-bottom: 22px;
+}
+
+.page-internal .cta-final .hero-actions {
+  margin-bottom: 16px;
+}
+
+/* ---------- Footer polish ---------- */
+.site-footer {
+  padding: 28px 0;
+}
+
+.footer-inner {
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Desktop refinements
    ========================================================= */
 @media (min-width: 980px) {
+  .container {
+    width: min(var(--container), calc(100% - 56px));
+  }
+
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 50px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(46px, 5vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.9px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    max-width: 56ch;
+  }
+
+  .hero-device {
+    width: min(560px, 100%);
+  }
+
+  .page-internal .hero-grid {
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 42px;
+  }
+
   .page-internal .hero-content h1 {
-    font-size: clamp(42px, 5vw, 72px);
-    line-height: 1.04;
-    letter-spacing: -0.8px;
-    max-width: 9ch;
+    max-width: 10ch;
+  }
+
+  .page-internal .hero-media {
+    justify-content: flex-end;
+  }
+
+  .site-nav--desktop {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------- Desktop médio ---------- */
+@media (min-width: 980px) and (max-width: 1180px) {
+  .container {
+    width: min(var(--container), calc(100% - 44px));
+  }
+
+  .header-inner {
+    gap: 14px;
+  }
+
+  .site-nav--desktop .nav-list {
+    gap: 4px;
+  }
+
+  .site-nav--desktop .nav-link {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .header-actions .btn {
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+
+  .page-internal .hero-content h1 {
+    font-size: clamp(38px, 4.4vw, 58px);
+    max-width: 11ch;
   }
 
   .page-internal .hero-subtitle {
-    max-width: 58ch;
+    font-size: 16px;
+    max-width: 54ch;
+  }
+}
+
+/* =========================================================
+   Mobile safety
+   ========================================================= */
+@media (max-width: 979px) {
+  .page-internal .hero-content h1 {
+    max-width: 100%;
+  }
+
+  .page-internal .hero-subtitle,
+  .page-internal .hero-note {
+    max-width: 100%;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-content h1 {
+    text-wrap: initial;
+  }
+
+  .section-header p,
+  .hero-subtitle,
+  .hero-note {
+    text-wrap: pretty;
+  }
+
+  .card {
+    padding: 18px;
   }
 }
