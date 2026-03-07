@@ -948,7 +948,7 @@ html[data-theme="light"] .site-footer {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 979px) {
   .page-internal .hero-grid {
     grid-template-columns: 1fr;
     gap: 36px;
