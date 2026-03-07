@@ -1,28 +1,27 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sistema para Pousada com Site Integrado | PMS + Reservas Diretas | BRsys</title>
-  <meta name="description" content="Sistema para pousada com site integrado: PMS, reservas diretas, WhatsApp, automação e marketing. Venda mais direto, reduza dependência da Booking e organize sua operação." />
-  <link rel="canonical" href="https://www.brsys.com.br/sistema-para-pousada-com-site/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Sistema para pousada com site integrado: PMS, reservas diretas, WhatsApp, automação e marketing. Venda mais direto, reduza dependência da Booking e organize sua operação.">
+  <link rel="canonical" href="https://www.brsys.com.br/sistema-para-pousada-com-site/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
 
-  <link rel="icon" href="/img/favicon.png" />
+  <link rel="icon" href="/img/favicon.png">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="BRsys" />
-  <meta property="og:title" content="Sistema para Pousada com Site Integrado | BRsys" />
-  <meta property="og:description" content="PMS + Site + Reservas Diretas + Automação. Para pousadas que querem vender mais sem depender da Booking." />
-  <meta property="og:url" content="https://www.brsys.com.br/sistema-para-pousada-com-site/" />
-  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BRsys">
+  <meta property="og:title" content="Sistema para Pousada com Site Integrado | BRsys">
+  <meta property="og:description" content="PMS + Site + Reservas Diretas + Automação. Para pousadas que querem vender mais sem depender da Booking.">
+  <meta property="og:url" content="https://www.brsys.com.br/sistema-para-pousada-com-site/">
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg">
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preload" href="/img/brsys-logo.svg" as="image">
+  <link rel="preload" href="/img/hero-hotelaria.png" as="image">
 
-  <!-- Schema: WebPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -44,7 +43,6 @@
   }
   </script>
 
-  <!-- Schema: Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -66,7 +64,6 @@
   }
   </script>
 
-  <!-- Schema: FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -109,34 +106,64 @@
   </script>
 </head>
 
-<body class="page-sistema-para-pousada-com-site">
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<body class="page-internal page-sistema-para-pousada-com-site">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="brand" aria-label="BRsys - Início">
-        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+      <a href="/" class="brand" aria-label="BRsys início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40">
         <span class="brand-text">
           <span class="brand-name">BRsys</span>
           <span class="brand-tagline">Tecnologia para Hotelaria</span>
         </span>
       </a>
 
-      <div id="nav-desktop-mount"></div>
+      <nav class="site-nav site-nav--desktop" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+          <li><a class="nav-link is-active" href="/pms/" aria-current="page">PMS</a></li>
+          <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+          <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+          <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+          <li><a class="nav-link" href="/sobre/">Sobre</a></li>
+        </ul>
+      </nav>
 
       <div class="header-actions">
         <a href="#preco" class="btn btn-secondary">Ver planos</a>
-        <a href="#contato" class="btn btn-primary">Agendar demo</a>
 
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+          🌙
+        </button>
 
-        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
 
-    <div id="nav-mobile-mount"></div>
+    <div class="nav-backdrop" hidden></div>
+
+    <aside id="mobile-menu" class="mobile-drawer" aria-hidden="true">
+      <nav class="site-nav site-nav--mobile" aria-label="Navegação móvel">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+          <li><a class="nav-link is-active" href="/pms/" aria-current="page">PMS</a></li>
+          <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+          <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+          <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+          <li><a class="nav-link" href="/sobre/">Sobre</a></li>
+        </ul>
+      </nav>
+    </aside>
   </header>
 
   <main id="conteudo">
@@ -146,12 +173,10 @@
         <div class="hero-content">
           <p class="eyebrow">Combo premium para pousadas • PMS + Site + Reservas Diretas</p>
 
-          <h1>Sistema para Pousada com Site Integrado</h1>
+          <h1>Sistema para pousada com site integrado e mais reservas diretas.</h1>
 
           <p class="hero-subtitle">
-            Organize a operação e aumente reservas diretas com uma estrutura completa:
-            <strong>PMS + site que converte + WhatsApp + automação + marketing</strong>.
-            Menos dependência de OTA, mais controle da sua venda e mais previsibilidade na rotina da pousada.
+            Organize a operação e aumente reservas diretas com uma estrutura completa: <strong>PMS + site que converte + WhatsApp + automação + marketing</strong>. Menos dependência de OTA, mais controle da sua venda e mais previsibilidade na rotina da pousada.
           </p>
 
           <div class="hero-actions">
@@ -171,10 +196,9 @@
             <img
               src="/img/hero-hotelaria.png"
               alt="Sistema BRsys para pousadas com site integrado"
-              loading="lazy"
               width="640"
               height="480"
-            />
+              loading="eager">
           </div>
         </div>
       </div>
@@ -185,8 +209,7 @@
         <div class="section-header">
           <h2>O problema não é falta de procura — é falta de estrutura para converter</h2>
           <p>
-            Muitas pousadas até recebem visitas no Instagram, no Google ou no WhatsApp, mas perdem margem e previsibilidade
-            porque dependem demais de OTAs ou de um processo comercial desorganizado.
+            Muitas pousadas até recebem visitas no Instagram, no Google ou no WhatsApp, mas perdem margem e previsibilidade porque dependem demais de OTAs ou de um processo comercial desorganizado.
           </p>
         </div>
 
@@ -217,10 +240,9 @@
     <section class="section" id="como-funciona">
       <div class="container">
         <div class="section-header">
-          <h2>Como funciona o combo Site + PMS + Reservas Diretas</h2>
+          <h2>Como funciona o combo site + PMS + reservas diretas</h2>
           <p>
-            A ideia é simples: criar uma estrutura em que o hóspede entende, confia e chama para reservar,
-            enquanto a pousada ganha mais organização operacional.
+            A ideia é simples: criar uma estrutura em que o hóspede entende, confia e chama para reservar, enquanto a pousada ganha mais organização operacional.
           </p>
         </div>
 
@@ -273,8 +295,7 @@
         <div class="section-header">
           <h2>O que muda na prática para a pousada</h2>
           <p>
-            O objetivo não é só ter um site bonito ou um sistema isolado. É unir operação e comercial
-            para vender melhor e trabalhar com mais clareza.
+            O objetivo não é só ter um site bonito ou um sistema isolado. É unir operação e comercial para vender melhor e trabalhar com mais clareza.
           </p>
         </div>
 
@@ -346,7 +367,7 @@
           </div>
 
           <div class="card">
-            <h3>Nicho Premium</h3>
+            <h3>Nicho premium</h3>
             <p>Estratégia mais avançada para hotel fazenda, operação premium ou estrutura comercial mais robusta.</p>
             <ul class="list">
               <li>Oferta e diferenciais</li>
@@ -357,7 +378,7 @@
           </div>
         </div>
 
-        <p class="hero-note" style="margin-top:14px;">
+        <p class="hero-note">
           Em muitos casos, uma única reserva direta extra por mês já ajuda a justificar o investimento na estrutura.
         </p>
       </div>
@@ -368,8 +389,7 @@
         <div class="section-header">
           <h2>Conteúdos relacionados no ecossistema BRsys</h2>
           <p>
-            Esta página é uma peça importante do cluster comercial da BRsys e se conecta com PMS, gestão,
-            reserva direta e páginas de apoio para hotelaria independente.
+            Esta página é uma peça importante do cluster comercial da BRsys e se conecta com PMS, gestão, reserva direta e páginas de apoio para hotelaria independente.
           </p>
         </div>
 
@@ -401,7 +421,7 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-header">
           <h2>Perguntas frequentes sobre sistema para pousada com site integrado</h2>
@@ -411,45 +431,33 @@
         <div class="grid-2">
           <div class="card">
             <h3>Isso substitui a Booking?</h3>
-            <p>
-              Não precisa substituir. A estratégia é reduzir dependência e aumentar reservas diretas,
-              deixando a OTA como apoio e não como centro do faturamento.
-            </p>
+            <p>Não precisa substituir. A estratégia é reduzir dependência e aumentar reservas diretas, deixando a OTA como apoio e não como centro do faturamento.</p>
           </div>
 
           <div class="card">
             <h3>Serve para pousada pequena?</h3>
-            <p>
-              Sim. A BRsys foi pensada para pousadas e hotéis independentes, com implantação por etapas e foco em resultado prático.
-            </p>
+            <p>Sim. A BRsys foi pensada para pousadas e hotéis independentes, com implantação por etapas e foco em resultado prático.</p>
           </div>
 
           <div class="card">
             <h3>O que preciso para começar?</h3>
-            <p>
-              Cidade, número de quartos, diária média e, se tiver, link do site ou Instagram atual.
-              Isso já ajuda a definir a melhor etapa de entrada.
-            </p>
+            <p>Cidade, número de quartos, diária média e, se tiver, link do site ou Instagram atual. Isso já ajuda a definir a melhor etapa de entrada.</p>
           </div>
 
           <div class="card">
             <h3>Quanto tempo leva para começar?</h3>
-            <p>
-              O essencial pode entrar no ar rápido. Depois a estrutura evolui conforme regras,
-              processos e maturidade da pousada.
-            </p>
+            <p>O essencial pode entrar no ar rápido. Depois a estrutura evolui conforme regras, processos e maturidade da pousada.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section cta" id="contato">
+    <section class="section cta cta-final" id="contato">
       <div class="container">
         <div class="section-header">
           <h2>Quer vender mais direto na sua pousada?</h2>
           <p>
-            Me diga cidade, quartos e diária média. Com isso já dá para mostrar o caminho mais curto
-            para estruturar reserva direta e operação.
+            Me diga cidade, quartos e diária média. Com isso já dá para mostrar o caminho mais curto para estruturar reserva direta e operação.
           </p>
         </div>
 
@@ -457,8 +465,8 @@
           <a href="https://wa.me/5513997408157?text=Ol%C3%A1!%20Quero%20o%20combo%20Sistema%20para%20Pousada%20com%20Site%20Integrado.%20Cidade:%20____%20Quartos:%20____%20Di%C3%A1ria%20m%C3%A9dia:%20____" class="btn btn-primary" target="_blank" rel="noopener">
             Chamar no WhatsApp
           </a>
-          <a href="mailto:contato@brsys.com.br?subject=Sistema%20para%20Pousada%20com%20Site%20Integrado" class="btn btn-secondary">
-            Enviar e-mail
+          <a href="/plataforma/" class="btn btn-secondary">
+            Ver plataforma
           </a>
         </div>
 
