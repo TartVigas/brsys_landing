@@ -1,5 +1,5 @@
 // /js/nav.js — menu global BRsys (desktop + mobile)
-// Usa páginas reais no menu principal e mantém suporte a âncoras locais quando existirem.
+// Header simplificado: Plataforma, PMS, Marketing, Gestão, Recursos, Sobre
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -11,16 +11,13 @@
 
   if (!desktopMount || !mobileMount || !toggleBtn) return;
 
-  // Menu global do site: somente páginas reais
   const NAV = [
     { label: "Plataforma", href: "/plataforma/" },
     { label: "PMS", href: "/pms/" },
     { label: "Marketing", href: "/marketing/" },
     { label: "Gestão", href: "/gestao/" },
-    { label: "Destinos", href: "/destinos/" },
     { label: "Recursos", href: "/recursos/" },
-    { label: "Sobre", href: "/sobre/" },
-    { label: "Contato", href: "/contato/" }
+    { label: "Sobre", href: "/sobre/" }
   ];
 
   function normalizePath(path) {
@@ -41,7 +38,10 @@
   function renderNav(container, mode) {
     const nav = document.createElement("nav");
     nav.className = `site-nav site-nav--${mode}`;
-    nav.setAttribute("aria-label", mode === "desktop" ? "Navegação principal" : "Navegação móvel");
+    nav.setAttribute(
+      "aria-label",
+      mode === "desktop" ? "Navegação principal" : "Navegação móvel"
+    );
 
     const ul = document.createElement("ul");
     ul.className = "nav-list";
@@ -61,7 +61,6 @@
   renderNav(desktopMount, "desktop");
   renderNav(mobileMount, "mobile");
 
-  // Backdrop mobile
   let backdrop = $(".nav-backdrop");
   if (!backdrop) {
     backdrop = document.createElement("div");
@@ -101,14 +100,12 @@
     if (e.key === "Escape" && isMobileOpen()) closeNav();
   });
 
-  // Fecha mobile ao redimensionar para desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 980 && isMobileOpen()) {
       closeNav();
     }
   });
 
-  // Smooth scroll para âncoras locais, caso existam em algum link futuro
   function smoothScrollTo(hash) {
     const el = document.querySelector(hash);
     if (!el) return false;
@@ -125,7 +122,6 @@
 
     const href = a.getAttribute("href") || "";
 
-    // Se for âncora local, trata com scroll suave
     if (href.startsWith("#")) {
       const ok = smoothScrollTo(href);
       if (ok) {
@@ -136,7 +132,6 @@
       return;
     }
 
-    // Se for mesma página com hash, ex.: /pagina/#bloco
     const url = new URL(a.href, window.location.origin);
     const currentPath = normalizePath(window.location.pathname);
     const targetPath = normalizePath(url.pathname);
@@ -157,7 +152,6 @@
   desktopMount.addEventListener("click", handleNavClick);
   mobileMount.addEventListener("click", handleNavClick);
 
-  // Marca item ativo
   function markActive() {
     const currentPath = normalizePath(window.location.pathname);
 
