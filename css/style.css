@@ -718,21 +718,21 @@ html[data-theme="light"] .site-footer {
 }
 
 .page-internal .hero-grid {
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: 36px;
+  grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+  gap: 34px;
   align-items: center;
 }
 
 .page-internal .hero-content {
-  max-width: 620px;
+  max-width: 680px;
 }
 
 .page-internal .hero-content h1 {
   margin: 8px 0 14px;
-  font-size: clamp(34px, 3.4vw, 50px);
+  font-size: clamp(36px, 3.5vw, 52px);
   line-height: 1.08;
   letter-spacing: -0.6px;
-  max-width: 11ch;
+  max-width: 13ch;
 }
 
 .page-internal .hero-subtitle {
@@ -754,7 +754,7 @@ html[data-theme="light"] .site-footer {
 
 .page-internal .hero-device {
   width: 100%;
-  max-width: 500px;
+  max-width: 460px;
 }
 
 .page-internal .section {
@@ -812,7 +812,7 @@ html[data-theme="light"] .site-footer {
 }
 
 /* =========================================================
-   Desktop / Mobile visibility
+   Desktop / Mobile visibility + hero refinements
    ========================================================= */
 @media (min-width: 980px) {
   .site-nav--desktop {
@@ -852,6 +852,37 @@ html[data-theme="light"] .site-footer {
   .hero-device {
     width: min(560px, 100%);
   }
+
+  /* páginas internas */
+  .page-internal .hero-grid {
+    grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+    gap: 34px;
+    align-items: center;
+  }
+
+  .page-internal .hero-content {
+    max-width: 680px;
+  }
+
+  .page-internal .hero-content h1 {
+    font-size: clamp(36px, 3.5vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+    max-width: 13ch;
+  }
+
+  .page-internal .hero-subtitle {
+    font-size: 16px;
+    max-width: 56ch;
+  }
+
+  .page-internal .hero-device {
+    max-width: 460px;
+  }
+
+  .page-internal .hero-media {
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1180px) {
@@ -886,27 +917,27 @@ html[data-theme="light"] .site-footer {
   }
 
   .page-internal .hero-grid {
-    grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.84fr);
-    gap: 34px;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.82fr);
+    gap: 26px;
   }
 
   .page-internal .hero-content {
-    max-width: 520px;
+    max-width: 620px;
   }
 
   .page-internal .hero-content h1 {
-    font-size: clamp(34px, 3.6vw, 48px);
-    max-width: 10.5ch;
-    line-height: 1.07;
+    font-size: clamp(34px, 3.2vw, 46px);
+    line-height: 1.08;
+    max-width: 14ch;
   }
 
   .page-internal .hero-subtitle {
     font-size: 15.5px;
-    max-width: 52ch;
+    max-width: 56ch;
   }
 
   .page-internal .hero-device {
-    max-width: 500px;
+    max-width: 430px;
   }
 }
 
