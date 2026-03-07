@@ -97,7 +97,9 @@
   backdrop.addEventListener("click", closeNav);
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isMobileOpen()) closeNav();
+    if (e.key === "Escape" && isMobileOpen()) {
+      closeNav();
+    }
   });
 
   window.addEventListener("resize", () => {
@@ -112,7 +114,12 @@
 
     const headerH = header ? header.offsetHeight : 0;
     const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
-    window.scrollTo({ top, behavior: "smooth" });
+
+    window.scrollTo({
+      top,
+      behavior: "smooth"
+    });
+
     return true;
   }
 
@@ -122,6 +129,7 @@
 
     const href = a.getAttribute("href") || "";
 
+    // Caso seja âncora local
     if (href.startsWith("#")) {
       const ok = smoothScrollTo(href);
       if (ok) {
@@ -132,10 +140,18 @@
       return;
     }
 
-    const url = new URL(a.href, window.location.origin);
+    let url;
+    try {
+      url = new URL(a.href, window.location.origin);
+    } catch (_) {
+      closeNav();
+      return;
+    }
+
     const currentPath = normalizePath(window.location.pathname);
     const targetPath = normalizePath(url.pathname);
 
+    // Caso seja mesma página com hash
     if (url.hash && currentPath === targetPath) {
       const ok = smoothScrollTo(url.hash);
       if (ok) {
@@ -146,7 +162,10 @@
       return;
     }
 
+    // Links normais: fecha o menu e força navegação
+    e.preventDefault();
     closeNav();
+    window.location.href = url.href;
   }
 
   desktopMount.addEventListener("click", handleNavClick);
@@ -174,6 +193,7 @@
       }
 
       a.classList.toggle("is-active", isActive);
+
       if (isActive) {
         a.setAttribute("aria-current", "page");
       } else {
