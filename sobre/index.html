@@ -1,28 +1,26 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sobre a BRsys | Tecnologia para Hotelaria Independente</title>
-  <meta name="description" content="Conheça a BRsys: tecnologia para hotelaria independente com foco em PMS, reservas diretas, automação, marketing e organização da operação." />
-  <link rel="canonical" href="https://www.brsys.com.br/sobre/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Conheça a BRsys: tecnologia para hotelaria independente com foco em PMS, reservas diretas, automação, marketing e organização da operação.">
+  <link rel="canonical" href="https://www.brsys.com.br/sobre/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
 
-  <link rel="icon" href="/img/favicon.png" />
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preload" href="/img/brsys-logo.svg" as="image">
+  <link rel="preload" href="/img/hero-hotelaria.png" as="image">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="BRsys" />
-  <meta property="og:title" content="Sobre a BRsys | Tecnologia para Hotelaria Independente" />
-  <meta property="og:description" content="Entenda a proposta da BRsys para pousadas e hotéis independentes: mais controle, mais reservas diretas e menos improviso." />
-  <meta property="og:url" content="https://www.brsys.com.br/sobre/" />
-  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BRsys">
+  <meta property="og:title" content="Sobre a BRsys | Tecnologia para Hotelaria Independente">
+  <meta property="og:description" content="Entenda a proposta da BRsys para pousadas e hotéis independentes: mais controle, mais reservas diretas e menos improviso.">
+  <meta property="og:url" content="https://www.brsys.com.br/sobre/">
+  <meta property="og:image" content="https://www.brsys.com.br/img/og.jpg">
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preload" href="/img/brsys-logo.svg" as="image" />
-
-  <!-- Schema: AboutPage -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -43,7 +41,6 @@
   }
   </script>
 
-  <!-- Schema: Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -65,7 +62,6 @@
   }
   </script>
 
-  <!-- Schema: FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -109,48 +105,75 @@
 </head>
 
 <body class="page-internal page-sobre">
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="brand" aria-label="BRsys - Início">
-        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40" />
+      <a href="/" class="brand" aria-label="BRsys início">
+        <img class="brand-logo" src="/img/brsys-logo.svg" alt="BRsys" width="40" height="40">
         <span class="brand-text">
           <span class="brand-name">BRsys</span>
           <span class="brand-tagline">Tecnologia para Hotelaria</span>
         </span>
       </a>
 
-      <div id="nav-desktop-mount"></div>
+      <nav class="site-nav site-nav--desktop" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+          <li><a class="nav-link" href="/pms/">PMS</a></li>
+          <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+          <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+          <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+          <li><a class="nav-link is-active" href="/sobre/" aria-current="page">Sobre</a></li>
+        </ul>
+      </nav>
 
       <div class="header-actions">
         <a href="#proposta" class="btn btn-secondary">Ver proposta</a>
-        <a href="#contato" class="btn btn-primary">Falar com a BRsys</a>
 
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+          🌙
+        </button>
 
-        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
 
-    <div id="nav-mobile-mount"></div>
+    <div class="nav-backdrop" hidden></div>
+
+    <aside id="mobile-menu" class="mobile-drawer" aria-hidden="true">
+      <nav class="site-nav site-nav--mobile" aria-label="Navegação móvel">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="/plataforma/">Plataforma</a></li>
+          <li><a class="nav-link" href="/pms/">PMS</a></li>
+          <li><a class="nav-link" href="/marketing/">Marketing</a></li>
+          <li><a class="nav-link" href="/gestao/">Gestão</a></li>
+          <li><a class="nav-link" href="/recursos/">Recursos</a></li>
+          <li><a class="nav-link is-active" href="/sobre/" aria-current="page">Sobre</a></li>
+        </ul>
+      </nav>
+    </aside>
   </header>
 
   <main id="conteudo">
-
     <section class="hero" id="topo">
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="eyebrow">Sobre a BRsys</p>
 
-          <h1>Tecnologia para Hotelaria Independente</h1>
+          <h1>Mais estrutura para a hotelaria independente crescer com clareza.</h1>
 
           <p class="hero-subtitle">
-            A BRsys nasceu com uma proposta simples: ajudar pousadas e hotéis independentes
-            a operarem com mais clareza, venderem mais direto e dependerem menos do improviso.
-            Em vez de separar tecnologia, marketing e operação, a ideia é conectar tudo em uma estrutura que faça sentido no dia a dia da hospedagem.
+            A BRsys nasceu com uma proposta simples: ajudar pousadas e hotéis independentes a organizarem melhor a operação, fortalecerem o canal direto e reduzirem a dependência do improviso. Em vez de separar tecnologia, marketing e rotina operacional, a ideia é conectar tudo em uma estrutura que faça sentido no dia a dia da hospedagem.
           </p>
 
           <div class="hero-actions">
@@ -159,7 +182,7 @@
           </div>
 
           <p class="hero-note">
-            PMS, reservas diretas, automação, marketing e gestão funcionando como partes de uma mesma estratégia.
+            PMS, reservas diretas, automação, marketing e gestão funcionando como partes da mesma estratégia.
           </p>
         </div>
 
@@ -168,10 +191,9 @@
             <img
               src="/img/hero-hotelaria.png"
               alt="Sobre a BRsys e sua proposta para hotelaria independente"
-              loading="lazy"
               width="640"
               height="480"
-            />
+              loading="eager">
           </div>
         </div>
       </div>
@@ -182,7 +204,7 @@
         <div class="section-header">
           <h2>A proposta da BRsys</h2>
           <p>
-            Na hotelaria independente, o problema raramente é só tecnologia. Normalmente ele aparece na soma de operação confusa, pouca previsibilidade comercial, dependência de OTA e processo desorganizado.
+            Na hotelaria independente, o problema raramente é só tecnologia. Na prática, ele aparece na soma de operação confusa, pouca previsibilidade comercial, dependência de OTA e processo desorganizado.
           </p>
         </div>
 
@@ -215,8 +237,7 @@
         <div class="section-header">
           <h2>Como a BRsys pensa hotelaria</h2>
           <p>
-            Uma hospedagem vende melhor quando presença digital, atendimento e operação conversam entre si.
-            Por isso a BRsys não trata site, PMS, WhatsApp e SEO como coisas separadas.
+            Uma hospedagem vende melhor quando presença digital, atendimento e operação conversam entre si. Por isso a BRsys não trata site, PMS, WhatsApp e SEO como coisas isoladas.
           </p>
         </div>
 
@@ -345,7 +366,7 @@
       </div>
     </section>
 
-    <section class="section cta" id="contato">
+    <section class="section cta cta-final" id="contato">
       <div class="container">
         <div class="section-header">
           <h2>Quer entender se a BRsys faz sentido para sua hospedagem?</h2>
@@ -359,8 +380,8 @@
             Falar no WhatsApp
           </a>
 
-          <a href="mailto:contato@brsys.com.br?subject=Sobre%20a%20BRsys" class="btn btn-secondary">
-            Enviar e-mail
+          <a href="/plataforma/" class="btn btn-secondary">
+            Ver plataforma
           </a>
         </div>
 
@@ -369,7 +390,6 @@
         </p>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
